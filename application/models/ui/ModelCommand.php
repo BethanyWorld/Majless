@@ -103,7 +103,6 @@ class ModelCommand extends CI_Model{
         return true;
     }
     public function doChangeSignUpInfo($inputs){
-
         /* Update Candidate*/
         $arrayCandidate = array(
             'CandidateFirstName' => $inputs['inputSignUpFirstName'],
@@ -205,18 +204,6 @@ class ModelCommand extends CI_Model{
         );
         $this->db->where(' CandidatePhone', $inputs['inputPhone']);
         $this->db->update('candidate', $arrayCandidate);
-        /*-------------------------------------------------------------------------------------*/
-        $arrayCandidate = array(
-            'ElitePassword' => md5($inputs['inputPhone'])
-        );
-        $this->db->where('ElitePhone', $inputs['inputPhone']);
-        $this->db->update('elite', $arrayCandidate);
-        /*-------------------------------------------------------------------------------------*/
-        $arrayCandidate = array(
-            'SponsorPassword' => md5($inputs['inputPhone'])
-        );
-        $this->db->where('SponsorPhone', $inputs['inputPhone']);
-        $this->db->update('sponsor', $arrayCandidate);
         /*-------------------------------------------------------------------------------------*/
         $arr = array(
             'type' => "green",

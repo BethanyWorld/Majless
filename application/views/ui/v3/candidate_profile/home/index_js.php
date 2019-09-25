@@ -41,13 +41,13 @@
                     $sendData = {
                         'inputCandidateStatus': $candidateStatus,
                     }
-                    /*$.ajax({
+                    $.ajax({
                         type: 'post',
                         url: base_url + 'SignUp/changeCandidateState',
                         data: $sendData,
                         success: function (data) {
                         }
-                    });*/
+                    });
                 });
             }
         });
