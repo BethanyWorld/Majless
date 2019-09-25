@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../css/custom.css",
+	"sources": [
+		"../css/custom.sass"
+	],
+	"sourcesContent": [
+		"$color: #fff;\n\nul{display: block; li{list-style: none; color: $color; } };\n"
+	],
+	"mappings": ";AAEA,AAAA,EAAE,CAAA;EAAC,OAAO,EAAE,KAAM;CAA2C;;;AAA7D,AAAoB,EAAlB,CAAkB,EAAE,CAAA;EAAC,UAAU,EAAE,IAAK;EAAE,KAAK,EAFvC,IAAI;CAE+C",
+	"names": []
+}

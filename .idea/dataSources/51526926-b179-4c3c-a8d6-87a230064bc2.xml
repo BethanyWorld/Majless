@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="javankar@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.11">
+    <root id="1">
+      <ServerVersion>5.7.14</ServerVersion>
+      <DefaultEngine>MyISAM</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <DefaultCasing>lower/lower</DefaultCasing>
+    </root>
+    <schema id="2" parent="1" name="adwords">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="3" parent="1" name="ahmadreza">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="4" parent="1" name="barmano">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="5" parent="1" name="book">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="6" parent="1" name="carnoma">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="7" parent="1" name="castlecode">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="8" parent="1" name="crystal">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="9" parent="1" name="davarmelody">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="10" parent="1" name="enfold">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="11" parent="1" name="ettehadmellat">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="12" parent="1" name="fardad">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="13" parent="1" name="gardeniya">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="14" parent="1" name="getshop">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="15" parent="1" name="hasht">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="16" parent="1" name="hazelcode">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="17" parent="1" name="hfj">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="18" parent="1" name="hmvc">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="19" parent="1" name="information_schema">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="20" parent="1" name="javankar">
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="21" parent="1" name="javanportal">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="22" parent="1" name="javanportal_text">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="23" parent="1" name="jm_consult">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="24" parent="1" name="jm_education">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="25" parent="1" name="jm_estelam">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="26" parent="1" name="jm_organization">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="27" parent="1" name="jm_phone">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="28" parent="1" name="jm_public">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="29" parent="1" name="kanoon">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="30" parent="1" name="last_ship">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="31" parent="1" name="mahanweb_art">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="32" parent="1" name="mand">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="33" parent="1" name="mysql">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="34" parent="1" name="new-pub">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="35" parent="1" name="nikikala">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="36" parent="1" name="paliz">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="37" parent="1" name="performance_schema">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="38" parent="1" name="pub.hfj.ir">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="39" parent="1" name="resourcespace">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="40" parent="1" name="rezomeapp">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="41" parent="1" name="saffron">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="42" parent="1" name="saffronblog">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="43" parent="1" name="saminadwordslast">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="44" parent="1" name="sanab_en">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="45" parent="1" name="sanab_fa">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="46" parent="1" name="schoolarsnetwork">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="47" parent="1" name="shadichild">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="48" parent="1" name="ship">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="49" parent="1" name="sys">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="50" parent="1" name="websamin">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="51" parent="1" name="websaminadwords">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="52" parent="1" name="websaminadwordspage">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="53" parent="1" name="websaminblog">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </schema>
+    <schema id="54" parent="1" name="websaminwords">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+  </database-model>
+</dataSource>

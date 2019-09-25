@@ -1,0 +1,1 @@
+<?php$CI =& get_instance();$normalUserIsLogged = $CI->session->userdata('UserIsLogged');$normalUserLoginInfo = $CI->session->userdata('UserLoginInfo');if (!$normalUserIsLogged  && !$normalUserLoginInfo) {    redirect(base_url());}?>

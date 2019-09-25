@@ -1,0 +1,1 @@
+<?php$CI =& get_instance();if ($CI->session->userdata('AgentIsLogged') == TRUE && count($CI->session->userdata('AgentLoginInfo')) > 0) {}else {    redirect(base_url('Agent/Account/'));}?>

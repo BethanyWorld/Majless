@@ -1,0 +1,53 @@
+
+table .fit{
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+table tbody tr td, .table tbody tr th {
+    vertical-align: middle !important;
+}
+.user-sidebar{
+    direction: rtl;
+    text-align: justify;
+    min-height: 100vh;
+    box-shadow: 0 0 22px 1px #f1f1f1;
+    border-radius: 10px;
+}
+.user-sidebar ul{
+
+}
+.user-sidebar ul li{
+    margin: 0;
+}
+.user-sidebar ul li a{
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+    border-right: 5px solid #ffffff;
+}
+.user-sidebar ul li a span{
+    color: #ca3487;
+    font-size: 18px;
+    margin-left: 10px;
+    position: relative;
+    top: 2px;
+}
+.user-sidebar ul li a:hover{
+    border-right: 5px solid #195171;
+}
+.user-sidebar ul li a.active{
+    border-right: 5px solid #195171;
+}
+
+.user-main-wrapper{
+    border-radius: 10px;
+    min-height: 100vh;
+    background: #fff;
+    box-shadow: 0 0 22px 1px #f1f1f1;
+    padding: 20px 20px;
+}
+.user-main-wrapper label{
+    line-height: 30px;
+}
