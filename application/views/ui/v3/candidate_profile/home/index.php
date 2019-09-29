@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="row col-xs-12 col-sm-3 pull-right">
-                    <img class="thumbnail profile-image" width="150px" height="150px" id="imageProfile" src=""/>
+                    <img class="thumbnail profile-image" width="170px" height="170px" id="imageProfile" src=""/>
                 </div>
                 <div class="row col-xs-12 col-sm-9 pull-right">
                     <table class="table table-bordered table-condensed rtl">
@@ -22,6 +22,22 @@
                                 <th class="fit national-code"></th>
                                 <th class="fit phone"></th>
                             </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered table-condensed rtl">
+                        <thead>
+                        <tr>
+                            <th class="fit">استان حوزه انتخاباتی</th>
+                            <th class="fit">شهر حوزه انتخاباتی</th>
+                            <th class="fit">جنسیت</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th class="fit constituency-province"></th>
+                            <th class="fit constituency-province-part"></th>
+                            <th class="fit gender"></th>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -141,17 +157,41 @@
                         </button>
                     </div>
                 <?php } ?>
-
                 <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                 <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeMarked') { ?>
-                    <div class="col-xs-12 alert alert-info">
+                    <div class="col-xs-12">
                         <p>
                             <strong>
                                 روزمه شما تایید شد. امتیاز رزومه شما
-                                <label class="label label-success"><?php echo $userInfo['CandidateScore']; ?></label>
+                                <label class="label label-info"><?php echo $userInfo['CandidateScore']; ?></label>
                                 می باشد
                             </strong>
                         </p>
+                    </div>
+                    اکنون شما میتوانید یکی از آزمون های مرحله اول
+                    را انتخاب کنید.
+                    <a href="<?php echo base_url('Profile/examList') ?>" class="btn btn-danger">
+                        رزرو آزمون
+                    </a>
+                <?php } ?>
+                <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                <?php if ($userInfo['CandidateStatus'] == 'CandidateExamFirstStep' && empty($firstStepExam)) { ?>
+                    <div class="col-xs-12">
+                        <p>
+                            <strong>
+                                شما آزمون مرحله اول را رزور کرده اید.
+                                لطفا در تاریخ  و ساعت مشخص شده در محل آزمون حضور داشته باشید.
+                            </strong>
+                        </p>
+                    </div>
+                <?php } ?>
+                <?php if ($userInfo['CandidateStatus'] == 'CandidateExamFirstStep' && !empty($firstStepExam)) { ?>
+                    <div class="col-xs-12">
+                        اکنون شما میتوانید یکی از آزمون های مرحله دوم
+                        را انتخاب کنید.
+                        <a href="<?php echo base_url('Profile/examListSecond') ?>" class="btn btn-danger">
+                            رزرو آزمون
+                        </a>
                     </div>
                 <?php } ?>
             </div>

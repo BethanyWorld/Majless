@@ -14,7 +14,7 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             <th class="fit"><?php echo $item['ExamCapacity']; ?></th>
             <th class="fit"><?php echo $item['ExamPlaceDefaultCapacity']; ?></th>
             <td class="fit">
-                <a href="<?php echo base_url('Agent/Exam/requests/') . $item['ExamId']; ?>">
+                <a href="<?php echo base_url('Agent/Exams/requests/') . $item['ExamId']; ?>">
                     <button type="button"
                             class="btn btn-info btn-circle waves-effect waves-circle waves-float">
                         <i class="material-icons">rate_review</i>

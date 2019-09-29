@@ -1,6 +1,5 @@
 <script type="text/javascript">
     $(document).ready(function () {
-
         $("#addExam").click(function (event) {
             toggleLoader();
             $inputExamPlaceId = $.trim($("#inputExamPlaceId").val());
@@ -46,31 +45,27 @@
                 steps: [
                     {
                         element: "#step1",
-                        title: "عنوان محل",
-                        content: "عنوانی برای محل آزمون وارد کنید"
+                        title: "عنوان آزمون",
+                        content: "عنوانی برای آزمون وارد کنید"
                     },
                     {
                         element: "#step2",
-                        title: "تصویر خبر",
-                        content: "تصویر مرتبط با محل آزمون را انتخاب کنید.فقط تصاویر با فرمت jpg,png معتبر هستند"
+                        title: "نوع آزمون",
+                        content: "نوع آزمون را انتخاب کنید"
                     },
                     {
                         element: "#step3",
                         title: "ظرفیت محل آزمون",
-                        content: "ظرفیت پیش فرض محل آزمون را وارد کنید.این ظرفیت به ازای هر سانس قابل تغییر است"
+                        content: "ظرفیت آزمون را وارد کنید"
                     }
                 ]
             });
             tour.init();
             tour.start();
         });
-
-
         $(function () {
             $(".date").persianDatepicker();
             $('.time').mask('00:00');
         });
-
-
     });
 </script>

@@ -29,7 +29,7 @@ class Exams extends CI_Controller{
         $data['pageTitle'] = 'افزودن آزمون';
         $agentId = $this->session->userdata('AgentLoginInfo')[0]['AgentId'];
         $data['examType'] = $this->config->item('EnumExamType');
-        $data['examPlaces'] = $this->ModelExam->getAllExamPlacesBtAgentId($agentId);
+        $data['examPlaces'] = $this->ModelExam->getAllExamPlacesByAgentId($agentId);
         $this->load->view('agent_panel/static/header', $data);
         $this->load->view('agent_panel/exams/add/index', $data);
         $this->load->view('agent_panel/exams/add/index_css');
@@ -59,7 +59,7 @@ class Exams extends CI_Controller{
         $data['data'] = $this->ModelExam->getExamByExamId($id)[0];
         $agentId = $this->session->userdata('AgentLoginInfo')[0]['AgentId'];
         $data['examType'] = $this->config->item('EnumExamType');
-        $data['examPlaces'] = $this->ModelExam->getAllExamPlacesBtAgentId($agentId);
+        $data['examPlaces'] = $this->ModelExam->getAllExamPlacesByAgentId($agentId);
 
         $this->load->view('agent_panel/static/header', $data);
         $this->load->view('agent_panel/exams/edit/index', $data);
@@ -86,6 +86,18 @@ class Exams extends CI_Controller{
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelExam->doDeleteExam($inputs);
         echo json_encode($result);
+    }
+
+    public function requests($examId){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = 'متقاضیان آزمون';
+        $data['examData'] = $this->ModelExam->getExamByExamId($examId)[0];
+        $data['candidates'] = $this->ModelExam->getExamRequestByExamId($examId);
+        $this->load->view('agent_panel/static/header', $data);
+        $this->load->view('agent_panel/exams/requests/index', $data);
+        $this->load->view('agent_panel/exams/requests/index_css');
+        $this->load->view('agent_panel/exams/requests/index_js');
+        $this->load->view('agent_panel/static/footer');
     }
 
 }

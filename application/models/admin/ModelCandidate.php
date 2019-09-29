@@ -199,6 +199,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+    /* Candidate Panel */
     public function candidateHasOtherConditionToContinue($inputs){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $candidateId = $loginInfo['CandidateId'];
@@ -227,7 +228,57 @@ class ModelCandidate extends CI_Model{
 
 
     }
+    public function candidateReserveExam($inputs){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $candidateId = $loginInfo['CandidateId'];
+        $UserArray = array(
+            'CandidateId' => $candidateId,
+            'ExamId' => $inputs['inputExamId'],
+            'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+        );
+        $updateArray = array(
+            'CandidateStatus' => $inputs['inputCandidateStatus']
+        );
+        $this->db->trans_start();
+        $this->db->insert('candidate_exam_request', $UserArray);
 
+        $this->db->where('CandidateId', $candidateId);
+        $this->db->update('candidate', $updateArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "رزور آزمون با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        }
+        else {
+            $arr = array(
+                'type' => "green",
+                'content' => "رزور آزمون با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+    public function getCandidateFirstStepExamByCandidateId($id){
+        $this->db->select('*');
+        $this->db->from('candidate_exam_request');
+        $this->db->join('exam' , 'candidate_exam_request.ExamId = exam.ExamId');
+        $this->db->where(
+            array(
+                'ExamState' => 'Pend',
+                'ExamType' => 'FirstStep',
+                'CandidateId' => $id
+            )
+        );
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        return array();
+    }
 
 }
 ?>

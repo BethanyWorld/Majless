@@ -8,13 +8,19 @@
             url: $personalInfoApi,
             success: function (data) {
                 $result = data;
-                $(".full-name").text($result['firstName'] + " " + $result['lastName']);
-                $(".national-code").text($result['nationalCode']);
-                $(".phone").text($result['cellPhoneNumber'] || "-");
-                $(".profile-image").attr('src', $result['profileImage'] || "<?php echo $noImg; ?>");
+                $(".full-name").html($result['firstName'] + " " + $result['lastName']);
+                $(".national-code").html($result['nationalCode']);
+                $(".phone").html($result['cellPhoneNumber'] || "-");
+                $(".profile-image").attr('src', "data:image/png;base64,"+$result['profileImage'] || "<?php echo $noImg; ?>");
+
+                $(".constituency-province").html($result['constituencyProvince']);
+                $(".constituency-province-part").html($result['constituencyProvincePart']);
+                $(".gender").html($result['gender']);
+
             }
         });
 
+        $currentCandidateStatus = "<?php echo $userInfo['CandidateStatus']; ?>";
         $candidateStatus = "";
         $.ajax({
             type: 'get',
@@ -38,28 +44,32 @@
                     else {
                         $candidateStatus = "CandidateRegister";
                     }
-                    $sendData = {
-                        'inputCandidateStatus': $candidateStatus,
-                    }
-                    $.ajax({
-                        type: 'post',
-                        url: base_url + 'SignUp/changeCandidateState',
-                        data: $sendData,
-                        success: function (data) {
+                    if($currentCandidateStatus == 'CandidateRegister' ||
+                        $currentCandidateStatus == 'CandidateResumeCompleted' ||
+                        $currentCandidateStatus == 'CandidateResumeAccepted' ||
+                        $currentCandidateStatus == 'CandidateResumeRejected'){
+                        $sendData = {
+                            'inputCandidateStatus': $candidateStatus,
                         }
-                    });
+                        $.ajax({
+                            type: 'post',
+                            url: base_url + 'SignUp/changeCandidateState',
+                            data: $sendData,
+                            success: function (data) {
+                                //location.reload();
+                            }
+                        });
+                    }
                 });
             }
         });
 
-
-
         $("#hasNotNormalCondition").click(function () {
             toggleLoader();
             $.ajax({
-                type : 'post',
-                url : base_url + 'Profile/candidateHasOtherConditionToContinue',
-                data : {'inputCandidateContinueCondition': 'CandidateHasNotContinueCondition'},
+                type: 'post',
+                url: base_url + 'Profile/candidateHasOtherConditionToContinue',
+                data: {'inputCandidateContinueCondition': 'CandidateHasNotContinueCondition'},
                 success: function (data) {
                     toggleLoader();
                     $result = JSON.parse(data);
@@ -75,9 +85,9 @@
         $("#hasNormalCondition").click(function () {
             toggleLoader();
             $.ajax({
-                type : 'post',
-                url : base_url + 'Profile/candidateHasOtherConditionToContinue',
-                data : {'inputCandidateContinueCondition': 'CandidateHasContinueCondition'},
+                type: 'post',
+                url: base_url + 'Profile/candidateHasOtherConditionToContinue',
+                data: {'inputCandidateContinueCondition': 'CandidateHasContinueCondition'},
                 success: function (data) {
                     toggleLoader();
                     $result = JSON.parse(data);
@@ -90,7 +100,5 @@
                 }
             });
         });
-
-
     });
 </script>

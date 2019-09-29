@@ -204,6 +204,17 @@ $CI =& get_instance();
                         </li>
                     </ul>
                 </li>
+                <li <?php echo $CI->uri->segment(2) == 'Candidates' ? 'class="active"' : '' ?> >
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">bookmark</i>
+                        <span>نامزد های انتخاباتی استان</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li <?php if(strpos($CI->uri->uri_string , '/Candidates/index') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Agent/Candidates/index'); ?>" class="waves-effect waves-block">فهرست</a>
+                        </li>
+                    </ul>
+                </li>
                 <li <?php echo $CI->uri->segment(2) == 'ExamPlaces' ? 'class="active"' : '' ?> >
                     <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
                         <i class="material-icons">bookmark</i>

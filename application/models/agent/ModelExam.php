@@ -39,11 +39,41 @@ class ModelExam extends CI_Model{
         $arr = array();
         return $arr;
     }
-    public function getAllExamPlacesBtAgentId($agentId){
+    public function getAllExamPlacesByAgentId($agentId){
         $this->db->select('*');
         $this->db->from('exam_places');
         $this->db->where(array('ExamPlaceAgentId' => $agentId));
         $this->db->order_by('ExamPlaceId DESC');
+        return $this->db->get()->result_array();
+    }
+    public function getAgentByStateId($stateId){
+        $this->db->select('*');
+        $this->db->from('agent');
+        $this->db->where(array('AgentStateId' => $stateId));
+        return $this->db->get()->result_array();
+    }
+    public function getExamsFirstStepByAgentId($agentId){
+        $this->db->select('*');
+        $this->db->from('exam');
+        $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
+        $this->db->join('state' , 'exam_places.ExamPlaceStateId = state.StateId');
+        $this->db->where(array(
+            'ExamAgentId' => $agentId,
+            'ExamType' => 'FirstStep',
+        ));
+        $this->db->order_by('ExamId DESC');
+        return $this->db->get()->result_array();
+    }
+    public function getExamsSecondStepByAgentId($agentId){
+        $this->db->select('*');
+        $this->db->from('exam');
+        $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
+        $this->db->join('state' , 'exam_places.ExamPlaceStateId = state.StateId');
+        $this->db->where(array(
+            'ExamAgentId' => $agentId,
+            'ExamType' => 'SecondStep',
+        ));
+        $this->db->order_by('ExamId DESC');
         return $this->db->get()->result_array();
     }
     public function doAddExamPlace($inputs){
@@ -283,6 +313,24 @@ class ModelExam extends CI_Model{
             return $arr;
         }
     }
+
+    public function getExamRequestByExamId($examId)
+    {
+        $this->db->select('*');
+        $this->db->from('candidate_exam_request');
+        $this->db->join('candidate', 'candidate_exam_request.CandidateId = candidate.CandidateId');
+        $this->db->join('state', 'candidate.CandidateStateId = state.StateId');
+        $this->db->join('city', 'candidate.CandidateCityId = city.CityId');
+        $this->db->where(array('ExamId' => $examId));
+        $this->db->order_by('RequestId DESC');
+
+
+        $tempDb = clone $this->db;
+        $result['count'] = $tempDb->get()->num_rows();
+        $result['data'] = $this->db->get()->result_array();
+        return $result;
+    }
+
 
 }
 
