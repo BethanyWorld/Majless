@@ -10,9 +10,12 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">تماس با ما</h3>
                 </div>
-                <div class="panel-body text-justify">
+                <div class="panel-body text-center">
                     لطفاً جهت تسريع در امر پاسخگويي و برقراري ارتباط صحيح با بخش مورد نظر خود به موضوع ارتباط آن بخش توجه فرمائيد.
                     پاسخگویی به ایمیل ها به صورت شبانه روزی میباشد.
+                    <strong class="col-xs-12 text-center">
+                        <a href="tel:09029026934">پشتیبانی:09029026934</a>
+                    </strong>
                 </div>
             </div>
             <div class="panel panel-default">

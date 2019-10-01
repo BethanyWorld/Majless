@@ -2,36 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="127eba2d-7415-495a-85e7-2bfd297d5681" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/application/controllers/Agent/Candidates.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/agent/ModelCandidates.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/candidates/detail/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/candidates/detail/index_css.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/candidates/detail/index_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/candidates/home/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/candidates/home/index_css.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/candidates/home/index_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/candidates/home/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_css.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/first_exam_list/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/first_exam_list/index_css.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/first_exam_list/index_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/second_exam_list/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/second_exam_list/index_css.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/second_exam_list/index_js.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Agent/Exams.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Agent/Exams.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/helpers/pipes/pipe_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/pipes/pipe_helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/admin/ModelCandidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/admin/ModelCandidate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/agent/ModelExam.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/agent/ModelExam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/agent_panel/exams/add/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/agent_panel/exams/add/index_js.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/agent_panel/exams/edit/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/agent_panel/exams/edit/index_js.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/agent_panel/exams/home/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/agent_panel/exams/home/pagination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/agent_panel/static/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/agent_panel/static/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/contact_us/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/contact_us/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/signup/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/signup/index_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/static/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/static/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/ui/v4/css/options.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/ui/v4/css/options.css" afterDir="false" />
     </list>
     <ignored path="1TeachMe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -269,7 +250,7 @@
     <session id="668804574">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="50" />
+          <entry key="project.closed" value="52" />
           <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.12" value="1" />
@@ -286,7 +267,7 @@
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="4" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.open.time.27" value="3" />
+          <entry key="project.open.time.27" value="4" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="2" />
@@ -296,29 +277,29 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="54" />
+          <entry key="project.opened" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="07c72c0d8baa22ab7b07d7669c7c4029" value="1" />
-          <entry key="css" value="66" />
+          <entry key="css" value="68" />
           <entry key="gif" value="1" />
           <entry key="htaccess" value="4" />
           <entry key="jpg" value="5" />
           <entry key="js" value="30" />
           <entry key="md" value="2" />
-          <entry key="php" value="1239" />
+          <entry key="php" value="1276" />
           <entry key="png" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="66" />
+          <entry key="CSS" value="68" />
           <entry key="Image" value="10" />
           <entry key="JavaScript" value="30" />
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="1239" />
+          <entry key="PHP" value="1276" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="htaccess" value="4" />
         </counts>
@@ -329,7 +310,7 @@
           <entry key="dummy" value="19" />
           <entry key="js" value="61" />
           <entry key="md" value="52" />
-          <entry key="php" value="41383" />
+          <entry key="php" value="41696" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -338,7 +319,7 @@
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="61" />
           <entry key="Markdown" value="52" />
-          <entry key="PHP" value="41381" />
+          <entry key="PHP" value="41694" />
           <entry key="PLAIN_TEXT" value="19" />
         </counts>
       </usages-collector>
@@ -348,70 +329,11 @@
     <favorites_list name="1TeachMe" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Exams.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="92" column="46" lean-forward="true" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
-              <folding>
-                <element signature="n#__construct#0;n#Exams#0;n#!!top" />
-                <element signature="n#index#0;n#Exams#0;n#!!top" />
-                <element signature="n#doPagination#0;n#Exams#0;n#!!top" />
-                <element signature="n#add#0;n#Exams#0;n#!!top" />
-                <element signature="n#doAdd#0;n#Exams#0;n#!!top" />
-                <element signature="n#edit#0;n#Exams#0;n#!!top" />
-                <element signature="n#doEdit#0;n#Exams#0;n#!!top" />
-                <element signature="n#doDelete#0;n#Exams#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/requests/index.php">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/agent/ModelExam.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="328" column="22" selection-start-line="328" selection-start-column="17" selection-end-line="328" selection-end-column="22" />
-              <folding>
-                <element signature="n#getExamPlaceByAgentId#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#getExamPlaceById#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#getAllExamPlacesByAgentId#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#getAgentByStateId#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#getExamsFirstStepByAgentId#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#getExamsSecondStepByAgentId#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#doAddExamPlace#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#doEditExamPlace#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#doDeleteExamPlace#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#getExamByAgentId#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#getExamByExamId#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#getAllExamsBtAgentId#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#doAddExam#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#doEditExam#0;n#ModelExam#0;n#!!top" />
-                <element signature="n#doDeleteExam#0;n#ModelExam#0;n#!!top" />
-              </folding>
-            </state>
+            <state relative-caret-position="-900" />
           </provider>
         </entry>
       </file>
@@ -491,10 +413,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/ui/v3/home/index.php" />
-        <option value="$PROJECT_DIR$/application/config/database.php" />
-        <option value="$PROJECT_DIR$/application/views/ui/v3/static/header.php" />
-        <option value="$PROJECT_DIR$/application/controllers/SignUp.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/static/header.php" />
         <option value="$PROJECT_DIR$/application/models/ui/ModelQuery.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/home/index.php" />
@@ -509,7 +427,6 @@
         <option value="$PROJECT_DIR$/application/views/agent_panel/exam_places/edit/index_js.php" />
         <option value="$PROJECT_DIR$/application/controllers/Agent/Exam.php" />
         <option value="$PROJECT_DIR$/application/views/agent_panel/exams/home/index_js.php" />
-        <option value="$PROJECT_DIR$/application/config/config.php" />
         <option value="$PROJECT_DIR$/application/views/agent_panel/exams/home/index.php" />
         <option value="$PROJECT_DIR$/application/views/agent_panel/exams/add/index.php" />
         <option value="$PROJECT_DIR$/application/views/agent_panel/exams/edit/index.php" />
@@ -528,20 +445,25 @@
         <option value="$PROJECT_DIR$/application/views/agent_panel/candidates/detail/index_js.php" />
         <option value="$PROJECT_DIR$/application/models/agent/ModelCandidates.php" />
         <option value="$PROJECT_DIR$/application/views/agent_panel/candidates/detail/index.php" />
-        <option value="$PROJECT_DIR$/application/helpers/pipes/pipe_helper.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/first_exam_list/index_css.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/first_exam_list/index.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/first_exam_list/index_js.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index_js.php" />
-        <option value="$PROJECT_DIR$/application/models/admin/ModelCandidate.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/Profile.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/second_exam_list/index_js.php" />
         <option value="$PROJECT_DIR$/application/views/agent_panel/exams/home/pagination.php" />
-        <option value="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php" />
-        <option value="$PROJECT_DIR$/application/models/agent/ModelExam.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Agent/Exams.php" />
+        <option value="$PROJECT_DIR$/application/helpers/pipes/pipe_helper.php" />
         <option value="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index.php" />
+        <option value="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Agent/Exams.php" />
+        <option value="$PROJECT_DIR$/application/models/agent/ModelExam.php" />
+        <option value="$PROJECT_DIR$/application/models/admin/ModelCandidate.php" />
+        <option value="$PROJECT_DIR$/assets/ui/v4/css/options.css" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/static/header.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/contact_us/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/signup/index_js.php" />
+        <option value="$PROJECT_DIR$/application/config/config.php" />
       </list>
     </option>
   </component>
@@ -567,7 +489,7 @@
       <path value="C:/php/pear" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1446" />
     <option name="y" value="-102" />
     <option name="width" value="1178" />
@@ -588,67 +510,6 @@
               <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
               <item name="Majless" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Agent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="agent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="agent_panel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="agent_panel" type="462c0819:PsiDirectoryNode" />
-              <item name="exams" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="agent_panel" type="462c0819:PsiDirectoryNode" />
-              <item name="exams" type="462c0819:PsiDirectoryNode" />
-              <item name="requests" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -668,19 +529,19 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\profile\home" />
-      <recent name="C:\wamp64\www\Majless\application\views\admin_panel\states\elections\home" />
-      <recent name="C:\wamp64\www\Majless\application\models\public" />
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\province\home" />
-      <recent name="C:\wamp64\www\JavanKar\application\models\user" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Majless\application\views\agent_panel\exams" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile" />
       <recent name="C:\wamp64\www\Majless\application\models\agent" />
       <recent name="C:\wamp64\www\Majless\application\controllers\Agent" />
       <recent name="C:\wamp64\www\Majless\application\views\agent_panel" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\profile\home" />
+      <recent name="C:\wamp64\www\Majless\application\views\admin_panel\states\elections\home" />
+      <recent name="C:\wamp64\www\Majless\application\models\public" />
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\province\home" />
+      <recent name="C:\wamp64\www\JavanKar\application\models\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -991,7 +852,8 @@
       <workItem from="1569386165575" duration="16220000" />
       <workItem from="1569409587789" duration="1578000" />
       <workItem from="1569644091679" duration="23652000" />
-      <workItem from="1569735566655" duration="6602000" />
+      <workItem from="1569735566655" duration="10643000" />
+      <workItem from="1569819244606" duration="7325000" />
     </task>
     <servers />
   </component>
@@ -1013,7 +875,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1730377000" />
+    <option name="totallyTimeSpent" value="1741743000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1026,9 +888,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1374" y="-102" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.24541284" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.25076452" />
       <window_info id="Favorites" order="1" sideWeight="0.50163937" side_tool="true" weight="0.23827533" />
       <window_info id="Structure" order="2" sideWeight="0.50163937" side_tool="true" weight="0.23827533" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3295082" />
@@ -1073,158 +934,12 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exam_places/edit/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/adminpanel/plugins/mask/jquery.mask.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/adminpanel/plugins/jquery-inputmask/jquery.inputmask.bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/home/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/edit/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="14" column="70" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/login/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/home/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="80" column="11" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/static/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4151">
-          <caret line="227" column="41" lean-forward="true" selection-start-line="227" selection-start-column="41" selection-end-line="227" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/edit/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/edit/index_css.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/AboutUs.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/SignUp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="98" column="1" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="46" lean-forward="true" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/ContactUs.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/candidates/add/index.php" />
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/static/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="209" column="55" selection-start-line="209" selection-start-column="55" selection-end-line="209" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/ExamPlaces.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/candidates/home/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/candidates/home/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/candidates/home/pagination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="84" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/add/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="67" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/add/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="91" column="44" lean-forward="true" selection-start-line="91" selection-end-line="92" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Account.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/agent_panel/candidates/detail/index_js.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1237,17 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Candidates.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-          <folding>
-            <element signature="n#index#0;n#Candidates#0;n#!!top" />
-            <element signature="n#doPagination#0;n#Candidates#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1285,37 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="32" column="95" selection-start-line="32" selection-start-column="95" selection-end-line="32" selection-end-column="95" />
-          <folding>
-            <element signature="e#2738#2745#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helpers/pipes/pipe_helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="89" column="36" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#contentStatus#0;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/agent/ModelCandidates.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1323,10 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-          <folding>
-            <element signature="e#113#680#0#HTML" />
-            <element signature="e#736#1520#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1334,12 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="4" column="129" selection-start-line="4" selection-start-column="129" selection-end-line="4" selection-end-column="129" />
-          <folding>
-            <element signature="e#417#1154#0#HTML" />
-            <element signature="e#1285#3240#0#HTML" />
-            <element signature="e#3299#3988#0#HTML" />
-            <element signature="e#4042#4728#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1357,76 +1020,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="59" column="67" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
-          <folding>
-            <element signature="n#__construct#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateHasOtherConditionToContinue#0;n#Profile#0;n#!!top" />
-            <element signature="n#examList#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateReserveExam#0;n#Profile#0;n#!!top" />
-            <element signature="n#logOut#0;n#Profile#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="186" column="26" lean-forward="true" selection-start-line="186" selection-start-column="26" selection-end-line="186" selection-end-column="26" />
-          <folding>
-            <element signature="e#8968#9743#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/admin/ModelCandidate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="270" column="36" selection-start-line="270" selection-start-column="32" selection-end-line="270" selection-end-column="36" />
-          <folding>
-            <element signature="n#getCandidate#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#834#1003#0#PHP" />
-            <element signature="e#950#1003#0#PHP" />
-            <element signature="n#getCandidateRolesByCandidateId#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="n#getCandidateByCandidateId#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#1533#1897#0#PHP" />
-            <element signature="e#1913#2037#0#PHP" />
-            <element signature="n#getCandidateCandidatePostByCandidateId#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#2426#2508#0#PHP" />
-            <element signature="e#2524#2648#0#PHP" />
-            <element signature="n#doAdd#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#2802#3093#0#PHP" />
-            <element signature="e#3192#3670#0#PHP" />
-            <element signature="e#3254#3411#0#PHP" />
-            <element signature="e#3448#3670#0#PHP" />
-            <element signature="e#3474#3634#0#PHP" />
-            <element signature="n#doEdit#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#3742#4033#0#PHP" />
-            <element signature="e#4237#4705#0#PHP" />
-            <element signature="e#4299#4451#0#PHP" />
-            <element signature="e#4488#4705#0#PHP" />
-            <element signature="e#4514#4669#0#PHP" />
-            <element signature="n#doDelete#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#4800#4906#0#PHP" />
-            <element signature="e#4831#4905#0#PHP" />
-            <element signature="e#4953#5425#0#PHP" />
-            <element signature="e#5015#5172#0#PHP" />
-            <element signature="e#5209#5425#0#PHP" />
-            <element signature="e#5235#5389#0#PHP" />
-            <element signature="n#getCandidateByStateId#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#5932#6014#0#PHP" />
-            <element signature="n#getCandidateByStateIdAndCityId#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#6514#6596#0#PHP" />
-            <element signature="n#getCandidateByStateName#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#7024#7106#0#PHP" />
-            <element signature="n#getCandidatesByElectionId#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#7492#7574#0#PHP" />
-            <element signature="n#candidateHasOtherConditionToContinue#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="n#candidateReserveExam#0;n#ModelCandidate#0;n#!!top" />
-            <element signature="e#10153#10235#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1444,69 +1041,205 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/requests/pagination.php">
+    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/requests/pagination.php" />
+    <entry file="file://$PROJECT_DIR$/application/helpers/pipes/pipe_helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="39" column="1" lean-forward="true" selection-end-line="42" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/agent/ModelExam.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="328" column="22" selection-start-line="328" selection-start-column="17" selection-end-line="328" selection-end-column="22" />
-          <folding>
-            <element signature="n#getExamPlaceByAgentId#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#getExamPlaceById#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#getAllExamPlacesByAgentId#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#getAgentByStateId#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#getExamsFirstStepByAgentId#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#getExamsSecondStepByAgentId#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#doAddExamPlace#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#doEditExamPlace#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#doDeleteExamPlace#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#getExamByAgentId#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#getExamByExamId#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#getAllExamsBtAgentId#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#doAddExam#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#doEditExam#0;n#ModelExam#0;n#!!top" />
-            <element signature="n#doDeleteExam#0;n#ModelExam#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Exams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="92" column="46" lean-forward="true" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
-          <folding>
-            <element signature="n#__construct#0;n#Exams#0;n#!!top" />
-            <element signature="n#index#0;n#Exams#0;n#!!top" />
-            <element signature="n#doPagination#0;n#Exams#0;n#!!top" />
-            <element signature="n#add#0;n#Exams#0;n#!!top" />
-            <element signature="n#doAdd#0;n#Exams#0;n#!!top" />
-            <element signature="n#edit#0;n#Exams#0;n#!!top" />
-            <element signature="n#doEdit#0;n#Exams#0;n#!!top" />
-            <element signature="n#doDelete#0;n#Exams#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="129">
+          <caret line="102" column="28" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/requests/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state relative-caret-position="219">
+          <caret line="58" column="58" lean-forward="true" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="75" column="63" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/agent/ModelExam.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/agent/ModelCandidates.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/admin/ModelCandidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="152" column="3" selection-start-line="152" selection-start-column="3" selection-end-line="152" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/AboutUs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/contact_us/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="13" column="84" lean-forward="true" selection-end-line="95" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/ui/v4/css/options.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="312" lean-forward="true" selection-start-line="312" selection-end-line="316" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/signup/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="124" column="31" lean-forward="true" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" />
+            <element signature="e#106#445#0#HTML" />
+            <element signature="e#490#1260#0#HTML" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/static/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/ContactUs.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/States.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Profile.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Home.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Content.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Contact.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Candidate.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Agent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Candidates.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+          <folding>
+            <element signature="n#index#0;n#Candidates#0;n#!!top" />
+            <element signature="n#doPagination#0;n#Candidates#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/ExamPlaces.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Home.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Pages.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Posts.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Profile.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Account.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/SignUp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4140" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-341">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+          <folding>
+            <element signature="n#__construct#0;n#Profile#0;n#!!top" />
+            <element signature="n#examList#0;n#Profile#0;n#!!top" />
+            <element signature="n#examListSecond#0;n#Profile#0;n#!!top" />
+            <element signature="n#candidateReserveExam#0;n#Profile#0;n#!!top" />
+            <element signature="n#logOut#0;n#Profile#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/ReportAbuse.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Agent/Exams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="115" column="38" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+          <folding>
+            <element signature="n#__construct#0;n#Exams#0;n#!!top" />
+            <element signature="n#index#0;n#Exams#0;n#!!top" />
+            <element signature="n#doPagination#0;n#Exams#0;n#!!top" />
+            <element signature="n#edit#0;n#Exams#0;n#!!top" />
+            <element signature="n#doEdit#0;n#Exams#0;n#!!top" />
+            <element signature="n#doDelete#0;n#Exams#0;n#!!top" />
+            <element signature="n#requests#0;n#Exams#0;n#!!top" />
+            <element signature="e#5001#5061#1#PHP" />
+            <element signature="e#5101#5178#1#PHP" />
+            <element signature="e#5218#5281#1#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="69" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-900" />
       </provider>
     </entry>
   </component>

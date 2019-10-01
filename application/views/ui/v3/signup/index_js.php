@@ -129,7 +129,7 @@
                                     }
                                     else {
                                         /*notify($result['message'], 'red');*/
-                                        $('#signUpModal').modal('show')
+                                        $('#signUpModal').modal('show');
                                         toggleLoader();
                                     }
                                 }

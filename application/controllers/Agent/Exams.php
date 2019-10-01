@@ -99,5 +99,33 @@ class Exams extends CI_Controller{
         $this->load->view('agent_panel/exams/requests/index_js');
         $this->load->view('agent_panel/static/footer');
     }
+    public function doAcceptRequest(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelExam->doAcceptRequest($inputs);
+        echo json_encode($result);
+    }
+    public function doRejectRequest(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelExam->doRejectRequest($inputs);
+        echo json_encode($result);
+    }
 
 }

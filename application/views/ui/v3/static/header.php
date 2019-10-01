@@ -133,18 +133,18 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                         <div class="col-xs-12 col-sm-6">
                             <div class="menu-top-menu-container">
                                 <ul id="menu-top-menu" class="top-nav-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
-                                        <a href="<?php echo base_url('SignUp?type=candidate'); ?>">ثبت نام</a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44">
-                                        <a href="<?php echo base_url('SignUp?type=sponsor'); ?>">حامیان</a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41">
-                                        <a href="<?php echo base_url('Content'); ?>">اخبار و مقالات</a>
-                                    </li>
+<!--                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">-->
+<!--                                        <a href="--><?php //echo base_url('SignUp?type=candidate'); ?><!--">ثبت نام</a>-->
+<!--                                    </li>-->
+<!--                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44">-->
+<!--                                        <a href="--><?php //echo base_url('SignUp?type=sponsor'); ?><!--">حامیان</a>-->
+<!--                                    </li>-->
+<!--                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41">-->
+<!--                                        <a href="--><?php //echo base_url('Content'); ?><!--">اخبار و مقالات</a>-->
+<!--                                    </li>-->
                                     <li id="menu-item-840"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-840">
-                                        <a href="<?php echo base_url('AboutUs/intro'); ?>">درباره ما</a>
+                                        <a href="tel:09029026934">پشتیبانی:09029026934</a>
                                     </li>
                                 </ul>
                             </div>

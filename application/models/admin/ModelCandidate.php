@@ -268,7 +268,6 @@ class ModelCandidate extends CI_Model{
         $this->db->join('exam' , 'candidate_exam_request.ExamId = exam.ExamId');
         $this->db->where(
             array(
-                'ExamState' => 'Pend',
                 'ExamType' => 'FirstStep',
                 'CandidateId' => $id
             )

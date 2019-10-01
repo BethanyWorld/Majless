@@ -34,6 +34,8 @@
                                     <th>نام و نام خانوادگی</th>
                                     <th class="fit">کد ملی</th>
                                     <th class="fit">تلفن همراه</th>
+                                    <th class="fit">وضعیت آزمون</th>
+                                    <th class="fit">رد آزمون</th>
                                     <th class="fit">تایید آزمون</th>
                                 </tr>
                                 </thead>
@@ -52,13 +54,24 @@
                                             <td><?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?></td>
                                             <td><?php echo $item['CandidateNationalCode']; ?></td>
                                             <th class="fit"><?php echo $item['CandidatePhone']; ?></th>
+                                            <th class="fit"><?php echo candidateExamStatus($item['ExamState']); ?></th>
                                             <td class="fit">
-                                                <a class="remove-exam"
+                                                <a class="reject-exam"
                                                    data-id="<?php echo $item['RequestId']; ?>"
                                                    data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
                                                     <button type="button"
                                                             class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
                                                         <i class="material-icons">close</i>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                            <td class="fit">
+                                                <a class="accept-exam"
+                                                   data-id="<?php echo $item['RequestId']; ?>"
+                                                   data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
+                                                    <button type="button"
+                                                            class="btn btn-success btn-circle waves-effect waves-circle waves-float">
+                                                        <i class="material-icons">check</i>
                                                     </button>
                                                 </a>
                                             </td>

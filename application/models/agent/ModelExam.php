@@ -330,6 +330,55 @@ class ModelExam extends CI_Model{
         $result['data'] = $this->db->get()->result_array();
         return $result;
     }
+    public function doAcceptRequest($inputs){
+        $this->db->trans_start();
+        $UserArray = array(
+            'ExamState' => 'Done'
+        );
+        $this->db->where('RequestId', $inputs['inputRequestId']);
+        $this->db->update('candidate_exam_request', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "تایید آزمون با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "تایید آزمون با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+    public function doRejectRequest($inputs){
+        $this->db->trans_start();
+        $UserArray = array(
+            'ExamState' => 'Pend'
+        );
+        $this->db->where('RequestId', $inputs['inputRequestId']);
+        $this->db->update('candidate_exam_request', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "رد آزمون با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "رد آزمون با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
 
 
 }
