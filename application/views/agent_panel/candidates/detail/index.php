@@ -28,38 +28,6 @@
                             </tr>
                             </tbody>
                         </table>
-                        <hr>
-                        <?php if ($candidateInfo['CandidateStatus'] == 'CandidateResumeMarked') { ?>
-                            <div class="col-xs-12 alert alert-warning">
-                                <strong>
-                                    شما قبلا یکبار برای این نامزد انتخاباتی نمره ثبت کرده اید
-                                </strong>
-                            </div>
-                        <?php } ?>
-                        <div class="col-xs-12 col-sm-4">
-
-                            <div class="form-group">
-                                <label>تخصیص نمره نامزد انتخاباتی - این نمره قابل تغییر است</label>
-                                <input
-                                        value="<?php echo $candidateInfo['CandidateId']; ?>"
-                                        type="hidden" class="form-control"
-                                        name="inputCandidateId" id="inputCandidateId"/>
-                                <input
-                                        placeholder="مثال 18"
-                                        value="<?php echo $candidateInfo['CandidateScore']; ?>"
-                                        type="text"
-                                        class="form-control"
-                                        name="inputCandidateMark"
-                                        id="inputCandidateMark"/>
-                                <br>
-                                <button type="button" id="editCandidateMark" class="btn btn-primary waves-effect">
-                                    ذخیره
-                                </button>
-
-                            </div>
-                        </div>
-
-
                     </div>
                 </div>
             </div>

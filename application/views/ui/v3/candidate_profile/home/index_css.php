@@ -5,7 +5,7 @@
     }
     .c-progress-steps li {
         position: relative;
-        font-size: 14px;
+        font-size: 12px !important;
         color: #7f8c8d;
         padding: 2px 0 2px 23px;
     }
@@ -58,7 +58,7 @@
             white-space: nowrap;
             position: relative;
             border-left-width: 0;
-            border-bottom-width: 4px;
+            border-bottom-width: 6px;
             border-bottom-style: solid;
             border-bottom-color: #7f8c8d;
         }

@@ -3,6 +3,22 @@
     <div class="row col-xs-12 col-md-3 pull-right"><?php echo $sidebar; ?></div>
     <div class="col-xs-12 col-md-9 pull-right table-responsive">
         <div class="row">
+            <strong style="margin: 8px;"
+                    class="pull-right">استان برگزاری آزمون مرحله اول:</strong>
+            <select name="inputStateId" id="inputStateId" style="width: 165px;float: right;margin-left: 15px;">
+                <?php foreach ($states as $state) { ?>
+                    <option
+                            <?php if($candidateStateId == $state['StateId']) echo "selected"; ?>
+                            value="<?php echo $state['StateId']; ?>">
+                        <?php echo $state['StateName']; ?>
+                    </option>
+                <?php } ?>
+            </select>
+            <button id="searchButton" class="btn btn-primary">جستجو</button>
+        </div>
+        <br>
+
+        <div class="row">
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
@@ -16,31 +32,7 @@
                         <th class="fit text-center">انتخاب</th>
                     </tr>
                 </thead>
-                <tbody>
-                <?php $counter = 1; foreach ($stateExams as $stateExam) { ?>
-                    <tr>
-                        <td class="fit text-center"><?php echo $counter++; ?></td>
-                        <td class="text-center"><?php echo $stateExam['ExamPlaceTitle']; ?></td>
-                        <td class="fit text-center"><?php echo $stateExam['ExamPlaceAddress']; ?></td>
-                        <td class="fit text-center"><?php echo $stateExam['ExamPlaceMapImage']; ?></td>
-                        <td class="fit text-center"><?php echo $stateExam['StateName']; ?></td>
-                        <td class="fit text-center"><?php echo $stateExam['ExamDate']; ?></td>
-                        <td class="fit text-center"><?php echo $stateExam['ExamTime']; ?></td>
-                        <td class="fit text-center">
-                            <button
-                                    class="btn btn-success preview-exam"
-                                    data-place-title="<?php echo $stateExam['ExamPlaceTitle']; ?>"
-                                    data-place-address="<?php echo $stateExam['ExamPlaceAddress']; ?>"
-                                    data-date="<?php echo $stateExam['ExamDate']; ?>"
-                                    data-time="<?php echo $stateExam['ExamTime']; ?>"
-                                    data-id="<?php echo $stateExam['ExamId']; ?>">
-                                رزور
-                                <i class="fa fa-edit"></i>
-                            </button>
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
+                <tbody class="table-rows"></tbody>
             </table>
         </div>
     </div>

@@ -52,18 +52,43 @@ class ModelExam extends CI_Model{
         $this->db->where(array('AgentStateId' => $stateId));
         return $this->db->get()->result_array();
     }
-    public function getExamsFirstStepByAgentId($agentId){
+    public function getFirstStepExamByStateId($stateId){
         $this->db->select('*');
         $this->db->from('exam');
         $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
         $this->db->join('state' , 'exam_places.ExamPlaceStateId = state.StateId');
         $this->db->where(array(
-            'ExamAgentId' => $agentId,
+            'ExamPlaceStateId' => $stateId,
             'ExamType' => 'FirstStep',
         ));
         $this->db->order_by('ExamId DESC');
         return $this->db->get()->result_array();
     }
+    public function getSecondStepExamByStateId($stateId){
+        $this->db->select('*');
+        $this->db->from('exam');
+        $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
+        $this->db->join('state' , 'exam_places.ExamPlaceStateId = state.StateId');
+        $this->db->where(array(
+            'ExamPlaceStateId' => $stateId,
+            'ExamType' => 'SecondStep',
+        ));
+        $this->db->order_by('ExamId DESC');
+        return $this->db->get()->result_array();
+    }
+    public function getEvaluationExamList(){
+        $this->db->select('*');
+        $this->db->from('exam');
+        $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
+        $this->db->join('state' , 'exam_places.ExamPlaceStateId = state.StateId');
+        $this->db->where(array(
+            'ExamAgentId' => 0,
+            'ExamType' => 'Evaluation'
+        ));
+        $this->db->order_by('ExamId DESC');
+        return $this->db->get()->result_array();
+    }
+
     public function getExamsSecondStepByAgentId($agentId){
         $this->db->select('*');
         $this->db->from('exam');
@@ -313,7 +338,6 @@ class ModelExam extends CI_Model{
             return $arr;
         }
     }
-
     public function getExamRequestByExamId($examId)
     {
         $this->db->select('*');
@@ -330,10 +354,11 @@ class ModelExam extends CI_Model{
         $result['data'] = $this->db->get()->result_array();
         return $result;
     }
-    public function doAcceptRequest($inputs){
+
+    public function doPresenceCandidateFirstExam($inputs){
         $this->db->trans_start();
         $UserArray = array(
-            'ExamState' => 'Done'
+            'ExamState' => 'Presence'
         );
         $this->db->where('RequestId', $inputs['inputRequestId']);
         $this->db->update('candidate_exam_request', $UserArray);
@@ -341,23 +366,56 @@ class ModelExam extends CI_Model{
         if ($this->db->trans_status() === FALSE) {
             $arr = array(
                 'type' => "red",
-                'content' => "تایید آزمون با مشکل مواجه شد",
+                'content' => "ثبت حضور آزمون با مشکل مواجه شد",
                 'success' => false
             );
             return $arr;
         } else {
             $arr = array(
                 'type' => "green",
-                'content' => "تایید آزمون با موفقیت انجام شد",
+                'content' => "ثبت حضور آزمون با موفقیت انجام شد",
                 'success' => true
             );
             return $arr;
         }
     }
-    public function doRejectRequest($inputs){
+    public function doAbsenceCandidateFirstExam($inputs){
+        $this->db->select('*');
+        $this->db->from('candidate_exam_request');
+        $this->db->where('RequestId', $inputs['inputRequestId']);
+        $candidateId = $this->db->get()->result_array()[0]['CandidateId'];
+
+        $this->db->trans_start();
+        $UserArray = array('ExamState' => 'Absence');
+        $this->db->where('RequestId', $inputs['inputRequestId']);
+        $this->db->update('candidate_exam_request', $UserArray);
+
+        $UserArray = array('CandidateStatus' => 'CandidateResumeMarked');
+        $this->db->where('CandidateId', $candidateId);
+        $this->db->update('candidate', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "ثبت غیبت آزمون با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        }
+        else {
+            $arr = array(
+                'type' => "green",
+                'content' => "ثبت غیبت آزمون با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
+    public function doPresenceCandidateSecondExam($inputs){
         $this->db->trans_start();
         $UserArray = array(
-            'ExamState' => 'Pend'
+            'ExamState' => 'Presence'
         );
         $this->db->where('RequestId', $inputs['inputRequestId']);
         $this->db->update('candidate_exam_request', $UserArray);
@@ -365,22 +423,51 @@ class ModelExam extends CI_Model{
         if ($this->db->trans_status() === FALSE) {
             $arr = array(
                 'type' => "red",
-                'content' => "رد آزمون با مشکل مواجه شد",
+                'content' => "ثبت حضور آزمون با مشکل مواجه شد",
                 'success' => false
             );
             return $arr;
         } else {
             $arr = array(
                 'type' => "green",
-                'content' => "رد آزمون با موفقیت انجام شد",
+                'content' => "ثبت حضور آزمون با موفقیت انجام شد",
                 'success' => true
             );
             return $arr;
         }
     }
+    public function doAbsenceCandidateSecondExam($inputs){
+        $this->db->select('*');
+        $this->db->from('candidate_exam_request');
+        $this->db->where('RequestId', $inputs['inputRequestId']);
+        $candidateId = $this->db->get()->result_array()[0]['CandidateId'];
 
+        $this->db->trans_start();
+        $UserArray = array('ExamState' => 'Absence');
+        $this->db->where('RequestId', $inputs['inputRequestId']);
+        $this->db->update('candidate_exam_request', $UserArray);
 
+        $UserArray = array('CandidateStatus' => 'CandidateExamFirstStep');
+        $this->db->where('CandidateId', $candidateId);
+        $this->db->update('candidate', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "ثبت غیبت آزمون با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        }
+        else {
+            $arr = array(
+                'type' => "green",
+                'content' => "ثبت غیبت آزمون با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
 
 }
-
 ?>

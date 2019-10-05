@@ -65,6 +65,7 @@ table tbody tr td, .table tbody tr th {
 .table-row-count{
     position: absolute;
     top: 0;
+    right: 0px;
 }
 .navbar {
     -webkit-border-radius: 0;

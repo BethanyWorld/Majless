@@ -99,7 +99,7 @@ class Exams extends CI_Controller{
         $this->load->view('agent_panel/exams/requests/index_js');
         $this->load->view('agent_panel/static/footer');
     }
-    public function doAcceptRequest(){
+    public function doPresenceCandidateFirstExam(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return strip_tags($v);
@@ -110,10 +110,10 @@ class Exams extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $result = $this->ModelExam->doAcceptRequest($inputs);
+        $result = $this->ModelExam->doPresenceCandidateFirstExam($inputs);
         echo json_encode($result);
     }
-    public function doRejectRequest(){
+    public function doAbsenceCandidateFirstExam(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return strip_tags($v);
@@ -124,7 +124,36 @@ class Exams extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $result = $this->ModelExam->doRejectRequest($inputs);
+        $result = $this->ModelExam->doAbsenceCandidateFirstExam($inputs);
+        echo json_encode($result);
+    }
+
+    public function doPresenceCandidateSecondExam(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelExam->doPresenceCandidateSecondExam($inputs);
+        echo json_encode($result);
+    }
+    public function doAbsenceCandidateSecondExam(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelExam->doAbsenceCandidateSecondExam($inputs);
         echo json_encode($result);
     }
 

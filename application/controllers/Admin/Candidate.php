@@ -11,7 +11,8 @@ class Candidate extends CI_Controller{
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نامزد های انتخاباتی';
-        $inputs['pageIndex'] = 1;
+        $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
+        $data['states'] = $this->ModelCountry->getStateList();
 
         $this->load->view('admin_panel/static/header', $data);
         $this->load->view('admin_panel/candidate/home/index');
@@ -27,53 +28,64 @@ class Candidate extends CI_Controller{
         echo json_encode($data);
     }
 
-    public function add(){
-        $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'افزودن نامزد انتخاباتی';
-        $data['states'] = $this->ModelCountry->getStateList();
-        $this->load->view('admin_panel/static/header', $data);
-        $this->load->view('admin_panel/candidate/add/index');
-        $this->load->view('admin_panel/candidate/add/index_css');
-        $this->load->view('admin_panel/candidate/add/index_js');
-        $this->load->view('admin_panel/static/footer');
-    }
-    public function doAdd(){
-        $inputs = $this->input->post(NULL, TRUE);
-        $inputs =array_map(function($v){ return strip_tags($v); }, $inputs);
-        $inputs =array_map(function($v){ return remove_invisible_characters($v); }, $inputs);
-        $inputs =array_map(function($v){ return makeSafeInput($v); }, $inputs);
-        $result = $this->ModelCandidate->doAdd($inputs);
-        echo json_encode($result);
-    }
-
     public function edit($candidateId){
         $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+
         $data['pageTitle'] = 'ویرایش نامزد انتخاباتی';
 
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
-        $data['states'] = $this->ModelCountry->getStateList();
-        $data['cities'] = $this->ModelCountry->getCityByStateId($data['candidate']['CandidateStateId']);
+        $data['api'] = $this->config->item('api');
+
+
         $this->load->view('admin_panel/static/header', $data);
         $this->load->view('admin_panel/candidate/edit/index' , $data);
         $this->load->view('admin_panel/candidate/edit/index_css');
-        $this->load->view('admin_panel/candidate/edit/index_js');
+        $this->load->view('admin_panel/candidate/edit/index_js' , $data);
         $this->load->view('admin_panel/static/footer');
     }
-    public function doEdit()
+    public function doMarkCandidate()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $inputs =array_map(function($v){ return strip_tags($v); }, $inputs);
         $inputs =array_map(function($v){ return remove_invisible_characters($v); }, $inputs);
         $inputs =array_map(function($v){ return makeSafeInput($v); }, $inputs);
-        $result = $this->ModelCandidate->doEdit($inputs);
+        $result = $this->ModelCandidate->doMarkCandidate($inputs);
         echo json_encode($result);
     }
-    public function doDelete(){
+    public function doAcceptCandidateFirstExam(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs =array_map(function($v){ return strip_tags($v); }, $inputs);
         $inputs =array_map(function($v){ return remove_invisible_characters($v); }, $inputs);
         $inputs =array_map(function($v){ return makeSafeInput($v); }, $inputs);
-        $result = $this->ModelCandidate->doDelete($inputs);
+        $result = $this->ModelCandidate->doAcceptCandidateFirstExam($inputs);
+        echo json_encode($result);
+    }
+    public function doRejectCandidateFirstExam()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs =array_map(function($v){ return strip_tags($v); }, $inputs);
+        $inputs =array_map(function($v){ return remove_invisible_characters($v); }, $inputs);
+        $inputs =array_map(function($v){ return makeSafeInput($v); }, $inputs);
+        $result = $this->ModelCandidate->doRejectCandidateFirstExam($inputs);
+        echo json_encode($result);
+    }
+
+    public function doAcceptCandidateSecondExam(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs =array_map(function($v){ return strip_tags($v); }, $inputs);
+        $inputs =array_map(function($v){ return remove_invisible_characters($v); }, $inputs);
+        $inputs =array_map(function($v){ return makeSafeInput($v); }, $inputs);
+        $result = $this->ModelCandidate->doAcceptCandidateSecondExam($inputs);
+        echo json_encode($result);
+    }
+    public function doRejectCandidateSecondExam()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs =array_map(function($v){ return strip_tags($v); }, $inputs);
+        $inputs =array_map(function($v){ return remove_invisible_characters($v); }, $inputs);
+        $inputs =array_map(function($v){ return makeSafeInput($v); }, $inputs);
+        $result = $this->ModelCandidate->doRejectCandidateSecondExam($inputs);
         echo json_encode($result);
     }
 

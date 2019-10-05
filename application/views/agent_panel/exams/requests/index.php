@@ -34,9 +34,10 @@
                                     <th>نام و نام خانوادگی</th>
                                     <th class="fit">کد ملی</th>
                                     <th class="fit">تلفن همراه</th>
-                                    <th class="fit">وضعیت آزمون</th>
-                                    <th class="fit">رد آزمون</th>
-                                    <th class="fit">تایید آزمون</th>
+                                    <th class="fit">وضعیت آزمون
+                                    <th class="fit">نوع آزمون</th>
+                                    <th class="fit">ثبت غیبت</th>
+                                    <th class="fit">ثبت حضور</th>
                                 </tr>
                                 </thead>
                                 <tbody class="table-rows">
@@ -55,6 +56,8 @@
                                             <td><?php echo $item['CandidateNationalCode']; ?></td>
                                             <th class="fit"><?php echo $item['CandidatePhone']; ?></th>
                                             <th class="fit"><?php echo candidateExamStatus($item['ExamState']); ?></th>
+                                            <th class="fit"><?php echo examType($examData['ExamType']); ?></th>
+                                            <?php if($examData['ExamType'] == 'FirstStep'){ ?>
                                             <td class="fit">
                                                 <a class="reject-exam"
                                                    data-id="<?php echo $item['RequestId']; ?>"
@@ -75,6 +78,29 @@
                                                     </button>
                                                 </a>
                                             </td>
+                                            <?php } ?>
+                                            <?php if($examData['ExamType'] == 'SecondStep'){ ?>
+                                                <td class="fit">
+                                                    <a class="reject-second-exam"
+                                                       data-id="<?php echo $item['RequestId']; ?>"
+                                                       data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
+                                                        <button type="button"
+                                                                class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    </a>
+                                                </td>
+                                                <td class="fit">
+                                                    <a class="accept-second-exam"
+                                                       data-id="<?php echo $item['RequestId']; ?>"
+                                                       data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
+                                                        <button type="button"
+                                                                class="btn btn-success btn-circle waves-effect waves-circle waves-float">
+                                                            <i class="material-icons">check</i>
+                                                        </button>
+                                                    </a>
+                                                </td>
+                                            <?php } ?>
                                         </tr>
                                     <?php }
                                 } ?>

@@ -22,6 +22,8 @@ $CI =& get_instance();
     <link href="<?php echo $_DIR; ?>plugins/simplePagination/simplePagination.css" rel="stylesheet"/>
     <link href="<?php echo $_DIR; ?>css/materialize.css" rel="stylesheet"/>
     <link href="<?php echo $_DIR; ?>css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo $_DIR; ?>plugins/persianDatepicker/css/persianDatepicker-default.css" />
+
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo $_DIR; ?>css/themes/all-themes.css" rel="stylesheet"/>
     <script src="<?php echo $_DIR; ?>plugins/jquery/jquery.min.js"></script>
@@ -33,6 +35,9 @@ $CI =& get_instance();
     <script src="<?php echo $_DIR; ?>plugins/iziToast/js/iziToast.min.js"></script>
     <script src="<?php echo $_DIR; ?>plugins/confirm/confirm.js"></script>
     <script src="<?php echo $_DIR; ?>plugins/simplePagination/simplePagination.js"></script>
+
+    <script src="<?php echo $_DIR; ?>plugins/persianDatepicker/js/persianDatepicker.min.js"></script>
+    <script src="<?php echo $_DIR; ?>plugins/mask/jquery.mask.min.js"></script>
     <script src="<?php echo $_DIR; ?>js/admin.js"></script>
     <script src="<?php echo $_DIR; ?>js/pages/index.js"></script>
     <script src="<?php echo $_DIR; ?>js/demo.js"></script>
@@ -179,6 +184,34 @@ $CI =& get_instance();
 <!--                        <li --><?php //if(strpos($CI->uri->uri_string , '/Candidate/add') !== false) echo "class='active'"; ?><!-->
 <!--                            <a href="--><?php //echo base_url('Admin/Candidate/add'); ?><!--" class="waves-effect waves-block">افزودن</a>-->
 <!--                        </li>-->
+                    </ul>
+                </li>
+                <li <?php echo $CI->uri->segment(2) == 'ExamPlaces' ? 'class="active"' : '' ?> >
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">bookmark</i>
+                        <span>محل آزمون ها</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li <?php if(strpos($CI->uri->uri_string , '/ExamPlaces/index') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/ExamPlaces/index'); ?>" class="waves-effect waves-block">فهرست</a>
+                        </li>
+                        <li <?php if(strpos($CI->uri->uri_string , '/ExamPlaces/add') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/ExamPlaces/add'); ?>" class="waves-effect waves-block">افزودن</a>
+                        </li>
+                    </ul>
+                </li>
+                <li <?php echo $CI->uri->segment(2) == 'Exams' ? 'class="active"' : '' ?> >
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">bookmark</i>
+                        <span>آزمون ها</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li <?php if(strpos($CI->uri->uri_string , '/Exams/index') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Exams/index'); ?>" class="waves-effect waves-block">فهرست</a>
+                        </li>
+                        <li <?php if(strpos($CI->uri->uri_string , '/Exams/add') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Exams/add'); ?>" class="waves-effect waves-block">افزودن</a>
+                        </li>
                     </ul>
                 </li>
                 <li <?php echo $CI->uri->segment(2) == 'ReportAbuse' ? 'class="active"' : '' ?> >

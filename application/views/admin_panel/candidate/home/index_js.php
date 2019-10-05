@@ -7,8 +7,18 @@
     $hasPagination = false;
 
     function loadData(selectedPage = $selectedPage){
+        toggleLoader();
+        $inputCandidateStatus = $("#inputCandidateStatus").val();
+        $inputCandidateNationalCode = $("#inputCandidateNationalCode").val();
+        $inputCandidateFullName = $("#inputCandidateFullName").val();
+        $inputCandidateState = $("#inputCandidateState").val();
+
         $sendData = {
-            'pageIndex': selectedPage
+            'inputCandidateStatus': $inputCandidateStatus,
+            'inputCandidateNationalCode': $inputCandidateNationalCode,
+            'inputCandidateFullName': $inputCandidateFullName,
+            'inputCandidateState': $inputCandidateState,
+            'pageIndex': selectedPage,
         }
         $.ajax({
             type: 'post',
@@ -41,6 +51,9 @@
     }
     $(document).ready(function(){
         loadData();
+        $("#searchButton").click(function () {
+            loadData(1);
+        });
     });
     $(document).on('click', '.remove-candidate', function () {
         $this = $(this);

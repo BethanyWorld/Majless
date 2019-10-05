@@ -1,6 +1,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".preview-exam").click(function () {
+        $(document).on('click' , '.preview-exam' , function () {
             $examPlaceTitle = $(this).data('place-title');
             $examPlaceAddress = $(this).data('place-address');
             $examDate = $(this).data('date');
@@ -11,17 +11,17 @@
             $(".place-address").text($examPlaceAddress);
             $(".date").text($examDate);
             $(".time").text($examTime);
-            $("#reserveFirstStepExam").attr('data-exam-id' , $examId);
+            $("#reserveSecondStepExam").attr('data-exam-id', $examId);
         });
-        $("#reserveFirstStepExam").click(function () {
-            $examId = $(this).data('exam-id');
+        $(document).on('click' , '#reserveSecondStepExam',function () {
+            $examId = $('#reserveSecondStepExam').attr('data-exam-id');
             toggleLoader();
             $.ajax({
                 type: 'post',
                 url: base_url + 'Profile/candidateReserveExam',
                 data: {
                     'inputExamId': $examId,
-                    'inputCandidateStatus':'CandidateExamSecondStep'
+                    'inputCandidateStatus': 'CandidateExamSecondStep'
                 },
                 success: function (data) {
                     toggleLoader();
@@ -35,5 +35,24 @@
                 }
             });
         });
+        function loadData($candidateStateId) {
+            toggleLoader();
+            $.ajax({
+                type: 'GET',
+                url: base_url + 'Profile/getSecondStepExamList/' + $candidateStateId,
+                success: function (data) {
+                    toggleLoader();
+                    $result = JSON.parse(data);
+                    $(".table-rows").html($result['htmlResult']);
+                }
+            });
+        }
+        $candidateStateId = "<?php echo $candidateStateId; ?>";
+        loadData($candidateStateId);
+        $("#searchButton").click(function () {
+            $inputStateId = $("#inputStateId").val();
+            loadData($inputStateId);
+        });
+        $('[data-toggle="popover"]').popover();
     });
 </script>

@@ -56,6 +56,7 @@ $config['proxy_ips'] = '';
 /*******************************************/
 /* تصویر لوگو پیش فرض برای تمامی تصاویر برنامه */
 $config['defaultImage'] = $config['base_url'] . 'assets/ui/v3/images/profile.jpg';
+$config['gifLoader'] = $config['base_url'] . 'assets/ui/v4/images/loader.gif';
 /* عنوان پیش فرض سایت */
 $config['defaultPageTitle'] = 'مجلس - ';
 /* تعداد سطر های پیش فرض جهت نمایش در پتل ها */
@@ -67,18 +68,30 @@ $config['EnumCandidateStatus'] = array(
     'CandidateRegister' => 'ثبت نام اولیه',
     'CandidateResumeCompleted' => 'تکمیل رزومه',
     'CandidateResumeAccepted' => 'تایید رزومه',
+    'CandidateResumeRejected' => 'رد رزومه',
+    'CandidateHasNotContinueCondition' => 'عدم احراز سایر شرایط',
+    'CandidateHasContinueCondition' => 'در انتظار نمره دهی',
     'CandidateResumeMarked' => 'امتیاز بندی رزومه',
     'CandidateExamFirstStep' => 'آزمون مرحله اول',
+    'CandidateExamFirstStepReject' => 'عدم موفقیت در آزمون مرحله اول',
     'CandidateExamSecondStep' => 'آزمون مرحله دوم',
+    'CandidateExamSecondStepReject' => 'عدم موفقیت در آزمون مرحله دوم',
     'CandidateAssessment' => 'کانون ارزیابی',
     'CandidateAccepted' => 'تایید نهایی'
 );
 $config['EnumExamType'] = array(
     'FirstStep' => 'مرحله اول',
     'SecondStep' => 'مرحله دوم',
+    'Evaluation' => 'کانون ارزیابی'
 );
-
 $config['api'] = array(
+    'SMS'  => 'http://new.moarefin.ir:8080/api/Messages',
     'PersonalInformationWeb'  => 'http://new.moarefin.ir:8080/api/PersonalInformationWeb?',
+    'MilitaryWeb'  => 'http://new.moarefin.ir:8080/api/MilitaryWeb?',
+    'PoliticalRecordWeb'  => 'http://new.moarefin.ir:8080/api/PoliticalRecordWeb?',
+    'ResearchSkillWeb'  => 'http://new.moarefin.ir:8080/api/ResearchSkillWeb?',
+    'OtherSkillWeb'  => 'http://new.moarefin.ir:8080/api/OtherSkillWeb?',
     'LegalConditionsWeb'  => 'http://new.moarefin.ir:8080/api/LegalConditionsWeb?'
 );
+/* استان پیش فرض تهران است */
+$config['defaultStateId'] = 8;

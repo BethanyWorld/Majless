@@ -12,10 +12,29 @@ class Profile extends CI_Controller{
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'صفحه کاربری';
         $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'صفحه کاربری';
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar' , NULL , TRUE);
-        $data['firstStepExam'] = $this->ModelCandidate->getCandidateFirstStepExamByCandidateId($loginInfo['CandidateId'])[0];
+
+        $data['allFirstStepExamRequests'] = $this->ModelCandidate->getCandidateFirstStepExamByCandidateId($loginInfo['CandidateId']);
+        $data['firstStepExam'] = $data['allFirstStepExamRequests'];
+        if(isset($data['firstStepExam']) && !empty($data['firstStepExam'])){
+            $data['firstStepExam'] = $data['firstStepExam'][0];
+        }
+
+        $data['allSecondStepExamRequests'] = $this->ModelCandidate->getCandidateSecondStepExamByCandidateId($loginInfo['CandidateId']);
+        $data['secondStepExam'] = $data['allSecondStepExamRequests'];
+        if(isset($data['secondStepExam']) && !empty($data['secondStepExam'])){
+            $data['secondStepExam'] = $data['secondStepExam'][0];
+        }
+
+        $data['allEvaluationExamRequests'] = $this->ModelCandidate->getCandidateEvaluationExamByCandidateId($loginInfo['CandidateId']);
+        $data['EvaluationExam'] = $data['allEvaluationExamRequests'];
+        if(isset($data['EvaluationExam']) && !empty($data['EvaluationExam'])){
+            $data['EvaluationExam'] = $data['EvaluationExam'][0];
+        }
+
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/index', $data);
         $this->load->view('ui/v3/candidate_profile/home/index_css');
@@ -30,14 +49,14 @@ class Profile extends CI_Controller{
         $result = $this->ModelCandidate->candidateHasOtherConditionToContinue($inputs);
         echo json_encode($result);
     }
+
     public function examList(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'فهرست آزمون های مرحله اول';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'فهرست آزمون های مرحله اول';
-        $agentInfo = $this->ModelExam->getAgentByStateId($loginInfo['CandidateStateId'])[0];
-        $data['stateExams'] = $this->ModelExam->getExamsFirstStepByAgentId($agentInfo['AgentId']);
-
+        $data['states'] = $this->ModelCountry->getStateList();
+        $data['candidateStateId'] = $loginInfo['CandidateStateId'];
         $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar' , NULL , TRUE);
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/first_exam_list/index', $data);
@@ -45,14 +64,20 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/first_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+    public function getFirstStepExamList($stateId){
+        $data['data'] = $this->ModelExam->getFirstStepExamByStateId($stateId);
+        $data['htmlResult'] = $this->load->view('ui/v3/candidate_profile/first_exam_list/pagination', $data, TRUE);
+        unset($data['data']);
+        echo json_encode($data);
+    }
+
     public function examListSecond(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
-        $data['title'] = 'فهرست آزمون های مرحله دوم';
+        $data['title'] = 'فهرست آزمون های مرحله اول';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'فهرست آزمون های مرحله دوم';
-        $agentInfo = $this->ModelExam->getAgentByStateId($loginInfo['CandidateStateId'])[0];
-        $data['stateExams'] = $this->ModelExam->getExamsSecondStepByAgentId($agentInfo['AgentId']);
-
+        $data['states'] = $this->ModelCountry->getStateList();
+        $data['candidateStateId'] = $loginInfo['CandidateStateId'];
         $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar' , NULL , TRUE);
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/second_exam_list/index', $data);
@@ -60,6 +85,34 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/second_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+    public function getSecondStepExamList($stateId){
+        $data['data'] = $this->ModelExam->getSecondStepExamByStateId($stateId);
+        $data['htmlResult'] = $this->load->view('ui/v3/candidate_profile/second_exam_list/pagination', $data, TRUE);
+        unset($data['data']);
+        echo json_encode($data);
+    }
+
+    public function evaluationExam(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'فهرست آزمون کانون ارزیابی';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'فهرست آزمون کانون ارزیابی';
+        $data['states'] = $this->ModelCountry->getStateList();
+        $data['candidateStateId'] = $loginInfo['CandidateStateId'];
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar' , NULL , TRUE);
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/evaluation_exam_list/index', $data);
+        $this->load->view('ui/v3/candidate_profile/evaluation_exam_list/index_css');
+        $this->load->view('ui/v3/candidate_profile/evaluation_exam_list/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function getEvaluationExamList(){
+        $data['data'] = $this->ModelExam->getEvaluationExamList();
+        $data['htmlResult'] = $this->load->view('ui/v3/candidate_profile/evaluation_exam_list/pagination', $data, TRUE);
+        unset($data['data']);
+        echo json_encode($data);
+    }
+
     public function candidateReserveExam(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs =array_map(function($v){ return strip_tags($v); }, $inputs);

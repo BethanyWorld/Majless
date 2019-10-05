@@ -8,7 +8,6 @@ class Agent extends CI_Controller{
         $this->load->model('admin/ModelAgent');
         $this->load->model('ui/ModelCountry');
     }
-
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نمایندگان';
@@ -27,7 +26,6 @@ class Agent extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
-
     public function add(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'افزودن نماینده';
@@ -70,7 +68,6 @@ class Agent extends CI_Controller{
         $result = $this->ModelAgent->doEdit($inputs);
         echo json_encode($result);
     }
-
     public function doDelete()
     {
         $inputs = $this->input->post(NULL, TRUE);

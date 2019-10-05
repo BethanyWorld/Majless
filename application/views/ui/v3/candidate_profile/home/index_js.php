@@ -11,15 +11,15 @@
                 $(".full-name").html($result['firstName'] + " " + $result['lastName']);
                 $(".national-code").html($result['nationalCode']);
                 $(".phone").html($result['cellPhoneNumber'] || "-");
-                $(".profile-image").attr('src', "data:image/png;base64,"+$result['profileImage'] || "<?php echo $noImg; ?>");
-
                 $(".constituency-province").html($result['constituencyProvince']);
                 $(".constituency-province-part").html($result['constituencyProvincePart']);
                 $(".gender").html($result['gender']);
+                if($result['profileImage'] != null){
+                    $(".profile-image").attr('src', ("data:image/png;base64,"+ $result['profileImage']));
+                }
 
             }
         });
-
         $currentCandidateStatus = "<?php echo $userInfo['CandidateStatus']; ?>";
         $candidateStatus = "";
         $.ajax({

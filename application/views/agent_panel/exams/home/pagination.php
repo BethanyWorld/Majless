@@ -13,6 +13,7 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             <td><?php echo $item['ExamPlaceTitle']; ?></td>
             <th class="fit"><?php echo $item['ExamCapacity']; ?></th>
             <th class="fit"><?php echo $item['ExamPlaceDefaultCapacity']; ?></th>
+            <th class="fit"><?php echo examType($item['ExamType']); ?></th>
             <td class="fit">
                 <a href="<?php echo base_url('Agent/Exams/requests/') . $item['ExamId']; ?>">
                     <button type="button"
