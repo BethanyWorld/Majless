@@ -93,10 +93,11 @@ class Exams extends CI_Controller{
         $data['pageTitle'] = 'متقاضیان آزمون';
         $data['examData'] = $this->ModelExam->getExamByExamId($examId)[0];
         $data['candidates'] = $this->ModelExam->getExamRequestByExamId($examId);
+        $data['api'] = $this->config->item('api');
         $this->load->view('agent_panel/static/header', $data);
         $this->load->view('agent_panel/exams/requests/index', $data);
         $this->load->view('agent_panel/exams/requests/index_css');
-        $this->load->view('agent_panel/exams/requests/index_js');
+        $this->load->view('agent_panel/exams/requests/index_js', $data);
         $this->load->view('agent_panel/static/footer');
     }
     public function doPresenceCandidateFirstExam(){

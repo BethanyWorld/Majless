@@ -36,7 +36,7 @@ class Candidates extends CI_Controller{
         $this->load->view('agent_panel/candidates/detail/index_js');
         $this->load->view('agent_panel/static/footer');
     }
-    public function doEditCandidateMark()
+    /*public function doEditCandidateMark()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
@@ -61,5 +61,5 @@ class Candidates extends CI_Controller{
         }
         $result = $this->ModelCandidates->doEditCandidateMark($inputs);
         echo json_encode($result);
-    }
+    }*/
 }

@@ -296,9 +296,6 @@ class ModelExam extends CI_Model{
         return $result;
     }
 
-
-
-
     public function doPresenceCandidateFirstExam($inputs){
         $this->db->trans_start();
         $UserArray = array(
@@ -350,6 +347,65 @@ class ModelExam extends CI_Model{
             $arr = array(
                 'type' => "green",
                 'content' => "ثبت غیبت آزمون با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
+
+
+    public function doAcceptCandidateEvaluationExam($inputs){
+        $this->db->trans_start();
+        $UserArray = array(
+            'ExamState' => 'Done'
+        );
+        $this->db->where('RequestId', $inputs['inputRequestId']);
+        $this->db->update('candidate_exam_request', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "تایید آزمون با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "تایید آزمون با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+    public function doRejectCandidateEvaluationExam($inputs){
+        $this->db->select('*');
+        $this->db->from('candidate_exam_request');
+        $this->db->where('RequestId', $inputs['inputRequestId']);
+        $candidateId = $this->db->get()->result_array()[0]['CandidateId'];
+
+        $this->db->trans_start();
+        /*$UserArray = array('ExamState' => 'Absence');
+        $this->db->where('RequestId', $inputs['inputRequestId']);
+        $this->db->update('candidate_exam_request', $UserArray);*/
+
+        $UserArray = array('CandidateStatus' => 'CandidateAssessmentReject');
+        $this->db->where('CandidateId', $candidateId);
+        $this->db->update('candidate', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "رد آزمون با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        }
+        else {
+            $arr = array(
+                'type' => "green",
+                'content' => "رد آزمون با موفقیت انجام شد",
                 'success' => true
             );
             return $arr;

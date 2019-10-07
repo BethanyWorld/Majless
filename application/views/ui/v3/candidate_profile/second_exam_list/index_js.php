@@ -13,6 +13,7 @@
             $(".time").text($examTime);
             $("#reserveSecondStepExam").attr('data-exam-id', $examId);
         });
+
         $(document).on('click' , '#reserveSecondStepExam',function () {
             $examId = $('#reserveSecondStepExam').attr('data-exam-id');
             toggleLoader();
@@ -24,17 +25,37 @@
                     'inputCandidateStatus': 'CandidateExamSecondStep'
                 },
                 success: function (data) {
-                    toggleLoader();
                     $result = JSON.parse(data);
                     notify($result['content'], $result['type']);
                     if ($result['success']) {
-                        setTimeout(function () {
-                            window.history.back();
-                        }, 1000);
+
+                        if($result['senderNumber'] != "" && $result['senderNumber'] != null) {
+                            $.ajax({
+                                type: 'POST',
+                                url: '<?php echo $api['SMS']; ?>',
+                                data: {
+                                    'senderNumber': $result['senderNumber'],
+                                    'messageBody': $result['messageBody']
+                                },
+                                success: function (data) {
+                                    toggleLoader();
+                                    setTimeout(function () {
+                                        window.history.back();
+                                    }, 1000);
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    toggleLoader();
+                                    notify('مشکلی درخ داده است', 'red');
+                                }
+                            });
+                        }
                     }
                 }
             });
         });
+
+
+
         function loadData($candidateStateId) {
             toggleLoader();
             $.ajax({

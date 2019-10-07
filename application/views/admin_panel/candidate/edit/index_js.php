@@ -166,9 +166,30 @@
                 url: base_url + 'Candidate/doMarkCandidate',
                 data: $sendData,
                 success: function (data) {
-                    toggleLoader();
                     $result = jQuery.parseJSON(data);
                     notify($result['content'], $result['type']);
+                    toggleLoader();
+                    /* Send SMS */
+                    if($result['senderNumber'] != "" && $result['senderNumber'] != null) {
+                        $.ajax({
+                            type: 'POST',
+                            url: '<?php echo $api['SMS']; ?>',
+                            data: {
+                                'senderNumber': $result['senderNumber'],
+                                'messageBody': 'کاربر گرامی  لطفا برای اطلاع از زمان و مکان آزمون اولیه به صفحه شخصی خود به آدرس http://majless11.com/Profile مراجعه کنید'
+                            },
+                            success: function (data) {
+                                $result = jQuery.parseJSON(data);
+                                notify('ارسال پیامک آزمون با موفقیت انجام شد', 'green');
+                                setTimeout(function () {
+                                    location.reload();
+                                }, 2000);
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                notify('مشکلی درخ داده است', 'red');
+                            }
+                        });
+                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     notify('مشکلی درخ داده است', 'red');
@@ -189,6 +210,22 @@
                     toggleLoader();
                     $result = jQuery.parseJSON(data);
                     notify($result['content'], $result['type']);
+                    $.ajax({
+                            type: 'POST',
+                            url: '<?php echo $api['SMS']; ?>',
+                            data: {
+                                'senderNumber': $result['senderNumber'],
+                                'messageBody': $result['messageBody']
+                            },
+                            success: function (data) {
+                                setTimeout(function () {
+                                    location.reload();
+                                } , 2000);
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                notify('مشکلی درخ داده است', 'red');
+                            }
+                        });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     notify('مشکلی درخ داده است', 'red');
@@ -228,6 +265,22 @@
                     toggleLoader();
                     $result = jQuery.parseJSON(data);
                     notify($result['content'], $result['type']);
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $api['SMS']; ?>',
+                        data: {
+                            'senderNumber': $result['senderNumber'],
+                            'messageBody': $result['messageBody']
+                        },
+                        success: function (data) {
+                            setTimeout(function () {
+                                location.reload();
+                            } , 2000);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            notify('مشکلی درخ داده است', 'red');
+                        }
+                    });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     notify('مشکلی درخ داده است', 'red');

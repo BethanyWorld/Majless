@@ -6,7 +6,7 @@
             $title = "<strong class='badge'> " + $this.data('title') + " </strong>";
             $.confirm({
                 title: '',
-                content: 'آیا از ثبت حضور آزمون مرحله اول '+ $title +' مطمئن هستید؟',
+                content: 'آیا از ثبت حضور آزمون مرحله اول ' + $title + ' مطمئن هستید؟',
                 buttons: {
                     specialKey: {
                         text: 'تایید',
@@ -29,11 +29,11 @@
                                         zindex: 9060,
                                         position: 'topLeft'
                                     });
-                                    setTimeout(function(){
+                                    setTimeout(function () {
                                         if ($result['success']) {
                                             location.reload();
                                         }
-                                    } , 1000);
+                                    }, 1000);
                                 },
                                 error: function (jqXHR, textStatus, errorThrown) {
                                     iziToast.show({
@@ -61,7 +61,7 @@
             $title = "<strong class='badge'> " + $this.data('title') + " </strong>";
             $.confirm({
                 title: '',
-                content: 'آیا از ثبت غیبت آزمون مرحله اول '+ $title +' مطمئن هستید؟',
+                content: 'آیا از ثبت غیبت آزمون مرحله اول ' + $title + ' مطمئن هستید؟',
                 buttons: {
                     specialKey: {
                         text: 'تایید',
@@ -76,7 +76,6 @@
                                 url: base_url + 'Exams/doAbsenceCandidateFirstExam',
                                 data: $sendData,
                                 success: function (data) {
-                                    toggleLoader();
                                     $result = jQuery.parseJSON(data);
                                     iziToast.show({
                                         title: $result['content'],
@@ -84,11 +83,26 @@
                                         zindex: 9060,
                                         position: 'topLeft'
                                     });
-                                    setTimeout(function(){
-                                        if ($result['success']) {
-                                            location.reload();
-                                        }
-                                    } , 1000);
+                                    if ($result['success']) {
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '<?php echo $api['SMS']; ?>',
+                                            data: {
+                                                'senderNumber': $result['senderNumber'],
+                                                'messageBody': $result['messageBody']
+                                            },
+                                            success: function (data) {
+                                                toggleLoader();
+                                                /*setTimeout(function () {
+                                                    location.reload();
+                                                }, 1000);*/
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                toggleLoader();
+                                                notify('مشکلی درخ داده است', 'red');
+                                            }
+                                        });
+                                    }
                                 },
                                 error: function (jqXHR, textStatus, errorThrown) {
                                     iziToast.show({
@@ -117,7 +131,7 @@
             $title = "<strong class='badge'> " + $this.data('title') + " </strong>";
             $.confirm({
                 title: '',
-                content: 'آیا از ثبت حضور آزمون مرحله دوم '+ $title +' مطمئن هستید؟',
+                content: 'آیا از ثبت حضور آزمون مرحله دوم ' + $title + ' مطمئن هستید؟',
                 buttons: {
                     specialKey: {
                         text: 'تایید',
@@ -140,11 +154,11 @@
                                         zindex: 9060,
                                         position: 'topLeft'
                                     });
-                                    setTimeout(function(){
+                                    setTimeout(function () {
                                         if ($result['success']) {
                                             location.reload();
                                         }
-                                    } , 1000);
+                                    }, 1000);
                                 },
                                 error: function (jqXHR, textStatus, errorThrown) {
                                     iziToast.show({
@@ -172,7 +186,7 @@
             $title = "<strong class='badge'> " + $this.data('title') + " </strong>";
             $.confirm({
                 title: '',
-                content: 'آیا از ثبت غیبت آزمون مرحله دوم '+ $title +' مطمئن هستید؟',
+                content: 'آیا از ثبت غیبت آزمون مرحله دوم ' + $title + ' مطمئن هستید؟',
                 buttons: {
                     specialKey: {
                         text: 'تایید',
@@ -195,11 +209,11 @@
                                         zindex: 9060,
                                         position: 'topLeft'
                                     });
-                                    setTimeout(function(){
+                                    setTimeout(function () {
                                         if ($result['success']) {
                                             location.reload();
                                         }
-                                    } , 1000);
+                                    }, 1000);
                                 },
                                 error: function (jqXHR, textStatus, errorThrown) {
                                     iziToast.show({

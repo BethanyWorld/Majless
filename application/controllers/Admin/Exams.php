@@ -99,7 +99,7 @@ class Exams extends CI_Controller{
         $this->load->view('admin_panel/exams/requests/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-    public function doPresenceCandidateKanoonExam(){
+    public function doAcceptCandidateEvaluationExam(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return strip_tags($v);
@@ -113,7 +113,7 @@ class Exams extends CI_Controller{
         $result = $this->ModelExam->doPresenceCandidateFirstExam($inputs);
         echo json_encode($result);
     }
-    public function doAbsenceCandidateKanoonEam(){
+    public function doRejectCandidateEvaluationExam(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return strip_tags($v);
@@ -124,9 +124,8 @@ class Exams extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $result = $this->ModelExam->doAbsenceCandidateFirstExam($inputs);
+        $result = $this->ModelExam->doRejectCandidateEvaluationExam($inputs);
         echo json_encode($result);
     }
-
 
 }

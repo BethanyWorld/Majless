@@ -69,11 +69,11 @@
                 <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeCompleted') { ?>
                     <?php include 'steps/complete/index.php'?>
                 <?php } ?>
-                <?php /* نامزد انتخاباتی رزومه را تکمیل کرده باشد*/ ?>
+                <?php /* نامزد انتخاباتی حائز شرایط اولیه برای نامزدی انتخابات نباشد*/ ?>
                 <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeRejected') { ?>
                     <?php include 'steps/reject/index.php'?>
                 <?php } ?>
-                <?php /* نامزد انتخاباتی نمره رزومه نداشته باشدد*/ ?>
+                <?php /* نامزد انتخاباتی شرایط اولیه برای نامزدی انتخابات را داشته باشد*/ ?>
                 <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeAccepted' ) { ?>
                     <?php include 'steps/accept/index.php'?>
                 <?php } ?>
@@ -107,6 +107,10 @@
                 <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                 <?php if ($userInfo['CandidateStatus'] == 'CandidateAssessment') { ?>
                     <?php include 'steps/assessement/index.php'?>
+                <?php } ?>
+                <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                <?php if ($userInfo['CandidateStatus'] == 'CandidateAssessmentReject') { ?>
+                    <?php include 'steps/assessement_reject/index.php'?>
                 <?php } ?>
 
 

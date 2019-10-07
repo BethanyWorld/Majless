@@ -1,16 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class SignUp extends CI_Controller
-{
-    public function __construct(){
+class SignUp extends CI_Controller{
+    public function __construct()
+    {
         parent::__construct();
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Headers: *');
         $this->load->model('ui/ModelCommand');
         $this->load->model('ui/ModelCountry');
     }
-
     public function index()
     {
         $inputs = $this->input->get(NULL, TRUE);
@@ -39,7 +37,8 @@ class SignUp extends CI_Controller
         $this->load->view('ui/v3/signup/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
-    public function submitSignUpForm(){
+    public function submitSignUpForm()
+    {
         $inputs = $this->input->post(NULL, TRUE);
         $inputSignUpType = $inputs['inputSignUpType'];
         unset($inputs['inputSignUpType']);
@@ -119,8 +118,7 @@ class SignUp extends CI_Controller
                 );
                 echo json_encode($arr);
             }
-        }
-        else {
+        } else {
             $arr = array(
                 'type' => "red",
                 'content' => "درخواست CSRF  نامعتبر است"
@@ -128,9 +126,34 @@ class SignUp extends CI_Controller
             echo json_encode($arr);
         }
     }
-    public function changeCandidateState(){
-        $inputs = $this->input->post(NULL, TRUE);
+    public function changeCandidateState()
+    {
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        if (!$loginInfo) {
+            $result = array(
+                'type' => "warning",
+                'content' => "ابتدا وارد سامانه شوید",
+                'success' => true
+            );
+            echo json_encode($result);
+            die();
+        }
 
+        if ($loginInfo['CandidateStatus'] != 'CandidateRegister' &&
+            $loginInfo['CandidateStatus'] != 'CandidateResumeCompleted' &&
+            $loginInfo['CandidateStatus'] != 'CandidateResumeAccepted' &&
+            $loginInfo['CandidateStatus'] != 'CandidateResumeRejected'){
+            $result = array(
+                'type' => "warning",
+                'content' => "دسترسی لازم را ندارید",
+                'success' => true
+            );
+            echo json_encode($result);
+            return false;
+        }
+
+
+        $inputs = $this->input->post(NULL, TRUE);
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
         $inputs = array_map(function ($v) {
@@ -142,8 +165,18 @@ class SignUp extends CI_Controller
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $result = $this->ModelCommand->doChangeCandidateState($inputs);
-        echo json_encode($result);
-    }
 
+        if ($inputs['inputCandidateStatus'] == 'CandidateRegister' || $inputs['inputCandidateStatus'] == 'CandidateResumeCompleted' || $inputs['inputCandidateStatus'] == 'CandidateResumeAccepted' || $inputs['inputCandidateStatus'] == 'CandidateResumeRejected') {
+            $result = $this->ModelCommand->doChangeCandidateState($inputs);
+            echo json_encode($result);
+        }
+        else {
+            $result = array(
+                'type' => "red",
+                'content' => "دسترسی به عملیات را ندارید",
+                'success' => true
+            );
+            echo json_encode($result);
+        }
+    }
 }

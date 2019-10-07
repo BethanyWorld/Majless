@@ -1,5 +1,6 @@
 <div class="col-xs-12">
-    <?php if($firstStepExam['ExamState'] == 'Absence'){ ?>
+    <?php
+    if(!empty($firstStepExam) && $firstStepExam['ExamState'] == 'Absence'){ ?>
         <div class="alert alert-danger">
             <strong>
                 شما در آزمون غیبت کرده اید.فرصت مجددی برای رزور آزمون برای شما فراهم شده است.لطفا آزمون مرحله اول خود را مجددا رزرو کنید

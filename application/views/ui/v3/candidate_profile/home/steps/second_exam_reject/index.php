@@ -1,7 +1,7 @@
 <div class="col-xs-12">
          <div class="alert alert-danger">
              <strong>
-                 شما حائز نمره قابل قبول در مرحله دوم نشدید.
+                 کاربر گرامی شما برای ادامه فرآیند حائز نمره لازم در آزمون نشدید
             </strong>
         </div>
 </div>

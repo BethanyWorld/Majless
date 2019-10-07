@@ -36,7 +36,7 @@
                     <span class="required"></span>
                     رمز عبور
                 </label>
-                <input class="form-control" type="text"
+                <input class="form-control" type="password"
                        id="inputPassword"
                        name="inputPassword"/>
             </div>

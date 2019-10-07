@@ -3,6 +3,8 @@
         $nationalCode = "<?php echo $userInfo['CandidateNationalCode']; ?>";
         $personalInfoApi = "<?php echo $this->config->item('api')['PersonalInformationWeb']; ?>nationalCode=" + $nationalCode;
         $legalConditionsApi = "<?php echo $this->config->item('api')['LegalConditionsWeb']; ?>nationalCodeList=" + $nationalCode;
+
+        /* Get Profile info */
         $.ajax({
             type: 'get',
             url: $personalInfoApi,
@@ -20,6 +22,8 @@
 
             }
         });
+
+
         $currentCandidateStatus = "<?php echo $userInfo['CandidateStatus']; ?>";
         $candidateStatus = "";
         $.ajax({
@@ -56,7 +60,11 @@
                             url: base_url + 'SignUp/changeCandidateState',
                             data: $sendData,
                             success: function (data) {
-                                //location.reload();
+                                if($currentCandidateStatus != $candidateStatus){
+                                    setTimeout(function(){
+                                        location.reload();
+                                    } , 1500);
+                                }
                             }
                         });
                     }

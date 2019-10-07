@@ -120,9 +120,9 @@
                                                 $result = JSON.parse(data);
                                                 notify($result['content'], $result['type']);
                                                 if ($result['success']) {
-                                                    setTimeout(function () {
-                                                        location.reload();
-                                                    }, 2000);
+                                                    setTimeout(function(){
+                                                        location.href = base_url + 'Login';
+                                                    } , 1500);
                                                 }
                                             }
                                         });
