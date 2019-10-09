@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 /* آدرس اصلی برنامه */
 $config['base_url'] = 'http://localhost:8080/Majless/';
-//$config['base_url'] = 'http://majles11.com';
+//$config['base_url'] = 'http://majles11.com/';
 $config['index_page'] = '';
 $config['uri_protocol']	= 'REQUEST_URI';
 $config['url_suffix'] = '';
@@ -91,7 +91,9 @@ $config['api'] = array(
     'PoliticalRecordWeb'  => 'http://new.moarefin.ir:8080/api/PoliticalRecordWeb?',
     'ResearchSkillWeb'  => 'http://new.moarefin.ir:8080/api/ResearchSkillWeb?',
     'OtherSkillWeb'  => 'http://new.moarefin.ir:8080/api/OtherSkillWeb?',
-    'LegalConditionsWeb'  => 'http://new.moarefin.ir:8080/api/LegalConditionsWeb?'
+    'LegalConditionsWeb'  => 'http://new.moarefin.ir:8080/api/LegalConditionsWeb?',
+    'EducationalInfoReportWeb'  => 'http://new.moarefin.ir:8080/api/EducationalInfoReportWeb?',
+    'JobHistoryWeb'  => 'http://new.moarefin.ir:8080/api/JobHistoryWeb?',
 );
 /* استان پیش فرض تهران است */
 $config['defaultStateId'] = 8;

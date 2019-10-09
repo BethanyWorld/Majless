@@ -28,9 +28,26 @@
                     $result = JSON.parse(data);
                     notify($result['content'], $result['type']);
                     if ($result['success']) {
-                        setTimeout(function () {
-                            window.history.back();
-                        }, 1000);
+                        if($result['senderNumber'] != "" && $result['senderNumber'] != null) {
+                            $.ajax({
+                                type: 'POST',
+                                url: '<?php echo $api['SMS']; ?>',
+                                data: {
+                                    'senderNumber': $result['senderNumber'],
+                                    'messageBody': $result['messageBody']
+                                },
+                                success: function (data) {
+                                    toggleLoader();
+                                    setTimeout(function () {
+                                        window.history.back();
+                                    }, 1000);
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    toggleLoader();
+                                    notify('مشکلی درخ داده است', 'red');
+                                }
+                            });
+                        }
                     }
                 }
             });

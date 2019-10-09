@@ -44,7 +44,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
         <link rel="stylesheet" href="<?= $_DIR; ?>css/iziToast.min.css"/>
         <script type="text/javascript" src="<?= $_DIR; ?>js/iziToast.min.js"></script>
         <script type='text/javascript' src='<?= $_DIR; ?>js/jquery-2.2.4.min.js?ver=2.2.4'></script>
-        <script type='text/javascript' src='<?= $_DIR; ?>js/script.js?ver=1.0'></script>
+        <script type='text/javascript' src='<?= $_DIR; ?>js/script.js?ver=1.0.1'></script>
         <script type='text/javascript' src='<?= $_DIR; ?>js/jquery.mmenu.min.all.js?ver=1.0'></script>
         <script type='text/javascript' src='<?= $_DIR; ?>js/jquery.parallax.js?ver=1.0'></script>
         <script type='text/javascript' src='<?= $_DIR; ?>js/lightbox.min.js?ver=1.0'></script>
@@ -182,7 +182,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                             <ul id="menu-main-menu" class="nav-menu">
                                 <li class="current-menu-item"><a href="<?php echo base_url() ?>">خانه</a></li>
                                 <li><a href="<?php echo base_url('State') ?>">استان ها</a></li>
-                                <li><a href="<?php echo base_url('Content') ?>">محتوا</a>
+                                <li class="hidden"><a href="<?php echo base_url('Content') ?>">محتوا</a>
                                     <ul>
                                         <?php foreach (array_reverse($categories) as $item){ ?>
                                             <li>
@@ -197,11 +197,12 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                 <li><a href="<?php echo base_url('AboutUs') ?>">شاخص ها</a>
                                     <ul>
                                         <li><a href="<?php echo base_url('AboutUs/candidatelegal') ?>">شرایط قانونی</a></li>
-                                        <li><a href="<?php echo base_url('AboutUs/candidatecriteriacompetencies') ?>">شایستگی های نماینده مجلس</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?php echo base_url('AboutUs') ?>">درباره ما</a>
+                                <li><a href="<?php echo base_url('AboutUs') ?>">درباره جنبش</a>
                                     <ul>
+                                        <li><a href="<?php echo base_url('AboutUs/candidatecriteriacompetencies') ?>">شایستگی های نماینده مجلس</a></li>
+
                                         <li><a href="<?php echo base_url('AboutUs/intro') ?>">معرفی</a></li>
                                         <li><a href="<?php echo base_url('AboutUs/prism') ?>">بیانیه ارزش</a></li>
                                         <li><a href="<?php echo base_url('AboutUs/measurement_process') ?>">فرآیند سنجش</a></li>
@@ -212,9 +213,9 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">ارتباطات مردمی</a>
+                                    <a href="javascript:void(0)">تماس با ما</a>
                                     <ul>
-                                        <li><a href="<?php echo base_url('ContactUs?type=contact') ?>">تماس با ما</a></li>
+                                        <li><a href="<?php echo base_url('ContactUs?type=contact') ?>">راه های ارتباطی</a></li>
                                         <li><a href="<?php echo base_url('ContactUs?type=report_abuse') ?>">گزارش مردمی</a></li>
                                     </ul>
                                 </li>

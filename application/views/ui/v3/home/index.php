@@ -631,7 +631,7 @@
             </div>
         </section>
         <!-- Edited Campaign-->
-        <section id="section-5d7930f13f0d9" class="campaign_section nopadding textaligncenter tbWow fadeIn"
+        <section id="section-5d7930f13f0d9" class="campaign_section nopadding textaligncenter tbWow fadeIn hidden"
                  style=" background-repeat: no-repeat; background-position: center center; background-size: cover;  ">
             <div class="container" style=' padding-top: 150px; padding-bottom: 150px; '>
                 <div class="row">
@@ -672,7 +672,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="fw-row nostretch hidden">
+                    <div class="fw-row nostretch">
                         <div id="column-5d7930f1422bc" class="tb-column nostretch col-xs-12  col-sm-12  nopadding ">
                             <div style=" " class=" noabsolutecenter  nopadding-xs">
                                 <div class="campaign_counter"
@@ -682,7 +682,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="fw-row nostretch hidden">
+                    <div class="fw-row nostretch">
                         <div id="column-5d7930f142f60" class="tb-column nostretch col-xs-12  col-sm-12  nopadding ">
                             <div style=" " class=" noabsolutecenter  nopadding-xs">
                                 <div class="">

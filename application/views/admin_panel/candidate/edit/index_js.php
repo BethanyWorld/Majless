@@ -146,6 +146,27 @@
                 });
             }
         });
+        /* $skillInfo Done */
+        $.ajax({
+            type: 'GET',
+            url: '<?php echo $api['EducationalInfoReportWeb']; ?>nationalCodeList=' + $candidateNationalCode,
+            success: function(data){
+                console.log(data);
+                $eduInfo = data['items'][0]['educationals'];
+                $index = 0;
+                $.each($eduInfo , function(key , value){
+                    $index +=1;
+                    $record = $(".temp-edu-record").clone().removeClass('temp-edu-record');
+                    $record.find('.row').html($index);
+                    for($i=0;$i < Object.keys(value).length; $i++){
+                        $record.find('.info-'+Object.keys(value)[$i]).html(Object.values(value)[$i] || "➖");
+                        $(".edu-info-container tbody").append($record);
+                    }
+                });
+            }
+        });
+
+
 
         $("#doGrading").click(function () {
             $inputCandidateId = $.trim($("#inputCandidateId").val());
@@ -197,7 +218,6 @@
                 }
             });
         });
-
         $("#doAcceptFirstExam").click(function () {
             $inputCandidateId = $.trim($("#inputCandidateId").val());
             toggleLoader();
@@ -252,7 +272,6 @@
                 }
             });
         });
-
         $("#doAcceptSecondExam").click(function () {
             $inputCandidateId = $.trim($("#inputCandidateId").val());
             toggleLoader();
@@ -295,6 +314,60 @@
             $.ajax({
                 type: 'post',
                 url: base_url + 'Candidate/doRejectCandidateSecondExam',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    notify('مشکلی درخ داده است', 'red');
+                    toggleLoader();
+                }
+            });
+        });
+        $("#doAcceptEvaluationExam").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            toggleLoader();
+            $sendData = { 'inputCandidateId': $inputCandidateId }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doAcceptEvaluationExam',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $api['SMS']; ?>',
+                        data: {
+                            'senderNumber': $result['senderNumber'],
+                            'messageBody': $result['messageBody']
+                        },
+                        success: function (data) {
+                            setTimeout(function () {
+                                location.reload();
+                            } , 2000);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            notify('مشکلی درخ داده است', 'red');
+                        }
+                    });
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    notify('مشکلی درخ داده است', 'red');
+                    toggleLoader();
+                }
+            });
+        });
+        $("#doRejectEvaluationExam").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            toggleLoader();
+            $sendData = { 'inputCandidateId': $inputCandidateId }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doRejectEvaluationExam',
                 data: $sendData,
                 success: function (data) {
                     toggleLoader();

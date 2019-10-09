@@ -22,7 +22,7 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             </td>
             <td class="fit text-center">
                 <?php if ($stateExam['ExamPlaceMapImage'] == "" || empty($stateExam['ExamPlaceMapImage'])) { ?>
-                    <label class="label label-default">بارگزاری نشده</label>
+                    <label class="label label-default">بارگذاری نشده</label>
                 <?php } else { ?>
                     <a target="_blank"
                        data-lightbox="image-1-<?php echo $counter; ?>"

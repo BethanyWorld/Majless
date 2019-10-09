@@ -75,7 +75,6 @@ class State extends CI_Controller {
         $this->load->view('ui/v3/static/footer', $data);
     }
     public function candidate($stateId  , $stateName ){
-
         $provinceAgent = $this->ModelAgent->getAgentByAgentStateId($stateId);
         $data['data'] = $this->ModelCandidate->getCandidateByStateId($stateId);
         $data['stateName'] = $stateName;
@@ -137,6 +136,7 @@ class State extends CI_Controller {
 
 
     }
+
     /* Helper Functions */
     public function getCityByStateId($stateId){
         echo json_encode($this->ModelCountry->getCityByStateId($stateId));
@@ -153,6 +153,5 @@ class State extends CI_Controller {
         $data['data'] = $this->ModelCandidate->getCandidatesByElectionId($electionId);
         echo $this->load->view('ui/v3/state/candidate/ajax' , $data, TRUE);
     }
-
     /* End Helper Functions*/
 }

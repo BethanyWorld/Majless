@@ -673,7 +673,7 @@ button.btn-submit{
 }
 
 #IranMap .map .province path:hover, #IranMap .map .island path:hover, #IranMap .map .province path.hover, #IranMap .map .island path.hover {
-	fill: #61863c !important;
+	fill: #da1f26 !important;
 	cursor: pointer
 }
 
@@ -696,7 +696,7 @@ button.btn-submit{
 }
 
 #IranMap .list span {
-	background: #61863c;
+	background: #da1f26;
 	color: #ecf0f1;
 	display: block;
 	margin: 0 2px;
@@ -723,7 +723,7 @@ button.btn-submit{
 }
 
 #IranMap .list li ul li a:hover, #IranMap .list li ul li a.hover {
-	background: #61863c;
+	background: #da1f26;
 	color: #fff;
 }
 
@@ -848,7 +848,7 @@ button.btn-submit{
 }
 
 .sidebar ul a:hover {
-	color: #719251;
+	color: #da1f26
 }
 
 .sidebar span.date {
@@ -888,7 +888,7 @@ button.btn-submit{
 	text-align: center;
 	overflow: hidden;
 	position: relative;
-	border-bottom: 5px solid #719251;
+	border-bottom: 5px solid #da1f26;
 	margin-bottom: 25px;
 }
 
@@ -908,7 +908,7 @@ button.btn-submit{
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-	background: #5c8333;
+	background: #da1f26;
 	position: absolute;
 	bottom: 135%;
 	right: 0;
@@ -932,7 +932,7 @@ button.btn-submit{
 }
 
 .mp-brief:hover .pic:after {
-	background: #7ab92d;
+	background: #da1f26;
 }
 
 .mp-brief .pic img {
@@ -979,7 +979,7 @@ button.btn-submit{
 	width: 100%;
 	height: 100%;
 	background: rgba(255, 255, 255, 0.9);
-	border: 1px dashed #5c8333;
+	border: 1px dashed #da1f26;
 	border-bottom: 0;
 	right: 0;
 	left: 0;
@@ -1008,7 +1008,7 @@ button.btn-submit{
 }
 
 .mp-section .menu ul li a:hover {
-	color: #5c8333;
+	color: #da1f26;
 }
 
 /*---------------------------------------------------------------------------------------*/

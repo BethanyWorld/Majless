@@ -139,6 +139,7 @@ class ModelCandidate extends CI_Model{
         $this->db->from('candidate');
         $this->db->join('election_location', 'election_location.ElectionId = candidate.CandidateElectionId');
         $this->db->where(array('CandidateElectionId' => $electionId));
+        $this->db->where(array('CandidateStatus' => 'CandidateAccepted'));
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();
@@ -473,7 +474,6 @@ class ModelCandidate extends CI_Model{
 
     }
 
-
     public function doAcceptCandidateSecondExam($inputs)
     {
         $userStatusArray = array(
@@ -543,6 +543,77 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
+
+    public function doAcceptEvaluationExam($inputs)
+    {
+        $userStatusArray = array(
+            'CandidateStatus' => 'CandidateAccepted'
+        );
+        $candidateInfo = $this->getCandidateByCandidateId($inputs['inputCandidateId']);
+        $data = $this->getCandidateSecondStepExamByCandidateId($inputs['inputCandidateId']);
+        $RequestId = 0;
+        foreach ($data as $item) {
+            if ($item['ExamState'] == 'Presence') {
+                $RequestId = $item['RequestId'];
+            }
+        }
+        $UserArray = array(
+            'ExamState' => 'Done'
+        );
+        $this->db->trans_start();
+        $this->db->where('RequestId', $RequestId);
+        $this->db->update('candidate_exam_request', $UserArray);
+        $this->db->where('CandidateId', $inputs['inputCandidateId']);
+        $this->db->update('candidate', $userStatusArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "تایید آزمون مرحله دوم با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "تایید آزمون کانون ارزیابی با موفقیت انجام شد",
+                'senderNumber' => $candidateInfo['CandidatePhone'],
+                'messageBody' => 'لطفا در اسرع وقت نسبت به تکمیل فرم لیست اموال و تعهدنامه به پنل خود به آدرس http://new.moarefin.com مراجعه نمایید',
+                'success' => true
+            );
+            return $arr;
+        }
+
+
+    }
+    public function doRejectEvaluationExam($inputs)
+    {
+        $UserArray = array(
+            'CandidateStatus' => 'CandidateAssessmentReject'
+        );
+        $this->db->trans_start();
+        $this->db->where('CandidateId', $inputs['inputCandidateId']);
+        $this->db->update('candidate', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "رد آزمون کانون ارزیابی با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "رد آزمون کانون ارزیابی با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
+
 }
 
 ?>

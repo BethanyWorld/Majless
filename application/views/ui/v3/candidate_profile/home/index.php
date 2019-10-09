@@ -112,9 +112,10 @@
                 <?php if ($userInfo['CandidateStatus'] == 'CandidateAssessmentReject') { ?>
                     <?php include 'steps/assessement_reject/index.php'?>
                 <?php } ?>
-
-
-
+                <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                <?php if ($userInfo['CandidateStatus'] == 'CandidateAccepted') { ?>
+                    <?php include 'steps/candidate_accepted/index.php'?>
+                <?php } ?>
             </div>
         </div>
     </div>

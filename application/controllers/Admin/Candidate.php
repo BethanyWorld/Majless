@@ -101,10 +101,28 @@ class Candidate extends CI_Controller{
         echo json_encode($result);
     }
 
+    public function doAcceptEvaluationExam(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs =array_map(function($v){ return strip_tags($v); }, $inputs);
+        $inputs =array_map(function($v){ return remove_invisible_characters($v); }, $inputs);
+        $inputs =array_map(function($v){ return makeSafeInput($v); }, $inputs);
+        $result = $this->ModelCandidate->doAcceptEvaluationExam($inputs);
+        echo json_encode($result);
+    }
+    public function doRejectEvaluationExam()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs =array_map(function($v){ return strip_tags($v); }, $inputs);
+        $inputs =array_map(function($v){ return remove_invisible_characters($v); }, $inputs);
+        $inputs =array_map(function($v){ return makeSafeInput($v); }, $inputs);
+        $result = $this->ModelCandidate->doRejectEvaluationExam($inputs);
+        echo json_encode($result);
+    }
+
+
     protected function getCandidateStatus($candidateId){
         return $this->ModelCandidate->getCandidateByCandidateId($candidateId);
     }
-
     protected function getCandidateExams($candidateId){
         $data['firstExams'] = $this->ModelCandidate->getCandidateFirstStepExamByCandidateId($candidateId);
         $data['secondExams'] = $this->ModelCandidate->getCandidateSecondStepExamByCandidateId($candidateId);

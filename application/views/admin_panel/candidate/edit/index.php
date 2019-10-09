@@ -10,13 +10,14 @@
                             <div class="image-area">
                                 <img class="profile-image"
                                      src="<?php echo $noImg; ?>"
-                                     style="width: 90%;max-width: 145px;" />
+                                     style="width: 90%;max-width: 145px;"/>
                             </div>
-                            <input type="hidden" name="inputCandidateId" id="inputCandidateId" value="<?php echo $candidate['CandidateId']; ?>" />
+                            <input type="hidden" name="inputCandidateId" id="inputCandidateId"
+                                   value="<?php echo $candidate['CandidateId']; ?>"/>
 
                             <div class="content-area">
                                 <h4>
-                                    <?php echo $candidate['CandidateFirstName']." ".$candidate['CandidateLastName']; ?>
+                                    <?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?>
                                 </h4>
                                 <h5>
                                     <span class="office-location">
@@ -49,23 +50,23 @@
                                 </li>
                                 <li>
                                     <span>تاریخ تولد</span>:
-                                    <span class="info-birthDate"><img src="<?php echo $gifLoader; ?>" /></span>
+                                    <span class="info-birthDate"><img src="<?php echo $gifLoader; ?>"/></span>
                                 </li>
                                 <li>
                                     <span>نام پدر</span>:
-                                    <span class="info-fatherName"><img src="<?php echo $gifLoader; ?>" /></span>
+                                    <span class="info-fatherName"><img src="<?php echo $gifLoader; ?>"/></span>
                                 </li>
                                 <li>
                                     <span>جنسیت</span>:
-                                    <span class="info-gender"><img src="<?php echo $gifLoader; ?>" /></span>
+                                    <span class="info-gender"><img src="<?php echo $gifLoader; ?>"/></span>
                                 </li>
                                 <li>
                                     <span>وضعیت تاهل</span>:
-                                    <span class="info-maritalStatus"><img src="<?php echo $gifLoader; ?>" /></span>
+                                    <span class="info-maritalStatus"><img src="<?php echo $gifLoader; ?>"/></span>
                                 </li>
                                 <li>
                                     <span>دین</span>:
-                                    <span class="info-religion"><img src="<?php echo $gifLoader; ?>" /></span>
+                                    <span class="info-religion"><img src="<?php echo $gifLoader; ?>"/></span>
                                 </li>
                             </ul>
                         </div>
@@ -86,109 +87,110 @@
                                     </li>
                                     <li role="presentation">
                                         <a href="#AcceptFirstExam" aria-controls="AcceptFirstExam"
-                                           role="tab" data-toggle="tab">ثبت نتیجه آزمون مرحله اول</a>
+                                           role="tab" data-toggle="tab">آزمون مرحله اول</a>
                                     </li>
                                     <li role="presentation">
                                         <a href="#AcceptSecondExam" aria-controls="AcceptSecondExam"
-                                           role="tab" data-toggle="tab">ثبت نتیجه آزمون مرحله دوم</a>
+                                           role="tab" data-toggle="tab">آزمون مرحله دوم</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#AcceptEvaluationExam" aria-controls="AcceptEvaluationExam"
+                                           role="tab" data-toggle="tab">آزمون کانون ارزیابی</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane fade in active" id="info">
                                         <div class="panel panel-default panel-post">
                                             <div class="panel-heading">
-                                              آزمون ها
+                                                آزمون ها
                                             </div>
                                             <div class="panel-body">
                                                 <div class="alert exam-info-container">
                                                     <?php
-                                                        if(empty($exams['firstExams']) || !isset($exams['firstExams']) || count($exams['firstExams']) <=0) {
-                                                            echo "<div class='row col-xs-12 text-danger'>🆕";
-                                                            echo "آزمون مرحله اول یافت نشد";
-                                                            echo "</div>";
-                                                        }
-                                                        else{
-                                                            foreach ($exams['firstExams'] as $exam) {
-                                                                if($exam['ExamState'] == 'Done'){
-                                                                    echo "<div class='row col-xs-12 text-success'>🆕";
-                                                                    echo "آزمون مرحله اول با شناسه ". $exam['RequestId'] ." تایید شده است و به مرحله آزمون مرحله دوم رفته ست";
-                                                                    echo "</div>";
-                                                                }
-                                                                if($exam['ExamState'] == 'Absence'){
-                                                                    echo "<div class='row col-xs-12 text-danger'>🆕";
-                                                                    echo "آزمون مرحله اول با شناسه ". $exam['RequestId'] ." ثبت غیبت شده است";
-                                                                    echo "</div>";
-                                                                }
-                                                                if($exam['ExamState'] == 'Presence'){
-                                                                    echo "<div class='row col-xs-12 text-warning'>🆕";
-                                                                    echo "آزمون مرحله اول با شناسه ". $exam['RequestId'] ." ثبت حضور شده است";
-                                                                    echo "</div>";
-                                                                }
-                                                                if($exam['ExamState'] == 'Pend'){
-                                                                    echo "<div class='row col-xs-12 text-primary'>🆕";
-                                                                    echo "آزمون مرحله اول با شناسه ". $exam['RequestId'] ." رزرو شده است";
-                                                                    echo "</div>";
-                                                                }
+                                                    if (empty($exams['firstExams']) || !isset($exams['firstExams']) || count($exams['firstExams']) <= 0) {
+                                                        echo "<div class='row col-xs-12 text-danger'>🆕";
+                                                        echo "آزمون مرحله اول یافت نشد";
+                                                        echo "</div>";
+                                                    } else {
+                                                        foreach ($exams['firstExams'] as $exam) {
+                                                            if ($exam['ExamState'] == 'Done') {
+                                                                echo "<div class='row col-xs-12 text-success'>🆕";
+                                                                echo "آزمون مرحله اول با شناسه " . $exam['RequestId'] . " تایید شده است و به مرحله آزمون مرحله دوم رفته ست";
+                                                                echo "</div>";
+                                                            }
+                                                            if ($exam['ExamState'] == 'Absence') {
+                                                                echo "<div class='row col-xs-12 text-danger'>🆕";
+                                                                echo "آزمون مرحله اول با شناسه " . $exam['RequestId'] . " ثبت غیبت شده است";
+                                                                echo "</div>";
+                                                            }
+                                                            if ($exam['ExamState'] == 'Presence') {
+                                                                echo "<div class='row col-xs-12 text-warning'>🆕";
+                                                                echo "آزمون مرحله اول با شناسه " . $exam['RequestId'] . " ثبت حضور شده است";
+                                                                echo "</div>";
+                                                            }
+                                                            if ($exam['ExamState'] == 'Pend') {
+                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "آزمون مرحله اول با شناسه " . $exam['RequestId'] . " رزرو شده است";
+                                                                echo "</div>";
                                                             }
                                                         }
+                                                    }
                                                     ?>
                                                     <?php
-                                                    if(empty($exams['secondExams']) || !isset($exams['secondExams']) || count($exams['secondExams']) <=0) {
+                                                    if (empty($exams['secondExams']) || !isset($exams['secondExams']) || count($exams['secondExams']) <= 0) {
                                                         echo "<div class='row col-xs-12 text-danger'>🆕";
                                                         echo "آزمون مرحله دوم یافت نشد";
                                                         echo "</div>";
-                                                    }
-                                                    else{
+                                                    } else {
                                                         foreach ($exams['secondExams'] as $exam) {
-                                                            if($exam['ExamState'] == 'Done'){
+                                                            if ($exam['ExamState'] == 'Done') {
                                                                 echo "<div class='row col-xs-12 text-primary'>🆕";
-                                                                echo "آزمون مرحله دوم با شناسه ". $exam['RequestId'] ." تایید شده است و به مرحله آزمون کانون ارزیابی رفته ست";
+                                                                echo "آزمون مرحله دوم با شناسه " . $exam['RequestId'] . " تایید شده است و به مرحله آزمون کانون ارزیابی رفته ست";
                                                                 echo "</div>";
                                                             }
-                                                            if($exam['ExamState'] == 'Absence'){
+                                                            if ($exam['ExamState'] == 'Absence') {
                                                                 echo "<div class='row col-xs-12 text-primary'>🆕";
-                                                                echo "آزمون مرحله دوم با شناسه ". $exam['RequestId'] ." ثبت غیبت شده است";
+                                                                echo "آزمون مرحله دوم با شناسه " . $exam['RequestId'] . " ثبت غیبت شده است";
                                                                 echo "</div>";
                                                             }
-                                                            if($exam['ExamState'] == 'Presence'){
+                                                            if ($exam['ExamState'] == 'Presence') {
                                                                 echo "<div class='row col-xs-12 text-primary'>🆕";
-                                                                echo "آزمون مرحله دوم با شناسه ". $exam['RequestId'] ." ثبت حضور شده است";
+                                                                echo "آزمون مرحله دوم با شناسه " . $exam['RequestId'] . " ثبت حضور شده است";
                                                                 echo "</div>";
                                                             }
-                                                            if($exam['ExamState'] == 'Pend'){
+                                                            if ($exam['ExamState'] == 'Pend') {
                                                                 echo "<div class='row col-xs-12 text-primary'>🆕";
-                                                                echo "آزمون مرحله دوم با شناسه ". $exam['RequestId'] ." رزرو شده است";
+                                                                echo "آزمون مرحله دوم با شناسه " . $exam['RequestId'] . " رزرو شده است";
                                                                 echo "</div>";
                                                             }
                                                         }
                                                     }
                                                     ?>
                                                     <?php
-                                                    if(empty($exams['evalExams']) || !isset($exams['evalExams']) || count($exams['evalExams']) <=0) {
+                                                    if (empty($exams['evalExams']) || !isset($exams['evalExams']) || count($exams['evalExams']) <= 0) {
                                                         echo "<div class='row col-xs-12 text-danger'>--";
                                                         echo "آزمون مرحله کانون یافت نشد";
                                                         echo "</div>";
-                                                    }
-                                                    else{
+                                                    } else {
                                                         foreach ($exams['evalExams'] as $exam) {
-                                                            if($exam['ExamState'] == 'Done'){
-                                                                echo "<div class='row col-xs-12 text-primary'>--";
-                                                                echo "آزمون مرحله اول با شناسه ". $exam['RequestId'] ." تایید شده است و به مرحله آزمون کانون ارزیابی رفته ست";
+                                                            if ($exam['ExamState'] == 'Done') {
+                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "آزمون کانون ارزیابی با شناسه " . $exam['RequestId'] . " تایید شده است";
                                                                 echo "</div>";
                                                             }
-                                                            if($exam['ExamState'] == 'Absence'){
+                                                            if ($exam['ExamState'] == 'Absence') {
                                                                 echo "<div class='row col-xs-12 text-primary'>🆕";
-                                                                echo "آزمون مرحله دوم با شناسه ". $exam['RequestId'] ." ثبت غیبت شده است";
+                                                                echo "آزمون کانون ارزیابی با شناسه " . $exam['RequestId'] . " ثبت غیبت شده است";
                                                                 echo "</div>";
                                                             }
-                                                            if($exam['ExamState'] == 'Presence'){
+                                                            if ($exam['ExamState'] == 'Presence') {
                                                                 echo "<div class='row col-xs-12 text-primary'>🆕";
-                                                                echo "آزمون مرحله دوم با شناسه ". $exam['RequestId'] ." ثبت حضور شده است";
+                                                                echo "آزمون کانون ارزیابی با شناسه " . $exam['RequestId'] . " ثبت حضور شده است";
                                                                 echo "</div>";
                                                             }
-                                                            if($exam['ExamState'] == 'Pend'){
+                                                            if ($exam['ExamState'] == 'Pend') {
                                                                 echo "<div class='row col-xs-12 text-primary'>🆕";
-                                                                echo "آزمون مرحله دوم با شناسه ". $exam['RequestId'] ." رزرو شده است";
+                                                                echo "آزمون کانون ارزیابی با شناسه " . $exam['RequestId'] . " رزرو شده است";
                                                                 echo "</div>";
                                                             }
                                                         }
@@ -204,8 +206,37 @@
                                             </div>
                                             <div class="panel-body">
                                                 <div class="alert  military-info-container">
-                                                    <img src="<?php echo $gifLoader; ?>" />
+                                                    <img src="<?php echo $gifLoader; ?>"/>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default panel-post">
+                                            <div class="panel-heading">
+                                                سوابق تحصیلی
+                                            </div>
+                                            <div class="panel-body edu-info-container table-responsive">
+                                                <table class="table table-bordered table-condensed table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="fit info-department">گروه تحصیلی</th>
+                                                        <th class="fit info-educationalAttainment">مقطع</th>
+                                                        <th class="fit info-science">عنوان رشته تحصیلی</th>
+                                                        <th class="fit info-studying">در حال تحصیل</th>
+                                                        <th class="fit info-universityLevelType">دانشگاه</th>
+                                                        <th class="fit info-universityName">نام دانشگاه</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr class="temp-edu-record">
+                                                        <td class="fit info-department"></td>
+                                                        <td class="fit info-educationalAttainment"></td>
+                                                        <td class="fit info-science"></td>
+                                                        <td class="fit info-studying"></td>
+                                                        <td class="fit info-universityLevelType"></td>
+                                                        <td class="fit info-universityName"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                         <div class="panel panel-default panel-post">
@@ -237,7 +268,7 @@
                                         </div>
                                         <div class="panel panel-default panel-post">
                                             <div class="panel-heading">
-                                               مقاله علمی
+                                                مقاله علمی
                                             </div>
                                             <div class="panel-body article-info-container table-responsive">
                                                 <table class="table table-bordered table-condensed table-striped">
@@ -264,7 +295,7 @@
                                         </div>
                                         <div class="panel panel-default panel-post">
                                             <div class="panel-heading">
-                                               اختراعات
+                                                اختراعات
                                             </div>
                                             <div class="panel-body invention-info-container table-responsive">
                                                 <table class="table table-bordered table-condensed table-striped">
@@ -401,7 +432,8 @@
                                                         <th class="fit info-electionType">نوع انتخابات</th>
                                                         <th class="fit info-electionPeriodType">دوره انتخابات</th>
                                                         <th class="fit info-parliamentPeriodType">دوره انتخابات</th>
-                                                        <th class="fit info-expertsParliamentPeriodType">دوره انتخابات</th>
+                                                        <th class="fit info-expertsParliamentPeriodType">دوره انتخابات
+                                                        </th>
                                                         <th class="fit info-cityCouncilPeriodType">دوره انتخابات</th>
                                                         <th class="fit info-supervisoryBoardType">مجلس</th>
                                                         <th class="fit info-mediaFormat">نوع رسانه</th>
@@ -441,7 +473,7 @@
                                         </div>
                                         <div class="panel panel-default panel-post">
                                             <div class="panel-heading">
-                                               مهارت ها
+                                                مهارت ها
                                             </div>
                                             <div class="panel-body skill-info-container">
                                                 <table class="table table-bordered table-condensed table-striped">
@@ -479,7 +511,7 @@
                                                         <input type="text" class="form-control"
                                                                value="<?php echo $candidate['CandidateScore']; ?>"
                                                                id="inputGrade"
-                                                               name="inputGrade"  />
+                                                               name="inputGrade"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -488,7 +520,8 @@
                                                     <button
                                                             id="doGrading"
                                                             type="button"
-                                                            class="btn btn-danger">ثبت</button>
+                                                            class="btn btn-danger">ثبت
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -500,11 +533,13 @@
                                                     <button
                                                             id="doAcceptFirstExam"
                                                             type="button"
-                                                            class="btn btn-success">تایید و ورود به مرحله دوم</button>
+                                                            class="btn btn-success">تایید و ورود به مرحله دوم
+                                                    </button>
                                                     <button
                                                             id="doRejectFirstExam"
                                                             type="button"
-                                                            class="btn btn-danger">رد آزمون مرحله اول</button>
+                                                            class="btn btn-danger">رد آزمون مرحله اول
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -516,15 +551,36 @@
                                                     <button
                                                             id="doAcceptSecondExam"
                                                             type="button"
-                                                            class="btn btn-success">تایید و ورود به کانون ارزیابی</button>
+                                                            class="btn btn-success">تایید و ورود به کانون ارزیابی
+                                                    </button>
                                                     <button
                                                             id="doRejectSecondExam"
                                                             type="button"
-                                                            class="btn btn-danger">رد آزمون مرحله دوم</button>
+                                                            class="btn btn-danger">رد آزمون مرحله دوم
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
+                                    <div role="tabpanel" class="tab-pane fade in" id="AcceptEvaluationExam">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button
+                                                            id="doAcceptEvaluationExam"
+                                                            type="button"
+                                                            class="btn btn-success">تایید کانون ارزیابی
+                                                    </button>
+                                                    <button
+                                                            id="doRejectEvaluationExam"
+                                                            type="button"
+                                                            class="btn btn-danger">رد آزمون کانون ارزیابی
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

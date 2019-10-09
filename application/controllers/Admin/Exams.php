@@ -110,7 +110,7 @@ class Exams extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $result = $this->ModelExam->doPresenceCandidateFirstExam($inputs);
+        $result = $this->ModelExam->doAcceptCandidateEvaluationExam($inputs);
         echo json_encode($result);
     }
     public function doRejectCandidateEvaluationExam(){

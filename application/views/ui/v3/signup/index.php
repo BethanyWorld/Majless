@@ -79,7 +79,7 @@
                 <div class="col-xs-12 col-md-6 pull-right">
                     <label>
                         <span class="required"></span>
-                        استان حوزه انتخاباتی
+                        استان
                     </label>
                     <select name="inputConstituencyProvince" id="inputConstituencyProvince"
                             class="form-control">
@@ -94,7 +94,7 @@
                 <div class="col-xs-12 col-md-6">
                     <label>
                         <span class="required"></span>
-                        شهر حوزه انتخاباتی
+                        شهر
                     </label>
                     <select name="inputConstituencyProvincePart" id="inputConstituencyProvincePart"
                             class="form-control">

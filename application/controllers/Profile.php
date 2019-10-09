@@ -152,12 +152,11 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
-
     public function candidateReserveExam(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $candidateStatus = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId'])['CandidateStatus'];
 
-        if($candidateStatus == 'CandidateResumeMarked' || $candidateStatus == 'CandidateExamFirstStep'){
+        if($candidateStatus == 'CandidateResumeMarked' || $candidateStatus == 'CandidateExamFirstStep' || $candidateStatus == 'CandidateExamSecondStep'){
             $inputs = $this->input->post(NULL, TRUE);
             $inputs = array_map(function ($v) {
                 return strip_tags($v);
