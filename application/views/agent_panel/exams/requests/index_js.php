@@ -209,11 +209,31 @@
                                         zindex: 9060,
                                         position: 'topLeft'
                                     });
-                                    setTimeout(function () {
+                                    if ($result['success']) {
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '<?php echo $api['SMS']; ?>',
+                                            data: {
+                                                'senderNumber': $result['senderNumber'],
+                                                'messageBody': $result['messageBody']
+                                            },
+                                            success: function (data) {
+                                                toggleLoader();
+                                                setTimeout(function () {
+                                                    location.reload();
+                                                }, 1000);
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                toggleLoader();
+                                                notify('مشکلی درخ داده است', 'red');
+                                            }
+                                        });
+                                    }
+                                    /*setTimeout(function () {
                                         if ($result['success']) {
                                             location.reload();
                                         }
-                                    }, 1000);
+                                    }, 1000);*/
                                 },
                                 error: function (jqXHR, textStatus, errorThrown) {
                                     iziToast.show({

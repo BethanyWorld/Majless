@@ -1,4 +1,5 @@
 <?php
+
 class ModelCandidate extends CI_Model{
     public function getCandidate($inputs)
     {

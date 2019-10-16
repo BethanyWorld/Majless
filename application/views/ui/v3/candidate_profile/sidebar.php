@@ -9,6 +9,7 @@
             <div class="panel-body">
                 <ul>
                     <li><a href="<?php echo base_url('Profile') ?>">پیشخوان</a></li>
+                    <li><a href="<?php echo base_url('Profile/resume') ?>">ویرایش رزومه</a></li>
                     <li><a href="<?php echo base_url('Profile/logOut') ?>">خروج</a></li>
                 </ul>
             </div>

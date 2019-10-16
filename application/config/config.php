@@ -29,7 +29,7 @@ $config['cache_query_string'] = FALSE;
 $config['encryption_key'] = 'bpYzH4olFrJDHuvihqEM0AIdotzljyuQ';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
-$config['sess_expiration'] = 14400;
+$config['sess_expiration'] = 144000;
 //$config['sess_save_path'] = NULL;
 $config['sess_save_path'] = sys_get_temp_dir();
 $config['sess_match_ip'] = FALSE;
@@ -46,7 +46,7 @@ $config['global_xss_filtering'] = FALSE;
 $config['csrf_protection'] = FALSE;
 $config['csrf_token_name'] = 'csrf_majless';
 $config['csrf_cookie_name'] = 'csrf_cookie_majless';
-$config['csrf_expire'] = 14400;
+$config['csrf_expire'] = 144000;
 $config['csrf_regenerate'] = TRUE;
 $config['csrf_exclude_uris'] = array();
 $config['compress_output'] = FALSE;
@@ -94,6 +94,11 @@ $config['api'] = array(
     'LegalConditionsWeb'  => 'http://new.moarefin.ir:8080/api/LegalConditionsWeb?',
     'EducationalInfoReportWeb'  => 'http://new.moarefin.ir:8080/api/EducationalInfoReportWeb?',
     'JobHistoryWeb'  => 'http://new.moarefin.ir:8080/api/JobHistoryWeb?',
+);
+$config['EnumResumeProfile'] = array(
+    'Gender' =>  array( 'Male' => 'آقا' , 'Female' => 'خانم'),
+    'MaritalStatus' =>  array('Married' =>'متاهل' , 'Single' => 'مجرد'),
+    'Religion' =>  array('Undefined'=>'نامشخص','IslamShia'=>'اسلام-شیعه','IslamSoni'=>'اسلام-سنی','Cristian'=>'مسیحی','Jush'=>'یهودی','Zartosht'=>'زرتشت','Other'=>'سایر')
 );
 /* استان پیش فرض تهران است */
 $config['defaultStateId'] = 8;

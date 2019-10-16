@@ -1,12 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Profile extends CI_Controller{
+
+class Profile extends CI_Controller
+{
     public function __construct()
     {
         parent::__construct();
         $this->load->helper('ui/user_login');
         $this->load->model('ui/ModelCountry');
         $this->load->model('admin/ModelCandidate');
+        $this->load->model('ui/ModelProfile');
         $this->load->model('agent/ModelExam');
     }
     public function index()
@@ -152,11 +155,12 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
-    public function candidateReserveExam(){
+    public function candidateReserveExam()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $candidateStatus = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId'])['CandidateStatus'];
 
-        if($candidateStatus == 'CandidateResumeMarked' || $candidateStatus == 'CandidateExamFirstStep' || $candidateStatus == 'CandidateExamSecondStep'){
+        if ($candidateStatus == 'CandidateResumeMarked' || $candidateStatus == 'CandidateExamFirstStep' || $candidateStatus == 'CandidateExamSecondStep') {
             $inputs = $this->input->post(NULL, TRUE);
             $inputs = array_map(function ($v) {
                 return strip_tags($v);
@@ -169,8 +173,7 @@ class Profile extends CI_Controller{
             }, $inputs);
             $result = $this->ModelCandidate->candidateReserveExam($inputs);
             echo json_encode($result);
-        }
-        else{
+        } else {
             $result = array(
                 'type' => "warning",
                 'content' => "دسترسی لازم را ندارید",
@@ -179,6 +182,58 @@ class Profile extends CI_Controller{
             echo json_encode($result);
             return false;
         }
+    }
+
+    public function resume(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'رزومه';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'رزومه';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
+        $data['states'] = $this->ModelCountry->getStateList();
+        $data['profileImage'] = "";
+        if($data['userInfo']['CandidateProfileImage'] != '' && $data['userInfo']['CandidateProfileImage'] != null){
+            $data['profileImage'] = $data['userInfo']['CandidateProfileImage'];
+        }
+        else{
+            $data['profileImage'] = $data['noImg'];
+        }
+        $data['userInfo']['CandidateStateCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateStateId']);
+        $data['userInfo']['CandidateConstituencyCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateConstituencyStateId']);
+        $data['userInfo']['CandidateBornCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateBornStateId']);
+        $data['userInfo']['CandidateFatherBornCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateFatherBornStateId']);
+        $data['userInfo']['CandidateMotherBornCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateMotherBornStateId']);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/home/resume/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/resume/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/resume/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function candidateUpdatePersonalInfo(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+
+        $electionId = $this->ModelCountry->getElectionIdByCityId($inputs['inputCandidateConstituencyCityId'])[0]['ElectionId'];
+
+        $inputs['inputCandidateElectionId'] = $electionId;
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelProfile->doUpdateCandidatePersonalInfo($inputs);
+        echo json_encode($result);
     }
     /* get out of panel - session destroyed */
     public function logOut()

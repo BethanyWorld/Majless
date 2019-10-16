@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class State extends CI_Controller {
+
     public function __construct(){
         parent::__construct();
         $this->load->model('ui/ModelQuery');
@@ -93,9 +94,12 @@ class State extends CI_Controller {
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
         $data['CSRF'] = $CSRF;
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
         $provinceAgent = $this->ModelAgent->getAgentByAgentStateId($stateId);
-        $data['data'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+        $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
         $data['posts'] = $this->ModelCandidate->getCandidateCandidatePostByCandidateId($candidateId);
+        $data['api'] = $this->config->item('api');
         $data['stateName'] = $stateName;
         $data['stateId'] = $stateId;
         $data['noImg'] = $this->config->item('defaultImage');
@@ -103,7 +107,7 @@ class State extends CI_Controller {
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/state/candidate_detail/index' , $data);
         $this->load->view('ui/v3/state/candidate_detail/index_css');
-        $this->load->view('ui/v3/state/candidate_detail/index_js');
+        $this->load->view('ui/v3/state/candidate_detail/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
     public function submitReportAbuse(){

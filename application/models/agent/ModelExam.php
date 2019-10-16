@@ -449,6 +449,11 @@ class ModelExam extends CI_Model{
         $this->db->where('RequestId', $inputs['inputRequestId']);
         $candidateId = $this->db->get()->result_array()[0]['CandidateId'];
 
+        $this->db->select('*');
+        $this->db->from('candidate');
+        $this->db->where('CandidateId', $candidateId);
+        $candidateInfo = $this->db->get()->result_array()[0];
+
         $this->db->trans_start();
         $UserArray = array('ExamState' => 'Absence');
         $this->db->where('RequestId', $inputs['inputRequestId']);
@@ -470,6 +475,8 @@ class ModelExam extends CI_Model{
             $arr = array(
                 'type' => "green",
                 'content' => "ثبت غیبت آزمون با موفقیت انجام شد",
+                'senderNumber' => $candidateInfo['CandidatePhone'],
+                'messageBody' => 'کاربر گرامی شما در آزمون غیبت داشته اید.فرصت مجددی برای رزرو آزمون برای شما مهیا شده است.لطفا جهت رزور آزمون به صفحه کاربری خود مراجعه کنید',
                 'success' => true
             );
             return $arr;
