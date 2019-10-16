@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="127eba2d-7415-495a-85e7-2bfd297d5681" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/application/models/ui/ModelProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/State.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/State.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/helpers/pipes/pipe_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/pipes/pipe_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/admin/ModelCandidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/admin/ModelCandidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/agent/ModelExam.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/agent/ModelExam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/agent_panel/exams/requests/index_js.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/about_us/intro/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/about_us/intro/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate-copy/ajax.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate-copy/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate-copy/index_css.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate-copy/index_js.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index_css.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index_css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index_js.php" afterDir="false" />
     </list>
     <ignored path="1TeachMe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -323,7 +306,7 @@
           <entry key="dummy" value="26" />
           <entry key="js" value="61" />
           <entry key="md" value="52" />
-          <entry key="php" value="48254" />
+          <entry key="php" value="48264" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -332,7 +315,7 @@
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="61" />
           <entry key="Markdown" value="52" />
-          <entry key="PHP" value="48252" />
+          <entry key="PHP" value="48262" />
           <entry key="PLAIN_TEXT" value="26" />
         </counts>
       </usages-collector>
@@ -346,8 +329,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index_js.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
+            <state relative-caret-position="47">
+              <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
               <folding>
                 <element signature="e#143#1603#0#HTML" />
                 <element signature="e#1735#2083#0#HTML" />
@@ -976,7 +959,7 @@
       <workItem from="1571029454735" duration="1655000" />
       <workItem from="1571033249368" duration="5787000" />
       <workItem from="1571113622158" duration="12871000" />
-      <workItem from="1571202993010" duration="10651000" />
+      <workItem from="1571202993010" duration="10868000" />
     </task>
     <servers />
   </component>
@@ -998,7 +981,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1880588000" />
+    <option name="totallyTimeSpent" value="1880805000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1422,8 +1405,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index_js.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
+        <state relative-caret-position="47">
+          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
           <folding>
             <element signature="e#143#1603#0#HTML" />
             <element signature="e#1735#2083#0#HTML" />

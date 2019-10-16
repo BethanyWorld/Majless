@@ -1,5 +1,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
+        /*demo*/
         $(document).on('change' , '#inputCandidateBornStateId',function () {
             toggleLoader();
             $inputCandidateStateId = $(this).val();
