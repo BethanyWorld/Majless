@@ -513,4 +513,70 @@
     .extra-padding-top-25 {
         padding-top: 20px;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .ttt label{
+        margin-top: 25px;
+    }
+   .ttt input {
+        margin: 0px 0px;
+        width: 100%;
+        display: block;
+        border: none;
+        padding: 0px 0;
+        height: 30px;
+        border-bottom: solid 1px #022D6D;
+        -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #022D6D 4%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #022D6D 4%);
+        background-position: -200px 0;
+        background-size: 300px 100%;
+        background-repeat: no-repeat;
+        color: #0e6252;
+       box-shadow: none !important;
+       border-radius: 0px;
+    }
+
+    .ttt input:focus, input:valid {
+        box-shadow: none;
+        outline: none;
+        background-position: 0 0;
+    }
+
+    .ttt input::-webkit-input-placeholder {
+        font-family: 'roboto', sans-serif;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .ttt  input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+        color: #022D6D;
+        font-size: 11px;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-15px);
+        visibility: visible !important;
+    }
 </style>

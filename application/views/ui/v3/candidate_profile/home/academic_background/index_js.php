@@ -309,6 +309,15 @@
                 fillMajorDropDown($parentDom , $AgricultureNaturalResourcesDepartment);
             }
         });
+        $(document).on('change', '[name="inputCandidateSchoolMajor"]', function (){
+            $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
+            $parentDom = "#" + $parentId + " ";
+            $inputCandidateSchoolMajor = $(this).val();
+
+            $($parentDom + '.CandidateDepartment').css('display' , 'none');
+            $($parentDom + '.CandidateMajor').css('display' , 'none');
+
+        });
         function fillMajorDropDown($id , data) {
             $($parentDom + "[name='inputCandidateMajor']").html('');
             for($i=0;$i<data.length;$i++){
