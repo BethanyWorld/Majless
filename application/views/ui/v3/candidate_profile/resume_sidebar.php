@@ -107,8 +107,11 @@
     ul.RightPanelUl li.active:after {
         background: #F3F4F5;
     }
-
-    ul.RightPanelUl li > .RightpanelIcon {
+    ul.RightPanelUl li a{
+        width: 100%;
+        display: inherit;
+    }
+    ul.RightPanelUl li  .RightpanelIcon {
         line-height: initial;
         font-size: 2em;
         margin: 0 0 0 0.8rem;
@@ -541,15 +544,17 @@
                 </li>
 
                 <li class="col-md-12 padding-0">
-                    <i class="zmdi RightpanelIcon">
-                        <span class="fa fa-share-square-o"></span>
-                    </i>
-                    <div class="RightPanelContent">
-                        <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
-                        <div class="RightPanelDescription">
-                            بسیج , انجمن , سمن
-                        </div>
-                    </div>
+                        <a href="<?php echo base_url('Profile/Socioculturalbackground'); ?>">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-share-square-o"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
+                                <div class="RightPanelDescription">
+                                    بسیج , انجمن , سمن
+                                </div>
+                            </div>
+                        </a>
                 </li>
 
                 <li class="col-md-12 padding-0">
