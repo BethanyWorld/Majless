@@ -1,9 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Profile extends CI_Controller
-{
-    public function __construct()
-    {
+class Profile extends CI_Controller{
+    public function __construct(){
         parent::__construct();
         $this->load->helper('ui/user_login');
         $this->load->model('ui/ModelCountry');
@@ -45,6 +43,14 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
+    public function getResumeStatus(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $inputs['inputCandidateStatus'] = $loginInfo['CandidateStatus'];
+        $result = $this->ModelCandidate->getResumeStatus($inputs);
+        echo json_encode($result);
+    }
     public function candidateHasOtherConditionToContinue()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -85,6 +91,8 @@ class Profile extends CI_Controller
         $result = $this->ModelCandidate->candidateHasOtherConditionToContinue($inputs);
         echo json_encode($result);
     }
+
+
     public function examList(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);

@@ -2,7 +2,7 @@
     <p>
         <strong>
             لطفا جهت ادامه فرآیند، رزومه خود را تکمیل کنید
-            <a target="_blank" class="btn btn-danger" href="http://new.moarefin.ir">تکمیل زرومه</a>
+            <a class="btn btn-danger" href="<?php echo base_url('Profile/resume'); ?>">تکمیل زرومه</a>
         </strong>
     </p>
 </div>

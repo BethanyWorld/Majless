@@ -1,4 +1,5 @@
 <?php
+
 class ModelProfile extends CI_Model{
     public function getAdminProfileInfoByAdminId($userId)
     {

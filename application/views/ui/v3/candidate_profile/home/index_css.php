@@ -5,7 +5,7 @@
     }
     .c-progress-steps li {
         position: relative;
-        font-size: 12px !important;
+        font-size: 14px !important;
         color: #7f8c8d;
         padding: 2px 0 2px 23px;
     }
@@ -80,6 +80,10 @@
             left: 50%;
             margin-left: -9px;
         }
+    }
+
+    .alerts-container .alert {
+        font-size: 22px;
     }
 
 

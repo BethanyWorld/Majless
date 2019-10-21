@@ -1,7 +1,5 @@
 <?php
-
 class ModelProfile extends CI_Model{
-
     public function doUpdateCandidatePersonalInfo($inputs)
     {
         $UserArray = array(
@@ -99,7 +97,6 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
-
 
     public function getCandidateBooksByCandidateId($id){
         return
@@ -233,7 +230,6 @@ class ModelProfile extends CI_Model{
         }
     }
 
-
     public function getCandidateTranslationByCandidateId($id){
         return
             $this->db->select('*')
@@ -278,7 +274,6 @@ class ModelProfile extends CI_Model{
         }
     }
 
-
     public function getCandidateInventionByCandidateId($id){
         return
             $this->db->select('*')
@@ -321,7 +316,6 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
-
 
     public function getCandidateConferenceByCandidateId($id){
         return
@@ -411,8 +405,6 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
-
-
 }
 
 ?>

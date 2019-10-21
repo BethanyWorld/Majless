@@ -1,5 +1,4 @@
 <?php
-
 class ModelCandidate extends CI_Model{
     public function getCandidate($inputs)
     {
@@ -73,6 +72,27 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
+    public function getResumeStatus($inputs){
+        $isComplete = "";
+        $isAccepted = "";
+
+        $this->db->select('*');
+        $this->db->from('candidate');
+        $this->db->where('CandidateId', $inputs['inputCandidateId']);
+        $this->db->order_by('CandidateId', 'ASC');
+        $personalInfo = $this->db->get()->result_array();
+        var_dump($personalInfo);
+
+        $this->db->select('*');
+        $this->db->from('candidate_academic_background');
+        $this->db->where('CandidateId', $inputs['inputCandidateId']);
+        $this->db->order_by('CandidateId', 'ASC');
+        $academicInfo = $this->db->get()->result_array();
+
+        var_dump($academicInfo);
+    }
+
     /* For Candidate News */
     public function getCandidateCandidatePostByCandidateId($candidateId)
     {
@@ -91,7 +111,6 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
-
     /* End For Candidate News  */
     public function getCandidateByStateId($stateId)
     {
@@ -256,7 +275,6 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-
     public function doMarkCandidate($inputs)
     {
         $UserArray = array(
@@ -312,7 +330,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function candidateReserveExam($inputs)
     {
         $candidateId = $this->session->userdata('UserLoginInfo')['CandidateId'];
@@ -474,7 +491,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function doAcceptCandidateSecondExam($inputs)
     {
         $userStatusArray = array(
@@ -544,8 +560,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
-
     public function doAcceptEvaluationExam($inputs)
     {
         $userStatusArray = array(
@@ -613,8 +627,5 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
-
-
 }
-
 ?>

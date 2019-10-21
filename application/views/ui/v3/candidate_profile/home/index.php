@@ -1,62 +1,31 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <div class="container container-wrapper" style="background: none;">
-    <div class="row col-xs-12 col-md-3 pull-right"><?php echo $sidebar; ?></div>
-    <div class="col-xs-12 col-md-9 pull-right">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="row col-xs-12 col-sm-3 pull-right">
-                    <img class="thumbnail profile-image"
-                         width="155px" height="155px"
-                         id="imageProfile"
-                         src="<?php echo $noImg; ?>" />
-                </div>
-                <div class="row col-xs-12 col-sm-9 pull-right">
-                    <table class="table table-bordered table-condensed rtl">
-                        <thead>
-                            <tr>
-                                <th class="fit">نام و نام خانوادگی</th>
-                                <th class="fit">کد ملی</th>
-                                <th class="fit">تلفن همراه</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th class="fit full-name">
-                                    <img src="<?php echo $gifLoader; ?>" />
-                                </th>
-                                <th class="fit national-code">
-                                    <img src="<?php echo $gifLoader; ?>" />
-                                </th>
-                                <th class="fit phone">
-                                    <img src="<?php echo $gifLoader; ?>" />
-                                </th>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-bordered table-condensed rtl">
-                        <thead>
-                        <tr>
-                            <th class="fit">استان حوزه انتخاباتی</th>
-                            <th class="fit">شهر حوزه انتخاباتی</th>
-                            <th class="fit">جنسیت</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th class="fit constituency-province">
-                                <img src="<?php echo $gifLoader; ?>" />
-                            </th>
-                            <th class="fit constituency-province-part">
-                                <img src="<?php echo $gifLoader; ?>" />
-                            </th>
-                            <th class="fit gender">
-                                <img src="<?php echo $gifLoader; ?>" />
-                            </th>
-                        </tr>
-                        </tbody>
-                    </table>
+    <div class="row col-xs-12 col-md-3 pull-right">
+        <div class="row col-xs-12  pull-right">
+            <div class="row col-xs-12 pull-right sidebar">
+                <img class="thumbnail profile-image"
+                     width="100%" height="135px"
+                     id="imageProfile"
+                     src="<?php echo $noImg; ?>" />
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <?php echo $userInfo['CandidateFirstName']." ".$userInfo['CandidateLastName']; ?>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="<?php echo base_url('Profile') ?>">پیشخوان</a></li>
+                            <li><a href="<?php echo base_url('Profile/resume') ?>">ویرایش رزومه</a></li>
+                            <li><a href="<?php echo base_url('Profile/logOut') ?>">خروج</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-9 pull-right alerts-container">
+        <div class="row">
             <div class="col-xs-12">
                 <!--  STEPS -->
                 <?php include 'steps/chart/index.php'?>

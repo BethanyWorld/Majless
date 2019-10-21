@@ -5,7 +5,7 @@
         $legalConditionsApi = "<?php echo $this->config->item('api')['LegalConditionsWeb']; ?>nationalCodeList=" + $nationalCode;
 
         /* Get Profile info */
-        $.ajax({
+        /*$.ajax({
             type: 'get',
             url: $personalInfoApi,
             success: function (data) {
@@ -19,16 +19,14 @@
                 if($result['profileImage'] != null){
                     $(".profile-image").attr('src', ("data:image/png;base64,"+ $result['profileImage']));
                 }
-
             }
-        });
-
+        });*/
 
         $currentCandidateStatus = "<?php echo $userInfo['CandidateStatus']; ?>";
         $candidateStatus = "";
         $.ajax({
             type: 'get',
-            url: $legalConditionsApi,
+            url: base_url + 'Profile/getResumeStatus',
             success: function (data) {
                 $result = data;
                 $.each($result['items'], function (index, value) {
@@ -63,7 +61,7 @@
                                 if($currentCandidateStatus != $candidateStatus){
                                     setTimeout(function(){
                                         location.reload();
-                                    } , 1500);
+                                    } , 1000);
                                 }
                             }
                         });
