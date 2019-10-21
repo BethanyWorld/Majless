@@ -1,44 +1,5 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document).on('change' , '#inputCandidateBornStateId',function () {
-            toggleLoader();
-            $inputCandidateStateId = $(this).val();
-            $sendData = {'inputStateId' : $inputCandidateStateId}
-            $.ajax({
-                type: 'post',
-                url: base_url + 'Profile/getCitiesByStateId',
-                data: $sendData,
-                success: function(data){
-                    toggleLoader();
-                    $result = JSON.parse(data);
-                    /*$selectInnerHtml = "";
-                    $.each($result , function(index , item){
-                        $selectInnerHtml += "<option value='"+item['CityId']+"'>";
-                        $selectInnerHtml += item['CityName'];
-                        $selectInnerHtml += "</option>";
-                    });
-                    $("#inputCandidateBornCityId").html($selectInnerHtml);*/
-
-                    $("#inputCandidateBornCityId").html('');
-                    $.each($result , function(index , item) {
-                        var selectInnerHtml = $('<option />',
-                            {
-                                "class": "",
-                                "value": item['CityId'],
-                                "text": item['CityName']
-
-                            });
-                        $('#inputCandidateBornCityId').append(selectInnerHtml);
-
-                    });
-                },
-                error: function(data){
-                    toggleLoader();
-                    notify('درخواست با خطا مواجه شد', 'red');
-                }
-            });
-        });
-
         $VeterinaryMedicineDepartment = JSON.parse (
             ' [' +
             '{ "name": "بهداشت و بیماری آبزیان" , "value" : "1" } ,' +
@@ -345,6 +306,30 @@
         $(document).on('click','.remove-form',function(){
             $(this).parent().remove();
         });
+
+
+        $("#updateProfileAcademicBackground").click(function () {
+            if($("#form").serializeArray().length <=0){
+                notify('وارد کردن حداقل سابقه تحصیلی الزامی ست', 'yellow');
+            }
+            else{
+                $sendData = {
+                    inputAcademicBackground: $("#form").serializeArray()
+                }
+                toggleLoader();
+                $.ajax({
+                    type: 'post',
+                    url: base_url + 'Profile/candidateUpdateAcademicBackground',
+                    data: $sendData,
+                    success: function (data) {
+                        toggleLoader();
+                        $result = JSON.parse(data);
+                        notify($result['content'], $result['type']);
+                    }
+                });
+            }
+        });
+
     });
 
 </script>

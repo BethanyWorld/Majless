@@ -92,16 +92,14 @@ $_DIR = base_url('assets/ui/v3/');
                                                  <b class="text-danger">*</b>
                                              </span>
                                                         </label>
-                                                        <select class="form-control form-control-lg"
-                                                                data-name="inputCandidateSchoolMajor">
+                                                        <select class="form-control form-control-lg" data-name="inputCandidateSchoolMajor">
                                                             <option>--انتخاب کنید</option>
-                                                            <option value="PayamNooruniversityLevelType">انسانی</option>
-                                                            <option value="SeminaryLevelType">تجربی</option>
-                                                            <option value="AbroadLevelType">ریاضی</option>
-                                                            <option value="AzadUniversityLevelType">فنی</option>
-                                                            <option value="GovernmentdailyLevelType">معارف اسلامی
-                                                            </option>
-                                                            <option value="GovernmentnightLevelType">کارودانش</option>
+                                                            <option value="ensani">انسانی</option>
+                                                            <option value="tajrobi">تجربی</option>
+                                                            <option value="riazi">ریاضی</option>
+                                                            <option value="fani">فنی</option>
+                                                            <option value="maref">معارف اسلامی</option>
+                                                            <option value="kardanesh">کارودانش</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 col-xs-12 form-group RightFloat CandidateUniversityName">
@@ -133,21 +131,14 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <select class="form-control form-control-lg"
                                                                 data-name="inputCandidateDepartment">
                                                             <option>--انتخاب کنید</option>
-                                                            <option value="VeterinaryMedicineDepartment">دامپزشکی
-                                                            </option>
-                                                            <option value="foreignlanguagesDepartment">زبان های خارجی
-                                                            </option>
+                                                            <option value="VeterinaryMedicineDepartment">دامپزشکی</option>
+                                                            <option value="foreignlanguagesDepartment">زبان های خارجی</option>
                                                             <option value="HumanitiesDepartment">علوم انسانی</option>
                                                             <option value="ScienceDepartment">علوم پایه</option>
-                                                            <option value="TechnicalEngineeringDepartment">فنی مهندسی
-                                                            </option>
+                                                            <option value="TechnicalEngineeringDepartment">فنی مهندسی</option>
                                                             <option value="ArtDepartment">هنر</option>
                                                             <option value="medicalDepartment">پزشکی</option>
-                                                            <option value="AgricultureNaturalResourcesDepartment">
-                                                                کشاورزس و
-                                                                منابع
-                                                                طبیعی
-                                                            </option>
+                                                            <option value="AgricultureNaturalResourcesDepartment">کشاورزی و منابع طبیعی</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 col-sm-12 col-xs-12 RightFloat CandidateMajor">
@@ -159,18 +150,6 @@ $_DIR = base_url('assets/ui/v3/');
                                                         </label>
                                                         <select class="form-control form-control-lg"
                                                                 data- name="inputCandidateMajor">
-                                                            <!--                                                    <option></option>-->
-                                                            <!--                                                    <option value="VeterinaryMedicineDepartment">دامپزشکی</option>-->
-                                                            <!--                                                    <option value="foreignlanguagesDepartment">زبان های خارجی</option>-->
-                                                            <!--                                                    <option value="HumanitiesDepartment">علوم انسانی</option>-->
-                                                            <!--                                                    <option value="ScienceDepartment">علوم پایه</option>-->
-                                                            <!--                                                    <option value="TechnicalEngineeringDepartment">فنی مهندسی</option>-->
-                                                            <!--                                                    <option value="ArtDepartment">هنر</option>-->
-                                                            <!--                                                    <option value="medicalDepartment">پزشکی</option>-->
-                                                            <!--                                                    <option value="AgricultureNaturalResourcesDepartment">کشاورزس و-->
-                                                            <!--                                                        منابع-->
-                                                            <!--                                                        طبیعی-->
-                                                            <!--                                                    </option>-->
                                                         </select>
                                                     </div>
 
@@ -202,7 +181,7 @@ $_DIR = base_url('assets/ui/v3/');
             <div class="LeftPaneAction">
                 <div class="row form-group">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <button class="btn btn-block btn-lg waves-effect CommonButtons" href="">
+                        <button class="btn btn-block btn-lg waves-effect CommonButtons" id="updateProfileAcademicBackground">
                             ثبت و ادامه
                         </button>
                     </div>

@@ -81,7 +81,8 @@ class ModelCandidate extends CI_Model{
         $this->db->from('candidate');
         $this->db->where('CandidateId', $inputs['inputCandidateId']);
         $this->db->order_by('CandidateId', 'ASC');
-        $personalInfo = $this->db->get()->result_array();
+        $personalInfo = $this->db->get()->result_array()[0];
+         /* Check Profile */
         var_dump($personalInfo);
 
         $this->db->select('*');

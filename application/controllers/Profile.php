@@ -429,9 +429,10 @@ class Profile extends CI_Controller{
     public function candidateUpdateAcademicBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
+        var_dump($inputs['inputAcademicBackground']);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
-        $result = $this->ModelProfile->candidateUpdateJobHistory($inputs);
-        echo json_encode($result);
+        /*$result = $this->ModelProfile->candidateUpdateJobHistory($inputs);
+        echo json_encode($result);*/
     }
 
 
