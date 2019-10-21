@@ -454,18 +454,21 @@
             <h3>اطلاعات فردی</h3>
             <ul class="col-xs-12">
                 <li class="text-center first">
-                    <a class="" href="<?php echo base_url('Profile/resume'); ?>">1</a>
+                    <a href="<?php echo base_url('Profile/resume'); ?>">1</a>
                 </li>
                 <li class="text-center">
                     <a href="<?php echo base_url('Profile/academicBackground'); ?>">
-                        <a class="" href="">2</a>
+                        2
                     </a>
                 </li>
                 <li class="text-center">
                     <a class="" href="">3</a>
                 </li>
                 <li class="text-center">
-                    <a class="" href="">4</a>
+                    <a href="<?php echo base_url('Profile/jobHistory'); ?>">
+                        4
+                    </a>
+
                 </li>
                 <li class="text-center">
                     <a class="" href="">5</a>
@@ -524,15 +527,17 @@
                 </li>
 
                 <li class="col-md-12 padding-0">
-                    <i class="zmdi RightpanelIcon">
-                        <span class="fa fa-cogs"></span>
-                    </i>
-                    <div class="RightPanelContent">
-                        <div class="RightPanleTitle"> سوابق شغلی</div>
-                        <div class="RightPanelDescription">,
-                            اطلاعات شغل های قبل
+                    <a href="<?php echo base_url('Profile/jobHistory'); ?>">
+                        <i class="zmdi RightpanelIcon">
+                            <span class="fa fa-cogs"></span>
+                        </i>
+                        <div class="RightPanelContent">
+                            <div class="RightPanleTitle"> سوابق شغلی</div>
+                            <div class="RightPanelDescription">,
+                                اطلاعات شغل های قبل
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </li>
 
                 <li class="col-md-12 padding-0">

@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="127eba2d-7415-495a-85e7-2bfd297d5681" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index_css.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index_css.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/resume_sidebar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index_css.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/ui/ModelProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ui/ModelProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index_css.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index_css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index_js.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/static/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/static/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/resume_sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/resume_sidebar.php" afterDir="false" />
     </list>
     <ignored path="1TeachMe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -277,7 +271,7 @@
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="2" />
-          <entry key="project.open.time.32" value="5" />
+          <entry key="project.open.time.32" value="6" />
           <entry key="project.open.time.33" value="2" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.41" value="1" />
@@ -285,7 +279,7 @@
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="73" />
+          <entry key="project.opened" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -298,7 +292,7 @@
           <entry key="jpg" value="5" />
           <entry key="js" value="30" />
           <entry key="md" value="2" />
-          <entry key="php" value="1640" />
+          <entry key="php" value="1661" />
           <entry key="png" value="4" />
         </counts>
       </usages-collector>
@@ -309,7 +303,7 @@
           <entry key="Image" value="10" />
           <entry key="JavaScript" value="30" />
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="1640" />
+          <entry key="PHP" value="1661" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="htaccess" value="5" />
         </counts>
@@ -320,7 +314,7 @@
           <entry key="dummy" value="26" />
           <entry key="js" value="61" />
           <entry key="md" value="52" />
-          <entry key="php" value="51864" />
+          <entry key="php" value="52171" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -329,7 +323,7 @@
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="61" />
           <entry key="Markdown" value="52" />
-          <entry key="PHP" value="51862" />
+          <entry key="PHP" value="52169" />
           <entry key="PLAIN_TEXT" value="26" />
         </counts>
       </usages-collector>
@@ -339,36 +333,12 @@
     <favorites_list name="1TeachMe" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/ui/ModelProfile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="327" column="10" selection-start-line="327" selection-start-column="10" selection-end-line="327" selection-end-column="10" />
-              <folding>
-                <element signature="n#doUpdateCandidatePersonalInfo#0;n#ModelProfile#0;n#!!top" />
-                <element signature="n#getCandidateSkillsByCandidateId#0;n#ModelProfile#0;n#!!top" />
-                <element signature="n#candidateUpdateSkills#0;n#ModelProfile#0;n#!!top" />
-                <element signature="n#getCandidateSkillsByCandidateId#1;n#ModelProfile#0;n#!!top" />
-                <element signature="n#candidateUpdateSkills#1;n#ModelProfile#0;n#!!top" />
-                <element signature="n#getCandidateBooksByCandidateId#1;n#ModelProfile#0;n#!!top" />
-                <element signature="n#candidateUpdateBooks#1;n#ModelProfile#0;n#!!top" />
-                <element signature="n#getCandidateArticlesByCandidateId#1;n#ModelProfile#0;n#!!top" />
-                <element signature="n#candidateUpdateArticles#1;n#ModelProfile#0;n#!!top" />
-                <element signature="n#getCandidateResearchByCandidateId#1;n#ModelProfile#0;n#!!top" />
-                <element signature="n#candidateUpdateResearch#1;n#ModelProfile#0;n#!!top" />
-                <element signature="n#getCandidateTranslationByCandidateId#1;n#ModelProfile#0;n#!!top" />
-                <element signature="n#candidateUpdateTranslation#1;n#ModelProfile#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="327" column="46" selection-start-line="327" selection-start-column="27" selection-end-line="327" selection-end-column="46" />
+            <state relative-caret-position="179">
+              <caret line="390" column="46" selection-start-line="390" selection-start-column="27" selection-end-line="390" selection-end-column="46" />
               <folding>
                 <element signature="n#__construct#0;n#Profile#0;n#!!top" />
                 <element signature="n#index#0;n#Profile#0;n#!!top" />
@@ -384,71 +354,143 @@
                 <element signature="n#candidateUpdatePersonalInfo#0;n#Profile#0;n#!!top" />
                 <element signature="n#skills#0;n#Profile#0;n#!!top" />
                 <element signature="n#candidateUpdateSkills#0;n#Profile#0;n#!!top" />
-                <element signature="e#20278#20355#1#PHP" />
+                <element signature="n#scienceBackground#0;n#Profile#0;n#!!top" />
+                <element signature="n#candidateUpdateBooks#0;n#Profile#0;n#!!top" />
+                <element signature="n#candidateUpdateArticles#0;n#Profile#0;n#!!top" />
+                <element signature="n#candidateUpdateResearch#0;n#Profile#0;n#!!top" />
+                <element signature="n#candidateUpdateTranslation#0;n#Profile#0;n#!!top" />
+                <element signature="n#candidateUpdateInvention#0;n#Profile#0;n#!!top" />
+                <element signature="n#candidateUpdateConference#0;n#Profile#0;n#!!top" />
                 <element signature="n#candidateUpdateSkills#1;n#Profile#0;n#!!top" />
-                <element signature="n#candidateUpdateBooks#1;n#Profile#0;n#!!top" />
-                <element signature="n#candidateUpdateArticles#1;n#Profile#0;n#!!top" />
-                <element signature="n#candidateUpdateResearch#1;n#Profile#0;n#!!top" />
-                <element signature="n#candidateUpdateTranslation#1;n#Profile#0;n#!!top" />
-                <element signature="n#candidateUpdateInvention#1;n#Profile#0;n#!!top" />
                 <element signature="n#logOut#0;n#Profile#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/ui/ModelProfile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-24">
+              <caret line="377" column="54" lean-forward="true" selection-start-line="377" selection-start-column="54" selection-end-line="377" selection-end-column="54" />
+              <folding>
+                <element signature="n#doUpdateCandidatePersonalInfo#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#131#2424#0#PHP" />
+                <element signature="e#2627#3101#0#PHP" />
+                <element signature="e#2689#2844#0#PHP" />
+                <element signature="e#2881#3101#0#PHP" />
+                <element signature="e#2907#3065#0#PHP" />
+                <element signature="n#getCandidateSkillsByCandidateId#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#3196#3257#0#PHP" />
+                <element signature="e#3196#3298#0#PHP" />
+                <element signature="n#candidateUpdateSkills#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#3454#3566#0#PHP" />
+                <element signature="e#3492#3565#0#PHP" />
+                <element signature="e#3576#4076#0#PHP" />
+                <element signature="e#3656#3978#0#PHP" />
+                <element signature="e#4122#4598#0#PHP" />
+                <element signature="e#4184#4340#0#PHP" />
+                <element signature="e#4377#4598#0#PHP" />
+                <element signature="e#4403#4562#0#PHP" />
+                <element signature="n#getCandidateBooksByCandidateId#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#4691#4755#0#PHP" />
+                <element signature="e#4691#4800#0#PHP" />
+                <element signature="n#candidateUpdateBooks#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#4963#5074#0#PHP" />
+                <element signature="e#5000#5073#0#PHP" />
+                <element signature="e#5084#5704#0#PHP" />
+                <element signature="e#5163#5607#0#PHP" />
+                <element signature="e#5750#6222#0#PHP" />
+                <element signature="e#5812#5966#0#PHP" />
+                <element signature="e#6003#6222#0#PHP" />
+                <element signature="e#6029#6186#0#PHP" />
+                <element signature="n#getCandidateArticlesByCandidateId#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#6317#6384#0#PHP" />
+                <element signature="e#6317#6429#0#PHP" />
+                <element signature="n#candidateUpdateArticles#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#6595#6709#0#PHP" />
+                <element signature="e#6635#6708#0#PHP" />
+                <element signature="e#6719#7466#0#PHP" />
+                <element signature="e#6801#7366#0#PHP" />
+                <element signature="e#7512#7990#0#PHP" />
+                <element signature="e#7574#7731#0#PHP" />
+                <element signature="e#7768#7990#0#PHP" />
+                <element signature="e#7794#7954#0#PHP" />
+                <element signature="n#getCandidateResearchByCandidateId#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#8085#8152#0#PHP" />
+                <element signature="e#8085#8197#0#PHP" />
+                <element signature="n#candidateUpdateResearch#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#8363#8477#0#PHP" />
+                <element signature="e#8403#8476#0#PHP" />
+                <element signature="e#8487#9325#0#PHP" />
+                <element signature="e#8569#9225#0#PHP" />
+                <element signature="e#9371#9852#0#PHP" />
+                <element signature="e#9433#9592#0#PHP" />
+                <element signature="e#9629#9852#0#PHP" />
+                <element signature="e#9655#9816#0#PHP" />
+                <element signature="n#getCandidateTranslationByCandidateId#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#9951#10021#0#PHP" />
+                <element signature="e#9951#10066#0#PHP" />
+                <element signature="n#candidateUpdateTranslation#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#10235#10352#0#PHP" />
+                <element signature="e#10278#10351#0#PHP" />
+                <element signature="e#10362#11132#0#PHP" />
+                <element signature="e#10447#11029#0#PHP" />
+                <element signature="e#11178#11654#0#PHP" />
+                <element signature="e#11240#11396#0#PHP" />
+                <element signature="e#11433#11654#0#PHP" />
+                <element signature="e#11459#11618#0#PHP" />
+                <element signature="n#getCandidateInventionByCandidateId#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#11751#11819#0#PHP" />
+                <element signature="e#11751#11864#0#PHP" />
+                <element signature="n#candidateUpdateInvention#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#12031#12146#0#PHP" />
+                <element signature="e#12072#12145#0#PHP" />
+                <element signature="e#12156#12818#0#PHP" />
+                <element signature="e#12239#12717#0#PHP" />
+                <element signature="e#12864#13336#0#PHP" />
+                <element signature="e#12926#13080#0#PHP" />
+                <element signature="e#13117#13336#0#PHP" />
+                <element signature="e#13143#13300#0#PHP" />
+                <element signature="n#getCandidateConferenceByCandidateId#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#13434#13503#0#PHP" />
+                <element signature="e#13434#13548#0#PHP" />
+                <element signature="n#candidateUpdateConference#0;n#ModelProfile#0;n#!!top" />
+                <element signature="e#13716#13832#0#PHP" />
+                <element signature="e#13758#13831#0#PHP" />
+                <element signature="e#13842#14601#0#PHP" />
+                <element signature="e#13926#14499#0#PHP" />
+                <element signature="e#14647#15119#0#PHP" />
+                <element signature="e#14709#14863#0#PHP" />
+                <element signature="e#14900#15119#0#PHP" />
+                <element signature="e#14926#15083#0#PHP" />
+                <element signature="n#getCandidateConferenceByCandidateId#1;n#ModelProfile#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index.php">
+        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="971" lean-forward="true" selection-start-line="971" selection-end-line="971" />
+            <state relative-caret-position="203">
+              <caret line="80" column="126" selection-start-line="80" selection-start-column="126" selection-end-line="80" selection-end-column="126" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#4;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index_js.php">
+        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index_js.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="113" column="54" selection-start-line="113" selection-start-column="54" selection-end-line="113" selection-end-column="54" />
+            <state relative-caret-position="-57">
+              <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
               <folding>
-                <element signature="e#108#378#0#HTML" />
-                <element signature="e#438#488#0#HTML" />
-                <element signature="e#544#1268#0#HTML" />
-                <element signature="e#1321#2045#0#HTML" />
-                <element signature="e#2119#2856#0#HTML" />
-                <element signature="e#2913#3650#0#HTML" />
-                <element signature="e#3721#4466#0#HTML" />
+                <element signature="e#107#250#0#HTML" />
+                <element signature="e#309#359#0#HTML" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="827">
-              <caret line="137" column="24" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -530,9 +572,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index_js.php" />
-        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/steps/has_condition/index.php" />
-        <option value="$PROJECT_DIR$/application/controllers/SignUp.php" />
         <option value="$PROJECT_DIR$/application/controllers/Agent/Candidates.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/steps/marked/index.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/steps/reject/index.php" />
@@ -553,7 +592,6 @@
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/steps/candidate_accepted/index.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/edit/index_js.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/edit/index.php" />
-        <option value="$PROJECT_DIR$/application/views/ui/v3/home/index.php" />
         <option value="$PROJECT_DIR$/assets/ui/v4/css/style.css" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/signup/index.php" />
@@ -571,16 +609,20 @@
         <option value="$PROJECT_DIR$/application/views/ui/v3/static/header.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index_css.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index.php" />
-        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index_js.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index_css.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index_css.php" />
-        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/resume_sidebar.php" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index_js.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/home/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/academic_background/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/resume_sidebar.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index_js.php" />
         <option value="$PROJECT_DIR$/application/models/ui/ModelProfile.php" />
         <option value="$PROJECT_DIR$/application/controllers/Profile.php" />
-        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index.php" />
       </list>
     </option>
   </component>
@@ -606,11 +648,11 @@
       <path value="C:/php/pear" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1374" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1353" />
     <option name="y" value="-102" />
-    <option name="width" value="1616" />
-    <option name="height" value="916" />
+    <option name="width" value="1378" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -620,6 +662,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -636,12 +679,6 @@
               <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
               <item name="Majless" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -649,13 +686,6 @@
               <item name="Majless" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
@@ -704,11 +734,21 @@
               <item name="candidate_profile" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Majless" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="v3" type="462c0819:PsiDirectoryNode" />
+              <item name="candidate_profile" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="Job_history" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -720,22 +760,22 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../HashtNewWordpress/wp-content/themes/NewHasht" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\profile\home" />
-      <recent name="C:\wamp64\www\Majless\application\views\admin_panel\states\elections\home" />
-      <recent name="C:\wamp64\www\Majless\application\models\public" />
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\province\home" />
-      <recent name="C:\wamp64\www\JavanKar\application\models\user" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile" />
       <recent name="C:\wamp64\www\Majless\application\models\ui" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home\steps" />
       <recent name="C:\wamp64\www\Majless\uploads" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\profile\home" />
+      <recent name="C:\wamp64\www\Majless\application\views\admin_panel\states\elections\home" />
+      <recent name="C:\wamp64\www\Majless\application\models\public" />
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\province\home" />
+      <recent name="C:\wamp64\www\JavanKar\application\models\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1065,7 +1105,8 @@
       <workItem from="1571113622158" duration="12871000" />
       <workItem from="1571202993010" duration="18446000" />
       <workItem from="1571234087084" duration="2358000" />
-      <workItem from="1571545890987" duration="23247000" />
+      <workItem from="1571545890987" duration="23660000" />
+      <workItem from="1571634932276" duration="3770000" />
     </task>
     <servers />
   </component>
@@ -1087,7 +1128,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1913988000" />
+    <option name="totallyTimeSpent" value="1918171000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1099,10 +1140,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1374" y="-102" width="1382" height="744" extended-state="6" />
+    <frame x="-1374" y="-102" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.13990825" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.24235474" />
       <window_info id="Favorites" order="1" sideWeight="0.50163937" side_tool="true" weight="0.23827533" />
       <window_info id="Structure" order="2" sideWeight="0.50163937" side_tool="true" weight="0.23827533" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3295082" />
@@ -1135,6 +1176,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Majless" />
+    </ignored-roots>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -1152,32 +1198,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/static/footer.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/home/index_css.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/home/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/ui/v4/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="679" column="16" lean-forward="true" selection-start-line="679" selection-start-column="16" selection-end-line="679" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/signup/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -1355,20 +1375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="227" column="50" selection-start-line="227" selection-start-column="50" selection-end-line="227" selection-end-column="50" />
-          <folding>
-            <element signature="e#260#1253#0#HTML" />
-            <element signature="e#1347#1714#0#HTML" />
-            <element signature="e#1755#1793#0#HTML" />
-            <element signature="e#1840#1919#0#HTML" />
-            <element signature="e#1994#2505#0#HTML" />
-            <element signature="e#2591#4471#0#HTML" />
-            <element signature="e#4556#6439#0#HTML" />
-            <element signature="e#6520#7758#0#HTML" />
-            <element signature="e#7838#8556#0#HTML" />
-            <element signature="e#8596#11361#0#HTML" />
-            <element signature="e#11457#16469#0#HTML" />
-            <element signature="e#12049#12190#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1416,27 +1422,10 @@
     <entry file="file://$PROJECT_DIR$/application/models/ui/ModelQuery.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="54" column="84" lean-forward="true" selection-start-line="54" selection-start-column="84" selection-end-line="55" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index_js.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="6" column="57" lean-forward="true" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="54" />
-          <folding>
-            <element signature="e#1125#5721#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1454,33 +1443,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/resume_sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="189" column="31" lean-forward="true" selection-start-line="189" selection-start-column="31" selection-end-line="189" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index_js.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="113" column="54" selection-start-line="113" selection-start-column="54" selection-end-line="113" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3094">
+          <caret line="137" column="24" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/home/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/academic_background/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/resume_sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="539" column="24" selection-start-line="539" selection-start-column="24" selection-end-line="539" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/skills/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="81" column="87" selection-start-line="81" selection-start-column="87" selection-end-line="81" selection-end-column="87" />
           <folding>
-            <element signature="e#108#378#0#HTML" />
-            <element signature="e#438#488#0#HTML" />
-            <element signature="e#544#1268#0#HTML" />
-            <element signature="e#1321#2045#0#HTML" />
-            <element signature="e#2119#2856#0#HTML" />
-            <element signature="e#2913#3650#0#HTML" />
-            <element signature="e#3721#4466#0#HTML" />
+            <element signature="e#1125#5721#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15738">
+          <caret line="975" column="123" selection-start-line="975" selection-start-column="123" selection-end-line="975" selection-end-column="123" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/resume/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="54" column="84" lean-forward="true" selection-start-line="54" selection-start-column="84" selection-end-line="55" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index_css.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="327" column="46" selection-start-line="327" selection-start-column="27" selection-end-line="327" selection-end-column="46" />
+        <state relative-caret-position="179">
+          <caret line="390" column="46" selection-start-line="390" selection-start-column="27" selection-end-line="390" selection-end-column="46" />
           <folding>
             <element signature="n#__construct#0;n#Profile#0;n#!!top" />
             <element signature="n#index#0;n#Profile#0;n#!!top" />
@@ -1496,13 +1537,14 @@
             <element signature="n#candidateUpdatePersonalInfo#0;n#Profile#0;n#!!top" />
             <element signature="n#skills#0;n#Profile#0;n#!!top" />
             <element signature="n#candidateUpdateSkills#0;n#Profile#0;n#!!top" />
-            <element signature="e#20278#20355#1#PHP" />
+            <element signature="n#scienceBackground#0;n#Profile#0;n#!!top" />
+            <element signature="n#candidateUpdateBooks#0;n#Profile#0;n#!!top" />
+            <element signature="n#candidateUpdateArticles#0;n#Profile#0;n#!!top" />
+            <element signature="n#candidateUpdateResearch#0;n#Profile#0;n#!!top" />
+            <element signature="n#candidateUpdateTranslation#0;n#Profile#0;n#!!top" />
+            <element signature="n#candidateUpdateInvention#0;n#Profile#0;n#!!top" />
+            <element signature="n#candidateUpdateConference#0;n#Profile#0;n#!!top" />
             <element signature="n#candidateUpdateSkills#1;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateBooks#1;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateArticles#1;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateResearch#1;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateTranslation#1;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateInvention#1;n#Profile#0;n#!!top" />
             <element signature="n#logOut#0;n#Profile#0;n#!!top" />
           </folding>
         </state>
@@ -1510,56 +1552,121 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/ui/ModelProfile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="327" column="10" selection-start-line="327" selection-start-column="10" selection-end-line="327" selection-end-column="10" />
+        <state relative-caret-position="-24">
+          <caret line="377" column="54" lean-forward="true" selection-start-line="377" selection-start-column="54" selection-end-line="377" selection-end-column="54" />
           <folding>
             <element signature="n#doUpdateCandidatePersonalInfo#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#131#2424#0#PHP" />
+            <element signature="e#2627#3101#0#PHP" />
+            <element signature="e#2689#2844#0#PHP" />
+            <element signature="e#2881#3101#0#PHP" />
+            <element signature="e#2907#3065#0#PHP" />
             <element signature="n#getCandidateSkillsByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#3196#3257#0#PHP" />
+            <element signature="e#3196#3298#0#PHP" />
             <element signature="n#candidateUpdateSkills#0;n#ModelProfile#0;n#!!top" />
-            <element signature="n#getCandidateSkillsByCandidateId#1;n#ModelProfile#0;n#!!top" />
-            <element signature="n#candidateUpdateSkills#1;n#ModelProfile#0;n#!!top" />
-            <element signature="n#getCandidateBooksByCandidateId#1;n#ModelProfile#0;n#!!top" />
-            <element signature="n#candidateUpdateBooks#1;n#ModelProfile#0;n#!!top" />
-            <element signature="n#getCandidateArticlesByCandidateId#1;n#ModelProfile#0;n#!!top" />
-            <element signature="n#candidateUpdateArticles#1;n#ModelProfile#0;n#!!top" />
-            <element signature="n#getCandidateResearchByCandidateId#1;n#ModelProfile#0;n#!!top" />
-            <element signature="n#candidateUpdateResearch#1;n#ModelProfile#0;n#!!top" />
-            <element signature="n#getCandidateTranslationByCandidateId#1;n#ModelProfile#0;n#!!top" />
-            <element signature="n#candidateUpdateTranslation#1;n#ModelProfile#0;n#!!top" />
+            <element signature="e#3454#3566#0#PHP" />
+            <element signature="e#3492#3565#0#PHP" />
+            <element signature="e#3576#4076#0#PHP" />
+            <element signature="e#3656#3978#0#PHP" />
+            <element signature="e#4122#4598#0#PHP" />
+            <element signature="e#4184#4340#0#PHP" />
+            <element signature="e#4377#4598#0#PHP" />
+            <element signature="e#4403#4562#0#PHP" />
+            <element signature="n#getCandidateBooksByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#4691#4755#0#PHP" />
+            <element signature="e#4691#4800#0#PHP" />
+            <element signature="n#candidateUpdateBooks#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#4963#5074#0#PHP" />
+            <element signature="e#5000#5073#0#PHP" />
+            <element signature="e#5084#5704#0#PHP" />
+            <element signature="e#5163#5607#0#PHP" />
+            <element signature="e#5750#6222#0#PHP" />
+            <element signature="e#5812#5966#0#PHP" />
+            <element signature="e#6003#6222#0#PHP" />
+            <element signature="e#6029#6186#0#PHP" />
+            <element signature="n#getCandidateArticlesByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#6317#6384#0#PHP" />
+            <element signature="e#6317#6429#0#PHP" />
+            <element signature="n#candidateUpdateArticles#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#6595#6709#0#PHP" />
+            <element signature="e#6635#6708#0#PHP" />
+            <element signature="e#6719#7466#0#PHP" />
+            <element signature="e#6801#7366#0#PHP" />
+            <element signature="e#7512#7990#0#PHP" />
+            <element signature="e#7574#7731#0#PHP" />
+            <element signature="e#7768#7990#0#PHP" />
+            <element signature="e#7794#7954#0#PHP" />
+            <element signature="n#getCandidateResearchByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#8085#8152#0#PHP" />
+            <element signature="e#8085#8197#0#PHP" />
+            <element signature="n#candidateUpdateResearch#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#8363#8477#0#PHP" />
+            <element signature="e#8403#8476#0#PHP" />
+            <element signature="e#8487#9325#0#PHP" />
+            <element signature="e#8569#9225#0#PHP" />
+            <element signature="e#9371#9852#0#PHP" />
+            <element signature="e#9433#9592#0#PHP" />
+            <element signature="e#9629#9852#0#PHP" />
+            <element signature="e#9655#9816#0#PHP" />
+            <element signature="n#getCandidateTranslationByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#9951#10021#0#PHP" />
+            <element signature="e#9951#10066#0#PHP" />
+            <element signature="n#candidateUpdateTranslation#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#10235#10352#0#PHP" />
+            <element signature="e#10278#10351#0#PHP" />
+            <element signature="e#10362#11132#0#PHP" />
+            <element signature="e#10447#11029#0#PHP" />
+            <element signature="e#11178#11654#0#PHP" />
+            <element signature="e#11240#11396#0#PHP" />
+            <element signature="e#11433#11654#0#PHP" />
+            <element signature="e#11459#11618#0#PHP" />
+            <element signature="n#getCandidateInventionByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#11751#11819#0#PHP" />
+            <element signature="e#11751#11864#0#PHP" />
+            <element signature="n#candidateUpdateInvention#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#12031#12146#0#PHP" />
+            <element signature="e#12072#12145#0#PHP" />
+            <element signature="e#12156#12818#0#PHP" />
+            <element signature="e#12239#12717#0#PHP" />
+            <element signature="e#12864#13336#0#PHP" />
+            <element signature="e#12926#13080#0#PHP" />
+            <element signature="e#13117#13336#0#PHP" />
+            <element signature="e#13143#13300#0#PHP" />
+            <element signature="n#getCandidateConferenceByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#13434#13503#0#PHP" />
+            <element signature="e#13434#13548#0#PHP" />
+            <element signature="n#candidateUpdateConference#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#13716#13832#0#PHP" />
+            <element signature="e#13758#13831#0#PHP" />
+            <element signature="e#13842#14601#0#PHP" />
+            <element signature="e#13926#14499#0#PHP" />
+            <element signature="e#14647#15119#0#PHP" />
+            <element signature="e#14709#14863#0#PHP" />
+            <element signature="e#14900#15119#0#PHP" />
+            <element signature="e#14926#15083#0#PHP" />
+            <element signature="n#getCandidateConferenceByCandidateId#1;n#ModelProfile#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index_js.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="137" column="24" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="24" />
+        <state relative-caret-position="-57">
+          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="e#107#250#0#HTML" />
+            <element signature="e#309#359#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/science_background/index.php">
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/Job_history/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="971" lean-forward="true" selection-start-line="971" selection-end-line="971" />
+        <state relative-caret-position="203">
+          <caret line="80" column="126" selection-start-line="80" selection-start-column="126" selection-end-line="80" selection-end-column="126" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
           </folding>
         </state>
       </provider>

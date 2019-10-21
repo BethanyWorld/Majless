@@ -367,6 +367,52 @@ class ModelProfile extends CI_Model{
         }
     }
 
+    public function getCandidateJobHistoryByCandidateId($id){
+        return
+            $this->db->select('*')
+                ->from('candidate_job_hostory')
+                ->where('CandidateId' , $id)
+                ->get()
+                ->result_array();
+    }
+    public function candidateUpdateJobHistory($inputs)
+    {
+        $this->db->trans_start();
+        $this->db->delete('candidate_job_hostory', array(
+            'CandidateId' => $inputs['inputCandidateId']
+        ));
+        for($i=0;$i <count($inputs['inputCandidateJobHistory']);){
+            $UserArray = array(
+                'CandidateId' => $inputs['inputCandidateId'],
+                'CandidateJobTitle' => $inputs['inputCandidateJobHistory'][$i]['value'],
+                'CandidateJobCompanyTitle' => $inputs['inputCandidateJobHistory'][$i+1]['value'],
+                'CandidateStartJobMonth' => $inputs['inputCandidateJobHistory'][$i+2]['value'],
+                'CandidateStartJobYear' => $inputs['inputCandidateJobHistory'][$i+3]['value'],
+                'CandidateEndJobMonth' => $inputs['inputCandidateJobHistory'][$i+4]['value'],
+                'CandidateEndJobYear' => $inputs['inputCandidateJobHistory'][$i+5]['value'],
+            );
+            $this->db->insert('candidate_job_hostory', $UserArray);
+            $i = $i +6;
+        }
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "بروزرسانی سوابق شغلی با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "بروزرسانی سوابق شغلی با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
+
 }
 
 ?>

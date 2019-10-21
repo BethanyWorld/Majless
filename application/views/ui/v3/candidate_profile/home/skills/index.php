@@ -79,7 +79,7 @@ $_DIR = base_url('assets/ui/v3/');
                                         </form>
 
 
-                                        <div  id="unique-form" class="col-md-12 col-xs-12 padding-0 hidden form">
+                                        <div  id="unique-form" class="animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
                                             <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                 <label for="inputSkillType">
