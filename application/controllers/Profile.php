@@ -379,6 +379,99 @@ class Profile extends CI_Controller
     }
 
 
+    public function academicBackground(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'رزومه';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'رزومه';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+
+
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+
+        $data['states'] = $this->ModelCountry->getStateList();
+        $data['profileImage'] = "";
+        if($data['userInfo']['CandidateProfileImage'] != '' && $data['userInfo']['CandidateProfileImage'] != null){
+            $data['profileImage'] = $data['userInfo']['CandidateProfileImage'];
+        }
+        else{
+            $data['profileImage'] = $data['noImg'];
+        }
+        $data['userInfo']['CandidateStateCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateStateId']);
+        $data['userInfo']['CandidateConstituencyCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateConstituencyStateId']);
+        $data['userInfo']['CandidateBornCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateBornStateId']);
+        $data['userInfo']['CandidateFatherBornCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateFatherBornStateId']);
+        $data['userInfo']['CandidateMotherBornCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateMotherBornStateId']);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/home/academic_background/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/academic_background/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/academic_background/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function candidateUpdateAcademicBackground(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $profileImage = $_POST['inputCandidateProfileImage'];
+        $inputs = $this->input->post(NULL, TRUE);
+        /* validation */
+        $this->form_validation->set_data($inputs);
+        $this->form_validation->set_rules('inputCandidateFirstName', 'نام', 'trim|required|min_length[2]|max_length[80]');
+        $this->form_validation->set_rules('inputCandidateLastName', 'نام خانوادگی', 'trim|required|min_length[2]|max_length[80]');
+        $this->form_validation->set_rules('inputCandidatePhone', 'تلفن همراه', 'trim|required|numeric|min_length[2]|max_length[20]');
+        $this->form_validation->set_rules('inputCandidateFatherName', 'نام پدر', 'trim|required|min_length[2]|max_length[80]');
+        $this->form_validation->set_rules('inputCandidateBirthDate', 'تاریخ تولد', 'trim|required|min_length[2]|max_length[80]');
+        $this->form_validation->set_rules('inputCandidateGender', 'جنسیت', 'trim|required|min_length[1]|max_length[80]');
+        $this->form_validation->set_rules('inputCandidateMaritalStatus', 'وضعیت تاهل', 'trim|required|min_length[2]|max_length[80]');
+        $this->form_validation->set_rules('inputCandidateReligion', 'دین', 'trim|required|min_length[2]|max_length[80]');
+        $this->form_validation->set_rules('inputCandidateBornStateId', 'استان محل تولد', 'trim|required|numeric|min_length[1]|max_length[3]');
+        $this->form_validation->set_rules('inputCandidateBornCityId', 'شهر محل تولد', 'trim|required|numeric|min_length[1]|max_length[3]');
+        $this->form_validation->set_rules('inputCandidateFatherBornStateId', 'استان محل تولد پدر', 'trim|required|numeric|min_length[1]|max_length[3]');
+        $this->form_validation->set_rules('inputCandidateFatherBornCityId', 'شهر محل تولد پدر', 'trim|required|numeric|min_length[1]|max_length[3]');
+        $this->form_validation->set_rules('inputCandidateMotherBornStateId', 'استان محل تولد مادر', 'trim|required|numeric|min_length[1]|max_length[3]');
+        $this->form_validation->set_rules('inputCandidateMotherBornCityId', 'شهر محل تولد مادر', 'trim|required|numeric|min_length[1]|max_length[3]');
+        $this->form_validation->set_rules('inputCandidateAddressStateId', 'استان محل سکونت', 'trim|required|numeric|min_length[1]|max_length[3]');
+        $this->form_validation->set_rules('inputCandidateAddressCityId', 'شهر محل سکونت', 'trim|required|numeric|min_length[1]|max_length[3]');
+        $this->form_validation->set_rules('inputCandidateAddressPart', 'بخش', 'trim|required|min_length[1]|max_length[254]');
+        $this->form_validation->set_rules('inputCandidateAddress', 'آدرس محل سکونت', 'trim|required|max_length[254]');
+        $this->form_validation->set_rules('inputCandidateLandLinePhone', 'تلفن ثابت', 'trim|required|numeric|min_length[2]|max_length[20]');
+        $this->form_validation->set_rules('inputCandidateConstituencyStateId', 'استان حوزه انتخاباتی', 'trim|required|numeric|min_length[1]|max_length[3]');
+        $this->form_validation->set_rules('inputCandidateConstituencyCityId', 'شهر حوزه انتخاباتی', 'trim|required|numeric|min_length[1]|max_length[3]');
+        if ($this->form_validation->run() == FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => validation_errors()
+            );
+            echo json_encode($arr);
+            die();
+        }
+        /* End validation*/
+
+        $electionId = $this->ModelCountry->getElectionIdByCityId($inputs['inputCandidateConstituencyCityId'])[0]['ElectionId'];
+        $inputs['inputCandidateElectionId'] = $electionId;
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+
+        $roles = $inputs['inputCandidateRoles'];
+        unset($inputs['inputCandidateRoles']);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $inputs['inputCandidateRoles'] = $roles;
+        $inputs['inputCandidateProfileImage'] = $profileImage;
+
+        $result = $this->ModelProfile->doUpdateCandidatePersonalInfo($inputs);
+        echo json_encode($result);
+    }
+
+
     /* get out of panel - session destroyed */
     public function logOut()
     {

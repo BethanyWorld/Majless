@@ -3,7 +3,7 @@
 <div id="main" class="site-main nopadding">
     <div class="fw-page-builder-content">
         <!-- Edited Slider-->
-        <section id="section-5d7930f11ff35 rrr"
+        <section id="section-5d7930f11ff35"
                  class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
                  style=" background-image:url(<?php echo $_DIR ?>images/slide4_850.jpg);background-size: cover;">
             <div class="campaign_section_slide"

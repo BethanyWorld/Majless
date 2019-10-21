@@ -1,50 +1,4 @@
-<?php $_DIR = base_url('assets/ui/v3/'); ?>
 <style>
-    .form {
-        box-shadow: 0 0 7px 1px #ccc !important;
-        padding: 15px 0 !important;
-        margin-bottom: 20px !important;
-    }
-
-    .form:last-child {
-        margin-bottom: 0 !important;
-    }
-
-    .add-form {
-        position: absolute;
-        left: 30px;
-        top: 20px;
-        width: 50px;
-        height: 50px;
-        background: #022d6d;
-        border-radius: 100px;
-        color: #fff;
-        padding: 18px;
-        cursor: pointer;
-        z-index: 1090;
-    }
-
-    .add-form:hover {
-        background: #0f4f6d;
-    }
-
-    .remove-form {
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: red;
-        color: #fff;
-        width: 25px;
-        height: 25px;
-        padding: 4px 5px;
-        cursor: pointer;
-        z-index: 1090;
-    }
-
-    .remove-form:hover {
-        background: #ff6966;
-    }
-
     /*Helper*/
     .margin-right-15 {
         margin-right: 15px;
@@ -192,6 +146,7 @@
         margin: .5rem 0 1rem;
         transition: box-shadow .25s;
         border-radius: 0;
+        min-height: 100vh;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16);
     }
 
@@ -313,7 +268,7 @@
 
     .InputNotAllow {
         cursor: not-allowed !important;
-        background-color: #eee !important;
+        background-color: #eee;
         opacity: 1;
         color: rgba(0, 0, 0, .26);
         border-bottom: 1px dotted rgba(0, 0, 0, .26);
@@ -325,7 +280,7 @@
 
     .LeftPaneAction {
         border-top: 1px solid rgba(160, 160, 160, .2);
-        padding: 0 20px;
+        padding: 20px;
     }
 
     .CommonButtons {
@@ -446,148 +401,111 @@
         color: #ffffff;
         transition: all 0.5s ease;
     }
+
+    .CandidateLevelType {
+        visibility: hidden;
+    }
+
+    .CandidateMajor {
+        visibility: hidden;
+    }
+
+    .CandidateUniversityName {
+        visibility: hidden;
+    }
+
+    .CandidateDepartment {
+        visibility: hidden;
+    }
+
+    .CandidateeduMajor {
+        display: none;
+    }
+
+    .GradeNotify {
+        color: #D10B20;
+        font-size: 14px;
+        line-height: 1.7em;
+    }
+
+    .list-group-Grade {
+        border-radius: 4px;
+        margin-bottom: 15px;
+    }
+
+    .Radio-Buttons {
+        visibility: hidden;
+    }
+    .Radio-Display{
+        display: inline-block;
+    }
+
+    .Radio-Buttons .radio {
+        margin: 0.5rem;
+    }
+
+    .Radio-Buttons .radio input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .Radio-Buttons .radio input[type="radio"] + .radio-label:before {
+        content: '';
+        background: #f4f4f4;
+        border-radius: 100%;
+        border: 1px solid #b4b4b4;
+        display: inline-block;
+        width: 1.4em;
+        height: 1.4em;
+        position: relative;
+        top: -0.2em;
+        margin-right: 1em;
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        transition: all 250ms ease;
+    }
+
+    .Radio-Buttons .radio input[type="radio"]:checked + .radio-label:before {
+        background-color: #3197EE;
+        box-shadow: inset 0 0 0 4px #f4f4f4;
+    }
+
+    .Radio-Buttons .radio input[type="radio"]:focus + .radio-label:before {
+        outline: none;
+        border-color: #3197EE;
+    }
+
+    .Radio-Buttons .radio input[type="radio"]:disabled + .radio-label:before {
+        box-shadow: inset 0 0 0 4px #f4f4f4;
+        border-color: #b4b4b4;
+        background: #b4b4b4;
+    }
+
+    .Radio-Buttons .radio input[type="radio"] + .radio-label:empty:before {
+        margin-right: 0;
+    }
+    .ul-background-color-hr {
+        background-color: lightblue;
+    }
+    .list-group-item:last-child {
+        margin-bottom: 0;
+        border-bottom-right-radius: .25rem;
+        border-bottom-left-radius: .25rem;
+    }
+    .list-group-item {
+        position: relative;
+        display: block;
+        padding: .75rem 1.25rem;
+        margin-bottom: -1px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+    .odd-background-color-div {
+        background-color: rgb(238, 238, 238);
+        margin-bottom: 3px;
+    }
+    .extra-padding-top-25 {
+        padding-top: 20px;
+    }
 </style>
-
-<div class="col-md-3 col-xs-12 pull-right">
-    <div class="col-xs-12 padding-0 visible-xs visible-sm">
-        <div class="col-xs-12 padding-0 MobileStep">
-            <h3>اطلاعات فردی</h3>
-            <ul class="col-xs-12">
-                <li class="text-center first">
-                    <a class="" href="<?php echo base_url('Profile/resume'); ?>">1</a>
-                </li>
-                <li class="text-center">
-                    <a href="<?php echo base_url('Profile/academicBackground'); ?>">
-                        <a class="" href="">2</a>
-                    </a>
-                </li>
-                <li class="text-center">
-                    <a class="" href="">3</a>
-                </li>
-                <li class="text-center">
-                    <a class="" href="">4</a>
-                </li>
-                <li class="text-center">
-                    <a class="" href="">5</a>
-                </li>
-                <li class="text-center">
-                    <a class="<?php echo base_url('Profile/scienceBackground'); ?>" href="">6</a>
-                </li>
-                <li class="text-center">
-                    <a class="<?php echo base_url('Profile/skills'); ?>" href="">7</a>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-    <div class="col-md-12 padding-0 visible-lg visible-md">
-        <div class="col-md-12 padding-0 RightPanel">
-            <ul class="col-md-12 padding-0 RightPanelUl">
-                <li class="col-md-12 padding-0 active">
-                    <a href="<?php echo base_url('Profile/resume'); ?>">
-                        <i class="zmdi RightpanelIcon">
-                            <span class="fa fa-user"></span>
-                        </i>
-                        <div class="RightPanelContent">
-                            <div class="RightPanleTitle">اطلاعات فردی</div>
-                            <div class="RightPanelDescription">
-                                اطلاعات فردی , آدرس
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="col-md-12 padding-0">
-                    <a href="<?php echo base_url('Profile/academicBackground'); ?>">
-                        <i class="zmdi RightpanelIcon">
-                            <span class="fa fa-book"></span>
-                        </i>
-                        <div class="RightPanelContent">
-                            <div class="RightPanleTitle"> سوابق تحصیلی</div>
-                            <div class="RightPanelDescription">
-                                مقطع , معدل , دنشگاه
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="col-md-12 padding-0">
-                    <i class="zmdi RightpanelIcon">
-                        <span class="fa fa-flag"></span>
-                    </i>
-                    <div class="RightPanelContent">
-                        <div class="RightPanleTitle"> نظام وظیفه</div>
-                        <div class="RightPanelDescription">,
-                            پایان خدمت , معافیت , مشمول
-                        </div>
-                    </div>
-                </li>
-
-                <li class="col-md-12 padding-0">
-                    <i class="zmdi RightpanelIcon">
-                        <span class="fa fa-cogs"></span>
-                    </i>
-                    <div class="RightPanelContent">
-                        <div class="RightPanleTitle"> سوابق شغلی</div>
-                        <div class="RightPanelDescription">,
-                            اطلاعات شغل های قبل
-                        </div>
-                    </div>
-                </li>
-
-                <li class="col-md-12 padding-0">
-                    <i class="zmdi RightpanelIcon">
-                        <span class="fa fa-share-square-o"></span>
-                    </i>
-                    <div class="RightPanelContent">
-                        <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
-                        <div class="RightPanelDescription">
-                            بسیج , انجمن , سمن
-                        </div>
-                    </div>
-                </li>
-
-                <li class="col-md-12 padding-0">
-                    <i class="zmdi RightpanelIcon">
-                        <span class="fa fa-handshake-o"></span>
-                    </i>
-                    <div class="RightPanelContent">
-                        <div class="RightPanleTitle"> سوابق سیاسی</div>
-                        <div class="RightPanelDescription">
-                            حزب , ستاد انتخابات , رسانه
-                        </div>
-                    </div>
-                </li>
-
-                <li class="col-md-12 padding-0">
-                    <a href="<?php echo base_url('Profile/scienceBackground'); ?>">
-                        <i class="zmdi RightpanelIcon">
-                            <span class="fa fa-flask"></span>
-                        </i>
-                        <div class="RightPanelContent">
-                            <div class="RightPanleTitle"> سوابق علمی پژوهشی</div>
-                            <div class="RightPanelDescription">
-                                تالیف , ترجمه , اختراع
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="col-md-12 padding-0">
-                    <a href="<?php echo base_url('Profile/skills'); ?>">
-                        <i class="zmdi RightpanelIcon">
-                            <span class="fa fa-outdent"></span>
-                        </i>
-                        <div class="RightPanelContent">
-                            <div class="RightPanleTitle"> مهارت ها</div>
-                            <div class="RightPanelDescription">
-                                مهارت های مختلف دیگر
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
