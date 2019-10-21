@@ -403,19 +403,19 @@
     }
 
     .CandidateLevelType {
-        visibility: hidden;
+        display: none;
     }
 
     .CandidateMajor {
-        visibility: hidden;
+        display: none;
     }
 
     .CandidateUniversityName {
-        visibility: hidden;
+        display: none;
     }
 
     .CandidateDepartment {
-        visibility: hidden;
+        display: none;
     }
 
     .CandidateeduMajor {
@@ -434,7 +434,7 @@
     }
 
     .Radio-Buttons {
-        visibility: hidden;
+        display: none;
     }
     .Radio-Display{
         display: inline-block;
@@ -486,20 +486,25 @@
         margin-right: 0;
     }
     .ul-background-color-hr {
-        background-color: lightblue;
+        margin: 0px auto;
+        padding: 20px;
+        box-shadow: none;
     }
     .list-group-item:last-child {
         margin-bottom: 0;
         border-bottom-right-radius: .25rem;
         border-bottom-left-radius: .25rem;
+
     }
     .list-group-item {
         position: relative;
-        display: block;
+        width: 100%;
+        display: inline-block;
         padding: .75rem 1.25rem;
         margin-bottom: -1px;
         background-color: #fff;
         border: 1px solid #ddd;
+        min-height: 100px;
     }
     .odd-background-color-div {
         background-color: rgb(238, 238, 238);

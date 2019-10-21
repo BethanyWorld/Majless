@@ -427,6 +427,8 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/academic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
+
     public function candidateUpdateAcademicBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);

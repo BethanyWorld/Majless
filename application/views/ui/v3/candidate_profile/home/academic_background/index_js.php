@@ -175,152 +175,167 @@
             ']'
         );
 
-        $(document).on('change', '#inputCandidateGrade', function () {
+        $(document).on('change', '[name="inputCandidateGrade"]', function () {
 
-            $inputCandidateGrade = $('#inputCandidateGrade').val();
-            $inputCandidateUniversityLevelType = $("#inputCandidateUniversityLevelType").val();
+            $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
+            $parentDom = "#" + $parentId + " ";
+
+            $inputCandidateGrade = $(this).val();
+            $inputCandidateUniversityLevelType = $($parentDom + "[name='inputCandidateUniversityLevelType']").eq(0).val();
 
             if($inputCandidateGrade !== "1" && $inputCandidateGrade !== "2" && $inputCandidateGrade !== "3") {
-
-                $('.CandidateLevelType').css('visibility' , 'visible');
-                $('.CandidateUniversityName').css('visibility' , 'visible');
-                $('.CandidateDepartment').css('visibility' , 'visible');
-                $('.CandidateMajor').css('visibility' , 'visible');
-                $('.Radio-Buttons').css('visibility' , 'visible');
+                $($parentDom + '.CandidateLevelType').css('display' , 'block');
+                $($parentDom + '.CandidateUniversityName').css('display' , 'block');
+                $($parentDom + '.CandidateDepartment').css('display' , 'block');
+                $($parentDom + '.CandidateMajor').css('display' , 'block');
+                $($parentDom + '.Radio-Buttons').css('display' , 'block');
             }
             else{
-                $('.CandidateLevelType').css('visibility' , 'hidden');
-                $('.CandidateUniversityName').css('visibility' , 'hidden');
-                $('.CandidateDepartment').css('visibility' , 'hidden');
-                $('.CandidateMajor').css('visibility' , 'hidden');
-                $('.Radio-Buttons').css('visibility' , 'hidden');
-
-
+                $($parentDom + '.CandidateLevelType').css('display' , 'none');
+                $($parentDom + '.CandidateUniversityName').css('display' , 'none');
+                $($parentDom + '.CandidateDepartment').css('display' , 'none');
+                $($parentDom + '.CandidateMajor').css('display' , 'none');
+                $($parentDom + '.Radio-Buttons').css('display' , 'none');
             }
 
             if($inputCandidateGrade !== "1" && $inputCandidateGrade !== "2" && $inputCandidateGrade !== "3" && $inputCandidateGrade !== "4" && $inputCandidateGrade !== "5") {
-
-                $('#GradeNotify').css('visibility' , 'hidden');
+                $($parentDom + '#GradeNotify').css('display' , 'none');
             }
             else{
-                $('#GradeNotify').css('visibility' , 'visible');
+                $($parentDom + '#GradeNotify').css('display' , 'block');
             }
 
             if($inputCandidateGrade === "10" || $inputCandidateGrade === "11") {
 
-                $('#GradeNotify').css('visibility' , 'visible');
+                $($parentDom + '#GradeNotify').css('display' , 'block');
             }
             else{
-                $('#GradeNotify').removeAttr('visibility' , 'hidden');
+                $($parentDom + '#GradeNotify').removeAttr('display' , 'none');
             }
-
-            if($inputCandidateGrade === "10" || $inputCandidateGrade === "11" || $inputCandidateGrade === "12" || $inputCandidateGrade === "13") {
-
-                $('#inputCandidateUniversityLevelType').attr('disabled' , 'disabled');
-                $('#inputCandidateUniversityLevelType').val('SeminaryLevelType');
-                $('.CandidateDepartment').css('display' , 'none');
-                $('.CandidateMajor').css('display' , 'none');
-            }
-            else{
-                $('#inputCandidateUniversityLevelType').removeAttr('disabled');
-                $('.CandidateDepartment').css('display' , 'block');
-                $('.CandidateMajor').css('display' , 'block');
-            }
-
             if($inputCandidateUniversityLevelType === "SeminaryLevelType") {
-                $('.CandidateDepartment').css('visibility' , 'hidden');
-                $('.CandidateMajor').css('visibility' , 'hidden');
+                $($parentDom + '.CandidateDepartment').css('display' , 'none');
+                $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
             else{
-                $('.CandidateDepartment').css('visibility' , 'visible');
-                $('.CandidateMajor').css('visibility' , 'visible');
+                $($parentDom + '.CandidateDepartment').css('display' , 'block');
+                $($parentDom + '.CandidateMajor').css('display' , 'block');
             }
-
             if($inputCandidateGrade === "1" || $inputCandidateGrade === "2" || $inputCandidateGrade === "3") {
 
-                $('.CandidateDepartment').css('visibility' , 'hidden');
-                $('.CandidateMajor').css('visibility' , 'hidden');
-
+                $($parentDom + '.CandidateDepartment').css('display' , 'none');
+                $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
             else{
-                $('.CandidateDepartment').css('visibility' , 'visible');
-                $('.CandidateMajor').css('visibility' , 'visible');
+                $($parentDom + '.CandidateDepartment').css('display' , 'block');
+                $($parentDom + '.CandidateMajor').css('display' , 'block');
 
             }
-
             if($inputCandidateGrade === "3") {
-                debugger;
-                $('.CandidateLevelType').css('display' , 'none');
-                $('.CandidateeduMajor').css('display' , 'block');
+                $($parentDom + '.CandidateLevelType').css('display' , 'none');
+                $($parentDom + '.CandidateeduMajor').css('display' , 'block');
             }
             else{
-                $('.CandidateLevelType').css('display' , 'block');
-                $('.CandidateeduMajor').css('display' , 'none');
+                $($parentDom + '.CandidateLevelType').css('display' , 'block');
+                $($parentDom + '.CandidateeduMajor').css('display' , 'none');
             }
-        });
+            if($inputCandidateGrade === "1" || $inputCandidateGrade === "2" ) {
+                $($parentDom + '.CandidateLevelType').css('display' , 'none');
+                $($parentDom + '.CandidateeduMajor').css('display' , 'none');
+            }
+            if($inputCandidateGrade === "10" || $inputCandidateGrade === "11" || $inputCandidateGrade === "12" || $inputCandidateGrade === "13") {
+                $($parentDom + '[name="inputCandidateUniversityLevelType"]').attr('disabled' , 'disabled').val('SeminaryLevelType');
+                $($parentDom + '.CandidateDepartment').css('display' , 'none');
+                $($parentDom + '.CandidateMajor').css('display' , 'none');
+            }
+            else{
+                $($parentDom + '[name="inputCandidateUniversityLevelType"]').removeAttr('disabled');
+            }
 
-        $(document).on('change', '#inputCandidateUniversityLevelType', function () {
-            $inputCandidateUniversityLevelType = $('#inputCandidateUniversityLevelType').val();
+        });
+        $(document).on('change', '[name="inputCandidateUniversityLevelType"]', function () {
+            $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
+            $parentDom = "#" + $parentId + " ";
+            $inputCandidateUniversityLevelType = $(this).val();
+
             if($inputCandidateUniversityLevelType === "SeminaryLevelType") {
-                $('.CandidateDepartment').css('visibility' , 'hidden');
-                $('.CandidateMajor').css('visibility' , 'hidden');
+                $($parentDom + '.CandidateDepartment').css('display' , 'none');
+                $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
             else {
-                $('.CandidateDepartment').css('visibility' , 'visible');
-                $('.CandidateMajor').css('visibility' , 'visible');
+                $($parentDom + '.CandidateDepartment').css('display' , 'block');
+                $($parentDom + '.CandidateMajor').css('display' , 'block');
             }
 
             if($inputCandidateUniversityLevelType === "Others") {
-                $('.Change-UniversityName').html('نام مرکز آموزشی');
+                $($parentDom + '.Change-UniversityName').html('نام مرکز آموزشی');
             }
             else {
-                $('.Change-UniversityName').html('نام دانشگاه');
+                $($parentDom + '.Change-UniversityName').html('نام دانشگاه');
             }
         });
+        $(document).on('change', '[name="inputCandidateDepartment"]', function () {
+            $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
+            $parentDom = "#" + $parentId + " ";
+            $inputCandidateDepartment = $(this).val();
 
-        $(document).on('change', '#inputCandidateDepartment', function () {
-            $inputCandidateDepartment = $('#inputCandidateDepartment').val();
             if($inputCandidateDepartment === "VeterinaryMedicineDepartment"){
-                debugger;
-                fillMajorDropDown($VeterinaryMedicineDepartment);
+                fillMajorDropDown($parentDom , $VeterinaryMedicineDepartment);
             }
             if($inputCandidateDepartment === "foreignlanguagesDepartment"){
-                fillMajorDropDown($foreignlanguages);
+                fillMajorDropDown($parentDom , $foreignlanguages);
             }
 
             if($inputCandidateDepartment === "HumanitiesDepartment"){
-                fillMajorDropDown($HumanitiesDepartment);
+                fillMajorDropDown($parentDom , $HumanitiesDepartment);
             }
 
             if($inputCandidateDepartment === "ScienceDepartment"){
-                fillMajorDropDown($ScienceDepartment);
+                fillMajorDropDown($parentDom , $ScienceDepartment);
             }
 
             if($inputCandidateDepartment === "TechnicalEngineeringDepartment"){
-                fillMajorDropDown($TechnicalEngineeringDepartment);
+                fillMajorDropDown($parentDom , $TechnicalEngineeringDepartment);
             }
 
             if($inputCandidateDepartment === "ArtDepartment"){
-                fillMajorDropDown($ArtDepartment);
+                fillMajorDropDown($parentDom , $ArtDepartment);
             }
 
             if($inputCandidateDepartment === "medicalDepartment"){
-                fillMajorDropDown($medicalDepartment);
+                fillMajorDropDown($parentDom , $medicalDepartment);
             }
 
             if($inputCandidateDepartment === "AgricultureNaturalResourcesDepartment"){
-                fillMajorDropDown($AgricultureNaturalResourcesDepartment);
+                fillMajorDropDown($parentDom , $AgricultureNaturalResourcesDepartment);
             }
         });
-
-        function fillMajorDropDown(data) {
-            $("#inputCandidateMajor").html('');
+        function fillMajorDropDown($id , data) {
+            $($parentDom + "[name='inputCandidateMajor']").html('');
             for($i=0;$i<data.length;$i++){
                 $tempOption = "<option value='"+data[$i]['value']+"'> "+ data[$i]['name']+"</option>";
-                $("#inputCandidateMajor").append($tempOption);
+                $($parentDom + "[name='inputCandidateMajor']").append($tempOption);
             }
         }
-
+        $(".add-form").click(function(){
+            $form = $("#unique-form").clone().removeClass('hidden').attr('id' , UUID());
+            $form.find('[data-name]').each(function(){
+                $(this).attr('name' , $(this).data('name'))
+            });
+            $radioButtonNameUUID =  UUID();
+            $form.find('input[type="radio"]').each(function(){
+                $id =  UUID();
+                $(this).attr('id' , $id);
+                $(this).attr('name' , $radioButtonNameUUID);
+                $(this).next('label').attr('for' , $id)
+            });
+            $(".skill-divider").after($form);
+        });
+        if($("#form").find('li').length == 0 ){
+            $(".add-form").click();
+        }
+        $(document).on('click','.remove-form',function(){
+            $(this).parent().remove();
+        });
     });
 
 </script>
