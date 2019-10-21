@@ -92,7 +92,6 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-
     public function examList(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
@@ -427,8 +426,6 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/academic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
-
     public function candidateUpdateAcademicBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
@@ -437,6 +434,23 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
+
+    public function socialCulturalBackground(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'رزومه';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
     /* get out of panel - session destroyed */
     public function logOut()
     {
