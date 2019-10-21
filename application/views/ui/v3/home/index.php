@@ -6,7 +6,7 @@
         <section id="section-5d7930f11ff35"
                  class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
                  style=" background-image:url(<?php echo $_DIR ?>images/slide4_850.jpg);background-size: cover;">
-            <div class="campaign_section_slide temp"
+            <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
             <div class="container" style=' padding-top: 130px; padding-bottom: 170px; '>
                 <div class="row">
