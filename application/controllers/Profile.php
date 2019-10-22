@@ -419,6 +419,7 @@ class Profile extends CI_Controller{
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+        $data['userInfo']['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/academic_background/index', $data);
@@ -429,10 +430,9 @@ class Profile extends CI_Controller{
     public function candidateUpdateAcademicBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
-        var_dump($inputs['inputAcademicBackground']);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
-        /*$result = $this->ModelProfile->candidateUpdateJobHistory($inputs);
-        echo json_encode($result);*/
+        $result = $this->ModelProfile->candidateUpdateAcademicBackground($inputs);
+        echo json_encode($result);
     }
 
 

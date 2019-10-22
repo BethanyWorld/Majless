@@ -135,16 +135,17 @@
             '{ "name": "سایر" , "value" : "11"  }   ' +
             ']'
         );
-
         $(document).on('change', '[name="inputCandidateGrade"]', function () {
 
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
-
             $inputCandidateGrade = $(this).val();
             $inputCandidateUniversityLevelType = $($parentDom + "[name='inputCandidateUniversityLevelType']").eq(0).val();
 
-            if($inputCandidateGrade !== "1" && $inputCandidateGrade !== "2" && $inputCandidateGrade !== "3") {
+            /* Added By ME */
+            $(':input',$parentDom).not(':button, :submit, :reset, :hidden, :checkbox, :radio , select[name="inputCandidateGrade"]').val('').prop('checked', false).prop('selected', false);
+
+            if($inputCandidateGrade !== "" && $inputCandidateGrade !== "ZirDiplom" && $inputCandidateGrade !== "Diplom") {
                 $($parentDom + '.CandidateLevelType').css('display' , 'block');
                 $($parentDom + '.CandidateUniversityName').css('display' , 'block');
                 $($parentDom + '.CandidateDepartment').css('display' , 'block');
@@ -159,19 +160,19 @@
                 $($parentDom + '.Radio-Buttons').css('display' , 'none');
             }
 
-            if($inputCandidateGrade !== "1" && $inputCandidateGrade !== "2" && $inputCandidateGrade !== "3" && $inputCandidateGrade !== "4" && $inputCandidateGrade !== "5") {
-                $($parentDom + '#GradeNotify').css('display' , 'none');
+            if($inputCandidateGrade !== "" && $inputCandidateGrade !== "ZirDiplom" && $inputCandidateGrade !== "Diplom" && $inputCandidateGrade !== "Kardani" && $inputCandidateGrade !== "Karshenasi") {
+                $($parentDom + '.GradeNotify').css('display' , 'none');
             }
             else{
-                $($parentDom + '#GradeNotify').css('display' , 'block');
+                $($parentDom + '.GradeNotify').css('display' , 'block');
             }
 
-            if($inputCandidateGrade === "10" || $inputCandidateGrade === "11") {
+            if($inputCandidateGrade === "Hozeh1" || $inputCandidateGrade === "Hozeh2") {
 
-                $($parentDom + '#GradeNotify').css('display' , 'block');
+                $($parentDom + '.GradeNotify').css('display' , 'block');
             }
             else{
-                $($parentDom + '#GradeNotify').removeAttr('display' , 'none');
+                $($parentDom + '.GradeNotify').removeAttr('display' , 'none');
             }
             if($inputCandidateUniversityLevelType === "SeminaryLevelType") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
@@ -181,8 +182,7 @@
                 $($parentDom + '.CandidateDepartment').css('display' , 'block');
                 $($parentDom + '.CandidateMajor').css('display' , 'block');
             }
-            if($inputCandidateGrade === "1" || $inputCandidateGrade === "2" || $inputCandidateGrade === "3") {
-
+            if($inputCandidateGrade === "" || $inputCandidateGrade === "ZirDiplom" || $inputCandidateGrade === "Diplom") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
@@ -191,7 +191,7 @@
                 $($parentDom + '.CandidateMajor').css('display' , 'block');
 
             }
-            if($inputCandidateGrade === "3") {
+            if($inputCandidateGrade === "Diplom") {
                 $($parentDom + '.CandidateLevelType').css('display' , 'none');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'block');
             }
@@ -199,25 +199,28 @@
                 $($parentDom + '.CandidateLevelType').css('display' , 'block');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'none');
             }
-            if($inputCandidateGrade === "1" || $inputCandidateGrade === "2" ) {
+
+            if($inputCandidateGrade == 'ZirDiplom' ) {
                 $($parentDom + '.CandidateLevelType').css('display' , 'none');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'none');
+                $($parentDom + '.CandidateDepartment').css('display' , 'none');
+                $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
-            if($inputCandidateGrade === "10" || $inputCandidateGrade === "11" || $inputCandidateGrade === "12" || $inputCandidateGrade === "13") {
-                $($parentDom + '[name="inputCandidateUniversityLevelType"]').attr('disabled' , 'disabled').val('SeminaryLevelType');
+
+
+            if($inputCandidateGrade === "Hozeh1" || $inputCandidateGrade === "Hozeh2" || $inputCandidateGrade === "Hozeh3" || $inputCandidateGrade === "Hozeh4") {
+                $($parentDom + '[name="inputCandidateUniversityLevelType"]').attr('readonly' , 'readonly').val('SeminaryLevelType');
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
             else{
-                $($parentDom + '[name="inputCandidateUniversityLevelType"]').removeAttr('disabled');
+                $($parentDom + '[name="inputCandidateUniversityLevelType"]').removeAttr('readonly');
             }
-
         });
         $(document).on('change', '[name="inputCandidateUniversityLevelType"]', function () {
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateUniversityLevelType = $(this).val();
-
             if($inputCandidateUniversityLevelType === "SeminaryLevelType") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
@@ -238,52 +241,61 @@
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateDepartment = $(this).val();
-
             if($inputCandidateDepartment === "VeterinaryMedicineDepartment"){
                 fillMajorDropDown($parentDom , $VeterinaryMedicineDepartment);
             }
-            if($inputCandidateDepartment === "foreignlanguagesDepartment"){
+            if($inputCandidateDepartment === "ForeignLanguagesDepartment"){
                 fillMajorDropDown($parentDom , $foreignlanguages);
             }
-
             if($inputCandidateDepartment === "HumanitiesDepartment"){
                 fillMajorDropDown($parentDom , $HumanitiesDepartment);
             }
-
             if($inputCandidateDepartment === "ScienceDepartment"){
                 fillMajorDropDown($parentDom , $ScienceDepartment);
             }
-
             if($inputCandidateDepartment === "TechnicalEngineeringDepartment"){
                 fillMajorDropDown($parentDom , $TechnicalEngineeringDepartment);
             }
-
             if($inputCandidateDepartment === "ArtDepartment"){
                 fillMajorDropDown($parentDom , $ArtDepartment);
             }
-
-            if($inputCandidateDepartment === "medicalDepartment"){
+            if($inputCandidateDepartment === "MedicalDepartment"){
                 fillMajorDropDown($parentDom , $medicalDepartment);
             }
-
             if($inputCandidateDepartment === "AgricultureNaturalResourcesDepartment"){
                 fillMajorDropDown($parentDom , $AgricultureNaturalResourcesDepartment);
             }
         });
         $(document).on('change', '[name="inputCandidateSchoolMajor"]', function (){
-            $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
-            $parentDom = "#" + $parentId + " ";
-            $inputCandidateSchoolMajor = $(this).val();
-
-            $($parentDom + '.CandidateDepartment').css('display' , 'none');
-            $($parentDom + '.CandidateMajor').css('display' , 'none');
-
+           if($(this).val() !== '' && $(this).val() !== undefined){
+               $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
+               $parentDom = "#" + $parentId + " ";
+               $inputCandidateSchoolMajor = $(this).val();
+               $($parentDom + '.CandidateDepartment').css('display' , 'none');
+               $($parentDom + '.CandidateMajor').css('display' , 'none');
+           }
         });
+
+
+
+        $('[name="inputCandidateGrade"]').change();
+        setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
+        setTimeout(function(){$('[name="inputCandidateDepartment"]').change();} , 1000);
+        setTimeout(function(){$('[name="inputCandidateSchoolMajor"]').change();} , 1500);
+
         function fillMajorDropDown($id , data) {
-            $($parentDom + "[name='inputCandidateMajor']").html('');
+            $selectedMajor = $($id + "[name='inputCandidateDepartment']").data('selected-major');
+            $($id + "[name='inputCandidateMajor']").html('');
+            $tempOption = "<option selected value=''>-- انتخاب کنید --</option>";
+            $($id + "[name='inputCandidateMajor']").append($tempOption);
             for($i=0;$i<data.length;$i++){
-                $tempOption = "<option value='"+data[$i]['value']+"'> "+ data[$i]['name']+"</option>";
-                $($parentDom + "[name='inputCandidateMajor']").append($tempOption);
+                if($selectedMajor == data[$i]['value']){
+                    $tempOption = "<option selected value='"+data[$i]['value']+"'> "+ data[$i]['name']+"</option>";
+                }
+                else{
+                    $tempOption = "<option value='"+data[$i]['value']+"'> "+ data[$i]['name']+"</option>";
+                }
+                $($id + "[name='inputCandidateMajor']").append($tempOption);
             }
         }
         $(".add-form").click(function(){
@@ -295,26 +307,26 @@
             $form.find('input[type="radio"]').each(function(){
                 $id =  UUID();
                 $(this).attr('id' , $id);
-                $(this).attr('name' , $radioButtonNameUUID);
-                $(this).next('label').attr('for' , $id)
+                $(this).attr('name' , "Study-Status-"+$radioButtonNameUUID);
+                $(this).next('label').attr('for' , $id);
             });
             $(".skill-divider").after($form);
+            $(".skill-divider").next("div.list-group-item").find('input[type="radio"]').eq(0).prop("checked", true);
         });
-        if($("#form").find('li').length == 0 ){
+        if($("#form").find('div.list-group-item').length == 0 ){
             $(".add-form").click();
         }
         $(document).on('click','.remove-form',function(){
             $(this).parent().remove();
         });
-
-
         $("#updateProfileAcademicBackground").click(function () {
+
             if($("#form").serializeArray().length <=0){
                 notify('وارد کردن حداقل سابقه تحصیلی الزامی ست', 'yellow');
             }
             else{
                 $sendData = {
-                    inputAcademicBackground: $("#form").serializeArray()
+                    inputCandidateAcademicBackground: $("#form").serializeArray()
                 }
                 toggleLoader();
                 $.ajax({

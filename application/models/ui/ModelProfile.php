@@ -405,6 +405,54 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
+
+    public function getCandidateAcademicBackgroundByCandidateId($id){
+        return
+            $this->db->select('*')
+                ->from('candidate_academic_background')
+                ->where('CandidateId' , $id)
+                ->get()
+                ->result_array();
+    }
+    public function candidateUpdateAcademicBackground($inputs)
+    {
+        $this->db->trans_start();
+        $this->db->delete('candidate_academic_background', array(
+            'CandidateId' => $inputs['inputCandidateId']
+        ));
+        for($i=0;$i < count($inputs['inputCandidateAcademicBackground']);){
+            $UserArray = array(
+                'CandidateId' => $inputs['inputCandidateId'],
+                'CandidateGrade' => $inputs['inputCandidateAcademicBackground'][$i]['value'],
+                'CandidateUniversityLevelType' => $inputs['inputCandidateAcademicBackground'][$i+1]['value'],
+                'CandidateSchoolMajor' => $inputs['inputCandidateAcademicBackground'][$i+2]['value'],
+                'CandidateUniversityName' => $inputs['inputCandidateAcademicBackground'][$i+3]['value'],
+                'CandidateDepartment' => $inputs['inputCandidateAcademicBackground'][$i+4]['value'],
+                'CandidateMajor' => $inputs['inputCandidateAcademicBackground'][$i+5]['value'],
+                'CandidateStudyStatus' => $inputs['inputCandidateAcademicBackground'][$i+6]['value'],
+            );
+            $this->db->insert('candidate_academic_background', $UserArray);
+            $i = $i +7;
+        }
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "بروزرسانی سوابق تحصیلی با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "بروزرسانی سوابق تحصیلی با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
 }
 
 ?>
