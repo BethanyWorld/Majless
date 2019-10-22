@@ -445,12 +445,20 @@ class Profile extends CI_Controller{
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+        $data['userInfo']['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index', $data);
         $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_css');
         $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
+    }
+    public function candidateUpdateSocialCulturalBackground(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $result = $this->ModelProfile->candidateUpdateSocialCulturalBackground($inputs);
+        echo json_encode($result);
     }
     /* get out of panel - session destroyed */
     public function logOut()

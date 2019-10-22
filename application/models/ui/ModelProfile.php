@@ -453,6 +453,61 @@ class ModelProfile extends CI_Model{
         }
     }
 
+
+
+    public function getCandidateSocialCulturalBackgroundByCandidateId($id){
+        return
+            $this->db->select('*')
+                ->from('candidate_social_record')
+                ->where('CandidateId' , $id)
+                ->get()
+                ->result_array();
+    }
+    public function candidateUpdateSocialCulturalBackground($inputs)
+    {
+        $this->db->trans_start();
+        $this->db->delete('candidate_social_record', array(
+            'CandidateId' => $inputs['inputCandidateId']
+        ));
+        for($i=0;$i < count($inputs['inputSocialCulturalBackground']);){
+            $UserArray = array(
+                'CandidateId' => $inputs['inputCandidateId'],
+                'CandidateActivityFieldType' => $inputs['inputSocialCulturalBackground'][$i]['value'],
+                'CandidateActivityFieldOtherTypeTitle' => $inputs['inputSocialCulturalBackground'][$i+1]['value'],
+                'CandidateOrganizationName' => $inputs['inputSocialCulturalBackground'][$i+2]['value'],
+                'CandidateMemberShipType' => $inputs['inputSocialCulturalBackground'][$i+3]['value'],
+                'CandidateMemberShipDescription' => $inputs['inputSocialCulturalBackground'][$i+4]['value'],
+                'CandidateBasijType' => $inputs['inputSocialCulturalBackground'][$i+5]['value'],
+                'CandidateBasijTypeOtherTitle' => $inputs['inputSocialCulturalBackground'][$i+6]['value'],
+                'CandidateMobilMembershipType' => $inputs['inputSocialCulturalBackground'][$i+7]['value'],
+                'CandidateBasijAreaTitle' => $inputs['inputSocialCulturalBackground'][$i+8]['value'],
+                'CandidateActivityStartMonth' => $inputs['inputSocialCulturalBackground'][$i+9]['value'],
+                'CandidateActivityStartYear' => $inputs['inputSocialCulturalBackground'][$i+10]['value'],
+                'CandidateActivityEndMonth' => $inputs['inputSocialCulturalBackground'][$i+11]['value'],
+                'CandidateActivityEndYear' => $inputs['inputSocialCulturalBackground'][$i+12]['value'],
+            );
+            $this->db->insert('candidate_social_record', $UserArray);
+            $i = $i +13;
+        }
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "بروزرسانی سوابق فرهنگی اجتماعی با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "بروزرسانی سوابق فرهنگی اجتماعی با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
+
 }
 
 ?>

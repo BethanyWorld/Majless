@@ -563,29 +563,32 @@
     .margin-b-35{
         margin-bottom: 35px;
     }
-    .div-except-mobilization{
-        display: none;
-        padding: 0px;
-    }
-    .div-for-mobilization{
+    .Collectionname{
         display: none;
     }
-    .div-for-others{
+    .inputmembershiptype{
+        display: none;
+    }
+    .Description{
+        display: none;
+    }
+    .culture-date{
+        display: none;
+    }
+    .inputCandidateBasijType{
         display: none;
     }
     .other-mobilization{
         display: none;
     }
-    /*.Collectionname{*/
-    /*    display: none;*/
-    /*}*/
-    /*.inputmembershiptype{*/
-    /*    display: none;*/
-    /*}*/
-    /*.Description{*/
-    /*    display: none;*/
-    /*}*/
-    /*.culture-date{*/
-    /*    display: none;*/
-    /*}*/
+    .domain-name
+    {
+        display: none;
+    }
+    .other-title{
+        display: none;
+    }
+    .inputCandidateMobilMembershipType{
+        display: none;
+    }
 </style>

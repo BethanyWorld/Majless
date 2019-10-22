@@ -1,89 +1,98 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document).on('change', '#inputCandidateBornStateId', function () {
-            toggleLoader();
-            $inputCandidateStateId = $(this).val();
-            $sendData = {'inputStateId': $inputCandidateStateId}
-            $.ajax({
-                type: 'post',
-                url: base_url + 'Profile/getCitiesByStateId',
-                data: $sendData,
-                success: function (data) {
-                    toggleLoader();
-                    $result = JSON.parse(data);
-                    $("#inputCandidateBornCityId").html('');
-                    $.each($result, function (index, item) {
-                        var selectInnerHtml = $('<option />',
-                            {
-                                "class": "",
-                                "value": item['CityId'],
-                                "text": item['CityName']
-
-                            });
-                        $('#inputCandidateBornCityId').append(selectInnerHtml);
-
-                    });
-                },
-                error: function (data) {
-                    toggleLoader();
-                    notify('درخواست با خطا مواجه شد', 'red');
-                }
-            });
-        });
-
         $(document).on('change', '[name="inputCandidateActivityFieldType"]', function () {
-            debugger;
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputfieldofactivity = $(this).val();
 
             if ($inputfieldofactivity !== "Mobilization" && $inputfieldofactivity !== "Others") {
-                $($parentDom + '.div-except-mobilization').css('display', 'block');
-                $($parentDom + '.div-for-mobilization').css('display', 'none');
-                $($parentDom + '.div-for-others').css('display', 'none');
+                $($parentDom + '.Collectionname').css('display', 'block');
+                $($parentDom + '.inputmembershiptype').css('display', 'block');
+                $($parentDom + '.Description').css('display', 'block');
+                $($parentDom + '.culture-date').css('display', 'block');
+
+                $($parentDom + '.inputCandidateMobilMembershipType').css('display', 'none');
+                $($parentDom + '.inputCandidateBasijType').css('display', 'none');
+                $($parentDom + '.domain-name').css('display', 'none');
+                $($parentDom + '.other-title').css('display', 'none');
+                $($parentDom + '.other-mobilization').css('display', 'none');
+
             }
+
             if ($inputfieldofactivity === "Mobilization") {
-                $($parentDom + '.div-for-mobilization').css('display', 'block');
-                $($parentDom + '.div-except-mobilization').css('display', 'none');
-                $($parentDom + '.div-for-others').css('display', 'none');
+                $($parentDom + '.inputCandidateMobilMembershipType').css('display', 'block');
+                $($parentDom + '.inputCandidateBasijType').css('display', 'block');
+                $($parentDom + '.domain-name').css('display', 'block');
+                $($parentDom + '.culture-date').css('display', 'block');
+
+
+                $($parentDom + '.Collectionname').css('display', 'none');
+                $($parentDom + '.Description').css('display', 'none');
+                $($parentDom + '.inputmembershiptype').css('display', 'none');
+                $($parentDom + '.other-title').css('display', 'none');
+
+
+
             }
             if ($inputfieldofactivity === "Others") {
-                $($parentDom + '.div-for-others').css('display', 'block');
-                $($parentDom + '.div-for-mobilization').css('display', 'none');
-                $($parentDom + '.div-except-mobilization').css('display', 'none');
+                $($parentDom + '.other-title').css('display', 'block');
+                $($parentDom + '.Collectionname').css('display', 'block');
+                $($parentDom + '.inputmembershiptype').css('display', 'block');
+                $($parentDom + '.Description').css('display', 'block');
+                $($parentDom + '.culture-date').css('display', 'block');
+
+                $($parentDom + '.inputCandidateBasijType').css('display', 'none');
+                $($parentDom + '.domain-name').css('display', 'none');
+                $($parentDom + '.inputCandidateMobilMembershipType').css('display', 'none');
 
             }
         });
-
         $(document).on('change', '[name="inputCandidateBasijType"]', function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputThetypeofmobilization = $(this).val();
-            if ($inputThetypeofmobilization === "Others") {
+            $inputCandidateActivityFieldType = $($parentDom + "[name='inputCandidateActivityFieldType']").val();
+            if ($inputThetypeofmobilization === "Others" && $inputCandidateActivityFieldType === "Mobilization") {
                 $($parentDom + '.other-mobilization').css('display', 'block');
-            }
-            else{
+            } else {
                 $($parentDom + '.other-mobilization').css('display', 'none');
             }
         });
-
         $(".add-form").click(function () {
             $form = $("#unique-form").clone().removeClass('hidden').attr('id', UUID());
             $form.find('[data-name]').each(function () {
                 $(this).attr('name', $(this).data('name'))
-            });
-            $radioButtonNameUUID = UUID();
-            $form.find('input[type="radio"]').each(function () {
-                $id = UUID();
-                $(this).attr('id', $id);
-                $(this).attr('name', $radioButtonNameUUID);
-                $(this).next('label').attr('for', $id)
             });
             $(".skill-divider").after($form);
         });
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });
-    });
 
+        $("#form [name='inputCandidateActivityFieldType']").change();
+        setTimeout(function(){
+            $("#form [name='inputCandidateBasijType']").change();
+        } , 500);
+
+        $("#buttonUpdateSocialCaltural").click(function () {
+            if($("#form").serializeArray().length <=0){
+                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            }
+            else{
+                $sendData = { inputSocialCulturalBackground : $("#form").serializeArray() }
+                toggleLoader();
+                $.ajax({
+                    type: 'post',
+                    url: base_url + 'Profile/candidateUpdateSocialCulturalBackground',
+                    data: $sendData,
+                    success: function (data) {
+                        toggleLoader();
+                        $result = JSON.parse(data);
+                        notify($result['content'], $result['type']);
+                    }
+                });
+            }
+        });
+
+    });
 </script>
