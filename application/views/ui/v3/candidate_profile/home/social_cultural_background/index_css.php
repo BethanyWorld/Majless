@@ -487,7 +487,7 @@
     }
     .ul-background-color-hr {
         margin: 0px auto;
-        padding: 20px;
+        padding: 20px !important;
         box-shadow: none;
     }
     .list-group-item:last-child {
@@ -514,32 +514,6 @@
         padding-top: 20px;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .ttt label{
-        margin-top: 25px;
-    }
    .ttt input {
         margin: 0px 0px;
         width: 100%;
@@ -552,8 +526,8 @@
         transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
         background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #022D6D 4%);
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #022D6D 4%);
-        background-position: -200px 0;
-        background-size: 300px 100%;
+        background-position: -350px 0;
+        background-size: 350px 100%;
         background-repeat: no-repeat;
         color: #0e6252;
        box-shadow: none !important;
@@ -579,4 +553,39 @@
         transform: translateY(-15px);
         visibility: visible !important;
     }
+
+    .margin-b-20{
+        margin-bottom: 20px;
+    }
+    .margin-b-30{
+        margin-bottom: 30px;
+    }
+    .margin-b-35{
+        margin-bottom: 35px;
+    }
+    .div-except-mobilization{
+        display: none;
+        padding: 0px;
+    }
+    .div-for-mobilization{
+        display: none;
+    }
+    .div-for-others{
+        display: none;
+    }
+    .other-mobilization{
+        display: none;
+    }
+    /*.Collectionname{*/
+    /*    display: none;*/
+    /*}*/
+    /*.inputmembershiptype{*/
+    /*    display: none;*/
+    /*}*/
+    /*.Description{*/
+    /*    display: none;*/
+    /*}*/
+    /*.culture-date{*/
+    /*    display: none;*/
+    /*}*/
 </style>
