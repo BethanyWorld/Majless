@@ -99,7 +99,15 @@ $config['EnumResumeProfile'] = array(
     'Gender' => array('Male' => 'آقا', 'Female' => 'خانم'),
     'MaritalStatus' => array('Married' => 'متاهل', 'Single' => 'مجرد'),
     'Months' => array('Married' => 'متاهل', 'Single' => 'مجرد'),
-    'Religion' => array('Undefined' => 'نامشخص', 'IslamShia' => 'اسلام-شیعه', 'IslamSoni' => 'اسلام-سنی', 'Cristian' => 'مسیحی', 'Jush' => 'یهودی', 'Zartosht' => 'زرتشت', 'Other' => 'سایر'),
+    'Religion' => array(
+        'Undefined' => 'نامشخص',
+        'IslamShia' => 'اسلام-شیعه',
+        'IslamSoni' => 'اسلام-سنی',
+        'Cristian' => 'مسیحی',
+        'Jush' => 'یهودی',
+        'Zartosht' => 'زرتشت',
+        'Other' => 'سایر'
+    ),
     'SkillLevel' => array(
         'Beginner' => 'مبتدی',
         'SemiProfessional' => 'نیمه حرفه ای',
@@ -141,6 +149,56 @@ $config['EnumResumeProfile'] = array(
         'PrintArticle' => 'چاپ مقاله',
         'AbstractPrinting' => 'چاپ چکیده',
     ),
+    /* For Candidate Academic Background */
+    'AcademicStudyStatus' => array(
+        'Student' => 'دانشجو',
+        'Graduated' => 'فارغ التحصیل'
+    ),
+    'CandidateGrade' => array(
+        'ZirDiplom' => 'زیر دیپلم',
+        'Diplom' => 'دیپلم',
+        'Kardani' => 'کاردانی',
+        'Karshenasi' => 'کارشناسی',
+        'KarshenasiArshad' => 'کارشناسی ارشد',
+        'DoctoryHerfei' => 'دکترای حرفه ای',
+        'DoctoryTakhasosi' => 'دکترای تخصصی',
+        'FogDoctory' => 'فوق دکتری',
+        'Hozeh1' => 'حوزه سطح یک',
+        'Hozeh2' => 'حوزه سطح دو',
+        'Hozeh3' => 'حوزه سطح سه',
+        'Hozeh4' => 'حوزه سطح چهار',
+    ),
+    'CandidateUniversityLevelType' => array(
+        'PayamNooruniversityLevelType' => ' پیام نور',
+        'SeminaryLevelType' => ' حوزه علمیه ',
+        'AbroadLevelType' => ' خارج از کشور ',
+        'AzadUniversityLevelType' => ' دانشگاه آزاد ',
+        'GovernmentdailyLevelType' => ' دولتی - روزانه',
+        'GovernmentnightLevelType' => ' دولتی - شبانه',
+        'VirtualgovernmentLevelType' => 'دولتی - مجازی',
+        'GovernmentCampus' => ' دولتی - پردیس خودگردان ',
+        'AppliedScienceLevelType' => ' علمی کاربردی ',
+        'profitLevelType' => ' غیر انتفاعی ',
+        'Others' => 'سایر'
+    ),
+    'CandidateSchoolMajor' => array(
+        'Ensani' => 'انسانی',
+        'Tajrobi' => 'تجربی',
+        'Riazi' => 'تجربی',
+        'Fani' => 'فنی',
+        'Maref' => 'معارف اسلامی',
+        'Kardanesh' => 'کارودانش',
+    ),
+    'CandidateDepartment' => array(
+        'VeterinaryMedicineDepartment' => 'دامپزشکی',
+        'ForeignLanguagesDepartment' => ' زبان های خارجی',
+        'HumanitiesDepartment' => 'علوم انسانی ',
+        'ScienceDepartment' => ' علوم پایه ',
+        'TechnicalEngineeringDepartment' => ' فنی مهندسی ',
+        'ArtDepartment' => 'هنر',
+        'MedicalDepartment' => 'پزشکی',
+        'AgricultureNaturalResourcesDepartment' => 'کشاورزی و منابع طبیعی',
+    )
 );
 /* استان پیش فرض تهران است */
 $config['defaultStateId'] = 8;

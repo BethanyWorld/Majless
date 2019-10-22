@@ -277,7 +277,7 @@
         });
 
 
-
+        /* Add By ME */
         $('[name="inputCandidateGrade"]').change();
         setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
         setTimeout(function(){$('[name="inputCandidateDepartment"]').change();} , 1000);
