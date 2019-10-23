@@ -87,7 +87,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateBasijType">
                                                             <div class="col-md-12 col-xs-12">
                                                                 <label for="inputCandidateBasijType">نوع بسیج :</label>
-                                                                <select class="form-control form-control-lg" data-name="inputCandidateBasijType">
+                                                                <select class="form-control form-control-lg" name="inputCandidateBasijType">
                                                                     <option value="" selected>--انتخاب کنید--</option>
                                                                     <?php foreach ($EnumResumeProfile['CandidateBasijType'] as $key => $value) { ?>
                                                                         <option
@@ -135,10 +135,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <label for="inputCandidateStartJobMonth">آغاز همکاری</label>
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                            <select
-                                                                                    class="form-control form-control-lg city-select"
-                                                                                    name="inputCandidateStartJobMonth"
-                                                                                    id="inputCandidateStartJobMonth">
+                                                                            <select class="form-control form-control-lg city-select" name="inputCandidateActivityStartMonth" id="inputCandidateActivityStartMonth">
                                                                                 <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
                                                                                     <option <?php setOptionSelected($item['CandidateActivityStartMonth'], $key); ?>
                                                                                             value="<?php echo $key; ?>">
@@ -148,10 +145,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                            <select
-                                                                                    class="form-control form-control-lg city-select"
-                                                                                    name="inputCandidateStartJobYear"
-                                                                                    id="inputCandidateStartJobYear">
+                                                                            <select class="form-control form-control-lg city-select" name="inputCandidateActivityStartYear" id="inputCandidateActivityStartYear">
                                                                                 <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                                     <option <?php setOptionSelected($item['CandidateActivityStartYear'], $i); ?>
                                                                                             value="<?php echo $i; ?>">
@@ -169,7 +163,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <select class="form-control form-control-lg city-select"
-                                                                                    name="inputCandidateEndJobMonth" id="inputCandidateEndJobMonth">
+                                                                                    name="inputCandidateActivityEndMonth" id="inputCandidateActivityEndMonth">
                                                                                 <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
                                                                                     <option <?php setOptionSelected($item['CandidateActivityEndMonth'], $key); ?>
                                                                                             value="<?php echo $key; ?>">
@@ -179,9 +173,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                            <select class="form-control form-control-lg city-select"
-                                                                                    name="inputCandidateEndJobYear"
-                                                                                    id="inputCandidateEndJobYear">
+                                                                            <select class="form-control form-control-lg city-select" name="inputCandidateActivityEndYear" id="inputCandidateActivityEndYear">
                                                                                 <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                                     <option <?php setOptionSelected($item['CandidateActivityEndYear'], $i); ?>
                                                                                             value="<?php echo $i; ?>">
@@ -298,9 +290,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <label for="inputCandidateStartJobMonth">آغاز همکاری</label>
                                                                 <div class="row">
                                                                     <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                        <select class="form-control form-control-lg city-select"
-                                                                                name="inputCandidateStartJobMonth"
-                                                                                id="inputCandidateStartJobMonth">
+                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateActivityStartMonth" id="inputCandidateActivityStartMonth">
                                                                             <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
                                                                                 <option value="<?php echo $key; ?>">
                                                                                     <?php echo $value; ?>
@@ -309,7 +299,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         </select>
                                                                     </div>
                                                                     <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateStartJobYear" id="inputCandidateStartJobYear">
+                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateActivityStartYear" id="inputCandidateActivityStartYear">
                                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                                 <option value="<?php echo $i; ?>">
                                                                                     <?php echo $i; ?>
@@ -325,7 +315,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </label>
                                                                 <div class="row">
                                                                     <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateEndJobMonth" id="inputCandidateEndJobMonth">
+                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateActivityEndMonth" id="inputCandidateActivityEndMonth">
                                                                             <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
                                                                                 <option value="<?php echo $key; ?>">
                                                                                     <?php echo $value; ?>
@@ -334,7 +324,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         </select>
                                                                     </div>
                                                                     <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateEndJobYear" id="inputCandidateEndJobYear">
+                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateActivityEndYear" id="inputCandidateActivityEndYear">
                                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                                 <option value="<?php echo $i; ?>">
                                                                                     <?php echo $i; ?>
@@ -359,9 +349,21 @@ $_DIR = base_url('assets/ui/v3/');
             <div class="LeftPaneAction">
                 <div class="row form-group">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <button class="btn btn-block btn-lg waves-effect CommonButtons" id="buttonUpdateSocialCaltural">
+                        <button class="btn btn-block btn-lg waves-effect CommonButtons" id="buttonUpdateSocialCalturalAndRedirect">
                             ثبت و ادامه
                         </button>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <button class="btn btn-block btn-lg waves-effect CommonButtons" id="buttonUpdateSocialCaltural">
+                            ثبت
+                        </button>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 prev-step">
+                        <a href="<?php echo base_url('Profile/jobHistory'); ?>">
+                            <button class="btn btn-block btn-lg waves-effect CommonButtons prev-step">
+                                مرحله قبل
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

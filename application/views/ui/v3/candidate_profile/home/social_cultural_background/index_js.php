@@ -74,7 +74,9 @@
             $("#form [name='inputCandidateBasijType']").change();
         } , 500);
 
-        $("#buttonUpdateSocialCaltural").click(function () {
+        $("#buttonUpdateSocialCaltural").click( {redirect: false}, updateProfileSocialCaltural);
+        $("#buttonUpdateSocialCalturalAndRedirect").click( {redirect: true}, updateProfileSocialCaltural);
+        function updateProfileSocialCaltural(param) {
             if($("#form").serializeArray().length <=0){
                 notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
             }
@@ -89,10 +91,12 @@
                         toggleLoader();
                         $result = JSON.parse(data);
                         notify($result['content'], $result['type']);
+                        if(param.data.redirect){
+                            window.location.href =  base_url+'Profile/politicBackground';
+                        }
                     }
                 });
             }
-        });
-
+        }
     });
 </script>

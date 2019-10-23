@@ -281,41 +281,128 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function skills(){
+    public function academicBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
-
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
-        $data['userInfo']['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($data['userInfo']['CandidateId']);
-
+        $data['userInfo']['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/skills/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/skills/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/skills/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/academic_background/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/academic_background/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/academic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateSkills(){
+    public function candidateUpdateAcademicBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
-        /*$inputs = array_map(function ($v) {
-            return strip_tags($v);
-        }, $inputs);
-        $inputs = array_map(function ($v) {
-            return remove_invisible_characters($v);
-        }, $inputs);
-        $inputs = array_map(function ($v) {
-            return makeSafeInput($v);
-        }, $inputs);*/
-        $result = $this->ModelProfile->candidateUpdateSkills($inputs);
+        $result = $this->ModelProfile->candidateUpdateAcademicBackground($inputs);
         echo json_encode($result);
     }
+
+    public function militaryStatus(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'رزومه';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/home/military_status/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/military_status/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/military_status/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function candidateUpdateMilitaryStatus(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $result = $this->ModelProfile->candidateUpdateMilitaryStatus($inputs);
+        echo json_encode($result);
+    }
+
+    public function jobHistory(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'رزومه';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+        $data['userInfo']['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($data['userInfo']['CandidateId']);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/home/job_history/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/job_history/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/job_history/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function candidateUpdateJobHistory(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $result = $this->ModelProfile->candidateUpdateJobHistory($inputs);
+        echo json_encode($result);
+    }
+
+    public function socialCulturalBackground(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'رزومه';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+        $data['userInfo']['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($data['userInfo']['CandidateId']);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function candidateUpdateSocialCulturalBackground(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $result = $this->ModelProfile->candidateUpdateSocialCulturalBackground($inputs);
+        echo json_encode($result);
+    }
+
+    public function politicBackground(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'رزومه';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/home/politic_background/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/politic_background/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/politic_background/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    /*public function candidateUpdatePoliticBackground(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $result = $this->ModelProfile->candidateUpdateSocialCulturalBackground($inputs);
+        echo json_encode($result);
+    }*/
 
     public function scienceBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -386,78 +473,39 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function jobHistory(){
+    public function skills(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
-        $data['userInfo']['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($data['userInfo']['CandidateId']);
+        $data['userInfo']['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($data['userInfo']['CandidateId']);
+
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/job_history/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/job_history/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/job_history/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/skills/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/skills/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/skills/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateJobHistory(){
+    public function candidateUpdateSkills(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
-        $result = $this->ModelProfile->candidateUpdateJobHistory($inputs);
-        echo json_encode($result);
-    }
-
-    public function academicBackground(){
-        $loginInfo = $this->session->userdata('UserLoginInfo');
-        $data['title'] = 'رزومه';
-        $data['noImg'] = $this->config->item('defaultImage');
-        $data['gifLoader'] = $this->config->item('gifLoader');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
-        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
-        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
-        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
-        $data['userInfo']['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($data['userInfo']['CandidateId']);
-
-        $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/academic_background/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/academic_background/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/academic_background/index_js', $data);
-        $this->load->view('ui/v3/static/footer');
-    }
-    public function candidateUpdateAcademicBackground(){
-        $loginInfo = $this->session->userdata('UserLoginInfo');
-        $inputs = $this->input->post(NULL, TRUE);
-        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
-        $result = $this->ModelProfile->candidateUpdateAcademicBackground($inputs);
-        echo json_encode($result);
-    }
-
-    public function socialCulturalBackground(){
-        $loginInfo = $this->session->userdata('UserLoginInfo');
-        $data['title'] = 'رزومه';
-        $data['noImg'] = $this->config->item('defaultImage');
-        $data['gifLoader'] = $this->config->item('gifLoader');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
-        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
-        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
-        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
-        $data['userInfo']['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($data['userInfo']['CandidateId']);
-
-        $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_js', $data);
-        $this->load->view('ui/v3/static/footer');
-    }
-    public function candidateUpdateSocialCulturalBackground(){
-        $loginInfo = $this->session->userdata('UserLoginInfo');
-        $inputs = $this->input->post(NULL, TRUE);
-        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
-        $result = $this->ModelProfile->candidateUpdateSocialCulturalBackground($inputs);
+        /*$inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);*/
+        $result = $this->ModelProfile->candidateUpdateSkills($inputs);
         echo json_encode($result);
     }
     /* get out of panel - session destroyed */

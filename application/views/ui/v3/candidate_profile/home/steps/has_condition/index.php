@@ -8,7 +8,7 @@
     <i class="fa fa-info fa-3x pull-right"></i>
     <strong>
         برای احراز نمره لازم در ارزیابی رزومه حتما نسبت به
-        <a target="_blank" href="http://new.moarefin.ir">
+        <a  href="<?php echo base_url('Profile/resume'); ?>">
             تکمیل اطلاعات رزومه
         </a>
         خود اقدام نمایید.

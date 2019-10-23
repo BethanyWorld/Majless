@@ -198,7 +198,39 @@ $config['EnumResumeProfile'] = array(
         'ArtDepartment' => 'هنر',
         'MedicalDepartment' => 'پزشکی',
         'AgricultureNaturalResourcesDepartment' => 'کشاورزی و منابع طبیعی',
-    )
+    ),
+
+    /* Social Caltural Enums */
+    'CandidateActivityFieldType' => array(
+        'Charity' => 'انجمن خیریه',
+        'Mobilization' => 'بسیج',
+        'University' => 'دانشگاه',
+        'Semen' => 'سمن',
+        'Councils' => 'شورایاری',
+        'CulturalCenter' => 'فرهنگسرا',
+        'JihadistActivities' => 'فعالیت های جهادی',
+        'Schools' => 'مدارس',
+        'TheMosque' => 'مسجد',
+        'RedCrescent' => 'هلال احمر',
+        'ReligiousCommittees' => 'هئیت های مذهبی',
+        'Others' => 'سایر'
+    ),
+    'CandidateMemberShipType' => array(
+        'Official' => 'رسمی',
+        'Voluntary' => 'داوطلبانه'
+    ),
+    'CandidateBasijType' => array(
+        'Urban' => 'شهری',
+        'schools' => 'مدارس',
+        'University' => 'دانشگاه',
+        'Others' => 'سایر'
+    ),
+    'CandidateMobilMembershipType' => array(
+        'Normal' => 'عادی',
+        'Active' => 'فعال',
+        'Kadr' => 'کادر',
+        'Others' => 'سایر'
+    ),
 );
 /* استان پیش فرض تهران است */
 $config['defaultStateId'] = 8;

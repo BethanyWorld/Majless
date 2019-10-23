@@ -173,6 +173,7 @@
                 $('#inputCandidateAddressCityPart').removeClass('InputNotAllow');
             }
         });
+        $("#inputCandidateReligion").change();
 
         function checkedCandidate() {
             $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
@@ -225,7 +226,9 @@
         }
         setInterval(checkedCandidate, 300);
 
-        $("#updateProfileInfo").click(function () {
+        $("#updateProfileInfo").click( {redirect: false}, updateProfile);
+        $("#updateProfileInfoAndRedirect").click( {redirect: true}, updateProfile);
+        function updateProfile(param){
             $inputCandidateProfileImage = $("#personInfoImageButtons").attr('src');
             $inputCandidateFirstName = $.trim($("#inputCandidateFirstName").val());
             $inputCandidateLastName = $.trim($("#inputCandidateLastName").val());
@@ -268,7 +271,7 @@
                 inputCandidateGender: $inputCandidateGender,
                 inputCandidateMaritalStatus: $inputCandidateMaritalStatus,
                 inputCandidateReligion: $inputCandidateReligion,
-                'inputCandidateBornStateId': $inputCandidateBornStateId,
+                inputCandidateBornStateId: $inputCandidateBornStateId,
                 inputCandidateBornCityId: $inputCandidateBornCityId,
                 inputCandidateFatherBornStateId: $inputCandidateFatherBornStateId,
                 inputCandidateFatherBornCityId: $inputCandidateFatherBornCityId,
@@ -296,8 +299,11 @@
                     toggleLoader();
                     $result = JSON.parse(data);
                     notify($result['content'], $result['type']);
+                    if(param.data.redirect){
+                        window.location.href =  base_url+'Profile/academicBackground';
+                    }
                 }
             });
-        });
+        }
     });
 </script>

@@ -56,15 +56,21 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="row col-xs-12 col-md-6">
+                <div class="row col-xs-12 col-md-5">
                     <button class="btn btn-danger btn-submit  pull-left" id="submitLoginForm">
                         ورود
                     </button>
                 </div>
-                <div class="row col-xs-12 col-md-6 pull-right">
+                <div class="row col-xs-12 col-md-7 pull-right">
                     <a class="d-i-b pull-right" href="<?php echo base_url('ResetPassword') ?>">
                         <strong style="line-height: 44px;">
-                            رمز عبور را فراموش کرده ام
+                            فراموشی رمز عبور
+                        </strong>
+                    </a>
+                    /
+                    <a class="d-i-b" href="<?php echo base_url('SignUp') ?>">
+                        <strong style="line-height: 44px;">
+                            ثبت نام کنید
                         </strong>
                     </a>
                 </div>

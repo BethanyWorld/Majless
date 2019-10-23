@@ -454,35 +454,35 @@
 <div class="col-md-3 col-xs-12 pull-right">
     <div class="col-xs-12 padding-0 visible-xs visible-sm">
         <div class="col-xs-12 padding-0 MobileStep">
-            <h3>اطلاعات فردی</h3>
             <ul class="col-xs-12">
-                <li class="text-center first">
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/resume'); ?>">1</a>
                 </li>
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/academicBackground'); ?>">2</a>
+                </li>
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/militaryStatus'); ?>">3</a>
+                </li>
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/jobHistory'); ?>">4</a>
+                </li>
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "socialCulturalBackground") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/socialCulturalBackground'); ?>">5</a>
+                </li>
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "politicBackground") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/politicBackground'); ?>">6</a>
+                </li>
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "scienceBackground") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/scienceBackground'); ?>">7</a>
+                </li>
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "skills") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/skills'); ?>">8</a>
+                </li>
                 <li class="text-center">
-                    <a href="<?php echo base_url('Profile/academicBackground'); ?>">
-                        2
+                    <a href="<?php echo base_url('Profile'); ?>">
+                        <i class="fa fa-refresh"></i>
                     </a>
-                </li>
-                <li class="text-center">
-                    <a class="" href="">3</a>
-                </li>
-                <li class="text-center">
-                    <a href="<?php echo base_url('Profile/jobHistory'); ?>">
-                        4
-                    </a>
-
-                </li>
-                <li class="text-center">
-                    <a href="<?php echo base_url('Profile/socialCulturalBackground'); ?>">
-                        5
-                    </a>
-                </li>
-                <li class="text-center">
-                    <a class="<?php echo base_url('Profile/scienceBackground'); ?>" href="">6</a>
-                </li>
-                <li class="text-center">
-                    <a class="<?php echo base_url('Profile/skills'); ?>" href="">7</a>
                 </li>
             </ul>
 
@@ -491,7 +491,7 @@
     <div class="col-md-12 padding-0 visible-lg visible-md">
         <div class="col-md-12 padding-0 RightPanel">
             <ul class="col-md-12 padding-0 RightPanelUl">
-                <li class="col-md-12 padding-0 active">
+                <li class="col-md-12 padding-0 <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/resume'); ?>">
                         <i class="zmdi RightpanelIcon">
                             <span class="fa fa-user"></span>
@@ -505,7 +505,7 @@
                     </a>
                 </li>
 
-                <li class="col-md-12 padding-0">
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/academicBackground'); ?>">
                         <i class="zmdi RightpanelIcon">
                             <span class="fa fa-book"></span>
@@ -519,7 +519,8 @@
                     </a>
                 </li>
 
-                <li class="col-md-12 padding-0">
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "active"; ?>">
+                    <a href="<?php echo base_url('Profile/militaryStatus'); ?>">
                     <i class="zmdi RightpanelIcon">
                         <span class="fa fa-flag"></span>
                     </i>
@@ -531,7 +532,7 @@
                     </div>
                 </li>
 
-                <li class="col-md-12 padding-0">
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/jobHistory'); ?>">
                         <i class="zmdi RightpanelIcon">
                             <span class="fa fa-cogs"></span>
@@ -545,10 +546,10 @@
                     </a>
                 </li>
 
-                <li class="col-md-12 padding-0">
-                        <a href="<?php echo base_url('Profile/socialCulturalBackground'); ?>">
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "socialCulturalBackground") !== false) echo "active"; ?>">
+                    <a href="<?php echo base_url('Profile/socialCulturalBackground'); ?>">
                             <i class="zmdi RightpanelIcon">
-                                <span class="fa fa-share-square-o"></span>
+                                <span class="fa fa-bookmark"></span>
                             </i>
                             <div class="RightPanelContent">
                                 <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
@@ -559,7 +560,8 @@
                         </a>
                 </li>
 
-                <li class="col-md-12 padding-0">
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "politicBackground") !== false) echo "active"; ?>">
+                    <a href="<?php echo base_url('Profile/politicBackground'); ?>">
                     <i class="zmdi RightpanelIcon">
                         <span class="fa fa-handshake-o"></span>
                     </i>
@@ -571,7 +573,7 @@
                     </div>
                 </li>
 
-                <li class="col-md-12 padding-0">
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "scienceBackground") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/scienceBackground'); ?>">
                         <i class="zmdi RightpanelIcon">
                             <span class="fa fa-flask"></span>
@@ -584,8 +586,7 @@
                         </div>
                     </a>
                 </li>
-
-                <li class="col-md-12 padding-0">
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "skills") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/skills'); ?>">
                         <i class="zmdi RightpanelIcon">
                             <span class="fa fa-outdent"></span>
@@ -598,8 +599,20 @@
                         </div>
                     </a>
                 </li>
+                <li class="col-md-12 padding-0">
+                    <a href="<?php echo base_url('Profile'); ?>">
+                        <i class="zmdi RightpanelIcon">
+                            <span class="fa fa-share-square-o"></span>
+                        </i>
+                        <div class="RightPanelContent">
+                            <div class="RightPanleTitle">بارگشت</div>
+                            <div class="RightPanelDescription">
+                                پیشخوان
+                            </div>
+                        </div>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
 </div>
-

@@ -46,7 +46,7 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
                             data-date="<?php echo $stateExam['ExamDate']; ?>"
                             data-time="<?php echo $stateExam['ExamTime']; ?>"
                             data-id="<?php echo $stateExam['ExamId']; ?>">
-                        رزور
+                        رزرو
                         <i class="fa fa-edit"></i>
                     </button>
                 <?php } ?>

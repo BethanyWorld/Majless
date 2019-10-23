@@ -387,7 +387,7 @@ class ModelCandidate extends CI_Model{
         if ($this->db->trans_status() === FALSE) {
             $arr = array(
                 'type' => "red",
-                'content' => "رزور آزمون با مشکل مواجه شد",
+                'content' => "رزرو آزمون با مشکل مواجه شد",
                 'success' => false
             );
             return $arr;
@@ -420,7 +420,7 @@ class ModelCandidate extends CI_Model{
             $messageBody .=  $examInfo['ExamTime'];
             $arr = array(
                 'type' => "green",
-                'content' => "رزور آزمون با موفقیت انجام شد",
+                'content' => "رزرو آزمون با موفقیت انجام شد",
                 'senderNumber' => $candidatePhone,
                 'messageBody' => $messageBody,
                 'success' => true

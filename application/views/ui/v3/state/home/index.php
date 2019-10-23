@@ -129,9 +129,8 @@
             <div class="list">
                 <ul>
                     <li class="province">
-                        <span>استانها</span>
+                        <span class="text-center">استانها</span>
                         <ul>
-                            <li data-province-id="8" style="width: 100%;text-align: center;" class="tehran"><a href="#tehran">تهران</a></li>
                             <li data-province-id="1" class="azerbaijan-east"><a href="#azerbaijan-east">آذربایجان شرقی</a></li>
                             <li data-province-id="2" class="azerbaijan-west"><a href="#azerbaijan-west">آذربایجان غربی</a></li>
                             <li data-province-id="3" class="ardabil"><a href="#ardabil">اردبیل</a></li>
@@ -139,6 +138,7 @@
                             <li data-province-id="5" class="alborz"><a href="#alborz">البرز</a></li>
                             <li data-province-id="6" class="ilam"><a href="#ilam">ایلام</a></li>
                             <li data-province-id="7" class="bushehr"><a href="#bushehr">بوشهر</a></li>
+                            <li data-province-id="8" class="tehran"><a href="#tehran">تهران</a></li>
                             <li data-province-id="9" class="chahar-mahaal-bakhtiari"><a href="#chahar-mahaal-bakhtiari">چهارمحال بختیاری</a></li>
                             <li data-province-id="10" class="khorasan-south"><a href="#khorasan-south">خراسان جنوبی</a></li>
                             <li data-province-id="11" class="khorasan-razavi"><a href="#khorasan-razavi">خراسان رضوی</a></li>

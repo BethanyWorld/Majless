@@ -174,6 +174,7 @@
             else{
                 $($parentDom + '.GradeNotify').removeAttr('display' , 'none');
             }
+
             if($inputCandidateUniversityLevelType === "SeminaryLevelType") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
@@ -182,6 +183,7 @@
                 $($parentDom + '.CandidateDepartment').css('display' , 'block');
                 $($parentDom + '.CandidateMajor').css('display' , 'block');
             }
+
             if($inputCandidateGrade === "" || $inputCandidateGrade === "ZirDiplom" || $inputCandidateGrade === "Diplom") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
@@ -191,6 +193,7 @@
                 $($parentDom + '.CandidateMajor').css('display' , 'block');
 
             }
+
             if($inputCandidateGrade === "Diplom") {
                 $($parentDom + '.CandidateLevelType').css('display' , 'none');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'block');
@@ -206,7 +209,6 @@
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
-
 
             if($inputCandidateGrade === "Hozeh1" || $inputCandidateGrade === "Hozeh2" || $inputCandidateGrade === "Hozeh3" || $inputCandidateGrade === "Hozeh4") {
                 $($parentDom + '[name="inputCandidateUniversityLevelType"]').attr('readonly' , 'readonly').val('SeminaryLevelType');
@@ -276,7 +278,6 @@
            }
         });
 
-
         /* Add By ME */
         $('[name="inputCandidateGrade"]').change();
         setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
@@ -319,15 +320,15 @@
         $(document).on('click','.remove-form',function(){
             $(this).parent().remove();
         });
-        $("#updateProfileAcademicBackground").click(function () {
 
+        $("#updateProfileAcademicBackground").click( {redirect: false}, updateProfile);
+        $("#updateProfileAcademicBackgroundAndRedirect").click( {redirect: true}, updateProfile);
+        function updateProfile(param){
             if($("#form").serializeArray().length <=0){
                 notify('وارد کردن حداقل سابقه تحصیلی الزامی ست', 'yellow');
             }
             else{
-                $sendData = {
-                    inputCandidateAcademicBackground: $("#form").serializeArray()
-                }
+                $sendData = {inputCandidateAcademicBackground: $("#form").serializeArray()}
                 toggleLoader();
                 $.ajax({
                     type: 'post',
@@ -337,10 +338,13 @@
                         toggleLoader();
                         $result = JSON.parse(data);
                         notify($result['content'], $result['type']);
+                        if(param.data.redirect){
+                            window.location.href =  base_url+'Profile/militaryStatus';
+                        }
                     }
                 });
             }
-        });
+        }
 
     });
 

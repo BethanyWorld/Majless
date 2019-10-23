@@ -58,6 +58,12 @@
                             ثبت نام کنید
                         </strong>
                     </a>
+                    /
+                    <a class="d-i-b" href="<?php echo base_url('Login') ?>">
+                        <strong style="line-height: 44px;">
+                            وارد شوید
+                        </strong>
+                    </a>
                 </div>
             </div>
         </div>

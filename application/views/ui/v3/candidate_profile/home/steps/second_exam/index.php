@@ -2,7 +2,7 @@
      <?php if($secondStepExam['ExamState'] == 'Pend'){ ?>
          <div class="alert alert-warning">
              <strong>
-                 شما آزمون مرحله دوم را رزور کرده اید.
+                 شما آزمون مرحله دوم را رزرو کرده اید.
             لطفا در تاریخ  و ساعت مشخص شده در محل آزمون حضور داشته باشید.
             </strong>
         </div>
@@ -43,7 +43,7 @@
      <?php if($secondStepExam['ExamState'] == 'Done'){ ?>
          <div class="alert alert-success">
              <strong>
-                 آزمون مرحله دوم شما تایید شده است.لطفا زمان کانون ارزیابی خود را رزور کنید
+                 آزمون مرحله دوم شما تایید شده است.لطفا زمان کانون ارزیابی خود را رزرو کنید
              </strong>
          </div>
          <a href="<?php echo base_url('Profile/evaluationExam') ?>" class="btn btn-danger">

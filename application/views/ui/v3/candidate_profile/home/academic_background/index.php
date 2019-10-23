@@ -219,9 +219,21 @@ $_DIR = base_url('assets/ui/v3/');
             <div class="LeftPaneAction">
                 <div class="row form-group">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <button class="btn btn-block btn-lg waves-effect CommonButtons" id="updateProfileAcademicBackground">
+                        <button class="btn btn-block btn-lg waves-effect CommonButtons next-step" id="updateProfileAcademicBackgroundAndRedirect">
                             ثبت و ادامه
                         </button>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <button class="btn btn-block btn-lg waves-effect CommonButtons" id="updateProfileAcademicBackground">
+                            ثبت
+                        </button>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <a href="<?php echo base_url('Profile/resume'); ?>">
+                            <button class="btn btn-block btn-lg waves-effect CommonButtons prev-step">
+                                مرحله قبل
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

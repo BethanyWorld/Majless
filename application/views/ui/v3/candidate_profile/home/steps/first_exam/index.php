@@ -2,7 +2,7 @@
     <?php if(isset($secondStepExam) && !empty($secondStepExam) && $secondStepExam['ExamState'] == 'Absence'){ ?>
         <div class="alert alert-danger">
             <strong>
-                شما در آزمون غیبت کرده اید.فرصت مجددی برای رزور آزمون برای شما فراهم شده است.لطفا آزمون مرحله دوم خود را مجددا رزرو کنید
+                شما در آزمون غیبت کرده اید.فرصت مجددی برای رزرو آزمون برای شما فراهم شده است.لطفا آزمون مرحله دوم خود را مجددا رزرو کنید
             </strong>
         </div>
     <?php } ?>
@@ -56,7 +56,7 @@
      <?php if($firstStepExam['ExamState'] == 'Done'){ ?>
          <div class="alert alert-success">
              <strong>
-                 آزمون مرحله اول شما تایید شده است.لطفا آزمون مرحله دوم خود را رزور کنید
+                 آزمون مرحله اول شما تایید شده است.لطفا آزمون مرحله دوم خود را رزرو کنید
              </strong>
          </div>
          <a href="<?php echo base_url('Profile/examListSecond') ?>" class="btn btn-danger">
