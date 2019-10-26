@@ -4,32 +4,16 @@
         $personalInfoApi = "<?php echo $this->config->item('api')['PersonalInformationWeb']; ?>nationalCode=" + $nationalCode;
         $legalConditionsApi = "<?php echo $this->config->item('api')['LegalConditionsWeb']; ?>nationalCodeList=" + $nationalCode;
 
-        /* Get Profile info */
-        /*$.ajax({
-            type: 'get',
-            url: $personalInfoApi,
-            success: function (data) {
-                $result = data;
-                $(".full-name").html($result['firstName'] + " " + $result['lastName']);
-                $(".national-code").html($result['nationalCode']);
-                $(".phone").html($result['cellPhoneNumber'] || "-");
-                $(".constituency-province").html($result['constituencyProvince']);
-                $(".constituency-province-part").html($result['constituencyProvincePart']);
-                $(".gender").html($result['gender']);
-                if($result['profileImage'] != null){
-                    $(".profile-image").attr('src', ("data:image/png;base64,"+ $result['profileImage']));
-                }
-            }
-        });*/
-
         $currentCandidateStatus = "<?php echo $userInfo['CandidateStatus']; ?>";
         $candidateStatus = "";
         $.ajax({
             type: 'get',
             url: base_url + 'Profile/getResumeStatus',
             success: function (data) {
-                $result = data;
-                $.each($result['items'], function (index, value) {
+                $result = JSON.parse(data);
+                console.log($result);
+                return;
+                $.each($result, function (index, value) {
                     /*اگر نامزد انتخاباتی رزومه خود را تکمیل کرده بود*/
                     if (value['isCompleted']) {
                         $candidateStatus = "CandidateResumeCompleted";
@@ -46,13 +30,8 @@
                     else {
                         $candidateStatus = "CandidateRegister";
                     }
-                    if($currentCandidateStatus == 'CandidateRegister' ||
-                        $currentCandidateStatus == 'CandidateResumeCompleted' ||
-                        $currentCandidateStatus == 'CandidateResumeAccepted' ||
-                        $currentCandidateStatus == 'CandidateResumeRejected'){
-                        $sendData = {
-                            'inputCandidateStatus': $candidateStatus,
-                        }
+                    if($currentCandidateStatus == 'CandidateRegister' || $currentCandidateStatus == 'CandidateResumeCompleted' || $currentCandidateStatus == 'CandidateResumeAccepted' || $currentCandidateStatus == 'CandidateResumeRejected'){
+                        $sendData = {'inputCandidateStatus': $candidateStatus,}
                         $.ajax({
                             type: 'post',
                             url: base_url + 'SignUp/changeCandidateState',

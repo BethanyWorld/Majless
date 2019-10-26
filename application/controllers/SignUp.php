@@ -1,11 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class SignUp extends CI_Controller{
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Headers: *');
         $this->load->model('ui/ModelCommand');
         $this->load->model('ui/ModelCountry');
     }
@@ -51,6 +48,10 @@ class SignUp extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
+
+        $electionId = $this->ModelCountry->getElectionIdByCityId($inputs['inputSignUpCityId'])[0]['ElectionId'];
+
+        $inputs['inputElectionId'] = $electionId;
         $inputs['inputSignUpType'] = $inputSignUpType;
         $captchaCode = $this->session->userdata['captchaCode'];
         if (strtolower($inputs['inputCaptcha']) == strtolower($captchaCode)) {
@@ -88,40 +89,6 @@ class SignUp extends CI_Controller{
                 'success' => false,
                 'type' => "red",
                 'content' => "کد امنیتی نامعتبر است"
-            );
-            echo json_encode($arr);
-        }
-    }
-    public function changeSignUpInfo()
-    {
-        $data = file_get_contents("php://input");
-        $data = json_decode($data, true);
-        $stateId = $this->ModelCountry->getStateIdByStateName($data['inputSignUpProvinceName'])[0]['StateId'];
-        $cityId = $this->ModelCountry->getStateCityIdByCityName($data['inputSignUpCityName'])[0]['CityId'];
-
-        /*$electionStateId = $this->ModelCountry->getStateIdByStateName($data['inputSignUpElectionProvinceName'])[0]['StateId'];*/
-        $electionCityId = $this->ModelCountry->getStateCityIdByCityName($data['inputSignUpElectionCityName'])[0]['CityId'];
-        $electionId = $this->ModelCountry->getElectionIdByCityId($electionCityId)[0]['ElectionId'];
-
-        $data['inputStateId'] = $stateId;
-        $data['inputCityId'] = $cityId;
-        $data['inputElectionId'] = $electionId;
-        $headers = $this->input->request_headers();
-        if ($headers['Secretkey'] == md5('majles11')) {
-            if ($this->ModelCommand->doCheckDuplicateSignUpInfo($data)) {
-                $result = $this->ModelCommand->doChangeSignUpInfo($data);
-                echo json_encode($result);
-            } else {
-                $arr = array(
-                    'type' => "red",
-                    'content' => "کد ملی جدید قبلا در سامانه ثبت شده است"
-                );
-                echo json_encode($arr);
-            }
-        } else {
-            $arr = array(
-                'type' => "red",
-                'content' => "درخواست CSRF  نامعتبر است"
             );
             echo json_encode($arr);
         }
