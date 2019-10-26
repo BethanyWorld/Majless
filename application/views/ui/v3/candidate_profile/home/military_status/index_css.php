@@ -23,12 +23,14 @@
     .LeftFloat {
         float: left;
     }
-    .margin-b-25{
+
+    .margin-b-25 {
         margin-bottom: 30px;
     }
 
     /*Helper*/
 
+    /*inputs*/
     .ttt input {
         margin: 0px 0px;
         width: 100%;
@@ -61,7 +63,7 @@
         transition: all 0.3s ease-in-out;
     }
 
-    .ttt  input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+    .ttt input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
         color: #022D6D;
         font-size: 11px;
         -webkit-transform: translateY(-20px);
@@ -69,18 +71,22 @@
         visibility: visible !important;
     }
 
+    /*inputs*/
+
     /*for add form*/
     .ul-background-color-hr {
         margin: 0px auto;
         padding: 20px !important;
         box-shadow: none;
     }
+
     .list-group-item:last-child {
         margin-bottom: 0;
         border-bottom-right-radius: .25rem;
         border-bottom-left-radius: .25rem;
 
     }
+
     .list-group-item {
         position: relative;
         width: 100%;
@@ -91,25 +97,30 @@
         border: 1px solid #ddd;
         min-height: 100px;
     }
+
     .odd-background-color-div {
         background-color: rgb(238, 238, 238);
         margin-bottom: 3px;
     }
+
     .extra-padding-top-25 {
         padding-top: 20px;
         padding-top: 20px;
     }
+
     .list-group-Grade {
         border-radius: 4px;
         margin-bottom: 15px;
     }
+
     /*end for add form*/
 
 
     /*for radio button*/
-    .border-color{
+    .border-color {
         border-color: gray;
     }
+
     .radiotextsty {
         color: #A5A4BF;
         font-size: 16px;
@@ -145,7 +156,7 @@
         width: 15px;
         background-color: white;
         border-radius: 50%;
-        border:1px solid #BEBEBE;
+        border: 1px solid #BEBEBE;
     }
 
     /* On mouse-over, add a grey background color */
@@ -156,7 +167,7 @@
     /* When the radio button is checked, add a blue background */
     .customradio input:checked ~ .checkmark {
         background-color: white;
-        border:1px solid #BEBEBE;
+        border: 1px solid #BEBEBE;
     }
 
     /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -180,31 +191,40 @@
         border-radius: 50%;
         background: #022D6D;
     }
-.inputCandidateExemptTitle{
-    display: none;
-}
-.inputCandidateDescription{
-    color: #A5A4BF;
-    display: none;
-}
-.inputCandidateMilitaryEndDtate{
-    display: none;
-}
-.inputCandidatePlaceservice1{
-     display: none;
- }
-    .inputCandidatePlaceservice2{
+
+    .inputCandidateExemptTitle {
         display: none;
     }
-.inputCandidateMilitaryServing{
-    display: none;
-}
-.inputCandidatePlaceservice-serving{
-    display: none;
-}
-.city-select{
-    width: 50% !important;
-}
+
+    .inputCandidateDescription {
+        color: #A5A4BF;
+        display: none;
+    }
+
+    .inputCandidateMilitaryEndDtate {
+        display: none;
+    }
+
+    .inputCandidatePlaceservice1 {
+        display: none;
+    }
+
+    .inputCandidatePlaceservice2 {
+        display: none;
+    }
+
+    .inputCandidateMilitaryServing {
+        display: none;
+    }
+
+    .inputCandidatePlaceservice-serving {
+        display: none;
+    }
+
+    .city-select {
+        width: 50% !important;
+    }
+
     /*end for radio button*/
 
 </style>

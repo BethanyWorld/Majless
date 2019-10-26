@@ -2,7 +2,6 @@
     $(document).ready(function () {
 
         $(document).on('click', '[name="inputCandidateMilitaryStatus"]', function () {
-            debugger;
             $inputCandidateMilitaryStatus = $(this).val();
             $inputCandidateMilitaryStatus = $('input[name=inputCandidateMilitaryStatus]:checked').val();
 
@@ -41,16 +40,13 @@
         });
 
         $(document).on('click', '[name="inputCandidateMilitaryEndArea"]', function () {
-            debugger;
             $inputCandidateMilitaryEndArea = $(this).val();
             $$inputCandidateMilitaryStatus = $('input[name=inputCandidateMilitaryStatus]:checked').val();
 
             if($inputCandidateMilitaryEndArea === 'Others' && $inputCandidateMilitaryStatus === 'CardService'){
-                debugger;
                 $('.inputCandidatePlaceservice1').css('display' , 'block');
             }
             if($inputCandidateMilitaryEndArea === 'Others' && $inputCandidateMilitaryStatus === 'Serving'){
-                debugger;
                 $('.inputCandidatePlaceservice2').css('display' , 'block');
             }
         });
