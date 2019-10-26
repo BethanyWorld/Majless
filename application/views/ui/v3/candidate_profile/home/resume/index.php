@@ -217,8 +217,9 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <select class="form-control form-control-lg state-select"
                                                             name="inputCandidateBornStateId"
                                                             id="inputCandidateBornStateId">
+                                                        <option value="">-- انتخاب کنید --</option>
                                                         <?php foreach ($states as $state) { ?>
-                                                            <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateStateId'], $state['StateId']); ?>>
+                                                            <option value="<?php echo $state['StateId']; ?>"  <?php setOptionSelected($userInfo['CandidateFatherBornStateId'], $state['StateId']); ?>>
                                                                 <?php echo $state['StateName']; ?>
                                                             </option>
                                                         <?php } ?>
@@ -232,13 +233,17 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <select class="form-control form-control-lg city-select"
                                                             name="inputCandidateBornCityId"
                                                             id="inputCandidateBornCityId">
-                                                        <?php foreach ($userInfo['CandidateBornCities'] as $city) { ?>
+                                                        <?php
+                                                        if($userInfo['CandidateCityId'] !== NULL){
+                                                            foreach ($userInfo['CandidateBornCities'] as $city) { ?>
                                                             <option
                                                                     value="<?php echo $city['CityId']; ?>"
                                                                 <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
                                                                 <?php echo $city['CityName']; ?>
                                                             </option>
-                                                        <?php } ?>
+                                                            <?php }
+                                                        }
+                                                        ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -257,10 +262,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <select class="form-control form-control-lg state-select"
                                                             name="inputCandidateFatherBornStateId"
                                                             id="inputCandidateFatherBornStateId">
+                                                        <option value="">-- انتخاب کنید --</option>
                                                         <?php foreach ($states as $state) { ?>
-                                                            <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateFatherBornStateId'], $state['StateId']); ?>>
-                                                                <?php echo $state['StateName']; ?>
-                                                            </option>
+                                                        <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateFatherBornStateId'], $state['StateId']); ?>>
+                                                            <?php echo $state['StateName']; ?>
+                                                        </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -276,11 +282,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                             name="inputCandidateFatherBornCityId"
                                                             id="inputCandidateFatherBornCityId">
                                                         <?php foreach ($userInfo['CandidateFatherBornCities'] as $city) { ?>
-                                                            <option
-                                                                    value="<?php echo $city['CityId']; ?>"
-                                                                <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
-                                                                <?php echo $city['CityName']; ?>
-                                                            </option>
+                                                        <option
+                                                                value="<?php echo $city['CityId']; ?>"
+                                                            <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
+                                                            <?php echo $city['CityName']; ?>
+                                                        </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -300,10 +306,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <select class="form-control form-control-lg state-select"
                                                             name="inputCandidateMotherBornStateId"
                                                             id="inputCandidateMotherBornStateId">
+                                                        <option value="">-- انتخاب کنید --</option>
                                                         <?php foreach ($states as $state) { ?>
-                                                            <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateMotherBornStateId'], $state['StateId']); ?>>
-                                                                <?php echo $state['StateName']; ?>
-                                                            </option>
+                                                        <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateMotherBornStateId'], $state['StateId']); ?>>
+                                                            <?php echo $state['StateName']; ?>
+                                                        </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -319,11 +326,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                             name="inputCandidateMotherBornCityId"
                                                             id="inputCandidateMotherBornCityId">
                                                         <?php foreach ($userInfo['CandidateMotherBornCities'] as $city) { ?>
-                                                            <option
-                                                                    value="<?php echo $city['CityId']; ?>"
-                                                                <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
-                                                                <?php echo $city['CityName']; ?>
-                                                            </option>
+                                                        <option
+                                                                value="<?php echo $city['CityId']; ?>"
+                                                            <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
+                                                            <?php echo $city['CityName']; ?>
+                                                        </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -343,10 +350,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <select class="form-control form-control-lg state-select"
                                                             name="inputCandidateAddressStateId"
                                                             id="inputCandidateAddressStateId">
+                                                        <option value="">-- انتخاب کنید --</option>
                                                         <?php foreach ($states as $state) { ?>
-                                                            <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateAddressStateId'], $state['StateId']); ?>>
-                                                                <?php echo $state['StateName']; ?>
-                                                            </option>
+                                                        <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateAddressStateId'], $state['StateId']); ?>>
+                                                            <?php echo $state['StateName']; ?>
+                                                        </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -361,12 +369,12 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <select class="form-control form-control-lg city-select"
                                                             name="inputCandidateAddressCityId"
                                                             id="inputCandidateAddressCityId">
-                                                        <?php foreach ($userInfo['CandidateStateCities'] as $city) { ?>
-                                                            <option
-                                                                    value="<?php echo $city['CityId']; ?>"
-                                                                <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
-                                                                <?php echo $city['CityName']; ?>
-                                                            </option>
+                                                        <?php foreach ($userInfo['CandidateAddressCities'] as $city) { ?>
+                                                        <option
+                                                                value="<?php echo $city['CityId']; ?>"
+                                                            <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
+                                                            <?php echo $city['CityName']; ?>
+                                                        </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -511,10 +519,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                         name="inputCandidateConstituencyStateId"
                                                         id="inputCandidateConstituencyStateId">
                                                     <?php foreach ($states as $state) { ?>
-                                                        <option value="<?php echo $state['StateId']; ?>"
-                                                            <?php setOptionSelected($userInfo['CandidateConstituencyStateId'], $state['StateId']); ?>>
-                                                            <?php echo $state['StateName']; ?>
-                                                        </option>
+                                                    <option value="<?php echo $state['StateId']; ?>"
+                                                        <?php setOptionSelected($userInfo['CandidateConstituencyStateId'], $state['StateId']); ?>>
+                                                        <?php echo $state['StateName']; ?>
+                                                    </option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -529,11 +537,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                         name="inputCandidateConstituencyCityId"
                                                         id="inputCandidateConstituencyCityId">
                                                     <?php foreach ($userInfo['CandidateConstituencyCities'] as $city) { ?>
-                                                        <option
-                                                                value="<?php echo $city['CityId']; ?>"
-                                                            <?php setOptionSelected($userInfo['CandidateConstituencyCityId'], $city['CityId']); ?>>
-                                                            <?php echo $city['CityName']; ?>
-                                                        </option>
+                                                    <option
+                                                            value="<?php echo $city['CityId']; ?>"
+                                                        <?php setOptionSelected($userInfo['CandidateConstituencyCityId'], $city['CityId']); ?>>
+                                                        <?php echo $city['CityName']; ?>
+                                                    </option>
                                                     <?php } ?>
                                                 </select>
                                                 <label class="label label-danger hidden invaliderror"
@@ -550,7 +558,8 @@ $_DIR = base_url('assets/ui/v3/');
             <div class="LeftPaneAction">
                 <div class="row form-group">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <button class="btn btn-block btn-lg CommonButtons waves-effect" id="updateProfileInfoAndRedirect">
+                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
+                                id="updateProfileInfoAndRedirect">
                             ثبت و ادامه
                         </button>
                     </div>

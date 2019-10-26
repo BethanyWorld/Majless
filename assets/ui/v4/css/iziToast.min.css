@@ -246,10 +246,10 @@
     margin: 0;
 }
 .iziToast .iziToast-texts *{
-    font-size: 14px !important;
+    font-size: 18px !important;
     direction: rtl;
     text-align: justify;
-    font-weight: 100;
+    font-weight: 900;
     font-family: inherit;
     margin-bottom: 2px;
 }

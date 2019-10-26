@@ -9,11 +9,7 @@ class ModelCountry extends CI_Model{
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-        $arr = array(
-            'type' => "red",
-            'content' => "اطلاعات نامعتبر است",
-            'success' => false
-        );
+        $arr = array();
         return $arr;
     }
     public function getStateById($stateId)
@@ -25,11 +21,7 @@ class ModelCountry extends CI_Model{
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-        $arr = array(
-            'type' => "red",
-            'content' => "اطلاعات نامعتبر است",
-            'success' => false
-        );
+        $arr = array();
         return $arr;
     }
     public function getCityByStateId($stateId)
@@ -41,11 +33,7 @@ class ModelCountry extends CI_Model{
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-        $arr = array(
-            'type' => "red",
-            'content' => "اطلاعات نامعتبر است",
-            'success' => false
-        );
+        $arr = array();
         return $arr;
     }
 

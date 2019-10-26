@@ -14,6 +14,7 @@ class ResetPassword extends CI_Controller{
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'بازیابی رمز عبور';
         $data['CSRF'] = $CSRF;
         $data['title'] = 'بازیابی رمز عبور';
+        $data['api'] = $this->config->item('api');
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/reset_password/index', $data);
         $this->load->view('ui/v3/reset_password/index_css', $data);
@@ -22,6 +23,7 @@ class ResetPassword extends CI_Controller{
     }
     public function submitResetPassword(){
         $inputs = $this->input->post(NULL, TRUE);
+        unset($inputs['inputSignUpType']);
         $inputs = array_map(function ($v) {
             return strip_tags($v);
         }, $inputs);
@@ -36,16 +38,14 @@ class ResetPassword extends CI_Controller{
             if ($inputs['inputCSRF'] == $this->session->userdata['CSRF']) {
                 $result = $this->ModelCommand->submitResetPassword($inputs);
                 echo json_encode($result);
-            }
-            else {
+            } else {
                 $arr = array(
                     'type' => "red",
                     'content' => "کد CSRF نامعتبر است"
                 );
                 echo json_encode($arr);
             }
-        }
-        else {
+        } else {
             $arr = array(
                 'type' => "red",
                 'content' => "کد امنیتی نامعتبر است"

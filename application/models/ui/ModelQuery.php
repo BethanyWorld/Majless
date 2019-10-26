@@ -71,7 +71,6 @@ class ModelQuery extends CI_Model{
         );
         return $arr;
     }
-
     public function doLogin($inputs){
         $this->db->select('*');
         $this->db->from('candidate');

@@ -12,6 +12,7 @@
             });
             return str;
         }
+
         $("#submitResetPassword").click(function () {
             toggleLoader();
             $inputPhone = $.trim($("#inputPhone").val());
@@ -20,14 +21,17 @@
             $inputPhone = toEnglishDigits($inputPhone);
             $inputCaptcha = toEnglishDigits($inputCaptcha);
 
+            if(!isPhone($inputPhone)){
+                notify("تلفن نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
             if ($inputPhone == "" || $inputCaptcha == "" || $inputCSRF == "") {
                 notify("لطفا تمامی موارد را کامل کنید", "red");
                 toggleLoader();
             }
             else {
-                $sendData = {
-                    'inputCaptcha': $inputCaptcha
-                }
+                $sendData = {'inputCaptcha': $inputCaptcha}
                 $.ajax({
                     type: 'post',
                     url: base_url + 'SignUp/checkCaptcha',
@@ -35,46 +39,43 @@
                     success: function (data) {
                         $result = JSON.parse(data);
                         if ($result['success']) {
-                            /*----------------------------*/
-                            $sendData = { 'mobile': $inputPhone }
+                            $sendData = {
+                                'inputPhone': $inputPhone,
+                                'inputCaptcha': $inputCaptcha,
+                                'inputCSRF': $inputCSRF
+                            }
                             $.ajax({
                                 type: 'post',
-                                url: 'http://new.moarefin.ir:8080/api/securityWeb',
+                                url: base_url + 'ResetPassword/submitResetPassword',
                                 data: $sendData,
                                 success: function (data) {
-                                    $result = data;
+                                    $result = JSON.parse(data);
+                                    notify($result['content'], $result['type']);
                                     if ($result['success']) {
-                                        $sendData = {
-                                            'inputPhone': $inputPhone,
-                                            'inputCaptcha': $inputCaptcha,
-                                            'inputCSRF': $inputCSRF
-                                        }
                                         $.ajax({
-                                            type: 'post',
-                                            url: base_url + 'ResetPassword/submitResetPassword',
-                                            data: $sendData,
+                                            type: 'POST',
+                                            url: '<?php echo $api['SMS']; ?>',
+                                            data: {
+                                                'senderNumber': $result['senderNumber'],
+                                                'messageBody': $result['messageBody']
+                                            },
                                             success: function (data) {
-                                                $result = JSON.parse(data);
-                                                notify($result['content'], $result['type']);
-                                                if ($result['success']) {
-                                                    setTimeout(function () {
-                                                        location.reload();
-                                                    }, 1000);
-                                                }
-                                                else{
-                                                    notify($result['message'], 'red');
-                                                    toggleLoader();
-                                                }
+                                                setTimeout(function(){
+                                                    window.location.href = base_url + 'Login';
+                                                } , 1500);
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                toggleLoader();
+                                                notify('مشکلی درخ داده است', 'red');
                                             }
                                         });
                                     }
-                                    else {
-                                        notify($result['message'], 'red');
+                                    else{
+                                        notify($result['content'], $result['type']);
                                         toggleLoader();
                                     }
                                 }
                             });
-                            /*----------------------------*/
                         }
                         else {
                             notify($result['content'], $result['type']);

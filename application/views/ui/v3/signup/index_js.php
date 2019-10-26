@@ -56,11 +56,18 @@
             $inputSignUpNationalCode = toEnglishDigits($inputSignUpNationalCode);
             $inputCaptcha = toEnglishDigits($inputCaptcha);
 
+            if(!isPhone($inputSignUpPhone)){
+                notify("تلفن نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+
             if(!isValidNationalCode($inputSignUpNationalCode)){
                 notify("کد ملی نامعتبر است", "red");
                 toggleLoader();
                 return;
             }
+
 
             if ($inputSignUpType.length == 0 ||
                 $inputSignUpFirstName == "" ||
@@ -84,48 +91,28 @@
                     success: function (data) {
                         $result = JSON.parse(data);
                         if ($result['success']) {
-                            /*----------------------------*/
                             $sendData = {
-                                'firstName': $inputSignUpFirstName,
-                                'lastName': $inputSignUpLastName,
-                                'mobile': $inputSignUpPhone,
-                                'NationalCode': $inputSignUpNationalCode,
-                                'ConstituencyProvince': $inputConstituencyProvinceName,
-                                'ConstituencyProvincePart': $inputConstituencyProvincePartName,
-                                'userTypes': $inputSignUpType
+                                'inputSignUpType': $inputSignUpType,
+                                'inputSignUpFirstName': $inputSignUpFirstName,
+                                'inputSignUpLastName': $inputSignUpLastName,
+                                'inputSignUpPhone': $inputSignUpPhone,
+                                'inputSignUpStateId': $inputConstituencyProvince,
+                                'inputSignUpCityId': $inputConstituencyProvincePart,
+                                'inputSignUpNationalCode': $inputSignUpNationalCode,
+                                'inputCaptcha': $inputCaptcha,
+                                'inputCSRF': $inputCSRF
                             }
                             $.ajax({
                                 type: 'post',
-                                url: 'http://new.moarefin.ir:8080/api/RegisterUserFromWeb',
+                                url: base_url + 'SignUp/submitSignUpForm',
                                 data: $sendData,
                                 success: function (data) {
-                                    $result = data;
+                                    $result = JSON.parse(data);
+                                    notify($result['content'], $result['type']);
                                     if ($result['success']) {
-                                        $sendData = {
-                                            'inputSignUpType': $inputSignUpType,
-                                            'inputSignUpFirstName': $inputSignUpFirstName,
-                                            'inputSignUpLastName': $inputSignUpLastName,
-                                            'inputSignUpPhone': $inputSignUpPhone,
-                                            'inputSignUpStateId': $inputConstituencyProvince,
-                                            'inputSignUpCityId': $inputConstituencyProvincePart,
-                                            'inputSignUpNationalCode': $inputSignUpNationalCode,
-                                            'inputCaptcha': $inputCaptcha,
-                                            'inputCSRF': $inputCSRF
-                                        }
-                                        $.ajax({
-                                            type: 'post',
-                                            url: base_url + 'SignUp/submitSignUpForm',
-                                            data: $sendData,
-                                            success: function (data) {
-                                                $result = JSON.parse(data);
-                                                notify($result['content'], $result['type']);
-                                                if ($result['success']) {
-                                                    setTimeout(function(){
-                                                        location.href = base_url + 'Login';
-                                                    } , 1500);
-                                                }
-                                            }
-                                        });
+                                        setTimeout(function(){
+                                            location.href = base_url + 'Login';
+                                        } , 1500);
                                     }
                                     else {
                                         /*notify($result['message'], 'red');*/
@@ -134,7 +121,6 @@
                                     }
                                 }
                             });
-                            /*----------------------------*/
                         }
                         else {
                             notify($result['content'], $result['type']);

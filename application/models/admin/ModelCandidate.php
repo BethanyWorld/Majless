@@ -76,22 +76,134 @@ class ModelCandidate extends CI_Model{
     public function getResumeStatus($inputs){
         $isComplete = "";
         $isAccepted = "";
-
+        ///////////////////////////////////////////////////////////////////
         $this->db->select('*');
         $this->db->from('candidate');
         $this->db->where('CandidateId', $inputs['inputCandidateId']);
         $this->db->order_by('CandidateId', 'ASC');
         $personalInfo = $this->db->get()->result_array()[0];
-         /* Check Profile */
-        var_dump($personalInfo);
-
+        ///////////////////////////////////////////////////////////////////
         $this->db->select('*');
         $this->db->from('candidate_academic_background');
         $this->db->where('CandidateId', $inputs['inputCandidateId']);
         $this->db->order_by('CandidateId', 'ASC');
         $academicInfo = $this->db->get()->result_array();
+        //////////////////////////////////////////////////////////////////
+        $this->db->select('*');
+        $this->db->from('candidate_military');
+        $this->db->where('CandidateId', $inputs['inputCandidateId']);
+        $this->db->order_by('CandidateId', 'ASC');
+        $militaryInfo = $this->db->get()->result_array();
+        //////////////////////////////////////////////////////////////////
 
-        var_dump($academicInfo);
+        //military is not implemented yet
+        if(empty($personalInfo) || empty($academicInfo) || !empty($militaryInfo)){
+            $arr = array(
+                'content' => 'Complement Issues',
+                'hasConditions' => false,
+                'isCompleted' => false
+            );
+            return $arr;
+        }
+
+        /* Check User Required Values */
+        if(
+            empty($personalInfo['CandidateBirthDate']) ||
+            empty($personalInfo['CandidateReligion']) ||
+            empty($personalInfo['CandidateBornStateId']) || empty($personalInfo['CandidateBornCityId']) ||
+            empty($personalInfo['CandidateFatherBornStateId']) || empty($personalInfo['CandidateFatherBornCityId']) ||
+            empty($personalInfo['CandidateMotherBornStateId']) || empty($personalInfo['CandidateMotherBornCityId']) ||
+            empty($personalInfo['CandidateAddressStateId']) || empty($personalInfo['CandidateAddressCityId']) ||
+            empty($personalInfo['CandidateStateId']) || empty($personalInfo['CandidateCityId'])
+        ){
+            $arr = array(
+                'hasConditions' => false,
+                'isCompleted' => false
+            );
+            return $arr;
+        }
+        /* Check User Age */
+        $candidateAge = (date('Y') - date('Y',strtotime($personalInfo['CandidateBirthDate']))) - 621;
+        if($candidateAge <=29 || $candidateAge >= 71){
+            $arr = array(
+                'content' => 'User Invalid Age',
+                'hasConditions' => false,
+                'isCompleted' => true
+            );
+            return $arr;
+        }
+        /* Check User Constituency State */
+        if(
+            $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateBornStateId'] &&
+            $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateFatherBornStateId'] &&
+            $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateMotherBornStateId'] &&
+            $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateAddressStateId']
+        )
+        {
+            $arr = array(
+                'content' => 'User Invalid Constituency State',
+                'hasConditions' => false,
+                'isCompleted' => true
+            );
+            return $arr;
+        }
+        /* Check User Constituency City */
+        if(
+            $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateBornCityId'] &&
+            $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateFatherBornCityId'] &&
+            $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateMotherBornCityId'] &&
+            $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateAddressCityId']
+        )
+        {
+            $arr = array(
+                'content' => 'User Invalid Constituency City',
+                'hasConditions' => false,
+                'isCompleted' => true
+            );
+            return $arr;
+        }
+        /* Check User Religion */
+
+        if($personalInfo['CandidateReligion'] !== 'IslamShia' && $personalInfo['CandidateReligion'] !== 'IslamSoni')
+        {
+            $arr = array(
+                'content' => 'User Invalid Religion',
+                'hasConditions' => false,
+                'isCompleted' => true
+            );
+            return $arr;
+        }
+        /* Check User Academic */
+        $hasAcademicCondition = false;
+        foreach ($academicInfo as $item) {
+            if(
+                $item['CandidateGrade'] == 'KarshenasiArshad' ||
+                $item['CandidateGrade'] == 'DoctoryHerfei' ||
+                $item['CandidateGrade'] == 'DoctoryTakhasosi' ||
+                $item['CandidateGrade'] == 'FogDoctory' ||
+                $item['CandidateGrade'] == 'Hozeh3' ||
+                $item['CandidateGrade'] == 'Hozeh4' ){
+                global $hasAcademicCondition;
+                $hasAcademicCondition = true;
+            }
+        }
+        if(!$hasAcademicCondition){
+            $arr = array(
+                'content' => 'User Invalid Grade',
+                'hasConditions' => false,
+                'isCompleted' => true
+            );
+            return $arr;
+        }
+
+        $arr = array(
+            'content' => 'User Is Valid',
+            'hasConditions' => true,
+            'isCompleted' => true
+        );
+        return $arr;
+
+
     }
 
     /* For Candidate News */

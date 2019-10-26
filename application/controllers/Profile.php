@@ -215,6 +215,10 @@ class Profile extends CI_Controller{
         $data['userInfo']['CandidateBornCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateBornStateId']);
         $data['userInfo']['CandidateFatherBornCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateFatherBornStateId']);
         $data['userInfo']['CandidateMotherBornCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateMotherBornStateId']);
+        $data['userInfo']['CandidateAddressCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateAddressStateId']);
+
+
+
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/resume/index', $data);
@@ -252,7 +256,7 @@ class Profile extends CI_Controller{
         if ($this->form_validation->run() == FALSE) {
             $arr = array(
                 'type' => "red",
-                'content' => validation_errors()
+                'content' => 'تمامی مقادیر ستاره دار را وارد کنید'
             );
             echo json_encode($arr);
             die();

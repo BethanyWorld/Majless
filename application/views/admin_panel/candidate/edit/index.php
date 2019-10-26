@@ -50,23 +50,33 @@
                                 </li>
                                 <li>
                                     <span>تاریخ تولد</span>:
-                                    <span class="info-birthDate"><img src="<?php echo $gifLoader; ?>"/></span>
+                                    <span class="info-birthDate">
+                                        <?php echo $candidate['CandidateBirthDate']; ?>
+                                    </span>
                                 </li>
                                 <li>
                                     <span>نام پدر</span>:
-                                    <span class="info-fatherName"><img src="<?php echo $gifLoader; ?>"/></span>
+                                    <span class="info-fatherName">
+                                        <?php echo $candidate['CandidateFatherName']; ?>
+                                    </span>
                                 </li>
                                 <li>
                                     <span>جنسیت</span>:
-                                    <span class="info-gender"><img src="<?php echo $gifLoader; ?>"/></span>
+                                    <span class="info-gender">
+                                        <?php genderPipe($candidate['CandidateGender']); ?>
+                                    </span>
                                 </li>
                                 <li>
                                     <span>وضعیت تاهل</span>:
-                                    <span class="info-maritalStatus"><img src="<?php echo $gifLoader; ?>"/></span>
+                                    <span class="info-maritalStatus">
+                                        <?php echo maritalStatusPipe($candidate['CandidateMaritalStatus']); ?>
+                                    </span>
                                 </li>
                                 <li>
                                     <span>دین</span>:
-                                    <span class="info-religion"><img src="<?php echo $gifLoader; ?>"/></span>
+                                    <span class="info-religion">
+                                        <?php echo religionPipe($candidate['CandidateReligion']); ?>
+                                    </span>
                                 </li>
                             </ul>
                         </div>
