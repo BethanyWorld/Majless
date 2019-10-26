@@ -11,7 +11,7 @@ $_DIR = base_url('assets/ui/v3/');
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
                                 وضعیت خدمت نظام وظیفه
-                                <span class="add-form fa fa-plus"></span>
+
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -20,153 +20,204 @@ $_DIR = base_url('assets/ui/v3/');
                                             <form id="form">
                                                 <span class="skill-divider"></span>
                                             </form>
-                                            <div id="unique-form" class="hidden list-group-item animated flipInX extra-padding-top-25 odd-background-color-div">
-                                                <span class="remove-form fa fa-times"></span>
+                                            <div id="unique-form"
+                                                 class="hidden list-group-item animated flipInX extra-padding-top-25 odd-background-color-div">
                                                 <div class="list-group-Grade col-md-12 col-xs-12 padding-0">
-                                                    <div class="col-md-12 col-xs-12 margin-b-30">
-                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                            <label for="inputCandidateActivityFieldType">زمینه فعالیت :</label>
-                                                            <select class="form-control form-control-lg" data-name="inputCandidateActivityFieldType">
-                                                                <option value="" selected>--انتخاب کنید--</option>
-                                                                <?php foreach ($EnumResumeProfile['CandidateActivityFieldType'] as $key => $value) { ?>
-                                                                    <option
-                                                                            value="<?php echo $key; ?>">
-                                                                        <?php echo $value; ?>
-                                                                    </option>
-                                                                <?php } ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                    <div class="col-md-12 col-xs-12 margin-b-30 paddingRight-0">
 
-                                                    <!--For Other-->
-                                                    <div class="col-md-6 col-xs-12 ttt RightFloat margin-b-30 other-title">
-                                                        <div class="col-md-12 col-xs-12 RightFloat">
-                                                            <label class="Lable" for="inputCandidateActivityFieldOtherTypeTitle">عنوان</label>
-                                                            <input data-name="inputCandidateActivityFieldOtherTypeTitle" class="ytyt" type="text" required>
-                                                        </div>
-                                                    </div>
+                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat paddingRight-0">
+                                                            <div class="col-md-12 col-xs-12 radio-list-group-item">
+                                                                <label class="customradio"><span class="radiotextsty">معاف</span>
+                                                                    <input type="radio"
+                                                                           data-name="inputCandidateMilitaryStatus" value="Exempt">
 
-                                                    <!--For exept mobilization-->
-                                                    <div class="col-md-12 col-xs-12 margin-b-30 RightFloat ttt Collectionname">
-                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                            <label for="inputCandidateOrganizationName" class="Lable">نام مجموعه</label>
-                                                            <input data-name="inputCandidateOrganizationName" class="ytyt" type="text" required>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-md-6 col-xs-12 RightFloat inputmembershiptype">
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 RightFloat paddingLeft-0">
-                                                            <label for="inputCandidateMemberShipType">نوع عضویت :</label>
-                                                            <select class="form-control form-control-lg"
-                                                                    data-name="inputCandidateMemberShipType">
-                                                                <option value="" selected>--انتخاب کنید--</option>
-                                                                <?php foreach ($EnumResumeProfile['CandidateMemberShipType'] as $key => $value) { ?>
-                                                                    <option value="<?php echo $key; ?>">
-                                                                        <?php echo $value; ?>
-                                                                    </option>
-                                                                <?php } ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-xs-12 RightFloat margin-b-30 paddingRight-0 Description ttt">
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 RightFloat">
-                                                            <label for="inputCandidateMemberShipDescription" class="Lable">توضیحات</label>
-                                                            <input data-name="inputCandidateMemberShipDescription" class="ytyt" type="text" required>
-                                                        </div>
-                                                    </div>
-
-                                                    <!--For mobilization Type-->
-                                                    <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateBasijType">
-                                                        <div class="col-md-12 col-xs-12">
-                                                            <label for="inputCandidateBasijType">نوع بسیج :</label>
-                                                            <select class="form-control form-control-lg" data-name="inputCandidateBasijType">
-                                                                <option value="" selected>--انتخاب کنید--</option>
-                                                                <?php foreach ($EnumResumeProfile['CandidateBasijType'] as $key => $value) { ?>
-                                                                    <option value="<?php echo $key; ?>">
-                                                                        <?php echo $value; ?>
-                                                                    </option>
-                                                                <?php } ?>
-                                                            </select>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-md-3 col-x-12 ttt RightFloat other-mobilization">
-                                                        <label for="inputCandidateBasijTypeOtherTitle" class="Lable">سایر</label>
-                                                        <input data-name="inputCandidateBasijTypeOtherTitle" class="ytyt" type="text" required>
-                                                    </div>
-                                                    <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateMobilMembershipType">
-                                                        <div class="col-md-12 col-xs-12">
-                                                            <label for="inputCandidateMobilMembershipType">نوع عضویت :</label>
-                                                            <select class="form-control form-control-lg" data-name="inputCandidateMobilMembershipType">
-                                                                <option value="" selected>--انتخاب کنید--</option>
-                                                                <?php foreach ($EnumResumeProfile['CandidateMobilMembershipType'] as $key => $value) { ?>
-                                                                    <option value="<?php echo $key; ?>">
-                                                                        <?php echo $value; ?>
-                                                                    </option>
-                                                                <?php } ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3 col-x-12 ttt RightFloat domain-name">
-                                                        <label for="inputCandidateBasijAreaTitle" class="Lable">نام حوزه</label>
-                                                        <input data-name="inputCandidateBasijAreaTitle" class="ytyt" type="text" required>
-                                                    </div>
-
-
-                                                    <!-- for Date -->
-                                                    <div class="col-md-12 col-xs-12 RightFloat culture-date padding-0">
-                                                        <div class="col-md-12 col-xs-12">
-                                                            <div class="col-md-6 col-xs-12 RightFloat">
-                                                                <label for="inputCandidateStartJobMonth">آغاز همکاری</label>
-                                                                <div class="row">
-                                                                    <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                        <select class="form-control form-control-lg city-select"
-                                                                                name="inputCandidateStartJobMonth"
-                                                                                id="inputCandidateStartJobMonth">
-                                                                            <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                                <option value="<?php echo $key; ?>">
-                                                                                    <?php echo $value; ?>
-                                                                                </option>
-                                                                            <?php } ?>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateStartJobYear" id="inputCandidateStartJobYear">
-                                                                            <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                                <option value="<?php echo $i; ?>">
-                                                                                    <?php echo $i; ?>
-                                                                                </option>
-                                                                            <?php } ?>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6 col-xs-12 RightFloat">
-                                                                <label for="inputCandidateStartJobMonth">
-                                                                    پایان همکاری
                                                                 </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateEndJobMonth" id="inputCandidateEndJobMonth">
-                                                                            <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                                <option value="<?php echo $key; ?>">
-                                                                                    <?php echo $value; ?>
-                                                                                </option>
-                                                                            <?php } ?>
-                                                                        </select>
+                                                                <label class="customradio"><span class="radiotextsty">دارای کارت پایان خدمت</span>
+                                                                    <input type="radio"
+                                                                           data-name="inputCandidateMilitaryStatus" value="CardService">
+
+                                                                </label>
+                                                                <label class="customradio"><span class="radiotextsty">درحال خدمت</span>
+                                                                    <input type="radio"
+                                                                           data-name="inputCandidateMilitaryStatus" value="Serving">
+
+                                                                </label>
+                                                                <label class="customradio"><span class="radiotextsty">مشمول</span>
+                                                                    <input type="radio"
+                                                                           data-name="inputCandidateMilitaryStatus" value="Included">
+
+                                                                </label>
+                                                                <label class="customradio"><span class="radiotextsty">خرید خدمت</span>
+                                                                    <input type="radio"
+                                                                           data-name="inputCandidateMilitaryStatus" value="Buyservice">
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr class="hidden-lg hidden-md visible-xs visible-sm border-color">
+
+                                                        <div class="col-md-8 col-sm-12 col-xs-12 padding-0 inputCandidateExemptTitle">
+                                                            <div class="col-md-3 col-xs-12 form-group RightFloat">
+                                                                <label class="customradio"><span class="radiotextsty">تحصیلی</span>
+                                                                    <input type="radio"
+                                                                           data-name="inputCandidateExemptTitle" value="educational">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 form-group RightFloat">
+                                                                <label class="customradio"><span class="radiotextsty">پزشکی</span>
+                                                                    <input type="radio"
+                                                                           data-name="inputCandidateExemptTitle" value="medical">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 form-group RightFloat">
+                                                                <label class="customradio"><span class="radiotextsty">کفالت</span>
+                                                                    <input type="radio"
+                                                                           data-name="inputCandidateExemptTitle" value="Guarantee">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 form-group RightFloat">
+                                                                <label class="customradio"><span class="radiotextsty">سایر</span>
+                                                                    <input type="radio"
+                                                                           data-name="inputCandidateExemptTitle" value="Others">
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 col-xs-12 RightFloat ttt inputCandidateDescription">
+                                                                <label for="inputCandidateDescription" class="Lable">توضیحات</label>
+                                                                <input name="inputCandidateDescription" type="text" required>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-8 col-sm-12 col-xs-12 padding-0 inputCandidateMilitaryEndDtate">
+
+                                                            <div class="col-md-12 col-xs-12">
+                                                                <div class="col-md-6 col-xs-12 margin-b-25 RightFloat">
+                                                                    <label for="inputCandidateMilitaryEndDtate">تاریخ اتمام</label>
+                                                                    <div class="clearfix"></div>
+                                                                    <select class="col-md-6 form-control form-control-lg city-select RightFloat" name="inputCandidateActivityStartMonth" id="inputCandidateActivityStartMonth">
+                                                                        <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                            <option value="<?php echo $key; ?>">
+                                                                                <?php echo $value; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                    <select class="col-md-6 form-control form-control-lg city-select" name="inputCandidateActivityStartYear" id="inputCandidateActivityStartYear">
+                                                                        <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                            <option
+                                                                                    value="<?php echo $i; ?>">
+                                                                                <?php echo $i; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 margin-b-25">
+                                                                    <label for="inputCandidateMilitaryEndArea">ارگان محل خدمت :</label>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 padding-0 inputCandidateMilitaryEndArea">
+                                                                    <div class="col-md-3 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">ارتش</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="Army">
+                                                                        </label>
                                                                     </div>
-                                                                    <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                        <select class="form-control form-control-lg city-select" name="inputCandidateEndJobYear" id="inputCandidateEndJobYear">
-                                                                            <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                                <option value="<?php echo $i; ?>">
-                                                                                    <?php echo $i; ?>
-                                                                                </option>
-                                                                            <?php } ?>
-                                                                        </select>
+                                                                    <div class="col-md-3 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">سپاه</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="Corps">
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">نیروی انتظامی</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="police">
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">وزارت دفاع</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="DepartmentDefense">
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">سایر</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="Others">
+                                                                        </label>
+                                                                    </div>
+
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12 RightFloat ttt inputCandidatePlaceservice1">
+                                                                        <label for="inputCandidateDescription" class="Lable">نام محل خدمت</label>
+                                                                        <input name="inputCandidateDescription" type="text" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <div class="col-md-8 col-sm-12 col-xs-12 padding-0 inputCandidateMilitaryServing">
+
+                                                            <div class="col-md-12 col-xs-12">
+                                                                <div class="col-md-6 col-xs-12 margin-b-25 RightFloat">
+                                                                    <label for="inputCandidateMilitaryEndDtate">تاریخ تقریبی پایان خدمت</label>
+                                                                    <div class="clearfix"></div>
+                                                                    <select class="col-md-6 form-control form-control-lg city-select RightFloat" name="inputCandidateActivityStartMonth" id="inputCandidateActivityStartMonth">
+                                                                        <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                            <option value="<?php echo $key; ?>">
+                                                                                <?php echo $value; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                    <select class="col-md-6 form-control form-control-lg city-select" name="inputCandidateActivityStartYear" id="inputCandidateActivityStartYear">
+                                                                        <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                            <option
+                                                                                    value="<?php echo $i; ?>">
+                                                                                <?php echo $i; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 margin-b-25">
+                                                                    <label for="inputCandidateMilitaryEndArea">ارگان محل خدمت :</label>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 padding-0 inputCandidateMilitaryEndArea">
+                                                                    <div class="col-md-3 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">ارتش</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="Army">
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">سپاه</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="Corps">
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">نیروی انتظامی</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="police">
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">وزارت دفاع</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="DepartmentDefense">
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                        <label class="customradio"><span class="radiotextsty">سایر</span>
+                                                                            <input type="radio"
+                                                                                   data-name="inputCandidateMilitaryEndArea" value="Others">
+                                                                        </label>
+                                                                    </div>
+
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12 RightFloat ttt inputCandidatePlaceservice2">
+                                                                        <label for="inputCandidateDescription" class="Lable">ارگان محل خدمت را وارد نمایید</label>
+                                                                        <input name="inputCandidateDescription" type="text" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -181,7 +232,8 @@ $_DIR = base_url('assets/ui/v3/');
             <div class="LeftPaneAction">
                 <div class="row form-group">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <button class="btn btn-block btn-lg waves-effect CommonButtons next-step" id="buttonUpdateMilitaryStatusAndRedirect">
+                        <button class="btn btn-block btn-lg waves-effect CommonButtons next-step"
+                                id="buttonUpdateMilitaryStatusAndRedirect">
                             ثبت و ادامه
                         </button>
                     </div>
