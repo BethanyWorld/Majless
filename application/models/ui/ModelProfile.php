@@ -1,4 +1,5 @@
 <?php
+
 class ModelProfile extends CI_Model{
     public function doUpdateCandidatePersonalInfo($inputs)
     {
@@ -453,8 +454,6 @@ class ModelProfile extends CI_Model{
         }
     }
 
-
-
     public function getCandidateSocialCulturalBackgroundByCandidateId($id){
         return
             $this->db->select('*')
@@ -505,6 +504,15 @@ class ModelProfile extends CI_Model{
             );
             return $arr;
         }
+    }
+
+    public function getCandidateMilitaryStatusByCandidateId($id){
+        return
+            $this->db->select('*')
+                ->from('candidate_military')
+                ->where('CandidateId' , $id)
+                ->get()
+                ->result_array();
     }
 
 

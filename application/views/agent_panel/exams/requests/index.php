@@ -14,11 +14,11 @@
                                 </tr>
                                 </thead>
                                 <tbody class="table-rows">
-                                    <tr>
-                                        <td><?php echo $examData['ExamPlaceTitle']; ?></td>
-                                        <td class="fit"><?php echo $examData['ExamDate']." ".$examData['ExamTime']; ?></td>
-                                        <td class="fit"><?php echo $examData['ExamPlaceDefaultCapacity']; ?></td>
-                                    </tr>
+                                <tr>
+                                    <td><?php echo $examData['ExamPlaceTitle']; ?></td>
+                                    <td class="fit"><?php echo $examData['ExamDate'] . " " . $examData['ExamTime']; ?></td>
+                                    <td class="fit"><?php echo $examData['ExamPlaceDefaultCapacity']; ?></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -57,30 +57,49 @@
                                             <th class="fit"><?php echo $item['CandidatePhone']; ?></th>
                                             <th class="fit"><?php echo candidateExamStatus($item['ExamState']); ?></th>
                                             <th class="fit"><?php echo examType($examData['ExamType']); ?></th>
-                                            <?php if($examData['ExamType'] == 'FirstStep'){ ?>
-                                            <td class="fit">
-                                                <a class="reject-exam"
-                                                   data-id="<?php echo $item['RequestId']; ?>"
-                                                   data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
-                                                    <button type="button"
-                                                            class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </a>
-                                            </td>
-                                            <td class="fit">
-                                                <a class="accept-exam"
-                                                   data-id="<?php echo $item['RequestId']; ?>"
-                                                   data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
-                                                    <button type="button"
-                                                            class="btn btn-success btn-circle waves-effect waves-circle waves-float">
-                                                        <i class="material-icons">check</i>
-                                                    </button>
-                                                </a>
-                                            </td>
-                                            <?php } ?>
-                                            <?php if($examData['ExamType'] == 'SecondStep'){ ?>
+                                            <?php if ($examData['ExamType'] == 'FirstStep') { ?>
                                                 <td class="fit">
+                                                    <?php if ($item['ExamState'] == 'Pend') { ?>
+                                                        <a class="reject-exam"
+                                                           data-id="<?php echo $item['RequestId']; ?>"
+                                                           data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
+                                                            <button type="button"
+                                                                    class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </a>
+                                                    <?php } else { ?>
+                                                        <button
+                                                                disabled
+                                                                type="button"
+                                                                class="btn btn-circle waves-effect waves-circle waves-float">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    <?php } ?>
+                                                </td>
+                                                <td class="fit">
+                                                    <?php if ($item['ExamState'] == 'Pend') { ?>
+                                                        <a class="accept-exam"
+                                                           data-id="<?php echo $item['RequestId']; ?>"
+                                                           data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
+                                                            <button type="button"
+                                                                    class="btn btn-success btn-circle waves-effect waves-circle waves-float">
+                                                                <i class="material-icons">check</i>
+                                                            </button>
+                                                        </a>
+                                                    <?php } else { ?>
+                                                        <button
+                                                                disabled
+                                                                type="button"
+                                                                class="btn btn-circle waves-effect waves-circle waves-float">
+                                                            <i class="material-icons">check</i>
+                                                        </button>
+                                                    <?php } ?>
+                                                </td>
+                                            <?php } ?>
+                                            <?php if ($examData['ExamType'] == 'SecondStep') { ?>
+                                                <td class="fit">
+                                                    <?php if ($item['ExamState'] == 'Pend') { ?>
                                                     <a class="reject-second-exam"
                                                        data-id="<?php echo $item['RequestId']; ?>"
                                                        data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
@@ -89,8 +108,17 @@
                                                             <i class="material-icons">close</i>
                                                         </button>
                                                     </a>
+                                                    <?php } else { ?>
+                                                        <button
+                                                                disabled
+                                                                type="button"
+                                                                class="btn btn-circle waves-effect waves-circle waves-float">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    <?php } ?>
                                                 </td>
                                                 <td class="fit">
+                                                    <?php if ($item['ExamState'] == 'Pend') { ?>
                                                     <a class="accept-second-exam"
                                                        data-id="<?php echo $item['RequestId']; ?>"
                                                        data-title="<?php echo $item['CandidateFirstName'] . " " . $item['CandidateLastName']; ?>">
@@ -99,6 +127,14 @@
                                                             <i class="material-icons">check</i>
                                                         </button>
                                                     </a>
+                                                    <?php } else { ?>
+                                                        <button
+                                                                disabled
+                                                                type="button"
+                                                                class="btn btn-circle waves-effect waves-circle waves-float">
+                                                            <i class="material-icons">check</i>
+                                                        </button>
+                                                    <?php } ?>
                                                 </td>
                                             <?php } ?>
                                         </tr>

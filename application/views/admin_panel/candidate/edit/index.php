@@ -1,4 +1,37 @@
-<?php $_DIR = base_url('assets/empanel/'); ?>
+<?php
+$_DIR = base_url('assets/empanel/');
+
+function gradePipe($type)
+{
+    switch ($type) {
+        case 'Undefined':
+            echo "<label class='label label-default'></label>";
+            break;
+        case 'Undefined':
+            echo "<label class='label label-default'></label>";
+            break;
+        case 'Undefined':
+            echo "<label class='label label-default'></label>";
+            break;
+        case 'Undefined':
+            echo "<label class='label label-default'></label>";
+            break;
+        case 'Undefined':
+            echo "<label class='label label-default'></label>";
+            break;
+        case 'Undefined':
+            echo "<label class='label label-default'></label>";
+            break;
+        case 'Undefined':
+            echo "<label class='label label-default'></label>";
+            break;
+        case 'Undefined':
+            echo "<label class='label label-default'></label>";
+            break;
+    }
+}
+
+?>
 <section class="content">
     <div class="container-fluid">
         <div class="row clearfix">
@@ -9,7 +42,7 @@
                         <div class="profile-body">
                             <div class="image-area">
                                 <img class="profile-image"
-                                     src="<?php echo $noImg; ?>"
+                                     src="<?php echo $candidate['CandidateProfileImage']; ?>"
                                      style="width: 90%;max-width: 145px;"/>
                             </div>
                             <input type="hidden" name="inputCandidateId" id="inputCandidateId"
@@ -216,7 +249,7 @@
                                             </div>
                                             <div class="panel-body">
                                                 <div class="alert  military-info-container">
-                                                    <img src="<?php echo $gifLoader; ?>"/>
+                                                    <?php var_dump($candidateMilitaryStatus); ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -236,15 +269,29 @@
                                                         <th class="fit info-universityName">نام دانشگاه</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
-                                                    <tr class="temp-edu-record">
-                                                        <td class="fit info-department"></td>
-                                                        <td class="fit info-educationalAttainment"></td>
-                                                        <td class="fit info-science"></td>
-                                                        <td class="fit info-studying"></td>
-                                                        <td class="fit info-universityLevelType"></td>
-                                                        <td class="fit info-universityName"></td>
-                                                    </tr>
+                                                    <?php foreach ($candidateAcademicBackground as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['CandidateDepartment']; ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php echo $item['CandidateGrade']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['CandidateMajor']; ?>
+                                                                <?php echo $item['CandidateSchoolMajor']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php echo $item['CandidateStudyStatus']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityLevelType">
+                                                                <?php echo $item['CandidateUniversityLevelType']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateUniversityName']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -518,9 +565,11 @@
                                                         می باشد
                                                     </strong>
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control"
+                                                        <input type="number" class="form-control"
                                                                value="<?php echo $candidate['CandidateScore']; ?>"
                                                                id="inputGrade"
+                                                               min="0"
+                                                               max="100"
                                                                name="inputGrade"/>
                                                     </div>
                                                 </div>

@@ -23,7 +23,7 @@
                                                     <option value="<?php echo $examPlace['ExamPlaceId']; ?>">
                                                         <?php echo $examPlace['ExamPlaceTitle']; ?>
                                                     </option>
-                                               <?php } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -37,11 +37,13 @@
                                             <select class="form-control"
                                                     name="inputExamType" id="inputExamType">
                                                 <option value="">-- انتخاب کنید --</option>
-                                                <?php foreach ($examType as $key => $value) { ?>
-                                                    <option value="<?php echo $key; ?>">
-                                                        <?php echo $value; ?>
-                                                    </option>
-                                                <?php } ?>
+                                                <?php foreach ($examType as $key => $value) {
+                                                    if ($key != 'Evaluation') { ?>
+                                                        <option value="<?php echo $key; ?>">
+                                                            <?php echo $value; ?>
+                                                        </option>
+                                                    <?php }
+                                                } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -56,8 +58,8 @@
                                                     value="1"
                                                     min="1"
                                                     type="number"
-                                                   class="form-control"
-                                                   id="inputExamCapacity" name="inputExamCapacity"/>
+                                                    class="form-control"
+                                                    id="inputExamCapacity" name="inputExamCapacity"/>
                                         </div>
                                     </div>
                                 </div>
