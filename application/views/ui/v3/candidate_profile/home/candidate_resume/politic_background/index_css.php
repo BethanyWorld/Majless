@@ -3,6 +3,7 @@
     .margin-right-15 {
         margin-right: 16px;
     }
+
     .padding-0 {
         padding: 0px;
     }
@@ -29,7 +30,7 @@
     /*Helper*/
 
     /*inputs*/
-    .input-style input {
+    .ttt input {
         margin: 0px 0px;
         width: 100%;
         display: block;
@@ -49,19 +50,19 @@
         border-radius: 0px;
     }
 
-    .input-style input:focus, input:valid {
+    .ttt input:focus, input:valid {
         box-shadow: none;
         outline: none;
-        background-position: 0px 0px;
+        background-position: 0 0;
     }
 
-    .input-style input::-webkit-input-placeholder {
+    .ttt input::-webkit-input-placeholder {
         font-family: 'roboto', sans-serif;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     }
 
-    .input-style input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+    .ttt input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
         color: #022D6D;
         font-size: 11px;
         -webkit-transform: translateY(-20px);

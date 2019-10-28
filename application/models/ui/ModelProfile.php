@@ -1,6 +1,8 @@
 <?php
 
-class ModelProfile extends CI_Model{
+
+class ModelProfile extends CI_Model
+{
     public function doUpdateCandidatePersonalInfo($inputs)
     {
         $UserArray = array(
@@ -66,6 +68,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateSkills($inputs)
     {
         $this->db->trans_start();
@@ -109,6 +112,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateBooks($inputs)
     {
         $this->db->trans_start();
@@ -153,6 +157,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateArticles($inputs)
     {
         $this->db->trans_start();
@@ -198,6 +203,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateResearch($inputs)
     {
         $this->db->trans_start();
@@ -244,6 +250,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateTranslation($inputs)
     {
         $this->db->trans_start();
@@ -289,6 +296,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateInvention($inputs)
     {
         $this->db->trans_start();
@@ -333,6 +341,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateConference($inputs)
     {
         $this->db->trans_start();
@@ -378,6 +387,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateJobHistory($inputs)
     {
         $this->db->trans_start();
@@ -415,6 +425,7 @@ class ModelProfile extends CI_Model{
         }
     }
 
+
     public function getCandidateAcademicBackgroundByCandidateId($id)
     {
         return
@@ -424,6 +435,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateAcademicBackground($inputs)
     {
         $this->db->trans_start();
@@ -471,6 +483,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateSocialCulturalBackground($inputs)
     {
         $this->db->trans_start();
@@ -524,6 +537,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateMilitaryStatus($inputs)
     {
         $this->db->trans_start();
@@ -557,63 +571,6 @@ class ModelProfile extends CI_Model{
             $arr = array(
                 'type' => "green",
                 'content' => "بروزرسانی سوابق نظام وظیفه با موفقیت انجام شد",
-                'success' => true
-            );
-            return $arr;
-        }
-    }
-
-    public function getCandidateUpdatePoliticBackgroundByCandidateId($id)
-    {
-        return
-            $this->db->select('*')
-                ->from('candidate_politic_record')
-                ->where('CandidateId', $id)
-                ->get()
-                ->result_array();
-    }
-    public function candidateUpdatePoliticBackground($inputs)
-    {
-        $this->db->trans_start();
-        $this->db->delete('candidate_politic_record', array(
-            'CandidateId' => $inputs['inputCandidateId']
-        ));
-        for ($i = 0; $i < count($inputs['inputCandidatePoliticBackground']);) {
-            $UserArray = array(
-                'CandidateId' => $inputs['inputCandidateId'],
-                'CandidateActivityType' => $inputs['inputCandidatePoliticBackground'][$i]['value'],
-                'CandidateActivityTypeOtherOrganizationTitle' => $inputs['inputCandidatePoliticBackground'][$i + 1]['value'],
-                'CandidateElectionType' => $inputs['inputCandidatePoliticBackground'][$i + 2]['value'],
-                'CandidateElectionPeriod' => $inputs['inputCandidatePoliticBackground'][$i + 3]['value'],
-                'CandidateElectionListName' => $inputs['inputCandidatePoliticBackground'][$i + 4]['value'],
-                'CandidateHeadquarterActivityTitle' => $inputs['inputCandidatePoliticBackground'][$i + 5]['value'],
-                'CandidateMediaType' => $inputs['inputCandidatePoliticBackground'][$i + 6]['value'],
-                'CandidateMediaTypeTitle' => $inputs['inputCandidatePoliticBackground'][$i + 7]['value'],
-                'CandidateMediaTitle' => $inputs['inputCandidatePoliticBackground'][$i + 8]['value'],
-                'CandidateMediaActivityType' => $inputs['inputCandidatePoliticBackground'][$i + 9]['value'],
-                'CandidateResponsibility' => $inputs['inputCandidatePoliticBackground'][$i + 10]['value'],
-                'CandidateMemberShip' => $inputs['inputCandidatePoliticBackground'][$i + 11]['value'],
-                'CandidateMediaStartMonth' => $inputs['inputCandidatePoliticBackground'][$i + 12]['value'],
-                'CandidateMediaStartYear' => $inputs['inputCandidatePoliticBackground'][$i + 13]['value'],
-                'CandidateMediaEndMonth' => $inputs['inputCandidatePoliticBackground'][$i + 14]['value'],
-                'CandidateMediaEndYear' => $inputs['inputCandidatePoliticBackground'][$i + 15]['value'],
-                'CandidateActivityDescription' => $inputs['inputCandidatePoliticBackground'][$i + 16]['value']
-            );
-            $this->db->insert('candidate_politic_record', $UserArray);
-            $i+=17;
-        }
-        $this->db->trans_complete();
-        if ($this->db->trans_status() === FALSE) {
-            $arr = array(
-                'type' => "red",
-                'content' => "بروزرسانی سوابق سیاسی با مشکل مواجه شد",
-                'success' => false
-            );
-            return $arr;
-        } else {
-            $arr = array(
-                'type' => "green",
-                'content' => "بروزرسانی سوابق سیاسی با موفقیت انجام شد",
                 'success' => true
             );
             return $arr;

@@ -395,7 +395,6 @@ class Profile extends CI_Controller{
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
-        $data['userInfo']['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index', $data);
@@ -403,13 +402,13 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdatePoliticBackground(){
+    /*public function candidateUpdatePoliticBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
-        $result = $this->ModelProfile->candidateUpdatePoliticBackground($inputs);
+        $result = $this->ModelProfile->candidateUpdateSocialCulturalBackground($inputs);
         echo json_encode($result);
-    }
+    }*/
 
     public function scienceBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
