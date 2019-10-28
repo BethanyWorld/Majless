@@ -1,7 +1,7 @@
 <style>
     /*Helper*/
     .margin-right-15 {
-        margin-right: 16px;
+        margin-right: 15px;
     }
 
     .padding-0 {
@@ -27,6 +27,7 @@
     .margin-b-25 {
         margin-bottom: 30px;
     }
+
     /*Helper*/
 
     /*inputs*/

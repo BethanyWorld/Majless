@@ -1,6 +1,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
- 
+
         $President = JSON.parse (
             ' [' +
             '{ "name": "دوره اول - 1358" , "value" : "1" } ,' +
@@ -51,7 +51,6 @@
         );
 
         $(document).on('change', '[name="inputCandidateActivityType"]', function () {
-            debugger;
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateActivityType = $(this).val();
@@ -119,14 +118,6 @@
                 $($parentDom + '.Media-Activity').css('display', 'none');
             }
         });
-        $(document).on('change', '[name="inputCandidateElectionType"]', function () {
-            $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
-            $parentDom = "#" + $parentId + " ";
-            $inputCandidateElectionType = $(this).val();
-
-            $($parentDom + '.ElectionPeriod').css('display', 'block');
-
-        });
         $(document).on('change', '[name="inputCandidateMediaType"]', function () {
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
@@ -142,6 +133,7 @@
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateElectionType = $(this).val();
+            $($parentDom + '.ElectionPeriod').css('display', 'block');
 
             if($inputCandidateElectionType === "President"){
                 fillMajorDropDown($parentDom , $President);
@@ -156,8 +148,9 @@
                 fillMajorDropDown($parentDom , $CityCouncil);
             }
         });
+
         function fillMajorDropDown($id , data) {
-            $selectedMajor = $($id + "[name='inputCandidateElectionType']").data('name');
+            $selectedMajor = $($id + "[name='inputCandidateElectionType']").data('selected-major');
             $($id + "[name='inputCandidateElectionPeriod']").html('');
             $tempOption = "<option selected value=''>-- انتخاب کنید --</option>";
             $($id + "[name='inputCandidateElectionPeriod']").append($tempOption);
@@ -181,6 +174,36 @@
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });
+
+        /* Add By ME */
+        $('[name="inputCandidateActivityType"]').change();
+        setTimeout(function(){$('[name="inputCandidateElectionType"]').change();} , 500);
+        setTimeout(function(){$('[name="inputCandidateMediaType"]').change();} , 1000);
+
+        $("#updatePoliticBackground").click({redirect: false}, updatePoliticBackground);
+        $("#updatePoliticBackgroundAndRedirect").click({redirect: true}, updatePoliticBackground);
+        function updatePoliticBackground(param) {
+            if ($("#form").serializeArray().length <= 0) {
+                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            }
+            else {
+                $sendData = {inputCandidatePoliticBackground : $("#form").serializeArray()}
+                toggleLoader();
+                $.ajax({
+                    type: 'post',
+                    url: base_url + 'Profile/candidateUpdatePoliticBackground',
+                    data: $sendData,
+                    success: function (data) {
+                        toggleLoader();
+                        $result = JSON.parse(data);
+                        notify($result['content'], $result['type']);
+                        if (param.data.redirect) {
+                            window.location.href = base_url + 'Profile/jobHistory';
+                        }
+                    }
+                });
+            }
+        }
 
     });
 </script>
