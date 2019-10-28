@@ -90,6 +90,7 @@
             }
         });
 
+
         $(".add-form").click(function () {
             $form = $("#unique-form").clone().removeClass('hidden').attr('id', UUID());
             $form.find('[data-name]').each(function () {
