@@ -52,6 +52,7 @@
                                                     </div>
                                                     <!--for Format-->
 
+                                                    
                                                     <!--for election-->
                                                     <div class="col-md-12 col-xs-12 RightFloat margin-b-25 ElectionType">
                                                         <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
