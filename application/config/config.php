@@ -93,9 +93,10 @@ $config['api'] = array(
     'OtherSkillWeb' => 'http://new.moarefin.ir:8080/api/OtherSkillWeb?',
     'LegalConditionsWeb' => 'http://new.moarefin.ir:8080/api/LegalConditionsWeb?',
     'EducationalInfoReportWeb' => 'http://new.moarefin.ir:8080/api/EducationalInfoReportWeb?',
-    'JobHistoryWeb' => 'http://new.moarefin.ir:8080/api/JobHistoryWeb?',
+    'JobHistoryWeb' => 'http://new.moarefin.ir:8080/api/JobHistoryWeb?'
 );
 $config['EnumResumeProfile'] = array(
+
     'Gender' => array('Male' => 'آقا', 'Female' => 'خانم'),
     'MaritalStatus' => array('Married' => 'متاهل', 'Single' => 'مجرد'),
     'Months' => array('Married' => 'متاهل', 'Single' => 'مجرد'),
@@ -126,28 +127,28 @@ $config['EnumResumeProfile'] = array(
         'Azar' => 'آذر',
         'Dey' => 'دی',
         'Bahman' => 'بهمن',
-        'Esfand' => 'اسفند',
+        'Esfand' => 'اسفند'
     ),
     'ArticleLevelType' => array(
         'Scopus' => 'علمی تخصصی',
         'ScientificTaroviji' => 'علمی ترویجی',
         'ScientificResearch' => 'علمی پژوهشی',
         'ISC' => 'ISC',
-        'ISI' => 'ISI',
+        'ISI' => 'ISI'
     ),
     'TranslateType' => array(
         'Article' => 'مقاله',
-        'Book' => 'کتاب',
+        'Book' => 'کتاب'
     ),
     'ConferenceLevelType' => array(
         'International' => 'بین المللی',
-        'Internal' => 'داخلی',
+        'Internal' => 'داخلی'
     ),
     'AcceptanceOfferType' => array(
         'Lecture' => 'سخنرانی',
         'Poster' => 'پوستر',
         'PrintArticle' => 'چاپ مقاله',
-        'AbstractPrinting' => 'چاپ چکیده',
+        'AbstractPrinting' => 'چاپ چکیده'
     ),
     /* For Candidate Academic Background */
     'AcademicStudyStatus' => array(
@@ -166,7 +167,7 @@ $config['EnumResumeProfile'] = array(
         'Hozeh1' => 'حوزه سطح یک',
         'Hozeh2' => 'حوزه سطح دو',
         'Hozeh3' => 'حوزه سطح سه',
-        'Hozeh4' => 'حوزه سطح چهار',
+        'Hozeh4' => 'حوزه سطح چهار'
     ),
     'CandidateUniversityLevelType' => array(
         'PayamNooruniversityLevelType' => ' پیام نور',
@@ -187,7 +188,7 @@ $config['EnumResumeProfile'] = array(
         'Riazi' => 'تجربی',
         'Fani' => 'فنی',
         'Maref' => 'معارف اسلامی',
-        'Kardanesh' => 'کارودانش',
+        'Kardanesh' => 'کارودانش'
     ),
     'CandidateDepartment' => array(
         'VeterinaryMedicineDepartment' => 'دامپزشکی',
@@ -197,7 +198,7 @@ $config['EnumResumeProfile'] = array(
         'TechnicalEngineeringDepartment' => ' فنی مهندسی ',
         'ArtDepartment' => 'هنر',
         'MedicalDepartment' => 'پزشکی',
-        'AgricultureNaturalResourcesDepartment' => 'کشاورزی و منابع طبیعی',
+        'AgricultureNaturalResourcesDepartment' => 'کشاورزی و منابع طبیعی'
     ),
     /* Social Caltural Enums */
     'CandidateActivityFieldType' => array(
@@ -251,6 +252,32 @@ $config['EnumResumeProfile'] = array(
         'DepartmentDefense' => 'وزارت دفاع',
         'Others' => 'سایر'
     ),
+    /* Politic Enums */
+    'CandidatePoliticActivityType' => array(
+        'Group' => 'حذب',
+        'CandidatesCampaign' => 'ستاد های انتخاباتی نامزدها',
+        'SupervisoryBoard' => ' نظارت و اجرایی ستاد انتخابات',
+        'Media' => 'رسانه',
+        'Others' => 'سایر'
+    ),
+    'CandidatePoliticElectionType' => array(
+        'President' => 'ریاست جمهوری',
+        'Parliament' => 'مجلس',
+        'CouncilExperts' => 'مجلس خبرگان',
+        'CityCouncil' => 'شورای شهر'
+    ),
+    'CandidateHeadquarterActivityTitle' => array(
+        'SupervisoryBoard' => ' نطارت شورای نگهبان',
+        'ExecutiveCommittee' => 'هیئت اجرایی وزارت کشور'
+    ),
+    'CandidateMediaType' => array(
+        'Voice' => 'صدا و سیما',
+        'Journals' => 'سایت خبری',
+        'NewSite' => 'شبکه اجتماعی',
+        'SocialNetwork' => 'نگهبان',
+        'Others' => 'سایر'
+    )
+
 );
 /* استان پیش فرض تهران است */
 $config['defaultStateId'] = 8;
