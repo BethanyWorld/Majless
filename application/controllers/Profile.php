@@ -402,14 +402,14 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    /*public function candidateUpdatePoliticBackground(){
+
+    public function candidateUpdatePoliticBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
-        $result = $this->ModelProfile->candidateUpdateSocialCulturalBackground($inputs);
+        $result = $this->ModelProfile->candidateUpdatePoliticBackground($inputs);
         echo json_encode($result);
-    }*/
-
+    }
     public function scienceBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'سوابق علمی پژوهشی';
