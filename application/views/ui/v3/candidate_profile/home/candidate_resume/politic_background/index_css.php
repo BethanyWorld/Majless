@@ -1,7 +1,7 @@
 <style>
     /*Helper*/
     .margin-right-15 {
-        margin-right: 15px;
+        margin-right: 16px;
     }
     .padding-0 {
         padding: 0px;

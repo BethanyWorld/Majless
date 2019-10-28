@@ -265,7 +265,7 @@ $config['EnumResumeProfile'] = array(
         'Parliament' => 'مجلس',
         'CouncilExperts' => 'مجلس خبرگان',
         'CityCouncil' => 'شورای شهر'
-    ),
+    ), 
     'CandidateHeadquarterActivityTitle' => array(
         'SupervisoryBoard' => ' نطارت شورای نگهبان',
         'ExecutiveCommittee' => 'هیئت اجرایی وزارت کشور'

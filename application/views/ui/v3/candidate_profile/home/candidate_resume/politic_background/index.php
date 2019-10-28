@@ -3,7 +3,7 @@
     <?php echo $resumeSidebar; ?>
     <div class="col-md-9 col-xs-12 pull-right">
         <div class="LeftPanel">
-            <div class="LeftPanelcontent">
+            <div class="LeftPanelcontent a">
                 <div class="row">
                     <div class="col-md-12 col-xs-12">
                         <div class="panel panel-default LeftPanelShadow">
