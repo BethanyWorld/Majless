@@ -205,6 +205,9 @@
         display: none;
     }
 
+    .inputCandidatePlaceService1 {
+        display: none;
+    }
     .inputCandidatePlaceservice1 {
         display: none;
     }

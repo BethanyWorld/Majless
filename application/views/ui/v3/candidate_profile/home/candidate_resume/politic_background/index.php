@@ -169,8 +169,7 @@
                                                                             name="inputCandidateMediaStartMonth"
                                                                             id="inputCandidateMediaStartMonth">
                                                                         <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                            <option
-                                                                                    value="<?php echo $key; ?>">
+                                                                            <option value="<?php echo $key; ?>">
                                                                                 <?php echo $value; ?>
                                                                             </option>
                                                                         <?php } ?>
@@ -181,8 +180,7 @@
                                                                             name="inputCandidateMediaStartYear"
                                                                             id="inputCandidateMediaStartYear">
                                                                         <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                            <option
-                                                                                    value="<?php echo $i; ?>">
+                                                                            <option value="<?php echo $i; ?>">
                                                                                 <?php echo $i; ?>
                                                                             </option>
                                                                         <?php } ?>
@@ -200,8 +198,7 @@
                                                                             name="inputCandidateMediaEndMonth"
                                                                             id="inputCandidateMediaEndMonth">
                                                                         <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                            <option
-                                                                                    value="<?php echo $key; ?>">
+                                                                            <option value="<?php echo $key; ?>">
                                                                                 <?php echo $value; ?>
                                                                             </option>
                                                                         <?php } ?>
@@ -212,8 +209,7 @@
                                                                             name="inputCandidateMediaEndYear"
                                                                             id="inputCandidateMediaEndYear">
                                                                         <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                            <option
-                                                                                    value="<?php echo $i; ?>">
+                                                                            <option value="<?php echo $i; ?>">
                                                                                 <?php echo $i; ?>
                                                                             </option>
                                                                         <?php } ?>
