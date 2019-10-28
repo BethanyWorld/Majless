@@ -42,7 +42,7 @@
                                                             </select>
                                                         </div>
 
-                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat input-style CollectionName">
+                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat CollectionName">
                                                             <label for="inputCandidateActivityTypeOtherOrganizationTitle">نام
                                                                 مجموعه</label>
                                                             <input data-name="inputCandidateActivityTypeOtherOrganizationTitle"
@@ -75,7 +75,7 @@
                                                             </select>
                                                         </div>
 
-                                                        <div class="col-md-4 col-sm-12 col-xs-12 input-style RightFloat CandidateName">
+                                                        <div class="col-md-4 col-sm-12 col-xs-12 ttt RightFloat CandidateName">
                                                             <label for="inputCandidateElectionListName">نام
                                                                 نامزد / لیست</label>
                                                             <input data-name="inputCandidateElectionListName"
@@ -85,7 +85,7 @@
                                                     <!--for election-->
 
                                                     <!--for Cooperation-->
-                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style Partnership-title">
+                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25  ttt Partnership-title">
                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
                                                             <label for="inputCandidateHeadquarterActivityTitle">عنوان
                                                                 همکاری :</label>
@@ -104,10 +104,10 @@
                                                     <!--for Cooperation-->
 
                                                     <!--for Media-->
-                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style Media">
+                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25  ttt Media">
                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                            <label for="inputCandidateMediaType">
-                                                                 قالب رسانه :</label>
+                                                            <label for="inputCandidateMediaType">">قالب
+                                                                رسانه :</label>
                                                             <select class="form-control form-control-lg"
                                                                     data-name="inputCandidateMediaType">
                                                                 <option value="" selected>--انتخاب کنید--</option>
@@ -118,29 +118,30 @@
                                                                 <option value="Others">سایر</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-md-6 col-sm-12 col-xs-12 input-style RightFloat media-template-title">
+                                                        <div class="col-md-6 col-sm-12 col-xs-12 ttt RightFloat media-template-title">
                                                             <label for="inputCandidateMediaTypeTitle">عنوان قالب
                                                                 رسانه</label>
                                                             <input data-name="inputCandidateMediaTypeTitle" type="text"
                                                                    required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25 input-style MediaName">
+                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25  ttt MediaName">
                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                            <label for="inputCandidateMediaTitle"> نام رسانه:</label>
-                                                            <input data-name="inputCandidateMediaTitle" type="text" required>
+                                                            <label for="inputCandidateMediaTitle"> نام
+                                                                رسانه:</label>
+                                                            <input data-name="inputCandidateMediaTitle" type="text">
                                                         </div>
-                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat Media-Activity input-style">
+                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat Media-Activity">
                                                             <label for="inputCandidateMediaActivityType">
                                                                 نوع فعالیت :</label>
                                                             <input data-name="inputCandidateMediaActivityType"
-                                                                   type="text" required>
+                                                                   type="text">
                                                         </div>
                                                     </div>
                                                     <!--for Media-->
 
                                                     <!--for Responsibility-->
-                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style">
+                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25  ttt">
                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
                                                             <label for="inputCandidateResponsibility">مسئولیت</label>
                                                             <input data-name="inputCandidateResponsibility" type="text"
@@ -221,7 +222,7 @@
                                                     <!--for Media-->
 
                                                     <!--for Description-->
-                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25 input-style">
+                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25 ttt">
                                                         <div class="col-md-12 col-sm-12 col-xs-12 RightFloat">
                                                             <label for="inputCandidateActivityDescription">توضیحات</label>
                                                             <input data-name="inputCandidateActivityDescription"
