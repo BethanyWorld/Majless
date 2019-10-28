@@ -26,7 +26,6 @@
     .margin-b-25 {
         margin-bottom: 30px;
     }
-
     /*Helper*/
 
     /*inputs*/
