@@ -1,6 +1,55 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
+        $President = JSON.parse (
+            ' [' +
+            '{ "name": "دوره اول - 1358" , "value" : "1" } ,' +
+            '{ "name": "دوره دوم - 1360" , "value" : "2"  } ,' +
+            '{ "name": "دوره سوم - 1360" , "value" : "3"  }   ,' +
+            '{ "name": "دوره چهارم - 1364" , "value" : "4"  }  ,' +
+            '{ "name": "دوره پنجم - 1368" , "value" : "5"  }   ,' +
+            '{ "name": "دوره ششم - 1372" , "value" : "6"  }   ,' +
+            '{ "name": "دوره هفتم - 1376" , "value" : "7"  }   ,' +
+            '{ "name": "دوره هشتم - 1380" , "value" : "8"  }   ,' +
+            '{ "name": "دوره نهم - 1384" , "value" : "9"  }   ,' +
+            '{ "name": "دوره دهم - 1388" , "value" : "10"  }   ,' +
+            '{ "name": "دوره یازدهم - 1392" , "value" : "11"  }   ,' +
+            '{ "name": "دوره دوازدهم - 1396" , "value" : "12"  }   ' +
+            ']'
+        );
+        $Parliament = JSON.parse (
+            ' [' +
+            '{ "name": "دوره اول - 1358"  , "value" : "1" } ,' +
+            '{ "name": "دوره دوم - 1363" , "value" : "2"  } ,' +
+            '{ "name": "دوره سوم - 1367" , "value" : "3"  }   ,' +
+            '{ "name": "دوره چهارم - 1371" , "value" : "4"  }  ,' +
+            '{ "name": "دوره پنجم - 1374" , "value" : "5"  }   ,' +
+            '{ "name": "دوره ششم - 1379" , "value" : "6"  }   ,' +
+            '{ "name": "دوره هفتم - 1382" , "value" : "7"  }   ,' +
+            '{ "name": "دوره هشتم - 1386" , "value" : "8"  }   ,' +
+            '{ "name": "دوره نهم - 1390" , "value" : "9"  }   ,' +
+            '{ "name": "دوره دهم - 1394" , "value" : "10"  }   ' +
+            ']'
+        );
+        $CouncilExperts = JSON.parse (
+            ' [' +
+            '{ "name": "دوره اول - 1361"  , "value" : "1" } ,' +
+            '{ "name": "دوره دوم - 1369" , "value" : "2"  } ,' +
+            '{ "name": "دوره سوم - 1377" , "value" : "3"  }   ,' +
+            '{ "name": "دوره چهارم - 1385" , "value" : "4"  }  ,' +
+            '{ "name": "دوره پنجم - 1394" , "value" : "5"  }   ' +
+            ']'
+        );
+        $CityCouncil = JSON.parse (
+            ' [' +
+            '{ "name": "دوره اول - 1377"  , "value" : "1" } ,' +
+            '{ "name": "دوره دوم - 1381" , "value" : "2"  } ,' +
+            '{ "name": "دوره سوم - 1385" , "value" : "3"  }   ,' +
+            '{ "name": "دوره چهارم - 1392" , "value" : "4"  }  ,' +
+            '{ "name": "دوره پنجم - 1396" , "value" : "5"  }   ' +
+            ']'
+        );
+
         $(document).on('change', '[name="inputCandidateActivityType"]', function () {
             debugger;
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
@@ -89,8 +138,39 @@
                 $($parentDom + '.media-template-title').css('display', 'none');
             }
         });
+        $(document).on('change', '[name="inputCandidateElectionType"]', function () {
+            $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
+            $parentDom = "#" + $parentId + " ";
+            $inputCandidateElectionType = $(this).val();
 
-
+            if($inputCandidateElectionType === "President"){
+                fillMajorDropDown($parentDom , $President);
+            }
+            if($inputCandidateElectionType === "Parliament"){
+                fillMajorDropDown($parentDom , $Parliament);
+            }
+            if($inputCandidateElectionType === "CouncilExperts"){
+                fillMajorDropDown($parentDom , $CouncilExperts);
+            }
+            if($inputCandidateElectionType === "CityCouncil"){
+                fillMajorDropDown($parentDom , $CityCouncil);
+            }
+        });
+        function fillMajorDropDown($id , data) {
+            $selectedMajor = $($id + "[name='inputCandidateElectionType']").data('name');
+            $($id + "[name='inputCandidateElectionPeriod']").html('');
+            $tempOption = "<option selected value=''>-- انتخاب کنید --</option>";
+            $($id + "[name='inputCandidateElectionPeriod']").append($tempOption);
+            for($i=0;$i<data.length;$i++){
+                if($selectedMajor == data[$i]['value']){
+                    $tempOption = "<option selected value='"+data[$i]['value']+"'> "+ data[$i]['name']+"</option>";
+                }
+                else{
+                    $tempOption = "<option value='"+data[$i]['value']+"'> "+ data[$i]['name']+"</option>";
+                }
+                $($id + "[name='inputCandidateElectionPeriod']").append($tempOption);
+            }
+        }
         $(".add-form").click(function () {
             $form = $("#unique-form").clone().removeClass('hidden').attr('id', UUID());
             $form.find('[data-name]').each(function () {

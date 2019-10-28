@@ -144,7 +144,7 @@
     .media-template-title{
         display: none;
     }
-    
+
     /*end for add form*/
 
 </style>
