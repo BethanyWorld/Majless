@@ -11,7 +11,12 @@
             $inputCandidateId = $.trim($("#inputCandidateId").val());
             $inputGrade = $.trim($("#inputGrade").val());
             /* Validation */
+            console.log($inputGrade);
             if (!$.isNumeric($inputGrade)) {
+                notify('نمره نامعتبر است', 'red');
+                return false;
+            }
+            if ($inputGrade > 100 || $inputGrade < 1) {
                 notify('نمره نامعتبر است', 'red');
                 return false;
             }
@@ -49,6 +54,11 @@
                                 notify('مشکلی درخ داده است', 'red');
                             }
                         });
+                    }
+                    else{
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

@@ -6,6 +6,7 @@ class Candidate extends CI_Controller{
         $this->load->helper('admin/admin_login');
         $this->load->model('admin/ModelCandidate');
         $this->load->model('ui/ModelCountry');
+        $this->load->model('ui/ModelProfile');
     }
 
     public function index(){
@@ -32,11 +33,13 @@ class Candidate extends CI_Controller{
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = 'ویرایش نامزد انتخاباتی';
-        $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['exams'] = $this->getCandidateExams($candidateId);
+        $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+        $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
+        $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
 
         $data['api'] = $this->config->item('api');
-
         $this->load->view('admin_panel/static/header', $data);
         $this->load->view('admin_panel/candidate/edit/index' , $data);
         $this->load->view('admin_panel/candidate/edit/index_css');

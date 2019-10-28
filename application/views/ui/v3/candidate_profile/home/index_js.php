@@ -11,41 +11,35 @@
             url: base_url + 'Profile/getResumeStatus',
             success: function (data) {
                 $result = JSON.parse(data);
-                console.log($result);
-                return;
-                $.each($result, function (index, value) {
-                    /*اگر نامزد انتخاباتی رزومه خود را تکمیل کرده بود*/
-                    if (value['isCompleted']) {
-                        $candidateStatus = "CandidateResumeCompleted";
-                        /*اگر نامزد انتخاباتی رزومه را تکمیل کرده بود و  شرایط  نامزد را داشت*/
-                        if (value['hasConditions']) {
-                            $candidateStatus = "CandidateResumeAccepted";
-                        }
-                        /*اگر نامزد انتخاباتی رزومه را تکمیل کرده بود ولی  شرایط  نامزد را نداشت*/
-                        else {
-                            $candidateStatus = "CandidateResumeRejected";
-                        }
+                /*اگر نامزد انتخاباتی رزومه خود را تکمیل کرده بود*/
+                if ($result['isCompleted']) {
+                    $candidateStatus = "CandidateResumeCompleted";
+                    /*اگر نامزد انتخاباتی رزومه را تکمیل کرده بود و  شرایط  نامزد را داشت*/
+                    if ($result['hasConditions']) {
+                        $candidateStatus = "CandidateResumeAccepted";
                     }
-                    /*اگر نامزد انتخاباتی رزومه خود را تکمیل نکزده بود*/
+                    /*اگر نامزد انتخاباتی رزومه را تکمیل کرده بود ولی  شرایط  نامزد را نداشت*/
                     else {
-                        $candidateStatus = "CandidateRegister";
+                        $candidateStatus = "CandidateResumeRejected";
                     }
-                    if($currentCandidateStatus == 'CandidateRegister' || $currentCandidateStatus == 'CandidateResumeCompleted' || $currentCandidateStatus == 'CandidateResumeAccepted' || $currentCandidateStatus == 'CandidateResumeRejected'){
-                        $sendData = {'inputCandidateStatus': $candidateStatus,}
-                        $.ajax({
-                            type: 'post',
-                            url: base_url + 'SignUp/changeCandidateState',
-                            data: $sendData,
-                            success: function (data) {
-                                if($currentCandidateStatus != $candidateStatus){
-                                    setTimeout(function(){
-                                        location.reload();
-                                    } , 1000);
-                                }
+                }
+                /*اگر نامزد انتخاباتی رزومه خود را تکمیل نکزده بود*/
+                else {
+                    $candidateStatus = "CandidateRegister";
+                }
+                if ($currentCandidateStatus == 'CandidateRegister' || $currentCandidateStatus == 'CandidateResumeCompleted' || $currentCandidateStatus == 'CandidateResumeAccepted' || $currentCandidateStatus == 'CandidateResumeRejected') {
+                    $sendData = {'inputCandidateStatus': $candidateStatus,}
+                    $.ajax({
+                        type: 'post',
+                        url: base_url + 'SignUp/changeCandidateState',
+                        data: $sendData,
+                        success: function (data) {
+                            if ($currentCandidateStatus != $candidateStatus) {
+                                location.reload();
                             }
-                        });
-                    }
-                });
+                        }
+                    });
+                }
             }
         });
 

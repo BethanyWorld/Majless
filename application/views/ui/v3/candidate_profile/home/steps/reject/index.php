@@ -1,8 +1,9 @@
-
-<div class="col-xs-12 alert alert-danger">
+<div class="col-xs-12 alert alert-warning">
     <p>
         <strong>
-            کاربر گرامی شما برای ادامه فرآیند، حائز نمره لازم  نشده اید
+            رزومه شما دارای شرایط قانونی نامزدی مجلس نیست.
+            لطفا جهت ادامه فرآیند، رزومه خود را تکمیل کنید
+            <a class="btn btn-danger" href="<?php echo base_url('Profile/resume'); ?>">تکمیل زرومه</a>
         </strong>
     </p>
 </div>

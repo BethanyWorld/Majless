@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Profile extends CI_Controller{
-
     public function __construct(){
         parent::__construct();
         $this->load->helper('ui/user_login');
@@ -10,8 +9,7 @@ class Profile extends CI_Controller{
         $this->load->model('ui/ModelProfile');
         $this->load->model('agent/ModelExam');
     }
-    public function index()
-    {
+    public function index(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'صفحه کاربری';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -104,15 +102,15 @@ class Profile extends CI_Controller{
         $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
         $data['api'] = $this->config->item('api');
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/first_exam_list/index', $data);
-        $this->load->view('ui/v3/candidate_profile/first_exam_list/index_css');
-        $this->load->view('ui/v3/candidate_profile/first_exam_list/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/exams/first_exam_list/index', $data);
+        $this->load->view('ui/v3/candidate_profile/exams/first_exam_list/index_css');
+        $this->load->view('ui/v3/candidate_profile/exams/first_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function getFirstStepExamList($stateId)
     {
         $data['data'] = $this->ModelExam->getFirstStepExamByStateId($stateId);
-        $data['htmlResult'] = $this->load->view('ui/v3/candidate_profile/first_exam_list/pagination', $data, TRUE);
+        $data['htmlResult'] = $this->load->view('ui/v3/candidate_profile/exams/first_exam_list/pagination', $data, TRUE);
         unset($data['data']);
         echo json_encode($data);
     }
@@ -127,15 +125,15 @@ class Profile extends CI_Controller{
         $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
         $data['api'] = $this->config->item('api');
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/second_exam_list/index', $data);
-        $this->load->view('ui/v3/candidate_profile/second_exam_list/index_css');
-        $this->load->view('ui/v3/candidate_profile/second_exam_list/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/exams/second_exam_list/index', $data);
+        $this->load->view('ui/v3/candidate_profile/exams/second_exam_list/index_css');
+        $this->load->view('ui/v3/candidate_profile/exams/second_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function getSecondStepExamList($stateId)
     {
         $data['data'] = $this->ModelExam->getSecondStepExamByStateId($stateId);
-        $data['htmlResult'] = $this->load->view('ui/v3/candidate_profile/second_exam_list/pagination', $data, TRUE);
+        $data['htmlResult'] = $this->load->view('ui/v3/candidate_profile/exams/second_exam_list/pagination', $data, TRUE);
         unset($data['data']);
         echo json_encode($data);
     }
@@ -150,15 +148,15 @@ class Profile extends CI_Controller{
         $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
         $data['api'] = $this->config->item('api');
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/evaluation_exam_list/index', $data);
-        $this->load->view('ui/v3/candidate_profile/evaluation_exam_list/index_css');
-        $this->load->view('ui/v3/candidate_profile/evaluation_exam_list/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/exams/evaluation_exam_list/index', $data);
+        $this->load->view('ui/v3/candidate_profile/exams/evaluation_exam_list/index_css');
+        $this->load->view('ui/v3/candidate_profile/exams/evaluation_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function getEvaluationExamList()
     {
         $data['data'] = $this->ModelExam->getEvaluationExamList();
-        $data['htmlResult'] = $this->load->view('ui/v3/candidate_profile/evaluation_exam_list/pagination', $data, TRUE);
+        $data['htmlResult'] = $this->load->view('ui/v3/candidate_profile/exams/evaluation_exam_list/pagination', $data, TRUE);
         unset($data['data']);
         echo json_encode($data);
     }
@@ -191,6 +189,8 @@ class Profile extends CI_Controller{
         }
     }
 
+
+    /* For Resume -------------------------------------------------------------*/
     public function resume(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
@@ -221,9 +221,9 @@ class Profile extends CI_Controller{
 
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/resume/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/resume/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/resume/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/resume/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/resume/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/resume/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function candidateUpdatePersonalInfo(){
@@ -297,9 +297,9 @@ class Profile extends CI_Controller{
         $data['userInfo']['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/academic_background/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/academic_background/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/academic_background/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function candidateUpdateAcademicBackground(){
@@ -319,11 +319,12 @@ class Profile extends CI_Controller{
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+        $data['userInfo']['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/military_status/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/military_status/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/military_status/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/military_status/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/military_status/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/military_status/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function candidateUpdateMilitaryStatus(){
@@ -346,9 +347,9 @@ class Profile extends CI_Controller{
         $data['userInfo']['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/job_history/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/job_history/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/job_history/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/job_history/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/job_history/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/job_history/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function candidateUpdateJobHistory(){
@@ -371,9 +372,9 @@ class Profile extends CI_Controller{
         $data['userInfo']['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/social_cultural_background/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/social_cultural_background/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/social_cultural_background/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/social_cultural_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function candidateUpdateSocialCulturalBackground(){
@@ -395,9 +396,9 @@ class Profile extends CI_Controller{
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/politic_background/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/politic_background/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/politic_background/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     /*public function candidateUpdatePoliticBackground(){
@@ -429,9 +430,9 @@ class Profile extends CI_Controller{
 
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/science_background/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/science_background/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/science_background/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/science_background/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/science_background/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/science_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function candidateUpdateBooks(){
@@ -491,9 +492,9 @@ class Profile extends CI_Controller{
 
 
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/candidate_profile/home/skills/index', $data);
-        $this->load->view('ui/v3/candidate_profile/home/skills/index_css');
-        $this->load->view('ui/v3/candidate_profile/home/skills/index_js', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/skills/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/skills/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/skills/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
     public function candidateUpdateSkills(){
@@ -512,6 +513,8 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateSkills($inputs);
         echo json_encode($result);
     }
+    /* End For Resume -------------------------------------------------------------*/
+
     /* get out of panel - session destroyed */
     public function logOut()
     {

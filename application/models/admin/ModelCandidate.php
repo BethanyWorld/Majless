@@ -556,6 +556,9 @@ class ModelCandidate extends CI_Model{
         $this->db->trans_start();
         $this->db->where('RequestId', $RequestId);
         $this->db->update('candidate_exam_request', $UserArray);
+
+        $this->db->where('CandidateId', $inputs['inputCandidateId']);
+        $this->db->update('candidate', array( 'CandidateStatus' => 'CandidateExamFirstStep'));
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
             $arr = array(
@@ -707,7 +710,7 @@ class ModelCandidate extends CI_Model{
                 'type' => "green",
                 'content' => "تایید آزمون کانون ارزیابی با موفقیت انجام شد",
                 'senderNumber' => $candidateInfo['CandidatePhone'],
-                'messageBody' => 'لطفا در اسرع وقت نسبت به تکمیل فرم لیست اموال و تعهدنامه به پنل خود به آدرس http://new.moarefin.com مراجعه نمایید',
+                'messageBody' => 'لطفا در اسرع وقت نسبت به تکمیل فرم لیست اموال و تعهدنامه به پنل خود به آدرس http://majless11.com/Profile مراجعه نمایید',
                 'success' => true
             );
             return $arr;
