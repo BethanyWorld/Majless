@@ -199,7 +199,6 @@ $config['EnumResumeProfile'] = array(
         'MedicalDepartment' => 'پزشکی',
         'AgricultureNaturalResourcesDepartment' => 'کشاورزی و منابع طبیعی',
     ),
-
     /* Social Caltural Enums */
     'CandidateActivityFieldType' => array(
         'Charity' => 'انجمن خیریه',
@@ -229,6 +228,27 @@ $config['EnumResumeProfile'] = array(
         'Normal' => 'عادی',
         'Active' => 'فعال',
         'Kadr' => 'کادر',
+        'Others' => 'سایر'
+    ),
+    /* Military Enums */
+    'CandidateMilitaryStatus' => array(
+        'Exempt' => 'معاف',
+        'CardService' => 'دارای کارت پایان خدمت',
+        'Serving' => 'درحال خدمت',
+        'Included' => 'مشمول',
+        'BuyService' => 'خرید خدمت'
+    ),
+    'CandidateExemptTitle' => array(
+        'Educational' => 'تحصیلی',
+        'Medical' => 'پزشکی',
+        'Guarantee' => 'کفالت',
+        'Others' => 'سایر'
+    ),
+    'CandidateMilitaryEndArea' => array(
+        'Army' => 'ارتش',
+        'Corps' => 'سپاه',
+        'Police' => 'نیروی انتظامی',
+        'DepartmentDefense' => 'وزارت دفاع',
         'Others' => 'سایر'
     ),
 );

@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Profile extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
         $this->load->helper('ui/user_login');
@@ -319,7 +320,7 @@ class Profile extends CI_Controller{
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
-        $data['userInfo']['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($data['userInfo']['CandidateId']);
+        $data['userInfo']['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($data['userInfo']['CandidateId'])[0];
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/military_status/index', $data);
