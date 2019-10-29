@@ -56,19 +56,21 @@ class SignUp extends CI_Controller{
         $captchaCode = $this->session->userdata['captchaCode'];
         if (strtolower($inputs['inputCaptcha']) == strtolower($captchaCode)) {
             if ($inputs['inputCSRF'] == $this->session->userdata['CSRF']) {
-                $result = $this->ModelCommand->doSubmitSignUpFormForm($inputs);
+                $result = $this->ModelCommand->doSubmitSignUpForm($inputs);
                 echo json_encode($result);
             } else {
                 $arr = array(
-                    'type' => "red",
-                    'content' => "کد CSRF نامعتبر است"
+                    'type' => "yellow",
+                    'content' => "کد CSRF نامعتبر است",
+                    'success' => true
                 );
                 echo json_encode($arr);
             }
         } else {
             $arr = array(
                 'type' => "red",
-                'content' => "کد امنیتی نامعتبر است"
+                'content' => "کد امنیتی نامعتبر است",
+                'success' => true
             );
             echo json_encode($arr);
         }

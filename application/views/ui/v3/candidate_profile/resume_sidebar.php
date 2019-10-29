@@ -227,8 +227,8 @@
     }
 
     .LeftPanelImage img {
-        width: 150px;
-        height: 150px;
+        width: 165px;
+        height: 165px;
     }
 
     .btn-border-info {
@@ -250,12 +250,12 @@
     .personInfoImageButtons {
         position: relative;
         text-align: center;
-        line-height: 45px;
+        line-height: 35px;
         font-size: 16px;
         color: #fff;
         padding: 0 25px;
         border-radius: 0;
-        cursor: pointer;
+        cursor: pointer !important;
     }
 
     .ButtonRedColor {

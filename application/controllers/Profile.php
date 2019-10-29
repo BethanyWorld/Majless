@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Profile extends CI_Controller{
 
+
     public function __construct(){
         parent::__construct();
         $this->load->helper('ui/user_login');
@@ -282,7 +283,7 @@ class Profile extends CI_Controller{
         $inputs['inputCandidateRoles'] = $roles;
         $inputs['inputCandidateProfileImage'] = $profileImage;
 
-        $result = $this->ModelProfile->doUpdateCandidatePersonalInfo($inputs);
+        $result = $this->ModelProfile->candidateUpdatePersonalInfo($inputs);
         echo json_encode($result);
     }
 

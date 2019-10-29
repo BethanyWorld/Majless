@@ -1,5 +1,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
+
         $(document).on('change', '.state-select', function () {
             toggleLoader();
             $inputCandidateStateId = $(this).val();
@@ -29,6 +30,7 @@
                 }
             });
         });
+
         defaultImage = '<?php echo $noImg ?>';
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -44,8 +46,11 @@
             readURL(this);
         });
         $(".RemoveImage").click(function () {
+            $("#imgInp").val('');
             $("#personInfoImageButtons").attr('src', defaultImage);
         });
+
+
         $(document).on('change', '#inputCandidateReligion', function () {
             $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
             if ($inputParliamentaryCandidate) {
@@ -198,6 +203,7 @@
                 $inputCandidateMotherBornCityId = $("#inputCandidateMotherBornCityId").val();
                 $inputCandidateAddressStateId = $("#inputCandidateAddressStateId").val();
                 $inputCandidateAddressCityId = $("#inputCandidateAddressCityId").val();
+
                 if (
                     $inputCandidateConstituencyStateId != $inputCandidateBornStateId ||
                     $inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId ||
@@ -222,6 +228,7 @@
             else {
                 $(".invaliderror").addClass('hidden');
                 $("#ReligionNotify").addClass('hidden');
+                $("#cs").addClass('hidden');
             }
         }
         setInterval(checkedCandidate, 300);
@@ -305,5 +312,8 @@
                 }
             });
         }
+        $('[data-mask]').each(function(){
+            $(this).mask($(this).data('mask'));
+        });
     });
 </script>

@@ -24,7 +24,7 @@ class ModelCommand extends CI_Model
     }
 
     /* For First SignUp Form */
-    public function doSubmitSignUpFormForm($inputs){
+    public function doSubmitSignUpForm($inputs){
         /*
          * $inputs['inputSignUpType']
          *  1 = Candidate

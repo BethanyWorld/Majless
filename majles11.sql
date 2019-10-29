@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2019 at 12:53 PM
+-- Generation Time: Oct 29, 2019 at 09:47 AM
 -- Server version: 5.7.14
 -- PHP Version: 7.0.10
 
@@ -60,37 +60,37 @@ CREATE TABLE `agent` (
 --
 
 INSERT INTO `agent` (`AgentId`, `AgentFullName`, `AgentPhone`, `AgentPassword`, `AgentStateId`) VALUES
-(13, 'پشتیبان آذربایجان شرقی', '041', '827ccb0eea8a706c4c34a16891f84e7b', 1),
-(16, 'پشتیبان آذربایجان غربی', '044', '827ccb0eea8a706c4c34a16891f84e7b', 2),
-(17, 'پشتیبان اردبیل', '045', '827ccb0eea8a706c4c34a16891f84e7b', 3),
-(18, 'پشتیبان اصفهان', '031', '827ccb0eea8a706c4c34a16891f84e7b', 4),
-(19, 'پشتیبان اصفهان', '026', '827ccb0eea8a706c4c34a16891f84e7b', 5),
-(20, 'پشتیبان ایلام', '084', '827ccb0eea8a706c4c34a16891f84e7b', 6),
-(21, 'پشتیبان بوشهر', '077', '827ccb0eea8a706c4c34a16891f84e7b', 7),
-(22, 'پشتیبان تهران', '021', '827ccb0eea8a706c4c34a16891f84e7b', 8),
-(23, 'پشتیبان چهارمحال و بختیاری', '038', '827ccb0eea8a706c4c34a16891f84e7b', 9),
-(24, 'پشتیبان خراسان رضوی', '051', '827ccb0eea8a706c4c34a16891f84e7b', 11),
-(25, 'پشتیبان خراسان جنوبی', '056', '827ccb0eea8a706c4c34a16891f84e7b', 10),
-(26, 'پشتیبان خراسان شمالی', '058', '827ccb0eea8a706c4c34a16891f84e7b', 10),
-(27, 'پشتیبان خوزستان', '061', '827ccb0eea8a706c4c34a16891f84e7b', 13),
-(28, 'پشتیبان زنجان', '024', '827ccb0eea8a706c4c34a16891f84e7b', 14),
-(29, 'پشتیبان سمنان', '023', '827ccb0eea8a706c4c34a16891f84e7b', 15),
-(30, 'پشتیبان سیستان و بلوچستان', '054', '827ccb0eea8a706c4c34a16891f84e7b', 16),
-(31, 'پشتیبان فارس', '071', '827ccb0eea8a706c4c34a16891f84e7b', 17),
-(32, 'پشتیبان قم', '025', '827ccb0eea8a706c4c34a16891f84e7b', 19),
-(33, 'پشتیبان قزوین', '028', '827ccb0eea8a706c4c34a16891f84e7b', 18),
-(34, 'پشتیبان کردستان', '087', '827ccb0eea8a706c4c34a16891f84e7b', 20),
-(35, 'پشتیبان کرمان', '034', '827ccb0eea8a706c4c34a16891f84e7b', 21),
-(36, 'پشتیبان کرمانشاه', '083', '827ccb0eea8a706c4c34a16891f84e7b', 22),
-(37, 'پشتیبان کهگیلویه و بویراحمد', '074', '827ccb0eea8a706c4c34a16891f84e7b', 23),
-(38, 'پشتیبان گلستان', '017', '827ccb0eea8a706c4c34a16891f84e7b', 24),
-(39, 'پشتیبان گیلان', '013', '827ccb0eea8a706c4c34a16891f84e7b', 25),
-(40, 'پشتیبان لرستان', '066', '827ccb0eea8a706c4c34a16891f84e7b', 26),
-(41, 'پشتیبان مازندران', '011', '827ccb0eea8a706c4c34a16891f84e7b', 27),
-(42, 'پشتیبان مرکزی', '086', '827ccb0eea8a706c4c34a16891f84e7b', 28),
-(43, 'پشتیبان هرمزگان', '076', '827ccb0eea8a706c4c34a16891f84e7b', 29),
-(44, 'پشتیبان همدان', '081', '827ccb0eea8a706c4c34a16891f84e7b', 30),
-(45, 'پشتیبان یزد', '035', '827ccb0eea8a706c4c34a16891f84e7b', 31);
+(1, 'پشتیبان آذربایجان شرقی', '041', '827ccb0eea8a706c4c34a16891f84e7b', 1),
+(2, 'پشتیبان آذربایجان غربی', '044', '827ccb0eea8a706c4c34a16891f84e7b', 2),
+(3, 'پشتیبان اردبیل', '045', '827ccb0eea8a706c4c34a16891f84e7b', 3),
+(4, 'پشتیبان اصفهان', '031', '827ccb0eea8a706c4c34a16891f84e7b', 4),
+(5, 'پشتیبان البرز', '026', '827ccb0eea8a706c4c34a16891f84e7b', 5),
+(6, 'پشتیبان ایلام', '084', '827ccb0eea8a706c4c34a16891f84e7b', 6),
+(7, 'پشتیبان بوشهر', '077', '827ccb0eea8a706c4c34a16891f84e7b', 7),
+(8, 'پشتیبان تهران', '021', '827ccb0eea8a706c4c34a16891f84e7b', 8),
+(9, 'پشتیبان چهارمحال و بختیاری', '038', '827ccb0eea8a706c4c34a16891f84e7b', 9),
+(10, 'پشتیبان خراسان جنوبی', '056', '827ccb0eea8a706c4c34a16891f84e7b', 10),
+(11, 'پشتیبان خراسان رضوی', '051', '827ccb0eea8a706c4c34a16891f84e7b', 11),
+(12, 'پشتیبان خراسان شمالی', '058', '827ccb0eea8a706c4c34a16891f84e7b', 12),
+(13, 'پشتیبان خوزستان', '061', '827ccb0eea8a706c4c34a16891f84e7b', 13),
+(14, 'پشتیبان زنجان', '024', '827ccb0eea8a706c4c34a16891f84e7b', 14),
+(15, 'پشتیبان سمنان', '023', '827ccb0eea8a706c4c34a16891f84e7b', 15),
+(16, 'پشتیبان سیستان و بلوچستان', '054', '827ccb0eea8a706c4c34a16891f84e7b', 16),
+(17, 'پشتیبان فارس', '071', '827ccb0eea8a706c4c34a16891f84e7b', 17),
+(18, 'پشتیبان قزوین', '028', '827ccb0eea8a706c4c34a16891f84e7b', 18),
+(19, 'پشتیبان قم', '025', '827ccb0eea8a706c4c34a16891f84e7b', 19),
+(20, 'پشتیبان کردستان', '087', '827ccb0eea8a706c4c34a16891f84e7b', 20),
+(21, 'پشتیبان کرمان', '034', '827ccb0eea8a706c4c34a16891f84e7b', 21),
+(22, 'پشتیبان کرمانشاه', '083', '827ccb0eea8a706c4c34a16891f84e7b', 22),
+(23, 'پشتیبان کهگیلویه و بویراحمد', '074', '827ccb0eea8a706c4c34a16891f84e7b', 23),
+(24, 'پشتیبان گلستان', '017', '827ccb0eea8a706c4c34a16891f84e7b', 24),
+(25, 'پشتیبان گیلان', '013', '827ccb0eea8a706c4c34a16891f84e7b', 25),
+(26, 'پشتیبان لرستان', '066', '827ccb0eea8a706c4c34a16891f84e7b', 26),
+(27, 'پشتیبان مازندران', '011', '827ccb0eea8a706c4c34a16891f84e7b', 27),
+(28, 'پشتیبان مرکزی', '086', '827ccb0eea8a706c4c34a16891f84e7b', 28),
+(29, 'پشتیبان هرمزگان', '076', '827ccb0eea8a706c4c34a16891f84e7b', 29),
+(30, 'پشتیبان همدان', '081', '827ccb0eea8a706c4c34a16891f84e7b', 30),
+(31, 'پشتیبان یزد', '035', '827ccb0eea8a706c4c34a16891f84e7b', 31);
 
 -- --------------------------------------------------------
 
@@ -249,16 +249,6 @@ CREATE TABLE `candidate_academic_background` (
   `CandidateStudyStatus` varchar(254) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'وضعیت تحصیل'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `candidate_academic_background`
---
-
-INSERT INTO `candidate_academic_background` (`RowId`, `CandidateId`, `CandidateGrade`, `CandidateUniversityLevelType`, `CandidateSchoolMajor`, `CandidateUniversityName`, `CandidateDepartment`, `CandidateMajor`, `CandidateStudyStatus`) VALUES
-(77, 1, 'ZirDiplom', '', '', '', '', '', 'Student'),
-(78, 1, 'KarshenasiArshad', 'AbroadLevelType', '', 'y', 'TechnicalEngineeringDepartment', '12', 'Graduated'),
-(85, 145, 'DoctoryHerfei', 'GovernmentdailyLevelType', '', 'تغفبغتب', 'ForeignLanguagesDepartment', '2', 'Graduated'),
-(86, 145, 'KarshenasiArshad', 'GovernmentdailyLevelType', '', 'امیر کبیر', 'HumanitiesDepartment', '13', 'Graduated');
-
 -- --------------------------------------------------------
 
 --
@@ -275,13 +265,6 @@ CREATE TABLE `candidate_articles` (
   `CandidateArticlePublishYear` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `candidate_articles`
---
-
-INSERT INTO `candidate_articles` (`RowId`, `CandidateId`, `CandidateArticleTitle`, `CandidateArticleLevel`, `CandidateArticleMagazineTitle`, `CandidateArticlePublishMonth`, `CandidateArticlePublishYear`) VALUES
-(6, 1, '564', 'Scopus', '654', 'Farvardin', 1300);
-
 -- --------------------------------------------------------
 
 --
@@ -296,14 +279,6 @@ CREATE TABLE `candidate_books` (
   `CandidateBookPublishMonth` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CandidateBookPublishYear` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `candidate_books`
---
-
-INSERT INTO `candidate_books` (`RowId`, `CandidateId`, `CandidateBookTitle`, `CandidateBookPublisher`, `CandidateBookPublishMonth`, `CandidateBookPublishYear`) VALUES
-(10, 1, '564', '564', 'Khordad', 1300),
-(11, 1, '1', '2', 'Farvardin', 1317);
 
 -- --------------------------------------------------------
 
@@ -321,14 +296,6 @@ CREATE TABLE `candidate_conference` (
   `CandidateConferenceYear` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `candidate_conference`
---
-
-INSERT INTO `candidate_conference` (`RowId`, `CandidateId`, `CandidateConferenceTitle`, `CandidateConferenceLevel`, `CandidateConferenceAcceptType`, `CandidateConferenceMonth`, `CandidateConferenceYear`) VALUES
-(5, 1, 'ikhioh', 'Internal', 'PrintArticle', 'Bahman', 1316),
-(6, 1, '564654', 'International', 'Lecture', 'Farvardin', 1300);
-
 -- --------------------------------------------------------
 
 --
@@ -342,20 +309,6 @@ CREATE TABLE `candidate_exam_request` (
   `ExamState` varchar(80) NOT NULL DEFAULT 'Pend' COMMENT '(Pend/Absence/Presence/Done)',
   `CreateDateTime` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `candidate_exam_request`
---
-
-INSERT INTO `candidate_exam_request` (`RequestId`, `CandidateId`, `ExamId`, `ExamState`, `CreateDateTime`) VALUES
-(2, 1, 1, 'Done', '1398/07/15 09:49:39'),
-(4, 1, 3, 'Absence', '1398/07/15 11:07:51'),
-(5, 1, 3, 'Done', '1398/07/15 11:47:23'),
-(6, 1, 6, 'Pend', '1398/07/15 13:43:24'),
-(7, 145, 8, 'Absence', '1398/08/05 11:34:11'),
-(8, 145, 8, 'Done', '1398/08/05 11:37:31'),
-(9, 145, 9, 'Done', '1398/08/05 15:57:18'),
-(10, 145, 6, 'Pend', '1398/08/05 16:02:38');
 
 -- --------------------------------------------------------
 
@@ -371,14 +324,6 @@ CREATE TABLE `candidate_invention` (
   `CandidateInventionRegisterNumber` varchar(254) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CandidateInventionDescription` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `candidate_invention`
---
-
-INSERT INTO `candidate_invention` (`RowId`, `CandidateId`, `CandidateInventionTitle`, `CandidateInventionField`, `CandidateInventionRegisterNumber`, `CandidateInventionDescription`) VALUES
-(2, 1, '99999999999', '4897897', '411111111', '654'),
-(3, 1, '5', '5', '5', '5');
 
 -- --------------------------------------------------------
 
@@ -397,13 +342,6 @@ CREATE TABLE `candidate_job_hostory` (
   `CandidateEndJobYear` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `candidate_job_hostory`
---
-
-INSERT INTO `candidate_job_hostory` (`RowId`, `CandidateId`, `CandidateJobTitle`, `CandidateJobCompanyTitle`, `CandidateStartJobMonth`, `CandidateStartJobYear`, `CandidateEndJobMonth`, `CandidateEndJobYear`) VALUES
-(16, 1, '6654654', '54564654', 'Farvardin', 1300, 'Tir', 1300);
-
 -- --------------------------------------------------------
 
 --
@@ -421,13 +359,6 @@ CREATE TABLE `candidate_military` (
   `CandidateMilitaryEndArea` varchar(254) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CandidateMilitaryEndAreaTitle` varchar(254) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `candidate_military`
---
-
-INSERT INTO `candidate_military` (`RowId`, `CandidateId`, `CandidateMilitaryStatus`, `CandidateExemptTitle`, `CandidateExemptDescription`, `CandidateMilitaryEndMonth`, `CandidateMilitaryEndYear`, `CandidateMilitaryEndArea`, `CandidateMilitaryEndAreaTitle`) VALUES
-(28, 145, 'Exempt', 'Medical', '11111111', 'Tir', 1358, 'Others', 'army');
 
 -- --------------------------------------------------------
 
@@ -456,19 +387,6 @@ CREATE TABLE `candidate_politic_record` (
   `CandidateMediaEndYear` int(11) NOT NULL COMMENT 'سال پایان همکاری',
   `CandidateActivityDescription` varchar(254) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'توضیحات'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `candidate_politic_record`
---
-
-INSERT INTO `candidate_politic_record` (`RowId`, `CandidateId`, `CandidateActivityType`, `CandidateActivityTypeOtherOrganizationTitle`, `CandidateElectionType`, `CandidateElectionPeriod`, `CandidateElectionListName`, `CandidateHeadquarterActivityTitle`, `CandidateMediaType`, `CandidateMediaTypeTitle`, `CandidateMediaTitle`, `CandidateMediaActivityType`, `CandidateResponsibility`, `CandidateMemberShip`, `CandidateMediaStartMonth`, `CandidateMediaStartYear`, `CandidateMediaEndMonth`, `CandidateMediaEndYear`, `CandidateActivityDescription`) VALUES
-(29, 145, 'CandidatesCampaign', '', 'CityCouncil', '3', 'لیست شورای شهر', '', '', '', '', '', 'مسئولیت شورای شهر', '', '0', 1300, '0', 1300, 'توضیحات شورای شهر'),
-(30, 145, 'CandidatesCampaign', '', 'President', '2', 'لیست ریاست جمهوری', '', '', '', '', '', 'مسئولسیت ریاست جمهوری', '', '0', 1300, '0', 1300, 'توضیحات ریاست جمهوری'),
-(31, 145, 'SupervisoryBoard', '', 'President', '', '', 'SupervisoryBoard', '', '', '', '', 'مسئولیت ریاست جمهوری با عنوان همکاری نظارت شورای نگهبان', '', '0', 1300, '0', 1300, 'توضیحات ریاست جمهوری با عنوان همکاری نظارت شورای نگهبان'),
-(32, 145, 'Media', '', 'President', '', '', '', 'Others', 'عنوان سایر رسانه', 'نام سایر رسانه', 'نوع فعالیت سایر رسانه', 'مسئولیت سایر رسانه', '', '0', 1302, '0', 1344, 'توضیحات سایر رسانه'),
-(33, 145, 'Media', '', 'President', '', '', '', 'Voice', '', 'نام رسانه صدا سیما', 'نوع فعالیت رسانه صدا سیما', 'مسئولیت رسانه صدا سیما', '', '0', 1314, '0', 1361, 'توضیحات تیر 14 تا آذر 61 رسانه صدا سیما'),
-(34, 145, 'Others', 'نام مجموعه سایر', 'President', '', '', '', '', '', '', '', 'مسئولیت مجموعه سایر', 'Voluntary', '0', 1301, '0', 1306, 'توضیحات اردیبهشت 301 تا شهریور 306'),
-(35, 145, 'Group', '', 'President', '', '', '', '', '', '', '', 'مسئولیت حذب رسمی', 'Official', '0', 1300, '0', 1300, 'توضیجات حذب رسمی');
 
 -- --------------------------------------------------------
 
@@ -517,14 +435,6 @@ CREATE TABLE `candidate_research` (
   `CandidateResearchYear` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `candidate_research`
---
-
-INSERT INTO `candidate_research` (`RowId`, `CandidateId`, `CandidateResearchTitle`, `CandidateResearchEmployer`, `CandidateResearchWorker`, `CandidateResearchResponsibility`, `CandidateResearchMonth`, `CandidateResearchYear`) VALUES
-(2, 1, 'jpj', 'poj', 'po\'j', '\'poj\'pjp\'oj', 0, 0),
-(3, 1, '5', '5', '5', '5', 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -536,292 +446,6 @@ CREATE TABLE `candidate_roles` (
   `CandidateId` int(11) NOT NULL,
   `Role` varchar(254) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `candidate_roles`
---
-
-INSERT INTO `candidate_roles` (`RoleId`, `CandidateId`, `Role`) VALUES
-(12, 52, 'Candidate'),
-(13, 52, 'Sponsor'),
-(14, 52, 'Elite'),
-(15, 53, 'Candidate'),
-(16, 53, 'Sponsor'),
-(17, 53, 'Elite'),
-(18, 54, 'Candidate'),
-(19, 54, 'Sponsor'),
-(20, 54, 'Elite'),
-(21, 55, 'Candidate'),
-(22, 55, 'Sponsor'),
-(23, 55, 'Elite'),
-(24, 56, 'Candidate'),
-(25, 56, 'Sponsor'),
-(26, 56, 'Elite'),
-(27, 57, 'Candidate'),
-(28, 57, 'Sponsor'),
-(29, 57, 'Elite'),
-(30, 58, 'Candidate'),
-(31, 58, 'Sponsor'),
-(32, 58, 'Elite'),
-(33, 59, 'Candidate'),
-(34, 59, 'Sponsor'),
-(35, 59, 'Elite'),
-(36, 60, 'Candidate'),
-(37, 60, 'Sponsor'),
-(38, 60, 'Elite'),
-(39, 61, 'Candidate'),
-(40, 61, 'Sponsor'),
-(41, 61, 'Elite'),
-(42, 62, 'Candidate'),
-(43, 62, 'Sponsor'),
-(44, 62, 'Elite'),
-(45, 63, 'Candidate'),
-(46, 63, 'Sponsor'),
-(47, 63, 'Elite'),
-(48, 64, 'Candidate'),
-(49, 64, 'Sponsor'),
-(50, 64, 'Elite'),
-(51, 65, 'Candidate'),
-(52, 65, 'Sponsor'),
-(53, 65, 'Elite'),
-(54, 66, 'Candidate'),
-(55, 66, 'Sponsor'),
-(56, 66, 'Elite'),
-(57, 67, 'Candidate'),
-(58, 67, 'Sponsor'),
-(59, 67, 'Elite'),
-(60, 68, 'Candidate'),
-(61, 68, 'Sponsor'),
-(62, 68, 'Elite'),
-(63, 69, 'Candidate'),
-(64, 69, 'Sponsor'),
-(65, 69, 'Elite'),
-(66, 70, 'Candidate'),
-(67, 70, 'Sponsor'),
-(68, 70, 'Elite'),
-(69, 71, 'Candidate'),
-(70, 71, 'Sponsor'),
-(71, 71, 'Elite'),
-(72, 72, 'Candidate'),
-(73, 72, 'Sponsor'),
-(74, 72, 'Elite'),
-(75, 73, 'Candidate'),
-(76, 73, 'Sponsor'),
-(77, 73, 'Elite'),
-(78, 74, 'Candidate'),
-(79, 74, 'Sponsor'),
-(80, 74, 'Elite'),
-(81, 75, 'Candidate'),
-(82, 75, 'Sponsor'),
-(83, 75, 'Elite'),
-(84, 76, 'Candidate'),
-(85, 76, 'Sponsor'),
-(86, 76, 'Elite'),
-(87, 77, 'Candidate'),
-(88, 77, 'Sponsor'),
-(89, 77, 'Elite'),
-(90, 78, 'Candidate'),
-(91, 78, 'Sponsor'),
-(92, 78, 'Elite'),
-(93, 79, 'Candidate'),
-(94, 79, 'Sponsor'),
-(95, 79, 'Elite'),
-(96, 80, 'Candidate'),
-(97, 80, 'Sponsor'),
-(98, 80, 'Elite'),
-(99, 81, 'Candidate'),
-(100, 81, 'Sponsor'),
-(101, 81, 'Elite'),
-(102, 82, 'Candidate'),
-(103, 82, 'Sponsor'),
-(104, 82, 'Elite'),
-(105, 83, 'Candidate'),
-(106, 83, 'Sponsor'),
-(107, 83, 'Elite'),
-(108, 84, 'Candidate'),
-(109, 84, 'Sponsor'),
-(110, 84, 'Elite'),
-(111, 85, 'Candidate'),
-(112, 85, 'Sponsor'),
-(113, 85, 'Elite'),
-(114, 86, 'Candidate'),
-(115, 86, 'Sponsor'),
-(116, 86, 'Elite'),
-(117, 87, 'Candidate'),
-(118, 87, 'Sponsor'),
-(119, 87, 'Elite'),
-(120, 88, 'Candidate'),
-(121, 88, 'Sponsor'),
-(122, 88, 'Elite'),
-(123, 89, 'Candidate'),
-(124, 89, 'Sponsor'),
-(125, 89, 'Elite'),
-(126, 90, 'Candidate'),
-(127, 90, 'Sponsor'),
-(128, 90, 'Elite'),
-(129, 91, 'Candidate'),
-(130, 91, 'Sponsor'),
-(131, 91, 'Elite'),
-(132, 92, 'Candidate'),
-(133, 92, 'Sponsor'),
-(134, 92, 'Elite'),
-(135, 93, 'Candidate'),
-(136, 93, 'Sponsor'),
-(137, 93, 'Elite'),
-(138, 94, 'Candidate'),
-(139, 94, 'Sponsor'),
-(140, 94, 'Elite'),
-(141, 95, 'Candidate'),
-(142, 95, 'Sponsor'),
-(143, 95, 'Elite'),
-(144, 96, 'Candidate'),
-(145, 96, 'Sponsor'),
-(146, 96, 'Elite'),
-(147, 97, 'Candidate'),
-(148, 97, 'Sponsor'),
-(149, 97, 'Elite'),
-(150, 98, 'Candidate'),
-(151, 98, 'Sponsor'),
-(152, 98, 'Elite'),
-(153, 99, 'Candidate'),
-(154, 99, 'Sponsor'),
-(155, 99, 'Elite'),
-(156, 100, 'Candidate'),
-(157, 100, 'Sponsor'),
-(158, 100, 'Elite'),
-(159, 101, 'Candidate'),
-(160, 101, 'Sponsor'),
-(161, 101, 'Elite'),
-(162, 102, 'Candidate'),
-(163, 102, 'Sponsor'),
-(164, 102, 'Elite'),
-(165, 103, 'Candidate'),
-(166, 103, 'Sponsor'),
-(167, 103, 'Elite'),
-(168, 104, 'Candidate'),
-(169, 104, 'Sponsor'),
-(170, 104, 'Elite'),
-(171, 105, 'Candidate'),
-(172, 105, 'Sponsor'),
-(173, 105, 'Elite'),
-(174, 106, 'Candidate'),
-(175, 106, 'Sponsor'),
-(176, 106, 'Elite'),
-(177, 107, 'Candidate'),
-(178, 107, 'Sponsor'),
-(179, 107, 'Elite'),
-(180, 108, 'Candidate'),
-(181, 108, 'Sponsor'),
-(182, 108, 'Elite'),
-(183, 109, 'Candidate'),
-(184, 109, 'Sponsor'),
-(185, 109, 'Elite'),
-(186, 110, 'Candidate'),
-(187, 110, 'Sponsor'),
-(188, 110, 'Elite'),
-(189, 111, 'Candidate'),
-(190, 111, 'Sponsor'),
-(191, 111, 'Elite'),
-(192, 112, 'Candidate'),
-(193, 112, 'Sponsor'),
-(194, 112, 'Elite'),
-(195, 113, 'Candidate'),
-(196, 113, 'Sponsor'),
-(197, 113, 'Elite'),
-(198, 114, 'Candidate'),
-(199, 114, 'Sponsor'),
-(200, 114, 'Elite'),
-(201, 115, 'Candidate'),
-(202, 115, 'Sponsor'),
-(203, 115, 'Elite'),
-(204, 116, 'Candidate'),
-(205, 116, 'Sponsor'),
-(206, 116, 'Elite'),
-(207, 117, 'Candidate'),
-(208, 117, 'Sponsor'),
-(209, 117, 'Elite'),
-(210, 118, 'Candidate'),
-(211, 118, 'Sponsor'),
-(212, 118, 'Elite'),
-(213, 119, 'Candidate'),
-(214, 119, 'Sponsor'),
-(215, 119, 'Elite'),
-(216, 120, 'Candidate'),
-(217, 120, 'Sponsor'),
-(218, 120, 'Elite'),
-(219, 121, 'Candidate'),
-(220, 121, 'Sponsor'),
-(221, 121, 'Elite'),
-(222, 122, 'Candidate'),
-(223, 122, 'Sponsor'),
-(224, 122, 'Elite'),
-(225, 123, 'Candidate'),
-(226, 123, 'Sponsor'),
-(227, 123, 'Elite'),
-(228, 124, 'Candidate'),
-(229, 124, 'Sponsor'),
-(230, 124, 'Elite'),
-(231, 125, 'Candidate'),
-(232, 125, 'Sponsor'),
-(233, 125, 'Elite'),
-(234, 126, 'Candidate'),
-(235, 126, 'Sponsor'),
-(236, 126, 'Elite'),
-(237, 127, 'Candidate'),
-(238, 127, 'Sponsor'),
-(239, 127, 'Elite'),
-(240, 128, 'Candidate'),
-(241, 128, 'Sponsor'),
-(242, 128, 'Elite'),
-(243, 129, 'Candidate'),
-(244, 129, 'Sponsor'),
-(245, 129, 'Elite'),
-(246, 130, 'Candidate'),
-(247, 130, 'Sponsor'),
-(248, 130, 'Elite'),
-(249, 131, 'Candidate'),
-(250, 131, 'Sponsor'),
-(251, 131, 'Elite'),
-(252, 132, 'Candidate'),
-(253, 132, 'Sponsor'),
-(254, 132, 'Elite'),
-(255, 133, 'Candidate'),
-(256, 133, 'Sponsor'),
-(257, 133, 'Elite'),
-(258, 134, 'Candidate'),
-(259, 134, 'Sponsor'),
-(260, 134, 'Elite'),
-(261, 135, 'Candidate'),
-(262, 135, 'Sponsor'),
-(263, 135, 'Elite'),
-(264, 136, 'Candidate'),
-(265, 136, 'Sponsor'),
-(266, 136, 'Elite'),
-(267, 1, 'Candidate'),
-(268, 1, 'Sponsor'),
-(269, 1, 'Elite'),
-(270, 138, 'Candidate'),
-(271, 138, 'Sponsor'),
-(272, 138, 'Elite'),
-(273, 139, 'Candidate'),
-(274, 139, 'Sponsor'),
-(275, 139, 'Elite'),
-(276, 140, 'Candidate'),
-(277, 140, 'Sponsor'),
-(278, 140, 'Elite'),
-(279, 141, 'Candidate'),
-(280, 141, 'Sponsor'),
-(281, 141, 'Elite'),
-(282, 143, 'Candidate'),
-(283, 143, 'Sponsor'),
-(284, 144, 'Candidate'),
-(285, 144, 'Sponsor'),
-(286, 144, 'Candidate'),
-(287, 144, 'Elite'),
-(288, 144, 'Sponsor'),
-(289, 145, 'Candidate'),
-(290, 145, 'Elite'),
-(291, 145, 'Sponsor');
 
 -- --------------------------------------------------------
 
@@ -836,16 +460,6 @@ CREATE TABLE `candidate_skills` (
   `SkillLevel` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `SkillLearnType` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `candidate_skills`
---
-
-INSERT INTO `candidate_skills` (`RowId`, `CandidateId`, `SkillType`, `SkillLevel`, `SkillLearnType`) VALUES
-(29, 1, 'نقاشی', 'Professional', 'TrainingCourse'),
-(30, 1, 'برنامه نویسی', 'SemiProfessional', 'Experimental'),
-(31, 1, 'طراحی', 'Professional', 'TrainingCourse'),
-(33, 145, '657r76r', 'Beginner', 'Experimental');
 
 -- --------------------------------------------------------
 
@@ -871,17 +485,6 @@ CREATE TABLE `candidate_social_record` (
   `CandidateActivityEndYear` int(11) NOT NULL COMMENT 'سال پایان فعالیت'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `candidate_social_record`
---
-
-INSERT INTO `candidate_social_record` (`RowId`, `CandidateId`, `CandidateActivityFieldType`, `CandidateActivityFieldOtherTypeTitle`, `CandidateOrganizationName`, `CandidateMemberShipType`, `CandidateMemberShipDescription`, `CandidateBasijType`, `CandidateBasijTypeOtherTitle`, `CandidateMobilMembershipType`, `CandidateBasijAreaTitle`, `CandidateActivityStartMonth`, `CandidateActivityStartYear`, `CandidateActivityEndMonth`, `CandidateActivityEndYear`) VALUES
-(94, 1, 'Mobilization', '', '', '', '', 'Others', 'نام حوزه بسیج شهری سایر ', 'Active', 'نام حوزه بسیج شهری سایر ', 'Ordibehsht', 1316, 'Bahman', 1343),
-(95, 1, 'Mobilization', '', '', '', '', 'Urban', '', 'Active', 'نام حوزه بسیج شهری فعال', 'Tir', 1365, 'Farvardin', 1390),
-(96, 1, 'Others', 'عنوان زمینه فعالیت سایر', 'نام مجموعه زمینه فعالیت سایر', 'Voluntary', 'توضیحات زمینه فعالیت سایر', '', '', '', '', 'Bahman', 1318, 'Esfand', 1398),
-(97, 1, 'University', '', 'دانشگاه تهران', 'Official', 'توضیحات دانشگاه', '', '', '', '', 'Dey', 1317, 'Bahman', 1322),
-(98, 1, 'Charity', '', 'انجمن خیریه', 'Voluntary', 'توضیحات انجمن خیریه داوطلبانه', '', '', '', '', 'Dey', 1357, 'Aban', 1392);
-
 -- --------------------------------------------------------
 
 --
@@ -897,13 +500,6 @@ CREATE TABLE `candidate_translation` (
   `CandidateTranslationMonth` varchar(80) NOT NULL,
   `CandidateTranslationYear` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `candidate_translation`
---
-
-INSERT INTO `candidate_translation` (`RowId`, `CandidateId`, `CandidateTranslationType`, `CandidateTranslationTitle`, `CandidateTranslationPublisher`, `CandidateTranslationMonth`, `CandidateTranslationYear`) VALUES
-(5, 1, 'Article', '56465', '4654654', 'Farvardin', 1398);
 
 -- --------------------------------------------------------
 
@@ -1932,21 +1528,6 @@ CREATE TABLE `exam` (
   `ExamAgentId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `exam`
---
-
-INSERT INTO `exam` (`ExamId`, `ExamPlaceId`, `ExamType`, `ExamCapacity`, `ExamDate`, `ExamTime`, `ExamAgentId`) VALUES
-(1, 1, 'FirstStep', 45, '1398/7/10', '14:50', 22),
-(2, 1, 'FirstStep', 0, '1398/7/17', '16:00', 22),
-(3, 1, 'SecondStep', 115, '1398/7/10', '14:00', 22),
-(4, 2, 'FirstStep', 40, '1398/7/11', '14:00', 13),
-(5, 2, 'FirstStep', 40, '1398/7/13', '18:00', 13),
-(6, 5, 'Evaluation', 37, '1398/7/22', '10:30', 0),
-(7, 6, 'FirstStep', 80, '1398/11/22', '14:50', 28),
-(8, 6, 'FirstStep', 28, '1398/8/13', '16:00', 28),
-(9, 6, 'SecondStep', 989, '1398/8/8', '08:00', 28);
-
 -- --------------------------------------------------------
 
 --
@@ -1962,17 +1543,6 @@ CREATE TABLE `exam_places` (
   `ExamPlaceStateId` int(11) NOT NULL,
   `ExamPlaceAgentId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `exam_places`
---
-
-INSERT INTO `exam_places` (`ExamPlaceId`, `ExamPlaceTitle`, `ExamPlaceAddress`, `ExamPlaceMapImage`, `ExamPlaceDefaultCapacity`, `ExamPlaceStateId`, `ExamPlaceAgentId`) VALUES
-(1, 'مصلی تهران', 'خیابن جامی 1111', '256be92a35f4348acd33dbc92054681c_BOT2.png', 20, 8, 22),
-(2, 'مصلی تبریز', 'تبریز آبرسان', '', 40, 1, 13),
-(3, 'محل اول کانون ارزیابی', 'آدرس اول محل آزمون کانون ارزیابی', '', 40, 8, 0),
-(5, 'محل دوم کانون ارزیابی', 'آدرس محل دوم کانون ارزیابی', '99d1d8640bad6d1be66675883d08e7ed_01.png', 40, 8, 0),
-(6, 'مصلی زنجان', 'زنجان خیابان دکتر ربیعی مصلی امام خمینی (ره)', 'bec98cbc8ab9c09596eca6d1016092a1_BOT2.png', 90, 14, 28);
 
 -- --------------------------------------------------------
 
@@ -2009,20 +1579,6 @@ CREATE TABLE `form_signup` (
   `CreateDateTime` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `form_signup`
---
-
-INSERT INTO `form_signup` (`RowId`, `SignUpType`, `SignUpFirstName`, `SignUpLastName`, `SignUpPhone`, `SignUpNationalCode`, `SignUpStateId`, `SignUpCityId`, `SignUpIP`, `CreateDateTime`) VALUES
-(25, '["1","2","3"]', 'محمدرضا', 'اسماعیلی', '091205721078', '4900354376', 8, 117, '::1', '1398/06/05 10:53:08'),
-(26, '["1","3"]', 'محمدرضا', 'اسماعیلی', '091205721079', '4900354376', 8, 117, '::1', '1398/07/07 11:26:38'),
-(27, '["1","3"]', 'محمدرضا', 'اسماعیلی', '09580572107', '0755723864', 8, 557, '::1', '1398/08/14 10:35:49'),
-(28, '["1"]', 'محمدرضا', 'اسماعیلی', '09120572107', '4900354376', 8, 548, '::1', '1398/06/30 16:29:47'),
-(29, '["1","2","3"]', 'محمدرضا', 'اسماعیلی', '09120572107', '4900354376', 8, 547, '::1', '1398/06/31 08:32:28'),
-(30, '["1","2","3"]', 'محمدرضا', 'اسماعیلی', '09120572107', '4900354376', 8, 547, '::1', '1398/06/31 09:19:39'),
-(31, '["1","3"]', 'محمدرضا', 'اسماعیلی', '09120572107', '4900354376', 8, 548, '::1', '1398/07/14 09:05:34'),
-(32, '["1","3"]', 'محمدرضا', 'اسماعیلی', '09120572107', '4900354376', 8, 548, '::1', '1398/07/14 09:07:26');
-
 -- --------------------------------------------------------
 
 --
@@ -2037,14 +1593,6 @@ CREATE TABLE `pages` (
   `ModifyDateTime` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `PageAgentId` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `pages`
---
-
-INSERT INTO `pages` (`PageId`, `PageTitle`, `PageContent`, `CreateDateTime`, `ModifyDateTime`, `PageAgentId`) VALUES
-(3, 'منشور حقوق مردم', '<p>به گزارش پایگاه اطلاع رسانی وزارت کشور، علی‌رضا رزم‌حسینی در نشست مشترک با اعضای حزب اعتدال و توسعه اظهار کرد: از آغاز فعالیت در استانداری خراسان رضوی با احزاب و گروه های سیاسی نشست های مختلفی را برگزار کرده ام تا از نظرات سازنده تشکل ها برای اداره بهتر استان استفاده کنیم.<br>\nوی افزود: به عنوان خدمتگذار مردم در خراسان رضوی، علاقه مندم که با گروه های مختلف سیاسی و احزاب و تشکل ها جلسات مشترکی داشته و از نظرات و انتقادات آن ها در مسیر بهبود شاخص های اقتصادی، فرهنگی و سیاسی بهره مند شویم.<br>\nاستاندار خراسان رضوی با بیان اینکه اولین راهبرد استان در حوزه سیاسی میانه روی است، تصریح کرد: بنده عضو هیچ حزب و گروهی نیستم و اعتقاد دارم که همه دوست داران نظام جمهوری اسلامی باید برای در مسیر توسعه و پیشرفت همدل شوند؛ در همین راستا در کرمان برای اولین بار منشور همدلی سیاسی تدوین و به امضاء رسید.<br>\nوی ادامه داد: اعتقاد داریم که کشور را با شرکت های توسعه گرا باید ساخت نه با دولت، لذا برای گام برداشتن در مسیر توانمندسازی مردم، توسعه جوامع محلی و تحقق سیاست های اقتصاد مقاومتی باید مشارکت بخش خصوصی و شرکت های توانمند و توسعه گرا را به کار گرفت.<br>\nاستاندار خراسان رضوی با اشاره به اجرای طرح همیاران آب در استان بیان کرد: طرح انتقال آب از دریای عمان هم با هدف تامین آب مورد نیاز نسل های آینده در سه استان خراسان رضوی، جنوبی و سیستان و بلوچستان اجرایی خواهد شد.<br>\nرزم حسینی همچنین از اجرای طرح نجات در برخی از محلات حاشیه شهر مشهد خبر داد و اظهار کرد: در خصوص اقتصاد زیارت برنامه ریزی های ویژه ای انجام شده که فرآیندهای آن درحال پیگیری است.<br>\nوی افزود: در مقابل افراد معترضی که حق شان توسط دستگاه های اجرایی ضایع شده سیاست ما گفت و گو، اقناع و ارائه راه حل مشکل خواهد بود و در همین راستا رویه شورای تامین استان در مواجهه با معترضین به حق، اقناع و حل مشکل بوده است.<br>\nاستاندار خراسان رضوی افزود: در سال ۹۶ که مسئولیت استانداری کرمان را برعهده داشتم، در جریان اعتراضات دی ماه اجازه ندادم به معترضان صدمه ای وارد شود چرا که به گفت‌وگو و اقناع اعتقاد داشتم و البته نیروی انتظامی هم با خویشتن داری و تدبیر با متعرضین برخورد کرد.<br>\nرزم حسینی در بخش پایانی سخنانش در خصوص ماجرای پدیده گفت: برای رفع و رجوع مشکل پدیده در تهران ۱۶ جلسه برگزار شد و سعی کردیم با درایت کامل برای رفع این مشکل راه حل اقتصادی پیدا کنیم.</p>\n', '1398/05/25 17:55:11', '1398/05/25 17:55:11', 13),
-(4, 'شرایط قانونی نامزد ها', '<p>هخکتبسی</p>\n\n<p>بی</p>\n\n<p>سشبسش</p>\n\n<p>ب</p>\n', '1398/06/31 15:32:44', '1398/06/31 15:32:44', 13);
 
 -- --------------------------------------------------------
 
@@ -2061,15 +1609,6 @@ CREATE TABLE `posts` (
   `ModifyDateTime` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `PostAgentId` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`PostId`, `PostTitle`, `PostContent`, `PostImage`, `CreateDateTime`, `ModifyDateTime`, `PostAgentId`) VALUES
-(3, 'معرفی مفاخر استان آذربایجان شرقی در سطح ملی با احیای مرکز خراسان شناسی', '<p>به گزارش پایگاه اطلاع رسانی وزارت کشور، علی‌رضا رزم‌حسینی در نشست مشترک با اعضای حزب اعتدال و توسعه اظهار کرد: از آغاز فعالیت در استانداری خراسان رضوی با احزاب و گروه های سیاسی نشست های مختلفی را برگزار کرده ام تا از نظرات سازنده تشکل ها برای اداره بهتر استان استفاده کنیم.<br>\nوی افزود: به عنوان خدمتگذار مردم در خراسان رضوی، علاقه مندم که با گروه های مختلف سیاسی و احزاب و تشکل ها جلسات مشترکی داشته و از نظرات و انتقادات آن ها در مسیر بهبود شاخص های اقتصادی، فرهنگی و سیاسی بهره مند شویم.<br>\nاستاندار خراسان رضوی با بیان اینکه اولین راهبرد استان در حوزه سیاسی میانه روی است، تصریح کرد: بنده عضو هیچ حزب و گروهی نیستم و اعتقاد دارم که همه دوست داران نظام جمهوری اسلامی باید برای در مسیر توسعه و پیشرفت همدل شوند؛ در همین راستا در کرمان برای اولین بار منشور همدلی سیاسی تدوین و به امضاء رسید.<br>\nوی ادامه داد: اعتقاد داریم که کشور را با شرکت های توسعه گرا باید ساخت نه با دولت، لذا برای گام برداشتن در مسیر توانمندسازی مردم، توسعه جوامع محلی و تحقق سیاست های اقتصاد مقاومتی باید مشارکت بخش خصوصی و شرکت های توانمند و توسعه گرا را به کار گرفت.<br>\nاستاندار خراسان رضوی با اشاره به اجرای طرح همیاران آب در استان بیان کرد: طرح انتقال آب از دریای عمان هم با هدف تامین آب مورد نیاز نسل های آینده در سه استان خراسان رضوی، جنوبی و سیستان و بلوچستان اجرایی خواهد شد.<br>\nرزم حسینی همچنین از اجرای طرح نجات در برخی از محلات حاشیه شهر مشهد خبر داد و اظهار کرد: در خصوص اقتصاد زیارت برنامه ریزی های ویژه ای انجام شده که فرآیندهای آن درحال پیگیری است.<br>\nوی افزود: در مقابل افراد معترضی که حق شان توسط دستگاه های اجرایی ضایع شده سیاست ما گفت و گو، اقناع و ارائه راه حل مشکل خواهد بود و در همین راستا رویه شورای تامین استان در مواجهه با معترضین به حق، اقناع و حل مشکل بوده است.<br>\nاستاندار خراسان رضوی افزود: در سال ۹۶ که مسئولیت استانداری کرمان را برعهده داشتم، در جریان اعتراضات دی ماه اجازه ندادم به معترضان صدمه ای وارد شود چرا که به گفت‌وگو و اقناع اعتقاد داشتم و البته نیروی انتظامی هم با خویشتن داری و تدبیر با متعرضین برخورد کرد.<br>\nرزم حسینی در بخش پایانی سخنانش در خصوص ماجرای پدیده گفت: برای رفع و رجوع مشکل پدیده در تهران ۱۶ جلسه برگزار شد و سعی کردیم با درایت کامل برای رفع این مشکل راه حل اقتصادی پیدا کنیم.</p>\n', '3bf146005ad7080bcf333094c35e8928_2_19.jpg', '1398/05/25 17:49:54', '1398/05/25 18:46:38', 13),
-(4, 'استاندار آذربایچان شرقی: از نظر گروه‌های مختلف سیاسی برای اداره بهتر استان استفاده خواهیم کرد', '<p>به گزارش پایگاه اطلاع رسانی وزارت کشور، علی‌رضا رزم‌حسینی در مراسم افتتاحیه دوره های آموزشی مجریان و دست اندرکاران برگزاری انتخابات مجلس شورای اسلامی و میان‌دوره‌ای خبرگان رهبری که در مشهد برگزار شد، اظهار کرد: در طول تاریخ شخصیت هایی از جمله فردوسی، عطار، خیام و مراجع عالیقدر بسیاری زیر سایه امام رضا(ع) در خراسان پرورش پیدا کرده اند و این سرزمین به همین دلیل همواره مورد توجه بوده است.<br>\nوی به رویکرد مدیریت استان در حوزه سیاسی پرداخت و افزود: در حوزه سیاسی مشی ما همواره میانه روی و اعتدال بوده است، چرا که معتقدیم این روش برگرفته از امام علی (ع) است که همواره پیروان خود را به میانه روی توصیه می کردند.<br>\nرزم حسینی به فعالیت خانه احزاب در استان اشاره کرد و ادامه داد: احزاب مختلف با سلایق گوناگون در خراسان رضوی فعال هستند و همواره سعی کرده ایم در جهت بهتر اداره کردن استان با این گروه ها همگرایی لازم را داشته باشیم.<br>\nاستاندار خراسان رضوی در بخش دیگری از سخنانش به موانع پیش روی توسعه و آبادانی پرداخت و گفت: برای رفع چالش هایی مانند بروکراسی فرسوده اداری و به دنبال آن دستیابی به توسعه پایدار مبتنی بر فرمایش مقام معظم رهبری باید به دنبال همگرایی بین همه ارکان حاکمیت باشیم و در این راستا مدلی را تحت عنوان مثلث توسعه اقتصادی فرهنگی در دستورکار قرار داده ایم.<br>\nوی یکی از اهداف انقلاب را بیشتر شدن تدین و تمکن مردم برشمرد و افزود: سرمایه گذاران بر اساس آموزه های دینی مجاهد اقتصادی هستند لذا ائمه جمعه می توانند در این زمینه فرهنگ سازی کرده و زمینه برای بهره گیری از ظرفیت سرمایه گذاران در مسیر توسعه و پیشرفت فراهم کنند.<br>\nرزم حسینی از همگرایی بین همه ارکان حکومت در استان به عنوان کم ترین تاثیر مدل مثلث توسعه اقتصادی فرهنگی یاد کرد و گفت: با اجرای این الگو در خراسان رضوی همه ارکان حکومت در کنار یکدیگر قرار گرفته و در جهت بهبود شاخص های سرمایه گذاری درحال تلاش هستند.  <br>\nوی در خصوص میزان سرمایه گذاری انجام شده در قالب طرح مثلث توسعه اقتصادی فرهنگی استان گفت: تا امروز در قالب این الگو، ۹۲هزار میلیاردتومان موافقت نامه سرمایه گذاری امضا شده است اما بدون شک حجم سرمایه گذاری ها می تواند بسیار بیشتر از این باشد.<br>\nاستاندار خراسان رضوی با بیان اینکه در برابر مشکلات حوزه سرمایه گذاری نمی توان دست روی دست گذاشت، اضافه کرد: در استان خراسان رضوی با همگرایی و هم افزایی همه ارکان حاکمیت، به سمت اصلاح رویه ها و بهبود فضای کسب و کار حرکت کرده و آتش به اختیار مسائل را جلو می بریم.<br>\nرزم حسینی با اشاره به در دستورکار قرار داشتن پروژه های ملی و مهم از جمله خط انتقال آب عمان به سه استان سیستان و بلوچستان، خراسان رضوی، خراسان جنوبی گفت: به منظور مدیریت همزمان منابع آب و خاک، طرح همیاران آب تدوین و فرآیند اجرای آن در استان با مشارکت همه دستگاه های ذی ربط کلید خورده است.<br>\nوی در ادامه درباره معضل حاشیه نشینی شهر مشهد گفت: برای ساماندهی و کاهش آسیب های اجتماعی در سکونتگاه های غیررسمی مشهد با حدود یک میلیون نفر جمعیت که همواره مورد توجه رئیس جمهور و مقام معظم رهبری بوده، در حال اجرای طرح نجات هستیم.<br>\nاستاندار خراسان رضوی ادامه داد: باید به اقتصاد زیارت توجه بیشتری شود چرا که طبق آمارها سالیانه بیش از ۳۰ مییلون زائر داخلی و خارجی به مشهد مقدس سفر می کنند و در این رابطه باید برنامه ریزی بیشتری انجام گیرد.<br>\nرزم حسینی در بخش پایانی سخنان خود به سیاست مدیریت استان در حوزه امنیت پرداخت و تشریح کرد: سیاست ما در حوزه امنیت گفت و گو، اقناع و ارائه راه حل به معترضین بوده است و معتقدیم نباید با معترضین به حق که به دلیل ناکارآمدی دستگاه های اجرایی و قضائی با مشکلاتی مواجه شده اند، برخورد قهری داشت.</p>\n', '4a3b755fa353566f168d83fc474f96a9_3_9.jpg', '1398/05/25 17:50:29', '1398/05/25 18:46:21', 13),
-(5, 'در جریان سفر یک روزه خود به استان مرکزی باتفاق استاندار مرکزی با حضور در شهرستان دلیجان از بخش های مختلف بیمارستان امام صادق(ع) این شهرستان بازدید کرد.', '<p>به گزارش پایگاه اطلاع رسانی وزارت کشور؛ دکتر سعید نمکی وزیر بهداشت در جریان سفر یک روزه خود به استان مرکزی باتفاق استاندار مرکزی با حضور در شهرستان دلیجان از بخش های مختلف بیمارستان امام صادق(ع) این شهرستان بازدید کرد.​</p>\n\n<p>وزیر بهداشت، درمان و آموزش پزشکی در این بازدید در جمع خبرنگاران گفت: مشکلات  شهرستان دلیجان در حوزه بهداشت و درمان ارزیابی و جمع بندی می شود و در اسرع وقت به همه مسائل رسیدگی می شود.</p>\n\n<p>وی با بیان اینکه مشکلات این شهرستان در دو بخش است، افزود: شهرستان دلیجان در حوزه نیروی انسانی و تجهیزات دارای مشکلاتی است که پس از سفر و جمع بندی، آنچه ضرورت داشته باشد انجام می شود.</p>\n\n<p>نمکی تصریح کرد: ضریب اشغال تخت نسبت به نیروی انسانی موجود باید به جمع بندی فنی و کامل برسد و با توجه به اولویت عدالت در سلامت و اینکه نیروی انسانی براساس نیاز مناطق توزیع شود اگر به کمبود نیروی انسانی متخصص و کارشناس و تجهیزات رسیدیم، تامین آنها در دستور کار قرار می گیرد.</p>\n\n<p>وزیر بهداشت اضافه کرد: سی تی اسکن فعلی بیمارستان قدیمی است و با توجه به اینکه شهرستان در کریدور عبوری است باید این سی تی اسکن تقویت و در اسرع وقت تامین می شود.</p>\n', 'fb9a356e2b668ed7763006b72dc1eb9a_IMG-20190815-WA0042.jpg', '1398/05/25 17:51:09', '1398/05/25 17:51:09', 13);
 
 -- --------------------------------------------------------
 
@@ -2325,7 +1864,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `agent`
 --
 ALTER TABLE `agent`
-  MODIFY `AgentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `AgentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT for table `candidate`
 --
@@ -2375,7 +1914,7 @@ ALTER TABLE `candidate_military`
 -- AUTO_INCREMENT for table `candidate_politic_record`
 --
 ALTER TABLE `candidate_politic_record`
-  MODIFY `RowId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `RowId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `candidate_post`
 --

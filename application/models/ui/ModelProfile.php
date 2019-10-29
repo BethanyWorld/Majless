@@ -1,7 +1,8 @@
 <?php
 
+
 class ModelProfile extends CI_Model{
-    public function doUpdateCandidatePersonalInfo($inputs)
+    public function candidateUpdatePersonalInfo($inputs)
     {
         $UserArray = array(
             'CandidateFirstName' => $inputs['inputCandidateFirstName'],
@@ -37,6 +38,18 @@ class ModelProfile extends CI_Model{
         $this->db->trans_start();
         $this->db->where('CandidateId', $inputs['inputCandidateId']);
         $this->db->update('candidate', $UserArray);
+
+        $this->db->delete('candidate_roles', array(
+            'CandidateId' => $inputs['inputCandidateId']
+        ));
+
+        foreach ($inputs['inputCandidateRoles'] as $input) {
+            $arrayCandidate = array(
+                'CandidateId' => $inputs['inputCandidateId'],
+                'Role' => $input
+            );
+            $this->db->insert('candidate_roles', $arrayCandidate);
+        }
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
             $arr = array(

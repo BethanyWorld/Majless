@@ -17,7 +17,7 @@ $_DIR = base_url('assets/ui/v3/');
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-3 col-sm-12 col-xs-12 text-center LeftPanelImage">
-                                        <img class="img-circle img-thumbnail" id="personInfoImageButtons"
+                                        <img class="img-thumbnail" id="personInfoImageButtons"
                                              src="<?php echo $profileImage; ?>">
                                         <div class="">
                                             <span class="btn btn-block personInfoImageButtons ButtonBlueColor">
@@ -31,7 +31,7 @@ $_DIR = base_url('assets/ui/v3/');
                                     <div class="col-md-9 col-xs-12 RightFloat">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 input-field RightFloat"
                                              id="birthDatePanel">
-                                            <div class="col-md-6 col-xs-12 form-group RightFloat">
+                                            <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                 <label class="active" for="inputCandidateFirstName">
                                                     نام
                                                     <span class="text-danger">
@@ -44,7 +44,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                        class="input-validate validate valid"
                                                        placeholder="پر کردن این فیلد الزامی می باشد">
                                             </div>
-                                            <div class="col-md-6 col-xs-12 form-group RightFloat">
+                                            <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                 <label class="active" for="inputCandidateLastName">
                                                     نام خانوادگی
                                                     <span class="text-danger">
@@ -57,7 +57,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                        class="input-validate validate valid"
                                                        placeholder="پر کردن این فیلد الزامی می باشد">
                                             </div>
-                                            <div class="col-md-6 col-xs-12 form-group RightFloat">
+                                            <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                 <label class="active" for="inputCandidateNationalCode">
                                                     کد ملی
                                                     <span class="text-danger">
@@ -92,9 +92,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <input id="inputCandidateBirthDate" type="text"
                                                        name="inputCandidateBirthDate"
+                                                       data-mask="0000/00/00"
+
                                                     <?php setInputValue($userInfo['CandidateBirthDate']); ?>
                                                        class="input-validate validate valid"
-                                                       placeholder="پر کردن این فیلد الزامی می باشد">
+                                                       placeholder="1357/12/22">
                                             </div>
                                             <div class="clearfix"></div>
                                             <div class="col-md-12 padding-0">
@@ -219,7 +221,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                             id="inputCandidateBornStateId">
                                                         <option value="">-- انتخاب کنید --</option>
                                                         <?php foreach ($states as $state) { ?>
-                                                            <option value="<?php echo $state['StateId']; ?>"  <?php setOptionSelected($userInfo['CandidateFatherBornStateId'], $state['StateId']); ?>>
+                                                            <option value="<?php echo $state['StateId']; ?>"
+                                                                <?php setOptionSelected($userInfo['CandidateBornStateId'], $state['StateId']); ?>>
                                                                 <?php echo $state['StateName']; ?>
                                                             </option>
                                                         <?php } ?>
@@ -234,13 +237,12 @@ $_DIR = base_url('assets/ui/v3/');
                                                             name="inputCandidateBornCityId"
                                                             id="inputCandidateBornCityId">
                                                         <?php
-                                                        if($userInfo['CandidateCityId'] !== NULL){
+                                                        if ($userInfo['CandidateCityId'] !== NULL) {
                                                             foreach ($userInfo['CandidateBornCities'] as $city) { ?>
-                                                            <option
-                                                                    value="<?php echo $city['CityId']; ?>"
-                                                                <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
-                                                                <?php echo $city['CityName']; ?>
-                                                            </option>
+                                                                <option value="<?php echo $city['CityId']; ?>"
+                                                                    <?php setOptionSelected($userInfo['CandidateBornCityId'], $city['CityId']); ?>>
+                                                                    <?php echo $city['CityName']; ?>
+                                                                </option>
                                                             <?php }
                                                         }
                                                         ?>
@@ -264,9 +266,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                             id="inputCandidateFatherBornStateId">
                                                         <option value="">-- انتخاب کنید --</option>
                                                         <?php foreach ($states as $state) { ?>
-                                                        <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateFatherBornStateId'], $state['StateId']); ?>>
-                                                            <?php echo $state['StateName']; ?>
-                                                        </option>
+                                                            <option value="<?php echo $state['StateId']; ?>"
+                                                                <?php setOptionSelected($userInfo['CandidateFatherBornStateId'], $state['StateId']); ?>>
+                                                                <?php echo $state['StateName']; ?>
+                                                            </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -282,11 +285,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                             name="inputCandidateFatherBornCityId"
                                                             id="inputCandidateFatherBornCityId">
                                                         <?php foreach ($userInfo['CandidateFatherBornCities'] as $city) { ?>
-                                                        <option
-                                                                value="<?php echo $city['CityId']; ?>"
-                                                            <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
-                                                            <?php echo $city['CityName']; ?>
-                                                        </option>
+                                                            <option
+                                                                    value="<?php echo $city['CityId']; ?>"
+                                                                <?php setOptionSelected($userInfo['CandidateFatherBornCityId'], $city['CityId']); ?>>
+                                                                <?php echo $city['CityName']; ?>
+                                                            </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -308,9 +311,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                             id="inputCandidateMotherBornStateId">
                                                         <option value="">-- انتخاب کنید --</option>
                                                         <?php foreach ($states as $state) { ?>
-                                                        <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateMotherBornStateId'], $state['StateId']); ?>>
-                                                            <?php echo $state['StateName']; ?>
-                                                        </option>
+                                                            <option value="<?php echo $state['StateId']; ?>"
+                                                                <?php setOptionSelected($userInfo['CandidateMotherBornStateId'], $state['StateId']); ?>>
+                                                                <?php echo $state['StateName']; ?>
+                                                            </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -326,11 +330,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                             name="inputCandidateMotherBornCityId"
                                                             id="inputCandidateMotherBornCityId">
                                                         <?php foreach ($userInfo['CandidateMotherBornCities'] as $city) { ?>
-                                                        <option
-                                                                value="<?php echo $city['CityId']; ?>"
-                                                            <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
-                                                            <?php echo $city['CityName']; ?>
-                                                        </option>
+                                                            <option
+                                                                    value="<?php echo $city['CityId']; ?>"
+                                                                <?php setOptionSelected($userInfo['CandidateMotherBornCityId'], $city['CityId']); ?>>
+                                                                <?php echo $city['CityName']; ?>
+                                                            </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -352,9 +356,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                             id="inputCandidateAddressStateId">
                                                         <option value="">-- انتخاب کنید --</option>
                                                         <?php foreach ($states as $state) { ?>
-                                                        <option value="<?php echo $state['StateId']; ?>" <?php setOptionSelected($userInfo['CandidateAddressStateId'], $state['StateId']); ?>>
-                                                            <?php echo $state['StateName']; ?>
-                                                        </option>
+                                                            <option value="<?php echo $state['StateId']; ?>"
+                                                                <?php setOptionSelected($userInfo['CandidateAddressStateId'], $state['StateId']); ?>>
+                                                                <?php echo $state['StateName']; ?>
+                                                            </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -370,11 +375,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                             name="inputCandidateAddressCityId"
                                                             id="inputCandidateAddressCityId">
                                                         <?php foreach ($userInfo['CandidateAddressCities'] as $city) { ?>
-                                                        <option
-                                                                value="<?php echo $city['CityId']; ?>"
-                                                            <?php setOptionSelected($userInfo['CandidateCityId'], $city['CityId']); ?>>
-                                                            <?php echo $city['CityName']; ?>
-                                                        </option>
+                                                            <option
+                                                                    value="<?php echo $city['CityId']; ?>"
+                                                                <?php setOptionSelected($userInfo['CandidateAddressCityId'], $city['CityId']); ?>>
+                                                                <?php echo $city['CityName']; ?>
+                                                            </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
@@ -519,10 +524,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                         name="inputCandidateConstituencyStateId"
                                                         id="inputCandidateConstituencyStateId">
                                                     <?php foreach ($states as $state) { ?>
-                                                    <option value="<?php echo $state['StateId']; ?>"
-                                                        <?php setOptionSelected($userInfo['CandidateConstituencyStateId'], $state['StateId']); ?>>
-                                                        <?php echo $state['StateName']; ?>
-                                                    </option>
+                                                        <option value="<?php echo $state['StateId']; ?>"
+                                                            <?php setOptionSelected($userInfo['CandidateConstituencyStateId'], $state['StateId']); ?>>
+                                                            <?php echo $state['StateName']; ?>
+                                                        </option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -537,15 +542,20 @@ $_DIR = base_url('assets/ui/v3/');
                                                         name="inputCandidateConstituencyCityId"
                                                         id="inputCandidateConstituencyCityId">
                                                     <?php foreach ($userInfo['CandidateConstituencyCities'] as $city) { ?>
-                                                    <option
-                                                            value="<?php echo $city['CityId']; ?>"
-                                                        <?php setOptionSelected($userInfo['CandidateConstituencyCityId'], $city['CityId']); ?>>
-                                                        <?php echo $city['CityName']; ?>
-                                                    </option>
+                                                        <option
+                                                                value="<?php echo $city['CityId']; ?>"
+                                                            <?php setOptionSelected($userInfo['CandidateConstituencyCityId'], $city['CityId']); ?>>
+                                                            <?php echo $city['CityName']; ?>
+                                                        </option>
                                                     <?php } ?>
                                                 </select>
-                                                <label class="label label-danger hidden invaliderror"
-                                                       id="cs">error</label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 form-group RightFloat">
+                                                <label class="label label-danger" id="cs">
+                                                    برای نامزدی در انتخابات باید محل تولد خود یا یکی از والدین یا محل
+                                                    سکونت شما در محدوده حوزه انتخابیه تعیین شده باشد.
+
+                                                </label>
                                             </div>
                                         </div>
                                     </div>

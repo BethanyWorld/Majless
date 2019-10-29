@@ -109,14 +109,17 @@
                                 success: function (data) {
                                     $result = JSON.parse(data);
                                     notify($result['content'], $result['type']);
-                                    if ($result['success']) {
+                                    if ($result['success'] && $result['type'] =='green') {
                                         setTimeout(function(){
                                             location.href = base_url + 'Login';
                                         } , 1500);
+                                        toggleLoader();
                                     }
                                     else {
                                         /*notify($result['message'], 'red');*/
-                                        $('#signUpModal').modal('show');
+                                        if($result['type'] == 'red'){
+                                            $('#signUpModal').modal('show');
+                                        }
                                         toggleLoader();
                                     }
                                 }
