@@ -40,13 +40,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="9" />
-          <entry key="php" value="23" />
+          <entry key="php" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="9" />
-          <entry key="PHP" value="23" />
+          <entry key="PHP" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -63,7 +63,7 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -76,10 +76,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/resume/index.php">
+        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="548" column="61" lean-forward="true" selection-start-line="548" selection-start-column="61" selection-end-line="548" selection-end-column="61" />
+            <state relative-caret-position="273">
+              <caret line="467" column="21" lean-forward="true" selection-start-line="467" selection-start-column="21" selection-end-line="467" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -122,6 +122,7 @@
         <option value="$PROJECT_DIR$/application/models/ui/ModelProfile.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/resume/index_js.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/resume/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index.php" />
       </list>
     </option>
   </component>
@@ -235,7 +236,7 @@
               <item name="candidate_profile" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="candidate_resume" type="462c0819:PsiDirectoryNode" />
-              <item name="resume" type="462c0819:PsiDirectoryNode" />
+              <item name="politic_background" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -256,19 +257,19 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Majless\assets\ui\v4\js" />
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home" />
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile" />
-      <recent name="C:\wamp64\www\Majless\application\models\ui" />
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home\steps" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\exams" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home\candidate_resume" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\profile\home" />
       <recent name="C:\wamp64\www\Majless\application\views\admin_panel\states\elections\home" />
       <recent name="C:\wamp64\www\Majless\application\models\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Majless\assets\ui\v4\js" />
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home" />
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile" />
+      <recent name="C:\wamp64\www\Majless\application\models\ui" />
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home\steps" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -635,7 +636,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8657000" />
+    <option name="totallyTimeSpent" value="9525000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -650,7 +651,7 @@
     <frame x="-1374" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.22087745" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.3139183" />
       <window_info id="Favorites" order="1" sideWeight="0.50163937" side_tool="true" weight="0.23827533" />
       <window_info id="Structure" order="2" sideWeight="0.50163937" side_tool="true" weight="0.23827533" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3295082" />
@@ -847,8 +848,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/resume/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="548" column="61" lean-forward="true" selection-start-line="548" selection-start-column="61" selection-end-line="548" selection-end-column="61" />
+        <state relative-caret-position="273">
+          <caret line="549" column="55" lean-forward="true" selection-start-line="549" selection-start-column="55" selection-end-line="549" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1095,6 +1096,13 @@
             <element signature="e#26945#27169#0#PHP" />
             <element signature="e#26971#27133#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="467" column="21" lean-forward="true" selection-start-line="467" selection-start-column="21" selection-end-line="467" selection-end-column="21" />
         </state>
       </provider>
     </entry>
