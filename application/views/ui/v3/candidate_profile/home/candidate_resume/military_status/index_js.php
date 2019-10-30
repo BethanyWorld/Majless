@@ -67,10 +67,10 @@
         $("#updateMilitaryStatus").click({redirect: false}, updateMilitaryStatus);
         $("#updateMilitaryStatusAndRedirect").click({redirect: true}, updateMilitaryStatus);
         function updateMilitaryStatus(param) {
-            if ($("#form-military").serializeArray().length <= 0) {
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else {
+            // if ($("#form-military").serializeArray().length <= 0) {
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = {inputCandidateMilitary: $("#form-military").serializeArray()}
                 toggleLoader();
                 $.ajax({
@@ -86,7 +86,6 @@
                         }
                     }
                 });
-            }
         }
 
 

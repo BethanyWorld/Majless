@@ -77,10 +77,10 @@
         $("#buttonUpdateSocialCaltural").click( {redirect: false}, updateProfileSocialCaltural);
         $("#buttonUpdateSocialCalturalAndRedirect").click( {redirect: true}, updateProfileSocialCaltural);
         function updateProfileSocialCaltural(param) {
-            if($("#form").serializeArray().length <=0){
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = { inputSocialCulturalBackground : $("#form").serializeArray() }
                 toggleLoader();
                 $.ajax({
@@ -96,7 +96,7 @@
                         }
                     }
                 });
-            }
+
         }
     });
 </script>

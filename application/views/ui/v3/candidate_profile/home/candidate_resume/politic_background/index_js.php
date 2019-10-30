@@ -183,10 +183,10 @@
         $("#updatePoliticBackground").click({redirect: false}, updatePoliticBackground);
         $("#updatePoliticBackgroundAndRedirect").click({redirect: true}, updatePoliticBackground);
         function updatePoliticBackground(param) {
-            if ($("#form").serializeArray().length <= 0) {
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else {
+            // if ($("#form").serializeArray().length <= 0) {
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = {inputCandidatePoliticBackground : $("#form").serializeArray()}
                 toggleLoader();
                 $.ajax({
@@ -202,7 +202,7 @@
                         }
                     }
                 });
-            }
+
         }
 
     });

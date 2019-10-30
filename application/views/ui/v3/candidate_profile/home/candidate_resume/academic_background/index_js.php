@@ -324,10 +324,10 @@
         $("#updateProfileAcademicBackground").click( {redirect: false}, updateProfile);
         $("#updateProfileAcademicBackgroundAndRedirect").click( {redirect: true}, updateProfile);
         function updateProfile(param){
-            if($("#form").serializeArray().length <=0){
-                notify('وارد کردن حداقل سابقه تحصیلی الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل سابقه تحصیلی الزامی ست', 'yellow');
+            // }
+
                 $sendData = {inputCandidateAcademicBackground: $("#form").serializeArray()}
                 toggleLoader();
                 $.ajax({
@@ -343,7 +343,7 @@
                         }
                     }
                 });
-            }
+
         }
 
     });

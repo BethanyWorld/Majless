@@ -8,10 +8,10 @@
             $(this).parent().remove();
         });
         $("#updateProfileSkills").click(function () {
-            if($("#form").serializeArray().length <=0){
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = {
                     inputCandidateSkills: $("#form").serializeArray()
                 }
@@ -26,7 +26,7 @@
                         notify($result['content'], $result['type']);
                     }
                 });
-            }
+
         });
     });
 </script>

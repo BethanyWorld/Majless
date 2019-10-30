@@ -12,10 +12,10 @@
         $("#updateProfileJobHistory").click( {redirect: false}, updateProfileJobHistory);
         $("#updateProfileJobHistoryAndRedirect").click( {redirect: true}, updateProfileJobHistory);
         function updateProfileJobHistory(param) {
-            if($("#form-job-history").serializeArray().length <=0){
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form-job-history").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = {inputCandidateJobHistory: $("#form-job-history").serializeArray()}
                 toggleLoader();
                 $.ajax({
@@ -31,7 +31,7 @@
                         }
                     }
                 });
-            }
+
         }
     });
 </script>

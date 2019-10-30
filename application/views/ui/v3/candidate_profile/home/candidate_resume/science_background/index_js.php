@@ -12,10 +12,10 @@
 
 
         $("#updateProfileBooks").click(function () {
-            if($("#form-books").serializeArray().length <=0){
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form-books").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = { inputCandidateBooks: $("#form-books").serializeArray() }
                 toggleLoader();
                 $.ajax({
@@ -28,13 +28,13 @@
                         notify($result['content'], $result['type']);
                     }
                 });
-            }
+
         });
         $("#updateProfileArticles").click(function () {
-            if($("#form-articles").serializeArray().length <=0){
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form-articles").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = { inputCandidateArticles : $("#form-articles").serializeArray() }
                 toggleLoader();
                 $.ajax({
@@ -47,13 +47,13 @@
                         notify($result['content'], $result['type']);
                     }
                 });
-            }
+
         });
         $("#updateProfileResearch").click(function () {
-            if($("#form-research").serializeArray().length <=0){
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form-research").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = { inputCandidateResearch : $("#form-research").serializeArray() }
                 toggleLoader();
                 $.ajax({
@@ -66,13 +66,13 @@
                         notify($result['content'], $result['type']);
                     }
                 });
-            }
+
         });
         $("#updateProfileTranslation").click(function () {
-            if($("#form-translate").serializeArray().length <=0){
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form-translate").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = { inputCandidateTranslation : $("#form-translate").serializeArray() }
                 toggleLoader();
                 $.ajax({
@@ -85,13 +85,12 @@
                         notify($result['content'], $result['type']);
                     }
                 });
-            }
         });
         $("#updateProfileInvention").click(function () {
-            if($("#form-invention").serializeArray().length <=0){
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form-invention").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = { inputCandidateInvention : $("#form-invention").serializeArray() }
                 toggleLoader();
                 $.ajax({
@@ -104,13 +103,12 @@
                         notify($result['content'], $result['type']);
                     }
                 });
-            }
         });
         $("#updateProfileConference").click(function () {
-            if($("#form-conference").serializeArray().length <=0){
-                notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            }
-            else{
+            // if($("#form-conference").serializeArray().length <=0){
+            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
+            // }
+
                 $sendData = { inputCandidateConference : $("#form-conference").serializeArray() }
                 toggleLoader();
                 $.ajax({
@@ -123,7 +121,6 @@
                         notify($result['content'], $result['type']);
                     }
                 });
-            }
         });
 
 
