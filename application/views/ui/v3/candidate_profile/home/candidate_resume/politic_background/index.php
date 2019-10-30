@@ -454,7 +454,7 @@
                         <button class="btn btn-block btn-lg waves-effect CommonButtons next-step"
                                 id="updatePoliticBackgroundAndRedirect">
                             ثبت و ادامه
-                        </button>
+                        </button> 
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         <button class="btn btn-block btn-lg waves-effect CommonButtons"
