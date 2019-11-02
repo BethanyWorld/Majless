@@ -353,8 +353,6 @@ class ModelExam extends CI_Model{
         }
     }
 
-
-
     public function doAcceptCandidateEvaluationExam($inputs){
         $this->db->trans_start();
         $UserArray = array(
@@ -411,7 +409,6 @@ class ModelExam extends CI_Model{
             return $arr;
         }
     }
-
 
 }
 ?>

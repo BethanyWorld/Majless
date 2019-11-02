@@ -10,6 +10,7 @@ class States extends CI_Controller{
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'فهرست استان ها';
         $inputs['pageIndex'] = 1;
+        $data['states'] = $this->ModelCountry->getStateList();
 
         $this->load->view('admin_panel/static/header', $data);
         $this->load->view('admin_panel/states/home/index');
@@ -88,8 +89,9 @@ class States extends CI_Controller{
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'فهرست  حوزه های انتخاباتی';
         $inputs['pageIndex'] = 1;
+        $data['states'] = $this->ModelCountry->getStateList();
         $this->load->view('admin_panel/static/header', $data);
-        $this->load->view('admin_panel/states/elections/home/index');
+        $this->load->view('admin_panel/states/elections/home/index', $data);
         $this->load->view('admin_panel/states/elections/home/index_css');
         $this->load->view('admin_panel/states/elections/home/index_js');
         $this->load->view('admin_panel/static/footer');

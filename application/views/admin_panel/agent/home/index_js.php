@@ -10,6 +10,7 @@
     function loadData(selectedPage = $selectedPage){
         toggleLoader();
         $sendData = {
+            'inputAgentState': $("#inputAgentState").val(),
             'pageIndex': selectedPage
         }
         $.ajax({
@@ -44,6 +45,9 @@
 
     $(document).ready(function(){
         loadData();
+        $("#searchButton").click(function () {
+            loadData(1);
+        });
     });
 
 

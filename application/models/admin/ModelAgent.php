@@ -17,6 +17,9 @@ class ModelAgent extends CI_Model{
         $this->db->select('*');
         $this->db->from('agent');
         $this->db->join('state' , 'agent.agentStateId = state.StateId');
+        if(isset($inputs['inputAgentState']) && $inputs['inputAgentState'] != ''){
+            $this->db->where('agent.AgentStateId' , $inputs['inputAgentState']);
+        }
         $this->db->order_by('AgentId', 'DESC');
 
         $tempDb = clone $this->db;

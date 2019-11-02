@@ -43,7 +43,7 @@
                 </nav>
                 <div class="clear"></div>
                 <div class="clear rtl">
-                    <div class="fw-page-builder-content textalignleft">تمامی حقوق برای جوانان فعال و انقلابی ایران محفوظ است.</div>
+                    <div class="fw-page-builder-content textalignleft">تمامی حقوق برای جنبش ازما محفوظ است.</div>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6">

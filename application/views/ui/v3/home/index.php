@@ -29,7 +29,7 @@
                                 <div class="hp-join-the-effort tbWow fadeInDown">
                                     <div class="fw-page-builder-content"><span style="color: #ffffff;float: left;">
                                                     <span class="rtl">
-                                                        بخشی از جنبش باشید و در ساختن آینده ای بهتر برای کشورمان شرکت کنید! به این کارزار تاریخی بپیوندید و در مقابل ارزشهایی که کشور ما را عالی می کند ، ایستادگی کنید. یک تفاوت ایجاد کنید
+                                                        بخشی از جنبش باشید و در ساختن آینده ای بهتر برای کشورمان شرکت کنید! به این کارزار تاریخی بپیوندید و برای ارزشهایی که کشور ما را عالی می کند ، ایستادگی کنید. یک تفاوت ایجاد کنید
                                                     </span>
                                     </div>
                                 </div>
@@ -165,8 +165,7 @@
             </div>
         </section>
         <!-- Edited Latest News-->
-        <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow fadeIn"
-                 style="background-color:#f9f9f9;   ">
+        <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow fadeIn hidden" style="background-color:#f9f9f9;">
             <div class="container" style=' padding-top: 60px; padding-bottom: 60px; '>
                 <div class="row">
                     <div class="fw-row absolutecenter-stretch">
@@ -259,13 +258,9 @@
                 <div class="fw-row absolutecenter-stretch">
                     <div id="column-5d7930f12c6ec"
                          class="tb-column absolutecenter-stretch col-xs-12  col-sm-6  nopadding  tbWow fadeIn ">
-                        <div style="background-image:url(<?php echo $_DIR ?>images/issues.jpg);
-                                background-repeat: no-repeat; background-position: center center; background-size: auto;
-                                padding: 30px 0px 30px 0px;"
-                             class=" absolutecenter  padding15-xs">
+                        <div style="background-image:url(<?php echo $_DIR ?>images/issues.jpg);background-repeat: no-repeat; background-position: center center; background-size: auto;padding: 30px 0px 30px 0px;" class=" absolutecenter  padding15-xs">
                             <div class="tb-single-image tbWow fadeInUp textaligncenter">
-                                       <span class="tb-single-image-wrap">
-                                       </span>
+                                       <span class="tb-single-image-wrap"></span>
                             </div>
                         </div>
                     </div>
@@ -602,7 +597,7 @@
                                             <div class="fw-page-builder-content rtl">
                                                 <p>
                                                     بخشی از جنبش باشید و در ساختن آینده ای بهتر برای کشورمان شرکت کنید!
-                                                    به این کارزار تاریخی بپیوندید و در مقابل ارزشهایی که کشور ما را عالی
+                                                    به این کارزار تاریخی بپیوندید و برای ارزشهایی که کشور ما را عالی
                                                     می کند ، ایستادگی کنید. یک تفاوت ایجاد کن.
                                                 </p>
                                             </div>

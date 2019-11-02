@@ -8,6 +8,7 @@
     function loadData(selectedPage = $selectedPage){
         toggleLoader();
         $sendData = {
+            'inputElectionStateId': $("#inputElectionStateId").val(),
             'pageIndex': selectedPage
         }
         $.ajax({
@@ -41,6 +42,9 @@
     }
     $(document).ready(function(){
         loadData();
+        $("#searchButton").click(function () {
+            loadData(1);
+        });
         $(document).on('click', '.remove-election', function () {
             $this = $(this);
             $title = "<strong class='badge'> " + $this.data('title') + " </strong>";

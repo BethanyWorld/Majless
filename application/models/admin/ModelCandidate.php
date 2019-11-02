@@ -72,6 +72,56 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+    public function getCandidateByCandidateNationalCode($CandidateNationalCode)
+    {
+        /*$this->db->select('*');
+        $this->db->from('candidate');
+        $this->db->join('state', 'candidate.CandidateStateId = state.StateId');
+        $this->db->join('city', 'candidate.CandidateCityId = city.CityId');
+        $this->db->where('CandidateNationalCode' , $CandidateNationalCode);*/
+        $query = $this->db->query('SELECT * FROM candidate WHERE CandidateNationalCode = ?',array($CandidateNationalCode));
+
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array()[0];
+            $this->db->select('*');
+            $this->db->from('candidate_roles');
+            $this->db->where('CandidateId', $result['CandidateId']);
+            $roles = $this->db->get()->result_array();
+            $result['roles'] = $roles;
+            return $result;
+        }
+        $arr = array();
+        return $arr;
+    }
+    public function doImportScores($inputs){
+        $this->db->trans_start();
+        foreach ($inputs['inputCandidateScores'] as $input) {
+            $UserArray = array(
+                'CandidateScore' => $input['inputScore']
+            );
+            $this->db->where('CandidateNationalCode', $input['inputNationalCode']);
+            $this->db->update('candidate', $UserArray);
+        }
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "بروزرسانی نمرات با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "بروزرسانی نمرات با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+
+
+    }
+
 
     public function getResumeStatus($inputs){
         $isComplete = "";

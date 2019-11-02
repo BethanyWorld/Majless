@@ -2,10 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="127eba2d-7415-495a-85e7-2bfd297d5681" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/import_scores/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/import_scores/index_css.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/import_scores/index_js.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index_css.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index_css.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Admin/Agent.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin/Agent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Admin/Candidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin/Candidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Admin/States.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin/States.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/admin/ModelAgent.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/admin/ModelAgent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/admin/ModelCandidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/admin/ModelCandidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/admin/ModelExam.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/admin/ModelExam.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/ui/ModelCountry.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ui/ModelCountry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/ui/ModelProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ui/ModelProfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/agent/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/agent/home/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/agent/home/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/agent/home/index_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/states/elections/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/states/elections/home/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/states/elections/home/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/states/elections/home/index_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/states/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/states/home/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/states/home/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/states/home/index_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/static/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/static/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/home/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/state/candidate/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/static/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/static/footer.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,25 +60,27 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="9" />
-          <entry key="php" value="24" />
+          <entry key="php" value="80" />
+          <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="9" />
-          <entry key="PHP" value="24" />
+          <entry key="PHP" value="80" />
+          <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="3" />
-          <entry key="php" value="284" />
+          <entry key="php" value="1911" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="284" />
+          <entry key="PHP" value="1911" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -74,17 +96,7 @@
     <favorites_list name="1TeachMe" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="467" column="21" lean-forward="true" selection-start-line="467" selection-start-column="21" selection-end-line="467" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,6 +113,7 @@
       <find>personInfoImageButtons</find>
       <find>mask</find>
       <find>id=&quot;cs&quot;</find>
+      <find>در مقابل</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,10 +132,31 @@
         <option value="$PROJECT_DIR$/assets/ui/v4/js/scripts.js" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/static/header.php" />
         <option value="$PROJECT_DIR$/application/controllers/Profile.php" />
-        <option value="$PROJECT_DIR$/application/models/ui/ModelProfile.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/resume/index_js.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/resume/index.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js.php" />
+        <option value="$PROJECT_DIR$/application/models/ui/ModelProfile.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/state/candidate/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/home/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/static/footer.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Admin/Agent.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/agent/home/index_js.php" />
+        <option value="$PROJECT_DIR$/application/models/admin/ModelAgent.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/states/home/index.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/states/home/index_js.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/agent/home/index.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Admin/States.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/states/elections/home/index.php" />
+        <option value="$PROJECT_DIR$/application/models/ui/ModelCountry.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/states/elections/home/index_js.php" />
+        <option value="$PROJECT_DIR$/application/models/admin/ModelExam.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/static/header.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/import_scores/index.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/import_scores/index_js.php" />
+        <option value="$PROJECT_DIR$/application/models/admin/ModelCandidate.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Admin/Candidate.php" />
       </list>
     </option>
   </component>
@@ -150,10 +184,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1216" />
-    <option name="y" value="-9" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="x" value="-1335" />
+    <option name="y" value="-102" />
+    <option name="width" value="1616" />
+    <option name="height" value="834" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -175,69 +209,6 @@
               <item name="Majless" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="v3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="v3" type="462c0819:PsiDirectoryNode" />
-              <item name="candidate_profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="v3" type="462c0819:PsiDirectoryNode" />
-              <item name="candidate_profile" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="v3" type="462c0819:PsiDirectoryNode" />
-              <item name="candidate_profile" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="candidate_resume" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="v3" type="462c0819:PsiDirectoryNode" />
-              <item name="candidate_profile" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="candidate_resume" type="462c0819:PsiDirectoryNode" />
-              <item name="politic_background" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -257,19 +228,19 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Majless\application\views\admin_panel\candidate" />
+      <recent name="C:\wamp64\www\Majless\assets\ui\v4\js" />
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home" />
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile" />
+      <recent name="C:\wamp64\www\Majless\application\models\ui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\exams" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home\candidate_resume" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\profile\home" />
       <recent name="C:\wamp64\www\Majless\application\views\admin_panel\states\elections\home" />
       <recent name="C:\wamp64\www\Majless\application\models\public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Majless\assets\ui\v4\js" />
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home" />
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile" />
-      <recent name="C:\wamp64\www\Majless\application\models\ui" />
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home\steps" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -636,7 +607,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9525000" />
+    <option name="totallyTimeSpent" value="28730000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -648,10 +619,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1374" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1374" y="-102" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.3139183" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.22247706" />
       <window_info id="Favorites" order="1" sideWeight="0.50163937" side_tool="true" weight="0.23827533" />
       <window_info id="Structure" order="2" sideWeight="0.50163937" side_tool="true" weight="0.23827533" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3295082" />
@@ -713,13 +683,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5487">
-          <caret line="282" column="30" lean-forward="true" selection-start-line="282" selection-start-column="30" selection-end-line="282" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -745,15 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-          <folding>
-            <element signature="n#index#0;n#SignUp#0;n#!!top" />
-            <element signature="n#submitSignUpForm#0;n#SignUp#0;n#!!top" />
-            <element signature="e#1661#1721#1#PHP" />
-            <element signature="e#1761#1838#1#PHP" />
-            <element signature="e#1878#1941#1#PHP" />
-            <element signature="n#checkCaptcha#0;n#SignUp#0;n#!!top" />
-            <element signature="n#changeCandidateState#0;n#SignUp#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -777,25 +731,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/static/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/adminpanel/js/helpers.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/adminpanel/js/script.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/static/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="39" column="74" selection-start-line="39" selection-start-column="74" selection-end-line="39" selection-end-column="74" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/adminpanel/js/admin.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -827,50 +767,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="61" column="37" lean-forward="true" selection-start-line="61" selection-start-column="37" selection-end-line="88" selection-end-column="13" />
-          <folding>
-            <element signature="n#doSendContactForm#0;n#ModelCommand#0;n#!!top" />
-            <element signature="e#2510#3593#0#PHP" />
-            <element signature="n#doCheckDuplicateSignUpInfo#0;n#ModelCommand#0;n#!!top" />
-            <element signature="n#doChangeSignUpInfo#0;n#ModelCommand#0;n#!!top" />
-            <element signature="n#doChangeCandidateState#0;n#ModelCommand#0;n#!!top" />
-            <element signature="n#submitReportAbuse#0;n#ModelCommand#0;n#!!top" />
-            <element signature="n#submitResetPassword#0;n#ModelCommand#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/static/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/resume/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="549" column="55" lean-forward="true" selection-start-line="549" selection-start-column="55" selection-end-line="549" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/resume/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#130#1265#0#HTML" />
-            <element signature="e#260#1253#0#HTML" />
-            <element signature="e#1347#1714#0#HTML" />
-            <element signature="e#1755#1793#0#HTML" />
-            <element signature="e#1840#1919#0#HTML" />
-            <element signature="e#1994#2505#0#HTML" />
-            <element signature="e#2591#4471#0#HTML" />
-            <element signature="e#4556#6439#0#HTML" />
-            <element signature="e#6520#7758#0#HTML" />
-            <element signature="e#7838#8556#0#HTML" />
-            <element signature="e#8643#11408#0#HTML" />
-            <element signature="e#11649#16813#0#HTML" />
-          </folding>
+        <state relative-caret-position="104">
+          <caret line="548" column="65" lean-forward="true" selection-start-line="548" selection-start-column="65" selection-end-line="548" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -878,224 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="285" column="66" selection-start-line="285" selection-start-column="39" selection-end-line="285" selection-end-column="66" />
-          <folding>
-            <element signature="n#__construct#0;n#Profile#0;n#!!top" />
-            <element signature="n#index#0;n#Profile#0;n#!!top" />
-            <element signature="e#1172#1316#0#PHP" />
-            <element signature="e#1532#1680#0#PHP" />
-            <element signature="e#1896#2044#0#PHP" />
-            <element signature="n#getResumeStatus#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateHasOtherConditionToContinue#0;n#Profile#0;n#!!top" />
-            <element signature="e#3050#3313#0#PHP" />
-            <element signature="e#3091#3237#0#PHP" />
-            <element signature="e#3322#3816#0#PHP" />
-            <element signature="e#3595#3740#0#PHP" />
-            <element signature="e#3835#3915#0#PHP" />
-            <element signature="e#3845#3905#1#PHP" />
-            <element signature="e#3935#4032#0#PHP" />
-            <element signature="e#3945#4022#1#PHP" />
-            <element signature="e#4052#4135#0#PHP" />
-            <element signature="e#4062#4125#1#PHP" />
-            <element signature="n#examList#0;n#Profile#0;n#!!top" />
-            <element signature="n#getFirstStepExamList#0;n#Profile#0;n#!!top" />
-            <element signature="n#examListSecond#0;n#Profile#0;n#!!top" />
-            <element signature="n#getSecondStepExamList#0;n#Profile#0;n#!!top" />
-            <element signature="n#evaluationExam#0;n#Profile#0;n#!!top" />
-            <element signature="n#getEvaluationExamList#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateReserveExam#0;n#Profile#0;n#!!top" />
-            <element signature="e#8528#9461#0#PHP" />
-            <element signature="e#8752#8840#0#PHP" />
-            <element signature="e#8762#8830#1#PHP" />
-            <element signature="e#8864#8969#0#PHP" />
-            <element signature="e#8874#8959#1#PHP" />
-            <element signature="e#8993#9084#0#PHP" />
-            <element signature="e#9003#9074#1#PHP" />
-            <element signature="e#9211#9461#0#PHP" />
-            <element signature="e#9240#9385#0#PHP" />
-            <element signature="n#resume#0;n#Profile#0;n#!!top" />
-            <element signature="e#10284#10557#0#PHP" />
-            <element signature="e#10490#10557#0#PHP" />
-            <element signature="e#15666#15746#0#PHP" />
-            <element signature="e#15676#15736#1#PHP" />
-            <element signature="e#15766#15863#0#PHP" />
-            <element signature="e#15776#15853#1#PHP" />
-            <element signature="e#15883#15966#0#PHP" />
-            <element signature="e#15893#15956#1#PHP" />
-            <element signature="n#academicBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateAcademicBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#militaryStatus#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateMilitaryStatus#0;n#Profile#0;n#!!top" />
-            <element signature="n#jobHistory#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateJobHistory#0;n#Profile#0;n#!!top" />
-            <element signature="n#socialCulturalBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateSocialCulturalBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#politicBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdatePoliticBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#scienceBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateBooks#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateArticles#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateResearch#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateTranslation#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateInvention#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateConference#0;n#Profile#0;n#!!top" />
-            <element signature="n#skills#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateSkills#0;n#Profile#0;n#!!top" />
-            <element signature="e#29528#29843#0#PHP" />
-            <element signature="n#logOut#0;n#Profile#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/ui/ModelProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-          <folding>
-            <element signature="n#getCandidateSkillsByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#3200#3265#0#PHP" />
-            <element signature="e#3200#3309#0#PHP" />
-            <element signature="n#candidateUpdateSkills#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#3473#3585#0#PHP" />
-            <element signature="e#3511#3584#0#PHP" />
-            <element signature="e#3595#4106#0#PHP" />
-            <element signature="e#3681#4007#0#PHP" />
-            <element signature="e#4152#4628#0#PHP" />
-            <element signature="e#4214#4370#0#PHP" />
-            <element signature="e#4407#4628#0#PHP" />
-            <element signature="e#4433#4592#0#PHP" />
-            <element signature="n#getCandidateBooksByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#4725#4789#0#PHP" />
-            <element signature="e#4725#4833#0#PHP" />
-            <element signature="n#candidateUpdateBooks#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#4996#5107#0#PHP" />
-            <element signature="e#5033#5106#0#PHP" />
-            <element signature="e#5117#5750#0#PHP" />
-            <element signature="e#5202#5652#0#PHP" />
-            <element signature="e#5796#6268#0#PHP" />
-            <element signature="e#5858#6012#0#PHP" />
-            <element signature="e#6049#6268#0#PHP" />
-            <element signature="e#6075#6232#0#PHP" />
-            <element signature="n#getCandidateArticlesByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#6368#6435#0#PHP" />
-            <element signature="e#6368#6479#0#PHP" />
-            <element signature="n#candidateUpdateArticles#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#6645#6759#0#PHP" />
-            <element signature="e#6685#6758#0#PHP" />
-            <element signature="e#6769#7531#0#PHP" />
-            <element signature="e#6857#7430#0#PHP" />
-            <element signature="e#7577#8055#0#PHP" />
-            <element signature="e#7639#7796#0#PHP" />
-            <element signature="e#7833#8055#0#PHP" />
-            <element signature="e#7859#8019#0#PHP" />
-            <element signature="n#getCandidateResearchByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#8155#8222#0#PHP" />
-            <element signature="e#8155#8266#0#PHP" />
-            <element signature="n#candidateUpdateResearch#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#8432#8546#0#PHP" />
-            <element signature="e#8472#8545#0#PHP" />
-            <element signature="e#8556#9411#0#PHP" />
-            <element signature="e#8644#9310#0#PHP" />
-            <element signature="e#9457#9938#0#PHP" />
-            <element signature="e#9519#9678#0#PHP" />
-            <element signature="e#9715#9938#0#PHP" />
-            <element signature="e#9741#9902#0#PHP" />
-            <element signature="n#getCandidateTranslationByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#10041#10111#0#PHP" />
-            <element signature="e#10041#10155#0#PHP" />
-            <element signature="n#candidateUpdateTranslation#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#10324#10441#0#PHP" />
-            <element signature="e#10367#10440#0#PHP" />
-            <element signature="e#10451#11236#0#PHP" />
-            <element signature="e#10542#11132#0#PHP" />
-            <element signature="e#11282#11758#0#PHP" />
-            <element signature="e#11344#11500#0#PHP" />
-            <element signature="e#11537#11758#0#PHP" />
-            <element signature="e#11563#11722#0#PHP" />
-            <element signature="n#getCandidateInventionByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#11859#11927#0#PHP" />
-            <element signature="e#11859#11971#0#PHP" />
-            <element signature="n#candidateUpdateInvention#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#12138#12253#0#PHP" />
-            <element signature="e#12179#12252#0#PHP" />
-            <element signature="e#12263#12938#0#PHP" />
-            <element signature="e#12352#12836#0#PHP" />
-            <element signature="e#12984#13456#0#PHP" />
-            <element signature="e#13046#13200#0#PHP" />
-            <element signature="e#13237#13456#0#PHP" />
-            <element signature="e#13263#13420#0#PHP" />
-            <element signature="n#getCandidateConferenceByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#13558#13627#0#PHP" />
-            <element signature="e#13558#13671#0#PHP" />
-            <element signature="n#candidateUpdateConference#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#13839#13955#0#PHP" />
-            <element signature="e#13881#13954#0#PHP" />
-            <element signature="e#13965#14739#0#PHP" />
-            <element signature="e#14055#14636#0#PHP" />
-            <element signature="e#14785#15257#0#PHP" />
-            <element signature="e#14847#15001#0#PHP" />
-            <element signature="e#15038#15257#0#PHP" />
-            <element signature="e#15064#15221#0#PHP" />
-            <element signature="n#getCandidateJobHistoryByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#15359#15429#0#PHP" />
-            <element signature="e#15359#15473#0#PHP" />
-            <element signature="n#candidateUpdateJobHistory#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#15641#15758#0#PHP" />
-            <element signature="e#15684#15757#0#PHP" />
-            <element signature="e#15768#16619#0#PHP" />
-            <element signature="e#15858#16515#0#PHP" />
-            <element signature="e#16665#17145#0#PHP" />
-            <element signature="e#16727#16885#0#PHP" />
-            <element signature="e#16922#17145#0#PHP" />
-            <element signature="e#16948#17109#0#PHP" />
-            <element signature="n#getCandidateAcademicBackgroundByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#17255#17333#0#PHP" />
-            <element signature="e#17255#17377#0#PHP" />
-            <element signature="n#candidateUpdateAcademicBackground#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#17553#17678#0#PHP" />
-            <element signature="e#17604#17677#0#PHP" />
-            <element signature="e#17688#18702#0#PHP" />
-            <element signature="e#17786#18590#0#PHP" />
-            <element signature="e#18748#19232#0#PHP" />
-            <element signature="e#18810#18970#0#PHP" />
-            <element signature="e#19007#19232#0#PHP" />
-            <element signature="e#19033#19196#0#PHP" />
-            <element signature="n#getCandidateSocialCulturalBackgroundByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#19348#19420#0#PHP" />
-            <element signature="e#19348#19464#0#PHP" />
-            <element signature="n#candidateUpdateSocialCulturalBackground#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#19646#19765#0#PHP" />
-            <element signature="e#19691#19764#0#PHP" />
-            <element signature="e#19775#21450#0#PHP" />
-            <element signature="e#19870#21343#0#PHP" />
-            <element signature="e#21496#21996#0#PHP" />
-            <element signature="e#21558#21726#0#PHP" />
-            <element signature="e#21763#21996#0#PHP" />
-            <element signature="e#21789#21960#0#PHP" />
-            <element signature="n#getCandidateMilitaryStatusByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#22102#22169#0#PHP" />
-            <element signature="e#22102#22213#0#PHP" />
-            <element signature="n#candidateUpdateMilitaryStatus#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#22385#22499#0#PHP" />
-            <element signature="e#22425#22498#0#PHP" />
-            <element signature="e#22509#23460#0#PHP" />
-            <element signature="e#22597#23365#0#PHP" />
-            <element signature="e#23506#23998#0#PHP" />
-            <element signature="e#23568#23732#0#PHP" />
-            <element signature="e#23769#23998#0#PHP" />
-            <element signature="e#23795#23962#0#PHP" />
-            <element signature="n#getCandidateUpdatePoliticBackgroundByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#24113#24186#0#PHP" />
-            <element signature="e#24113#24230#0#PHP" />
-            <element signature="n#candidateUpdatePoliticBackground#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#24405#24525#0#PHP" />
-            <element signature="e#24451#24524#0#PHP" />
-            <element signature="e#24535#26641#0#PHP" />
-            <element signature="e#24632#26539#0#PHP" />
-            <element signature="e#26687#27169#0#PHP" />
-            <element signature="e#26749#26908#0#PHP" />
-            <element signature="e#26945#27169#0#PHP" />
-            <element signature="e#26971#27133#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1103,6 +788,451 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="467" column="21" lean-forward="true" selection-start-line="467" selection-start-column="21" selection-end-line="467" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/resume/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="173" column="7" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/majles11.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="195" column="22" selection-start-line="195" selection-start-column="22" selection-end-line="195" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/ui/ModelProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+          <folding>
+            <element signature="n#candidateUpdatePersonalInfo#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#getCandidateAcademicBackgroundByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateAcademicBackground#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#4148#4952#0#PHP" />
+            <element signature="n#getCandidateMilitaryStatusByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateMilitaryStatus#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#6195#6963#0#PHP" />
+            <element signature="n#getCandidateJobHistoryByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateJobHistory#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#8197#8854#0#PHP" />
+            <element signature="n#getCandidateSocialCulturalBackgroundByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateSocialCulturalBackground#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#10122#11595#0#PHP" />
+            <element signature="n#getCandidateBooksByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateBooks#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#12822#13272#0#PHP" />
+            <element signature="n#getCandidateResearchByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateResearch#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#14477#15143#0#PHP" />
+            <element signature="n#getCandidateArticlesByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateArticles#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#16360#16933#0#PHP" />
+            <element signature="n#getCandidateTranslationByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateTranslation#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#18162#18752#0#PHP" />
+            <element signature="n#getCandidateInventionByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateInvention#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#19972#20456#0#PHP" />
+            <element signature="n#getCandidateConferenceByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateConference#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#21675#22256#0#PHP" />
+            <element signature="n#getCandidateUpdatePoliticBackgroundByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdatePoliticBackground#0;n#ModelProfile#0;n#!!top" />
+            <element signature="e#23511#25418#0#PHP" />
+            <element signature="n#getCandidateSkillsByCandidateId#0;n#ModelProfile#0;n#!!top" />
+            <element signature="n#candidateUpdateSkills#0;n#ModelProfile#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate/ajax.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="42" selection-end-column="18" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#!!top" />
+            <element signature="n#div#0;n#section#0;n#div#1;n#div#1;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#section#0;n#div#1;n#div#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/static/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1316">
+          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/home/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="262" column="74" selection-start-line="262" selection-start-column="74" selection-end-line="262" selection-end-column="74" />
+          <folding>
+            <element signature="n#section#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#form#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#form#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#section#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#section#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#5;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#5;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#6;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#6;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#6;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#6;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#6;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#7;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#7;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#7;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#7;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#7;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/static/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/home/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="43" selection-end-column="18" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/home/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="52" column="19" lean-forward="true" selection-start-line="52" selection-start-column="19" selection-end-line="55" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/admin/ModelAgent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/agent/home/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="49" selection-end-column="11" />
+          <folding>
+            <element signature="e#1804#4093#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/states/home/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/agent/home/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="26" selection-end-column="22" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/states/home/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/States.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="100" column="49" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="49" />
+          <folding>
+            <element signature="n#index#0;n#States#0;n#!!top" />
+            <element signature="n#doPagination#0;n#States#0;n#!!top" />
+            <element signature="n#edit#0;n#States#0;n#!!top" />
+            <element signature="n#doEdit#0;n#States#0;n#!!top" />
+            <element signature="n#cities#0;n#States#0;n#!!top" />
+            <element signature="n#doAddStateCity#0;n#States#0;n#!!top" />
+            <element signature="n#doEditStateCity#0;n#States#0;n#!!top" />
+            <element signature="n#doDeleteStateCity#0;n#States#0;n#!!top" />
+            <element signature="n#elections#0;n#States#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/ui/ModelCountry.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="239" column="32" selection-start-line="239" selection-start-column="20" selection-end-line="239" selection-end-column="32" />
+          <folding>
+            <element signature="n#getStates#0;n#ModelCountry#0;n#!!top" />
+            <element signature="n#getStateByStateId#0;n#ModelCountry#0;n#!!top" />
+            <element signature="n#getStateCitiesByStateId#0;n#ModelCountry#0;n#!!top" />
+            <element signature="n#getStateIdByStateName#0;n#ModelCountry#0;n#!!top" />
+            <element signature="n#getStateCityIdByCityName#0;n#ModelCountry#0;n#!!top" />
+            <element signature="n#getElectionIdByCityId#0;n#ModelCountry#0;n#!!top" />
+            <element signature="n#doEditState#0;n#ModelCountry#0;n#!!top" />
+            <element signature="n#doAddStateCity#0;n#ModelCountry#0;n#!!top" />
+            <element signature="n#doEditStateCity#0;n#ModelCountry#0;n#!!top" />
+            <element signature="n#doDeleteStateCity#0;n#ModelCountry#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/states/elections/home/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="8" column="62" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="62" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/states/elections/home/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+          <folding>
+            <element signature="e#1664#4181#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/static/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="190" column="91" selection-start-line="190" selection-start-column="79" selection-end-line="190" selection-end-column="91" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Agent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <element signature="n#doPagination#0;n#Agent#0;n#!!top" />
+            <element signature="n#add#0;n#Agent#0;n#!!top" />
+            <element signature="n#doAdd#0;n#Agent#0;n#!!top" />
+            <element signature="n#edit#0;n#Agent#0;n#!!top" />
+            <element signature="n#doEdit#0;n#Agent#0;n#!!top" />
+            <element signature="n#doDelete#0;n#Agent#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/profile/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-751" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/agent_panel/exam_places/add/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="65" selection-end-column="11" />
+          <folding>
+            <element signature="e#916#3261#0#HTML" />
+            <element signature="e#3335#4647#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/ExamPlaces.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1586">
+          <caret line="113" column="30" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helpers/plugins/excel/PHPExcel/iofactory_helper.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helpers/plugins/excel/bootstrap_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/import_scores/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="40" column="70" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/import_scores/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+          <folding>
+            <element signature="e#160#2660#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/admin/ModelExam.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding>
+            <element signature="n#getExamPlace#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#getExamPlaceById#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#getAllExamPlaces#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doAddExamPlace#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doEditExamPlace#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doDeleteExamPlace#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#getExamByAgentId#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#getExamByExamId#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#getAllExamsByAgentId#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doAddExam#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doEditExam#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doDeleteExam#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#getExamRequestByExamId#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doPresenceCandidateFirstExam#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doAbsenceCandidateFirstExam#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doAcceptCandidateEvaluationExam#0;n#ModelExam#0;n#!!top" />
+            <element signature="n#doRejectCandidateEvaluationExam#0;n#ModelExam#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Candidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="222" column="52" lean-forward="true" selection-start-line="222" selection-start-column="52" selection-end-line="222" selection-end-column="52" />
+          <folding>
+            <element signature="n#__construct#0;n#Candidate#0;n#!!top" />
+            <element signature="n#index#0;n#Candidate#0;n#!!top" />
+            <element signature="n#doPagination#0;n#Candidate#0;n#!!top" />
+            <element signature="n#edit#0;n#Candidate#0;n#!!top" />
+            <element signature="n#doMarkCandidate#0;n#Candidate#0;n#!!top" />
+            <element signature="n#doAcceptCandidateFirstExam#0;n#Candidate#0;n#!!top" />
+            <element signature="n#doRejectCandidateFirstExam#0;n#Candidate#0;n#!!top" />
+            <element signature="n#doAcceptCandidateSecondExam#0;n#Candidate#0;n#!!top" />
+            <element signature="n#doRejectCandidateSecondExam#0;n#Candidate#0;n#!!top" />
+            <element signature="n#doAcceptEvaluationExam#0;n#Candidate#0;n#!!top" />
+            <element signature="n#doRejectEvaluationExam#0;n#Candidate#0;n#!!top" />
+            <element signature="n#getCandidateStatus#0;n#Candidate#0;n#!!top" />
+            <element signature="n#getCandidateExams#0;n#Candidate#0;n#!!top" />
+            <element signature="n#importScores#0;n#Candidate#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/admin/ModelCandidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="81" column="121" selection-start-line="81" selection-start-column="121" selection-end-line="81" selection-end-column="121" />
+          <folding>
+            <element signature="n#getCandidate#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="e#655#793#0#PHP" />
+            <element signature="e#802#958#0#PHP" />
+            <element signature="e#967#1104#0#PHP" />
+            <element signature="e#1114#1346#0#PHP" />
+            <element signature="e#1539#1708#0#PHP" />
+            <element signature="e#1655#1708#0#PHP" />
+            <element signature="n#getCandidateRolesByCandidateId#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getCandidateByCandidateId#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="e#2404#2767#0#PHP" />
+            <element signature="e#2783#2907#0#PHP" />
+            <element signature="n#doImportScores#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getResumeStatus#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getCandidateCandidatePostByCandidateId#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getCandidateByStateId#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getCandidateByStateIdAndCityId#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getCandidateByStateName#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getCandidatesByElectionId#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#candidateHasOtherConditionToContinue#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getCandidateFirstStepExamByCandidateId#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getCandidateSecondStepExamByCandidateId#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#getCandidateEvaluationExamByCandidateId#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#doMarkCandidate#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#doUpdateMarkCandidate#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#candidateReserveExam#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#doAcceptCandidateFirstExam#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#doRejectCandidateFirstExam#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#doAcceptCandidateSecondExam#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#doRejectCandidateSecondExam#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#doAcceptEvaluationExam#0;n#ModelCandidate#0;n#!!top" />
+            <element signature="n#doRejectEvaluationExam#0;n#ModelCandidate#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

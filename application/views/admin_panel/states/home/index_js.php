@@ -8,6 +8,7 @@
     function loadData(selectedPage = $selectedPage){
         toggleLoader();
         $sendData = {
+            'inputStateId': $("#inputStateId").val(),
             'pageIndex': selectedPage
         }
         $.ajax({
@@ -41,5 +42,8 @@
     }
     $(document).ready(function(){
         loadData();
+        $("#searchButton").click(function () {
+            loadData(1);
+        });
     });
 </script>

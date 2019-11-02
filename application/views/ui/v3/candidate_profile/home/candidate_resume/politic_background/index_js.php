@@ -198,7 +198,7 @@
                         $result = JSON.parse(data);
                         notify($result['content'], $result['type']);
                         if (param.data.redirect) {
-                            window.location.href = base_url + 'Profile/jobHistory';
+                            window.location.href = base_url + 'Profile/scienceBackground';
                         }
                     }
                 });

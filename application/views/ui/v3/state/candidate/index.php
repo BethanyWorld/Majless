@@ -32,6 +32,15 @@
     <div class="row col-xs-12 col-md-8 pull-left">
         <section class="mp-section">
 
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="alert alert-info text-center">
+                        <h4>
+                            اطلاعات بصورت نمونه آورده شده است.به محض تایید شورای نگهبان اطلاعات نامزد های انتخاباتی مجلس یازدهم در این قسمت قرار خواهد گرفت
+                        </h4>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-4 col-sm-6 mp">
                 <div class="mp-brief">
                     <div class="menu">
@@ -67,7 +76,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="row candidate-container">
                 <?php

@@ -1,6 +1,7 @@
 <?php
 
-class ModelCountry extends CI_Model{
+class ModelCountry extends CI_Model
+{
     public function getStateList()
     {
         $this->db->select('*');
@@ -12,6 +13,7 @@ class ModelCountry extends CI_Model{
         $arr = array();
         return $arr;
     }
+
     public function getStateById($stateId)
     {
         $this->db->select('*');
@@ -24,6 +26,7 @@ class ModelCountry extends CI_Model{
         $arr = array();
         return $arr;
     }
+
     public function getCityByStateId($stateId)
     {
         $this->db->select('*');
@@ -45,12 +48,15 @@ class ModelCountry extends CI_Model{
         $end = $this->config->item('defaultPageSize');
         $this->db->select('*');
         $this->db->from('state');
+        if (isset($inputs['inputStateId']) && $inputs['inputStateId'] != '') {
+            $this->db->where('StateId', $inputs['inputStateId']);
+        }
         $this->db->order_by('StateId', 'DESC');
 
         $tempDb = clone $this->db;
         $result['count'] = $tempDb->get()->num_rows();
 
-        $this->db->limit($end,$start);
+        $this->db->limit($end, $start);
         $query = $this->db->get()->result_array();
         if (count($query) > 0) {
             $result['data'] = $query;
@@ -60,6 +66,7 @@ class ModelCountry extends CI_Model{
         }
         return $result;
     }
+
     public function getStateByStateId($stateId)
     {
         $this->db->select('*');
@@ -69,9 +76,10 @@ class ModelCountry extends CI_Model{
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-        $arr = array(  );
+        $arr = array();
         return $arr;
     }
+
     public function getStateCitiesByStateId($stateId)
     {
         $this->db->select('*');
@@ -81,9 +89,10 @@ class ModelCountry extends CI_Model{
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-        $arr = array( );
+        $arr = array();
         return $arr;
     }
+
     public function getStateIdByStateName($stateName)
     {
         $this->db->select('*');
@@ -93,9 +102,10 @@ class ModelCountry extends CI_Model{
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-        $arr = array(  );
+        $arr = array();
         return $arr;
     }
+
     public function getStateCityIdByCityName($cityName)
     {
         $this->db->select('*');
@@ -105,10 +115,12 @@ class ModelCountry extends CI_Model{
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-        $arr = array( );
+        $arr = array();
         return $arr;
     }
-    public function getElectionIdByCityId($electionCityId){
+
+    public function getElectionIdByCityId($electionCityId)
+    {
         $this->db->select('*');
         $this->db->from('election_location_city');
         $this->db->where(array('election_location_city.ElectionCityId' => $electionCityId));
@@ -116,7 +128,7 @@ class ModelCountry extends CI_Model{
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-        $arr = array( );
+        $arr = array();
         return $arr;
     }
 
@@ -126,7 +138,7 @@ class ModelCountry extends CI_Model{
             'StateName' => $inputs['inputStateName']
         );
         $this->db->trans_start();
-        $this->db->where('StateId' , $inputs['inputStateId']);
+        $this->db->where('StateId', $inputs['inputStateId']);
         $this->db->update('state', $UserArray);
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
@@ -145,6 +157,7 @@ class ModelCountry extends CI_Model{
             return $arr;
         }
     }
+
     public function doAddStateCity($inputs)
     {
         $UserArray = array(
@@ -170,13 +183,14 @@ class ModelCountry extends CI_Model{
             return $arr;
         }
     }
+
     public function doEditStateCity($inputs)
     {
         $UserArray = array(
             'CityName' => $inputs['inputCityName']
         );
         $this->db->trans_start();
-        $this->db->where('CityId' , $inputs['inputCityId']);
+        $this->db->where('CityId', $inputs['inputCityId']);
         $this->db->update('city', $UserArray);
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
@@ -195,12 +209,13 @@ class ModelCountry extends CI_Model{
             return $arr;
         }
     }
+
     public function doDeleteStateCity($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('city', array(
-            'CityStateId' =>  $inputs['inputStateId'],
-            'CityId' =>  $inputs['inputCityId']
+            'CityStateId' => $inputs['inputStateId'],
+            'CityId' => $inputs['inputCityId']
         ));
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
@@ -229,13 +244,16 @@ class ModelCountry extends CI_Model{
         $end = $this->config->item('defaultPageSize');
         $this->db->select('*');
         $this->db->from('election_location');
-        $this->db->join('state','election_location.ElectionStateId = state.StateId');
+        if (isset($inputs['inputElectionStateId']) && $inputs['inputElectionStateId'] != '') {
+            $this->db->where('election_location.ElectionStateId', $inputs['inputElectionStateId']);
+        }
+        $this->db->join('state', 'election_location.ElectionStateId = state.StateId');
         $this->db->order_by('election_location.ElectionStateId', 'ASC');
 
         $tempDb = clone $this->db;
         $result['count'] = $tempDb->get()->num_rows();
 
-        $this->db->limit($end,$start);
+        $this->db->limit($end, $start);
         $query = $this->db->get()->result_array();
         if (count($query) > 0) {
             $result['data'] = $query;
@@ -245,7 +263,9 @@ class ModelCountry extends CI_Model{
         }
         return $result;
     }
-    public function doAddElection($inputs){
+
+    public function doAddElection($inputs)
+    {
         $UserArray = array(
             'ElectionName' => $inputs['inputElectionName'],
             'ElectionStateId' => $inputs['inputElectionStateId']
@@ -277,18 +297,20 @@ class ModelCountry extends CI_Model{
             return $arr;
         }
     }
-    public function doEditElection($inputs){
+
+    public function doEditElection($inputs)
+    {
         $UserArray = array(
             'ElectionName' => $inputs['inputElectionName'],
             'ElectionStateId' => $inputs['inputElectionStateId']
         );
         $this->db->trans_start();
-        $this->db->where('ElectionId' , $inputs['inputElectionId']);
+        $this->db->where('ElectionId', $inputs['inputElectionId']);
         $this->db->update('election_location', $UserArray);
 
 
         $this->db->delete('election_location_city', array(
-            'ElectionId' =>  $inputs['inputElectionId']
+            'ElectionId' => $inputs['inputElectionId']
         ));
         foreach ($inputs['inputElectionCityId'] as $input) {
             $UserArray = array(
@@ -314,14 +336,15 @@ class ModelCountry extends CI_Model{
             return $arr;
         }
     }
+
     public function doDeleteElection($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('election_location', array(
-            'ElectionId' =>  $inputs['inputElectionId']
+            'ElectionId' => $inputs['inputElectionId']
         ));
         $this->db->delete('election_location_city', array(
-            'ElectionId' =>  $inputs['inputElectionId']
+            'ElectionId' => $inputs['inputElectionId']
         ));
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
@@ -342,20 +365,23 @@ class ModelCountry extends CI_Model{
 
 
     }
-    public function getElectionInfo($electionId){
+
+    public function getElectionInfo($electionId)
+    {
         $this->db->select('*');
         $this->db->from('election_location');
-        $this->db->join('state' , 'election_location.ElectionStateId = state.StateId');
+        $this->db->join('state', 'election_location.ElectionStateId = state.StateId');
         $this->db->where(array('ElectionId' => $electionId));
         $result['election'] = $this->db->get()->result_array()[0];
 
         $this->db->select('*');
         $this->db->from('election_location_city');
-        $this->db->join('city' , 'election_location_city.ElectionCityId = city.CityId');
+        $this->db->join('city', 'election_location_city.ElectionCityId = city.CityId');
         $this->db->where(array('ElectionId' => $electionId));
         $result['electionCities'] = $this->db->get()->result_array();
         return $result;
     }
+
     public function getElectionsByStateId($stateId)
     {
         $this->db->select('*');

@@ -12,6 +12,7 @@ class Agent extends CI_Controller{
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نمایندگان';
         $inputs['pageIndex'] = 1;
+        $data['states'] = $this->ModelCountry->getStateList();
 
         $this->load->view('admin_panel/static/header', $data);
         $this->load->view('admin_panel/agent/home/index');

@@ -40,6 +40,15 @@
     </div>
 
     <div class="row col-xs-12 col-md-9 pull-left">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-info text-center">
+                    <h4>
+                        اطلاعات بصورت نمونه آورده شده است.به محض تایید شورای نگهبان اطلاعات نامزد های انتخاباتی مجلس یازدهم در این قسمت قرار خواهد گرفت
+                    </h4>
+                </div>
+            </div>
+        </div>
         <section class="col-xs-12 mp-section zp" style="display: inline-block;width: 100%;">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
