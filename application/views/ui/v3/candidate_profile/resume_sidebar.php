@@ -479,6 +479,10 @@
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "skills") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/skills'); ?>">8</a>
                 </li>
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/veteran'); ?>">9</a>
+                </li>
+
                 <li class="text-center">
                     <a href="<?php echo base_url('Profile'); ?>">
                         <i class="fa fa-refresh"></i>
@@ -599,6 +603,20 @@
                         </div>
                     </a>
                 </li>
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "active"; ?>">
+                    <a href="<?php echo base_url('Profile/veteran'); ?>">
+                        <i class="zmdi RightpanelIcon">
+                            <span class="fa fa-wheelchair"></span>
+                        </i>
+                        <div class="RightPanelContent">
+                            <div class="RightPanleTitle">ایثارگری</div>
+                            <div class="RightPanelDescription">
+                               درج سوابق جانباری و ایثارگری
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
                 <li class="col-md-12 padding-0">
                     <a href="<?php echo base_url('Profile'); ?>">
                         <i class="zmdi RightpanelIcon">
