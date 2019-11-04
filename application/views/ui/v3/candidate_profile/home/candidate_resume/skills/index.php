@@ -138,6 +138,11 @@ $_DIR = base_url('assets/ui/v3/');
             <div class="LeftPaneAction">
                 <div class="row form-group">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <button class="btn btn-block btn-lg CommonButtons waves-effect" id="updateProfileSkillsAndRedirect">
+                            ثبت و ادامه
+                        </button>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         <button class="btn btn-block btn-lg CommonButtons waves-effect" id="updateProfileSkills">
                              ثبت
                         </button>
