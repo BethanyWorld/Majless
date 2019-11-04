@@ -33,7 +33,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         <i class="fa fa-chevron-up"></i>
                                                                     </span>
                                                                 </div>
-                                                                <div class="panel-body">
+                                                                <div class="panel-body p">
                                                                     <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Veteran' , $Self['CandidateVeteranType']); ?>
