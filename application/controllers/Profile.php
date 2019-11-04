@@ -1,7 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Profile extends CI_Controller{
-    public function __construct(){
+
+class Profile extends CI_Controller
+{
+    public function __construct()
+    {
         parent::__construct();
         $this->load->helper('ui/user_login');
         $this->load->model('ui/ModelCountry');
@@ -9,7 +12,9 @@ class Profile extends CI_Controller{
         $this->load->model('ui/ModelProfile');
         $this->load->model('agent/ModelExam');
     }
-    public function index(){
+
+    public function index()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'صفحه کاربری';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -43,13 +48,15 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/static/footer');
     }
 
-    public function getResumeStatus(){
+    public function getResumeStatus()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
         $inputs['inputCandidateStatus'] = $loginInfo['CandidateStatus'];
         $result = $this->ModelCandidate->getResumeStatus($inputs);
         echo json_encode($result);
     }
+
     public function candidateHasOtherConditionToContinue()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -91,7 +98,8 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function examList(){
+    public function examList()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['title'] = 'فهرست آزمون های مرحله اول';
@@ -107,6 +115,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/exams/first_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function getFirstStepExamList($stateId)
     {
         $data['data'] = $this->ModelExam->getFirstStepExamByStateId($stateId);
@@ -114,6 +123,7 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+
     public function examListSecond()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -130,6 +140,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/exams/second_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function getSecondStepExamList($stateId)
     {
         $data['data'] = $this->ModelExam->getSecondStepExamByStateId($stateId);
@@ -137,6 +148,7 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+
     public function evaluationExam()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -153,6 +165,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/exams/evaluation_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function getEvaluationExamList()
     {
         $data['data'] = $this->ModelExam->getEvaluationExamList();
@@ -160,6 +173,7 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+
     public function candidateReserveExam()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -190,7 +204,8 @@ class Profile extends CI_Controller{
     }
 
     /* For Resume -------------------------------------------------------------*/
-    public function resume(){
+    public function resume()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -203,10 +218,9 @@ class Profile extends CI_Controller{
 
         $data['states'] = $this->ModelCountry->getStateList();
         $data['profileImage'] = "";
-        if($data['userInfo']['CandidateProfileImage'] != '' && $data['userInfo']['CandidateProfileImage'] != null){
+        if ($data['userInfo']['CandidateProfileImage'] != '' && $data['userInfo']['CandidateProfileImage'] != null) {
             $data['profileImage'] = $data['userInfo']['CandidateProfileImage'];
-        }
-        else{
+        } else {
             $data['profileImage'] = $data['noImg'];
         }
         $data['userInfo']['CandidateStateCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateStateId']);
@@ -217,15 +231,15 @@ class Profile extends CI_Controller{
         $data['userInfo']['CandidateAddressCities'] = $this->ModelCountry->getCityByStateId($data['userInfo']['CandidateAddressStateId']);
 
 
-
-
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/resume/index', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/resume/index_css');
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/resume/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdatePersonalInfo(){
+
+    public function candidateUpdatePersonalInfo()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $profileImage = $_POST['inputCandidateProfileImage'];
         $inputs = $this->input->post(NULL, TRUE);
@@ -284,7 +298,8 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function academicBackground(){
+    public function academicBackground()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -301,7 +316,9 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateAcademicBackground(){
+
+    public function candidateUpdateAcademicBackground()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
@@ -309,7 +326,8 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function militaryStatus(){
+    public function militaryStatus()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -326,7 +344,9 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/military_status/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateMilitaryStatus(){
+
+    public function candidateUpdateMilitaryStatus()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
@@ -334,7 +354,8 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function jobHistory(){
+    public function jobHistory()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -351,7 +372,9 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/job_history/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateJobHistory(){
+
+    public function candidateUpdateJobHistory()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
@@ -359,7 +382,8 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function socialCulturalBackground(){
+    public function socialCulturalBackground()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -376,7 +400,9 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/social_cultural_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateSocialCulturalBackground(){
+
+    public function candidateUpdateSocialCulturalBackground()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
@@ -384,7 +410,8 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function politicBackground(){
+    public function politicBackground()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -401,7 +428,9 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdatePoliticBackground(){
+
+    public function candidateUpdatePoliticBackground()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
@@ -409,7 +438,8 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function scienceBackground(){
+    public function scienceBackground()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'سوابق علمی پژوهشی';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -428,49 +458,60 @@ class Profile extends CI_Controller{
         $data['userInfo']['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($data['userInfo']['CandidateId']);
 
 
-
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/science_background/index', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/science_background/index_css');
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/science_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateBooks(){
+
+    public function candidateUpdateBooks()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
         $result = $this->ModelProfile->candidateUpdateBooks($inputs);
         echo json_encode($result);
     }
-    public function candidateUpdateArticles(){
+
+    public function candidateUpdateArticles()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
         $result = $this->ModelProfile->candidateUpdateArticles($inputs);
         echo json_encode($result);
     }
-    public function candidateUpdateResearch(){
+
+    public function candidateUpdateResearch()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
         $result = $this->ModelProfile->candidateUpdateResearch($inputs);
         echo json_encode($result);
     }
-    public function candidateUpdateTranslation(){
+
+    public function candidateUpdateTranslation()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
         $result = $this->ModelProfile->candidateUpdateTranslation($inputs);
         echo json_encode($result);
     }
-    public function candidateUpdateInvention(){
+
+    public function candidateUpdateInvention()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
         $result = $this->ModelProfile->candidateUpdateInvention($inputs);
         echo json_encode($result);
     }
-    public function candidateUpdateConference(){
+
+    public function candidateUpdateConference()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
@@ -478,7 +519,8 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function skills(){
+    public function skills()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -497,7 +539,9 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/skills/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateSkills(){
+
+    public function candidateUpdateSkills()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
@@ -515,7 +559,8 @@ class Profile extends CI_Controller{
     }
 
 
-    public function veteran(){
+    public function veteran()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -526,6 +571,43 @@ class Profile extends CI_Controller{
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
 
+        $candidateVeteran = $this->ModelProfile->getCandidateVeteranByCandidateId($data['userInfo']['CandidateId']);
+
+        $temp = array(
+            'IsActive' => 0,
+            'CandidateVeteranFamilyTitle' => '',
+            'CandidateVeteranType' => '',
+            'CandidateVeteranPercent' => '',
+            'CandidateVeteranMonth' => '',
+            'CandidateVeteranYear' => '',
+        );
+        $data['Self'] = $temp;
+        $data['Wife'] = $temp;
+        $data['Children'] = $temp;
+        $data['Parents'] = $temp;
+        $data['SisterBrother'] = $temp;
+
+        for ($i = 0; $i < count($candidateVeteran); $i++) {
+            $item = $candidateVeteran[$i];
+            switch ($item['CandidateVeteranFamilyTitle']) {
+                case  'Self':
+                    $data['Self'] = $item;
+                    break;
+                case  'Wife':
+                    $data['Wife'] = $item;
+                    break;
+                case  'Children':
+                    $data['Children'] = $item;
+                    break;
+                case  'Parents':
+                    $data['Parents'] = $item;
+                    break;
+                case  'SisterBrother':
+                    $data['SisterBrother'] = $item;
+                    break;
+            }
+        }
+
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/veteran/index', $data);
@@ -533,7 +615,9 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/veteran/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateVeteran(){
+
+    public function candidateUpdateVeteran()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];

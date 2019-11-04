@@ -291,11 +291,11 @@
                             </div>
                             <div class="link-type-absolute100 tb-icon-box  absolutecenter-top  textalignleft    tbWow fadeInRight "
                                  data-wow-delay="0.2s">
-                                <a class="absolute100" href="<?php echo base_url('AboutUs/State'); ?>"
+                                <a class="absolute100" href="<?php echo base_url('State'); ?>"
                                    target="_self">Read More</a>
                                 <div class="tb-icon-box-image iconbox-image-type img-rounded alignleft"
                                      style=" background: none !important; ">
-                                    <a href="<?php echo base_url('AboutUs/State'); ?>">
+                                    <a href="<?php echo base_url('State'); ?>">
                                         <img src="<?php echo $_DIR ?>images/icon_foreign_policy.png"
                                              class="img-rounded" alt=""/>
                                     </a>

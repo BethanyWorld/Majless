@@ -98,7 +98,7 @@ class ModelQuery extends CI_Model{
         else{
             $arr = array(
                 'type' => "red",
-                'content' => "اطلاعان نامعتبر است",
+                'content' => "اطلاعات نامعتبر است",
                 'success' => false
             );
             return $arr;

@@ -1,5 +1,7 @@
 <?php
-class ModelProfile extends CI_Model{
+
+class ModelProfile extends CI_Model
+{
     public function candidateUpdatePersonalInfo($inputs)
     {
         $UserArray = array(
@@ -77,13 +79,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateAcademicBackground($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_academic_background', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateMilitary'])) {
+        if (isset($inputs['inputCandidateMilitary'])) {
             for ($i = 0; $i < count($inputs['inputCandidateAcademicBackground']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -126,13 +129,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateMilitaryStatus($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_military', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateMilitary'])) {
+        if (isset($inputs['inputCandidateMilitary'])) {
             for ($i = 0; $i < count($inputs['inputCandidateMilitary']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -176,13 +180,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateJobHistory($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_job_hostory', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateJobHistory'])) {
+        if (isset($inputs['inputCandidateJobHistory'])) {
             for ($i = 0; $i < count($inputs['inputCandidateJobHistory']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -224,13 +229,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateSocialCulturalBackground($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_social_record', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputSocialCulturalBackground'])) {
+        if (isset($inputs['inputSocialCulturalBackground'])) {
             for ($i = 0; $i < count($inputs['inputSocialCulturalBackground']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -279,13 +285,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateBooks($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_books', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateBooks'])) {
+        if (isset($inputs['inputCandidateBooks'])) {
             for ($i = 0; $i < count($inputs['inputCandidateBooks']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -325,13 +332,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateResearch($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_research', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateResearch'])) {
+        if (isset($inputs['inputCandidateResearch'])) {
             for ($i = 0; $i < count($inputs['inputCandidateResearch']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -373,13 +381,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateArticles($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_articles', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateArticles'])) {
+        if (isset($inputs['inputCandidateArticles'])) {
             for ($i = 0; $i < count($inputs['inputCandidateArticles']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -420,13 +429,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateTranslation($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_translation', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateTranslation'])) {
+        if (isset($inputs['inputCandidateTranslation'])) {
             for ($i = 0; $i < count($inputs['inputCandidateTranslation']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -467,13 +477,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateInvention($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_invention', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateInvention'])) {
+        if (isset($inputs['inputCandidateInvention'])) {
             for ($i = 0; $i < count($inputs['inputCandidateInvention']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -513,13 +524,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateConference($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_conference', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateConference'])) {
+        if (isset($inputs['inputCandidateConference'])) {
             for ($i = 0; $i < count($inputs['inputCandidateConference']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -560,13 +572,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdatePoliticBackground($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_politic_record', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidatePoliticBackground'])) {
+        if (isset($inputs['inputCandidatePoliticBackground'])) {
             for ($i = 0; $i < count($inputs['inputCandidatePoliticBackground']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -619,13 +632,14 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateSkills($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_skills', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if(isset($inputs['inputCandidateSkills'])){
+        if (isset($inputs['inputCandidateSkills'])) {
             for ($i = 0; $i < count($inputs['inputCandidateSkills']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -654,6 +668,59 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
+    public function getCandidateVeteranByCandidateId($id)
+    {
+        return
+            $this->db->select('*')
+                ->from('candidate_veteran')
+                ->where('CandidateId', $id)
+                ->get()
+                ->result_array();
+    }
+    public function candidateUpdateVeteran($inputs)
+    {
+        $this->db->trans_start();
+        $this->db->delete('candidate_veteran', array(
+            'CandidateId' => $inputs['inputCandidateId']
+        ));
+        foreach($inputs['inputCandidateVeteran'] as $item) {
+            if($item['isTabChecked'] == 'true'){
+                $iActive =  1;
+            }
+            else{
+                $iActive =  0;
+            }
+            $UserArray = array(
+                'CandidateId' => $inputs['inputCandidateId'],
+                'IsActive' => $iActive,
+                'CandidateVeteranFamilyTitle' => $item['inputCandidateVeteranFamilyTitle'],
+                'CandidateVeteranType' => (isset($item['inputCandidateVeteranType'])) ? $item['inputCandidateVeteranType']: "",
+                'CandidateVeteranPercent' => $item['inputCandidateVeteranPercent'],
+                'CandidateVeteranMonth' => $item['inputCandidateStartLiberationMonth'],
+                'CandidateVeteranYear' => $item['inputCandidateStartLiberationYear']
+            );
+            $this->db->insert('candidate_veteran', $UserArray);
+        }
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "بروزرسانی سوابق ایثارگری با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "بروزرسانی سوابق ایثارگری با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
+
 }
 
 ?>

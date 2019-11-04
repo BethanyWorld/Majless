@@ -62,12 +62,12 @@
                     <a href="#academiccareerrecords" aria-controls="academiccareerrecords" role="tab"
                                            data-toggle="tab">سوابق شغلی تحصیلی</a>
                 </li>
-                <li role="presentation"><a href="#inventory" aria-controls="inventory" role="tab" data-toggle="tab">فهرست
-                        اموال</a></li>
-                <li role="presentation"><a href="#electioncosts" aria-controls="electioncosts" role="tab"
-                                           data-toggle="tab">هزینه های انتخابات</a></li>
-                <li role="presentation"><a href="#electionpromises" aria-controls="electionpromises" role="tab"
-                                           data-toggle="tab">وعده های انتخاباتی</a></li>
+<!--                <li role="presentation"><a href="#inventory" aria-controls="inventory" role="tab" data-toggle="tab">فهرست-->
+<!--                        اموال</a></li>-->
+<!--                <li role="presentation"><a href="#electioncosts" aria-controls="electioncosts" role="tab"-->
+<!--                                           data-toggle="tab">هزینه های انتخابات</a></li>-->
+<!--                <li role="presentation"><a href="#electionpromises" aria-controls="electionpromises" role="tab"-->
+<!--                                           data-toggle="tab">وعده های انتخاباتی</a></li>-->
                 <li role="presentation"><a href="#relatedNews" aria-controls="relatedNews" role="tab"
                                            data-toggle="tab">اخبار مرتبط</a></li>
                 <li role="presentation"><a href="#reportabuse" aria-controls="reportabuse" role="tab" data-toggle="tab">گزارش
@@ -79,39 +79,39 @@
                     <ul class="personal-info-container">
                         <li>
                             <span>کد ملی</span>
-                            <span><?php echo $candidate['CandidateNationalCode']; ?></span>
+                            <span>123456789</span>
                         </li>
                         <li>
                             <span>نمره رزومه</span>
-                            <span><?php echo $candidate['CandidateScore']; ?></span>
+                            <span>80</span>
                         </li>
                         <li>
                             <span>استان</span>
-                            <span><?php echo $candidate['StateName']; ?></span>
+                            <span>تهران</span>
                         </li>
                         <li>
                             <span>شهر</span>
-                            <span><?php echo $candidate['CityName']; ?></span>
+                            <span>تهران</span>
                         </li>
                         <li>
                             <span>تاریخ تولد</span>
-                            <span class="info-birthDate"><img src="<?php echo $gifLoader; ?>"/></span>
+                            <span class="info-birthDate">1372/12/02</span>
                         </li>
                         <li>
                             <span>نام پدر</span>
-                            <span class="info-fatherName"><img src="<?php echo $gifLoader; ?>"/></span>
+                            <span class="info-fatherName">علی</span>
                         </li>
                         <li>
                             <span>جنسیت</span>
-                            <span class="info-gender"><img src="<?php echo $gifLoader; ?>"/></span>
+                            <span class="info-gender">مرد</span>
                         </li>
                         <li>
                             <span>وضعیت تاهل</span>
-                            <span class="info-maritalStatus"><img src="<?php echo $gifLoader; ?>"/></span>
+                            <span class="info-maritalStatus">متاهل</span>
                         </li>
                         <li>
                             <span>دین</span>
-                            <span class="info-religion"><img src="<?php echo $gifLoader; ?>"/></span>
+                            <span class="info-religion">اسلام-شیعه</span>
                         </li>
                     </ul>
                 </div>
@@ -122,7 +122,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="alert  military-info-container">
-                                <img src="<?php echo $gifLoader; ?>"/>
+                               دارای کارت پایان خدمت - ارتش
                             </div>
                         </div>
                     </div>
@@ -137,19 +137,19 @@
                                     <th class="fit info-department">گروه تحصیلی</th>
                                     <th class="fit info-educationalAttainment">مقطع</th>
                                     <th class="fit info-science">عنوان رشته تحصیلی</th>
-                                    <th class="fit info-studying">در حال تحصیل</th>
+                                    <th class="fit info-studying">وضعیت تحصیل</th>
                                     <th class="fit info-universityLevelType">دانشگاه</th>
                                     <th class="fit info-universityName">نام دانشگاه</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr class="temp-edu-record">
-                                    <td class="fit info-department"></td>
-                                    <td class="fit info-educationalAttainment"></td>
-                                    <td class="fit info-science"></td>
-                                    <td class="fit info-studying"></td>
-                                    <td class="fit info-universityLevelType"></td>
-                                    <td class="fit info-universityName"></td>
+                                    <td class="fit info-department">فنی مهندسی</td>
+                                    <td class="fit info-educationalAttainment">کارشناسی</td>
+                                    <td class="fit info-science">مهندسی کامپیوتر</td>
+                                    <td class="fit info-studying">فارغ التحصیل</td>
+                                    <td class="fit info-universityLevelType">دولتی روزانه</td>
+                                    <td class="fit info-universityName">تبریز</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -173,12 +173,12 @@
                                 </thead>
                                 <tbody>
                                 <tr class="temp-job-record">
-                                    <th class="fit info-jobTitle"></th>
-                                    <th class="fit info-organizationName"></th>
-                                    <th class="fit info-beginYear"></th>
-                                    <th class="fit info-beginMonth"></th>
-                                    <th class="fit info-endYear"></th>
-                                    <th class="fit info-endMonth"></th>
+                                    <th class="fit info-jobTitle">برنامه نویس</th>
+                                    <th class="fit info-organizationName">عنوان شرکت</th>
+                                    <th class="fit info-beginYear">1395</th>
+                                    <th class="fit info-beginMonth">فروردین</th>
+                                    <th class="fit info-endYear">1398</th>
+                                    <th class="fit info-endMonth">آبان</th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -201,11 +201,11 @@
                                 </thead>
                                 <tbody>
                                 <tr class="temp-book-record">
-                                    <td class="fit row"></td>
-                                    <td class="fit info-title"></td>
-                                    <td class="fit info-publisher"></td>
-                                    <td class="fit info-printYear"></td>
-                                    <td class="fit info-printMonth"></td>
+                                    <td class="fit row">1</td>
+                                    <td class="fit info-title">کتاب نمونه</td>
+                                    <td class="fit info-publisher">عنوان ناشر</td>
+                                    <td class="fit info-printYear">1395</td>
+                                    <td class="fit info-printMonth">فروردین</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -228,11 +228,11 @@
                                 </thead>
                                 <tbody>
                                 <tr class="temp-article-record">
-                                    <td class="fit row"></td>
-                                    <td class="fit info-title"></td>
-                                    <td class="fit info-articleLevelType"></td>
-                                    <td class="fit info-printYear"></td>
-                                    <td class="fit info-printMonth"></td>
+                                    <td class="fit row">1</td>
+                                    <td class="fit info-title">تست</td>
+                                    <td class="fit info-articleLevelType">تست</td>
+                                    <td class="fit info-printYear">تست</td>
+                                    <td class="fit info-printMonth">تست</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -255,11 +255,11 @@
                                 </thead>
                                 <tbody>
                                 <tr class="temp-invention-record">
-                                    <td class="fit row"></td>
-                                    <th class="fit info-title"></th>
-                                    <th class="fit info-registerNumber"></th>
-                                    <th class="fit info-domain"></th>
-                                    <th class="fit info-description"></th>
+                                    <td class="fit row">1</td>
+                                    <th class="fit info-title">تست</th>
+                                    <th class="fit info-registerNumber">تست</th>
+                                    <th class="fit info-domain">تست</th>
+                                    <th class="fit info-description">تست</th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -284,13 +284,13 @@
                                 </thead>
                                 <tbody>
                                 <tr class="temp-research-record">
-                                    <td class="fit row"></td>
-                                    <th class="fit info-title"></th>
-                                    <th class="fit info-responsibility"></th>
-                                    <th class="fit info-executive"></th>
-                                    <th class="fit info-employer"></th>
-                                    <th class="fit info-yearDate"></th>
-                                    <th class="fit info-monthDate"></th>
+                                    <td class="fit row">1</td>
+                                    <th class="fit info-title">تست</th>
+                                    <th class="fit info-responsibility">تست</th>
+                                    <th class="fit info-executive">تست</th>
+                                    <th class="fit info-employer">تست</th>
+                                    <th class="fit info-yearDate">تست</th>
+                                    <th class="fit info-monthDate">تست</th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -314,12 +314,12 @@
                                 </thead>
                                 <tbody>
                                 <tr class="temp-scientific-record">
-                                    <td class="fit row"></td>
-                                    <th class="fit info-title"></th>
-                                    <th class="fit info-acceptanceOfferType"></th>
-                                    <th class="fit info-conferenceLevelType"></th>
-                                    <th class="fit info-yearDate"></th>
-                                    <th class="fit info-monthDate"></th>
+                                    <td class="fit row">1</td>
+                                    <th class="fit info-title">تست</th>
+                                    <th class="fit info-acceptanceOfferType">تست</th>
+                                    <th class="fit info-conferenceLevelType">تست</th>
+                                    <th class="fit info-yearDate">تست</th>
+                                    <th class="fit info-monthDate">تست</th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -343,12 +343,12 @@
                                 </thead>
                                 <tbody>
                                 <tr class="temp-translate-record">
-                                    <td class="fit row"></td>
-                                    <th class="fit info-title"></th>
-                                    <th class="fit info-publisher"></th>
-                                    <th class="fit info-translateType"></th>
-                                    <th class="fit info-publishYear"></th>
-                                    <th class="fit info-publishMonth"></th>
+                                    <td class="fit row">1</td>
+                                    <th class="fit info-title">تست</th>
+                                    <th class="fit info-publisher">تست</th>
+                                    <th class="fit info-translateType">تست</th>
+                                    <th class="fit info-publishYear">تست</th>
+                                    <th class="fit info-publishMonth">تست</th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -389,28 +389,28 @@
                                 </thead>
                                 <tbody>
                                 <tr class="temp-politic-record">
-                                    <td class="fit row"></td>
-                                    <td class="fit info-politicalType"></td>
-                                    <td class="fit info-otherPoliticalType"></td>
-                                    <td class="fit info-mediaName"></td>
-                                    <td class="fit info-activityType"></td>
-                                    <td class="fit info-beginMonth"></td>
-                                    <td class="fit info-beginYear"></td>
-                                    <td class="fit info-endMonth"></td>
-                                    <td class="fit info-endYear"></td>
-                                    <td class="fit info-yearCooperation"></td>
-                                    <td class="fit info-responsibility"></td>
-                                    <td class="fit info-membershipType"></td>
-                                    <td class="fit info-electionType"></td>
-                                    <td class="fit info-electionPeriodType"></td>
-                                    <td class="fit info-parliamentPeriodType"></td>
-                                    <td class="fit info-expertsParliamentPeriodType"></td>
-                                    <td class="fit info-cityCouncilPeriodType"></td>
-                                    <td class="fit info-supervisoryBoardType"></td>
-                                    <td class="fit info-mediaFormat"></td>
-                                    <td class="fit info-otherMediaFormat"></td>
-                                    <td class="fit info-candidateName"></td>
-                                    <td class="fit info-description"></td>
+                                    <td class="fit row">1</td>
+                                    <td class="fit info-politicalType">تست</td>
+                                    <td class="fit info-otherPoliticalType">تست</td>
+                                    <td class="fit info-mediaName">تست</td>
+                                    <td class="fit info-activityType">تست</td>
+                                    <td class="fit info-beginMonth">تست</td>
+                                    <td class="fit info-beginYear">تست</td>
+                                    <td class="fit info-endMonth">تست</td>
+                                    <td class="fit info-endYear">تست</td>
+                                    <td class="fit info-yearCooperation">تست</td>
+                                    <td class="fit info-responsibility">تست</td>
+                                    <td class="fit info-membershipType">تست</td>
+                                    <td class="fit info-electionType">تست</td>
+                                    <td class="fit info-electionPeriodType">تست</td>
+                                    <td class="fit info-parliamentPeriodType">تست</td>
+                                    <td class="fit info-expertsParliamentPeriodType">تست</td>
+                                    <td class="fit info-cityCouncilPeriodType">تست</td>
+                                    <td class="fit info-supervisoryBoardType">تست</td>
+                                    <td class="fit info-mediaFormat">تست</td>
+                                    <td class="fit info-otherMediaFormat">تست</td>
+                                    <td class="fit info-candidateName">تست</td>
+                                    <td class="fit info-description">تست</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -432,10 +432,10 @@
                                 </thead>
                                 <tbody>
                                 <tr class="temp-skill-record">
-                                    <td class="fit row"></td>
-                                    <td class="fit info-skillNameType"></td>
-                                    <td class="fit info-skillLevel"></td>
-                                    <td class="fit info-howLearn"></td>
+                                    <td class="fit row">1</td>
+                                    <td class="fit info-skillNameType">تست</td>
+                                    <td class="fit info-skillLevel">تست</td>
+                                    <td class="fit info-howLearn">تست</td>
                                 </tr>
                                 </tbody>
                             </table>
