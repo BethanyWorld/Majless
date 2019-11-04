@@ -13,6 +13,7 @@
             });
         });
 
+        $('.RegistrationTypeDiv').find(":checkbox").attr('checked' , 'checked')
         $(document).on('click', '.panel-heading', function(e) {
             e.preventDefault();
             ($(this).find(":checkbox").attr('checked') == undefined) ? $(this).find(":checkbox").attr('checked' , 'checked') : $(this).find(":checkbox").removeAttr('checked')

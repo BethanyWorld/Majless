@@ -214,4 +214,7 @@
     .liberationdate{
         display: none;
     }
+   .list-group-Grade .panel-body{
+        display: none;
+    }
 </style>
