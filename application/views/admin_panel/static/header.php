@@ -21,6 +21,7 @@ $CI =& get_instance();
     <link href="<?php echo $_DIR; ?>plugins/confirm/confirm.css" rel="stylesheet"/>
     <link href="<?php echo $_DIR; ?>plugins/simplePagination/simplePagination.css" rel="stylesheet"/>
     <link href="<?php echo $_DIR; ?>css/materialize.css" rel="stylesheet"/>
+    <link href="<?php echo $_DIR; ?>plugins/morrisjs/morris.css" rel="stylesheet" />
     <link href="<?php echo $_DIR; ?>css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo $_DIR; ?>plugins/persianDatepicker/css/persianDatepicker-default.css"/>
 
@@ -35,9 +36,10 @@ $CI =& get_instance();
     <script src="<?php echo $_DIR; ?>plugins/iziToast/js/iziToast.min.js"></script>
     <script src="<?php echo $_DIR; ?>plugins/confirm/confirm.js"></script>
     <script src="<?php echo $_DIR; ?>plugins/simplePagination/simplePagination.js"></script>
-
     <script src="<?php echo $_DIR; ?>plugins/persianDatepicker/js/persianDatepicker.min.js"></script>
     <script src="<?php echo $_DIR; ?>plugins/mask/jquery.mask.min.js"></script>
+    <script src="<?php echo $_DIR; ?>plugins/raphael/raphael.min.js"></script>
+    <script src="<?php echo $_DIR; ?>plugins/morrisjs/morris.js"></script>
     <script src="<?php echo $_DIR; ?>js/admin.js"></script>
     <script src="<?php echo $_DIR; ?>js/pages/index.js"></script>
     <script src="<?php echo $_DIR; ?>js/demo.js"></script>
