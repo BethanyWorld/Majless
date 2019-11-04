@@ -369,6 +369,7 @@
         transform: rotate(45deg);
     }
 
+    /*Checkboxes styles*/
     .MobileStep {
         margin-bottom: 15px;
     }
@@ -433,10 +434,12 @@
         margin-bottom: 15px;
     }
 
+    /*radio buttons*/
     .Radio-Buttons {
         display: none;
     }
-    .Radio-Display{
+
+    .Radio-Display {
         display: inline-block;
     }
 
@@ -485,17 +488,21 @@
     .Radio-Buttons .radio input[type="radio"] + .radio-label:empty:before {
         margin-right: 0;
     }
+    /*radio buttons*/
+
     .ul-background-color-hr {
         margin: 0px auto;
         padding: 20px;
         box-shadow: none;
     }
+
     .list-group-item:last-child {
         margin-bottom: 0;
         border-bottom-right-radius: .25rem;
         border-bottom-left-radius: .25rem;
 
     }
+
     .list-group-item {
         position: relative;
         width: 100%;
@@ -506,10 +513,12 @@
         border: 1px solid #ddd;
         min-height: 100px;
     }
+
     .odd-background-color-div {
         background-color: rgb(238, 238, 238);
         margin-bottom: 3px;
     }
+
     .extra-padding-top-25 {
         padding-top: 20px;
     }

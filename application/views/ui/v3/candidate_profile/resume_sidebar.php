@@ -306,10 +306,6 @@
         border-radius: 0px;
     }
 
-    .RegistrationTypeDiv {
-        padding: 15px 0px;
-    }
-
     .BirthDateTitleMarginTop {
         margin-top: 30px;
     }
@@ -371,6 +367,9 @@
     }
 
     /*Checkboxes styles*/
+    .RegistrationTypeDiv {
+        padding: 15px 0px;
+    }
     .RegistrationTypeDiv input[type="checkbox"] {
         display: none;
     }
@@ -416,7 +415,7 @@
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
     }
-
+    /*Checkboxes styles*/
     .MobileStep {
         margin-bottom: 15px;
     }

@@ -305,7 +305,7 @@
                 $(this).attr('name' , $(this).data('name'))
             });
             $radioButtonNameUUID =  UUID();
-            $form.find('input[type="radio"]').each(function(){
+            $form.find('input[type="radio"]').each(function() {
                 $id =  UUID();
                 $(this).attr('id' , $id);
                 $(this).attr('name' , "Study-Status-"+$radioButtonNameUUID);
