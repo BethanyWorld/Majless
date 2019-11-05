@@ -35,6 +35,7 @@ class SignUp extends CI_Controller{
         $this->load->view('ui/v3/signup/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
+
     public function submitSignUpForm()
     {
         $inputs = $this->input->post(NULL, TRUE);
