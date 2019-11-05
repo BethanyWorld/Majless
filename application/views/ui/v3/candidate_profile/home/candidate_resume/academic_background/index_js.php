@@ -229,15 +229,19 @@
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
-            // else {
-            //     $($parentDom + '.CandidateDepartment').css('display' , 'block');
-            //     $($parentDom + '.CandidateMajor').css('display' , 'block');
-            // }
+            else {
+                $($parentDom + '.CandidateDepartment').css('display' , 'block');
+                $($parentDom + '.CandidateMajor').css('display' , 'block');
+            }
             if($inputCandidateUniversityLevelType === "Others") {
                 $($parentDom + '.Change-UniversityName').html('نام مرکز آموزشی');
             }
             else {
                 $($parentDom + '.Change-UniversityName').html('نام دانشگاه');
+            }
+            if($inputCandidateUniversityLevelType === "") {
+                $($parentDom + '.CandidateDepartment').css('display' , 'none');
+                $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
         });
         $(document).on('change', '[name="inputCandidateDepartment"]', function () {
