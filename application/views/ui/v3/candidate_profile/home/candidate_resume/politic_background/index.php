@@ -274,6 +274,7 @@
                                                             <label for="inputCandidateElectionType"> انتخابات :</label>
                                                             <select class="form-control form-control-lg"
                                                                     data-name="inputCandidateElectionType">
+                                                                <option value="" selected>--انتخاب کنید--</option>
                                                                 <?php foreach ($EnumResumeProfile['CandidatePoliticElectionType'] as $key => $value) { ?>
                                                                     <option value="<?php echo $key; ?>">
                                                                         <?php echo $value; ?>
