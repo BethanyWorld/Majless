@@ -1,17 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $('div.list-group-Grade').each(function() {
-            $(this).attr('id', UUID());
-            $form =  $(this).attr('id', UUID());
 
-            $radioButtonNameUUID =  UUID();
-            $form.find('input[type="radio"]').each(function() {
-                $id =  UUID();
-                $(this).attr('id' , $id);
-                $(this).attr('name' , "veteran-"+$radioButtonNameUUID);
-                $(this).next('label').attr('for' , $id);
-            });
-        });
+
         $(document).on('click', '.panel-heading', function(e) {
             e.preventDefault();
             ($(this).find(":checkbox").attr('checked') == undefined) ? $(this).find(":checkbox").attr('checked' , 'checked') : $(this).find(":checkbox").removeAttr('checked')
@@ -39,9 +29,38 @@
             }
         });
 
+
+        $('div.list-group-Grade').each(function() {
+
+            $this = $(this);
+            $(this).attr('id', UUID());
+            $form =  $(this).attr('id', UUID()); // rfwerfgwerfefe
+            $expandPanels =  ($(this).find('.RegistrationTypeDiv :checkbox').attr('checked') != undefined) ? true : false;
+            if($expandPanels) {
+                $form.find('.panel-body').show();
+            }
+
+            $this.find('.Radio-Buttons input[type="radio"]').each(function(){
+                $this = $(this);
+                if($this.attr('checked') != '' && $this.attr('checked') != undefined){
+                    $this.click();
+                }
+            });
+
+
+            $radioButtonNameUUID =  UUID();
+            $form.find('input[type="radio"]').each(function() {
+                $id =  UUID();
+                $(this).attr('id' , $id);
+                $(this).attr('name' , "veteran-"+$radioButtonNameUUID);
+                $(this).next('label').attr('for' , $id);
+            });
+
+        });
+
         $("#updateVeteran").click(function () {
             $sendData = [];
-            $(".list-group-Grade").each(function(){
+            $(".list-group-Grade").each(function() {
                 $isTabChecked =  ($(this).find('.RegistrationTypeDiv :checkbox').attr('checked') != undefined) ? true : false;
                 $inputCandidateVeteranFamilyTitle = $(this).find('.RegistrationTypeDiv :checkbox').val();
                 $inputCandidateVeteranType = $(this).find('.Radio-Buttons :radio:checked').val();
