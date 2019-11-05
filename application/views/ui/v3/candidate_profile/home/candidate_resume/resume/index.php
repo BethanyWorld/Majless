@@ -97,7 +97,12 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <?php setInputValue($userInfo['CandidateBirthDate']); ?>
                                                        class="input-validate validate valid"
                                                        placeholder="1357/12/22">
+
+                                                <label class="text-danger" id="DateChecked">
+                                                    حداقل سن مجاز 30 سال تا 75 سال میباشد
+                                                </label>
                                             </div>
+
                                             <div class="clearfix"></div>
                                             <div class="col-md-12 padding-0">
                                                 <hr>

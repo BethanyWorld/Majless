@@ -2,6 +2,17 @@
 
 
     $(document).ready(function () {
+        $inputCandidateAddressCityPart = $('#inputCandidateAddressCityPart').val();
+        if ($inputCandidateAddressCityPart !== null && $inputCandidateAddressCityPart !== "") {
+            $('#inputCandidateAddressVillage').attr("disabled", "disabled");
+            $('#inputCandidateAddressVillage').removeAttr('placeholder');
+            $('#inputCandidateAddressVillage').addClass('InputNotAllow');
+
+            $('#inputCandidateAddressVillagePart').attr("disabled", "disabled");
+            $('#inputCandidateAddressVillagePart').removeAttr('placeholder');
+            $('#inputCandidateAddressVillagePart').addClass('InputNotAllow');
+        }
+
 
         $(document).on('change', '.state-select', function () {
             toggleLoader();
@@ -103,6 +114,22 @@
         $("#inputCandidateReligion").change();
 
         function checkedCandidate() {
+
+            /*checked date*/
+            $inputCandidateBirthDate = $.trim($("#inputCandidateBirthDate").val());
+            dob = new Date($inputCandidateBirthDate);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            $candidateage = (age - 621) ;
+            console.log($candidateage);
+            if($candidateage <=30 || $candidateage >=75){
+                $('#DateChecked').show();
+            }
+            else{
+                $('#DateChecked').hide();
+            }
+            /*checked date*/
+
             $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
             if ($inputParliamentaryCandidate) {
                 /* relegion Check */
