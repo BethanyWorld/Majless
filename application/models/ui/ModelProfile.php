@@ -86,7 +86,7 @@ class ModelProfile extends CI_Model
         $this->db->delete('candidate_academic_background', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        if (isset($inputs['inputCandidateMilitary'])) {
+        if (isset($inputs['inputCandidateAcademicBackground'])) {
             for ($i = 0; $i < count($inputs['inputCandidateAcademicBackground']);) {
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
@@ -147,7 +147,6 @@ class ModelProfile extends CI_Model
                     'CandidateMilitaryEndYear' => $inputs['inputCandidateMilitary'][$i + 4]['value'],
                     'CandidateMilitaryEndArea' => $inputs['inputCandidateMilitary'][$i + 5]['value'],
                     'CandidateMilitaryEndAreaTitle' => $inputs['inputCandidateMilitary'][$i + 6]['value'],
-
                 );
                 $this->db->insert('candidate_military', $UserArray);
                 $i += 7;

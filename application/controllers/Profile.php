@@ -615,7 +615,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/veteran/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdateVeteran()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');

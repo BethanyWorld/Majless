@@ -147,7 +147,7 @@ class ModelCandidate extends CI_Model{
         //////////////////////////////////////////////////////////////////
 
         //military is not implemented yet
-        if(empty($personalInfo) || empty($academicInfo) || !empty($militaryInfo)){
+        if(empty($personalInfo) || empty($academicInfo) || empty($militaryInfo)){
             $arr = array(
                 'content' => 'Complement Issues',
                 'hasConditions' => false,
