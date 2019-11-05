@@ -1,6 +1,4 @@
 <?php
-
-
 class ModelProfile extends CI_Model
 {
     public function candidateUpdatePersonalInfo($inputs)
