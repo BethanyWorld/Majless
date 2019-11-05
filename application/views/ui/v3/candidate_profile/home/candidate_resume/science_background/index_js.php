@@ -55,6 +55,7 @@
             // }
 
                 $sendData = { inputCandidateResearch : $("#form-research").serializeArray() }
+
                 toggleLoader();
                 $.ajax({
                     type: 'post',

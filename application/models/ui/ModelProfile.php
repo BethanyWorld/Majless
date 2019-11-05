@@ -348,7 +348,7 @@ class ModelProfile extends CI_Model
                     'CandidateResearchWorker' => $inputs['inputCandidateResearch'][$i + 2]['value'],
                     'CandidateResearchResponsibility' => $inputs['inputCandidateResearch'][$i + 3]['value'],
                     'CandidateResearchMonth' => $inputs['inputCandidateResearch'][$i + 4]['value'],
-                    'CandidateResearchYear' => $inputs['inputCandidateResearch'][$i + 4]['value'],
+                    'CandidateResearchYear' => $inputs['inputCandidateResearch'][$i + 5]['value'],
                 );
                 $this->db->insert('candidate_research', $UserArray);
                 $i = $i + 6;

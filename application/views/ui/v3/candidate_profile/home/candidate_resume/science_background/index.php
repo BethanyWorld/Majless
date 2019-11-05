@@ -437,15 +437,15 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <label for="inputCandidateResearchYear">
                                                             سال چاپ
                                                             <span class="text-danger">
-                                                 <b class="text-danger">*</b>
-                                             </span>
+                                                                 <b class="text-danger">*</b>
+                                                             </span>
                                                         </label>
                                                         <select class="form-control form-control-lg city-select"
                                                                 name="inputCandidateResearchYear"
                                                                 id="inputCandidateResearchYear">
                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                 <option
-                                                                    <?php setOptionSelected($item['CandidateResearchMonth'], $i); ?>
+                                                                    <?php setOptionSelected($item['CandidateResearchYear'], $i); ?>
                                                                         value="<?php echo $i; ?>">
                                                                     <?php echo $i; ?>
                                                                 </option>
@@ -987,7 +987,7 @@ $_DIR = base_url('assets/ui/v3/');
                                             </div>
                                             <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                 <label for="inputConferenceLevelType">
-                                                   سطح همایش
+                                                    سطح همایش
                                                     <span class="text-danger">
                                                     <b class="text-danger">*</b></span>
                                                 </label>
