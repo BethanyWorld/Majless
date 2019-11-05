@@ -254,7 +254,7 @@ $config['EnumResumeProfile'] = array(
     ),
     /* Politic Enums */
     'CandidatePoliticActivityType' => array(
-        'Group' => 'حذب',
+        'Group' => 'حزب',
         'CandidatesCampaign' => 'ستاد های انتخاباتی نامزدها',
         'SupervisoryBoard' => ' نظارت و اجرایی ستاد انتخابات',
         'Media' => 'رسانه',
