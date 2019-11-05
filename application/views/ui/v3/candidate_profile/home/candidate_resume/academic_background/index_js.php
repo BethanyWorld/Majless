@@ -214,9 +214,11 @@
                 $($parentDom + '[name="inputCandidateUniversityLevelType"]').attr('readonly' , 'readonly').val('SeminaryLevelType');
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
+                $($parentDom + '.CandidateLevelType').css('pointerEvents' , 'none');
             }
             else{
                 $($parentDom + '[name="inputCandidateUniversityLevelType"]').removeAttr('readonly');
+                $($parentDom + '.CandidateLevelType').css('pointerEvents' , 'auto');
             }
         });
         $(document).on('change', '[name="inputCandidateUniversityLevelType"]', function () {
@@ -227,11 +229,10 @@
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
-            else {
-                $($parentDom + '.CandidateDepartment').css('display' , 'block');
-                $($parentDom + '.CandidateMajor').css('display' , 'block');
-            }
-
+            // else {
+            //     $($parentDom + '.CandidateDepartment').css('display' , 'block');
+            //     $($parentDom + '.CandidateMajor').css('display' , 'block');
+            // }
             if($inputCandidateUniversityLevelType === "Others") {
                 $($parentDom + '.Change-UniversityName').html('نام مرکز آموزشی');
             }
@@ -305,7 +306,7 @@
                 $(this).attr('name' , $(this).data('name'))
             });
             $radioButtonNameUUID =  UUID();
-            $form.find('input[type="radio"]').each(function() {
+            $form.find('input[type="radio"]').each(function(){
                 $id =  UUID();
                 $(this).attr('id' , $id);
                 $(this).attr('name' , "Study-Status-"+$radioButtonNameUUID);
