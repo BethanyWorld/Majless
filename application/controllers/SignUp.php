@@ -28,6 +28,7 @@ class SignUp extends CI_Controller{
         $data['CSRF'] = $CSRF;
         $data['title'] = 'ثبت نام';
         $data['signUpType'] = $this->input->get('type');
+        $data['api'] = $this->config->item('api');
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/signup/index', $data);
         $this->load->view('ui/v3/signup/index_css', $data);

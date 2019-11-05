@@ -91,6 +91,8 @@ class ModelCommand extends CI_Model
             $arr = array(
                 'type' => "green",
                 'content' => "درخواست ثبت نام با موفقیت ارسال شد",
+                'senderNumber' => $inputs['inputSignUpPhone'],
+                'messageBody' => "ثبت نام با موفقیت انجام شد.نام کاربری:".$inputs['inputSignUpPhone']." و رمز عبور ".$inputs['inputSignUpPhone']." می باشد ",
                 'success' => true
             );
             return $arr;

@@ -110,10 +110,24 @@
                                     $result = JSON.parse(data);
                                     notify($result['content'], $result['type']);
                                     if ($result['success'] && $result['type'] =='green') {
-                                        setTimeout(function(){
-                                            location.href = base_url + 'Login';
-                                        } , 1500);
-                                        toggleLoader();
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '<?php echo $api['SMS']; ?>',
+                                            data: {
+                                                'senderNumber': $result['senderNumber'],
+                                                'messageBody': $result['messageBody']
+                                            },
+                                            success: function (data) {
+                                                setTimeout(function(){
+                                                    location.href = base_url + 'Login';
+                                                } , 500);
+                                                toggleLoader();
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                toggleLoader();
+                                                notify('مشکلی درخ داده است', 'red');
+                                            }
+                                        });
                                     }
                                     else {
                                         /*notify($result['message'], 'red');*/
