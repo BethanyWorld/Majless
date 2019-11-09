@@ -212,7 +212,6 @@ class Profile extends CI_Controller
         $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'رزومه';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
-
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
 
@@ -329,6 +328,10 @@ class Profile extends CI_Controller
     public function militaryStatus()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
+
+        if($loginInfo['CandidateGender'] == 'Female') {
+            redirect(base_url('Profile/jobHistory'));
+        }
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');

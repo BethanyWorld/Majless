@@ -522,6 +522,7 @@
                     </a>
                 </li>
 
+                <?php if($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male'){ ?>
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/militaryStatus'); ?>">
                     <i class="zmdi RightpanelIcon">
@@ -534,6 +535,7 @@
                         </div>
                     </div>
                 </li>
+                <?php } ?>
 
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/jobHistory'); ?>">

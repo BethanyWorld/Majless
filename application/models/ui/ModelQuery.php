@@ -85,7 +85,6 @@ class ModelQuery extends CI_Model{
             $this->db->where('CandidateId' , $result[0]['CandidateId']);
             $roles = $this->db->get()->result_array();
             $result[0]['roles'] = $roles;
-
             $this->session->set_userdata('UserLoginInfo' , $result[0]);
             $this->session->set_userdata('UserIsLogged' , true);
             $arr = array(

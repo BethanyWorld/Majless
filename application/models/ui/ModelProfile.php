@@ -63,6 +63,19 @@ class ModelProfile extends CI_Model
                 'content' => "بروزرسانی پروفایل با موفقیت انجام شد",
                 'success' => true
             );
+
+            $this->db->select('*');
+            $this->db->from('candidate');
+            $this->db->where(array(
+                'CandidateId' => $inputs['inputCandidateId'],
+            ));
+            $result = $this->db->get()->result_array();
+            $this->db->select('*');
+            $this->db->from('candidate_roles');
+            $this->db->where('CandidateId' , $result[0]['CandidateId']);
+            $roles = $this->db->get()->result_array();
+            $result[0]['roles'] = $roles;
+            $this->session->set_userdata('UserLoginInfo' , $result[0]);
             return $arr;
         }
 
