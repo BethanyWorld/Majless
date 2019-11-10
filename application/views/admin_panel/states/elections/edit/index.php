@@ -46,16 +46,17 @@
                                         <?php
                                         $electionCityIds = array();
                                         foreach ($electionInfo['electionCities'] as $electionCity) {
-                                            array_push($electionCityIds , $electionCity['CityId']);
+                                            array_push($electionCityIds, $electionCity['CityId']);
                                         }
                                         ?>
                                         <?php foreach ($cities as $city) { ?>
+                                            <div class="row col-xs-12">
                                                 <input class="election-city"
-                                                       <?php if(in_array($city['CityId'], $electionCityIds))   echo "checked"; ?>
+                                                    <?php if (in_array($city['CityId'], $electionCityIds)) echo "checked"; ?>
                                                        id="i-<?php echo $city['CityId']; ?>"
                                                        type="checkbox" value="<?php echo $city['CityId']; ?>"/>
                                                 <label for="i-<?php echo $city['CityId']; ?>"><?php echo $city['CityName']; ?></label>
-                                                &nbsp;&nbsp;&nbsp;
+                                            </div>   &nbsp;&nbsp;&nbsp;
                                         <?php } ?>
                                     </div>
                                 </div>

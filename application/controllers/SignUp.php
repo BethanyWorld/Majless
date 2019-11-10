@@ -36,8 +36,7 @@ class SignUp extends CI_Controller{
         $this->load->view('ui/v3/static/footer', $data);
     }
 
-    public function submitSignUpForm()
-    {
+    public function submitSignUpForm(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputSignUpType = $inputs['inputSignUpType'];
         unset($inputs['inputSignUpType']);
@@ -50,11 +49,30 @@ class SignUp extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
+        $inputs['inputSignUpType'] = $inputSignUpType;
+
+        $this->form_validation->set_data($inputs);
+        $this->form_validation->set_rules('inputSignUpFirstName', 'نام', 'trim|xss_clean|required|min_length[1]|max_length[80]');
+        $this->form_validation->set_rules('inputSignUpLastName', 'نام خانوادگی', 'trim|xss_clean|required|min_length[1]|max_length[80]');
+        $this->form_validation->set_rules('inputSignUpPhone', 'تلفن', 'trim|xss_clean|required|min_length[11]|max_length[11]|regex_match[/^[0-9]{11}$/]');
+        $this->form_validation->set_rules('inputSignUpStateId', 'استان', 'trim|xss_clean|required|min_length[1]|numeric|greater_than[0]');
+        $this->form_validation->set_rules('inputSignUpCityId', 'شهر', 'trim|xss_clean|required|min_length[1]|numeric|greater_than[0]');
+        $this->form_validation->set_rules('inputCaptcha', 'کد امنیتی', 'trim|required|min_length[5]|max_length[5]');
+        $this->form_validation->set_rules('inputSignUpType[]', "عنوان ثبت نام", "trim|xss_clean|numeric|greater_than[0]|less_than[4]");
+
+
+        if ($this->form_validation->run() == FALSE) {
+            $arr = array(
+                'type' => "yellow",
+                'content' => validation_errors()
+            );
+            echo json_encode($arr);
+            die();
+        }
 
         $electionId = $this->ModelCountry->getElectionIdByCityId($inputs['inputSignUpCityId'])[0]['ElectionId'];
 
         $inputs['inputElectionId'] = $electionId;
-        $inputs['inputSignUpType'] = $inputSignUpType;
         $captchaCode = $this->session->userdata['captchaCode'];
         if (strtolower($inputs['inputCaptcha']) == strtolower($captchaCode)) {
             if ($inputs['inputCSRF'] == $this->session->userdata['CSRF']) {

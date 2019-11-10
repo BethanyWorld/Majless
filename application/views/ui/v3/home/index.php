@@ -6,6 +6,8 @@
         <section id="section-5d7930f11ff35"
                  class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
                  style=" background-image:url(<?php echo $_DIR ?>images/slide4_850.jpg);background-size: cover;">
+            <div class="overlay" style="position: absolute;width: 100%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 1;"></div>
+
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
             <div class="container" style=' padding-top: 130px; padding-bottom: 170px; '>
@@ -568,8 +570,8 @@
             </div>
         </section>
         <!-- Edited Capitol-->
-        <section id="hp-us-capitol" class="campaign_section nopadding parallax-section  tbWow fadeIn "
-                 style="background-color:#0e2b53; background-image:url(<?php echo $_DIR ?>images/wwsf_all2.jpg); background-repeat: no-repeat; background-position: right center; background-size: cover;  ">
+        <section id="hp-us-capitol" class="campaign_section nopadding parallax-section  tbWow fadeIn" style="background-color:#0e2b53; background-image:url(<?php echo $_DIR ?>images/wwsf_all2.jpg); background-repeat: no-repeat; background-position: right center; background-size: cover;  ">
+            <div class="overlay" style="position: absolute;width: 100%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 0;"></div>
             <div class="container" style=' padding-top: 200px; padding-bottom: 200px; '>
                 <div class="row">
                     <div class="fw-row nostretch">

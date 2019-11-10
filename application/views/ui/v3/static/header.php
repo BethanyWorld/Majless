@@ -209,12 +209,12 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                     </ul>
  */ ?>
                             </li>
-                            <li><a href="<?php echo base_url('AboutUs') ?>">شاخص ها</a>
+                            <li><a href="<?php echo base_url('AboutUs/candidatelegal') ?>">شاخص ها</a>
                                 <ul>
                                     <li><a href="<?php echo base_url('AboutUs/candidatelegal') ?>">شرایط قانونی</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo base_url('AboutUs') ?>">درباره جنبش</a>
+                            <li><a href="<?php echo base_url('AboutUs/intro') ?>">درباره جنبش</a>
                                 <ul>
                                     <li><a href="<?php echo base_url('AboutUs/candidatecriteriacompetencies') ?>">شایستگی
                                             های نماینده مجلس</a></li>

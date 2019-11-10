@@ -54,9 +54,9 @@
                     $result = jQuery.parseJSON(data);
                     for (let i = 0; i < $result.length; i++) {
                         $temp = "";
-                        $temp = '<input class="election-city" id="i-' + $result[i].CityId + '" type="checkbox"  value="' + $result[i].CityId + '" />';
+                        $temp = '<div class="row col-xs-12"><input class="election-city" id="i-' + $result[i].CityId + '" type="checkbox"  value="' + $result[i].CityId + '" />';
                         $temp += '<label for="i-' + $result[i].CityId + '">' + $result[i].CityName + '</label>';
-                        $temp += '&nbsp;&nbsp;&nbsp;';
+                        $temp += '</div>';
                         $("#electionCities").append($temp);
                     }
                 },

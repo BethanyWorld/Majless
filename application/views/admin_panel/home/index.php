@@ -67,10 +67,10 @@
                                 <tr>
                                     <td class="text-center"><?php echo $index++; ?></td>
                                     <td><?php echo $item['StateName']; ?></td>
-                                    <td class="text-center"><label class="label label-success"><?php echo $item['candidateCount']; ?></label></td>
-                                    <td class="text-center"><label class="label label-info"><?php echo $item['RoleCandidateCount']; ?></label></td>
-                                    <td class="text-center"><label class="label label-warning"><?php echo $item['RoleSponsorCount']; ?></label></td>
-                                    <td class="text-center"><label class="label label-primary"><?php echo $item['RoleEliteCount']; ?></label></td>
+                                    <td class="text-center"><label><?php echo $item['candidateCount']; ?></label></td>
+                                    <td class="text-center"><label><?php echo $item['RoleCandidateCount']; ?></label></td>
+                                    <td class="text-center"><label><?php echo $item['RoleEliteCount']; ?></label></td>
+                                    <td class="text-center"><label><?php echo $item['RoleSponsorCount']; ?></label></td>
                                 </tr>
                             <?php } ?>
                             </tbody>

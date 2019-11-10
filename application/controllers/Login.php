@@ -9,7 +9,6 @@ class Login extends CI_Controller
         $this->load->model('ui/ModelQuery');
         $this->load->model('ui/ModelCountry');
     }
-
     public function index(){
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
@@ -24,7 +23,6 @@ class Login extends CI_Controller
         $this->load->view('ui/v3/login/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
-
     public function doLogin(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
@@ -36,6 +34,19 @@ class Login extends CI_Controller
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
+
+        $this->form_validation->set_rules('inputPhone', 'تلفن', 'trim|xss_clean|required|min_length[11]|max_length[11]|regex_match[/^[0-9]{11}$/]');
+        $this->form_validation->set_rules('inputPassword', 'شهر', 'trim|xss_clean|required|min_length[1]|max_length[80]');
+        if ($this->form_validation->run() == FALSE) {
+            $arr = array(
+                'type' => "yellow",
+                'content' => validation_errors()
+            );
+            echo json_encode($arr);
+            die();
+        }
+
+
         if ($inputs['inputCSRF'] == $this->session->userdata['CSRF']) {
             $result = $this->ModelQuery->doLogin($inputs);
             echo json_encode($result);

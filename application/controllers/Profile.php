@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Profile extends CI_Controller
-{
+class Profile extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
@@ -12,7 +10,6 @@ class Profile extends CI_Controller
         $this->load->model('ui/ModelProfile');
         $this->load->model('agent/ModelExam');
     }
-
     public function index()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -47,7 +44,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function getResumeStatus()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -56,7 +52,6 @@ class Profile extends CI_Controller
         $result = $this->ModelCandidate->getResumeStatus($inputs);
         echo json_encode($result);
     }
-
     public function candidateHasOtherConditionToContinue()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -97,7 +92,6 @@ class Profile extends CI_Controller
         $result = $this->ModelCandidate->candidateHasOtherConditionToContinue($inputs);
         echo json_encode($result);
     }
-
     public function examList()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -115,7 +109,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/exams/first_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function getFirstStepExamList($stateId)
     {
         $data['data'] = $this->ModelExam->getFirstStepExamByStateId($stateId);
@@ -123,7 +116,6 @@ class Profile extends CI_Controller
         unset($data['data']);
         echo json_encode($data);
     }
-
     public function examListSecond()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -140,7 +132,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/exams/second_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function getSecondStepExamList($stateId)
     {
         $data['data'] = $this->ModelExam->getSecondStepExamByStateId($stateId);
@@ -148,7 +139,6 @@ class Profile extends CI_Controller
         unset($data['data']);
         echo json_encode($data);
     }
-
     public function evaluationExam()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -165,7 +155,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/exams/evaluation_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function getEvaluationExamList()
     {
         $data['data'] = $this->ModelExam->getEvaluationExamList();
@@ -173,7 +162,6 @@ class Profile extends CI_Controller
         unset($data['data']);
         echo json_encode($data);
     }
-
     public function candidateReserveExam()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -202,7 +190,6 @@ class Profile extends CI_Controller
             return false;
         }
     }
-
     /* For Resume -------------------------------------------------------------*/
     public function resume()
     {
@@ -236,7 +223,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/resume/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdatePersonalInfo()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -296,7 +282,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdatePersonalInfo($inputs);
         echo json_encode($result);
     }
-
     public function academicBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -315,7 +300,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdateAcademicBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -324,7 +308,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateAcademicBackground($inputs);
         echo json_encode($result);
     }
-
     public function militaryStatus()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -347,7 +330,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/military_status/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdateMilitaryStatus()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -356,7 +338,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateMilitaryStatus($inputs);
         echo json_encode($result);
     }
-
     public function jobHistory()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -375,7 +356,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/job_history/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdateJobHistory()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -384,7 +364,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateJobHistory($inputs);
         echo json_encode($result);
     }
-
     public function socialCulturalBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -403,7 +382,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/social_cultural_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdateSocialCulturalBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -412,7 +390,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateSocialCulturalBackground($inputs);
         echo json_encode($result);
     }
-
     public function politicBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -431,7 +408,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdatePoliticBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -440,7 +416,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdatePoliticBackground($inputs);
         echo json_encode($result);
     }
-
     public function scienceBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -467,7 +442,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/science_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdateBooks()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -476,7 +450,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateBooks($inputs);
         echo json_encode($result);
     }
-
     public function candidateUpdateArticles()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -485,7 +458,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateArticles($inputs);
         echo json_encode($result);
     }
-
     public function candidateUpdateResearch()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -494,7 +466,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateResearch($inputs);
         echo json_encode($result);
     }
-
     public function candidateUpdateTranslation()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -503,7 +474,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateTranslation($inputs);
         echo json_encode($result);
     }
-
     public function candidateUpdateInvention()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -512,7 +482,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateInvention($inputs);
         echo json_encode($result);
     }
-
     public function candidateUpdateConference()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -521,7 +490,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateConference($inputs);
         echo json_encode($result);
     }
-
     public function skills()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -542,7 +510,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/skills/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdateSkills()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -560,7 +527,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateSkills($inputs);
         echo json_encode($result);
     }
-
 
     public function veteran()
     {
@@ -627,7 +593,6 @@ class Profile extends CI_Controller
         echo json_encode($result);
     }
     /* End For Resume -------------------------------------------------------------*/
-
     /* get out of panel - session destroyed */
     public function logOut()
     {

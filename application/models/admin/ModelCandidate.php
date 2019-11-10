@@ -121,8 +121,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
-
     public function getResumeStatus($inputs){
         $isComplete = "";
         $isAccepted = "";
@@ -147,14 +145,27 @@ class ModelCandidate extends CI_Model{
         //////////////////////////////////////////////////////////////////
 
         //military is not implemented yet
-        if(empty($personalInfo) || empty($academicInfo) || empty($militaryInfo)){
-            $arr = array(
-                'content' => 'Complement Issues',
-                'hasConditions' => false,
-                'isCompleted' => false
-            );
-            return $arr;
+        if($personalInfo['CandidateGender'] == 'Male'){
+            if(empty($personalInfo) || empty($academicInfo) || empty($militaryInfo)){
+                $arr = array(
+                    'content' => 'Complement Issues',
+                    'hasConditions' => false,
+                    'isCompleted' => false
+                );
+                return $arr;
+            }
         }
+        else{
+            if(empty($personalInfo) || empty($academicInfo)){
+                $arr = array(
+                    'content' => 'Complement Issues',
+                    'hasConditions' => false,
+                    'isCompleted' => false
+                );
+                return $arr;
+            }
+        }
+
 
         /* Check User Required Values */
         if(
@@ -255,7 +266,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     /* For Candidate News */
     public function getCandidateCandidatePostByCandidateId($candidateId)
     {

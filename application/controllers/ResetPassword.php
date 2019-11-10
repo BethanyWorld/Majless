@@ -33,6 +33,16 @@ class ResetPassword extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
+        $this->form_validation->set_rules('inputPhone', 'تلفن', 'trim|xss_clean|required|min_length[11]|max_length[11]|regex_match[/^[0-9]{11}$/]');
+        if ($this->form_validation->run() == FALSE) {
+            $arr = array(
+                'type' => "yellow",
+                'content' => validation_errors()
+            );
+            echo json_encode($arr);
+            die();
+        }
+
         $captchaCode = $this->session->userdata['captchaCode'];
         if (strtolower($inputs['inputCaptcha']) == strtolower($captchaCode)) {
             if ($inputs['inputCSRF'] == $this->session->userdata['CSRF']) {

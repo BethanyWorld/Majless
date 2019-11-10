@@ -68,6 +68,12 @@ class Content extends CI_Controller
     }
     public function doSendArticle()
     {
+        $arr = array(
+            'type' => "red",
+            'content' => "امکان ارسال محتوا فعلا وجود ندارد"
+        );
+        echo json_encode($arr);
+        die();
         $inputs = $this->input->post(NULL, TRUE);
         $captchaCode = $this->session->userdata['captchaCode'];
         if (strtolower($inputs['inputCaptcha']) == strtolower($captchaCode)) {
@@ -100,6 +106,12 @@ class Content extends CI_Controller
     }
     public function uploadFile()
     {
+        $arr = array(
+            'type' => "red",
+            'content' => "امکان ارسال محتوا فعلا وجود ندارد"
+        );
+        echo json_encode($arr);
+        die();
         $inputs = $this->input->post(NULL, TRUE);
         if ($inputs['inputCSRF'] == $this->session->userdata['CSRF']) {
             $uploadPath = $this->config->item('upload_path');
