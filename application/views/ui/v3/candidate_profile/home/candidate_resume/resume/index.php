@@ -31,7 +31,7 @@ $_DIR = base_url('assets/ui/v3/');
                                     <div class="col-md-9 col-xs-12 RightFloat">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 input-field RightFloat"
                                              id="birthDatePanel">
-                                            <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                            <div class="col-md-4 col-xs-12 form-group RightFloat has-required-field">
                                                 <label class="active" for="inputCandidateFirstName">
                                                     نام
                                                     <span class="text-danger">
@@ -44,7 +44,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                        class="input-validate validate valid"
                                                        placeholder="پر کردن این فیلد الزامی می باشد">
                                             </div>
-                                            <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                            <div class="col-md-4 col-xs-12 form-group RightFloat has-required-field">
                                                 <label class="active" for="inputCandidateLastName">
                                                     نام خانوادگی
                                                     <span class="text-danger">
@@ -57,7 +57,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                        class="input-validate validate valid"
                                                        placeholder="پر کردن این فیلد الزامی می باشد">
                                             </div>
-                                            <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                            <div class="col-md-4 col-xs-12 form-group RightFloat has-required-field">
                                                 <label class="active" for="inputCandidateNationalCode">
                                                     کد ملی
                                                     <span class="text-danger">
@@ -70,7 +70,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                        class="input-validate validate valid"
                                                        placeholder="پر کردن این فیلد الزامی می باشد">
                                             </div>
-                                            <div class="col-md-6 col-xs-12 form-group RightFloat">
+                                            <div class="col-md-6 col-xs-12 form-group RightFloat has-required-field">
                                                 <label class="active" for="inputCandidateFatherName">
                                                     نام پدر
                                                     <span class="text-danger">
@@ -83,7 +83,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                        class="input-validate validate valid"
                                                        placeholder="پر کردن این فیلد الزامی می باشد">
                                             </div>
-                                            <div class="col-md-6 col-xs-12 form-group RightFloat">
+                                            <div class="col-md-6 col-xs-12 form-group RightFloat has-required-field">
                                                 <label class="active" for="inputCandidateBirthDate">
                                                     تاریخ تولد
                                                     <span class="text-danger">
@@ -108,7 +108,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <hr>
                                                 <label for="inputRegistrationType">نوع ثبت نام</label>
                                                 <div class="row RegistrationTypeDiv">
-                                                    <div class="col-md-4 col-sm-12 col-xs-12 RightFloat paddingLeft-0">
+                                                    <div class="col-md-4 col-sm-12 col-xs-12 RightFloat paddingLeft-0 has-required-field">
                                                         <input type="checkbox" value="Candidate" class="roles"
                                                                id="inputParliamentaryCandidate"
                                                             <?php
@@ -123,7 +123,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                             نامزد انتخابات مجلس
                                                         </label>
                                                     </div>
-                                                    <div class="col-md-4 col-sm-12 col-xs-12 RightFloat paddingLeft-0">
+                                                    <div class="col-md-4 col-sm-12 col-xs-12 RightFloat paddingLeft-0 has-required-field">
                                                         <input type="checkbox" class="roles" value="Elite"
                                                                id="inputParliamentaryElectionBank"
                                                             <?php
@@ -138,7 +138,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                             بانک اطلاعات نخبگان جوان
                                                         </label>
                                                     </div>
-                                                    <div class="col-md-4 col-sm-12 col-xs-12 RightFloat paddingLeft-0">
+                                                    <div class="col-md-4 col-sm-12 col-xs-12 RightFloat paddingLeft-0 has-required-field">
                                                         <input type="checkbox" class="roles" value="Sponsor"
                                                                id="inputSponsorColleague"
                                                             <?php
@@ -159,7 +159,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 col-xs-12 col-sm-12 padding-0">
-                                        <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
+                                        <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                             <label for="inputCandidateGender">
                                                 جنسیت
                                                 <span class="text-danger">
@@ -176,7 +176,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <?php } ?>
                                             </select>
                                         </div>
-                                        <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
+                                        <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                             <label for="inputCandidateMaritalStatus">
                                                 وضعییت تاهل
                                                 <span class="text-danger">
@@ -193,7 +193,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <?php } ?>
                                             </select>
                                         </div>
-                                        <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
+                                        <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                             <label for="inputCandidateReligion">
                                                 دین
                                                 <span class="text-danger">
@@ -216,7 +216,7 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="col-lg-12 col-md-12 col-xs-12">
                                                 <h3 class="margin-right-15 BirthDateTitleMarginTop">محل تولد</h3>
                                                 <hr>
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                                     <label for="inputCandidateBornStateId">
                                                         استان
                                                         <span class="text-danger"><b class="text-danger">*</b></span>
@@ -233,7 +233,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <?php } ?>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                                     <label for="inputCandidateBornCityId">
                                                         شهرستان
                                                         <span class="text-danger"><b class="text-danger">*</b></span>
@@ -259,7 +259,7 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="col-lg-12 col-md-12 col-xs-12">
                                                 <h3 class="margin-right-15 BirthDateTitleMarginTop">محل تولد پدر</h3>
                                                 <hr>
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                                     <label for="inputCandidateFatherBornStateId">
                                                         استان
                                                         <span class="text-danger">
@@ -278,8 +278,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <?php } ?>
                                                     </select>
                                                 </div>
-
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                                     <label for="inputCandidateFatherBornCityId">
                                                         شهرستان
                                                         <span class="text-danger">
@@ -304,7 +303,7 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="col-lg-12 col-md-12 col-xs-12">
                                                 <h3 class="margin-right-15 BirthDateTitleMarginTop">محل تولد مادر</h3>
                                                 <hr>
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                                     <label for="inputCandidateMotherBornStateId">
                                                         استان
                                                         <span class="text-danger">
@@ -323,8 +322,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <?php } ?>
                                                     </select>
                                                 </div>
-
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                                     <label for="inputCandidateMotherBornCityId">
                                                         شهرستان
                                                         <span class="text-danger">
@@ -349,7 +347,7 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="col-lg-12 col-md-12 col-xs-12">
                                                 <h3 class="margin-right-15 BirthDateTitleMarginTop">محل سکونت</h3>
                                                 <hr>
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom has-required-field">
                                                     <label for="inputCandidateAddressStateId">
                                                         استان
                                                         <span class="text-danger">
@@ -369,7 +367,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                     </select>
                                                 </div>
 
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom has-required-field">
                                                     <label for="inputCandidateAddressCityId">
                                                         شهرستان
                                                         <span class="text-danger">
@@ -389,7 +387,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                     </select>
                                                 </div>
 
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom has-required-field">
                                                     <label for="inputCandidateAddressPart">
                                                         بخش
                                                         <span class="text-danger">
@@ -403,7 +401,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                            placeholder="پر کردن این فیلد الزامی می باشد">
                                                 </div>
 
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom inputCandidateAddressCityPart">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom inputCandidateAddressCityPart has-required-field">
                                                     <label for="inputCandidateAddressCityPart">
                                                         شهر
                                                         <span class="text-danger">
@@ -417,7 +415,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                            placeholder="پر کردن این فیلد الزامی می باشد">
                                                 </div>
 
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom has-required-field">
                                                     <label for="inputCandidateAddressVillage">
                                                         دهستان
                                                         <span class="text-danger">
@@ -430,7 +428,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                            placeholder="پرکردن این فیلد اجباری می باشد">
                                                 </div>
 
-                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom">
+                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom has-required-field">
                                                     <label for="inputCandidateAddressVillagePart">
                                                         آبادی
                                                         <span class="text-danger">
@@ -443,7 +441,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                            placeholder="پرکردن این فیلد اجباری می باشد">
                                                 </div>
 
-                                                <div class="col-md-12 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 RightFloat form-group-MarginBottom has-required-field">
                                                     <label for="inputCandidateAddress">
                                                         آدرس
                                                         <span class="text-danger">
@@ -475,7 +473,7 @@ $_DIR = base_url('assets/ui/v3/');
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                        <div class="col-md-6 col-xs-12 form-group RightFloat">
+                                        <div class="col-md-6 col-xs-12 form-group RightFloat has-required-field">
                                             <label class="active" for="inputCandidateLandLinePhone">
                                                 تلفن ثابت
                                                 <span class="text-danger">
@@ -488,8 +486,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <?php setInputValue($userInfo['CandidateLandLinePhone']); ?>
                                                    placeholder="پر کردن این فیلد الزامی می باشد">
                                         </div>
-
-                                        <div class="col-md-6 col-xs-12 form-group RightFloat">
+                                        <div class="col-md-6 col-xs-12 form-group RightFloat has-required-field">
                                             <label class="active" for="inputCandidatePhone">
                                                 تلفن همراه
                                                 <span class="text-danger">
@@ -519,7 +516,7 @@ $_DIR = base_url('assets/ui/v3/');
                                         <h3>حوزه انتخاباتی</h3>
                                         <hr>
                                         <div class="col-md-12 col-xs-12 padding-0">
-                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat has-required-field">
                                                 <label for="inputCandidateConstituencyStateId">
                                                     استان
                                                     <span class="text-danger">
@@ -536,7 +533,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <?php } ?>
                                                 </select>
                                             </div>
-                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat has-required-field">
                                                 <label for="inputCandidateConstituencyCityId">
                                                     شهرستان
                                                     <span class="text-danger">
