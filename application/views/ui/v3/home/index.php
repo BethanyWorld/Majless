@@ -7,7 +7,6 @@
                  class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
                  style=" background-image:url(<?php echo $_DIR ?>images/slide4_850.jpg);background-size: cover;">
             <div class="overlay" style="position: absolute;width: 100%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 1;"></div>
-
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
             <div class="container" style=' padding-top: 130px; padding-bottom: 170px; '>
@@ -30,14 +29,13 @@
                                 <div class="fw-divider-space" style="padding-top: 10px;"></div>
                                 <div class="hp-join-the-effort tbWow fadeInDown">
                                     <div class="fw-page-builder-content"><span style="color: #ffffff;float: left;">
-                                                    <span class="rtl">
-                                                        بخشی از جنبش باشید و در ساختن آینده ای بهتر برای کشورمان شرکت کنید! به این کارزار تاریخی بپیوندید و برای ارزشهایی که کشور ما را عالی می کند ، ایستادگی کنید. یک تفاوت ایجاد کنید
-                                                    </span>
+                              <span class="rtl">
+                              بخشی از جنبش باشید و در ساختن آینده ای بهتر برای کشورمان شرکت کنید! به این کارزار تاریخی بپیوندید و برای ارزشهایی که کشور ما را عالی می کند ، ایستادگی کنید. یک تفاوت ایجاد کنید
+                              </span>
                                     </div>
                                 </div>
                                 <div class="fw-divider-space" style="padding-top: 30px;"></div>
                                 <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels">
-
                                     <form action="<?php echo base_url('SignUp'); ?>" method="get">
                                         <div class="row rtl">
                                             <div class="col-xs-12 col-md-6 pull-right">
@@ -117,7 +115,6 @@
                             <div style="  color: #e3a4ab; padding: 20px 0px 20px 0px;"
                                  class=" noabsolutecenter  padding15-xs">
                                 <div class="link-type-absolute100 tb-icon-box  absolutecenter-top  textalignleft tbWow fadeInUp   tbWow fadeIn ">
-
                                     <div class="tb-icon-box-image iconbox-image-type img-rounded alignleft"
                                          style=" background: none !important; ">
                                         <a href="javascript:void(0);">
@@ -182,7 +179,7 @@
                                             <div class="fw-page-builder-content">
                                                 <div class="col-xs-12 col-md-6">
                                                     <img style="max-width: 100%;width: 400px;box-shadow: 0px 0px 20px 0px #ccc;border: 3px solid #043174;"
-                                                            src="<?php echo base_url('assets/ui/v4/images/banner.jpeg'); ?>" />
+                                                         src="<?php echo base_url('assets/ui/v4/images/banner.jpeg'); ?>" />
                                                 </div>
                                                 <div class="col-xs-12 col-md-6 rtl" style="line-height: 35px;font-size: 18px;font-weight: 900;">
                                                     <h2>محورهای پنل اول</h2>
@@ -201,7 +198,6 @@
                                                         <li>نقش مجلس در فساد شبکه‌ای  شفافیت و پاسخگویی(رای، اموال، تابعیت، سفرها، تجارت و ...)</li>
                                                         <li>ساماندهی نظارت اجتماعی بر مجلس</li>
                                                     </ul>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -272,7 +268,6 @@
                                                             <?php echo formatDate($post['CreateDateTime']); ?>
                                                         </div>
                                                     </div>
-
                                                     <?php if (isset($post['PostImage']) && !empty($post['PostImage'])) { ?>
                                                         <img width="600" height="600"
                                                              src="<?php echo image_url($post['PostImage']); ?>"
@@ -291,7 +286,6 @@
                                                     <div class="read-more">جزئیات بیشتر</div>
                                                 </div>
                                             </div>
-
                                         <?php } ?>
                                     <?php } ?>
                                 </div>
@@ -309,7 +303,7 @@
                          class="tb-column absolutecenter-stretch col-xs-12  col-sm-6  nopadding  tbWow fadeIn ">
                         <div style="background-image:url(<?php echo $_DIR ?>images/issues.jpg);background-repeat: no-repeat; background-position: center center; background-size: auto;padding: 30px 0px 30px 0px;" class=" absolutecenter  padding15-xs">
                             <div class="tb-single-image tbWow fadeInUp textaligncenter">
-                                       <span class="tb-single-image-wrap"></span>
+                                <span class="tb-single-image-wrap"></span>
                             </div>
                         </div>
                     </div>
@@ -686,10 +680,10 @@
                                     <div>
                                         <div class="fw-page-builder-content">
                                             <h4 style="text-align: center;"><span style="font-size: 18pt;">
-                                                        ما با شما معنی پیدا میکنیم
-                                                        <br>
-                                                        از این حرکت انقلابی حمایت کنید
-                                                    </span>
+                                    ما با شما معنی پیدا میکنیم
+                                    <br>
+                                    از این حرکت انقلابی حمایت کنید
+                                    </span>
                                             </h4>
                                         </div>
                                     </div>
@@ -708,10 +702,10 @@
                         <div id="column-5d7930f1415bb" class="tb-column nostretch col-xs-12  col-sm-12  nopadding ">
                             <div style=" " class=" noabsolutecenter  nopadding-xs">
                                 <div class="tb-single-image  textaligncenter">
-                                          <span class="tb-single-image-wrap">
-                                          <img src="<?php echo $_DIR ?>images/spacer_center_no_change.png"
-                                               alt="img">
-                                          </span>
+                           <span class="tb-single-image-wrap">
+                           <img src="<?php echo $_DIR ?>images/spacer_center_no_change.png"
+                                alt="img">
+                           </span>
                                 </div>
                             </div>
                         </div>
@@ -733,9 +727,9 @@
                                     <div>
                                         <div class="fw-page-builder-content">
                                             <p>
-                                                   <span style="font-size: 20pt; color: #585858;">
-                                                       <em>نفر تاکنون مشارکت داشته اند</em>
-                                                   </span>
+                                    <span style="font-size: 20pt; color: #585858;">
+                                    <em>نفر تاکنون مشارکت داشته اند</em>
+                                    </span>
                                             </p>
                                         </div>
                                     </div>

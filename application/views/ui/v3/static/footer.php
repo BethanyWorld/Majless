@@ -1,20 +1,20 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <!-- #main -->
-<footer id="footer-promo">
-    <div class="container">
-        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.1s">
-            <span aria-hidden="true" class="fa fa-twitter"></span>
-        </a>
-        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.2s">
-            <span aria-hidden="true" class="fa fa-instagram"></span>
-        </a>
-        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.3s">
-            <span aria-hidden="true" class="fa fa-linkedin"></span>
-        </a>
-        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.4s">
-            <span aria-hidden="true" class="fa fa-google-plus"></span></a>
-    </div>
-</footer>
+<!--<footer id="footer-promo">-->
+<!--    <div class="container">-->
+<!--        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.1s">-->
+<!--            <span aria-hidden="true" class="fa fa-twitter"></span>-->
+<!--        </a>-->
+<!--        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.2s">-->
+<!--            <span aria-hidden="true" class="fa fa-instagram"></span>-->
+<!--        </a>-->
+<!--        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.3s">-->
+<!--            <span aria-hidden="true" class="fa fa-linkedin"></span>-->
+<!--        </a>-->
+<!--        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.4s">-->
+<!--            <span aria-hidden="true" class="fa fa-google-plus"></span></a>-->
+<!--    </div>-->
+<!--</footer>-->
 <footer id="footer-navigation">
     <div class="container">
         <div class="row">
@@ -56,9 +56,7 @@
 </footer>
 </div>
 <script type='text/javascript' src='<?= $_DIR; ?>js/bootstrap.min.js?ver=3.3.7'></script>
-<script type='text/javascript' src='<?= $_DIR; ?>js/wow.min.js?ver=1.0'></script>
 <script type='text/javascript' src='<?= $_DIR; ?>js/loading_screen.js?ver=1.0'></script>
 <script type='text/javascript' src='<?= $_DIR; ?>js/theme.js?ver=1.0'></script>
-<script type='text/javascript' src='<?= $_DIR; ?>js/slick.min.js?ver=1.0'></script>
 </body>
 </html>
