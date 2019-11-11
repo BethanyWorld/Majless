@@ -14,6 +14,7 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12 col-xs-12 padding-0">
+                                        <hr>
                                         <div class="list-group-item ul-background-color-hr">
                                             <form id="form">
                                                 <span class="skill-divider"></span>

@@ -94,7 +94,7 @@
         padding: .75rem 1.25rem;
         margin-bottom: -1px;
         background-color: #fff;
-        border: 1px solid #ddd;
+        border: none;
         min-height: 100px;
     }
 

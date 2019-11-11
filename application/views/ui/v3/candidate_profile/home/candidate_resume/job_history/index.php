@@ -19,7 +19,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
 <!--                                        <h3>سوابق شغلی</h3>-->
-<!--                                        <hr>-->
+                                        <hr>
                                         <form id="form-job-history">
                                             <span class="skill-divider"></span>
                                             <?php foreach ($userInfo['candidateJobHistory'] as $item) { ?>
