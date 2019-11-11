@@ -76,7 +76,7 @@
     /*for add form*/
     .ul-background-color-hr {
         margin: 0px auto;
-        padding: 20px !important;
+        padding: 0px !important;
         box-shadow: none;
     }
 
@@ -99,8 +99,10 @@
     }
 
     .odd-background-color-div {
-        background-color: rgb(238, 238, 238);
+        /*background-color: rgb(238, 238, 238);*/
         margin-bottom: 3px;
+        box-shadow: 0 0 7px 1px #ccc !important;
+
     }
 
     .extra-padding-top-25 {

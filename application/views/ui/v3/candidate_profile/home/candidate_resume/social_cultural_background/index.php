@@ -15,7 +15,7 @@ $_DIR = base_url('assets/ui/v3/');
                             </div>
                             <div class="panel-body">
                                 <div class="row">
-                                    <div class="col-md-12 col-xs-12 padding-0">
+                                    <div class="col-md-12 col-xs-12">
                                         <hr>
                                         <div class="list-group-item ul-background-color-hr">
                                             <form id="form">
