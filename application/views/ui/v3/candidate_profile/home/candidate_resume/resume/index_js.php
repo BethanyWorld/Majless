@@ -131,11 +131,12 @@
 
 
                 /*checked date*/
+                debugger;
                 $inputCandidateBirthDate = $.trim($("#inputCandidateBirthDate").val());
                 dob = new Date($inputCandidateBirthDate);
                 var today = new Date();
                 var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
-                $candidateage = (age - 621);
+                $candidateage = (age - 620);
                 if ($candidateage <= 30 || $candidateage >= 75) {
                     debugger;
                     $('#DateChecked').show();
