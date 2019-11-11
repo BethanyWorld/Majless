@@ -27,8 +27,11 @@
                 else {
                     $candidateStatus = "CandidateRegister";
                 }
-                if ($currentCandidateStatus == 'CandidateRegister' || $currentCandidateStatus == 'CandidateResumeCompleted' || $currentCandidateStatus == 'CandidateResumeAccepted' || $currentCandidateStatus == 'CandidateResumeRejected') {
-                    $sendData = {'inputCandidateStatus': $candidateStatus,}
+                if ($currentCandidateStatus == 'CandidateRegister' ||
+                    $currentCandidateStatus == 'CandidateResumeCompleted' ||
+                    $currentCandidateStatus == 'CandidateResumeAccepted' ||
+                    $currentCandidateStatus == 'CandidateResumeRejected') {
+                    $sendData = {'inputCandidateStatus': $candidateStatus}
                     $.ajax({
                         type: 'post',
                         url: base_url + 'SignUp/changeCandidateState',

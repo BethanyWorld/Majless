@@ -1,36 +1,6 @@
 <?php
 $_DIR = base_url('assets/empanel/');
 
-function gradePipe($type)
-{
-    switch ($type) {
-        case 'Undefined':
-            echo "<label class='label label-default'></label>";
-            break;
-        case 'Undefined':
-            echo "<label class='label label-default'></label>";
-            break;
-        case 'Undefined':
-            echo "<label class='label label-default'></label>";
-            break;
-        case 'Undefined':
-            echo "<label class='label label-default'></label>";
-            break;
-        case 'Undefined':
-            echo "<label class='label label-default'></label>";
-            break;
-        case 'Undefined':
-            echo "<label class='label label-default'></label>";
-            break;
-        case 'Undefined':
-            echo "<label class='label label-default'></label>";
-            break;
-        case 'Undefined':
-            echo "<label class='label label-default'></label>";
-            break;
-    }
-}
-
 ?>
 <section class="content">
     <div class="container-fluid">
@@ -242,7 +212,6 @@ function gradePipe($type)
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="panel panel-default panel-post">
                                             <div class="panel-heading">
                                                 سوابق خدمت
@@ -269,6 +238,7 @@ function gradePipe($type)
                                                         <th class="fit info-universityName">نام دانشگاه</th>
                                                     </tr>
                                                     </thead>
+                                                    <tbody>
                                                     <?php foreach ($candidateAcademicBackground as $item) { ?>
                                                         <tr class="temp-edu-record">
                                                             <td class="fit info-department">
@@ -298,27 +268,78 @@ function gradePipe($type)
                                         </div>
                                         <div class="panel panel-default panel-post">
                                             <div class="panel-heading">
+                                                سوابق شغلی
+                                            </div>
+                                            <div class="panel-body edu-info-container table-responsive">
+                                                <table class="table table-bordered table-condensed table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="fit info-department">عنوان دقیق شغلی</th>
+                                                        <th class="fit info-educationalAttainment">نام سازمان</th>
+                                                        <th class="fit info-science">ماه آغاز همکاری</th>
+                                                        <th class="fit info-studying">سال آغاز همکاری</th>
+                                                        <th class="fit info-universityLevelType">ماه پایان همکاری </th>
+                                                        <th class="fit info-universityName">سال پایان همکاری</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <?php foreach ($candidateJobHistory as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['CandidateJobTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php echo $item['CandidateJobCompanyTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['CandidateStartJobMonth']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php echo $item['CandidateStartJobYear']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityLevelType">
+                                                                <?php echo $item['CandidateEndJobMonth']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateEndJobYear']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default panel-post">
+                                            <div class="panel-heading">
                                                 تالیف کتاب
                                             </div>
                                             <div class="panel-body book-info-container table-responsive">
                                                 <table class="table table-bordered table-condensed table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th class="fit">ردیف</th>
-                                                        <th class="fit info-title">عنوان کتاب</th>
-                                                        <th class="fit info-publisher">ناشر</th>
-                                                        <th class="fit info-printYear">سال چاپ</th>
-                                                        <th class="fit info-printMonth">ماه چاپ</th>
+                                                        <th class="fit">عنوان کتاب</th>
+                                                        <th class="fit info-title">ناشر </th>
+                                                        <th class="fit info-publisher">ماه انتشار </th>
+                                                        <th class="fit info-printYear">سال انتشار</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="temp-book-record">
-                                                        <td class="fit row"></td>
-                                                        <td class="fit info-title"></td>
-                                                        <td class="fit info-publisher"></td>
-                                                        <td class="fit info-printYear"></td>
-                                                        <td class="fit info-printMonth"></td>
-                                                    </tr>
+                                                    <?php foreach ($candidateBooks as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['CandidateBookTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php echo $item['CandidateBookPublisher']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['CandidateBookPublishMonth']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php echo $item['CandidateBookPublishYear']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -331,21 +352,33 @@ function gradePipe($type)
                                                 <table class="table table-bordered table-condensed table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th class="fit">ردیف</th>
-                                                        <th class="fit info-title">عنوان مقاله</th>
-                                                        <th class="fit info-articleLevelType">سطح مقاله</th>
+                                                        <th class="fit">عنوان مقاله</th>
+                                                        <th class="fit info-title">سطح مقاله </th>
+                                                        <th class="fit info-articleLevelType">عنوان مجله </th>
                                                         <th class="fit info-printYear">سال نشر</th>
                                                         <th class="fit info-printMonth">ماه نشر</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="temp-article-record">
-                                                        <td class="fit row"></td>
-                                                        <td class="fit info-title"></td>
-                                                        <td class="fit info-articleLevelType"></td>
-                                                        <td class="fit info-printYear"></td>
-                                                        <td class="fit info-printMonth"></td>
-                                                    </tr>
+                                                    <?php foreach ($candidateArticles as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['CandidateArticleTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php echo $item['CandidateArticleLevel']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['CandidateArticleMagazineTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php echo $item['CandidateArticlePublishYear']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityLevelType">
+                                                                <?php echo $item['CandidateArticlePublishMonth']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -358,21 +391,29 @@ function gradePipe($type)
                                                 <table class="table table-bordered table-condensed table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th class="fit">ردیف</th>
-                                                        <th class="fit info-title">عنوان اختراع</th>
+                                                        <th class="fit">عنوان اختراع </th>
+                                                        <th class="fit info-title">حوزه ابداع</th>
                                                         <th class="fit info-registerNumber">شماره ثبت</th>
-                                                        <th class="fit info-domain">حوزه</th>
-                                                        <th class="fit info-description">توضیحات</th>
+                                                        <th class="fit info-description">شرح اختراع</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="temp-invention-record">
-                                                        <td class="fit row"></td>
-                                                        <th class="fit info-title"></th>
-                                                        <th class="fit info-registerNumber"></th>
-                                                        <th class="fit info-domain"></th>
-                                                        <th class="fit info-description"></th>
-                                                    </tr>
+                                                    <?php foreach ($candidateInvention as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['CandidateInventionTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php echo $item['CandidateInventionField']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['CandidateInventionRegisterNumber']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php echo $item['CandidateInventionDescription']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -385,7 +426,6 @@ function gradePipe($type)
                                                 <table class="table table-bordered table-condensed table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th class="fit">ردیف</th>
                                                         <th class="fit info-title">عنوان طراح</th>
                                                         <th class="fit info-responsibility">مسئولیت</th>
                                                         <th class="fit info-executive">مجری</th>
@@ -395,15 +435,29 @@ function gradePipe($type)
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="temp-research-record">
-                                                        <td class="fit row"></td>
-                                                        <th class="fit info-title"></th>
-                                                        <th class="fit info-responsibility"></th>
-                                                        <th class="fit info-executive"></th>
-                                                        <th class="fit info-employer"></th>
-                                                        <th class="fit info-yearDate"></th>
-                                                        <th class="fit info-monthDate"></th>
-                                                    </tr>
+
+                                                    <?php foreach ($candidateResearch as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['CandidateResearchTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php echo $item['CandidateResearchResponsibility']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['CandidateResearchWorker']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php echo $item['CandidateResearchEmployer']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityLevelType">
+                                                                <?php echo $item['CandidateResearchYear']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateResearchMonth']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -416,7 +470,6 @@ function gradePipe($type)
                                                 <table class="table table-bordered table-condensed table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th class="fit">ردیف</th>
                                                         <th class="fit info-title">عنوان همایش</th>
                                                         <th class="fit info-acceptanceOfferType">سطح</th>
                                                         <th class="fit info-conferenceLevelType">نوع پذیرش / ارائه</th>
@@ -425,14 +478,25 @@ function gradePipe($type)
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="temp-scientific-record">
-                                                        <td class="fit row"></td>
-                                                        <th class="fit info-title"></th>
-                                                        <th class="fit info-acceptanceOfferType"></th>
-                                                        <th class="fit info-conferenceLevelType"></th>
-                                                        <th class="fit info-yearDate"></th>
-                                                        <th class="fit info-monthDate"></th>
-                                                    </tr>
+                                                    <?php foreach ($candidateConference as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['CandidateConferenceTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php echo $item['CandidateConferenceLevel']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['CandidateConferenceAcceptType']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php echo $item['CandidateConferenceYear']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityLevelType">
+                                                                <?php echo $item['CandidateConferenceMonth']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -445,7 +509,6 @@ function gradePipe($type)
                                                 <table class="table table-bordered table-condensed table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th class="fit">ردیف</th>
                                                         <th class="fit info-title">عنوان</th>
                                                         <th class="fit info-publisher">ناشر</th>
                                                         <th class="fit info-translateType">نوع</th>
@@ -454,14 +517,25 @@ function gradePipe($type)
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="temp-translate-record">
-                                                        <td class="fit row"></td>
-                                                        <th class="fit info-title"></th>
-                                                        <th class="fit info-publisher"></th>
-                                                        <th class="fit info-translateType"></th>
-                                                        <th class="fit info-publishYear"></th>
-                                                        <th class="fit info-publishMonth"></th>
-                                                    </tr>
+                                                    <?php foreach ($candidateTranslation as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['CandidateTranslationType']; ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php echo $item['CandidateTranslationTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['CandidateTranslationPublisher']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php echo $item['CandidateTranslationYear']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityLevelType">
+                                                                <?php echo $item['CandidateTranslationMonth']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -500,30 +574,61 @@ function gradePipe($type)
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="temp-politic-record">
-                                                        <td class="fit row"></td>
-                                                        <td class="fit info-politicalType"></td>
-                                                        <td class="fit info-otherPoliticalType"></td>
-                                                        <td class="fit info-mediaName"></td>
-                                                        <td class="fit info-activityType"></td>
-                                                        <td class="fit info-beginMonth"></td>
-                                                        <td class="fit info-beginYear"></td>
-                                                        <td class="fit info-endMonth"></td>
-                                                        <td class="fit info-endYear"></td>
-                                                        <td class="fit info-yearCooperation"></td>
-                                                        <td class="fit info-responsibility"></td>
-                                                        <td class="fit info-membershipType"></td>
-                                                        <td class="fit info-electionType"></td>
-                                                        <td class="fit info-electionPeriodType"></td>
-                                                        <td class="fit info-parliamentPeriodType"></td>
-                                                        <td class="fit info-expertsParliamentPeriodType"></td>
-                                                        <td class="fit info-cityCouncilPeriodType"></td>
-                                                        <td class="fit info-supervisoryBoardType"></td>
-                                                        <td class="fit info-mediaFormat"></td>
-                                                        <td class="fit info-otherMediaFormat"></td>
-                                                        <td class="fit info-candidateName"></td>
-                                                        <td class="fit info-description"></td>
-                                                    </tr>
+                                                    <?php foreach ($politicBackground as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['CandidateActivityType']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['CandidateActivityTypeOtherOrganizationTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php echo $item['CandidateElectionType']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityLevelType">
+                                                                <?php echo $item['CandidateElectionPeriod']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateElectionListName']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateHeadquarterActivityTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateMediaType']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateMediaTypeTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateMediaTitle']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateMediaActivityType']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateResponsibility']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateMemberShip']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateMediaStartMonth']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateMediaStartYear']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateMediaEndMonth']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateMediaEndYear']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $item['CandidateActivityDescription']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -536,19 +641,25 @@ function gradePipe($type)
                                                 <table class="table table-bordered table-condensed table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th class="fit">ردیف</th>
                                                         <th class="fit info-politicalType">نام مهارت</th>
                                                         <th class="fit info-otherPoliticalType">سطح مهارت</th>
                                                         <th class="fit info-mediaName">نحوه یادگیری</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="temp-skill-record">
-                                                        <td class="fit row"></td>
-                                                        <td class="fit info-skillNameType"></td>
-                                                        <td class="fit info-skillLevel"></td>
-                                                        <td class="fit info-howLearn"></td>
-                                                    </tr>
+                                                    <?php foreach ($candidateSkills as $item) { ?>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php echo $item['SkillType']; ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php echo $item['SkillLevel']; ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $item['SkillLearnType']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>

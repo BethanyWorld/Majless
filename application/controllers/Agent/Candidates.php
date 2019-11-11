@@ -9,7 +9,7 @@ class Candidates extends CI_Controller{
     }
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'قهرست نامزد های انتخاباتی استان';
+        $data['pageTitle'] = 'فهرست نامزد های انتخاباتی استان';
         $this->load->view('agent_panel/static/header', $data);
         $this->load->view('agent_panel/candidates/home/index', $data);
         $this->load->view('agent_panel/candidates/home/index_css');

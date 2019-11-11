@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Candidate extends CI_Controller
-{
+class Candidate extends CI_Controller{
     public function __construct(){
         parent::__construct();
         $this->load->helper('admin/admin_login');
@@ -10,7 +8,6 @@ class Candidate extends CI_Controller
         $this->load->model('ui/ModelCountry');
         $this->load->model('ui/ModelProfile');
     }
-
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نامزد های انتخاباتی';
@@ -31,8 +28,7 @@ class Candidate extends CI_Controller
         echo json_encode($data);
     }
 
-    public function edit($candidateId)
-    {
+    public function edit($candidateId){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = 'ویرایش نامزد انتخاباتی';
@@ -41,6 +37,17 @@ class Candidate extends CI_Controller
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
         $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
         $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
+        $data['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($candidateId);
+        $data['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($candidateId);
+
+        $data['candidateBooks'] = $this->ModelProfile->getCandidateBooksByCandidateId($candidateId);
+        $data['candidateArticles'] = $this->ModelProfile->getCandidateArticlesByCandidateId($candidateId);
+        $data['candidateResearch'] = $this->ModelProfile->getCandidateResearchByCandidateId($candidateId);
+        $data['candidateTranslation'] = $this->ModelProfile->getCandidateTranslationByCandidateId($candidateId);
+        $data['candidateInvention'] = $this->ModelProfile->getCandidateInventionByCandidateId($candidateId);
+        $data['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($candidateId);
+        $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
+        $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
 
         $data['api'] = $this->config->item('api');
         $this->load->view('admin_panel/static/header', $data);
@@ -172,7 +179,6 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doRejectEvaluationExam($inputs);
         echo json_encode($result);
     }
-
     protected function getCandidateStatus($candidateId){
         return $this->ModelCandidate->getCandidateByCandidateId($candidateId);
     }
@@ -186,7 +192,6 @@ class Candidate extends CI_Controller
         $data['evalExams'] = array_reverse($data['evalExams']);
         return $data;
     }
-
     public function importScores()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -250,7 +255,6 @@ class Candidate extends CI_Controller
         <?php } ?>
         <?php
     }
-
     public function doImportScores()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -258,6 +262,4 @@ class Candidate extends CI_Controller
         echo json_encode($result);
 
     }
-
-
 }

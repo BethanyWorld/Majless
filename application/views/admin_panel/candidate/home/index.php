@@ -28,7 +28,7 @@
                                    name="inputCandidateNationalCode"
                                    style="width: 100px;"
                                    id="inputCandidateNationalCode"/>
-                            <label for="inputCandidateFullName">نام و نام خانوادگی:</label>
+                            <label for="inputCandidateFullName">نام یا نام خانوادگی:</label>
                             <input type="text"
                                    style="width: 100px;"
                                    name="inputCandidateFullName"

@@ -37,11 +37,13 @@
                                             <select class="form-control"
                                                     name="inputExamType" id="inputExamType">
                                                 <option value="">-- انتخاب کنید --</option>
-                                                <?php foreach ($examType as $key => $value) { ?>
+                                                <?php foreach ($examType as $key => $value) {
+                                                    if($key == 'Evaluation'){
+                                                    ?>
                                                     <option value="<?php echo $key; ?>">
                                                         <?php echo $value; ?>
                                                     </option>
-                                                <?php } ?>
+                                                <?php  } } ?>
                                             </select>
                                         </div>
                                     </div>
