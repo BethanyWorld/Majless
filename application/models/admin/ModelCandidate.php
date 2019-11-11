@@ -184,7 +184,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
         /* Check User Age */
-        $candidateAge = (date('Y') - date('Y',strtotime($personalInfo['CandidateBirthDate']))) - 621;
+        $candidateAge = (date('Y') - date('Y',strtotime($personalInfo['CandidateBirthDate'])));
         if($candidateAge <=29 || $candidateAge >= 71){
             $arr = array(
                 'content' => 'User Invalid Age',
