@@ -136,7 +136,7 @@
                 var today = new Date();
                 var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
                 $candidateage = (age - 620);
-                if ($candidateage <= 30 || $candidateage >= 75) {
+                if ($candidateage < 30 || $candidateage > 75) {
                     $('#DateChecked').show();
 
                 } else {
