@@ -1,5 +1,7 @@
 <?php
-class ModelCandidate extends CI_Model{
+
+class ModelCandidate extends CI_Model
+{
     public function getCandidate($inputs)
     {
         $limit = $inputs['pageIndex'];
@@ -41,6 +43,7 @@ class ModelCandidate extends CI_Model{
         }
         return $result;
     }
+
     public function getCandidateRolesByCandidateId($candidateId)
     {
         $this->db->select('*');
@@ -48,6 +51,7 @@ class ModelCandidate extends CI_Model{
         $this->db->where(array('CandidateId' => $candidateId));
         return $this->db->get()->result_array();
     }
+
     public function getCandidateByCandidateId($candidateId)
     {
         $this->db->select('*');
@@ -72,6 +76,7 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
     public function getCandidateByCandidateNationalCode($CandidateNationalCode)
     {
         /*$this->db->select('*');
@@ -79,7 +84,7 @@ class ModelCandidate extends CI_Model{
         $this->db->join('state', 'candidate.CandidateStateId = state.StateId');
         $this->db->join('city', 'candidate.CandidateCityId = city.CityId');
         $this->db->where('CandidateNationalCode' , $CandidateNationalCode);*/
-        $query = $this->db->query('SELECT * FROM candidate WHERE CandidateNationalCode = ?',array($CandidateNationalCode));
+        $query = $this->db->query('SELECT * FROM candidate WHERE CandidateNationalCode = ?', array($CandidateNationalCode));
 
         if ($query->num_rows() > 0) {
             $result = $query->result_array()[0];
@@ -93,7 +98,9 @@ class ModelCandidate extends CI_Model{
         $arr = array();
         return $arr;
     }
-    public function doImportScores($inputs){
+
+    public function doImportScores($inputs)
+    {
         $this->db->trans_start();
         foreach ($inputs['inputCandidateScores'] as $input) {
             $UserArray = array(
@@ -121,7 +128,9 @@ class ModelCandidate extends CI_Model{
 
 
     }
-    public function getResumeStatus($inputs){
+
+    public function getResumeStatus($inputs)
+    {
         $isComplete = "";
         $isAccepted = "";
         ///////////////////////////////////////////////////////////////////
@@ -145,8 +154,8 @@ class ModelCandidate extends CI_Model{
         //////////////////////////////////////////////////////////////////
 
         //military is not implemented yet
-        if($personalInfo['CandidateGender'] == 'Male'){
-            if(empty($personalInfo) || empty($academicInfo) || empty($militaryInfo)){
+        if ($personalInfo['CandidateGender'] == 'Male') {
+            if (empty($personalInfo) || empty($academicInfo) || empty($militaryInfo)) {
                 $arr = array(
                     'content' => 'Complement Issues',
                     'hasConditions' => false,
@@ -154,9 +163,8 @@ class ModelCandidate extends CI_Model{
                 );
                 return $arr;
             }
-        }
-        else{
-            if(empty($personalInfo) || empty($academicInfo)){
+        } else {
+            if (empty($personalInfo) || empty($academicInfo)) {
                 $arr = array(
                     'content' => 'Complement Issues',
                     'hasConditions' => false,
@@ -168,7 +176,7 @@ class ModelCandidate extends CI_Model{
 
 
         /* Check User Required Values */
-        if(
+        if (
             empty($personalInfo['CandidateBirthDate']) ||
             empty($personalInfo['CandidateReligion']) ||
             empty($personalInfo['CandidateBornStateId']) || empty($personalInfo['CandidateBornCityId']) ||
@@ -176,7 +184,7 @@ class ModelCandidate extends CI_Model{
             empty($personalInfo['CandidateMotherBornStateId']) || empty($personalInfo['CandidateMotherBornCityId']) ||
             empty($personalInfo['CandidateAddressStateId']) || empty($personalInfo['CandidateAddressCityId']) ||
             empty($personalInfo['CandidateStateId']) || empty($personalInfo['CandidateCityId'])
-        ){
+        ) {
             $arr = array(
                 'hasConditions' => false,
                 'isCompleted' => false
@@ -184,8 +192,17 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
         /* Check User Age */
-        $candidateAge = (date('Y') - date('Y',strtotime($personalInfo['CandidateBirthDate'])));
-        if($candidateAge <=29 || $candidateAge >= 71){
+        $date = $personalInfo['CandidateBirthDate'];
+
+        list($year, $month, $day) = explode("/", $date);
+        $year_diff = jDateTime::date("Y", false, false, true, 'Asia/Tehran') - $year;
+        $month_diff = jDateTime::date("m", false, false, true, 'Asia/Tehran') - $month;
+        $day_diff = jDateTime::date("d", false, false, true, 'Asia/Tehran') - $day;
+        if ($day_diff < 0 || $month_diff < 0){
+            $year_diff  = $year_diff -1;
+        }
+        $candidateAge = $year_diff;
+        if ($candidateAge <= 29 || $candidateAge >= 76) {
             $arr = array(
                 'content' => 'User Invalid Age',
                 'hasConditions' => false,
@@ -194,13 +211,12 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
         /* Check User Constituency State */
-        if(
+        if (
             $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateBornStateId'] &&
             $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateFatherBornStateId'] &&
             $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateMotherBornStateId'] &&
             $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateAddressStateId']
-        )
-        {
+        ) {
             $arr = array(
                 'content' => 'User Invalid Constituency State',
                 'hasConditions' => false,
@@ -209,13 +225,12 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
         /* Check User Constituency City */
-        if(
+        if (
             $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateBornCityId'] &&
             $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateFatherBornCityId'] &&
             $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateMotherBornCityId'] &&
             $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateAddressCityId']
-        )
-        {
+        ) {
             $arr = array(
                 'content' => 'User Invalid Constituency City',
                 'hasConditions' => false,
@@ -225,8 +240,7 @@ class ModelCandidate extends CI_Model{
         }
         /* Check User Religion */
 
-        if($personalInfo['CandidateReligion'] !== 'IslamShia' && $personalInfo['CandidateReligion'] !== 'IslamSoni')
-        {
+        if ($personalInfo['CandidateReligion'] !== 'IslamShia' && $personalInfo['CandidateReligion'] !== 'IslamSoni') {
             $arr = array(
                 'content' => 'User Invalid Religion',
                 'hasConditions' => false,
@@ -237,18 +251,18 @@ class ModelCandidate extends CI_Model{
         /* Check User Academic */
         $hasAcademicCondition = false;
         foreach ($academicInfo as $item) {
-            if(
+            if (
                 $item['CandidateGrade'] == 'KarshenasiArshad' ||
                 $item['CandidateGrade'] == 'DoctoryHerfei' ||
                 $item['CandidateGrade'] == 'DoctoryTakhasosi' ||
                 $item['CandidateGrade'] == 'FogDoctory' ||
                 $item['CandidateGrade'] == 'Hozeh3' ||
-                $item['CandidateGrade'] == 'Hozeh4' ){
+                $item['CandidateGrade'] == 'Hozeh4') {
                 global $hasAcademicCondition;
                 $hasAcademicCondition = true;
             }
         }
-        if(!$hasAcademicCondition){
+        if (!$hasAcademicCondition) {
             $arr = array(
                 'content' => 'User Invalid Grade',
                 'hasConditions' => false,
@@ -266,6 +280,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     /* For Candidate News */
     public function getCandidateCandidatePostByCandidateId($candidateId)
     {
@@ -284,6 +299,7 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
     /* End For Candidate News  */
     public function getCandidateByStateId($stateId)
     {
@@ -299,6 +315,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateByStateIdAndCityId($stateId, $cityId)
     {
         $this->db->select('*');
@@ -313,6 +330,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateByStateName($stateName)
     {
         $this->db->select('*');
@@ -326,6 +344,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidatesByElectionId($electionId)
     {
         $this->db->select('*');
@@ -339,12 +358,13 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     /* Candidate Panel */
     public function candidateHasOtherConditionToContinue($inputs)
     {
         if ($inputs['inputCandidateContinueCondition'] != 'CandidateHasNotContinueCondition'
             &&
-            $inputs['inputCandidateContinueCondition'] != 'CandidateHasContinueCondition'){
+            $inputs['inputCandidateContinueCondition'] != 'CandidateHasContinueCondition') {
             $result = array(
                 'type' => "warning",
                 'content' => "دسترسی لازم را ندارید",
@@ -368,8 +388,7 @@ class ModelCandidate extends CI_Model{
                 'success' => false
             );
             return $arr;
-        }
-        else {
+        } else {
             $this->db->select('*');
             $this->db->from('candidate');
             $this->db->where(array(
@@ -391,6 +410,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateFirstStepExamByCandidateId($id)
     {
         $this->db->select('*');
@@ -410,6 +430,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateSecondStepExamByCandidateId($id)
     {
         $this->db->select('*');
@@ -429,6 +450,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateEvaluationExamByCandidateId($id)
     {
         $this->db->select('*');
@@ -448,6 +470,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function doMarkCandidate($inputs)
     {
         $UserArray = array(
@@ -476,6 +499,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doUpdateMarkCandidate($inputs)
     {
         $UserArray = array(
@@ -503,6 +527,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function candidateReserveExam($inputs)
     {
         $candidateId = $this->session->userdata('UserLoginInfo')['CandidateId'];
@@ -510,7 +535,7 @@ class ModelCandidate extends CI_Model{
 
         $this->db->select('*');
         $this->db->from('exam');
-        $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
+        $this->db->join('exam_places', 'exam.ExamPlaceId = exam_places.ExamPlaceId');
         $this->db->where('ExamId', $inputs['inputExamId']);
         $examInfo = $this->db->get()->result_array()[0];
         if ($examInfo['ExamCapacity'] <= 0) {
@@ -566,7 +591,7 @@ class ModelCandidate extends CI_Model{
         } else {
             $messageBody = "";
             $examTypePersian = "";
-            switch ($examInfo['ExamType']){
+            switch ($examInfo['ExamType']) {
                 case 'FirstStep':
                     $examTypePersian = "مرحله اول";
                     break;
@@ -577,19 +602,19 @@ class ModelCandidate extends CI_Model{
                     $examTypePersian = "آزمون کانون ارزیابی";
                     break;
             }
-            $messageBody .= "کاربر گرامی زمان و مکان ".$examTypePersian." به شرح زیر می باشد.";
+            $messageBody .= "کاربر گرامی زمان و مکان " . $examTypePersian . " به شرح زیر می باشد.";
             $messageBody .= "\r\n";
             $messageBody .= "آدرس محل آزمون:";
             $messageBody .= "\r\n";
-            $messageBody .=  $examInfo['ExamPlaceAddress'];
+            $messageBody .= $examInfo['ExamPlaceAddress'];
             $messageBody .= "\r\n";
             $messageBody .= "تاریخ برگزاری آزمون:";
             $messageBody .= "\r\n";
-            $messageBody .=  $examInfo['ExamDate'];
+            $messageBody .= $examInfo['ExamDate'];
             $messageBody .= "\r\n";
             $messageBody .= "ساعت:";
             $messageBody .= "\r\n";
-            $messageBody .=  $examInfo['ExamTime'];
+            $messageBody .= $examInfo['ExamTime'];
             $arr = array(
                 'type' => "green",
                 'content' => "رزرو آزمون با موفقیت انجام شد",
@@ -600,6 +625,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function doAcceptCandidateFirstExam($inputs)
     {
         $candidateInfo = $this->getCandidateByCandidateId($inputs['inputCandidateId']);
@@ -618,7 +644,7 @@ class ModelCandidate extends CI_Model{
         $this->db->update('candidate_exam_request', $UserArray);
 
         $this->db->where('CandidateId', $inputs['inputCandidateId']);
-        $this->db->update('candidate', array( 'CandidateStatus' => 'CandidateExamFirstStep'));
+        $this->db->update('candidate', array('CandidateStatus' => 'CandidateExamFirstStep'));
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
             $arr = array(
@@ -640,6 +666,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doRejectCandidateFirstExam($inputs)
     {
         $UserArray = array(
@@ -667,6 +694,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doAcceptCandidateSecondExam($inputs)
     {
         $userStatusArray = array(
@@ -709,6 +737,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doRejectCandidateSecondExam($inputs)
     {
         $UserArray = array(
@@ -736,6 +765,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doAcceptEvaluationExam($inputs)
     {
         $userStatusArray = array(
@@ -778,6 +808,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doRejectEvaluationExam($inputs)
     {
         $UserArray = array(
@@ -804,4 +835,5 @@ class ModelCandidate extends CI_Model{
         }
     }
 }
+
 ?>
