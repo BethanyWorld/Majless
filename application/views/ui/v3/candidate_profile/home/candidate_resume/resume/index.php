@@ -99,7 +99,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                        placeholder="1357/12/22">
 
                                                 <label class="text-danger" id="DateChecked">
-                                                    حداقل سن مجاز 30 سال تا 75 سال میباشد
+                                                    حداقل سن مجاز 30 سال حداکثر سن مجاز 75 سال میباشد
                                                 </label>
                                             </div>
 
@@ -556,7 +556,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label class="label label-danger" id="cs">
+                                                <label class="label label-danger hidden" id="cs">
                                                     برای نامزدی در انتخابات باید محل تولد خود یا یکی از والدین یا محل
                                                     سکونت شما در محدوده حوزه انتخابیه تعیین شده باشد.
                                                 </label>

@@ -36,7 +36,7 @@
                         $citySelect.append(selectInnerHtml);
 
                     });
-                    $citySelect.find('option').eq(0).attr('selected','selected');
+                    $citySelect.find('option').eq(0).attr('selected', 'selected');
                     checkCandidateStateAndCity();
                 },
                 error: function (data) {
@@ -115,31 +115,37 @@
 
         function checkedCandidate() {
 
-            /*checked date*/
-            $inputCandidateBirthDate = $.trim($("#inputCandidateBirthDate").val());
-            dob = new Date($inputCandidateBirthDate);
-            var today = new Date();
-            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            $candidateage = (age - 621) ;
-            console.log($candidateage);
-            if($candidateage <=30 || $candidateage >=75){
-                $('#DateChecked').show();
-            }
-            else{
-                $('#DateChecked').hide();
-            }
-            /*checked date*/
-
             $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
             if ($inputParliamentaryCandidate) {
+
                 /* relegion Check */
                 $inputCandidateReligion = $('#inputCandidateReligion').val();
                 if ("IslamShia" != $inputCandidateReligion && "IslamSoni" != $inputCandidateReligion) {
                     $("#ReligionNotify").removeClass('hidden');
+
                 } else {
-                    $("#ReligionNotify").removeClass('hidden');
+                    $("#ReligionNotify").addClass('hidden');
+
                 }
                 /* End relegion check*/
+
+
+                /*checked date*/
+                $inputCandidateBirthDate = $.trim($("#inputCandidateBirthDate").val());
+                dob = new Date($inputCandidateBirthDate);
+                var today = new Date();
+                var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
+                $candidateage = (age - 621);
+                if ($candidateage <= 30 || $candidateage >= 75) {
+                    debugger;
+                    $('#DateChecked').show();
+
+                } else {
+                    debugger;
+                    $('#DateChecked').hide();
+                }
+                /*checked date*/
+
                 /**/
                 $cs = $("#cs");
                 $inputCandidateConstituencyStateId = $("#inputCandidateConstituencyStateId").val();
@@ -154,29 +160,30 @@
                 $inputCandidateAddressCityId = $("#inputCandidateAddressCityId").val();
 
                 if (
-                    $inputCandidateConstituencyStateId != $inputCandidateBornStateId ||
-                    $inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId ||
-                    $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId ||
-                    $inputCandidateConstituencyStateId != $inputCandidateAddressStateId
-                ) {
+                    $inputCandidateConstituencyStateId != $inputCandidateBornStateId &&
+                    $inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId &&
+                    $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId &&
+                    $inputCandidateConstituencyStateId != $inputCandidateAddressStateId) {
                     $cs.removeClass('hidden');
                     return;
                 }
                 if (
-                    $inputCandidateConstituencyCityId != $inputCandidateBornCityId ||
-                    $inputCandidateConstituencyCityId != $inputCandidateFatherBornCityId ||
-                    $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId ||
-                    $inputCandidateConstituencyCityId != $inputCandidateAddressCityId
-                ) {
+                    $inputCandidateConstituencyCityId != $inputCandidateBornCityId &&
+                    $inputCandidateConstituencyCityId != $inputCandidateFatherBornCityId &&
+                    $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId &&
+                    $inputCandidateConstituencyCityId != $inputCandidateAddressCityId) {
                     $cs.removeClass('hidden');
                     return;
                 }
+
                 $cs.addClass('hidden');
                 /**/
             } else {
                 $(".invaliderror").addClass('hidden');
                 $("#ReligionNotify").addClass('hidden');
+                $('#DateChecked').hide();
                 $("#cs").addClass('hidden');
+
             }
         }
 
@@ -217,49 +224,87 @@
             $inputCandidatePhone = $.trim($("#inputCandidatePhone").val());
             $inputCandidateConstituencyStateId = $.trim($("#inputCandidateConstituencyStateId").val());
             $inputCandidateConstituencyCityId = $.trim($("#inputCandidateConstituencyCityId").val());
-            $sendData = {
-                inputCandidateProfileImage: $inputCandidateProfileImage,
-                inputCandidateFirstName: $inputCandidateFirstName,
-                inputCandidateLastName: $inputCandidateLastName,
-                inputCandidateNationalCode: $inputCandidateNationalCode,
-                inputCandidateFatherName: $inputCandidateFatherName,
-                inputCandidateBirthDate: $inputCandidateBirthDate,
-                inputCandidateGender: $inputCandidateGender,
-                inputCandidateMaritalStatus: $inputCandidateMaritalStatus,
-                inputCandidateReligion: $inputCandidateReligion,
-                inputCandidateBornStateId: $inputCandidateBornStateId,
-                inputCandidateBornCityId: $inputCandidateBornCityId,
-                inputCandidateFatherBornStateId: $inputCandidateFatherBornStateId,
-                inputCandidateFatherBornCityId: $inputCandidateFatherBornCityId,
-                inputCandidateMotherBornStateId: $inputCandidateMotherBornStateId,
-                inputCandidateMotherBornCityId: $inputCandidateMotherBornCityId,
-                inputCandidateAddressStateId: $inputCandidateAddressStateId,
-                inputCandidateAddressCityId: $inputCandidateAddressCityId,
-                inputCandidateAddressPart: $inputCandidateAddressPart,
-                inputCandidateAddressCityPart: $inputCandidateAddressCityPart,
-                inputCandidateAddressVillage: $inputCandidateAddressVillage,
-                inputCandidateAddressVillagePart: $inputCandidateAddressVillagePart,
-                inputCandidateAddress: $inputCandidateAddress,
-                inputCandidateLandLinePhone: $inputCandidateLandLinePhone,
-                inputCandidatePhone: $inputCandidatePhone,
-                inputCandidateConstituencyStateId: $inputCandidateConstituencyStateId,
-                inputCandidateConstituencyCityId: $inputCandidateConstituencyCityId,
-                inputCandidateRoles: $inputCandidateRoles
-            }
-            toggleLoader();
-            $.ajax({
-                type: 'post',
-                url: base_url + 'Profile/candidateUpdatePersonalInfo',
-                data: $sendData,
-                success: function (data) {
-                    toggleLoader();
-                    $result = JSON.parse(data);
-                    notify($result['content'], $result['type']);
-                    if (param.data.redirect) {
-                        window.location.href = base_url + 'Profile/academicBackground';
-                    }
+
+            $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
+            $inputParliamentaryElectionBank = $('#inputParliamentaryElectionBank').is(":checked");
+            $inputSponsorColleague = $('#inputSponsorColleague').is(":checked");
+            if ($inputCandidateFirstName == "" ||
+                $inputCandidateLastName == "" ||
+                $inputCandidateNationalCode == "" ||
+                $inputCandidateFatherName == "" ||
+                $inputCandidateBirthDate == "" ||
+                $inputCandidateGender == "" ||
+                $inputCandidateMaritalStatus == "" ||
+
+                $inputParliamentaryCandidate == false &&
+                $inputParliamentaryElectionBank == false &&
+                $inputSponsorColleague == false ||
+
+                $inputCandidateReligion == "" ||
+                $inputCandidateBornStateId == "" ||
+                $inputCandidateBornCityId == "" ||
+
+                $inputCandidateFatherBornStateId == "" ||
+                $inputCandidateFatherBornCityId == "" ||
+                $inputCandidateMotherBornStateId == "" ||
+
+                $inputCandidateMotherBornCityId == "" ||
+                $inputCandidateAddressStateId == "" ||
+                $inputCandidateAddressCityId == "" ||
+                $inputCandidateAddressPart == "" ||
+                $inputCandidateAddressCityPart == "" ||
+                $inputCandidateAddress == "" ||
+                $inputCandidateLandLinePhone == "" ||
+                $inputCandidatePhone == "" ||
+                $inputCandidateConstituencyStateId == "" ||
+                $inputCandidateConstituencyCityId == "") {
+                notify("لطفا تمامی موارد را کامل کنید", "red");
+            } else {
+                $sendData = {
+                    inputCandidateProfileImage: $inputCandidateProfileImage,
+                    inputCandidateFirstName: $inputCandidateFirstName,
+                    inputCandidateLastName: $inputCandidateLastName,
+                    inputCandidateNationalCode: $inputCandidateNationalCode,
+                    inputCandidateFatherName: $inputCandidateFatherName,
+                    inputCandidateBirthDate: $inputCandidateBirthDate,
+                    inputCandidateGender: $inputCandidateGender,
+                    inputCandidateMaritalStatus: $inputCandidateMaritalStatus,
+                    inputCandidateReligion: $inputCandidateReligion,
+                    inputCandidateBornStateId: $inputCandidateBornStateId,
+                    inputCandidateBornCityId: $inputCandidateBornCityId,
+                    inputCandidateFatherBornStateId: $inputCandidateFatherBornStateId,
+                    inputCandidateFatherBornCityId: $inputCandidateFatherBornCityId,
+                    inputCandidateMotherBornStateId: $inputCandidateMotherBornStateId,
+                    inputCandidateMotherBornCityId: $inputCandidateMotherBornCityId,
+                    inputCandidateAddressStateId: $inputCandidateAddressStateId,
+                    inputCandidateAddressCityId: $inputCandidateAddressCityId,
+                    inputCandidateAddressPart: $inputCandidateAddressPart,
+                    inputCandidateAddressCityPart: $inputCandidateAddressCityPart,
+                    inputCandidateAddressVillage: $inputCandidateAddressVillage,
+                    inputCandidateAddressVillagePart: $inputCandidateAddressVillagePart,
+                    inputCandidateAddress: $inputCandidateAddress,
+                    inputCandidateLandLinePhone: $inputCandidateLandLinePhone,
+                    inputCandidatePhone: $inputCandidatePhone,
+                    inputCandidateConstituencyStateId: $inputCandidateConstituencyStateId,
+                    inputCandidateConstituencyCityId: $inputCandidateConstituencyCityId,
+                    inputCandidateRoles: $inputCandidateRoles
                 }
-            });
+                toggleLoader();
+                $.ajax({
+                    type: 'post',
+                    url: base_url + 'Profile/candidateUpdatePersonalInfo',
+                    data: $sendData,
+                    success: function (data) {
+                        toggleLoader();
+                        $result = JSON.parse(data);
+                        notify($result['content'], $result['type']);
+                        if (param.data.redirect) {
+                            window.location.href = base_url + 'Profile/academicBackground';
+                        }
+                    }
+                });
+            }
+
         }
 
         $('[data-mask]').each(function () {

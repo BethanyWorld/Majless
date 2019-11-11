@@ -9,6 +9,29 @@
             $inputContent = $.trim($("#inputContent").val());
             $inputCaptcha = $.trim($("#inputCaptcha").val());
             $inputCSRF = $.trim($("#inputCSRF").val());
+
+            if(!isText($inputFullName)){
+                notify("نام و نام خانوادگی نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+
+            if(!isContactTitle($inputTitle)){
+                notify("تعداد کاراکتر های عنوان نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+            if(!isCaptcha($inputCaptcha)) {
+                notify("کد امنیتی نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+            if(!isContactContent($inputContent)) {
+                notify("تعداد کارکتر های پیام نا معتبر است", "red");
+                toggleLoader();
+                return;
+            }
+
             if ($inputFullName == "" || $inputTitle == "" || $inputSubject == "" || $inputContent == "" || $inputCaptcha == "") {
                 notify("لطفا تمامی موارد را کامل کنید", "red");
                 toggleLoader();

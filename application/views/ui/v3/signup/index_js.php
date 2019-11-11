@@ -62,11 +62,52 @@
                 return;
             }
 
+            if(!is_valid_length_phone($inputSignUpPhone , 11)){
+                notify("تعداد کاراکتر تلفن همراه نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+
             if(!isValidNationalCode($inputSignUpNationalCode)){
                 notify("کد ملی نامعتبر است", "red");
                 toggleLoader();
                 return;
             }
+
+
+            /*Start Validation ------------------------------*/
+            if(!is_valid_length($inputSignUpFirstName , 80)){
+                notify("تعداد کاراکتر نام نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+
+            if(!isText($inputSignUpFirstName)){
+                notify("نام نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+            if(!isText($inputSignUpLastName)){
+                notify("نام خانوادگی نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+            if(!isValueInteger($inputConstituencyProvince)) {
+                notify("استان نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+            if(!isCaptcha($inputCaptcha)) {
+                notify("کد امنیتی نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+           // $inputSignUpFirstName = strip_tags($inputSignUpFirstName);
+
+            /* End Validation --------------------------------*/
+
+
+
 
 
             if ($inputSignUpType.length == 0 ||

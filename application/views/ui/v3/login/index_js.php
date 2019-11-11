@@ -21,6 +21,29 @@
             $inputCaptcha = toEnglishDigits($inputCaptcha);
 
 
+
+            if(!isPhone($inputPhone)){
+                notify("تلفن نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+            if(!is_valid_length_phone($inputPhone , 11)){
+                notify("تعداد کاراکتر تلفن همراه نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+            if(!isCaptcha($inputCaptcha)) {
+                notify("کد امنیتی نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+
+            if(!isPassword($inputPassword)) {
+                notify("تعداد اعداد رمز عبور نامعتبر است", "red");
+                toggleLoader();
+                return;
+            }
+
             if ($inputPhone == "" || $inputCaptcha == "" || $inputPassword == "") {
                 notify("لطفا تمامی موارد را کامل کنید", "red");
                 toggleLoader();

@@ -18,8 +18,8 @@ $_DIR = base_url('assets/ui/v3/');
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                        <h3>مهارت ها</h3>
-                                        <hr>
+<!--                                        <h3>مهارت ها</h3>-->
+<!--                                        <hr>-->
                                         <form id="form">
                                             <span class="skill-divider"></span>
                                             <?php foreach ($userInfo['candidateSkills'] as $item) { ?>
