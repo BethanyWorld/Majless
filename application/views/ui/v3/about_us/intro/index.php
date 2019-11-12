@@ -104,8 +104,7 @@
 
 
         <h4 class="col-xs-12 text-justify blockquote-reverse text-primary" style="text-align: center;">
-            اعضای جنبش:
-            جوانان فعال و مطالبه گر ایران
+           اعضای جنبش ازما
         </h4>
 
 
