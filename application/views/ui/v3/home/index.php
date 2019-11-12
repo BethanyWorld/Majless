@@ -1,6 +1,12 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <!-- #masthead -->
 <div id="main" class="site-main nopadding">
+    <a href="#hp-latest-news-1">
+        <div class="alert alert-danger" style="margin: 0;text-align: center;background: #d10b20;color: #fff;border: 0;font-size: 18px;">
+            همایش 25 آبان ماه 1398 - این خانه ازما ست
+        </div>
+    </a>
+
     <div class="fw-page-builder-content">
         <!-- Edited Slider-->
         <section id="section-5d7930f11ff35"
@@ -164,7 +170,7 @@
             </div>
         </section>
         <!-- Banner -->
-        <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow" >
+        <section id="hp-latest-news-1" class="campaign_section nopadding hp-title-sections tbWow" >
             <div class="container" style=' padding-top: 60px; padding-bottom: 60px; '>
                 <div class="row">
                     <div class="fw-row absolutecenter-stretch">
