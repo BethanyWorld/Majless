@@ -33,7 +33,6 @@
             sum %= 11;
             return (sum < 2 && check == sum) || (sum >= 2 && check + sum == 11);
         }
-
         $("#submitSignUpForm").click(function () {
             toggleLoader();
             $inputSignUpFirstName = $.trim($("#inputSignUpFirstName").val());

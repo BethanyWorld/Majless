@@ -1,6 +1,5 @@
 <script type="text/javascript">
     $(document).ready(function () {
-
         $(document).on('click', '[name="inputCandidateMilitaryStatus"]', function () {
             //$inputCandidateMilitaryStatus = $(this).val();
             $inputCandidateMilitaryStatus = $('input[name=inputCandidateMilitaryStatus]:checked').val();
@@ -50,42 +49,40 @@
             }
         });
 
-
-
         $form = $("#unique-form").clone().removeClass('hidden').attr('id', UUID());
         $form.find('[data-name]').each(function () {
             $(this).attr('name', $(this).data('name'))
         });
         $(".skill-divider").after($form);
 
-
         $("#form-military [name='inputCandidateMilitaryStatus']:checked").click();
         $("#form-military [name='inputCandidateExemptTitle']:checked").click();
         $("#form-military [name='inputCandidateMilitaryEndArea']:checked").click();
 
-
         $("#updateMilitaryStatus").click({redirect: false}, updateMilitaryStatus);
         $("#updateMilitaryStatusAndRedirect").click({redirect: true}, updateMilitaryStatus);
-        function updateMilitaryStatus(param) {
-            // if ($("#form-military").serializeArray().length <= 0) {
-            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            // }
 
-                $sendData = {inputCandidateMilitary: $("#form-military").serializeArray()}
-                toggleLoader();
-                $.ajax({
-                    type: 'post',
-                    url: base_url + 'Profile/candidateUpdateMilitaryStatus',
-                    data: $sendData,
-                    success: function (data) {
-                        toggleLoader();
-                        $result = JSON.parse(data);
-                        notify($result['content'], $result['type']);
-                        if (param.data.redirect) {
-                            window.location.href = base_url + 'Profile/jobHistory';
-                        }
+        function updateMilitaryStatus(param) {
+            $data = $("#form-military").serializeArray();
+            if($data[1]['name'] != 'inputCandidateExemptTitle'){
+                $data.splice(1, 0, {name: "inputCandidateExemptTitle", value: ""});
+            }
+
+            $sendData = { inputCandidateMilitary: $data }
+            toggleLoader();
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Profile/candidateUpdateMilitaryStatus',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = JSON.parse(data);
+                    notify($result['content'], $result['type']);
+                    if (param.data.redirect) {
+                        window.location.href = base_url + 'Profile/jobHistory';
                     }
-                });
+                }
+            });
         }
 
 

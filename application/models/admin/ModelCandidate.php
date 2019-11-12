@@ -154,10 +154,11 @@ class ModelCandidate extends CI_Model
         //////////////////////////////////////////////////////////////////
 
         //military is not implemented yet
-        if ($personalInfo['CandidateGender'] == 'Male') {
+        if ($personalInfo['CandidateGender'] == 'Male' || $personalInfo['CandidateGender'] == NULL) {
             if (empty($personalInfo) || empty($academicInfo) || empty($militaryInfo)) {
                 $arr = array(
                     'content' => 'Complement Issues',
+                    'message' => 'حداقل موارد لازم برای تکمیل رزومه اطلاعات فردی، سوابق تحصیلی و اطلاعات نطام وظیفه می باشد.لطفا روزمه خود را تکمیل کنید',
                     'hasConditions' => false,
                     'isCompleted' => false
                 );
@@ -167,6 +168,7 @@ class ModelCandidate extends CI_Model
             if (empty($personalInfo) || empty($academicInfo)) {
                 $arr = array(
                     'content' => 'Complement Issues',
+                    'message' => 'حداقل موارد لازم برای تکمیل رزومه اطلاعات فردی، سوابق تحصیلی می باشد.لطفا روزمه خود را تکمیل کنید',
                     'hasConditions' => false,
                     'isCompleted' => false
                 );
@@ -186,7 +188,9 @@ class ModelCandidate extends CI_Model
             empty($personalInfo['CandidateStateId']) || empty($personalInfo['CandidateCityId'])
         ) {
             $arr = array(
+                'content' => 'State Is Invalid',
                 'hasConditions' => false,
+                'message' => 'لطفا اطلاعات مرتبط با استان و شهر اطلاعات فردی را تکمیل کنید',
                 'isCompleted' => false
             );
             return $arr;
@@ -198,13 +202,14 @@ class ModelCandidate extends CI_Model
         $year_diff = jDateTime::date("Y", false, false, true, 'Asia/Tehran') - $year;
         $month_diff = jDateTime::date("m", false, false, true, 'Asia/Tehran') - $month;
         $day_diff = jDateTime::date("d", false, false, true, 'Asia/Tehran') - $day;
-        if ($day_diff < 0 || $month_diff < 0){
-            $year_diff  = $year_diff -1;
+        if ($day_diff < 0 || $month_diff < 0) {
+            $year_diff = $year_diff - 1;
         }
         $candidateAge = $year_diff;
         if ($candidateAge <= 29 || $candidateAge >= 76) {
             $arr = array(
                 'content' => 'User Invalid Age',
+                'message' => 'حداقل سن برای شرکت در نامزدی انتخابات 30 و حداکثر 75 سال میباشد',
                 'hasConditions' => false,
                 'isCompleted' => true
             );
@@ -219,6 +224,7 @@ class ModelCandidate extends CI_Model
         ) {
             $arr = array(
                 'content' => 'User Invalid Constituency State',
+                'message' => 'استان و شهر حوزه انتخابی باید با استان و شهر محل تولد پدر، مادر یا محل سکونت شما یکسان باشد.',
                 'hasConditions' => false,
                 'isCompleted' => true
             );
@@ -233,6 +239,7 @@ class ModelCandidate extends CI_Model
         ) {
             $arr = array(
                 'content' => 'User Invalid Constituency City',
+                'message' => 'استان و شهر حوزه انتخابی باید با استان و شهر محل تولد پدر، مادر یا محل سکونت شما یکسان باشد.',
                 'hasConditions' => false,
                 'isCompleted' => true
             );
@@ -240,9 +247,10 @@ class ModelCandidate extends CI_Model
         }
         /* Check User Religion */
 
-        if ($personalInfo['CandidateReligion'] !== 'IslamShia' && $personalInfo['CandidateReligion'] !== 'IslamSoni') {
+        if ($personalInfo['CandidateReligion'] == 'Undefined' || $personalInfo['CandidateReligion'] == 'Other') {
             $arr = array(
                 'content' => 'User Invalid Religion',
+                'message' => 'دین خود را انتخاب کنید.افراد دارای دین اسلام و اقلیت های مذهبی میتوانند در انتخابات شرکت کنند.',
                 'hasConditions' => false,
                 'isCompleted' => true
             );
@@ -252,12 +260,13 @@ class ModelCandidate extends CI_Model
         $hasAcademicCondition = false;
         foreach ($academicInfo as $item) {
             if (
-                $item['CandidateGrade'] == 'KarshenasiArshad' ||
-                $item['CandidateGrade'] == 'DoctoryHerfei' ||
-                $item['CandidateGrade'] == 'DoctoryTakhasosi' ||
-                $item['CandidateGrade'] == 'FogDoctory' ||
-                $item['CandidateGrade'] == 'Hozeh3' ||
-                $item['CandidateGrade'] == 'Hozeh4') {
+                ($item['CandidateGrade'] == 'KarshenasiArshad' && $item['CandidateStudyStatus'] == 'Graduated') ||
+                ($item['CandidateGrade'] == 'DoctoryHerfei' && $item['CandidateStudyStatus'] == 'Graduated') ||
+                ($item['CandidateGrade'] == 'DoctoryTakhasosi' && $item['CandidateStudyStatus'] == 'Graduated') ||
+                ($item['CandidateGrade'] == 'FogDoctory' && $item['CandidateStudyStatus'] == 'Graduated') ||
+                ($item['CandidateGrade'] == 'Hozeh3' && $item['CandidateStudyStatus'] == 'Graduated') ||
+                ($item['CandidateGrade'] == 'Hozeh4' && $item['CandidateStudyStatus'] == 'Graduated')
+            ) {
                 global $hasAcademicCondition;
                 $hasAcademicCondition = true;
             }
@@ -265,6 +274,7 @@ class ModelCandidate extends CI_Model
         if (!$hasAcademicCondition) {
             $arr = array(
                 'content' => 'User Invalid Grade',
+                'message' => 'حداقل مدرک تحصیلی برای شرکت در انتخابات مجلس کارشناسی ارشد یا معادل آن است',
                 'hasConditions' => false,
                 'isCompleted' => true
             );

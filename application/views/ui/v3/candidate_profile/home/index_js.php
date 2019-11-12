@@ -11,6 +11,13 @@
             url: base_url + 'Profile/getResumeStatus',
             success: function (data) {
                 $result = JSON.parse(data);
+
+                if($result['message'] !== undefined){
+                    $message = "<ul  class='list-group'><li  class='list-group-item'>"+$result['message']+"</li></ul>";
+                    $(".alerts-container").append($message);
+                }
+
+
                 /*اگر نامزد انتخاباتی رزومه خود را تکمیل کرده بود*/
                 if ($result['isCompleted']) {
                     $candidateStatus = "CandidateResumeCompleted";
