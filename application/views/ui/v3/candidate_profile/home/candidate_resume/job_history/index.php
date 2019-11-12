@@ -177,7 +177,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputCandidateStartJobYear"
-                                                        id="inputCandidateStartJobYear">
+                                                        id="inputCandidateStartJobYear"
+                                                        style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
                                                             <?php if ($i == 1398) echo "selected"; ?>
@@ -213,7 +214,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputCandidateEndJobYear"
-                                                        id="inputCandidateEndJobYear">
+                                                        id="inputCandidateEndJobYear" style="font-family: tahoma">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
                                                             <?php if ($i == 1398) echo "selected"; ?>

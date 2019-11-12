@@ -349,7 +349,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                         <select class="form-control form-control-lg city-select"
                                                                                 name="inputCandidateActivityStartYear"
-                                                                                id="inputCandidateActivityStartYear">
+                                                                                id="inputCandidateActivityStartYear"
+                                                                        style="font-family: tahoma">
                                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                                 <option value="<?php echo $i; ?>">
                                                                                     <?php echo $i; ?>
@@ -378,7 +379,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                         <select class="form-control form-control-lg city-select"
                                                                                 name="inputCandidateActivityEndYear"
-                                                                                id="inputCandidateActivityEndYear">
+                                                                                id="inputCandidateActivityEndYear"
+                                                                        style="font-family: tahoma">
                                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                                 <option value="<?php echo $i; ?>">
                                                                                     <?php echo $i; ?>

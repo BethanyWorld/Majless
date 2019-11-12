@@ -137,7 +137,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputCandidateBookPublishYear"
-                                                        id="inputCandidateBookPublishYear">
+                                                        id="inputCandidateBookPublishYear"
+                                                        style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
                                                             <?php if ($i == 1398) echo "selected"; ?>
@@ -329,7 +330,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputCandidateArticlePublishYear"
-                                                        id="inputCandidateArticlePublishYear">
+                                                        id="inputCandidateArticlePublishYear"
+                                                        style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option value="<?php echo $i; ?>">
                                                             <?php echo $i; ?>
@@ -527,7 +529,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputCandidateResearchYear"
-                                                        id="inputCandidateResearchYear">
+                                                        id="inputCandidateResearchYear"
+                                                        style="font-family: tahoma">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option value="<?php echo $i; ?>">
                                                             <?php echo $i; ?>
@@ -717,7 +720,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputCandidateTranslationYear"
-                                                        id="inputCandidateTranslationYear">
+                                                        id="inputCandidateTranslationYear"
+                                                        style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
                                                             <?php if ($i == 1398) echo "selected"; ?>
@@ -1049,7 +1053,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputCandidateConferenceYear"
-                                                        id="inputCandidateConferenceYear">
+                                                        id="inputCandidateConferenceYear"
+                                                        style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
                                                             <?php if ($i == 1398) echo "selected"; ?>
