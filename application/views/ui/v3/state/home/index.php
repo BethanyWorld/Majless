@@ -162,7 +162,7 @@
                             <li data-province-id="29" class="hormozgan"><a href="#hormozgan">هرمزگان</a></li>
                             <li data-province-id="30" class="hamadan"><a href="#hormozgan">همدان</a></li>
                             <li data-province-id="31" class="yazd"><a href="#yazd">یزد</a></li>
-                            <li data-province-id="32" class="yazd"><a href="#yazd">اقلیت های مذهبی</a></li>
+                            <li data-province-id="32" class=""><a href="#">اقلیت های مذهبی</a></li>
                         </ul>
                     </li>
                 </ul>
