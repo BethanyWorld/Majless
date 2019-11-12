@@ -165,7 +165,6 @@
                 $inputCandidateAddressCityId = $("#inputCandidateAddressCityId").val();
                 $inputCandidateReligion = $('#inputCandidateReligion').val();
                 if (
-                    $inputCandidateConstituencyStateId != $inputCandidateBornStateId &&
                     $inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId &&
                     $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId &&
                     $inputCandidateConstituencyStateId != $inputCandidateAddressStateId &&
@@ -176,7 +175,6 @@
                     return;
                 }
                 if (
-                    $inputCandidateConstituencyCityId != $inputCandidateBornCityId &&
                     $inputCandidateConstituencyCityId != $inputCandidateFatherBornCityId &&
                     $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId &&
                     $inputCandidateConstituencyCityId != $inputCandidateAddressCityId &&
