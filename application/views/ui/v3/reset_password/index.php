@@ -28,7 +28,9 @@
                         <span class="required"></span>
                         تلفن همراه
                     </label>
-                    <input class="form-control" type="text" id="inputPhone" name="inputPhone" autofocus/>
+                    <input
+                            style="font-family: tahoma;"
+                            class="form-control" type="text" id="inputPhone" name="inputPhone" autofocus/>
                 </div>
             </div>
             <div class="row col-xs-12 form-group">
@@ -41,7 +43,7 @@
                          style="margin: 10px 5px;border: 2px solid #ccc;"
                          src="<?php echo base_url('GetCaptcha'); ?>"/>
                     <input type="text"
-                           style="position: relative;top:15px;    width: calc(100% - 175px);float: left;"
+                           style="position: relative;top:15px;width: calc(100% - 175px);float: left;font-family: tahoma;"
                            name="inputCaptcha" id="inputCaptcha" class="form-control"
                            placeholder="کد امنیتی">
                 </div>

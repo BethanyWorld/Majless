@@ -20,8 +20,6 @@
             $inputPhone = toEnglishDigits($inputPhone);
             $inputCaptcha = toEnglishDigits($inputCaptcha);
 
-
-
             if(!isPhone($inputPhone)){
                 notify("تلفن نامعتبر است", "red");
                 toggleLoader();

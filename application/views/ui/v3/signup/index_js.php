@@ -13,16 +13,16 @@
         }
         function isValidNationalCode(input) {
             if (!/^\d{10}$/.test(input)
-                || input=='0000000000'
-                || input=='1111111111'
-                || input=='2222222222'
-                || input=='3333333333'
-                || input=='4444444444'
-                || input=='5555555555'
-                || input=='6666666666'
-                || input=='7777777777'
-                || input=='8888888888'
-                || input=='9999999999')
+                || input == '0000000000'
+                || input == '1111111111'
+                || input == '2222222222'
+                || input == '3333333333'
+                || input == '4444444444'
+                || input == '5555555555'
+                || input == '6666666666'
+                || input == '7777777777'
+                || input == '8888888888'
+                || input == '9999999999')
                 return false;
             var check = parseInt(input[9]);
             var sum = 0;
@@ -55,19 +55,19 @@
             $inputSignUpNationalCode = toEnglishDigits($inputSignUpNationalCode);
             $inputCaptcha = toEnglishDigits($inputCaptcha);
 
-            if(!isPhone($inputSignUpPhone)){
+            if (!isPhone($inputSignUpPhone)) {
                 notify("تلفن نامعتبر است", "red");
                 toggleLoader();
                 return;
             }
 
-            if(!is_valid_length_phone($inputSignUpPhone , 11)){
+            if (!is_valid_length_phone($inputSignUpPhone, 11)) {
                 notify("تعداد کاراکتر تلفن همراه نامعتبر است", "red");
                 toggleLoader();
                 return;
             }
 
-            if(!isValidNationalCode($inputSignUpNationalCode)){
+            if (!isValidNationalCode($inputSignUpNationalCode)) {
                 notify("کد ملی نامعتبر است", "red");
                 toggleLoader();
                 return;
@@ -75,38 +75,35 @@
 
 
             /*Start Validation ------------------------------*/
-            if(!is_valid_length($inputSignUpFirstName , 80)){
+            if (!is_valid_length($inputSignUpFirstName, 80)) {
                 notify("تعداد کاراکتر نام نامعتبر است", "red");
                 toggleLoader();
                 return;
             }
 
-            if(!isText($inputSignUpFirstName)){
+            if (!isText($inputSignUpFirstName)) {
                 notify("نام نامعتبر است", "red");
                 toggleLoader();
                 return;
             }
-            if(!isText($inputSignUpLastName)){
+            if (!isText($inputSignUpLastName)) {
                 notify("نام خانوادگی نامعتبر است", "red");
                 toggleLoader();
                 return;
             }
-            if(!isValueInteger($inputConstituencyProvince)) {
+            if (!isValueInteger($inputConstituencyProvince)) {
                 notify("استان نامعتبر است", "red");
                 toggleLoader();
                 return;
             }
-            if(!isCaptcha($inputCaptcha)) {
+            if (!isCaptcha($inputCaptcha)) {
                 notify("کد امنیتی نامعتبر است", "red");
                 toggleLoader();
                 return;
             }
-           // $inputSignUpFirstName = strip_tags($inputSignUpFirstName);
+            // $inputSignUpFirstName = strip_tags($inputSignUpFirstName);
 
             /* End Validation --------------------------------*/
-
-
-
 
 
             if ($inputSignUpType.length == 0 ||
@@ -149,7 +146,7 @@
                                 success: function (data) {
                                     $result = JSON.parse(data);
                                     notify($result['content'], $result['type']);
-                                    if ($result['success'] && $result['type'] =='green') {
+                                    if ($result['success'] && $result['type'] == 'green') {
                                         $.ajax({
                                             type: 'POST',
                                             url: '<?php echo $api['SMS']; ?>',
@@ -158,9 +155,9 @@
                                                 'messageBody': $result['messageBody']
                                             },
                                             success: function (data) {
-                                                setTimeout(function(){
+                                                setTimeout(function () {
                                                     location.href = base_url + 'Login';
-                                                } , 500);
+                                                }, 500);
                                                 toggleLoader();
                                             },
                                             error: function (jqXHR, textStatus, errorThrown) {
@@ -171,7 +168,7 @@
                                     }
                                     else {
                                         /*notify($result['message'], 'red');*/
-                                        if($result['type'] == 'red'){
+                                        if ($result['type'] == 'red') {
                                             $('#signUpModal').modal('show');
                                         }
                                         toggleLoader();
@@ -187,6 +184,8 @@
                 });
             }
         });
+
+        cutSelectOptionLongText();
         $('#inputConstituencyProvince').change(function () {
             toggleLoader();
             $("#inputConstituencyProvincePart").html('');
@@ -200,6 +199,7 @@
                     for (let i = 0; i < $result.length; i++) {
                         $("#inputConstituencyProvincePart").append('<option value="' + $result[i].CityId + '">' + $result[i].CityName + '</option>');
                     }
+                    cutSelectOptionLongText();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     iziToast.show({
