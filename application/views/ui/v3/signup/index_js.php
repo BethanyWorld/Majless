@@ -12,6 +12,7 @@
             return str;
         }
         function isValidNationalCode(input) {
+            input = toEnglishDigits(input);
             if (!/^\d{10}$/.test(input)
                 || input == '0000000000'
                 || input == '1111111111'
@@ -55,11 +56,7 @@
             $inputSignUpNationalCode = toEnglishDigits($inputSignUpNationalCode);
             $inputCaptcha = toEnglishDigits($inputCaptcha);
 
-            if (!isPhone($inputSignUpPhone)) {
-                notify("تلفن نامعتبر است", "red");
-                toggleLoader();
-                return;
-            }
+
 
             if (!is_valid_length_phone($inputSignUpPhone, 11)) {
                 notify("تعداد کاراکتر تلفن همراه نامعتبر است", "red");
@@ -101,7 +98,6 @@
                 toggleLoader();
                 return;
             }
-            // $inputSignUpFirstName = strip_tags($inputSignUpFirstName);
 
             /* End Validation --------------------------------*/
 

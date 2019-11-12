@@ -54,7 +54,7 @@ class SignUp extends CI_Controller{
         $this->form_validation->set_data($inputs);
         $this->form_validation->set_rules('inputSignUpFirstName', 'نام', 'trim|xss_clean|required|min_length[1]|max_length[80]');
         $this->form_validation->set_rules('inputSignUpLastName', 'نام خانوادگی', 'trim|xss_clean|required|min_length[1]|max_length[80]');
-        $this->form_validation->set_rules('inputSignUpPhone', 'تلفن', 'trim|xss_clean|required|min_length[11]|max_length[11]|regex_match[/^[0-9]{11}$/]');
+        $this->form_validation->set_rules('inputSignUpPhone', 'تلفن', 'trim|xss_clean|required|min_length[11]|max_length[11]');
         $this->form_validation->set_rules('inputSignUpStateId', 'استان', 'trim|xss_clean|required|min_length[1]|numeric|greater_than[0]');
         $this->form_validation->set_rules('inputSignUpCityId', 'شهر', 'trim|xss_clean|required|min_length[1]|numeric|greater_than[0]');
         $this->form_validation->set_rules('inputCaptcha', 'کد امنیتی', 'trim|required|min_length[5]|max_length[5]');
@@ -69,6 +69,11 @@ class SignUp extends CI_Controller{
             echo json_encode($arr);
             die();
         }
+
+
+        $inputs['inputSignUpPhone']  = FaToEn($inputs['inputSignUpPhone']);
+        $inputs['inputCaptcha']  = FaToEn($inputs['inputCaptcha']);
+        $inputs['inputSignUpNationalCode']  = FaToEn($inputs['inputSignUpNationalCode']);
 
         $electionId = $this->ModelCountry->getElectionIdByCityId($inputs['inputSignUpCityId'])[0]['ElectionId'];
 
@@ -98,6 +103,7 @@ class SignUp extends CI_Controller{
     public function checkCaptcha()
     {
         $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCaptcha']  = FaToEn($inputs['inputCaptcha']);
         $captchaCode = $this->session->userdata['captchaCode'];
         if (strtolower($inputs['inputCaptcha']) == strtolower($captchaCode)) {
             $arr = array(

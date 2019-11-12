@@ -35,7 +35,10 @@ class Login extends CI_Controller
             return makeSafeInput($v);
         }, $inputs);
 
-        $this->form_validation->set_rules('inputPhone', 'تلفن', 'trim|xss_clean|required|min_length[11]|max_length[11]|regex_match[/^[0-9]{11}$/]');
+        $inputs['inputPhone']  = FaToEn($inputs['inputPhone']);
+        $inputs['inputPassword']  = FaToEn($inputs['inputPassword']);
+
+        $this->form_validation->set_rules('inputPhone', 'تلفن', 'trim|xss_clean|required|min_length[11]|max_length[11]');
         $this->form_validation->set_rules('inputPassword', 'شهر', 'trim|xss_clean|required|min_length[1]|max_length[80]');
         if ($this->form_validation->run() == FALSE) {
             $arr = array(

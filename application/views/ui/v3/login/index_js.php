@@ -18,13 +18,10 @@
             $inputCaptcha = $.trim($("#inputCaptcha").val());
             $inputCSRF = $.trim($("#inputCSRF").val());
             $inputPhone = toEnglishDigits($inputPhone);
+            $inputPassword = toEnglishDigits($inputPassword);
             $inputCaptcha = toEnglishDigits($inputCaptcha);
 
-            if(!isPhone($inputPhone)){
-                notify("تلفن نامعتبر است", "red");
-                toggleLoader();
-                return;
-            }
+
             if(!is_valid_length_phone($inputPhone , 11)){
                 notify("تعداد کاراکتر تلفن همراه نامعتبر است", "red");
                 toggleLoader();

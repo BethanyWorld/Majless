@@ -33,6 +33,10 @@ class ResetPassword extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
+
+        $inputs['inputPhone']  = FaToEn($inputs['inputPhone']);
+        $inputs['inputCaptcha']  = FaToEn($inputs['inputCaptcha']);
+
         $this->form_validation->set_rules('inputPhone', 'تلفن', 'trim|xss_clean|required|min_length[11]|max_length[11]|regex_match[/^[0-9]{11}$/]');
         if ($this->form_validation->run() == FALSE) {
             $arr = array(
@@ -42,6 +46,7 @@ class ResetPassword extends CI_Controller{
             echo json_encode($arr);
             die();
         }
+
 
         $captchaCode = $this->session->userdata['captchaCode'];
         if (strtolower($inputs['inputCaptcha']) == strtolower($captchaCode)) {

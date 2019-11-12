@@ -123,8 +123,8 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                 <h1 class="site-title" id="main-logo">
                     <a id="main-logo-link" href="<?php echo base_url(); ?>" rel="home">
                         <img src="<?= $_DIR; ?>images/campaign_logo_color.png"
-                             style=" position: relative;"
-                             alt="مجلس 11">
+                             style=" position: relative;width: 220px;"
+                             alt="جنبش ازما">
                     </a>
                 </h1>
                 <nav id="primary-navigation" class="site-navigation primary-navigation rtl">
