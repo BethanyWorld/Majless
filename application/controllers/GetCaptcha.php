@@ -3,10 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class GetCaptcha extends CI_Controller
 {
     public function index(){
-        $random_alpha = /*mb_strtoupper(md5(rand()))*/"12345";
-        $random_alpha = str_ireplace("O","K",$random_alpha);
+        /*$random_alpha = mb_strtoupper(md5(rand()));*/
+        $random_alpha = mb_strtoupper(rand(11111,99999));
+        /*$random_alpha = str_ireplace("O","K",$random_alpha);
         $random_alpha = str_ireplace("0","N",$random_alpha);
-        $random_alpha = str_ireplace("I","T",$random_alpha);
+        $random_alpha = str_ireplace("I","T",$random_alpha);*/
         $captcha_code = substr($random_alpha, 0, 5);
         $this->session->set_userdata('captchaCode',$captcha_code);
         $target_layer = imagecreatetruecolor(70, 40);
