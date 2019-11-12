@@ -1,7 +1,5 @@
 <?php
-
-class ModelCommand extends CI_Model
-{
+class ModelCommand extends CI_Model{
     /* For Contact Form */
     public function doSendContactForm($inputs)
     {
@@ -22,7 +20,6 @@ class ModelCommand extends CI_Model
         );
         return $arr;
     }
-
     /* For First SignUp Form */
     public function doSubmitSignUpForm($inputs){
         /*
@@ -99,7 +96,6 @@ class ModelCommand extends CI_Model
         }
 
     }
-
     /* For Prevent Duplicate Info */
     public function doCheckDuplicateSignUpInfo($inputs)
     {
@@ -202,7 +198,6 @@ class ModelCommand extends CI_Model
         );
         return $arr;
     }
-
     /*For Contact Form*/
     public function submitReportAbuse($inputs)
     {
@@ -249,7 +244,7 @@ class ModelCommand extends CI_Model
             /*-------------------------------------------------------------------------------------*/
             $arr = array(
                 'type' => "green",
-                'content' => "درخواست بروزرسانی با موفقیت ارسال شد",
+                'content' => "رمز عبور جدید به تلفن شما ارسال شد",
                 'senderNumber' => $inputs['inputPhone'],
                 'messageBody' => "رمز عبور شما تغییر یافت.نام کاربری:".$inputs['inputPhone']." و رمز عبور ".$inputs['inputPhone']." می باشد ",
                 'success' => true
@@ -258,5 +253,4 @@ class ModelCommand extends CI_Model
         }
     }
 }
-
 ?>

@@ -32,9 +32,6 @@
                             <li id="menu-item-47"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a
                                         href="<?php echo base_url('SignUp?type=candidate'); ?>">ثبت نام نامزدهای انتخاباتی</a></li>
-                            <li id="menu-item-46"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a
-                                        href="<?php echo base_url('Content/sendArticle'); ?>">ارسال محتوا</a></li>
                             <li id="menu-item-841"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-841"><a
                                         href="<?php echo base_url('SignUp?type=sponsor'); ?>">حامیان</a></li>
@@ -43,12 +40,11 @@
                 </nav>
                 <div class="clear"></div>
                 <div class="clear rtl">
-                    <div class="fw-page-builder-content textalignleft">تمامی حقوق برای جنبش ازما محفوظ است.</div>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <p class="rtl">
-                    ما به نمایندگی از جوانان فعال و مطالبه گر ایران اسلامی، در لبیک به بیانیه گام دوم انقلاب رهبری حکیم و فرزانه، هم‌قسم شده‌ایم که در جهت تحقق کامل شعارها و آرمان‌های این انقلاب دینی قدم در عرصه عمل گذاریم و با حمایت مردم عزیز، زمام اداره بخش‌های گوناگون این نظام انقلابی را به دست جوانان مؤمن، انقلابی، دانا و کاردان بسپاریم و با هم پیمان بسته‌ایم که در این راه، اصول زیر را سرلوحه افکار و اعمال خود قرار دهیم
+                    <div class="fw-page-builder-content textalignright">تمامی حقوق برای جنبش ازما محفوظ است</div>
                 </p>
             </div>
         </div>

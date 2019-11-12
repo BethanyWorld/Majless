@@ -215,35 +215,38 @@ class ModelCandidate extends CI_Model
             );
             return $arr;
         }
+
         /* Check User Constituency State */
-        if (
-            $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateBornStateId'] &&
-            $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateFatherBornStateId'] &&
-            $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateMotherBornStateId'] &&
-            $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateAddressStateId']
-        ) {
-            $arr = array(
-                'content' => 'User Invalid Constituency State',
-                'message' => 'استان و شهر حوزه انتخابی باید با استان و شهر محل تولد پدر، مادر یا محل سکونت شما یکسان باشد.',
-                'hasConditions' => false,
-                'isCompleted' => true
-            );
-            return $arr;
-        }
-        /* Check User Constituency City */
-        if (
-            $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateBornCityId'] &&
-            $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateFatherBornCityId'] &&
-            $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateMotherBornCityId'] &&
-            $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateAddressCityId']
-        ) {
-            $arr = array(
-                'content' => 'User Invalid Constituency City',
-                'message' => 'استان و شهر حوزه انتخابی باید با استان و شهر محل تولد پدر، مادر یا محل سکونت شما یکسان باشد.',
-                'hasConditions' => false,
-                'isCompleted' => true
-            );
-            return $arr;
+        if ($personalInfo['CandidateReligion'] == 'IslamShia' || $personalInfo['CandidateReligion'] == 'IslamSoni') {
+            if (
+                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateBornStateId'] &&
+                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateFatherBornStateId'] &&
+                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateMotherBornStateId'] &&
+                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateAddressStateId']
+            ) {
+                $arr = array(
+                    'content' => 'User Invalid Constituency State',
+                    'message' => 'استان و شهر حوزه انتخابی باید با استان و شهر محل تولد پدر، مادر یا محل سکونت شما یکسان باشد.',
+                    'hasConditions' => false,
+                    'isCompleted' => true
+                );
+                return $arr;
+            }
+            /* Check User Constituency City */
+            if (
+                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateBornCityId'] &&
+                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateFatherBornCityId'] &&
+                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateMotherBornCityId'] &&
+                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateAddressCityId']
+            ) {
+                $arr = array(
+                    'content' => 'User Invalid Constituency City',
+                    'message' => 'استان و شهر حوزه انتخابی باید با استان و شهر محل تولد پدر، مادر یا محل سکونت شما یکسان باشد.',
+                    'hasConditions' => false,
+                    'isCompleted' => true
+                );
+                return $arr;
+            }
         }
         /* Check User Religion */
 
