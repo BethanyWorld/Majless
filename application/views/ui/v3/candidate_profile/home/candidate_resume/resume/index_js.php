@@ -1,6 +1,4 @@
 <script type="text/javascript">
-
-
     $(document).ready(function () {
         $inputCandidateAddressCityPart = $('#inputCandidateAddressCityPart').val();
         if ($inputCandidateAddressCityPart !== null && $inputCandidateAddressCityPart !== "") {
@@ -12,28 +10,7 @@
             $('#inputCandidateAddressVillagePart').removeAttr('placeholder');
             $('#inputCandidateAddressVillagePart').addClass('InputNotAllow');
         }
-
-
-        // for add title to my state option
-        setInterval(function () {
-            $('select option').prop('title', function () {
-                return this.text;
-            });
-            $('select option').prop('text', function () {
-
-                $tttt = this.text;
-                $fff = this.text.length;
-                if( $fff > 40 ){
-                    $ttt = $tttt.substring(0,40) + '...';
-                    return $ttt ;
-                }
-                else{
-                    return this.text;
-                }
-            });
-        } , 1000);
-        // for add title to my state option
-
+        cutSelectOptionLongText();
         $(document).on('change', '.state-select', function () {
             toggleLoader();
             $inputCandidateStateId = $(this).val();
@@ -54,10 +31,10 @@
                                 "text": item['CityName']
                             });
                         $citySelect.append(selectInnerHtml);
-
                     });
                     $citySelect.find('option').eq(0).attr('selected', 'selected');
                     checkCandidateStateAndCity();
+                    cutSelectOptionLongText();
                 },
                 error: function (data) {
                     toggleLoader();
@@ -66,7 +43,6 @@
             });
         });
         defaultImage = '<?php echo $noImg ?>';
-
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -77,7 +53,6 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-
         $("#imgInp").change(function () {
             readURL(this);
         });
@@ -131,10 +106,7 @@
                 $('#inputCandidateAddressCityPart').removeClass('InputNotAllow');
             }
         });
-
-
         $("#inputCandidateReligion").change();
-
         function checkedCandidate() {
 
             $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
@@ -229,11 +201,9 @@
 
             }
         }
-
         setInterval(checkedCandidate, 300);
         $("#updateProfileInfo").click({redirect: false}, updateProfile);
         $("#updateProfileInfoAndRedirect").click({redirect: true}, updateProfile);
-
         function updateProfile(param) {
             $inputCandidateProfileImage = $("#personInfoImageButtons").attr('src');
             $inputCandidateFirstName = $.trim($("#inputCandidateFirstName").val());
@@ -349,27 +319,19 @@
             }
 
         }
-
         $('[data-mask]').each(function () {
             $(this).mask($(this).data('mask'));
         });
-
         function checkCandidateStateAndCity() {
-
             $cs = $("#cs");
-
             $inputCandidateConstituencyStateId = $("#inputCandidateConstituencyStateId").val();
             $inputCandidateConstituencyCityId = $("#inputCandidateConstituencyCityId").val();
-
             $inputCandidateFatherBornStateId = $("#inputCandidateFatherBornStateId").val();
             $inputCandidateFatherBornCityId = $("#inputCandidateFatherBornCityId").val();
-
             $inputCandidateMotherBornStateId = $("#inputCandidateMotherBornStateId").val();
             $inputCandidateMotherBornCityId = $("#inputCandidateMotherBornCityId").val();
-
             $inputCandidateAddressStateId = $("#inputCandidateAddressStateId").val();
             $inputCandidateAddressCityId = $("#inputCandidateAddressCityId").val();
-
             if (
                 $inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId &&
                 $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId &&
@@ -382,7 +344,6 @@
                 $cs.css('display', 'block');
                 return;
             }
-            console.log("state success");
             if (
                 $inputCandidateConstituencyCityId != $inputCandidateFatherBornCityId &&
                 $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId &&
@@ -395,22 +356,14 @@
                 return;
             }
             $cs.css('display', 'none');
-
-
-
         }
-
         $(document).on('change', '#inputCandidateConstituencyStateId', checkCandidateStateAndCity);
         $(document).on('change', '#inputCandidateConstituencyCityId', checkCandidateStateAndCity);
-
         $(document).on('change', '#inputCandidateFatherBornStateId', checkCandidateStateAndCity);
         $(document).on('change', '#inputCandidateFatherBornCityId', checkCandidateStateAndCity);
-
         $(document).on('change', '#inputCandidateMotherBornStateId', checkCandidateStateAndCity);
         $(document).on('change', '#inputCandidateMotherBornCityId', checkCandidateStateAndCity);
-
         $(document).on('change', '#inputCandidateAddressStateId', checkCandidateStateAndCity);
         $(document).on('change', '#inputCandidateAddressCityId', checkCandidateStateAndCity);
-
     });
 </script>
