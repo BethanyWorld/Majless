@@ -60,7 +60,8 @@
                     </label>
                     <input
                             value="<?php if (isset($defaultValue['p'])) echo $defaultValue['p']; ?>"
-                            class="form-control" type="text" id="inputSignUpPhone" name="inputSignUpPhone"/>
+                            class="form-control" type="text" id="inputSignUpPhone" name="inputSignUpPhone"
+                            style="font-family: tahoma;"/>
                 </div>
             </div>
             <div class="form-group">
@@ -72,7 +73,8 @@
                     <input
                             value="<?php if (isset($defaultValue['nc'])) echo $defaultValue['nc']; ?>"
                             class="form-control" type="text" id="inputSignUpNationalCode"
-                            name="inputSignUpNationalCode"/>
+                            name="inputSignUpNationalCode"
+                            style="font-family: tahoma;"/>
                 </div>
             </div>
             <div class="form-group">
@@ -144,9 +146,10 @@
                          style="margin: 10px 5px;border: 2px solid #ccc;float: right;"
                          src="<?php echo base_url('GetCaptcha'); ?>"/>
                     <input type="text"
-                           style="position: relative;top:15px;    width: 100px;float: right;"
+                           style="position: relative;top:15px;    width: 100px;float: right;font-family: tahoma;"
                            name="inputCaptcha" id="inputCaptcha" class="form-control"
-                           placeholder="کد امنیتی">
+                           placeholder="کد امنیتی"
+                           >
                 </div>
             </div>
             <div class="form-group">

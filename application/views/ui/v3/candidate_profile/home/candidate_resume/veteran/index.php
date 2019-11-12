@@ -25,7 +25,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <div class="panel-heading">
                                                                     <div class="RegistrationTypeDiv">
                                                                         <input type="checkbox" value="Self"
-                                                                               <?php if($Self['IsActive']) echo "checked='checked'"; ?>
+                                                                            <?php if ($Self['IsActive']) echo "checked='checked'"; ?>
                                                                                class="roles" id="Self" name="Self">
                                                                         <label for="Self">خودم</label>
                                                                     </div>
@@ -36,32 +36,41 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <div class="panel-body p">
                                                                     <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Veteran' , $Self['CandidateVeteranType']); ?>
-                                                                                    id="radio1" type="radio" value="Veteran" name="radio">
+                                                                            <input <?php setRadioSelected('Veteran', $Self['CandidateVeteranType']); ?>
+                                                                                    id="radio1" type="radio"
+                                                                                    value="Veteran" name="radio">
                                                                             <label for="radio1" class="radio-label">جانباز</label>
                                                                         </div>
                                                                         <div class="col-md-12 col-x-12 margin-t-15 PercentageOfVeterans">
                                                                             <label class=""> 0 تا 100 : &nbsp;</label>
                                                                             <input <?php setInputValue($Self['CandidateVeteranPercent']); ?>
                                                                                     type="number"
-                                                                                    name="inputCandidatePercentageOfVeterans" />
+                                                                                    name="inputCandidatePercentageOfVeterans"
+                                                                                    style="font-family: tahoma;"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Liberation' , $Self['CandidateVeteranType']); ?>
-                                                                                    id="radio2" type="radio" value="Liberation" name="radio">
+                                                                            <input <?php setRadioSelected('Liberation', $Self['CandidateVeteranType']); ?>
+                                                                                    id="radio2" type="radio"
+                                                                                    value="Liberation" name="radio">
                                                                             <label for="radio2" class="radio-label">آزاده</label>
                                                                         </div>
 
                                                                         <div class="col-md-12 col-xs-12 margin-t-15 liberationdate">
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationMonth">ماه :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationMonth">ماه
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($Self['CandidateVeteranMonth']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationMonth"  />
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationMonth"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationYear">سال :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationYear">سال
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($Self['CandidateVeteranYear']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationYear"/>
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationYear"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -78,9 +87,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <div class="panel-heading">
                                                                     <div class="RegistrationTypeDiv">
                                                                         <input
-                                                                            <?php if($Wife['IsActive']) echo "checked='checked'"; ?>
-                                                                                type="checkbox" value="Wife" class="roles"
-                                                                               id="Wife"  name="Wife">
+                                                                            <?php if ($Wife['IsActive']) echo "checked='checked'"; ?>
+                                                                                type="checkbox" value="Wife"
+                                                                                class="roles"
+                                                                                id="Wife" name="Wife">
                                                                         <label for="Wife">همسر</label>
                                                                     </div>
                                                                     <!--                                                                <h3 class="panel-title">Panel 1</h3>-->
@@ -91,37 +101,49 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <div class="panel-body">
                                                                     <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Veteran' , $Wife['CandidateVeteranType']); ?>
-                                                                                    id="radio1" type="radio" value="Veteran" name="radio">
+                                                                            <input <?php setRadioSelected('Veteran', $Wife['CandidateVeteranType']); ?>
+                                                                                    id="radio1" type="radio"
+                                                                                    value="Veteran" name="radio">
                                                                             <label for="radio1" class="radio-label">جانباز</label>
                                                                         </div>
 
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Martyr' , $Wife['CandidateVeteranType']); ?>
-                                                                                    id="radio3" type="radio" value="Martyr" name="radio">
-                                                                            <label for="radio3" class="radio-label">شهید</label>
+                                                                            <input <?php setRadioSelected('Martyr', $Wife['CandidateVeteranType']); ?>
+                                                                                    id="radio3" type="radio"
+                                                                                    value="Martyr" name="radio">
+                                                                            <label for="radio3"
+                                                                                   class="radio-label">شهید</label>
                                                                         </div>
 
                                                                         <div class="col-md-12 col-x-12 margin-t-15 PercentageOfVeterans">
                                                                             <label class=""> 0 تا 100 : &nbsp;</label>
                                                                             <input <?php setInputValue($Wife['CandidateVeteranPercent']); ?>
-                                                                                    type="number" name="inputCandidatePercentageOfVeterans" />
+                                                                                    type="number"
+                                                                                    name="inputCandidatePercentageOfVeterans"
+                                                                                    style="font-family: tahoma;"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Liberation' , $Wife['CandidateVeteranType']); ?>
-                                                                                    id="radio2" type="radio" value="Liberation" name="radio">
+                                                                            <input <?php setRadioSelected('Liberation', $Wife['CandidateVeteranType']); ?>
+                                                                                    id="radio2" type="radio"
+                                                                                    value="Liberation" name="radio">
                                                                             <label for="radio2" class="radio-label">آزاده</label>
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 margin-t-15 liberationdate">
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationMonth">ماه :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationMonth">ماه
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($Wife['CandidateVeteranMonth']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationMonth"  />
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationMonth"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationYear">سال :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationYear">سال
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($Wife['CandidateVeteranYear']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationYear"/>
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationYear"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -138,10 +160,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                             <div class="panel panel-default">
                                                                 <div class="panel-heading">
                                                                     <div class="RegistrationTypeDiv">
-                                                                        <input <?php if($Children['IsActive']) echo "checked='checked'"; ?>
+                                                                        <input <?php if ($Children['IsActive']) echo "checked='checked'"; ?>
                                                                                 type="checkbox" value="Children"
-                                                                               class="roles"
-                                                                               id="Children" name="Children">
+                                                                                class="roles"
+                                                                                id="Children" name="Children">
                                                                         <label for="Children">
                                                                             فرزند
                                                                         </label>
@@ -154,37 +176,49 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <div class="panel-body">
                                                                     <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Veteran' , $Children['CandidateVeteranType']); ?>
-                                                                                    id="radio1" type="radio" value="Veteran" name="radio">
+                                                                            <input <?php setRadioSelected('Veteran', $Children['CandidateVeteranType']); ?>
+                                                                                    id="radio1" type="radio"
+                                                                                    value="Veteran" name="radio">
                                                                             <label for="radio1" class="radio-label">جانباز</label>
                                                                         </div>
 
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Martyr' , $Children['CandidateVeteranType']); ?>
-                                                                                    id="radio3" type="radio" value="Martyr" name="radio">
-                                                                            <label for="radio3" class="radio-label">شهید</label>
+                                                                            <input <?php setRadioSelected('Martyr', $Children['CandidateVeteranType']); ?>
+                                                                                    id="radio3" type="radio"
+                                                                                    value="Martyr" name="radio">
+                                                                            <label for="radio3"
+                                                                                   class="radio-label">شهید</label>
                                                                         </div>
 
                                                                         <div class="col-md-12 col-x-12 margin-t-15 PercentageOfVeterans">
                                                                             <label class=""> 0 تا 100 : &nbsp;</label>
                                                                             <input <?php setInputValue($Children['CandidateVeteranPercent']); ?>
-                                                                                    type="number" name="inputCandidatePercentageOfVeterans" />
+                                                                                    type="number"
+                                                                                    name="inputCandidatePercentageOfVeterans"
+                                                                                    style="font-family: tahoma;"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Liberation' , $Children['CandidateVeteranType']); ?>
-                                                                                    id="radio2" type="radio" value="Liberation" name="radio">
+                                                                            <input <?php setRadioSelected('Liberation', $Children['CandidateVeteranType']); ?>
+                                                                                    id="radio2" type="radio"
+                                                                                    value="Liberation" name="radio">
                                                                             <label for="radio2" class="radio-label">آزاده</label>
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 margin-t-15 liberationdate">
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationMonth">ماه :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationMonth">ماه
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($Children['CandidateVeteranMonth']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationMonth"  />
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationMonth"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationYear">سال :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationYear">سال
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($Children['CandidateVeteranYear']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationYear"/>
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationYear"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -199,8 +233,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                             <div class="panel panel-default">
                                                                 <div class="panel-heading">
                                                                     <div class="RegistrationTypeDiv">
-                                                                        <input <?php if($Parents['IsActive']) echo "checked='checked'"; ?>
-                                                                                type="checkbox" value="Parents" class="roles" id="Parents" name="Parents">
+                                                                        <input <?php if ($Parents['IsActive']) echo "checked='checked'"; ?>
+                                                                                type="checkbox" value="Parents"
+                                                                                class="roles" id="Parents"
+                                                                                name="Parents">
                                                                         <label for="Parents">
                                                                             پدر / مادر
                                                                         </label>
@@ -213,37 +249,49 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <div class="panel-body">
                                                                     <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Veteran' , $Parents['CandidateVeteranType']); ?>
-                                                                                    id="radio1" type="radio" value="Veteran" name="radio">
+                                                                            <input <?php setRadioSelected('Veteran', $Parents['CandidateVeteranType']); ?>
+                                                                                    id="radio1" type="radio"
+                                                                                    value="Veteran" name="radio">
                                                                             <label for="radio1" class="radio-label">جانباز</label>
                                                                         </div>
 
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Martyr' , $Parents['CandidateVeteranType']); ?>
-                                                                                    id="radio3" type="radio" value="Martyr" name="radio">
-                                                                            <label for="radio3" class="radio-label">شهید</label>
+                                                                            <input <?php setRadioSelected('Martyr', $Parents['CandidateVeteranType']); ?>
+                                                                                    id="radio3" type="radio"
+                                                                                    value="Martyr" name="radio">
+                                                                            <label for="radio3"
+                                                                                   class="radio-label">شهید</label>
                                                                         </div>
 
                                                                         <div class="col-md-12 col-x-12 margin-t-15 PercentageOfVeterans">
                                                                             <label class=""> 0 تا 100 : &nbsp;</label>
                                                                             <input <?php setInputValue($Parents['CandidateVeteranPercent']); ?>
-                                                                                    type="number" name="inputCandidatePercentageOfVeterans" />
+                                                                                    type="number"
+                                                                                    name="inputCandidatePercentageOfVeterans"
+                                                                                    style="font-family: tahoma;"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Liberation' , $Parents['CandidateVeteranType']); ?>
-                                                                                    id="radio2" type="radio" value="Liberation" name="radio">
+                                                                            <input <?php setRadioSelected('Liberation', $Parents['CandidateVeteranType']); ?>
+                                                                                    id="radio2" type="radio"
+                                                                                    value="Liberation" name="radio">
                                                                             <label for="radio2" class="radio-label">آزاده</label>
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 margin-t-15 liberationdate">
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationMonth">ماه :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationMonth">ماه
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($Parents['CandidateVeteranMonth']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationMonth"  />
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationMonth"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationYear">سال :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationYear">سال
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($Parents['CandidateVeteranYear']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationYear"/>
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationYear"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -258,8 +306,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                             <div class="panel panel-default">
                                                                 <div class="panel-heading">
                                                                     <div class="RegistrationTypeDiv">
-                                                                        <input <?php if($SisterBrother['IsActive']) echo "checked='checked'"; ?>
-                                                                                type="checkbox" value="SisterBrother" class="roles" id="SisterBrother" name="SisterBrother">
+                                                                        <input <?php if ($SisterBrother['IsActive']) echo "checked='checked'"; ?>
+                                                                                type="checkbox" value="SisterBrother"
+                                                                                class="roles" id="SisterBrother"
+                                                                                name="SisterBrother">
                                                                         <label for="SisterBrother">
                                                                             برادر / خواهر
                                                                         </label>
@@ -271,37 +321,49 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <div class="panel-body">
                                                                     <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Veteran' , $SisterBrother['CandidateVeteranType']); ?>
-                                                                                    id="radio1" type="radio" value="Veteran" name="radio">
+                                                                            <input <?php setRadioSelected('Veteran', $SisterBrother['CandidateVeteranType']); ?>
+                                                                                    id="radio1" type="radio"
+                                                                                    value="Veteran" name="radio">
                                                                             <label for="radio1" class="radio-label">جانباز</label>
                                                                         </div>
 
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Martyr' , $SisterBrother['CandidateVeteranType']); ?>
-                                                                                    id="radio3" type="radio" value="Martyr" name="radio">
-                                                                            <label for="radio3" class="radio-label">شهید</label>
+                                                                            <input <?php setRadioSelected('Martyr', $SisterBrother['CandidateVeteranType']); ?>
+                                                                                    id="radio3" type="radio"
+                                                                                    value="Martyr" name="radio">
+                                                                            <label for="radio3"
+                                                                                   class="radio-label">شهید</label>
                                                                         </div>
 
                                                                         <div class="col-md-12 col-x-12 margin-t-15 PercentageOfVeterans">
                                                                             <label class=""> 0 تا 100 : &nbsp;</label>
                                                                             <input <?php setInputValue($SisterBrother['CandidateVeteranPercent']); ?>
-                                                                                    type="number" name="inputCandidatePercentageOfVeterans" />
+                                                                                    type="number"
+                                                                                    name="inputCandidatePercentageOfVeterans"
+                                                                                    style="font-family: tahoma;"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
-                                                                            <input <?php setRadioSelected('Liberation' , $SisterBrother['CandidateVeteranType']); ?>
-                                                                                    id="radio2" type="radio" value="Liberation" name="radio">
+                                                                            <input <?php setRadioSelected('Liberation', $SisterBrother['CandidateVeteranType']); ?>
+                                                                                    id="radio2" type="radio"
+                                                                                    value="Liberation" name="radio">
                                                                             <label for="radio2" class="radio-label">آزاده</label>
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 margin-t-15 liberationdate">
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationMonth">ماه :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationMonth">ماه
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($SisterBrother['CandidateVeteranMonth']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationMonth"  />
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationMonth"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
-                                                                                <label for="inputCandidateStartLiberationYear">سال :&nbsp;</label>
+                                                                                <label for="inputCandidateStartLiberationYear">سال
+                                                                                    :&nbsp;</label>
                                                                                 <input <?php setInputValue($SisterBrother['CandidateVeteranYear']); ?>
-                                                                                        type="number" name="inputCandidateStartLiberationYear"/>
+                                                                                        type="number"
+                                                                                        name="inputCandidateStartLiberationYear"
+                                                                                        style="font-family: tahoma;"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>

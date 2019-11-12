@@ -14,6 +14,26 @@
         }
 
 
+        // for add title to my state option
+        setInterval(function () {
+            $('select option').prop('title', function () {
+                return this.text;
+            });
+            $('select option').prop('text', function () {
+
+                $tttt = this.text;
+                $fff = this.text.length;
+                if( $fff > 40 ){
+                    $ttt = $tttt.substring(0,40) + '...';
+                    return $ttt ;
+                }
+                else{
+                    return this.text;
+                }
+            });
+        } , 1000);
+        // for add title to my state option
+
         $(document).on('change', '.state-select', function () {
             toggleLoader();
             $inputCandidateStateId = $(this).val();
@@ -111,6 +131,8 @@
                 $('#inputCandidateAddressCityPart').removeClass('InputNotAllow');
             }
         });
+
+
         $("#inputCandidateReligion").change();
 
         function checkedCandidate() {
@@ -118,16 +140,29 @@
             $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
             if ($inputParliamentaryCandidate) {
 
-                /* relegion Check */
+                /*For relegion Check */
                 $inputCandidateReligion = $('#inputCandidateReligion').val();
-                if ("IslamShia" != $inputCandidateReligion && "IslamSoni" != $inputCandidateReligion) {
+                if ($inputCandidateReligion === "Undefined" || $inputCandidateReligion === "Other") {
                     $("#ReligionNotify").removeClass('hidden');
 
                 } else {
                     $("#ReligionNotify").addClass('hidden');
-
                 }
-                /* End relegion check*/
+                /*End relegion check*/
+
+
+                /* For Religious minority check*/
+                if ($inputCandidateReligion === "Cristian" || $inputCandidateReligion === "Jush" || $inputCandidateReligion === "Zartosht") {
+                    $('#inputCandidateConstituencyStateId option').filter(function () {
+                        return $(this).val() <= 31;
+                    }).prop('disabled', true).css('color', '#ccc');
+                } else {
+
+                    $('#inputCandidateConstituencyStateId option').filter(function () {
+                        return $(this).val() <= 31;
+                    }).prop('disabled', false).css('color', '#555');
+                }
+                /* End Religious minority check*/
 
 
                 /*checked date*/
@@ -136,7 +171,7 @@
                 var today = new Date();
                 var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
                 $candidateage = (age - 620);
-                if ($candidateage < 30 || $candidateage > 75) {
+                if ($candidateage <= 29 || $candidateage >= 76) {
                     $('#DateChecked').show();
 
                 } else {
@@ -156,12 +191,15 @@
                 $inputCandidateMotherBornCityId = $("#inputCandidateMotherBornCityId").val();
                 $inputCandidateAddressStateId = $("#inputCandidateAddressStateId").val();
                 $inputCandidateAddressCityId = $("#inputCandidateAddressCityId").val();
-
+                $inputCandidateReligion = $('#inputCandidateReligion').val();
                 if (
                     $inputCandidateConstituencyStateId != $inputCandidateBornStateId &&
                     $inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId &&
                     $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId &&
-                    $inputCandidateConstituencyStateId != $inputCandidateAddressStateId) {
+                    $inputCandidateConstituencyStateId != $inputCandidateAddressStateId &&
+                    $inputCandidateReligion != "Cristian" &&
+                    $inputCandidateReligion != "Jush" &&
+                    $inputCandidateReligion != "Zartosht") {
                     $cs.removeClass('hidden');
                     return;
                 }
@@ -169,7 +207,10 @@
                     $inputCandidateConstituencyCityId != $inputCandidateBornCityId &&
                     $inputCandidateConstituencyCityId != $inputCandidateFatherBornCityId &&
                     $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId &&
-                    $inputCandidateConstituencyCityId != $inputCandidateAddressCityId) {
+                    $inputCandidateConstituencyCityId != $inputCandidateAddressCityId &&
+                    $inputCandidateReligion != "Cristian" &&
+                    $inputCandidateReligion != "Jush" &&
+                    $inputCandidateReligion != "Zartosht") {
                     $cs.removeClass('hidden');
                     return;
                 }
@@ -181,6 +222,10 @@
                 $("#ReligionNotify").addClass('hidden');
                 $('#DateChecked').hide();
                 $("#cs").addClass('hidden');
+
+                $('#inputCandidateConstituencyStateId option').filter(function () {
+                    return $(this).val() <= 31;
+                }).prop('disabled', false).css('color', '#555');
 
             }
         }
@@ -325,15 +370,13 @@
             $inputCandidateAddressStateId = $("#inputCandidateAddressStateId").val();
             $inputCandidateAddressCityId = $("#inputCandidateAddressCityId").val();
 
-
-            console.log("$inputCandidateFatherBornStateId", $inputCandidateFatherBornStateId);
-            console.log("$inputCandidateMotherBornStateId", $inputCandidateMotherBornStateId);
-            console.log("$inputCandidateAddressStateId", $inputCandidateAddressStateId);
-            console.log("$inputCandidateConstituencyStateId", $inputCandidateConstituencyStateId);
             if (
                 $inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId &&
                 $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId &&
-                $inputCandidateConstituencyStateId != $inputCandidateAddressStateId
+                $inputCandidateConstituencyStateId != $inputCandidateAddressStateId &&
+                $inputCandidateReligion != "Cristian" &&
+                $inputCandidateReligion != "Jush" &&
+                $inputCandidateReligion != "Zartosht"
             ) {
                 console.log("state error");
                 $cs.css('display', 'block');
@@ -343,12 +386,18 @@
             if (
                 $inputCandidateConstituencyCityId != $inputCandidateFatherBornCityId &&
                 $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId &&
-                $inputCandidateConstituencyCityId != $inputCandidateAddressCityId
+                $inputCandidateConstituencyCityId != $inputCandidateAddressCityId &&
+                $inputCandidateReligion != "Cristian" &&
+                $inputCandidateReligion != "Jush" &&
+                $inputCandidateReligion != "Zartosht"
             ) {
                 $cs.css('display', 'block');
                 return;
             }
             $cs.css('display', 'none');
+
+
+
         }
 
         $(document).on('change', '#inputCandidateConstituencyStateId', checkCandidateStateAndCity);

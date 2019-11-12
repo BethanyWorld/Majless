@@ -64,7 +64,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                  <b class="text-danger">*</b>
                                              </span>
                                                 </label>
-                                                <input id="inputCandidateNationalCode" type="text"
+                                                <input style="font-family: tahoma;" id="inputCandidateNationalCode"
+                                                       type="text"
                                                        name="inputCandidateNationalCode"
                                                     <?php setInputValue($userInfo['CandidateNationalCode']); ?>
                                                        class="input-validate validate valid"
@@ -96,7 +97,8 @@ $_DIR = base_url('assets/ui/v3/');
 
                                                     <?php setInputValue($userInfo['CandidateBirthDate']); ?>
                                                        class="input-validate validate valid"
-                                                       placeholder="1357/12/22">
+                                                       placeholder="1357/12/22"
+                                                       style="font-family: tahoma;">
 
                                                 <label class="text-danger" id="DateChecked">
                                                     حداقل سن مجاز 30 سال حداکثر سن مجاز 75 سال میباشد
@@ -484,7 +486,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                    name="inputCandidateLandLinePhone"
                                                    class="input-validate validate valid"
                                                 <?php setInputValue($userInfo['CandidateLandLinePhone']); ?>
-                                                   placeholder="پر کردن این فیلد الزامی می باشد">
+                                                   placeholder="پر کردن این فیلد الزامی می باشد"
+                                                   style="font-family: tahoma;">
                                         </div>
                                         <div class="col-md-6 col-xs-12 form-group RightFloat has-required-field">
                                             <label class="active" for="inputCandidatePhone">
@@ -496,7 +499,8 @@ $_DIR = base_url('assets/ui/v3/');
                                             <input id="inputCandidatePhone" type="text"
                                                 <?php setInputValue($userInfo['CandidatePhone']); ?>
                                                    name="inputCandidatePhone" class="input-validate validate valid"
-                                                   placeholder="پر کردن این فیلد الزامی می باشد">
+                                                   placeholder="پر کردن این فیلد الزامی می باشد"
+                                                   style="font-family: tahoma;">
                                         </div>
                                     </div>
                                 </div>

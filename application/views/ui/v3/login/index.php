@@ -29,7 +29,8 @@
                 </label>
                 <input class="form-control" type="text"
                        id="inputPhone"
-                       name="inputPhone"/>
+                       name="inputPhone"
+                       style="font-family: tahoma;"/>
             </div>
             <div class="form-group">
                 <label>
@@ -38,7 +39,8 @@
                 </label>
                 <input class="form-control" type="password"
                        id="inputPassword"
-                       name="inputPassword"/>
+                       name="inputPassword"
+                       style="font-family: tahoma;"/>
             </div>
             <div class="form-group">
                 <div class="pull-right">
@@ -50,7 +52,7 @@
                          style="margin: 10px 5px;border: 2px solid #ccc;"
                          src="<?php echo base_url('GetCaptcha'); ?>"/>
                     <input type="text"
-                           style="position: relative;top:15px;    width: calc(100% - 175px);float: left;"
+                           style="position: relative;top:15px;    width: calc(100% - 175px);float: left;font-family: tahoma;"
                            name="inputCaptcha" id="inputCaptcha" class="form-control"
                            placeholder="کد امنیتی">
                 </div>

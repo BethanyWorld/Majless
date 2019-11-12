@@ -73,7 +73,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                             </option>
                                                                         <?php } ?>
                                                                     </select>
-                                                                    <select class="col-md-6 form-control form-control-lg city-select" name="inputCandidateMilitaryEndYear" id="inputCandidateMilitaryEndYear">
+                                                                    <select class="col-md-6 form-control form-control-lg city-select" name="inputCandidateMilitaryEndYear" id="inputCandidateMilitaryEndYear"
+                                                                    style="font-family: tahoma;">
                                                                         <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                             <option
                                                                                 <?php setOptionSelected($userInfo['candidateMilitaryStatus']['CandidateMilitaryEndYear'], $i); ?>
