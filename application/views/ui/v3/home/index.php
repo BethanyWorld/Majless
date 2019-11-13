@@ -61,15 +61,16 @@
                                         <div class="row rtl">
                                             <div class="col-xs-12 col-md-6 pull-right">
                                                 <input
-                                                        style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
+                                                        style="font-family: tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                                         placeholder="تلفن همراه"
-                                                        class="form-control" type="text" id="p" name="p"/>
+                                                        class="form-control" type="text" id="p" name="p"
+                                               />
                                             </div>
                                             <div class="col-xs-12 col-md-6">
                                                 <input
-                                                        style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
+                                                        style="font-family:tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                                         placeholder="کد ملی"
-                                                        class="form-control" type="text" id="nc" name="nc"/>
+                                                        class="form-control" type="text" id="nc" name="nc"
                                             </div>
                                         </div>
                                         <button type="submit"

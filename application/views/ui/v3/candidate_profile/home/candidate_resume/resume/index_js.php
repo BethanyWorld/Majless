@@ -128,7 +128,10 @@
                     $('#inputCandidateConstituencyStateId option').filter(function () {
                         return $(this).val() <= 31;
                     }).prop('disabled', true).css('color', '#ccc');
-                } else {
+                   $("#inputCandidateConstituencyStateId option").prop("selected", false);
+                   //$("#inputCandidateConstituencyCityId option").prop("selected", false);
+                    $('#inputCandidateConstituencyStateId').chane();}
+                else {
 
                     $('#inputCandidateConstituencyStateId option').filter(function () {
                         return $(this).val() <= 31;
