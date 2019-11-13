@@ -60,6 +60,9 @@
             $("#imgInp").val('');
             $("#personInfoImageButtons").attr('src', defaultImage);
         });
+
+        $isFirstTimeReligionChange = false;
+        $("#inputCandidateReligion").change();
         $(document).on('change', '#inputCandidateReligion', function () {
             $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
             if ($inputParliamentaryCandidate) {
@@ -69,6 +72,16 @@
                 } else {
                     $('#ReligionNotify').css('visibility', 'hidden');
                 }
+                /* For Religious minority check*/
+                if($isFirstTimeReligionChange){
+                    if ($inputCandidateReligion === "Cristian" || $inputCandidateReligion === "Jush" || $inputCandidateReligion === "Zartosht") {
+                        console.log();
+                        setTimeout(function(){
+                            $("#inputCandidateConstituencyStateId").change();
+                        },2000);
+                    }
+                }
+                $isFirstTimeReligionChange = true;
             }
         });
         $(document).on('keyup', '#inputCandidateAddressCityPart', function () {
@@ -106,12 +119,10 @@
                 $('#inputCandidateAddressCityPart').removeClass('InputNotAllow');
             }
         });
-        $("#inputCandidateReligion").change();
-        function checkedCandidate() {
 
+        function checkedCandidate() {
             $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
             if ($inputParliamentaryCandidate) {
-
                 /*For relegion Check */
                 $inputCandidateReligion = $('#inputCandidateReligion').val();
                 if ($inputCandidateReligion === "Undefined" || $inputCandidateReligion === "Other") {
@@ -122,17 +133,14 @@
                 }
                 /*End relegion check*/
 
-
                 /* For Religious minority check*/
                 if ($inputCandidateReligion === "Cristian" || $inputCandidateReligion === "Jush" || $inputCandidateReligion === "Zartosht") {
                     $('#inputCandidateConstituencyStateId option').filter(function () {
                         return $(this).val() <= 31;
                     }).prop('disabled', true).css('color', '#ccc');
                    $("#inputCandidateConstituencyStateId option").prop("selected", false);
-                   //$("#inputCandidateConstituencyCityId option").prop("selected", false);
-                    $('#inputCandidateConstituencyStateId').chane();}
+                }
                 else {
-
                     $('#inputCandidateConstituencyStateId option').filter(function () {
                         return $(this).val() <= 31;
                     }).prop('disabled', false).css('color', '#555');
@@ -190,16 +198,13 @@
 
                 $cs.addClass('hidden');
                 /**/
-            } else {
+            }
+            else {
                 $(".invaliderror").addClass('hidden');
                 $("#ReligionNotify").addClass('hidden');
                 $('#DateChecked').hide();
                 $("#cs").addClass('hidden');
-
-                $('#inputCandidateConstituencyStateId option').filter(function () {
-                    return $(this).val() <= 31;
-                }).prop('disabled', false).css('color', '#555');
-
+                $('#inputCandidateConstituencyStateId option').filter(function () {return $(this).val() <= 31;}).prop('disabled', false).css('color', '#555');
             }
         }
         setInterval(checkedCandidate, 300);
@@ -312,8 +317,10 @@
                         toggleLoader();
                         $result = JSON.parse(data);
                         notify($result['content'], $result['type']);
-                        if (param.data.redirect) {
-                            window.location.href = base_url + 'Profile/academicBackground';
+                        if($result['type'] !='red'){
+                            if (param.data.redirect) {
+                                window.location.href = base_url + 'Profile/academicBackground';
+                            }
                         }
                     }
                 });

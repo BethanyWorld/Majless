@@ -66,6 +66,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <input style="font-family: tahoma;" id="inputCandidateNationalCode"
                                                        type="text"
+                                                       pattern="[0-9]*"
                                                        name="inputCandidateNationalCode"
                                                     <?php setInputValue($userInfo['CandidateNationalCode']); ?>
                                                        class="input-validate validate valid"
@@ -75,8 +76,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <label class="active" for="inputCandidateFatherName">
                                                     نام پدر
                                                     <span class="text-danger">
-                                                 <b class="text-danger">*</b>
-                                             </span>
+                                                        <b class="text-danger">*</b>
+                                                    </span>
                                                 </label>
                                                 <input id="inputCandidateFatherName" type="text"
                                                        name="inputCandidateFatherName"
@@ -93,8 +94,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </label>
                                                 <input id="inputCandidateBirthDate" type="text"
                                                        name="inputCandidateBirthDate"
+                                                       pattern="[0-9]*"
                                                        data-mask="0000/00/00"
-
                                                     <?php setInputValue($userInfo['CandidateBirthDate']); ?>
                                                        class="input-validate validate valid"
                                                        placeholder="1357/12/22"
@@ -485,6 +486,7 @@ $_DIR = base_url('assets/ui/v3/');
                                             <input id="inputCandidateLandLinePhone" type="text"
                                                    name="inputCandidateLandLinePhone"
                                                    class="input-validate validate valid"
+                                                   pattern="[0-9]*"
                                                 <?php setInputValue($userInfo['CandidateLandLinePhone']); ?>
                                                    placeholder="پر کردن این فیلد الزامی می باشد"
                                                    style="font-family: tahoma;">
@@ -497,6 +499,7 @@ $_DIR = base_url('assets/ui/v3/');
                                              </span>
                                             </label>
                                             <input id="inputCandidatePhone" type="text"
+                                                   pattern="[0-9]*"
                                                 <?php setInputValue($userInfo['CandidatePhone']); ?>
                                                    name="inputCandidatePhone" class="input-validate validate valid"
                                                    placeholder="پر کردن این فیلد الزامی می باشد"

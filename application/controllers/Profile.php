@@ -229,6 +229,13 @@ class Profile extends CI_Controller{
         $profileImage = $_POST['inputCandidateProfileImage'];
         $inputs = $this->input->post(NULL, TRUE);
         /* validation */
+
+
+        $inputs['inputCandidateBirthDate']  = FaToEn($inputs['inputCandidateBirthDate']);
+        $inputs['inputCandidatePhone']  = FaToEn($inputs['inputCandidatePhone']);
+        $inputs['inputCandidateLandLinePhone']  = FaToEn($inputs['inputCandidateLandLinePhone']);
+        $inputs['inputCandidateNationalCode']  = FaToEn($inputs['inputCandidateNationalCode']);
+
         $this->form_validation->set_data($inputs);
         $this->form_validation->set_rules('inputCandidateFirstName', 'نام', 'trim|required|min_length[2]|max_length[80]');
         $this->form_validation->set_rules('inputCandidateLastName', 'نام خانوادگی', 'trim|required|min_length[2]|max_length[80]');
