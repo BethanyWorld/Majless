@@ -1,4 +1,9 @@
 <style>
+    /*helper*/
+    .padding-0{
+        padding: 0px;
+    }
+    /*helper*/
     .c-progress-steps {
         margin: 0;
         list-style-type: none;
@@ -79,6 +84,11 @@
             bottom: -14px;
             left: 50%;
             margin-left: -9px;
+        }
+    }
+    @media all and (max-width: 992px){
+        .sidebar{
+            float: left !important;
         }
     }
 

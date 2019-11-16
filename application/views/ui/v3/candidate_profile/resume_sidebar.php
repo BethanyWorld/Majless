@@ -429,7 +429,7 @@
 
     .MobileStep ul li {
         width: 20.16%;
-        margin-right: 25px;
+        margin-right: 8px;
     }
 
     .MobileStep ul li a {
@@ -441,12 +441,26 @@
         color: #ffffff;
         border-radius: 3.5px;
         text-shadow: 1px 0px 8px #333;
+        padding: 13px;
+        line-height: 0px;
+        cursor: pointer;
     }
-
+    .MobileStep ul li a i{
+        line-height: 0px;
+    }
     .MobileStep ul li.first a {
         background: #022D6D;
         color: #ffffff;
         transition: all 0.5s ease;
+    }
+
+    @media (max-width: 1199px) and (min-width: 992px) {
+        .RightPanel .RightPanelUl li{
+            padding: 0.5em 0.5em;
+        }
+        ul.RightPanelUl li .RightPanleTitle{
+            font-size: 1.1em;
+        }
     }
 </style>
 

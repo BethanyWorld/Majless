@@ -12,4 +12,9 @@
     #DateChecked{
         display: none;
     }
+    @media(max-width: 767px){
+        .response-padding{
+            padding: 0px;
+        }
+    }
 </style>

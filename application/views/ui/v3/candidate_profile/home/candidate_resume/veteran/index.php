@@ -3,7 +3,7 @@ $_DIR = base_url('assets/ui/v3/');
 ?>
 <div class="container container-wrapper" style="background: none;">
     <?php echo $resumeSidebar; ?>
-    <div class="col-xs-12 col-md-9 pull-right">
+    <div class="col-xs-12 col-md-9 pull-right response-padding">
         <div class="LeftPanel">
             <div class="LeftPanelcontent">
                 <div class="row">
@@ -34,7 +34,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     </span>
                                                                 </div>
                                                                 <div class="panel-body p">
-                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons">
+                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons response-padding">
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Veteran', $Self['CandidateVeteranType']); ?>
                                                                                     id="radio1" type="radio"
@@ -99,7 +99,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </span>
                                                                 </div>
                                                                 <div class="panel-body">
-                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons">
+                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons response-padding">
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Veteran', $Wife['CandidateVeteranType']); ?>
                                                                                     id="radio1" type="radio"
@@ -174,7 +174,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </span>
                                                                 </div>
                                                                 <div class="panel-body">
-                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons">
+                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons response-padding">
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Veteran', $Children['CandidateVeteranType']); ?>
                                                                                     id="radio1" type="radio"
@@ -247,7 +247,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </span>
                                                                 </div>
                                                                 <div class="panel-body">
-                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons">
+                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons response-padding">
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Veteran', $Parents['CandidateVeteranType']); ?>
                                                                                     id="radio1" type="radio"
@@ -319,7 +319,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </span>
                                                                 </div>
                                                                 <div class="panel-body">
-                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons">
+                                                                    <div class="col-md-12 col-xs-12 Radio-Buttons response-padding">
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Veteran', $SisterBrother['CandidateVeteranType']); ?>
                                                                                     id="radio1" type="radio"

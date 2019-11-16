@@ -3,7 +3,7 @@ $_DIR = base_url('assets/ui/v3/');
 ?>
 <div class="container container-wrapper" style="background: none;">
     <?php echo $resumeSidebar; ?>
-    <div class="col-md-9 col-xs-12 pull-right">
+    <div class="col-md-9 col-xs-12 pull-right response-padding">
         <div class="LeftPanel">
             <div class="LeftPanelcontent">
                 <div class="row">

@@ -217,4 +217,18 @@
    .list-group-Grade .panel-body{
         display: none;
     }
+
+
+    @media(max-width: 992px) {
+        .response-padding{
+            padding: 0px;
+        }
+        .RegistrationTypeDiv {
+            padding: 10px 0px 5px 15px;
+            width: 150px;
+        }
+        .Radio-Buttons label{
+            padding-left: 0px;
+        }
+    }
 </style>

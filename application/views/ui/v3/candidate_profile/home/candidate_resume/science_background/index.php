@@ -5,7 +5,7 @@ $_DIR = base_url('assets/ui/v3/');
 
     <?php echo $resumeSidebar; ?>
 
-    <div class="col-xs-12 col-md-9 pull-right">
+    <div class="col-xs-12 col-md-9 pull-right response-padding">
         <div class="LeftPanel">
             <div class="LeftPanelcontent">
                 <div class="row">

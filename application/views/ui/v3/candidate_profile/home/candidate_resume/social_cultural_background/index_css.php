@@ -382,7 +382,7 @@
 
     .MobileStep ul li {
         width: 20.16%;
-        margin-right: 25px;
+        margin-right: 8px;
     }
 
     .MobileStep ul li a {
@@ -394,8 +394,12 @@
         color: #ffffff;
         border-radius: 3.5px;
         text-shadow: 1px 0px 8px #333;
+        padding: 13px;
+        line-height: 0px;
     }
-
+    .MobileStep ul li a i {
+        line-height: 0px;
+    }
     .MobileStep ul li.first a {
         background: #022D6D;
         color: #ffffff;
@@ -591,5 +595,11 @@
     }
     .inputCandidateMobilMembershipType{
         display: none;
+    }
+
+    @media(max-width: 992px) {
+        .response-padding{
+            padding: 0px;
+        }
     }
 </style>

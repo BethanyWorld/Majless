@@ -5,7 +5,7 @@
 <div class="container container-wrapper">
 
     <div class="col-xs-12 col-md-3 pull-right">
-        <div class="row col-xs-12 sidebar">
+        <div class="row sidebar">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">تماس با ما</h3>
