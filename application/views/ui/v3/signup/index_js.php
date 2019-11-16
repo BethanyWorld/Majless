@@ -151,9 +151,10 @@
                                                 'messageBody': $result['messageBody']
                                             },
                                             success: function (data) {
-                                                setTimeout(function () {
-                                                    location.href = base_url + 'Login';
-                                                }, 500);
+                                                // setTimeout(function () {
+                                                //     location.href = base_url + 'Login';
+                                                // }, 500);
+                                                $('.Patron').show();
                                                 toggleLoader();
                                             },
                                             error: function (jqXHR, textStatus, errorThrown) {
@@ -180,6 +181,21 @@
                 });
             }
         });
+
+        // if($('#inputSignUpTypeSponsor').is(":checked")) {
+        //     debugger;
+        //    $('.ttt').show();
+        // }
+        // else{
+        //     $('.ttt').hide();
+        // }
+
+        //
+        // $('#inputSignUpTypeSponsor').change(function() {
+        //     debugger;
+        //    $tttt =  $(this).is(':checked');
+        // });
+
 
         cutSelectOptionLongText();
         $('#inputConstituencyProvince').change(function () {

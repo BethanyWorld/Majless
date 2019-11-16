@@ -21,4 +21,19 @@
         margin: 5px 0 !important;
         margin-left: 18px !important;
     }
+
+.Patron{
+    display: none;
+}
+.Patron{
+    text-align: center;
+    background-color: #022a65;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.Patron h3{
+    color: #fff;
+}
+
 </style>

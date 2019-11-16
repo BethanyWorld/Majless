@@ -349,6 +349,10 @@ img.black-and-white-color:hover {
 	.padding15-xs {
 		padding: 30px 15px !important;
 	}
+	.fw-page-builder-content p {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
 }
 
 .textalignleft, .textalignleft h1, .textalignleft h2, .textalignleft h3, .textalignleft h4, .textalignleft h5, .textalignleft h6 {

@@ -149,7 +149,7 @@
                            style="position: relative;top:15px;    width: 100px;float: right;font-family: tahoma;"
                            name="inputCaptcha" id="inputCaptcha" class="form-control"
                            placeholder="کد امنیتی"
-                           >
+                    >
                 </div>
             </div>
             <div class="form-group">
@@ -166,6 +166,14 @@
                     </a>
                 </div>
             </div>
+
+            <!--    for sweet alert-->
+            <div id="h3-1" class="col-md-12 col-xs-12 Patron animated fadeInUp">
+                <h3>
+                    <span>از حمایت شما متشکریم .</span>
+                </h3>
+            </div>
+            <!--    for sweet alert-->
         </div>
     </div>
 </div>
@@ -175,7 +183,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">اعلان</h4>
             </div>
             <div class="modal-body">
@@ -191,3 +200,5 @@
         </div>
     </div>
 </div>
+
+
