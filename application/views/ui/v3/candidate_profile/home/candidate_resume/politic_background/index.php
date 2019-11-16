@@ -425,7 +425,8 @@
                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                     <select class="form-control form-control-lg city-select"
                                                                             name="inputCandidateMediaStartYear"
-                                                                            id="inputCandidateMediaStartYear">
+                                                                            id="inputCandidateMediaStartYear"
+                                                                    style="font-family: tahoma">
                                                                         <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                             <option value="<?php echo $i; ?>">
                                                                                 <?php echo $i; ?>
@@ -453,7 +454,8 @@
                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                     <select class="form-control form-control-lg city-select"
                                                                             name="inputCandidateMediaEndYear"
-                                                                            id="inputCandidateMediaEndYear">
+                                                                            id="inputCandidateMediaEndYear"
+                                                                            style="font-family: tahoma;">
                                                                         <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                             <option value="<?php echo $i; ?>">
                                                                                 <?php echo $i; ?>
