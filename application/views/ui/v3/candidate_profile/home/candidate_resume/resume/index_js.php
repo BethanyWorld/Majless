@@ -1,4 +1,16 @@
 <script type="text/javascript">
+
+    function toEnglishDigits(str) {
+        var e = '۰'.charCodeAt(0);
+        str = str.replace(/[۰-۹]/g, function (t) {
+            return t.charCodeAt(0) - e;
+        });
+        e = '٠'.charCodeAt(0);
+        str = str.replace(/[٠-٩]/g, function (t) {
+            return t.charCodeAt(0) - e;
+        });
+        return str;
+    }
     $(document).ready(function () {
         $inputCandidateAddressCityPart = $('#inputCandidateAddressCityPart').val();
         if ($inputCandidateAddressCityPart !== null && $inputCandidateAddressCityPart !== "") {
@@ -10,6 +22,36 @@
             $('#inputCandidateAddressVillagePart').removeAttr('placeholder');
             $('#inputCandidateAddressVillagePart').addClass('InputNotAllow');
         }
+
+
+        //$('#inputCandidateBirthDate').mask("0000/00/00");
+        $('#inputCandidateBirthDate').keyup(function(e){
+            if(e.keyCode != 8){
+                var v = toEnglishDigits($(this).val());
+                if (v.match(/^\d{4}$/) !== null) {
+                    $(this).val(v + '/');
+                }
+                else if (v.match(/^\d{4}\/\d{2}$/) !== null) {
+                    $(this).val(v + '/');
+                }
+                $val = toEnglishDigits($(this).val());
+                $val = $val.substring(0, 10);
+                $(this).val($val);
+
+            }
+        });
+        $("#inputCandidateBirthDate").bind("paste", function(e){
+            var v = toEnglishDigits($(this).val());
+            if (v.match(/^\d{4}$/) !== null) {
+                $(this).val(v + '/');
+            } else if (v.match(/^\d{4}\/\d{2}$/) !== null) {
+                $(this).val(v + '/');
+            }
+            $val = toEnglishDigits($(this).val());
+            $val = $val.substring(0, 10);
+            $(this).val($val);
+        } );
+
         cutSelectOptionLongText();
         $(document).on('change', '.state-select', function () {
             toggleLoader();
@@ -72,8 +114,6 @@
                 } else {
                     $('#ReligionNotify').css('visibility', 'hidden');
                 }
-
-
                 /* For Religious minority check*/
                 if ($inputCandidateReligion === "Cristian" || $inputCandidateReligion === "Jush" || $inputCandidateReligion === "Zartosht") {
                     $('#inputCandidateConstituencyStateId option').filter(function () {
@@ -90,16 +130,6 @@
                     }).prop('disabled', false).css('color', '#555');
                 }
                 /* End Religious minority check*/
-                /* For Religious minority check*/
-                /*if($isFirstTimeReligionChange){
-                    if ($inputCandidateReligion === "Cristian" || $inputCandidateReligion === "Jush" || $inputCandidateReligion === "Zartosht") {
-                        console.log();
-                        setTimeout(function(){
-                            $("#inputCandidateConstituencyStateId").change();
-                        },2000);
-                    }
-                }
-                $isFirstTimeReligionChange = true;*/
             }
         });
         $(document).on('keyup', '#inputCandidateAddressCityPart', function () {
