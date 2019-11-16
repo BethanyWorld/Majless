@@ -95,7 +95,6 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <input id="inputCandidateBirthDate" type="text"
                                                        name="inputCandidateBirthDate"
                                                        pattern="[0-9]*"
-                                                       data-mask="0000/00/00"
                                                     <?php setInputValue($userInfo['CandidateBirthDate']); ?>
                                                        class="input-validate validate valid"
                                                        placeholder="1357/12/22"
