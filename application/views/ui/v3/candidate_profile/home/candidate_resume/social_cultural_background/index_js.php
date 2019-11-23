@@ -1,5 +1,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
+
         $(document).on('change', '[name="inputCandidateActivityFieldType"]', function () {
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
@@ -64,6 +65,17 @@
                 $(this).attr('name', $(this).data('name'))
             });
             $(".skill-divider").after($form);
+
+
+            // for date 98
+            $inputCandidateActivityStartYear = $('#inputCandidateActivityStartYear').find('option').filter('[selected]').length;
+            $inputCandidateActivityEndYear = $('#inputCandidateActivityEndYear').find('option').filter('[selected]').length;
+            if ($inputCandidateActivityStartYear === 0) {
+                $('#inputCandidateActivityStartYear').find('option:last-child').attr('selected' , 'selected');
+                $('#inputCandidateActivityEndYear').find('option:last-child').attr('selected' , 'selected');
+            }
+            // for date 98
+
         });
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();

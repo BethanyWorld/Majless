@@ -8,6 +8,7 @@
         margin: 0;
         list-style-type: none;
     }
+
     .c-progress-steps li {
         position: relative;
         font-size: 14px !important;

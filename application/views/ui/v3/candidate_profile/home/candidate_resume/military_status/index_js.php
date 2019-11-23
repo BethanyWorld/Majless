@@ -1,13 +1,20 @@
 <script type="text/javascript">
     $(document).ready(function () {
+
+        // for date 98
+        $inputCandidateMilitaryEndYear = $('#inputCandidateMilitaryEndYear').find('option').filter('[selected]').length;
+        if ($inputCandidateMilitaryEndYear === 0) {
+           $('#inputCandidateMilitaryEndYear').find('option:last-child').attr('selected' , 'selected');
+        }
+        // for date 98
+
         $(document).on('click', '[name="inputCandidateMilitaryStatus"]', function () {
             //$inputCandidateMilitaryStatus = $(this).val();
             $inputCandidateMilitaryStatus = $('input[name=inputCandidateMilitaryStatus]:checked').val();
 
             if ($inputCandidateMilitaryStatus === 'Exempt') {
                 $('.inputCandidateExemptTitle').css('display', 'block');
-            }
-            else {
+            } else {
                 $('.inputCandidateExemptTitle').css('display', 'none');
             }
 
@@ -16,13 +23,11 @@
                 if ($inputCandidateMilitaryStatus === 'CardService') {
                     $("label.MilitaryEndDateTitle").find('b').eq(0).show();
                     $("label.MilitaryEndDateTitle").find('b').eq(1).hide();
-                }
-                else {
+                } else {
                     $("label.MilitaryEndDateTitle").find('b').eq(0).hide();
                     $("label.MilitaryEndDateTitle").find('b').eq(1).show();
                 }
-            }
-            else {
+            } else {
                 $('.inputCandidateMilitaryEndDtate').css('display', 'none');
             }
 
@@ -32,8 +37,7 @@
             $inputCandidateExemptTitle = $(this).val();
             if ($inputCandidateExemptTitle === 'Others') {
                 $('.inputCandidateDescription').css('display', 'block');
-            }
-            else {
+            } else {
                 $('.inputCandidateDescription').css('display', 'none');
             }
         });
@@ -43,8 +47,7 @@
 
             if ($inputCandidateMilitaryEndArea === 'Others') {
                 $('.inputCandidatePlaceService1').css('display', 'block');
-            }
-            else {
+            } else {
                 $('.inputCandidatePlaceService1').css('display', 'none');
             }
         });
@@ -64,11 +67,11 @@
 
         function updateMilitaryStatus(param) {
             $data = $("#form-military").serializeArray();
-            if($data[1]['name'] != 'inputCandidateExemptTitle'){
+            if ($data[1]['name'] != 'inputCandidateExemptTitle') {
                 $data.splice(1, 0, {name: "inputCandidateExemptTitle", value: ""});
             }
 
-            $sendData = { inputCandidateMilitary: $data }
+            $sendData = {inputCandidateMilitary: $data}
             toggleLoader();
             $.ajax({
                 type: 'post',

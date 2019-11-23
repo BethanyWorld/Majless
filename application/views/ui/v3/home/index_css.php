@@ -1,4 +1,8 @@
 <style>
+    .tb-icon-box-description{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
     .state-news{
         padding: 0 15px;
     }

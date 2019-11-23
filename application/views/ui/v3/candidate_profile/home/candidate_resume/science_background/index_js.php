@@ -1,10 +1,24 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $(".add-form").click(function(){
+        $(".add-form").click(function() {
             $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0)
                 .clone().removeClass('hidden').removeClass('unique-form');
             $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
+
+
+            // for date 98
+            debugger;
+            $inputCandidateArticlePublishYear = $('#inputCandidateArticlePublishYear').find('option').filter('[selected]').length;
+            $inputCandidateResearchYear = $('#inputCandidateResearchYear').find('option').filter('[selected]').length;
+            if ($inputCandidateArticlePublishYear === 0 || $inputCandidateActivityEndYear === 0) {
+                debugger;
+                $('#inputCandidateArticlePublishYear').find('option:last-child').attr('selected' , 'selected');
+                $('#inputCandidateResearchYear').find('option:last-child').attr('selected' , 'selected');
+            }
+            // for date 98
+
+
         });
         $(document).on('click','.remove-form',function(){
             $(this).parent().remove();

@@ -1,11 +1,11 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <!-- #masthead -->
 <div id="main" class="site-main nopadding">
-    <a href="#hp-latest-news-1">
-        <div class="alert alert-danger" style="margin: 0;text-align: center;background: #d10b20;color: #fff;border: 0;font-size: 18px;">
-            همایش 25 آبان ماه 1398 - این خانه ازما ست
-        </div>
-    </a>
+<!--    <a href="#hp-latest-news-1">-->
+<!--        <div class="alert alert-danger" style="margin: 0;text-align: center;background: #d10b20;color: #fff;border: 0;font-size: 18px;">-->
+<!--            همایش 25 آبان ماه 1398 - این خانه ازما ست-->
+<!--        </div>-->
+<!--    </a>-->
 
     <div class="fw-page-builder-content">
         <!-- Edited Slider-->
@@ -73,10 +73,12 @@
                                                         class="form-control" type="text" id="nc" name="nc"
                                             </div>
                                         </div>
-                                        <button type="submit"
-                                                style="float: left;text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
-                                            ثبت نام کنید
-                                        </button>
+                                        <div class="col-md-12 col-xs-12">
+                                            <button type="submit"
+                                                    style="float: left;text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
+                                                ثبت نام کنید
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -171,51 +173,51 @@
             </div>
         </section>
         <!-- Banner -->
-        <section id="hp-latest-news-1" class="campaign_section nopadding hp-title-sections tbWow" >
-            <div class="container" style=' padding-top: 60px; padding-bottom: 60px; '>
-                <div class="row">
-                    <div class="fw-row absolutecenter-stretch">
-                        <div id="column-5d7930f127f86"
-                             class="tb-column absolutecenter-stretch col-xs-12  col-sm-12  nopadding  tbWow fadeIn ">
-                            <div style=" " class=" noabsolutecenter  nopadding-xs">
-                                <div class="link-type-no tb-icon-box  textaligncenter    tbWow fadeInUp ">
-                                    <div class="tb-icon-box-description">
-                                        <h4>ساز و کار شایسته گزینی</h4>
-                                        <h1>این خانه از ماست</h1>
-                                        <div class="tb-icon-box-text">
-                                            <div class="fw-page-builder-content">
-                                                <div class="col-xs-12 col-md-6">
-                                                    <img style="max-width: 100%;width: 400px;box-shadow: 0px 0px 20px 0px #ccc;border: 3px solid #043174;"
-                                                         src="<?php echo base_url('assets/ui/v4/images/banner.jpeg'); ?>" />
-                                                </div>
-                                                <div class="col-xs-12 col-md-6 rtl" style="line-height: 35px;font-size: 18px;font-weight: 900;">
-                                                    <h2>محورهای پنل اول</h2>
-                                                    <ul>
-                                                        <li>ضرورت تغییر در وضع موجود و ورود گفتمان و نیروهای نو به سپهر سیاست ایران</li>
-                                                        <li>بایسته های نماینده تراز ایران اسلامی</li>
-                                                        <li>سازو کار شایسته گزینی</li>
-                                                        <li>عدالت رسانه ای در انتخابات</li>
-                                                        <li>ساماندهی نظارت اجتماعی بر عملکرد نمایندگان مجلس</li>
-                                                    </ul>
-                                                    <h2>محورهای پنل دوم</h2>
-                                                    <ul>
-                                                        <li>مقابله با نقش آفرینی شبکه ثروت در انتخابات</li>
-                                                        <li>شفاف‌سازی هزینه‌های انتخاباتی</li>
-                                                        <li>مقابله تعارض منافع در مجلس</li>
-                                                        <li>نقش مجلس در فساد شبکه‌ای  شفافیت و پاسخگویی(رای، اموال، تابعیت، سفرها، تجارت و ...)</li>
-                                                        <li>ساماندهی نظارت اجتماعی بر مجلس</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!--        <section id="hp-latest-news-1" class="campaign_section nopadding hp-title-sections tbWow" >-->
+<!--            <div class="container" style=' padding-top: 60px; padding-bottom: 60px; '>-->
+<!--                <div class="row">-->
+<!--                    <div class="fw-row absolutecenter-stretch">-->
+<!--                        <div id="column-5d7930f127f86"-->
+<!--                             class="tb-column absolutecenter-stretch col-xs-12  col-sm-12  nopadding  tbWow fadeIn ">-->
+<!--                            <div style=" " class=" noabsolutecenter  nopadding-xs">-->
+<!--                                <div class="link-type-no tb-icon-box  textaligncenter    tbWow fadeInUp ">-->
+<!--                                    <div class="tb-icon-box-description">-->
+<!--                                        <h4>ساز و کار شایسته گزینی</h4>-->
+<!--                                        <h1>این خانه از ماست</h1>-->
+<!--                                        <div class="tb-icon-box-text">-->
+<!--                                            <div class="fw-page-builder-content">-->
+<!--                                                <div class="col-xs-12 col-md-6">-->
+<!--                                                    <img style="max-width: 100%;width: 400px;box-shadow: 0px 0px 20px 0px #ccc;border: 3px solid #043174;"-->
+<!--                                                         src="--><?php //echo base_url('assets/ui/v4/images/banner.jpeg'); ?><!--" />-->
+<!--                                                </div>-->
+<!--                                                <div class="col-xs-12 col-md-6 rtl" style="line-height: 35px;font-size: 18px;font-weight: 900;">-->
+<!--                                                    <h2>محورهای پنل اول</h2>-->
+<!--                                                    <ul>-->
+<!--                                                        <li>ضرورت تغییر در وضع موجود و ورود گفتمان و نیروهای نو به سپهر سیاست ایران</li>-->
+<!--                                                        <li>بایسته های نماینده تراز ایران اسلامی</li>-->
+<!--                                                        <li>سازو کار شایسته گزینی</li>-->
+<!--                                                        <li>عدالت رسانه ای در انتخابات</li>-->
+<!--                                                        <li>ساماندهی نظارت اجتماعی بر عملکرد نمایندگان مجلس</li>-->
+<!--                                                    </ul>-->
+<!--                                                    <h2>محورهای پنل دوم</h2>-->
+<!--                                                    <ul>-->
+<!--                                                        <li>مقابله با نقش آفرینی شبکه ثروت در انتخابات</li>-->
+<!--                                                        <li>شفاف‌سازی هزینه‌های انتخاباتی</li>-->
+<!--                                                        <li>مقابله تعارض منافع در مجلس</li>-->
+<!--                                                        <li>نقش مجلس در فساد شبکه‌ای  شفافیت و پاسخگویی(رای، اموال، تابعیت، سفرها، تجارت و ...)</li>-->
+<!--                                                        <li>ساماندهی نظارت اجتماعی بر مجلس</li>-->
+<!--                                                    </ul>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
         <!-- Edited Latest News-->
         <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow fadeIn hidden" style="background-color:#f9f9f9;">
             <div class="container" style=' padding-top: 60px; padding-bottom: 60px; '>
@@ -308,7 +310,7 @@
                 <div class="fw-row absolutecenter-stretch">
                     <div id="column-5d7930f12c6ec"
                          class="tb-column absolutecenter-stretch col-xs-12  col-sm-6  nopadding  tbWow fadeIn ">
-                        <div style="background-image:url(<?php echo $_DIR ?>images/issues.jpg);background-repeat: no-repeat; background-position: center center; background-size: auto;padding: 30px 0px 30px 0px;" class=" absolutecenter  padding15-xs">
+                        <div style="background-image:url(<?php echo $_DIR ?>images/issues.jpg);background-repeat: no-repeat; background-position: center center; background-size: auto;padding: 30px 0px 30px 0px; min-height: 500px;" class=" absolutecenter  padding15-xs">
                             <div class="tb-single-image tbWow fadeInUp textaligncenter">
                                 <span class="tb-single-image-wrap"></span>
                             </div>

@@ -29,9 +29,9 @@
     </div>
     <div class="col-xs-12 col-md-9">
         <input type="hidden" id="inputCSRF" name="inputCSRF" value="<?= $CSRF; ?>"/>
-        <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 padding-right-0">
             <div class="form-group">
-                <div class="col-xs-12 col-md-6 pull-right">
+                <div class="col-xs-12 col-md-6 pull-right padding-right-0">
                     <label>
                         <span class="required"></span>
                         نام
@@ -41,7 +41,7 @@
                             class="form-control" type="text" id="inputSignUpFirstName" name="inputSignUpFirstName"
                             autofocus/>
                 </div>
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-6 padding-right-0">
                     <label>
                         <span class="required"></span>
                         نام و نام خانوادگی
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-xs-12">
+                <div class="col-xs-12 padding-right-0">
                     <label>
                         <span class="required"></span>
                         تلفن همراه
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-xs-12">
+                <div class="col-xs-12 padding-right-0">
                     <label>
                         <span class="required"></span>
                         کد ملی
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-xs-12 col-md-6 pull-right">
+                <div class="col-xs-12 col-md-6 pull-right padding-right-0">
                     <label>
                         <span class="required"></span>
                         استان
@@ -93,7 +93,7 @@
                         <?php } ?>
                     </select>
                 </div>
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-6 padding-right-0">
                     <label>
                         <span class="required"></span>
                         شهر
@@ -104,13 +104,13 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-xs-12">
+                <div class="col-xs-12 padding-0">
                     <label>
                         <span class="required"></span>
                         ثبت نام به عنوان
                     </label>
                 </div>
-                <div class="col-xs-12">
+                <div class="col-xs-12 padding-0">
                     <div class="form-group">
                         <label class="label-sign-up-type" for="inputSignUpTypeCandidate">نامزد انتخاباتی</label>
                         <input
@@ -137,28 +137,28 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-xs-12">
-                    <label class="pull-right">
+                <div class="pull-right">
+                    <label class="">
                         <span class="required"></span>
                         کد امنیتی
                     </label>
                     <img class="captcha_img"
-                         style="margin: 10px 5px;border: 2px solid #ccc;float: right;"
+                         style="margin: 10px 5px;border: 2px solid #ccc;"
                          src="<?php echo base_url('GetCaptcha'); ?>"/>
                     <input type="text"
-                           style="position: relative;top:15px;    width: 100px;float: right;font-family: tahoma;"
+                           style="position: relative;top:15px;    width:calc(100% - 175px);float: left;font-family: tahoma;"
                            name="inputCaptcha" id="inputCaptcha" class="form-control"
                            placeholder="کد امنیتی"
                     >
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-6 padding-0">
                     <button class="btn btn-danger btn-submit pull-left" id="submitSignUpForm">
                         ثبت نام
                     </button>
                 </div>
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-6 padding-0">
                     <a class="d-i-b" href="<?php echo base_url('Login') ?>">
                         <strong style="line-height: 44px;">
                             ورود به صفحه کاربری

@@ -1,4 +1,10 @@
 <style>
+    .padding-0{
+        padding: 0px;
+    }
+    .padding-right-0{
+        padding-right: 0px;
+    }
     label {
         margin-top: 5px;
     }

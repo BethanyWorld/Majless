@@ -382,7 +382,7 @@
 
     .MobileStep ul li {
         width: 20.16%;
-        margin-right: 8px;
+        margin-right: 4px;
     }
 
     .MobileStep ul li a {
@@ -394,8 +394,12 @@
         color: #ffffff;
         border-radius: 3.5px;
         text-shadow: 1px 0px 8px #333;
-        padding: 13px;
         line-height: 0px;
+        padding-bottom: 13px;
+        padding-top: 13px;
+        padding-left: 9px;
+        padding-right: 9px;
+
     }
     .MobileStep ul li a i {
         line-height: 0px;
@@ -600,6 +604,12 @@
     @media(max-width: 992px) {
         .response-padding{
             padding: 0px;
+        }
+    }
+    @media (max-width: 768px) {
+        .LeftPanel .LeftPanelcontent {
+            padding: 0px;
+            border-radius: 0 0 2px 2px;
         }
     }
 </style>

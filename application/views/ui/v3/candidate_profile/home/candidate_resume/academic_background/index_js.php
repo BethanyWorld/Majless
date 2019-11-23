@@ -304,13 +304,13 @@
                 $($id + "[name='inputCandidateMajor']").append($tempOption);
             }
         }
-        $(".add-form").click(function(){
+        $(".add-form").click(function() {
             $form = $("#unique-form").clone().removeClass('hidden').attr('id' , UUID());
-            $form.find('[data-name]').each(function(){
+            $form.find('[data-name]').each(function() {
                 $(this).attr('name' , $(this).data('name'))
             });
             $radioButtonNameUUID =  UUID();
-            $form.find('input[type="radio"]').each(function(){
+            $form.find('input[type="radio"]').each(function() {
                 $id =  UUID();
                 $(this).attr('id' , $id);
                 $(this).attr('name' , "Study-Status-"+$radioButtonNameUUID);

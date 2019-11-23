@@ -429,7 +429,7 @@
 
     .MobileStep ul li {
         width: 20.16%;
-        margin-right: 8px;
+        margin-right: 25px;
     }
 
     .MobileStep ul li a {
@@ -441,26 +441,12 @@
         color: #ffffff;
         border-radius: 3.5px;
         text-shadow: 1px 0px 8px #333;
-        padding: 13px;
-        line-height: 0px;
-        cursor: pointer;
     }
-    .MobileStep ul li a i{
-        line-height: 0px;
-    }
+
     .MobileStep ul li.first a {
         background: #022D6D;
         color: #ffffff;
         transition: all 0.5s ease;
-    }
-
-    @media (max-width: 1199px) and (min-width: 992px) {
-        .RightPanel .RightPanelUl li{
-            padding: 0.5em 0.5em;
-        }
-        ul.RightPanelUl li .RightPanleTitle{
-            font-size: 1.1em;
-        }
     }
 </style>
 
@@ -495,7 +481,9 @@
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/veteran'); ?>">9</a>
                 </li>
-
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/finance'); ?>">10</a>
+                </li>
                 <li class="text-center">
                     <a href="<?php echo base_url('Profile'); ?>">
                         <i class="fa fa-refresh"></i>
@@ -627,6 +615,19 @@
                             <div class="RightPanleTitle">ایثارگری</div>
                             <div class="RightPanelDescription">
                                درج سوابق جانباری و ایثارگری
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "active"; ?>">
+                    <a href="<?php echo base_url('Profile/finance'); ?>">
+                        <i class="zmdi RightpanelIcon">
+                            <span class="fa fa-money"></span>
+                        </i>
+                        <div class="RightPanelContent">
+                            <div class="RightPanleTitle">اطلاعات مالی</div>
+                            <div class="RightPanelDescription">
+                                درج خلاصه ای از املاک
                             </div>
                         </div>
                     </a>
