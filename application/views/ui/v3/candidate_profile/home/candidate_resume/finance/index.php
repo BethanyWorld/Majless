@@ -4,7 +4,6 @@ $_DIR = base_url('assets/ui/v3/');
 <div class="container container-wrapper" style="background: none;">
 
     <?php echo $resumeSidebar; ?>
-
     <div class="col-xs-12 col-md-9 pull-right response-padding">
         <div class="LeftPanel">
             <div class="LeftPanelcontent">
@@ -26,14 +25,14 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateType">
+                                                <label for="inputRealEstateType">
                                                     نوع کاربری
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="RealEstateType"
-                                                        id="RealEstateType">
+                                                        name="inputRealEstateType"
+                                                        id="inputRealEstateType">
                                                     <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value){ ?>
                                                         <option
                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
@@ -41,13 +40,13 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateOwnershipDate">
+                                                <label for="inputRealEstateOwnershipDate">
                                                     سال شروع مالکیت
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="RealEstateOwnershipDate"  id="RealEstateOwnershipDate"  style="font-family: tahoma;">
+                                                        name="inputRealEstateOwnershipDate"  id="inputRealEstateOwnershipDate"  style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
                                                             <?php if ($i == 1398) echo "selected"; ?>
@@ -58,13 +57,13 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateOwnershipType">
+                                                <label for="inputRealEstateOwnershipType">
                                                     نحوه مالکیت
                                                 </label>
                                                 <select
                                                         class="form-control form-control-lg city-select"
-                                                        name="RealEstateOwnershipType"
-                                                        id="RealEstateOwnershipType">
+                                                        name="inputRealEstateOwnershipType"
+                                                        id="inputRealEstateOwnershipType">
                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
                                                         <option
                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
@@ -72,9 +71,9 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
-                                                <label for="RealEstateCountryId">کشور</label>
-                                                <select class="form-control form-control-lg state-select" name="RealEstateCountryId"
-                                                        id="RealEstateCountryId">
+                                                <label for="inputRealEstateCountryId">کشور</label>
+                                                <select class="form-control form-control-lg state-select" name="inputRealEstateCountryId"
+                                                        id="inputRealEstateCountryId">
                                                     <option value="">-- انتخاب کنید --</option>
                                                     <?php foreach ($countries as $item){ ?>
                                                     <option
@@ -84,12 +83,12 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                <label for="RealEstateStateId">
+                                                <label for="inputRealEstateStateId">
                                                     استان
                                                 </label>
                                                 <select class="form-control form-control-lg state-select"
-                                                        name="RealEstateStateId"
-                                                        id="RealEstateStateId">
+                                                        name="inputRealEstateStateId"
+                                                        id="inputRealEstateStateId">
                                                     <option value="">-- انتخاب کنید --</option>
                                                     <option value="">-- انتخاب کنید --</option>
                                                     <?php foreach ($states as $state) { ?>
@@ -100,37 +99,37 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                <label for="RealEstateCityId">
+                                                <label for="inputRealEstateCityId">
                                                     شهر
                                                 </label>
                                                 <select class="form-control form-control-lg state-select"
-                                                        name="RealEstateCityId"
-                                                        id="RealEstateCityId">
+                                                        name="inputRealEstateCityId"
+                                                        id="inputRealEstateCityId">
                                                 </select>
                                             </div>
                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstatePortion">
+                                                <label for="inputRealEstatePortion">
                                                     سهم از ملک(1 تا 6 دانگ)
                                                     <span class="text-danger"></span>
                                                 </label>
-                                                <input type="number" name="RealEstatePortion" id="RealEstatePortion"
+                                                <input type="number" name="inputRealEstatePortion" id="inputRealEstatePortion"
                                                        class="form-control" placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                             </div>
                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateExtent">
+                                                <label for="inputRealEstateExtent">
                                                     متراژ حدودی ملک
                                                     <span class="text-danger"></span>
                                                 </label>
                                                 <div class="row">
                                                     <div class="col-md-6 col-xs-12 RightFloat">
-                                                        <input type="number" name="RealEstateExtent"
-                                                               id="RealEstateExtent" class="form-control"
+                                                        <input type="number" name="inputRealEstateExtentUnit"
+                                                               id="inputRealEstateExtentUnit" class="form-control"
                                                                placeholder=""/>
                                                     </div>
                                                     <div class="col-md-6 col-xs-12 RightFloat">
                                                         <select class="form-control form-control-lg city-select"
-                                                                name="RealEstateExtent"
-                                                                id="RealEstateExtent">
+                                                                name="inputRealEstateExtentUnit"
+                                                                id="inputRealEstateExtentUnit">
                                                             <?php foreach ($EnumResumeProfile['Extent'] as $key => $value){ ?>
                                                                 <option
                                                                         value="<?php echo $key; ?>"><?php echo $value; ?></option>
@@ -140,7 +139,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputRealEstateBuyTimePrice">
                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -148,21 +147,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputRealEstateBuyTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputRealEstateBuyTimePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputRealEstateBuyTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputRealEstateBuyTimePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputRealEstateBuyTimePrice"
+                                                                id="inputRealEstateBuyTimePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -172,7 +171,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputRealEstateNowTimePrice">
                                                     ارزش حدودی کل سهام درحال حاضر :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -180,21 +179,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputRealEstateNowTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputRealEstateNowTimePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputRealEstateNowTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputRealEstateNowTimePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputRealEstateNowTimePrice"
+                                                                id="inputRealEstateNowTimePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -204,12 +203,12 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
-                                                <label for="RealEstateAddress">
+                                                <label for="inputRealEstateAddress">
                                                     آدرس
                                                     </span>
                                                 </label>
-                                                <input id="RealEstateAddress" type="text"
-                                                       name="RealEstateAddress"
+                                                <input id="inputRealEstateAddress" type="text"
+                                                       name="inputRealEstateAddress"
                                                        class="input-validate validate valid"
                                                        placeholder="نام خیابان اصلی / محله / منطقه">
                                             </div>
@@ -248,14 +247,14 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="inputCandidateBookPublishMonth">
+                                                <label for="inputVehicleType">
                                                     نوع وسیله نقلیه
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="inputTypeOfVehicle"
-                                                        id="inputTypeOfVehicle">
+                                                        name="inputVehicleType"
+                                                        id="inputVehicleType">
                                                     <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value){ ?>
                                                         <option
                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
@@ -263,14 +262,14 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="inputCandidateBookPublishYear">
+                                                <label for="inputVehicleOwnershipDate">
                                                     سال شروع مالکیت
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="inputCandidateBookPublishYear"
-                                                        id="inputCandidateBookPublishYear"
+                                                        name="inputVehicleOwnershipDate"
+                                                        id="inputVehicleOwnershipDate"
                                                         style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
@@ -282,14 +281,14 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="inputCandidateBookPublishMonth">
+                                                <label for="inputVehicleOwnershipType">
                                                     نحوه مالکیت
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="inputCandidateBookPublishMonth"
-                                                        id="inputCandidateBookPublishMonth">
+                                                        name="inputVehicleOwnershipType"
+                                                        id="inputVehicleOwnershipType">
                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
                                                         <option
                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
@@ -297,7 +296,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputVehicleBuyTimePrice">
                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -305,21 +304,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputVehicleBuyTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputVehicleBuyTimePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputVehicleBuyTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputVehicleBuyTimePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputVehicleBuyTimePrice"
+                                                                id="inputVehicleBuyTimePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -329,7 +328,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputVehicleNowTimePrice">
                                                     ارزش حدودی کل سهام درحال حاضر :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -337,21 +336,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputVehicleNowTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputVehicleNowTimePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputVehicleNowTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputVehicleNowTimePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputVehicleNowTimePrice"
+                                                                id="inputVehicleNowTimePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -362,11 +361,11 @@ $_DIR = base_url('assets/ui/v3/');
                                             </div>
 
                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="inputCandidateBookPublishYear">
+                                                <label for="inputVehiclePortion">
                                                     سهم از ملک(1 تا 6 دانگ)
                                                     <span class="text-danger"></span>
                                                 </label>
-                                                <input type="number" name="" id="" class="form-control"
+                                                <input type="number" name="inputVehiclePortion" id="inputVehiclePortion" class="form-control"
                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                             </div>
                                         </div>
@@ -404,22 +403,22 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
                                             <div class="col-md-4 col-xs-12 form-group RightFloat">
-                                                <label for="InvestTitle">
+                                                <label for="inputInvestTitle">
                                                     نام شرکت / موسسه
                                                 </label>
-                                                <input id="InvestTitle" type="text"
-                                                       name="InvestTitle"
+                                                <input id="inputInvestTitle" type="text"
+                                                       name="inputInvestTitle"
                                                        placeholder="نام شرکت - موسسه - پروژه ">
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="InvestDate">
+                                                <label for="inputInvestDate">
                                                     سال شروع مالکیت
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="InvestDate"
-                                                        id="InvestDate"
+                                                        name="inputInvestDate"
+                                                        id="inputInvestDate"
                                                         style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
@@ -431,14 +430,14 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="InvestOwnershipType">
+                                                <label for="inputInvestOwnershipType">
                                                     نحوه مالکیت
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="InvestOwnershipType"
-                                                        id="InvestOwnershipType">
+                                                        name="inputInvestOwnershipType"
+                                                        id="inputInvestOwnershipType">
                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
                                                         <option
                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
@@ -446,7 +445,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputInvestBuyTimePrice">
                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -454,21 +453,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputInvestBuyTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputInvestBuyTimePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputInvestBuyTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputInvestBuyTimePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputInvestBuyTimePrice"
+                                                                id="inputInvestBuyTimePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -478,7 +477,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputInvestNowTimePrice">
                                                     ارزش حدودی کل سهام درحال حاضر :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -486,21 +485,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputInvestNowTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputInvestNowTimePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputInvestNowTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputInvestNowTimePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputInvestNowTimePrice"
+                                                                id="inputInvestNowTimePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -544,15 +543,15 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
                                             <div class="col-md-4 col-xs-12 form-group RightFloat">
-                                                <label for="BankAccountTitle">
+                                                <label for="inputBankAccountTitle">
                                                     عنوان بانک یا موسسه
                                                 </label>
-                                                <input id="BankAccountTitle" type="text"
-                                                       name="BankAccountTitle"
+                                                <input id="inputBankAccountTitle" type="text"
+                                                       name="inputBankAccountTitle"
                                                        placeholder="عنوان بانک یا موسسه ">
                                             </div>
                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputBankAccountPrice">
                                                     مبلغ :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -560,21 +559,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputBankAccountPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputBankAccountPrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
                                                                 name="RealEstateBuyTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputBankAccountPrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputBankAccountPrice"
+                                                                id="inputBankAccountPrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -590,8 +589,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                     </span>
                                                 </label>
                                                 <select class="form-control form-control-lg state-select"
-                                                        name="BankAccountCountryId"
-                                                        id="BankAccountCountryId">
+                                                        name="inputBankAccountCountryId"
+                                                        id="inputBankAccountCountryId">
                                                     <option value="">-- انتخاب کنید --</option>
                                                     <?php foreach ($countries as $item){ ?>
                                                         <option
@@ -633,7 +632,7 @@ $_DIR = base_url('assets/ui/v3/');
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 form">
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputCreditPrice">
                                                     جمع کل بستانکاری از اشخاص حقیقی یا حقوقی :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -641,21 +640,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputCreditPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputCreditPrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputCreditPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputCreditPrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputCreditPrice"
+                                                                id="inputCreditPrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -665,7 +664,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputDebotrPrice">
                                                     جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -673,21 +672,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputDebotrPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputDebotrPrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputDebotrPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputDebotrPrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputDebotrPrice"
+                                                                id="inputDebotrPrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -695,6 +694,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <textarea class="EStates-textArea" name="inputDebotrDescription"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -731,12 +731,12 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="GoodsType">
+                                                <label for="inputGoodsType">
                                                     نوع کالا
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="GoodsType"
-                                                        id="GoodsType">
+                                                        name="inputGoodsType"
+                                                        id="inputGoodsType">
                                                     <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value){ ?>
                                                         <option
                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
@@ -744,14 +744,14 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="GoodsOwnershipStartDate">
+                                                <label for="inputGoodsOwnershipStartDate">
                                                     سال شروع مالکیت
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="GoodsOwnershipStartDate"
-                                                        id="GoodsOwnershipStartDate"
+                                                        name="inputGoodsOwnershipStartDate"
+                                                        id="inputGoodsOwnershipStartDate"
                                                         style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
@@ -763,15 +763,15 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="GoodsCount">
+                                                <label for="inputGoodsCount">
                                                     حجم / وزن / تعداد کالا
                                                     <span class="text-danger"></span>
                                                 </label>
-                                                <input type="text" name="GoodsCount" id="GoodsCount"
+                                                <input type="text" name="inputGoodsCount" id="inputGoodsCount"
                                                        class="form-control" placeholder="  حجم / وزن / تعداد کالا"/>
                                             </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputGoodsBuyTimePrice">
                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -779,21 +779,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputGoodsBuyTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputGoodsBuyTimePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputGoodsBuyTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputGoodsBuyTimePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputGoodsBuyTimePrice"
+                                                                id="inputGoodsBuyTimePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -803,7 +803,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputGoodsNowTimePrice">
                                                     ارزش حدودی کل سهام درحال حاضر :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -811,21 +811,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputGoodsNowTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputGoodsNowTimePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputGoodsNowTimePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputGoodsNowTimePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputGoodsNowTimePrice"
+                                                                id="inputGoodsNowTimePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -836,23 +836,23 @@ $_DIR = base_url('assets/ui/v3/');
                                             </div>
 
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="GoodsOwnershipPercent">
+                                                <label for="inputGoodsOwnershipPercent">
                                                     درصد سهم از مالکیت :
                                                     <span class="text-danger"></span>
                                                 </label>
-                                                <input type="number" name="GoodsOwnershipPercent"
-                                                       id="GoodsOwnershipPercent" class="form-control"
+                                                <input type="number" name="inputGoodsOwnershipPercent"
+                                                       id="inputGoodsOwnershipPercent" class="form-control"
                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateOwnershipType">
+                                                <label for="inputRealEstateOwnershipType">
                                                     نحوه مالکیت
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="RealEstateOwnershipType"
-                                                        id="RealEstateOwnershipType">
+                                                        name="inputRealEstateOwnershipType"
+                                                        id="inputRealEstateOwnershipType">
                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
                                                         <option
                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
@@ -894,12 +894,12 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="FeeType">
+                                                <label for="inputFeeType">
                                                     عنوان :
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="FeeType"
-                                                        id="FeeType">
+                                                        name="inputFeeType"
+                                                        id="inputFeeType">
                                                     <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value){ ?>
                                                         <option
                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
@@ -907,14 +907,14 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="FeeOwnershipStartDate">
+                                                <label for="inputFeeOwnershipStartDate">
                                                     سال شروع مالکیت
                                                     <span class="text-danger">
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="FeeOwnershipStartDate"
-                                                        id="FeeOwnershipStartDate"
+                                                        name="inputFeeOwnershipStartDate"
+                                                        id="inputFeeOwnershipStartDate"
                                                         style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
@@ -926,15 +926,15 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="FeePercent">
+                                                <label for="inputFeePercent">
                                                     درصد سهم از مالکیت معنوی:
                                                     <span class="text-danger"></span>
                                                 </label>
-                                                <input type="number" name="FeePercent" id="FeePercent"
+                                                <input type="number" name="inputFeePercent" id="inputFeePercent"
                                                        class="form-control" placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                             </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputFeeAverageInYear">
                                                     میزان درآمد متوسط سالیانه از مالکیت معنوی :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -942,21 +942,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputFeeAverageInYear" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputFeeAverageInYear ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputFeeAverageInYear" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputFeeAverageInYear">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputFeeAverageInYear"
+                                                                id="inputFeeAverageInYear">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -1000,7 +1000,7 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputAverageMonthIncome">
                                                  درآمد متوسط ماهیانه :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -1008,21 +1008,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputAverageMonthIncome" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputAverageMonthIncome ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputAverageMonthIncome" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputAverageMonthIncome">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputAverageMonthIncome"
+                                                                id="inputAverageMonthIncome">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -1067,7 +1067,7 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputElectionPlacePrice">
                                                     هزینه دایرکردن محل ستاد انتخابات (اجاره بها , حملو نقل و سایر موارد)
                                                     -هزینه کل :
                                                     <span class="text-danger"></span>
@@ -1076,21 +1076,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionPlacePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputElectionPlacePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionPlacePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputElectionPlacePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputElectionPlacePrice"
+                                                                id="inputElectionPlacePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -1100,7 +1100,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputElectionFlockPrice">
                                                     هزینه برپایی تجمعات عمومی مرتبط با اهداف انتخاباتی – هزینه کل :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -1108,21 +1108,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionFlockPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputElectionFlockPrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionFlockPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputElectionFlockPrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputElectionFlockPrice"
+                                                                id="inputElectionFlockPrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -1132,7 +1132,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputElectionAdvertisePrice">
                                                     هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -1140,21 +1140,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionAdvertisePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputElectionAdvertisePrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionAdvertisePrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputElectionAdvertisePrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputElectionAdvertisePrice"
+                                                                id="inputElectionAdvertisePrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -1164,7 +1164,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputElectionStaffPrice">
                                                     هزینه و حق الزحمه عوامل اجرایی و کارشناسی در انتخابات – هزینه کل :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -1172,21 +1172,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionStaffPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputElectionStaffPrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionStaffPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputElectionStaffPrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputElectionStaffPrice"
+                                                                id="inputElectionStaffPrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
@@ -1196,7 +1196,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="RealEstateBuyTimePrice">
+                                                <label for="inputElectionAllPrice">
                                                     جمع کل هزینه های انتخاباتی :
                                                     <span class="text-danger"></span>
                                                 </label>
@@ -1204,21 +1204,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionAllPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice ">تومان</label>
+                                                        <label for="inputElectionAllPrice ">صد تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                         <input
                                                                 type="number"
-                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                name="inputElectionAllPrice" class="form-control"
                                                                 placeholder=""/>
-                                                        <label for="RealEstateBuyTimePrice">هزار</label>
+                                                        <label for="inputElectionAllPrice">هزار تومان</label>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                         <select class="form-control form-control-lg state-select"
-                                                                name="RealEstateBuyTimePrice"
-                                                                id="RealEstateBuyTimePrice">
+                                                                name="inputElectionAllPrice"
+                                                                id="inputElectionAllPrice">
                                                             <option>انتخاب کنید ---</option>
                                                             <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
                                                             <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
