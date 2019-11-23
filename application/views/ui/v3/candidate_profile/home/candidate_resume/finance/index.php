@@ -34,11 +34,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <select class="form-control form-control-lg city-select"
                                                         name="RealEstateType"
                                                         id="RealEstateType">
-                                                    <option value="">مسکونی</option>
-                                                    <option value="">اداری</option>
-                                                    <option value="">تجاری</option>
-                                                    <option value="">صنعتی</option>
-                                                    <option value="">کشاورزی</option>
+                                                    <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value){ ?>
+                                                        <option
+                                                                value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
@@ -48,9 +47,7 @@ $_DIR = base_url('assets/ui/v3/');
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="RealEstateOwnershipDate"
-                                                        id="RealEstateOwnershipDate"
-                                                        style="font-family: tahoma;">
+                                                        name="RealEstateOwnershipDate"  id="RealEstateOwnershipDate"  style="font-family: tahoma;">
                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                         <option
                                                             <?php if ($i == 1398) echo "selected"; ?>
@@ -64,62 +61,51 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <label for="RealEstateOwnershipType">
                                                     نحوه مالکیت
                                                 </label>
-                                                <select class="form-control form-control-lg city-select"
+                                                <select
+                                                        class="form-control form-control-lg city-select"
                                                         name="RealEstateOwnershipType"
                                                         id="RealEstateOwnershipType">
-                                                    <option value="">خرید</option>
-                                                    <option value="">ارث</option>
-                                                    <option value="">هدیه / هبه</option>
-                                                    <option value="">مهریه</option>
-                                                    <option value="">جبران خسارت</option>
+                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                        <option
+                                                                value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
-                                                <label for="RealEstateCountryId">
-                                                    کشور
-                                                    </span>
-                                                </label>
-                                                <select class="form-control form-control-lg state-select"
-                                                        name="RealEstateCountryId"
+                                                <label for="RealEstateCountryId">کشور</label>
+                                                <select class="form-control form-control-lg state-select" name="RealEstateCountryId"
                                                         id="RealEstateCountryId">
                                                     <option value="">-- انتخاب کنید --</option>
-
-                                                    <option value="iran">ایران</option>
-                                                    <option value="tehran">تهران</option>
-                                                    <option value="yazd">یزد</option>
-
+                                                    <?php foreach ($countries as $item){ ?>
+                                                    <option
+                                                            <?php if($item['ISO'] =='IR') echo "selected"; ?>
+                                                            value="<?php echo $item['CountryId']; ?>"><?php echo $item['FaName']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                 <label for="RealEstateStateId">
                                                     استان
-                                                    </span>
                                                 </label>
                                                 <select class="form-control form-control-lg state-select"
                                                         name="RealEstateStateId"
                                                         id="RealEstateStateId">
                                                     <option value="">-- انتخاب کنید --</option>
-
-                                                    <option value="">تهران</option>
-                                                    <option value="">تهران</option>
-                                                    <option value="">تهران</option>
-
+                                                    <option value="">-- انتخاب کنید --</option>
+                                                    <?php foreach ($states as $state) { ?>
+                                                        <option value="<?php echo $state['StateId']; ?>">
+                                                            <?php echo $state['StateName']; ?>
+                                                        </option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                 <label for="RealEstateCityId">
                                                     شهر
-                                                    </span>
                                                 </label>
                                                 <select class="form-control form-control-lg state-select"
                                                         name="RealEstateCityId"
                                                         id="RealEstateCityId">
-                                                    <option value="">-- انتخاب کنید --</option>
-
-                                                    <option value="">تهران</option>
-                                                    <option value="">تهران</option>
-                                                    <option value="">تهران</option>
-
                                                 </select>
                                             </div>
                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -145,8 +131,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <select class="form-control form-control-lg city-select"
                                                                 name="RealEstateExtent"
                                                                 id="RealEstateExtent">
-                                                            <option value="">متر مربع</option>
-                                                            <option value="">هکتار</option>
+                                                            <?php foreach ($EnumResumeProfile['Extent'] as $key => $value){ ?>
+                                                                <option
+                                                                        value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                            <?php } ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -266,13 +254,12 @@ $_DIR = base_url('assets/ui/v3/');
                                              </span>
                                                 </label>
                                                 <select class="form-control form-control-lg city-select"
-                                                        name="inputCandidateBookPublishMonth"
-                                                        id="inputCandidateBookPublishMonth">
-                                                    <option value="">موتور سیکلت</option>
-                                                    <option value="">دوچرخه</option>
-                                                    <option value="">خودرو سبک</option>
-                                                    <option value="">خودرو سنگین</option>
-                                                    <option value="">سایر</option>
+                                                        name="inputTypeOfVehicle"
+                                                        id="inputTypeOfVehicle">
+                                                    <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value){ ?>
+                                                        <option
+                                                                value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
@@ -303,11 +290,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputCandidateBookPublishMonth"
                                                         id="inputCandidateBookPublishMonth">
-                                                    <option value="">خرید</option>
-                                                    <option value="">ارث</option>
-                                                    <option value="">هدیه / هبه</option>
-                                                    <option value="">مهریه</option>
-                                                    <option value="">جبران خسارت</option>
+                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                        <option
+                                                                value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
@@ -453,11 +439,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <select class="form-control form-control-lg city-select"
                                                         name="InvestOwnershipType"
                                                         id="InvestOwnershipType">
-                                                    <option value="">خرید</option>
-                                                    <option value="">ارث</option>
-                                                    <option value="">هدیه / هبه</option>
-                                                    <option value="">مهریه</option>
-                                                    <option value="">جبران خسارت</option>
+                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                        <option
+                                                                value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
@@ -608,11 +593,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                         name="BankAccountCountryId"
                                                         id="BankAccountCountryId">
                                                     <option value="">-- انتخاب کنید --</option>
-
-                                                    <option value="iran">ایران</option>
-                                                    <option value="tehran">تهران</option>
-                                                    <option value="yazd">یزد</option>
-
+                                                    <?php foreach ($countries as $item){ ?>
+                                                        <option
+                                                            <?php if($item['ISO'] =='IR') echo "selected"; ?>
+                                                                value="<?php echo $item['CountryId']; ?>"><?php echo $item['FaName']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -752,13 +737,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <select class="form-control form-control-lg city-select"
                                                         name="GoodsType"
                                                         id="GoodsType">
-                                                    <option value="">لوکس یا تزئینی</option>
-                                                    <option value="">مسکوکات</option>
-                                                    <option value="">شمش/طلا/جواهر</option>
-                                                    <option value="">فلزات قیمتی</option>
-                                                    <option value="">ارز خارجی</option>
-                                                    <option value="">دام و طیور</option>
-                                                    <option value="">سایر کالاهای تجاری</option>
+                                                    <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value){ ?>
+                                                        <option
+                                                                value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
@@ -871,11 +853,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <select class="form-control form-control-lg city-select"
                                                         name="RealEstateOwnershipType"
                                                         id="RealEstateOwnershipType">
-                                                    <option value="">خرید</option>
-                                                    <option value="">ارث</option>
-                                                    <option value="">هدیه / هبه</option>
-                                                    <option value="">مهریه</option>
-                                                    <option value="">جبران خسارت</option>
+                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                        <option
+                                                                value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -919,9 +900,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <select class="form-control form-control-lg city-select"
                                                         name="FeeType"
                                                         id="FeeType">
-                                                    <option value="">کتاب</option>
-                                                    <option value="">اختراع / اکتشاف</option>
-                                                    <option value="">ثر هنری</option>
+                                                    <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value){ ?>
+                                                        <option
+                                                                value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">

@@ -1,7 +1,5 @@
 <script type="text/javascript">
     $(document).ready(function () {
-
-
         $(".add-form").click(function () {
             $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().removeClass('hidden').removeClass('unique-form');
             $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
@@ -9,7 +7,6 @@
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });
-
         $(document).on('change', '#RealEstateCountryId', function () {
             $parentDom = $(this).parents('#form-books').attr('id');
             $parentId = "#" + $parentDom + '';
@@ -24,8 +21,6 @@
                 $('.MoneyStateDiv').css('pointerEvents', 'auto');
             }
         });
-
-
         $(document).on('change', '.price-unit', function () {
             debugger;
             $RealEstateBuyTimePrice = $('#RealEstateBuyTimePrice').val();
@@ -35,8 +30,6 @@
             $(this).prev('div').prev('div').find("input[type='number']").attr('data-unit', $rightSide);
             updatePrice();
         });
-
-
         function updatePrice() {
             $('.price-left-side').each(function() {
                 debugger;
@@ -70,6 +63,10 @@
                 }
             });
         }
+
+
+
+
 
     });
 </script>

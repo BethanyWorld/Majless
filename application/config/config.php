@@ -96,7 +96,6 @@ $config['api'] = array(
     'JobHistoryWeb' => 'http://new.moarefin.ir:8080/api/JobHistoryWeb?'
 );
 $config['EnumResumeProfile'] = array(
-
     'Gender' => array('Male' => 'آقا', 'Female' => 'خانم'),
     'MaritalStatus' => array('Married' => 'متاهل', 'Single' => 'مجرد'),
     'Months' => array('Married' => 'متاهل', 'Single' => 'مجرد'),
@@ -276,7 +275,50 @@ $config['EnumResumeProfile'] = array(
         'NewSite' => 'شبکه اجتماعی',
         'SocialNetwork' => 'نگهبان',
         'Others' => 'سایر'
+    ),
+    /* For Finance Info */
+    'RealEstateType'=> array(
+        'Residential' => 'مسکونی',
+        'Official' => 'اداری',
+        'Commercial' => 'تجاری',
+        'Industrial' => 'صنعتی',
+        'Agriculture' => 'کشاورزی'
+    ),
+    'OwnershipType' => array(
+        'Buy' => 'خرید',
+        'Inheritance' => 'ارث',
+        'gift' => 'هدیه / هبه',
+        'Dowry' => 'مهریه',
+        'Compensation' => 'جبران خسارت'
+    ),
+    'Extent' => array(
+        'SquareMeters' => 'متر مربع',
+        'Ha' => 'هکتار'
+    ),
+    'TypeOfVehicle' => array(
+        'Motorcycle' => 'موتور سیکلت',
+        'Bike' => 'دوچرخه',
+        'Vehicles' => 'خودرو سبک',
+        'HeavyVehicles' => 'خودرو سنگین',
+        'Other' => 'سایر',
+    ),
+    'GoodsType' => array(
+        'Decorative' => 'لوکس یا تزئینی',
+        'Coins' => 'مسکوکات',
+        'Jewelry' => 'شمش/طلا/جواهر',
+        'PreciousMetals' => 'فلزات قیمتی',
+        'ForeignCurrency' => 'ارز خارجی',
+        'Livestock' => 'دام و طیور',
+        'OtherCommercialGoods' => 'سایر کالاهای تجاری'
+    ),
+    'FeeType' => array(
+        'Book' => 'کتاب',
+        'Invention' => 'اختراع / اکتشاف',
+        'Art' => 'اثر هنری'
     )
+
+
+
 
 );
 /* استان پیش فرض تهران است */

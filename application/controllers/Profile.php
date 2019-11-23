@@ -599,8 +599,8 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateVeteran($inputs);
         echo json_encode($result);
     }
-    public function finance()
-    {
+
+    public function finance(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -608,6 +608,8 @@ class Profile extends CI_Controller{
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'اطلاعات مالی';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
 
+        $data['countries'] = $this->ModelCountry->getCountryList();
+        $data['states'] = $this->ModelCountry->getStateList();
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
 

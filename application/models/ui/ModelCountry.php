@@ -1,7 +1,20 @@
 <?php
 
+
 class ModelCountry extends CI_Model
 {
+
+    public function getCountryList()
+    {
+        $this->db->select('*');
+        $this->db->from('country');
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        $arr = array();
+        return $arr;
+    }
     public function getStateList()
     {
         $this->db->select('*');
