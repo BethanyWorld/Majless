@@ -31,5 +31,23 @@
         color: #d10b20;
         top: 0
     }
+    /*for panel tab*/
+    .panel-heading-background {
+        background-image: none !important;
+    }
 
+    .panel-heading-background .nav-tabs > li > a {
+        color: #333;
+        text-shadow: none !important;
+    }
+
+    .panel-heading-background .nav-tabs > li {
+        float: right;
+    }
+
+    .panel-heading-background .nav-tabs > li > a {
+        margin-right: 0px;
+        margin-left: 2px;
+    }
+    /*for panel tab*/
 </style>

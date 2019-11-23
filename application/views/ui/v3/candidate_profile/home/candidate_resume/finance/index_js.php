@@ -30,8 +30,9 @@
             $(this).prev('div').prev('div').find("input[type='number']").attr('data-unit', $rightSide);
             updatePrice();
         });
+
         function updatePrice() {
-            $('.price-left-side').each(function() {
+            $('.price-left-side').each(function () {
                 debugger;
                 $leftDataUnit = $(this).find('input[type="number"]').attr('data-unit');
                 switch ($leftDataUnit) {
@@ -47,7 +48,7 @@
                 }
             });
 
-            $('.price-right-side').each(function() {
+            $('.price-right-side').each(function () {
                 debugger;
                 $rightDataUnit = $(this).find('input[type="number"]').attr('data-unit');
                 switch ($rightDataUnit) {
@@ -64,9 +65,38 @@
             });
         }
 
+        // for panel tab
+        $(function () {
+            var $tabButtonItem = $('#tab-button li'),
+                $tabSelect = $('#tab-select'),
+                $tabContents = $('.tab-contents'),
+                activeClass = 'is-active';
 
+            $tabButtonItem.first().addClass(activeClass);
+            $tabContents.not(':first').hide();
 
+            $tabButtonItem.find('a').on('click', function (e) {
+                var target = $(this).attr('href');
 
+                $tabButtonItem.removeClass(activeClass);
+                $(this).parent().addClass(activeClass);
+                $tabSelect.val(target);
+                $tabContents.hide();
+                $(target).show();
+                e.preventDefault();
+            });
+
+            $tabSelect.on('change', function () {
+                var target = $(this).val(),
+                    targetSelectNum = $(this).prop('selectedIndex');
+
+                $tabButtonItem.removeClass(activeClass);
+                $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+                $tabContents.hide();
+                $(target).show();
+            });
+        });
+        // for panel tab
 
     });
 </script>
