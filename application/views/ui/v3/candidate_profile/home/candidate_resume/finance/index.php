@@ -19,7 +19,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                         <hr>
-                                        <form id="form-books">
+                                        <form id="form-RealEstate">
                                             <span class="divider"></span>
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
@@ -241,7 +241,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                         <hr>
-                                        <form id="form-articles">
+                                        <form id="form-Vehicle">
                                             <span class="divider"></span>
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
@@ -397,7 +397,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                         <hr>
-                                        <form id="form-research">
+                                        <form id="form-Invest">
                                             <span class="divider"></span>
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
@@ -537,7 +537,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                         <hr>
-                                        <form id="form-translate">
+                                        <form id="form-BankAccount">
                                             <span class="divider"></span>
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
@@ -627,7 +627,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                         <hr>
-                                        <form id="form-invention">
+                                        <form id="form-Credit-Debtor">
                                             <span class="divider"></span>
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 form">
@@ -725,7 +725,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                         <hr>
-                                        <form id="form-translate">
+                                        <form id="form-Goods">
                                             <span class="divider"></span>
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
@@ -888,7 +888,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                         <hr>
-                                        <form id="form-translate">
+                                        <form id="form-Fee">
                                             <span class="divider"></span>
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
@@ -994,7 +994,7 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                         <hr>
-                                        <form id="form-translate">
+                                        <form id="form-AverageMonthIncome">
                                             <span class="divider"></span>
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
@@ -1060,9 +1060,8 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                         <hr>
-                                        <form id="form-conference">
+                                        <form id="form-Election">
                                             <span class="divider"></span>
-
                                         </form>
                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
