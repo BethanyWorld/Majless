@@ -1,4 +1,5 @@
 <?php
+
 class ModelProfile extends CI_Model
 {
     public function candidateUpdatePersonalInfo($inputs)
@@ -81,7 +82,6 @@ class ModelProfile extends CI_Model
 
 
     }
-
     public function getCandidateAcademicBackgroundByCandidateId($id)
     {
         return
@@ -91,7 +91,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateAcademicBackground($inputs)
     {
         $this->db->trans_start();
@@ -131,7 +130,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateMilitaryStatusByCandidateId($id)
     {
         return
@@ -141,7 +139,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateMilitaryStatus($inputs)
     {
         $this->db->trans_start();
@@ -181,7 +178,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateJobHistoryByCandidateId($id)
     {
         return
@@ -191,7 +187,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateJobHistory($inputs)
     {
         $this->db->trans_start();
@@ -230,7 +225,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateSocialCulturalBackgroundByCandidateId($id)
     {
         return
@@ -240,7 +234,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateSocialCulturalBackground($inputs)
     {
         $this->db->trans_start();
@@ -286,7 +279,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateBooksByCandidateId($id)
     {
         return
@@ -296,7 +288,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateBooks($inputs)
     {
         $this->db->trans_start();
@@ -333,7 +324,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateResearchByCandidateId($id)
     {
         return
@@ -343,7 +333,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateResearch($inputs)
     {
         $this->db->trans_start();
@@ -382,7 +371,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateArticlesByCandidateId($id)
     {
         return
@@ -392,7 +380,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateArticles($inputs)
     {
         $this->db->trans_start();
@@ -430,7 +417,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateTranslationByCandidateId($id)
     {
         return
@@ -440,7 +426,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateTranslation($inputs)
     {
         $this->db->trans_start();
@@ -478,7 +463,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateInventionByCandidateId($id)
     {
         return
@@ -488,7 +472,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateInvention($inputs)
     {
         $this->db->trans_start();
@@ -525,7 +508,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateConferenceByCandidateId($id)
     {
         return
@@ -535,7 +517,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateConference($inputs)
     {
         $this->db->trans_start();
@@ -573,7 +554,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateUpdatePoliticBackgroundByCandidateId($id)
     {
         return
@@ -583,7 +563,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdatePoliticBackground($inputs)
     {
         $this->db->trans_start();
@@ -633,7 +612,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateSkillsByCandidateId($id)
     {
         return
@@ -643,7 +621,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateSkills($inputs)
     {
         $this->db->trans_start();
@@ -679,7 +656,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateVeteranByCandidateId($id)
     {
         return
@@ -730,6 +706,49 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
+
+
+    /* finance update */
+
+    public function candidateUpdateRealEstates($inputs)
+    {
+        $this->db->trans_start();
+        $this->db->delete('candidate_articles', array(
+            'CandidateId' => $inputs['inputCandidateId']
+        ));
+        if (isset($inputs['inputCandidateArticles'])) {
+            for ($i = 0; $i < count($inputs['inputCandidateArticles']);) {
+                $UserArray = array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'CandidateArticleTitle' => $inputs['inputCandidateArticles'][$i]['value'],
+                    'CandidateArticleLevel' => $inputs['inputCandidateArticles'][$i + 1]['value'],
+                    'CandidateArticleMagazineTitle' => $inputs['inputCandidateArticles'][$i + 2]['value'],
+                    'CandidateArticlePublishMonth' => $inputs['inputCandidateArticles'][$i + 3]['value'],
+                    'CandidateArticlePublishYear' => $inputs['inputCandidateArticles'][$i + 4]['value']
+                );
+                $this->db->insert('candidate_articles', $UserArray);
+                $i = $i + 5;
+            }
+        }
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "بروزرسانی مقالات ها با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "بروزرسانی مقالات ها با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+    /* End finance update*/
+
 
 
 }

@@ -19,6 +19,7 @@ class Home extends CI_Controller {
         $data['report']['ExamRequestsCount'] = $this->ModelReport->getAllExamRequestsCount();
         $data['report']['StateCandidatesCount'] = $this->ModelReport->getStateCandidatesCount();
         $data['report']['Roles'] = $this->ModelReport->getRolesCount();
+        $data['report']['GenderCount'] = $this->ModelReport->getGenderCount();
         $data['latestCandidates'] = $this->ModelReport->getLatestCandidates();
 
 

@@ -45,13 +45,13 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <script src="<?php echo $_DIR; ?>js/helper.min.js"></script>
     <script type="text/javascript"> var base_url = "<?php echo base_url(); ?>";</script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101180356-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-101180356-3');
-    </script>
+<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101180356-3"></script>-->
+<!--    <script>-->
+<!--        window.dataLayer = window.dataLayer || [];-->
+<!--        function gtag(){dataLayer.push(arguments);}-->
+<!--        gtag('js', new Date());-->
+<!--        gtag('config', 'UA-101180356-3');-->
+<!--    </script>-->
 </head>
 <div id="loading">
     <div id="loading-center">

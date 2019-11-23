@@ -217,9 +217,65 @@ $_DIR = base_url('assets/empanel/');
                                                 سوابق خدمت
                                             </div>
                                             <div class="panel-body">
-                                                <div class="alert  military-info-container">
-                                                    <?php var_dump($candidateMilitaryStatus); ?>
-                                                </div>
+                                                <table class="table table-bordered table-condensed table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="fit info-department">وضعیت خدمت</th>
+                                                        <th class="fit info-educationalAttainment">علت معافیت</th>
+                                                        <th class="fit info-science">توصیحات</th>
+                                                        <th class="fit info-studying">تاریخ اتمام خدمت</th>
+                                                        <th class="fit info-universityLevelType">ارگان پایان خدمت</th>
+                                                        <th class="fit info-universityName">محل پایان خدمت</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="temp-edu-record">
+                                                            <td class="fit info-department">
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidateMilitaryStatus'] as $key => $value) {
+                                                                    if($candidateMilitaryStatus[0]['CandidateMilitaryStatus'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                            <td class="fit info-educationalAttainment">
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidateExemptTitle'] as $key => $value) {
+                                                                    if($candidateMilitaryStatus[0]['CandidateExemptTitle'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                            <td class="fit info-science">
+                                                                <?php echo $candidateMilitaryStatus[0]['CandidateExemptDescription']; ?>
+                                                            </td>
+                                                            <td class="fit info-studying">
+                                                                <?php
+                                                                    foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                                                        if($candidateMilitaryStatus[0]['CandidateMilitaryEndMonth'] == $key){
+                                                                            echo $value;
+                                                                        }
+                                                                    }
+                                                                ?>
+                                                                <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndYear']; ?>
+                                                            </td>
+                                                            <td class="fit info-universityLevelType">
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidateMilitaryEndArea'] as $key => $value) {
+                                                                    if($candidateMilitaryStatus[0]['CandidateMilitaryEndArea'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                            <td class="fit info-universityName">
+                                                                <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndAreaTitle']; ?>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                         <div class="panel panel-default panel-post">
@@ -233,7 +289,7 @@ $_DIR = base_url('assets/empanel/');
                                                         <th class="fit info-department">گروه تحصیلی</th>
                                                         <th class="fit info-educationalAttainment">مقطع</th>
                                                         <th class="fit info-science">عنوان رشته تحصیلی</th>
-                                                        <th class="fit info-studying">در حال تحصیل</th>
+                                                        <th class="fit info-studying">وضعیت تحصیل</th>
                                                         <th class="fit info-universityLevelType">دانشگاه</th>
                                                         <th class="fit info-universityName">نام دانشگاه</th>
                                                     </tr>
@@ -242,20 +298,50 @@ $_DIR = base_url('assets/empanel/');
                                                     <?php foreach ($candidateAcademicBackground as $item) { ?>
                                                         <tr class="temp-edu-record">
                                                             <td class="fit info-department">
-                                                                <?php echo $item['CandidateDepartment']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidateDepartment'] as $key => $value) {
+                                                                    if($item['CandidateDepartment'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-educationalAttainment">
-                                                                <?php echo $item['CandidateGrade']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidateGrade'] as $key => $value) {
+                                                                    if($item['CandidateGrade'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-science">
+                                                                <?php
+                                                                    foreach ($EnumResumeProfile['CandidateSchoolMajor'] as $key => $value) {
+                                                                        if($item['CandidateSchoolMajor'] == $key){
+                                                                            echo $value;
+                                                                        }
+                                                                    }
+                                                                ?>
                                                                 <?php echo $item['CandidateMajor']; ?>
-                                                                <?php echo $item['CandidateSchoolMajor']; ?>
                                                             </td>
                                                             <td class="fit info-studying">
-                                                                <?php echo $item['CandidateStudyStatus']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['AcademicStudyStatus'] as $key => $value) {
+                                                                    if($item['CandidateStudyStatus'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-universityLevelType">
-                                                                <?php echo $item['CandidateUniversityLevelType']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidateUniversityLevelType'] as $key => $value) {
+                                                                    if($item['CandidateUniversityLevelType'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-universityName">
                                                                 <?php echo $item['CandidateUniversityName']; ?>
@@ -278,7 +364,7 @@ $_DIR = base_url('assets/empanel/');
                                                         <th class="fit info-educationalAttainment">نام سازمان</th>
                                                         <th class="fit info-science">ماه آغاز همکاری</th>
                                                         <th class="fit info-studying">سال آغاز همکاری</th>
-                                                        <th class="fit info-universityLevelType">ماه پایان همکاری </th>
+                                                        <th class="fit info-universityLevelType">ماه پایان همکاری</th>
                                                         <th class="fit info-universityName">سال پایان همکاری</th>
                                                     </tr>
                                                     </thead>
@@ -292,13 +378,25 @@ $_DIR = base_url('assets/empanel/');
                                                                 <?php echo $item['CandidateJobCompanyTitle']; ?>
                                                             </td>
                                                             <td class="fit info-science">
-                                                                <?php echo $item['CandidateStartJobMonth']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                                                    if($item['CandidateStartJobMonth'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-studying">
                                                                 <?php echo $item['CandidateStartJobYear']; ?>
                                                             </td>
                                                             <td class="fit info-universityLevelType">
-                                                                <?php echo $item['CandidateEndJobMonth']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                                                    if($item['CandidateEndJobMonth'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-universityName">
                                                                 <?php echo $item['CandidateEndJobYear']; ?>
@@ -318,8 +416,8 @@ $_DIR = base_url('assets/empanel/');
                                                     <thead>
                                                     <tr>
                                                         <th class="fit">عنوان کتاب</th>
-                                                        <th class="fit info-title">ناشر </th>
-                                                        <th class="fit info-publisher">ماه انتشار </th>
+                                                        <th class="fit info-title">ناشر</th>
+                                                        <th class="fit info-publisher">ماه انتشار</th>
                                                         <th class="fit info-printYear">سال انتشار</th>
                                                     </tr>
                                                     </thead>
@@ -333,7 +431,13 @@ $_DIR = base_url('assets/empanel/');
                                                                 <?php echo $item['CandidateBookPublisher']; ?>
                                                             </td>
                                                             <td class="fit info-science">
-                                                                <?php echo $item['CandidateBookPublishMonth']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                                                    if($item['CandidateBookPublishMonth'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-studying">
                                                                 <?php echo $item['CandidateBookPublishYear']; ?>
@@ -353,8 +457,8 @@ $_DIR = base_url('assets/empanel/');
                                                     <thead>
                                                     <tr>
                                                         <th class="fit">عنوان مقاله</th>
-                                                        <th class="fit info-title">سطح مقاله </th>
-                                                        <th class="fit info-articleLevelType">عنوان مجله </th>
+                                                        <th class="fit info-title">سطح مقاله</th>
+                                                        <th class="fit info-articleLevelType">عنوان مجله</th>
                                                         <th class="fit info-printYear">سال نشر</th>
                                                         <th class="fit info-printMonth">ماه نشر</th>
                                                     </tr>
@@ -366,7 +470,13 @@ $_DIR = base_url('assets/empanel/');
                                                                 <?php echo $item['CandidateArticleTitle']; ?>
                                                             </td>
                                                             <td class="fit info-educationalAttainment">
-                                                                <?php echo $item['CandidateArticleLevel']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['ArticleLevelType'] as $key => $value) {
+                                                                    if($item['CandidateArticleLevel'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-science">
                                                                 <?php echo $item['CandidateArticleMagazineTitle']; ?>
@@ -375,7 +485,13 @@ $_DIR = base_url('assets/empanel/');
                                                                 <?php echo $item['CandidateArticlePublishYear']; ?>
                                                             </td>
                                                             <td class="fit info-universityLevelType">
-                                                                <?php echo $item['CandidateArticlePublishMonth']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                                                    if($item['CandidateArticlePublishMonth'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -391,7 +507,7 @@ $_DIR = base_url('assets/empanel/');
                                                 <table class="table table-bordered table-condensed table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th class="fit">عنوان اختراع </th>
+                                                        <th class="fit">عنوان اختراع</th>
                                                         <th class="fit info-title">حوزه ابداع</th>
                                                         <th class="fit info-registerNumber">شماره ثبت</th>
                                                         <th class="fit info-description">شرح اختراع</th>
@@ -454,7 +570,13 @@ $_DIR = base_url('assets/empanel/');
                                                                 <?php echo $item['CandidateResearchYear']; ?>
                                                             </td>
                                                             <td class="fit info-universityName">
-                                                                <?php echo $item['CandidateResearchMonth']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                                                    if($item['CandidateResearchMonth'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -484,16 +606,34 @@ $_DIR = base_url('assets/empanel/');
                                                                 <?php echo $item['CandidateConferenceTitle']; ?>
                                                             </td>
                                                             <td class="fit info-educationalAttainment">
-                                                                <?php echo $item['CandidateConferenceLevel']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['ConferenceLevelType'] as $key => $value) {
+                                                                    if($item['CandidateConferenceLevel'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-science">
-                                                                <?php echo $item['CandidateConferenceAcceptType']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['AcceptanceOfferType'] as $key => $value) {
+                                                                    if($item['CandidateConferenceAcceptType'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-studying">
                                                                 <?php echo $item['CandidateConferenceYear']; ?>
                                                             </td>
                                                             <td class="fit info-universityLevelType">
-                                                                <?php echo $item['CandidateConferenceMonth']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                                                    if($item['CandidateConferenceMonth'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -520,7 +660,13 @@ $_DIR = base_url('assets/empanel/');
                                                     <?php foreach ($candidateTranslation as $item) { ?>
                                                         <tr class="temp-edu-record">
                                                             <td class="fit info-department">
-                                                                <?php echo $item['CandidateTranslationType']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['TranslateType'] as $key => $value) {
+                                                                    if($item['CandidateTranslationType'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-educationalAttainment">
                                                                 <?php echo $item['CandidateTranslationTitle']; ?>
@@ -532,7 +678,13 @@ $_DIR = base_url('assets/empanel/');
                                                                 <?php echo $item['CandidateTranslationYear']; ?>
                                                             </td>
                                                             <td class="fit info-universityLevelType">
-                                                                <?php echo $item['CandidateTranslationMonth']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                                                    if($item['CandidateTranslationMonth'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -548,7 +700,6 @@ $_DIR = base_url('assets/empanel/');
                                                 <table class="table table-bordered table-condensed table-striped">
                                                     <thead>
                                                     <tr>
-                                                        <th class="fit">ردیف</th>
                                                         <th class="fit info-politicalType">قالب</th>
                                                         <th class="fit info-otherPoliticalType">سایر قالب</th>
                                                         <th class="fit info-mediaName">رسانه</th>
@@ -577,13 +728,25 @@ $_DIR = base_url('assets/empanel/');
                                                     <?php foreach ($politicBackground as $item) { ?>
                                                         <tr class="temp-edu-record">
                                                             <td class="fit info-department">
-                                                                <?php echo $item['CandidateActivityType']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidatePoliticActivityType'] as $key => $value) {
+                                                                    if($item['CandidateActivityType'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-science">
                                                                 <?php echo $item['CandidateActivityTypeOtherOrganizationTitle']; ?>
                                                             </td>
                                                             <td class="fit info-studying">
-                                                                <?php echo $item['CandidateElectionType']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidatePoliticElectionType'] as $key => $value) {
+                                                                    if($item['CandidateElectionType'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-universityLevelType">
                                                                 <?php echo $item['CandidateElectionPeriod']; ?>
@@ -592,10 +755,22 @@ $_DIR = base_url('assets/empanel/');
                                                                 <?php echo $item['CandidateElectionListName']; ?>
                                                             </td>
                                                             <td class="fit info-universityName">
-                                                                <?php echo $item['CandidateHeadquarterActivityTitle']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidateHeadquarterActivityTitle'] as $key => $value) {
+                                                                    if($item['CandidateHeadquarterActivityTitle'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-universityName">
-                                                                <?php echo $item['CandidateMediaType']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidateMediaType'] as $key => $value) {
+                                                                    if($item['CandidateMediaType'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-universityName">
                                                                 <?php echo $item['CandidateMediaTypeTitle']; ?>
@@ -605,6 +780,13 @@ $_DIR = base_url('assets/empanel/');
                                                             </td>
                                                             <td class="fit info-universityName">
                                                                 <?php echo $item['CandidateMediaActivityType']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['CandidateMediaType'] as $key => $value) {
+                                                                    if($item['CandidateMediaType'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-universityName">
                                                                 <?php echo $item['CandidateResponsibility']; ?>
@@ -653,10 +835,22 @@ $_DIR = base_url('assets/empanel/');
                                                                 <?php echo $item['SkillType']; ?>
                                                             </td>
                                                             <td class="fit info-educationalAttainment">
-                                                                <?php echo $item['SkillLevel']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['SkillLevel'] as $key => $value) {
+                                                                    if($item['SkillLevel'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                             <td class="fit info-science">
-                                                                <?php echo $item['SkillLearnType']; ?>
+                                                                <?php
+                                                                foreach ($EnumResumeProfile['SkillLearnType'] as $key => $value) {
+                                                                    if($item['SkillLearnType'] == $key){
+                                                                        echo $value;
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>

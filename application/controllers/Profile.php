@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Profile extends CI_Controller{
+
     public function __construct()
     {
         parent::__construct();
@@ -197,7 +198,7 @@ class Profile extends CI_Controller{
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'رزومه';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'پروفایل شخصی';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
@@ -295,7 +296,7 @@ class Profile extends CI_Controller{
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'سوابق تحصیلی';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
@@ -325,7 +326,7 @@ class Profile extends CI_Controller{
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'سوابق نظام وظیفه';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
@@ -351,7 +352,7 @@ class Profile extends CI_Controller{
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'سوابق شغلی';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
@@ -377,7 +378,7 @@ class Profile extends CI_Controller{
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'سوابق فرهنگی اجتماعی';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
@@ -403,7 +404,7 @@ class Profile extends CI_Controller{
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'سوابق سیاسی';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
@@ -534,14 +535,13 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateSkills($inputs);
         echo json_encode($result);
     }
-
     public function veteran()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'مهارت ها';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'سوابق ایثارگری';
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
 
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
@@ -599,6 +599,33 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateVeteran($inputs);
         echo json_encode($result);
     }
+    public function finance()
+    {
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'رزومه';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'اطلاعات مالی';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/finance/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/finance/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/finance/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function candidateUpdateFinance(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $result = $this->ModelProfile->candidateUpdateFinance($inputs);
+        echo json_encode($result);
+    }
+
     /* End For Resume -------------------------------------------------------------*/
     /* get out of panel - session destroyed */
     public function logOut()

@@ -1,0 +1,1 @@
+<?php$CI =& get_instance();if ($CI->session->userdata('VeteranIsLogged') == TRUE && count($CI->session->userdata('VeteranLoginInfo')) > 0) {}else {    redirect(base_url('Veteran/Account/'));}?>

@@ -6,7 +6,15 @@
     $totalResultCount = 0;
     $hasPagination = false;
     function loadData(selectedPage = $selectedPage) {
+        $inputCandidateStatus = $("#inputCandidateStatus").val();
+        $inputCandidateNationalCode = $("#inputCandidateNationalCode").val();
+        $inputCandidateFullName = $("#inputCandidateFullName").val();
+        $inputCandidateState = $("#inputCandidateState").val();
         $sendData = {
+            'inputCandidateStatus': $inputCandidateStatus,
+            'inputCandidateNationalCode': $inputCandidateNationalCode,
+            'inputCandidateFullName': $inputCandidateFullName,
+            'inputCandidateState': $inputCandidateState,
             'pageIndex': selectedPage
         }
         $.ajax({
@@ -41,5 +49,8 @@
     }
     $(document).ready(function () {
         loadData();
+        $("#searchButton").click(function () {
+            loadData(1);
+        });
     });
 </script>

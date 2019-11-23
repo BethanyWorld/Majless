@@ -5,11 +5,16 @@ class Candidates extends CI_Controller{
         parent::__construct();
         $this->load->helper('agent/agent_login');
         $this->load->helper('pipes/pipe');
-        $this->load->model('agent/ModelCandidates');
+        $this->load->model('agent/ModelCandidates' , 'agentModelCandidates');
+        $this->load->model('admin/ModelCandidate');
+        $this->load->model('ui/ModelCountry');
+        $this->load->model('ui/ModelProfile');
     }
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'فهرست نامزد های انتخاباتی استان';
+        $data['pageTitle'] = 'نامزد های انتخاباتی';
+        $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
+        $data['states'] = $this->ModelCountry->getStateList();
         $this->load->view('agent_panel/static/header', $data);
         $this->load->view('agent_panel/candidates/home/index', $data);
         $this->load->view('agent_panel/candidates/home/index_css');
@@ -18,48 +23,53 @@ class Candidates extends CI_Controller{
     }
     public function doPagination(){
         $inputs = $this->input->post(NULL, TRUE);
-        $data = $this->ModelCandidates->getCandidatesByStateId($inputs);
+        $data = $this->agentModelCandidates->getCandidatesByStateId($inputs);
         $data['htmlResult'] = $this->load->view('agent_panel/candidates/home/pagination', $data, TRUE);
         unset($data['data']);
         echo json_encode($data);
     }
 
-    public function detail($id)
+    public function detail($candidateId)
     {
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'جزئیات نامزد انتخاباتی';
-        $data['candidateInfo'] = $this->ModelCandidates->getCandidateById($id)[0];
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = 'ویرایش نامزد انتخاباتی';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['exams'] = $this->getCandidateExams($candidateId);
+        $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+        $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
+        $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
+        $data['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($candidateId);
+        $data['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($candidateId);
 
+        $data['candidateBooks'] = $this->ModelProfile->getCandidateBooksByCandidateId($candidateId);
+        $data['candidateArticles'] = $this->ModelProfile->getCandidateArticlesByCandidateId($candidateId);
+        $data['candidateResearch'] = $this->ModelProfile->getCandidateResearchByCandidateId($candidateId);
+        $data['candidateTranslation'] = $this->ModelProfile->getCandidateTranslationByCandidateId($candidateId);
+        $data['candidateInvention'] = $this->ModelProfile->getCandidateInventionByCandidateId($candidateId);
+        $data['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($candidateId);
+        $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
+        $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
+
+        $data['api'] = $this->config->item('api');
         $this->load->view('agent_panel/static/header', $data);
         $this->load->view('agent_panel/candidates/detail/index', $data);
         $this->load->view('agent_panel/candidates/detail/index_css');
         $this->load->view('agent_panel/candidates/detail/index_js');
         $this->load->view('agent_panel/static/footer');
     }
-    /*public function doEditCandidateMark()
-    {
-        $inputs = $this->input->post(NULL, TRUE);
-        $inputs = array_map(function ($v) {
-            return strip_tags($v);
-        }, $inputs);
-        $inputs = array_map(function ($v) {
-            return remove_invisible_characters($v);
-        }, $inputs);
-        $inputs = array_map(function ($v) {
-            return makeSafeInput($v);
-        }, $inputs);
 
-        $this->form_validation->set_data($inputs);
-        $this->form_validation->set_rules('inputCandidateScore', 'نمره آزمون', 'trim|required|greater_than[0]|less_than[101]|numeric');
-        if ($this->form_validation->run() == FALSE) {
-            $arr = array(
-                'type' => "red",
-                'content' => validation_errors()
-            );
-            echo json_encode($arr);
-            die();
-        }
-        $result = $this->ModelCandidates->doEditCandidateMark($inputs);
-        echo json_encode($result);
-    }*/
+    protected function getCandidateStatus($candidateId){
+        return $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+    }
+    protected function getCandidateExams($candidateId){
+        $data['firstExams'] = $this->ModelCandidate->getCandidateFirstStepExamByCandidateId($candidateId);
+        $data['secondExams'] = $this->ModelCandidate->getCandidateSecondStepExamByCandidateId($candidateId);
+        $data['evalExams'] = $this->ModelCandidate->getCandidateEvaluationExamByCandidateId($candidateId);
+
+        $data['firstExams'] = array_reverse($data['firstExams']);
+        $data['secondExams'] = array_reverse($data['secondExams']);
+        $data['evalExams'] = array_reverse($data['evalExams']);
+        return $data;
+    }
 }

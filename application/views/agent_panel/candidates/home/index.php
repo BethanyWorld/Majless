@@ -1,6 +1,39 @@
  <section class="content">
     <div class="container-fluid">
         <div class="row clearfix">
+
+            <div class="col-xs-12 rtl">
+                <div class="row col-xs-12 card info-box">
+                    <div class="body">
+                        <div class="col-xs-12">
+                            <label for="inputCandidateStatus">وضعیت:</label>
+                            <select name="inputCandidateStatus" id="inputCandidateStatus">
+                                <option value="">همه</option>
+                                <?php foreach ($enumCandidateStatus as $key => $value) { ?>
+                                    <option value="<?php echo $key; ?>">
+                                        <?php echo $value; ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                            <label for="inputCandidateNationalCode">کد ملی:</label>
+                            <input type="text"
+                                   name="inputCandidateNationalCode"
+                                   style="width: 100px;"
+                                   id="inputCandidateNationalCode"/>
+                            <label for="inputCandidateFullName">نام یا نام خانوادگی:</label>
+                            <input type="text"
+                                   style="width: 100px;"
+                                   name="inputCandidateFullName"
+                                   id="inputCandidateFullName"/>
+                            <button type="button"
+                                    id="searchButton"
+                                    class="btn btn-info btn-circle waves-effect waves-circle waves-float pull-left btn-search">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-xs-12 rtl">
                 <div class="row col-xs-12 card">
                     <div class="body">

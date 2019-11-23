@@ -1,4 +1,5 @@
 <?php
+
 class ModelReport extends CI_Model{
     public function getAllCandidatesCount($stateId = 0){
         $this->db->select('*');
@@ -95,6 +96,18 @@ class ModelReport extends CI_Model{
         $data['Elite'] = $this->db->get()->result_array()[0]['cnt'];
         return $data;
     }
+    public function getGenderCount(){
+        $this->db->select('COUNT(CandidateId) as MaleCount');
+        $this->db->from('candidate');
+        $this->db->where('CandidateGender' , 'Male');
+        $data['MaleCount'] = $this->db->get()->result_array()[0]['MaleCount'];
+
+        $this->db->select('COUNT(CandidateId) as FemaleCount');
+        $this->db->from('candidate');
+        $this->db->where('CandidateGender' , 'Female');
+        $data['FemaleCount'] = $this->db->get()->result_array()[0]['FemaleCount'];
+        return $data;
+    }
     public function getLatestCandidates($stateId = 0){
         $this->db->select('*');
         $this->db->from('candidate');
@@ -104,5 +117,6 @@ class ModelReport extends CI_Model{
         $this->db->limit(8);
         return $this->db->get()->result_array();
     }
+
 }
 ?>

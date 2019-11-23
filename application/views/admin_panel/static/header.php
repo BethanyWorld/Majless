@@ -138,6 +138,21 @@ $CI =& get_instance();
                         </li>
                     </ul>
                 </li>
+                <li <?php echo $CI->uri->segment(2) == 'Veteran' ? 'class="active"' : '' ?> >
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">bookmark</i>
+                        <span>پشتیبان پنل ایثارگر</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li <?php if (strpos($CI->uri->uri_string, '/Veteran/index') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Veteran/index'); ?>" class="waves-effect waves-block">فهرست</a>
+                        </li>
+                        <li <?php if (strpos($CI->uri->uri_string, '/Veteran/add') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Veteran/add'); ?>"
+                               class="waves-effect waves-block">افزودن</a>
+                        </li>
+                    </ul>
+                </li>
                 <li <?php echo $CI->uri->segment(2) == 'States' ? 'class="active"' : '' ?> >
                     <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
                         <i class="material-icons">bookmark</i>

@@ -99,6 +99,28 @@
                             </div>
                         </div>
                     </div>
+                    <div class="info-box-4">
+                        <div class="icon">
+                            <i class="material-icons col-red">face</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">تعداد آقایان</div>
+                            <div class="number">
+                                <?php echo $report['GenderCount']['MaleCount']; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-box-4">
+                        <div class="icon">
+                            <i class="material-icons col-red">face</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">تعداد خانم ها</div>
+                            <div class="number">
+                                <?php echo $report['GenderCount']['FemaleCount']; ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xs-12">
                     <div class="info-box-4">

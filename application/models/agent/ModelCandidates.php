@@ -11,6 +11,19 @@ class ModelCandidates extends CI_Model{
         $this->db->from('candidate');
         $this->db->join('election_location' , 'candidate.CandidateElectionId = election_location.ElectionId');
         $this->db->where(array('CandidateStateId' => $AgentStateId));
+
+
+        if (!empty($inputs['inputCandidateStatus'])) {
+            $this->db->where('CandidateStatus', $inputs['inputCandidateStatus']);
+        }
+        if (!empty($inputs['inputCandidateNationalCode'])) {
+            $this->db->where('CandidateNationalCode', $inputs['inputCandidateNationalCode']);
+        }
+        if (!empty($inputs['inputCandidateFullName'])) {
+            $this->db->like('CandidateFirstName', $inputs['inputCandidateFullName']);
+            $this->db->or_like('CandidateLastName', $inputs['inputCandidateFullName']);
+        }
+
         $this->db->order_by('CandidateId DESC');
 
         $tempDb = clone $this->db;
