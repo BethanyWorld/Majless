@@ -97,7 +97,11 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                             <label for="inputRealEstateCountryId">کشور</label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select
+                                                                                    data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
+                                                                                    data-state-id="<?php echo $item['RealEstateStateId']; ?>"
+                                                                                    data-city-id="<?php echo $item['RealEstateCityId']; ?>"
+                                                                                    class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateCountryId"
                                                                                     id="inputRealEstateCountryId">
                                                                                 <option value="">-- انتخاب کنید --
@@ -117,8 +121,7 @@
                                                                             <select class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateStateId"
                                                                                     id="inputRealEstateStateId">
-                                                                                <option value="">-- انتخاب کنید --
-                                                                                </option>
+                                                                                <option value="">-- انتخاب کنید --</option>
                                                                                 <?php foreach ($states as $state) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
@@ -132,10 +135,9 @@
                                                                             <label for="inputRealEstateCityId">
                                                                                 شهر
                                                                             </label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg city-select"
                                                                                     name="inputRealEstateCityId"
                                                                                     id="inputRealEstateCityId">
-                                                                                <option value="8">تهران</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -204,7 +206,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             id="inputRealEstateBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -269,7 +271,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             id="inputRealEstateNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -371,7 +373,7 @@
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                 <label for="inputRealEstateCountryId">کشور</label>
-                                                                <select class="form-control form-control-lg state-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateCountryId"
                                                                         id="inputRealEstateCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
@@ -401,10 +403,9 @@
                                                                 <label for="inputRealEstateCityId">
                                                                     شهر
                                                                 </label>
-                                                                <select class="form-control form-control-lg state-select"
+                                                                <select class="form-control form-control-lg city-select"
                                                                         name="inputRealEstateCityId"
                                                                         id="inputRealEstateCityId">
-                                                                    <option value="8">تهران</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -467,7 +468,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 id="inputRealEstateBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -512,7 +513,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 id="inputRealEstateNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -653,7 +654,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             id="inputVehicleBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -718,7 +719,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             id="inputVehicleNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -850,7 +851,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 id="inputVehicleBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -895,7 +896,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 id="inputVehicleNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -1034,7 +1035,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             id="inputInvestBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -1099,7 +1100,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             id="inputInvestNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -1210,7 +1211,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 id="inputInvestBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -1255,7 +1256,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 id="inputInvestNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -1352,7 +1353,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputBankAccountPrice"
                                                                                             id="inputBankAccountPrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -1393,7 +1394,7 @@
 
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                             <label for="inputBankAccountCountryId">کشور</label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputBankAccountCountryId"
                                                                                     id="inputBankAccountCountryId">
                                                                                 <option value="">-- انتخاب کنید --
@@ -1444,7 +1445,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputBankAccountPrice"
                                                                                 id="inputBankAccountPrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -1470,7 +1471,7 @@
                                                                     کشور
                                                                     </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg state-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputBankAccountCountryId"
                                                                         id="inputBankAccountCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
@@ -1552,7 +1553,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputCreditPrice"
                                                                                             id="inputCreditPrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -1617,7 +1618,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputDebotrPrice"
                                                                                             id="inputDebotrPrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -1766,7 +1767,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             id="inputGoodsBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -1831,7 +1832,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             id="inputGoodsNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -1972,7 +1973,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 id="inputGoodsBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -2170,7 +2171,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputFeeAverageInYear"
                                                                                             id="inputFeeAverageInYear">
                                                                                         <option>انتخاب کنید ---</option>
@@ -2281,7 +2282,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputFeeAverageInYear"
                                                                                 id="inputFeeAverageInYear">
                                                                             <option>انتخاب کنید ---</option>
@@ -2369,7 +2370,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputAverageMonthIncome"
                                                                                     id="inputAverageMonthIncome">
                                                                                 <option>انتخاب کنید ---</option>
@@ -2482,7 +2483,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionPlacePrice"
                                                                                     id="inputElectionPlacePrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -2548,7 +2549,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionFlockPrice"
                                                                                     id="inputElectionFlockPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -2613,7 +2614,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     id="inputElectionAdvertisePrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -2679,7 +2680,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionStaffPrice"
                                                                                     id="inputElectionStaffPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -2744,7 +2745,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionAllPrice"
                                                                                     id="inputElectionAllPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -2877,7 +2878,11 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                             <label for="inputRealEstateCountryId">کشور</label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select
+                                                                                    data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
+                                                                                    data-state-id="<?php echo $item['RealEstateStateId']; ?>"
+                                                                                    data-city-id="<?php echo $item['RealEstateCityId']; ?>"
+                                                                                    class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateCountryId"
                                                                                     id="inputRealEstateCountryId">
                                                                                 <option value="">-- انتخاب کنید --
@@ -2897,8 +2902,7 @@
                                                                             <select class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateStateId"
                                                                                     id="inputRealEstateStateId">
-                                                                                <option value="">-- انتخاب کنید --
-                                                                                </option>
+                                                                                <option value="">-- انتخاب کنید --</option>
                                                                                 <?php foreach ($states as $state) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
@@ -2912,10 +2916,9 @@
                                                                             <label for="inputRealEstateCityId">
                                                                                 شهر
                                                                             </label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg city-select"
                                                                                     name="inputRealEstateCityId"
                                                                                     id="inputRealEstateCityId">
-                                                                                <option value="8">تهران</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -2984,7 +2987,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             id="inputRealEstateBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -3049,7 +3052,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             id="inputRealEstateNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -3151,7 +3154,7 @@
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                 <label for="inputRealEstateCountryId">کشور</label>
-                                                                <select class="form-control form-control-lg state-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateCountryId"
                                                                         id="inputRealEstateCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
@@ -3181,10 +3184,9 @@
                                                                 <label for="inputRealEstateCityId">
                                                                     شهر
                                                                 </label>
-                                                                <select class="form-control form-control-lg state-select"
+                                                                <select class="form-control form-control-lg city-select"
                                                                         name="inputRealEstateCityId"
                                                                         id="inputRealEstateCityId">
-                                                                    <option value="8">تهران</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -3247,7 +3249,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 id="inputRealEstateBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -3292,7 +3294,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 id="inputRealEstateNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -3433,7 +3435,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             id="inputVehicleBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -3498,7 +3500,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             id="inputVehicleNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -3630,7 +3632,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 id="inputVehicleBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -3675,7 +3677,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 id="inputVehicleNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -3814,7 +3816,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             id="inputInvestBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -3879,7 +3881,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             id="inputInvestNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -3990,7 +3992,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 id="inputInvestBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -4035,7 +4037,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 id="inputInvestNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -4132,7 +4134,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputBankAccountPrice"
                                                                                             id="inputBankAccountPrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -4173,7 +4175,7 @@
 
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                             <label for="inputBankAccountCountryId">کشور</label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputBankAccountCountryId"
                                                                                     id="inputBankAccountCountryId">
                                                                                 <option value="">-- انتخاب کنید --
@@ -4224,7 +4226,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputBankAccountPrice"
                                                                                 id="inputBankAccountPrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -4250,7 +4252,7 @@
                                                                     کشور
                                                                     </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg state-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputBankAccountCountryId"
                                                                         id="inputBankAccountCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
@@ -4332,7 +4334,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputCreditPrice"
                                                                                     id="inputCreditPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -4397,7 +4399,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputDebotrPrice"
                                                                                     id="inputDebotrPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -4546,7 +4548,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             id="inputGoodsBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -4611,7 +4613,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             id="inputGoodsNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -4752,7 +4754,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 id="inputGoodsBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -4950,7 +4952,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputFeeAverageInYear"
                                                                                             id="inputFeeAverageInYear">
                                                                                         <option>انتخاب کنید ---</option>
@@ -5061,7 +5063,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputFeeAverageInYear"
                                                                                 id="inputFeeAverageInYear">
                                                                             <option>انتخاب کنید ---</option>
@@ -5149,7 +5151,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputAverageMonthIncome"
                                                                                     id="inputAverageMonthIncome">
                                                                                 <option>انتخاب کنید ---</option>
@@ -5262,7 +5264,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionPlacePrice"
                                                                                     id="inputElectionPlacePrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -5328,7 +5330,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionFlockPrice"
                                                                                     id="inputElectionFlockPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -5393,7 +5395,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     id="inputElectionAdvertisePrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -5459,7 +5461,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionStaffPrice"
                                                                                     id="inputElectionStaffPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -5524,7 +5526,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionAllPrice"
                                                                                     id="inputElectionAllPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -5657,7 +5659,11 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                             <label for="inputRealEstateCountryId">کشور</label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select
+                                                                                    data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
+                                                                                    data-state-id="<?php echo $item['RealEstateStateId']; ?>"
+                                                                                    data-city-id="<?php echo $item['RealEstateCityId']; ?>"
+                                                                                    class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateCountryId"
                                                                                     id="inputRealEstateCountryId">
                                                                                 <option value="">-- انتخاب کنید --
@@ -5677,8 +5683,7 @@
                                                                             <select class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateStateId"
                                                                                     id="inputRealEstateStateId">
-                                                                                <option value="">-- انتخاب کنید --
-                                                                                </option>
+                                                                                <option value="">-- انتخاب کنید --</option>
                                                                                 <?php foreach ($states as $state) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
@@ -5692,10 +5697,9 @@
                                                                             <label for="inputRealEstateCityId">
                                                                                 شهر
                                                                             </label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg city-select"
                                                                                     name="inputRealEstateCityId"
                                                                                     id="inputRealEstateCityId">
-                                                                                <option value="8">تهران</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -5764,7 +5768,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             id="inputRealEstateBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -5829,7 +5833,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             id="inputRealEstateNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -5931,7 +5935,7 @@
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                 <label for="inputRealEstateCountryId">کشور</label>
-                                                                <select class="form-control form-control-lg state-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateCountryId"
                                                                         id="inputRealEstateCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
@@ -5961,10 +5965,9 @@
                                                                 <label for="inputRealEstateCityId">
                                                                     شهر
                                                                 </label>
-                                                                <select class="form-control form-control-lg state-select"
+                                                                <select class="form-control form-control-lg city-select"
                                                                         name="inputRealEstateCityId"
                                                                         id="inputRealEstateCityId">
-                                                                    <option value="8">تهران</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -6027,7 +6030,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 id="inputRealEstateBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -6072,7 +6075,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 id="inputRealEstateNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -6213,7 +6216,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             id="inputVehicleBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -6278,7 +6281,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             id="inputVehicleNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -6410,7 +6413,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 id="inputVehicleBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -6455,7 +6458,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 id="inputVehicleNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -6594,7 +6597,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             id="inputInvestBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -6659,7 +6662,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             id="inputInvestNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -6770,7 +6773,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 id="inputInvestBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -6815,7 +6818,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 id="inputInvestNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -6912,7 +6915,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputBankAccountPrice"
                                                                                             id="inputBankAccountPrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -6953,7 +6956,7 @@
 
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                             <label for="inputBankAccountCountryId">کشور</label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputBankAccountCountryId"
                                                                                     id="inputBankAccountCountryId">
                                                                                 <option value="">-- انتخاب کنید --
@@ -7004,7 +7007,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputBankAccountPrice"
                                                                                 id="inputBankAccountPrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -7030,7 +7033,7 @@
                                                                     کشور
                                                                     </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg state-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputBankAccountCountryId"
                                                                         id="inputBankAccountCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
@@ -7112,7 +7115,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputCreditPrice"
                                                                                     id="inputCreditPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -7177,7 +7180,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputDebotrPrice"
                                                                                     id="inputDebotrPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -7326,7 +7329,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             id="inputGoodsBuyTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -7391,7 +7394,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             id="inputGoodsNowTimePrice">
                                                                                         <option>انتخاب کنید ---</option>
@@ -7532,7 +7535,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 id="inputGoodsBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
@@ -7730,7 +7733,7 @@
                                                                                         تومان</label>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputFeeAverageInYear"
                                                                                             id="inputFeeAverageInYear">
                                                                                         <option>انتخاب کنید ---</option>
@@ -7841,7 +7844,7 @@
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputFeeAverageInYear"
                                                                                 id="inputFeeAverageInYear">
                                                                             <option>انتخاب کنید ---</option>
@@ -7929,7 +7932,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputAverageMonthIncome"
                                                                                     id="inputAverageMonthIncome">
                                                                                 <option>انتخاب کنید ---</option>
@@ -8042,7 +8045,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionPlacePrice"
                                                                                     id="inputElectionPlacePrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -8108,7 +8111,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionFlockPrice"
                                                                                     id="inputElectionFlockPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -8173,7 +8176,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     id="inputElectionAdvertisePrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -8239,7 +8242,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionStaffPrice"
                                                                                     id="inputElectionStaffPrice">
                                                                                 <option>انتخاب کنید ---</option>
@@ -8304,7 +8307,7 @@
                                                                                 تومان</label>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputElectionAllPrice"
                                                                                     id="inputElectionAllPrice">
                                                                                 <option>انتخاب کنید ---</option>

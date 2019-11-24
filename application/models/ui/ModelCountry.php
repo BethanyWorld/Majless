@@ -8,6 +8,7 @@ class ModelCountry extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('country');
+        $this->db->order_by('FaName' , 'ASC');
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();

@@ -1,34 +1,5 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".add-form").click(function () {
-            $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().removeClass('hidden').removeClass('unique-form');
-            $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
-        });
-        $(document).on('click', '.remove-form', function () {
-            $(this).parent().remove();
-        });
-        $(document).on('change', '#RealEstateCountryId', function () {
-            $parentDom = $(this).parents('#form-books').attr('id');
-            $parentId = "#" + $parentDom + '';
-            $RealEstateCountryId = $(this).val();
-            if ($RealEstateCountryId === 'iran') {
-                $('[name="RealEstateStateId"]').attr('readonly', 'readonly');
-                $('[name="RealEstateCityId"]').attr('readonly', 'readonly');
-                $('.MoneyStateDiv').css('pointerEvents', 'none');
-            } else {
-                $('[name="RealEstateStateId"]').removeAttr('readonly');
-                $('[name="RealEstateCityId"]').removeAttr('readonly');
-                $('.MoneyStateDiv').css('pointerEvents', 'auto');
-            }
-        });
-        $(document).on('change', '.price-unit', function () {
-            $RealEstateBuyTimePrice = $('#RealEstateBuyTimePrice').val();
-            $leftSide = $(this).find("select option:selected").data('left-side');
-            $rightSide = $(this).find("select option:selected").data('right-side');
-            $(this).prev('div').find("input[type='number']").attr('data-unit', $leftSide);
-            $(this).prev('div').prev('div').find("input[type='number']").attr('data-unit', $rightSide);
-            updatePrice();
-        });
         function updatePrice() {
             $('.price-left-side').each(function () {
                 $leftDataUnit = $(this).find('input[type="number"]').attr('data-unit');
@@ -44,7 +15,6 @@
                         break;
                 }
             });
-
             $('.price-right-side').each(function () {
                 $rightDataUnit = $(this).find('input[type="number"]').attr('data-unit');
                 switch ($rightDataUnit) {
@@ -119,5 +89,73 @@
             });
 
         });
+
+
+        $(".add-form").click(function () {
+            $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().removeClass('hidden').removeClass('unique-form');
+            $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
+            setTimeout(function(){
+                $('[name=inputRealEstateCountryId]').change();
+                $('.price-unit').change();
+                updatePrice();
+            } , 500);
+        });
+        $(document).on('click', '.remove-form', function () {
+            $(this).parent().remove();
+        });
+        $(document).on('change', '[name=inputRealEstateCountryId]', function () {
+            if ($(this).val() != 118) {
+                $('[name="inputRealEstateStateId"]').val(0).attr('readonly', 'readonly');
+                $('[name="inputRealEstateCityId"]').val(0).attr('readonly', 'readonly');
+                $('.MoneyStateDiv').css('pointerEvents', 'none');
+            } else{
+                if($(this).val() == undefined || $(this).val() == "") {
+                    $('[name="inputRealEstateStateId"]').removeAttr('readonly').val("");
+                    $('[name="inputRealEstateCityId"]').removeAttr('readonly').val("");
+                    $('.MoneyStateDiv').css('pointerEvents', 'auto');
+                }
+            }
+        });
+        $(document).on('change', '.price-unit', function () {
+            $RealEstateBuyTimePrice = $('#RealEstateBuyTimePrice').val();
+            $leftSide = $(this).find("select option:selected").data('left-side');
+            $rightSide = $(this).find("select option:selected").data('right-side');
+            $(this).prev('div').find("input[type='number']").attr('data-unit', $leftSide);
+            $(this).prev('div').prev('div').find("input[type='number']").attr('data-unit', $rightSide);
+            updatePrice();
+        });
+        $(document).on('change', '.state-select[name=inputRealEstateStateId]', function () {
+            toggleLoader();
+            $inputCandidateStateId = $(this).val();
+            $this = $(this);
+            $.ajax({
+                type: 'post',
+                url: base_url + 'State/getCityByStateId/' + $inputCandidateStateId,
+                success: function (data) {
+                    toggleLoader();
+                    $result = JSON.parse(data);
+                    $citySelect = $this.parent().next('div').find('.city-select').eq(0);
+                    $citySelect.html('');
+                    $.each($result, function (index, item) {
+                        var selectInnerHtml = $('<option />',
+                            {
+                                "class": "",
+                                "value": item['CityId'],
+                                "text": item['CityName']
+                            });
+                        $citySelect.append(selectInnerHtml);
+                    });
+                    $citySelect.find('option').eq(0).attr('selected', 'selected');
+                    cutSelectOptionLongText();
+                },
+                error: function (data) {
+                    toggleLoader();
+                    notify('درخواست با خطا مواجه شد', 'red');
+                }
+            });
+        });
+
+        $('[name=inputRealEstateCountryId]').change();
+        $('.price-unit').change();
     });
 </script>
