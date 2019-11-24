@@ -323,7 +323,7 @@ function splitPrice($price)
                                                                         </div>
                                                                     </div>
                                                                 <?php }
-                                                            } ?>
+                                                            } ?> 
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
