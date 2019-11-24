@@ -22,7 +22,6 @@
             }
         });
         $(document).on('change', '.price-unit', function () {
-            debugger;
             $RealEstateBuyTimePrice = $('#RealEstateBuyTimePrice').val();
             $leftSide = $(this).find("select option:selected").data('left-side');
             $rightSide = $(this).find("select option:selected").data('right-side');
@@ -30,10 +29,8 @@
             $(this).prev('div').prev('div').find("input[type='number']").attr('data-unit', $rightSide);
             updatePrice();
         });
-
         function updatePrice() {
             $('.price-left-side').each(function () {
-                debugger;
                 $leftDataUnit = $(this).find('input[type="number"]').attr('data-unit');
                 switch ($leftDataUnit) {
                     case 'SD':
@@ -49,7 +46,6 @@
             });
 
             $('.price-right-side').each(function () {
-                debugger;
                 $rightDataUnit = $(this).find('input[type="number"]').attr('data-unit');
                 switch ($rightDataUnit) {
                     case 'HZ':
@@ -64,7 +60,6 @@
                 }
             });
         }
-
         // for panel tab
         $(function () {
             var $tabButtonItem = $('#tab-button li'),
@@ -97,6 +92,32 @@
             });
         });
         // for panel tab
+        $(".LeftPaneAction button").click(function () {
+            $data = $(this).parents('.LeftPaneAction').prev('div.panel-body').find('form').eq(0).serializeArray();
+            $role = $(this).data('role');
+            $target = $(this).data('target');
+            /*@Role
+             * Self
+             * Wife
+             * Child
+             */
+            $sendData = {
+                'data': $data,
+                'role': $role,
+                'target': $target
+            }
+            toggleLoader();
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Profile/candidateUpdateFinance',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = JSON.parse(data);
+                    notify($result['content'], $result['type']);
+                }
+            });
 
+        });
     });
 </script>

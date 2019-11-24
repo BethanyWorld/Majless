@@ -293,7 +293,7 @@ $config['EnumResumeProfile'] = array(
     ),
     'Extent' => array(
         'SquareMeters' => 'متر مربع',
-        'Ha' => 'هکتار'
+        'Hektar' => 'هکتار'
     ),
     'TypeOfVehicle' => array(
         'Motorcycle' => 'موتور سیکلت',
@@ -316,10 +316,6 @@ $config['EnumResumeProfile'] = array(
         'Invention' => 'اختراع / اکتشاف',
         'Art' => 'اثر هنری'
     )
-
-
-
-
 );
 /* استان پیش فرض تهران است */
 $config['defaultStateId'] = 8;

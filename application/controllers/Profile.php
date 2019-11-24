@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Profile extends CI_Controller{
+
+class Profile extends CI_Controller
+{
 
     public function __construct()
     {
@@ -11,6 +13,7 @@ class Profile extends CI_Controller{
         $this->load->model('ui/ModelProfile');
         $this->load->model('agent/ModelExam');
     }
+
     public function index()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -45,6 +48,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function getResumeStatus()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -53,6 +57,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelCandidate->getResumeStatus($inputs);
         echo json_encode($result);
     }
+
     public function candidateHasOtherConditionToContinue()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -93,6 +98,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelCandidate->candidateHasOtherConditionToContinue($inputs);
         echo json_encode($result);
     }
+
     public function examList()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -110,6 +116,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/exams/first_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function getFirstStepExamList($stateId)
     {
         $data['data'] = $this->ModelExam->getFirstStepExamByStateId($stateId);
@@ -117,6 +124,7 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+
     public function examListSecond()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -133,6 +141,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/exams/second_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function getSecondStepExamList($stateId)
     {
         $data['data'] = $this->ModelExam->getSecondStepExamByStateId($stateId);
@@ -140,6 +149,7 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+
     public function evaluationExam()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -156,6 +166,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/exams/evaluation_exam_list/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function getEvaluationExamList()
     {
         $data['data'] = $this->ModelExam->getEvaluationExamList();
@@ -163,6 +174,7 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+
     public function candidateReserveExam()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -191,6 +203,7 @@ class Profile extends CI_Controller{
             return false;
         }
     }
+
     /* For Resume -------------------------------------------------------------*/
     public function resume()
     {
@@ -224,6 +237,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/resume/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function candidateUpdatePersonalInfo()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -232,10 +246,10 @@ class Profile extends CI_Controller{
         /* validation */
 
 
-        $inputs['inputCandidateBirthDate']  = FaToEn($inputs['inputCandidateBirthDate']);
-        $inputs['inputCandidatePhone']  = FaToEn($inputs['inputCandidatePhone']);
-        $inputs['inputCandidateLandLinePhone']  = FaToEn($inputs['inputCandidateLandLinePhone']);
-        $inputs['inputCandidateNationalCode']  = FaToEn($inputs['inputCandidateNationalCode']);
+        $inputs['inputCandidateBirthDate'] = FaToEn($inputs['inputCandidateBirthDate']);
+        $inputs['inputCandidatePhone'] = FaToEn($inputs['inputCandidatePhone']);
+        $inputs['inputCandidateLandLinePhone'] = FaToEn($inputs['inputCandidateLandLinePhone']);
+        $inputs['inputCandidateNationalCode'] = FaToEn($inputs['inputCandidateNationalCode']);
 
         $this->form_validation->set_data($inputs);
         $this->form_validation->set_rules('inputCandidateFirstName', 'نام', 'trim|required|min_length[2]|max_length[80]');
@@ -290,6 +304,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdatePersonalInfo($inputs);
         echo json_encode($result);
     }
+
     public function academicBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -308,6 +323,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function candidateUpdateAcademicBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -316,11 +332,12 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateAcademicBackground($inputs);
         echo json_encode($result);
     }
+
     public function militaryStatus()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
 
-        if($loginInfo['CandidateGender'] == 'Female') {
+        if ($loginInfo['CandidateGender'] == 'Female') {
             redirect(base_url('Profile/jobHistory'));
         }
         $data['title'] = 'رزومه';
@@ -338,6 +355,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/military_status/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function candidateUpdateMilitaryStatus()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -346,6 +364,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateMilitaryStatus($inputs);
         echo json_encode($result);
     }
+
     public function jobHistory()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -364,6 +383,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/job_history/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function candidateUpdateJobHistory()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -372,6 +392,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateJobHistory($inputs);
         echo json_encode($result);
     }
+
     public function socialCulturalBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -390,6 +411,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/social_cultural_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function candidateUpdateSocialCulturalBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -398,6 +420,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateSocialCulturalBackground($inputs);
         echo json_encode($result);
     }
+
     public function politicBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -416,6 +439,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function candidateUpdatePoliticBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -424,6 +448,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdatePoliticBackground($inputs);
         echo json_encode($result);
     }
+
     public function scienceBackground()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -450,6 +475,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/science_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function candidateUpdateBooks()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -458,6 +484,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateBooks($inputs);
         echo json_encode($result);
     }
+
     public function candidateUpdateArticles()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -466,6 +493,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateArticles($inputs);
         echo json_encode($result);
     }
+
     public function candidateUpdateResearch()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -474,6 +502,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateResearch($inputs);
         echo json_encode($result);
     }
+
     public function candidateUpdateTranslation()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -482,6 +511,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateTranslation($inputs);
         echo json_encode($result);
     }
+
     public function candidateUpdateInvention()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -490,6 +520,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateInvention($inputs);
         echo json_encode($result);
     }
+
     public function candidateUpdateConference()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -498,6 +529,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateConference($inputs);
         echo json_encode($result);
     }
+
     public function skills()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -518,6 +550,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/skills/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function candidateUpdateSkills()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -535,6 +568,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateSkills($inputs);
         echo json_encode($result);
     }
+
     public function veteran()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -591,6 +625,7 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/veteran/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+
     public function candidateUpdateVeteran()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -600,7 +635,8 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function finance(){
+    public function finance()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -613,6 +649,7 @@ class Profile extends CI_Controller{
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
 
+        $data['finance'] = $this->ModelProfile->getCandidateFinanceByCandidateId($loginInfo['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/finance/index', $data);
@@ -620,14 +657,304 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/finance/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdateFinance(){
+    public function candidateUpdateFinance()
+    {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
-        $result = $this->ModelProfile->candidateUpdateFinance($inputs);
-        echo json_encode($result);
+        $tableName = "candidate_price_";
+        switch ($inputs['target']) {
+            case 'RealEstate':
+                /*******************************************************************************************************/
+                $tableName .= "realestates";
+                $this->db->delete($tableName, array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'ForWho' => $inputs['role'],
+                ));
+                if(!isset($inputs['data'])){
+                    $arr = array('type' => "green", 'content' => "بروزرسانی با موفقیت انجام شد", 'success' => true);
+                    echo json_encode($arr); die();
+                }
+                for ($i = 0; $i < count($inputs['data']);) {
+                    $UserArray = array(
+                        'CandidateId' => $inputs['inputCandidateId'],
+                        'RealEstateType' => $inputs['data'][$i]['value'],
+                        'RealEstateOwnershipDate' => $inputs['data'][$i + 1]['value'],
+                        'RealEstateOwnershipType' => $inputs['data'][$i + 2]['value'],
+                        'RealEstateCountryId' => $inputs['data'][$i + 3]['value'],
+                        'RealEstateStateId' => $inputs['data'][$i + 4]['value'],
+                        'RealEstateCityId' => $inputs['data'][$i + 5]['value'],
+                        'RealEstatePortion' => $inputs['data'][$i + 6]['value'],
+                        'RealEstateExtent' => $inputs['data'][$i + 7]['value'],
+                        'RealEstateExtentUnit' => $inputs['data'][$i + 8]['value'],
+                        'RealEstateBuyTimePrice' => $inputs['data'][$i + 10]['value'] . "." . $inputs['data'][$i + 9]['value'] . " " . $inputs['data'][$i + 11]['value'],
+                        'RealEstateNowTimePrice' => $inputs['data'][$i + 13]['value'] . "." . $inputs['data'][$i + 12]['value'] . " " . $inputs['data'][$i + 14]['value'],
+                        'RealEstateAddress' => $inputs['data'][$i + 15]['value'],
+                        'ForWho' => $inputs['role'],
+                    );
+                    $this->db->insert($tableName, $UserArray);
+                    $i = $i + 16;
+                }
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی با موفقیت انجام شد",
+                    'success' => true
+                );
+                echo json_encode($arr);
+                /*******************************************************************************************************/
+                break;
+            case 'Vehicle':
+                /*******************************************************************************************************/
+                $tableName .= "vehicle";
+                $this->db->delete($tableName, array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'ForWho' => $inputs['role']
+                ));
+                if(!isset($inputs['data'])){
+                    $arr = array('type' => "green", 'content' => "بروزرسانی با موفقیت انجام شد", 'success' => true);
+                    echo json_encode($arr); die();
+                }
+                for ($i = 0; $i < count($inputs['data']);) {
+                    $UserArray = array(
+                        'CandidateId' => $inputs['inputCandidateId'],
+                        'VehicleType' => $inputs['data'][$i]['value'],
+                        'VehicleOwnershipDate' => $inputs['data'][$i + 1]['value'],
+                        'VehicleOwnershipType' => $inputs['data'][$i + 2]['value'],
+                        'VehicleBuyTimePrice' => $inputs['data'][$i + 4]['value'] . "." . $inputs['data'][$i + 3]['value'] . " " . $inputs['data'][$i + 5]['value'],
+                        'VehicleNowTimePrice' => $inputs['data'][$i + 7]['value'] . "." . $inputs['data'][$i + 6]['value'] . " " . $inputs['data'][$i + 8]['value'],
+                        'VehiclePortion' => $inputs['data'][$i + 9]['value'],
+                        'ForWho' => $inputs['role'],
+                    );
+                    $this->db->insert($tableName, $UserArray);
+                    $i = $i + 10;
+                }
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی با موفقیت انجام شد",
+                    'success' => true
+                );
+                echo json_encode($arr);
+                /*******************************************************************************************************/
+                break;
+            case 'Invest':
+                /*******************************************************************************************************/
+                $tableName .= "invest";
+                $this->db->delete($tableName, array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'ForWho' => $inputs['role']
+                ));
+                if(!isset($inputs['data'])){
+                    $arr = array('type' => "green", 'content' => "بروزرسانی با موفقیت انجام شد", 'success' => true);
+                    echo json_encode($arr); die();
+                }
+                for ($i = 0; $i < count($inputs['data']);) {
+                    $UserArray = array(
+                        'CandidateId' => $inputs['inputCandidateId'],
+                        'InvestTitle' => $inputs['data'][$i]['value'],
+                        'InvestDate' => $inputs['data'][$i + 1]['value'],
+                        'InvestOwnershipType' => $inputs['data'][$i + 2]['value'],
+                        'InvestBuyTimePrice' => $inputs['data'][$i + 4]['value'] . "." . $inputs['data'][$i + 3]['value'] . " " . $inputs['data'][$i + 5]['value'],
+                        'InvestNowTimePrice' => $inputs['data'][$i + 7]['value'] . "." . $inputs['data'][$i + 6]['value'] . " " . $inputs['data'][$i + 8]['value'],
+                        'ForWho' => $inputs['role'],
+                    );
+                    $this->db->insert($tableName, $UserArray);
+                    $i = $i + 9;
+                }
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی با موفقیت انجام شد",
+                    'success' => true
+                );
+                echo json_encode($arr);
+                /*******************************************************************************************************/
+                break;
+            case 'BankAccount':
+                /*******************************************************************************************************/
+                $tableName .= "bank_account";
+                $this->db->delete($tableName, array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'ForWho' => $inputs['role']
+                ));
+                if(!isset($inputs['data'])){
+                    $arr = array('type' => "green", 'content' => "بروزرسانی با موفقیت انجام شد", 'success' => true);
+                    echo json_encode($arr); die();
+                }
+                for ($i = 0; $i < count($inputs['data']);) {
+                    $UserArray = array(
+                        'CandidateId' => $inputs['inputCandidateId'],
+                        'BankAccountTitle' => $inputs['data'][$i]['value'],
+                        'BankAccountPrice' => $inputs['data'][$i + 2]['value'] . "." . $inputs['data'][$i + 1]['value'] . " " . $inputs['data'][$i + 3]['value'],
+                        'BankAccountCountryId' => $inputs['data'][$i + 4]['value'],
+                        'ForWho' => $inputs['role'],
+                    );
+                    $this->db->insert($tableName, $UserArray);
+                    $i = $i + 5;
+                }
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی با موفقیت انجام شد",
+                    'success' => true
+                );
+                echo json_encode($arr);
+                /*******************************************************************************************************/
+                break;
+            case 'Credit-Debtor':
+                /*******************************************************************************************************/
+                $tableName .= "credit_debtor";
+                $this->db->delete($tableName, array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'ForWho' => $inputs['role']
+                ));
+                if(!isset($inputs['data'])){
+                    $arr = array('type' => "green", 'content' => "بروزرسانی با موفقیت انجام شد", 'success' => true);
+                    echo json_encode($arr); die();
+                }
+                for ($i = 0; $i < count($inputs['data']);) {
+                    $UserArray = array(
+                        'CandidateId' => $inputs['inputCandidateId'],
+                        'CreditPrice' => $inputs['data'][$i +1]['value'] . "." . $inputs['data'][$i]['value'] . " " . $inputs['data'][$i + 2]['value'],
+                        'DebotrPrice' => $inputs['data'][$i + 4]['value'] . "." . $inputs['data'][$i + 3]['value'] . " " . $inputs['data'][$i + 5]['value'],
+                        'DebotrDescription' => $inputs['data'][$i + 6]['value'],
+                        'ForWho' => $inputs['role'],
+                    );
+                    $this->db->insert($tableName, $UserArray);
+                    $i = $i + 7;
+                }
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی با موفقیت انجام شد",
+                    'success' => true
+                );
+                echo json_encode($arr);
+                /*******************************************************************************************************/
+                break;
+            case 'Goods':
+                /*******************************************************************************************************/
+                $tableName .= "goods";
+                $this->db->delete($tableName, array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'ForWho' => $inputs['role']
+                ));
+                if(!isset($inputs['data'])){
+                    $arr = array('type' => "green", 'content' => "بروزرسانی با موفقیت انجام شد", 'success' => true);
+                    echo json_encode($arr); die();
+                }
+                for ($i = 0; $i < count($inputs['data']);) {
+                    $UserArray = array(
+                        'CandidateId' => $inputs['inputCandidateId'],
+                        'GoodsType' => $inputs['data'][$i]['value'] ,
+                        'GoodsOwnershipStartDate' => $inputs['data'][$i + 1]['value'],
+                        'GoodsCount' => $inputs['data'][$i + 2]['value'],
+                        'GoodsBuyTimePrice' => $inputs['data'][$i + 4]['value'] . "." . $inputs['data'][$i + 3]['value'] . " " . $inputs['data'][$i + 5]['value'],
+                        'GoodsNowTimePrice' => $inputs['data'][$i + 7]['value'] . "." . $inputs['data'][$i + 6]['value'] . " " . $inputs['data'][$i + 8]['value'],
+                        'GoodsOwnershipPercent' => $inputs['data'][$i + 9]['value'],
+                        'RealEstateOwnershipType' => $inputs['data'][$i + 10]['value'],
+                        'ForWho' => $inputs['role'],
+                    );
+                    $this->db->insert($tableName, $UserArray);
+                    $i = $i + 11;
+                }
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی با موفقیت انجام شد",
+                    'success' => true
+                );
+                echo json_encode($arr);
+                /*******************************************************************************************************/
+                break;
+            case 'Fee':
+                /*******************************************************************************************************/
+                $tableName .= "fee";
+                $this->db->delete($tableName, array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'ForWho' => $inputs['role']
+                ));
+                if(!isset($inputs['data'])){
+                    $arr = array('type' => "green", 'content' => "بروزرسانی با موفقیت انجام شد", 'success' => true);
+                    echo json_encode($arr); die();
+                }
+                for ($i = 0; $i < count($inputs['data']);) {
+                    $UserArray = array(
+                        'CandidateId' => $inputs['inputCandidateId'],
+                        'FeeType' => $inputs['data'][$i]['value'] ,
+                        'FeeOwnershipStartDate' => $inputs['data'][$i + 1]['value'],
+                        'FeePercent' => $inputs['data'][$i + 2]['value'],
+                        'FeeAverageInYear' => $inputs['data'][$i + 4]['value'] . "." . $inputs['data'][$i + 3]['value'] . " " . $inputs['data'][$i + 5]['value'],
+                        'ForWho' => $inputs['role'],
+                    );
+                    $this->db->insert($tableName, $UserArray);
+                    $i = $i + 6;
+                }
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی با موفقیت انجام شد",
+                    'success' => true
+                );
+                echo json_encode($arr);
+                /*******************************************************************************************************/
+                break;
+            case 'AverageMonthIncome':
+                /*******************************************************************************************************/
+                $tableName .= "income";
+                $this->db->delete($tableName, array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'ForWho' => $inputs['role']
+                ));
+                if(!isset($inputs['data'])){
+                    $arr = array('type' => "green", 'content' => "بروزرسانی با موفقیت انجام شد", 'success' => true);
+                    echo json_encode($arr); die();
+                }
+                for ($i = 0; $i < count($inputs['data']);) {
+                    $UserArray = array(
+                        'CandidateId' => $inputs['inputCandidateId'],
+                        'AverageMonthIncome' => $inputs['data'][$i + 1]['value'] . "." . $inputs['data'][$i]['value'] . " " . $inputs['data'][$i + 2]['value'],
+                        'ForWho' => $inputs['role'],
+                    );
+                    $this->db->insert($tableName, $UserArray);
+                    $i = $i + 3;
+                }
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی با موفقیت انجام شد",
+                    'success' => true
+                );
+                echo json_encode($arr);
+                /*******************************************************************************************************/
+                break;
+            case 'Election':
+                /*******************************************************************************************************/
+                $tableName .= "election";
+                $this->db->delete($tableName, array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'ForWho' => $inputs['role']
+                ));
+                if(!isset($inputs['data'])){
+                    $arr = array('type' => "green", 'content' => "بروزرسانی با موفقیت انجام شد", 'success' => true);
+                    echo json_encode($arr); die();
+                }
+                for ($i = 0; $i < count($inputs['data']);) {
+                    $UserArray = array(
+                        'CandidateId' => $inputs['inputCandidateId'],
+                        'ElectionPlacePrice' => $inputs['data'][$i+1]['value'] . "." . $inputs['data'][$i]['value'] . " " . $inputs['data'][$i + 2]['value'],
+                        'ElectionFlockPrice' => $inputs['data'][$i + 4]['value'] . "." . $inputs['data'][$i + 3]['value'] . " " . $inputs['data'][$i + 5]['value'],
+                        'ElectionAdvertisePrice' => $inputs['data'][$i + 7]['value'] . "." . $inputs['data'][$i + 6]['value'] . " " . $inputs['data'][$i + 8]['value'],
+                        'ElectionStaffPrice' => $inputs['data'][$i + 10]['value'] . "." . $inputs['data'][$i + 9]['value'] . " " . $inputs['data'][$i + 11]['value'],
+                        'ElectionAllPrice' => $inputs['data'][$i + 13]['value'] . "." . $inputs['data'][$i + 12]['value'] . " " . $inputs['data'][$i + 14]['value'],
+                        'ForWho' => $inputs['role'],
+                    );
+                    $this->db->insert($tableName, $UserArray);
+                    $i = $i + 15;
+                }
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی با موفقیت انجام شد",
+                    'success' => true
+                );
+                echo json_encode($arr);
+                /*******************************************************************************************************/
+                break;
+        }
     }
-
     /* End For Resume -------------------------------------------------------------*/
     /* get out of panel - session destroyed */
     public function logOut()

@@ -1,7 +1,5 @@
 <?php
-
-class ModelProfile extends CI_Model
-{
+class ModelProfile extends CI_Model{
     public function candidateUpdatePersonalInfo($inputs)
     {
         $UserArray = array(
@@ -707,50 +705,18 @@ class ModelProfile extends CI_Model
         }
     }
 
-
-    /* finance update */
-
-    public function candidateUpdateRealEstates($inputs)
+    public function getCandidateFinanceByCandidateId($id)
     {
-        $this->db->trans_start();
-        $this->db->delete('candidate_articles', array(
-            'CandidateId' => $inputs['inputCandidateId']
-        ));
-        if (isset($inputs['inputCandidateArticles'])) {
-            for ($i = 0; $i < count($inputs['inputCandidateArticles']);) {
-                $UserArray = array(
-                    'CandidateId' => $inputs['inputCandidateId'],
-                    'CandidateArticleTitle' => $inputs['inputCandidateArticles'][$i]['value'],
-                    'CandidateArticleLevel' => $inputs['inputCandidateArticles'][$i + 1]['value'],
-                    'CandidateArticleMagazineTitle' => $inputs['inputCandidateArticles'][$i + 2]['value'],
-                    'CandidateArticlePublishMonth' => $inputs['inputCandidateArticles'][$i + 3]['value'],
-                    'CandidateArticlePublishYear' => $inputs['inputCandidateArticles'][$i + 4]['value']
-                );
-                $this->db->insert('candidate_articles', $UserArray);
-                $i = $i + 5;
-            }
-        }
-        $this->db->trans_complete();
-        if ($this->db->trans_status() === FALSE) {
-            $arr = array(
-                'type' => "red",
-                'content' => "بروزرسانی مقالات ها با مشکل مواجه شد",
-                'success' => false
-            );
-            return $arr;
-        } else {
-            $arr = array(
-                'type' => "green",
-                'content' => "بروزرسانی مقالات ها با موفقیت انجام شد",
-                'success' => true
-            );
-            return $arr;
-        }
+        $data['BankAccount']=$this->db->select('*')->from('candidate_price_bank_account')->where('CandidateId', $id)->get()->result_array();
+        $data['CreditDebtor']=$this->db->select('*')->from('candidate_price_credit_debtor')->where('CandidateId', $id)->get()->result_array();
+        $data['Election']=$this->db->select('*')->from('candidate_price_election')->where('CandidateId', $id)->get()->result_array();
+        $data['Fee']=$this->db->select('*')->from('candidate_price_fee')->where('CandidateId', $id)->get()->result_array();
+        $data['Goods']=$this->db->select('*')->from('candidate_price_goods')->where('CandidateId', $id)->get()->result_array();
+        $data['Income']=$this->db->select('*')->from('candidate_price_income')->where('CandidateId', $id)->get()->result_array();
+        $data['Invest']=$this->db->select('*')->from('candidate_price_invest')->where('CandidateId', $id)->get()->result_array();
+        $data['RealEStates']=$this->db->select('*')->from('candidate_price_realestates')->where('CandidateId', $id)->get()->result_array();
+        $data['Vehicle']=$this->db->select('*')->from('candidate_price_vehicle')->where('CandidateId', $id)->get()->result_array();
+        return $data;
     }
-    /* End finance update*/
-
-
-
 }
-
 ?>

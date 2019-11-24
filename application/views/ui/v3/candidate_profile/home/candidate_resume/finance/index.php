@@ -1,11 +1,25 @@
+<?php $_DIR = base_url('assets/ui/v3/'); ?>
 <?php
-$_DIR = base_url('assets/ui/v3/');
+function splitPrice($price)
+{
+    $price = explode(".", $price);
+    $priceLeft = $price[0];
+    $price = explode(" ", $price[1]);
+    $priceRight = $price[0];
+    $priceUnit = $price[1];
+    $data = array(
+        'left' => $priceLeft,
+        'right' => $priceRight,
+        'unit' => $priceUnit,
+    );
+    return $data;
+}
+
 ?>
 <div class="container container-wrapper" style="background: none;">
-
     <?php echo $resumeSidebar; ?>
     <div class="col-xs-12 col-md-9 pull-right response-padding">
-        
+
         <div class="panel with-nav-tabs panel-default">
             <div class="panel-heading panel-heading-background">
                 <ul class="nav nav-tabs">
@@ -33,19 +47,295 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-RealEstate">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['RealEStates'] as $item) {
+                                                                if ($item['ForWho'] == 'Self') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateType">
+                                                                                نوع کاربری
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateType"
+                                                                                    id="inputRealEstateType">
+                                                                                <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateOwnershipDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateOwnershipDate"
+                                                                                    id="inputRealEstateOwnershipDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateOwnershipDate'], $i); ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateOwnershipType">
+                                                                                نحوه مالکیت
+                                                                            </label>
+                                                                            <select
+                                                                                    class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateOwnershipType"
+                                                                                    id="inputRealEstateOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateOwnershipType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateCountryId">کشور</label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputRealEstateCountryId"
+                                                                                    id="inputRealEstateCountryId">
+                                                                                <option value="">-- انتخاب کنید --
+                                                                                </option>
+                                                                                <?php foreach ($countries as $row) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateCountryId'], $row['CountryId']); ?>
+                                                                                        <?php if ($row['ISO'] == 'IR') echo "selected"; ?>
+                                                                                            value="<?php echo $row['CountryId']; ?>"><?php echo $row['FaName']; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                            <label for="inputRealEstateStateId">
+                                                                                استان
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputRealEstateStateId"
+                                                                                    id="inputRealEstateStateId">
+                                                                                <option value="">-- انتخاب کنید --
+                                                                                </option>
+                                                                                <?php foreach ($states as $state) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
+                                                                                            value="<?php echo $state['StateId']; ?>">
+                                                                                        <?php echo $state['StateName']; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                            <label for="inputRealEstateCityId">
+                                                                                شهر
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputRealEstateCityId"
+                                                                                    id="inputRealEstateCityId">
+                                                                                <option value="8">تهران</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstatePortion">
+                                                                                سهم از ملک(1 تا 6 دانگ)
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input type="number"
+                                                                                <?php setInputValue($item['RealEstatePortion']); ?>
+                                                                                   name="inputRealEstatePortion"
+                                                                                   id="inputRealEstatePortion"
+                                                                                   class="form-control"
+                                                                                   placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateExtent">
+                                                                                متراژ حدودی ملک
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-xs-12 RightFloat">
+                                                                                    <input type="number"
+                                                                                        <?php setInputValue($item['RealEstateExtent']); ?>
+                                                                                           name="inputRealEstateExtent"
+                                                                                           id="inputRealEstateExtent"
+                                                                                           class="form-control"
+                                                                                           placeholder=""/>
+                                                                                </div>
+                                                                                <div class="col-md-6 col-xs-12 RightFloat">
+                                                                                    <select class="form-control form-control-lg city-select"
+                                                                                            name="inputRealEstateExtentUnit"
+                                                                                            id="inputRealEstateExtentUnit">
+                                                                                        <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
+                                                                                            <option
+                                                                                                <?php setOptionSelected($item['RealEstateExtentUnit'], $key); ?>
+                                                                                                    value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                        <?php } ?>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputRealEstateBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                            type="number"
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateBuyTimePrice'])['left']); ?>
+                                                                                            name="inputRealEstateBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputRealEstateBuyTimePrice"
+                                                                                            id="inputRealEstateBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputRealEstateNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateNowTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputRealEstateNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputRealEstateNowTimePrice"
+                                                                                            id="inputRealEstateNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateAddress">آدرس</label>
+                                                                            <input
+                                                                                <?php setInputValue($item['RealEstateAddress']); ?>
+                                                                                    id="inputRealEstateAddress"
+                                                                                    type="text"
+                                                                                    name="inputRealEstateAddress"
+                                                                                    class="input-validate validate valid"
+                                                                                    placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateType">
                                                                     نوع کاربری
-                                                                    <span class="text-danger">
-                                             </span>
+                                                                    <span class="text-danger"></span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputRealEstateType"
                                                                         id="inputRealEstateType">
-                                                                    <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value){ ?>
+                                                                    <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -54,11 +344,12 @@ $_DIR = base_url('assets/ui/v3/');
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateOwnershipDate">
                                                                     سال شروع مالکیت
-                                                                    <span class="text-danger">
-                                             </span>
+                                                                    <span class="text-danger"></span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputRealEstateOwnershipDate"  id="inputRealEstateOwnershipDate"  style="font-family: tahoma;">
+                                                                        name="inputRealEstateOwnershipDate"
+                                                                        id="inputRealEstateOwnershipDate"
+                                                                        style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
                                                                             <?php if ($i == 1398) echo "selected"; ?>
@@ -76,7 +367,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         class="form-control form-control-lg city-select"
                                                                         name="inputRealEstateOwnershipType"
                                                                         id="inputRealEstateOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -84,12 +375,13 @@ $_DIR = base_url('assets/ui/v3/');
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
                                                                 <label for="inputRealEstateCountryId">کشور</label>
-                                                                <select class="form-control form-control-lg state-select" name="inputRealEstateCountryId"
+                                                                <select class="form-control form-control-lg state-select"
+                                                                        name="inputRealEstateCountryId"
                                                                         id="inputRealEstateCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
-                                                                    <?php foreach ($countries as $item){ ?>
+                                                                    <?php foreach ($countries as $item) { ?>
                                                                         <option
-                                                                            <?php if($item['ISO'] =='IR') echo "selected"; ?>
+                                                                            <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
                                                                                 value="<?php echo $item['CountryId']; ?>"><?php echo $item['FaName']; ?></option>
                                                                     <?php } ?>
                                                                 </select>
@@ -101,7 +393,6 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <select class="form-control form-control-lg state-select"
                                                                         name="inputRealEstateStateId"
                                                                         id="inputRealEstateStateId">
-                                                                    <option value="">-- انتخاب کنید --</option>
                                                                     <option value="">-- انتخاب کنید --</option>
                                                                     <?php foreach ($states as $state) { ?>
                                                                         <option value="<?php echo $state['StateId']; ?>">
@@ -117,6 +408,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <select class="form-control form-control-lg state-select"
                                                                         name="inputRealEstateCityId"
                                                                         id="inputRealEstateCityId">
+                                                                    <option value="8">تهران</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -124,8 +416,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     سهم از ملک(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputRealEstatePortion" id="inputRealEstatePortion"
-                                                                       class="form-control" placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                <input type="number" name="inputRealEstatePortion"
+                                                                       id="inputRealEstatePortion"
+                                                                       class="form-control"
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateExtent">
@@ -134,15 +428,17 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </label>
                                                                 <div class="row">
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
-                                                                        <input type="number" name="inputRealEstateExtentUnit"
-                                                                               id="inputRealEstateExtentUnit" class="form-control"
+                                                                        <input type="number"
+                                                                               name="inputRealEstateExtent"
+                                                                               id="inputRealEstateExtent"
+                                                                               class="form-control"
                                                                                placeholder=""/>
                                                                     </div>
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
                                                                         <select class="form-control form-control-lg city-select"
                                                                                 name="inputRealEstateExtentUnit"
                                                                                 id="inputRealEstateExtentUnit">
-                                                                            <?php foreach ($EnumResumeProfile['Extent'] as $key => $value){ ?>
+                                                                            <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
                                                                                 <option
                                                                                         value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                             <?php } ?>
@@ -159,25 +455,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputRealEstateBuyTimePrice" class="form-control"
+                                                                                name="inputRealEstateBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputRealEstateBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputRealEstateBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputRealEstateBuyTimePrice" class="form-control"
+                                                                                name="inputRealEstateBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputRealEstateBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputRealEstateBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 id="inputRealEstateBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -191,34 +500,44 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputRealEstateNowTimePrice" class="form-control"
+                                                                                name="inputRealEstateNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputRealEstateNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputRealEstateNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputRealEstateNowTimePrice" class="form-control"
+                                                                                name="inputRealEstateNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputRealEstateNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputRealEstateNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 id="inputRealEstateNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
-                                                                <label for="inputRealEstateAddress">
-                                                                    آدرس
-                                                                    </span>
-                                                                </label>
+                                                                <label for="inputRealEstateAddress">آدرس</label>
                                                                 <input id="inputRealEstateAddress" type="text"
                                                                        name="inputRealEstateAddress"
                                                                        class="input-validate validate valid"
@@ -231,8 +550,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileBooks">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="RealEstate"
+                                                                data-role="Self">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -255,6 +576,207 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Vehicle">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Vehicle'] as $item) {
+                                                                if ($item['ForWho'] == 'Self') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleType">
+                                                                                نوع وسیله نقلیه<span
+                                                                                        class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputVehicleType"
+                                                                                    id="inputVehicleType">
+                                                                                <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['VehicleType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleOwnershipDate">
+                                                                                سال شروع مالکیت<span
+                                                                                        class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputVehicleOwnershipDate"
+                                                                                    id="inputVehicleOwnershipDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['VehicleOwnershipDate'], $i); ?>
+                                                                                        <?php if ($i == 1398) echo "selected"; ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleOwnershipType">
+                                                                                نحوه مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputVehicleOwnershipType"
+                                                                                    id="inputVehicleOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+
+                                                                                        <?php setOptionSelected($item['VehicleOwnershipType'], $i); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleBuyTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputVehicleBuyTimePrice"
+                                                                                            id="inputVehicleBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputVehicleNowTimePrice"
+                                                                                            id="inputVehicleNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehiclePortion">
+                                                                                سهم از ملک(1 تا 6 دانگ)
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['VehiclePortion']); ?>
+                                                                                    type="number"
+                                                                                    name="inputVehiclePortion"
+                                                                                    id="inputVehiclePortion"
+                                                                                    class="form-control"
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
@@ -267,7 +789,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputVehicleType"
                                                                         id="inputVehicleType">
-                                                                    <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value){ ?>
+                                                                    <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -301,7 +823,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputVehicleOwnershipType"
                                                                         id="inputVehicleOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -316,25 +838,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputVehicleBuyTimePrice" class="form-control"
+                                                                                name="inputVehicleBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputVehicleBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputVehicleBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputVehicleBuyTimePrice" class="form-control"
+                                                                                name="inputVehicleBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputVehicleBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputVehicleBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 id="inputVehicleBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -348,25 +883,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputVehicleNowTimePrice" class="form-control"
+                                                                                name="inputVehicleNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputVehicleNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputVehicleNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputVehicleNowTimePrice" class="form-control"
+                                                                                name="inputVehicleNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputVehicleNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputVehicleNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 id="inputVehicleNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -377,7 +925,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     سهم از ملک(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputVehiclePortion" id="inputVehiclePortion" class="form-control"
+                                                                <input type="number" name="inputVehiclePortion"
+                                                                       id="inputVehiclePortion" class="form-control"
                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                         </div>
@@ -387,8 +936,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileArticles">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Vehicle"
+                                                                data-role="Self">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -411,6 +962,188 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Invest">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Invest'] as $item) {
+                                                                if ($item['ForWho'] == 'Self') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputInvestTitle">
+                                                                                نام شرکت / موسسه
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['InvestTitle']); ?>
+                                                                                    id="inputInvestTitle" type="text"
+                                                                                    name="inputInvestTitle"
+                                                                                    placeholder="نام شرکت - موسسه - پروژه ">
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger">
+                                             </span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputInvestDate"
+                                                                                    id="inputInvestDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['InvestDate'], $i); ?>
+                                                                                        <?php if ($i == 1398) echo "selected"; ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestOwnershipType">
+                                                                                نحوه مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputInvestOwnershipType"
+                                                                                    id="inputInvestOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['InvestDate'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestBuyTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputInvestBuyTimePrice"
+                                                                                            id="inputInvestBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestNowTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputInvestNowTimePrice"
+                                                                                            id="inputInvestNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
@@ -450,7 +1183,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputInvestOwnershipType"
                                                                         id="inputInvestOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -465,25 +1198,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputInvestBuyTimePrice" class="form-control"
+                                                                                name="inputInvestBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputInvestBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputInvestBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputInvestBuyTimePrice" class="form-control"
+                                                                                name="inputInvestBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputInvestBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputInvestBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 id="inputInvestBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -497,25 +1243,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputInvestNowTimePrice" class="form-control"
+                                                                                name="inputInvestNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputInvestNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputInvestNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputInvestNowTimePrice" class="form-control"
+                                                                                name="inputInvestNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputInvestNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputInvestNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 id="inputInvestNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -527,8 +1286,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileResearch">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Invest"
+                                                                data-role="Self">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -551,6 +1312,106 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-BankAccount">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['BankAccount'] as $item) {
+                                                                if ($item['ForWho'] == 'Self') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputBankAccountTitle">
+                                                                                عنوان بانک یا موسسه
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['BankAccountTitle']); ?>
+                                                                                    id="inputBankAccountTitle"
+                                                                                    type="text"
+                                                                                    name="inputBankAccountTitle"
+                                                                                    placeholder="عنوان بانک یا موسسه ">
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputBankAccountPrice">
+                                                                                مبلغ :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+
+                                                                                        <?php setInputValue(splitPrice($item['BankAccountPrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputBankAccountPrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputBankAccountPrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+
+                                                                                        <?php setInputValue(splitPrice($item['BankAccountPrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="RealEstateBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputBankAccountPrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputBankAccountPrice"
+                                                                                            id="inputBankAccountPrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['BankAccountPrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['BankAccountPrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['BankAccountPrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputBankAccountCountryId">کشور</label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputBankAccountCountryId"
+                                                                                    id="inputBankAccountCountryId">
+                                                                                <option value="">-- انتخاب کنید --
+                                                                                </option>
+                                                                                <?php foreach ($countries as $row) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['BankAccountCountryId'], $row['CountryId']); ?>
+                                                                                            value="<?php echo $row['CountryId']; ?>"><?php echo $row['FaName']; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
@@ -571,25 +1432,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputBankAccountPrice" class="form-control"
+                                                                                name="inputBankAccountPrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputBankAccountPrice ">صد تومان</label>
+                                                                        <label for="inputBankAccountPrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="RealEstateBuyTimePrice" class="form-control"
+                                                                                name="RealEstateBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputBankAccountPrice">هزار تومان</label>
+                                                                        <label for="inputBankAccountPrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputBankAccountPrice"
                                                                                 id="inputBankAccountPrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -604,9 +1478,9 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         name="inputBankAccountCountryId"
                                                                         id="inputBankAccountCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
-                                                                    <?php foreach ($countries as $item){ ?>
+                                                                    <?php foreach ($countries as $item) { ?>
                                                                         <option
-                                                                            <?php if($item['ISO'] =='IR') echo "selected"; ?>
+                                                                            <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
                                                                                 value="<?php echo $item['CountryId']; ?>"><?php echo $item['FaName']; ?></option>
                                                                     <?php } ?>
                                                                 </select>
@@ -618,8 +1492,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="BankAccount"
+                                                                data-role="Self">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -641,82 +1517,160 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Credit-Debtor">
                                                             <span class="divider"></span>
+                                                            <?php
+                                                            $creditDebtor = "";
+                                                            foreach ($finance['CreditDebtor'] as $item) {
+                                                                if($item['ForWho'] == 'Self'){
+                                                                    $creditDebtor = $item;
+                                                                }
+                                                            }
+                                                            ?>
+                                                            <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputCreditPrice">
+                                                                                جمع کل بستانکاری از اشخاص حقیقی یا حقوقی
+                                                                                :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputCreditPrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputCreditPrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputCreditPrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputCreditPrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputCreditPrice"
+                                                                                            id="inputCreditPrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputDebotrPrice">
+                                                                                جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputDebotrPrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputDebotrPrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputDebotrPrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputDebotrPrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputDebotrPrice"
+                                                                                            id="inputDebotrPrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <textarea class="EStates-textArea"
+                                                                                      name="inputDebotrDescription"><?php echo $creditDebtor['DebotrDescription']; ?></textarea>
+                                                                        </div>
+                                                                    </div>
                                                         </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 form">
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputCreditPrice">
-                                                                    جمع کل بستانکاری از اشخاص حقیقی یا حقوقی :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputCreditPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputCreditPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputCreditPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputCreditPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputCreditPrice"
-                                                                                id="inputCreditPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputDebotrPrice">
-                                                                    جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputDebotrPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputDebotrPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputDebotrPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputDebotrPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputDebotrPrice"
-                                                                                id="inputDebotrPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <textarea class="EStates-textArea" name="inputDebotrDescription"></textarea>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileInvention">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Credit-Debtor"
+                                                                data-role="Self">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -737,8 +1691,219 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                         <hr>
-                                                        <form id="form-Goods ">
+                                                        <form id="form-Goods">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Goods'] as $item) {
+                                                                if ($item['ForWho'] == 'Self') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsType">
+                                                                                نوع کالا
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputGoodsType"
+                                                                                    id="inputGoodsType">
+                                                                                <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['GoodsType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsOwnershipStartDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputGoodsOwnershipStartDate"
+                                                                                    id="inputGoodsOwnershipStartDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['GoodsOwnershipStartDate'], $i); ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsCount">
+                                                                                حجم / وزن / تعداد کالا
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['GoodsCount']); ?>
+                                                                                    type="text" name="inputGoodsCount"
+                                                                                    id="inputGoodsCount"
+                                                                                    class="form-control"
+                                                                                    placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputGoodsBuyTimePrice"
+                                                                                            id="inputGoodsBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputGoodsNowTimePrice"
+                                                                                            id="inputGoodsNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsOwnershipPercent">
+                                                                                درصد سهم از مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['GoodsOwnershipPercent']); ?>
+                                                                                    type="number"
+                                                                                    name="inputGoodsOwnershipPercent"
+                                                                                    id="inputGoodsOwnershipPercent"
+                                                                                    class="form-control"
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateOwnershipType">
+                                                                                نحوه مالکیت
+                                                                                <span class="text-danger">
+                                             </span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateOwnershipType"
+                                                                                    id="inputRealEstateOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateOwnershipType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
@@ -749,7 +1914,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputGoodsType"
                                                                         id="inputGoodsType">
-                                                                    <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value){ ?>
+                                                                    <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -779,8 +1944,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     حجم / وزن / تعداد کالا
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="text" name="inputGoodsCount" id="inputGoodsCount"
-                                                                       class="form-control" placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                <input type="text" name="inputGoodsCount"
+                                                                       id="inputGoodsCount"
+                                                                       class="form-control"
+                                                                       placeholder="  حجم / وزن / تعداد کالا"/>
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputGoodsBuyTimePrice">
@@ -791,25 +1958,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputGoodsBuyTimePrice" class="form-control"
+                                                                                name="inputGoodsBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputGoodsBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputGoodsBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputGoodsBuyTimePrice" class="form-control"
+                                                                                name="inputGoodsBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputGoodsBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputGoodsBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 id="inputGoodsBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -823,25 +2003,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputGoodsNowTimePrice" class="form-control"
+                                                                                name="inputGoodsNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputGoodsNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputGoodsNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputGoodsNowTimePrice" class="form-control"
+                                                                                name="inputGoodsNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputGoodsNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputGoodsNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 id="inputGoodsNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -853,7 +2046,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <input type="number" name="inputGoodsOwnershipPercent"
-                                                                       id="inputGoodsOwnershipPercent" class="form-control"
+                                                                       id="inputGoodsOwnershipPercent"
+                                                                       class="form-control"
                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
@@ -865,7 +2059,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputRealEstateOwnershipType"
                                                                         id="inputRealEstateOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -878,8 +2072,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Goods"
+                                                                data-role="Self">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -902,6 +2098,121 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Fee">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Fee'] as $item) {
+                                                                if ($item['ForWho'] == 'Self') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeeType">عنوان :</label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputFeeType"
+                                                                                    id="inputFeeType">
+                                                                                <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['FeeType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeeOwnershipStartDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputFeeOwnershipStartDate"
+                                                                                    id="inputFeeOwnershipStartDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['FeeOwnershipStartDate'], $i); ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeePercent">
+                                                                                درصد سهم از مالکیت معنوی:
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['FeePercent']); ?>
+                                                                                    type="number" name="inputFeePercent"
+                                                                                    id="inputFeePercent"
+                                                                                    class="form-control"
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeeAverageInYear">
+                                                                                میزان درآمد متوسط سالیانه از مالکیت
+                                                                                معنوی :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputFeeAverageInYear"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputFeeAverageInYear ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputFeeAverageInYear"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputFeeAverageInYear">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputFeeAverageInYear"
+                                                                                            id="inputFeeAverageInYear">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['FeeAverageInYear'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['FeeAverageInYear'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['FeeAverageInYear'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
@@ -912,7 +2223,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputFeeType"
                                                                         id="inputFeeType">
-                                                                    <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value){ ?>
+                                                                    <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -942,8 +2253,10 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     درصد سهم از مالکیت معنوی:
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputFeePercent" id="inputFeePercent"
-                                                                       class="form-control" placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                <input type="number" name="inputFeePercent"
+                                                                       id="inputFeePercent"
+                                                                       class="form-control"
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputFeeAverageInYear">
@@ -954,25 +2267,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputFeeAverageInYear" class="form-control"
+                                                                                name="inputFeeAverageInYear"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputFeeAverageInYear ">صد تومان</label>
+                                                                        <label for="inputFeeAverageInYear ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputFeeAverageInYear" class="form-control"
+                                                                                name="inputFeeAverageInYear"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputFeeAverageInYear">هزار تومان</label>
+                                                                        <label for="inputFeeAverageInYear">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
                                                                                 name="inputFeeAverageInYear"
                                                                                 id="inputFeeAverageInYear">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -984,8 +2310,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Fee"
+                                                                data-role="Self">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -1000,7 +2328,6 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 در آمد
-                                                <span class="add-form fa fa-plus"></span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -1008,50 +2335,92 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-AverageMonthIncome">
                                                             <span class="divider"></span>
-                                                        </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
-                                                            <span class="remove-form fa fa-times"></span>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputAverageMonthIncome">
-                                                                    درآمد متوسط ماهیانه :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputAverageMonthIncome" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputAverageMonthIncome ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputAverageMonthIncome" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputAverageMonthIncome">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputAverageMonthIncome"
-                                                                                id="inputAverageMonthIncome">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
+                                                            <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <?php
+                                                                    $income = "";
+                                                                    foreach ($finance['Income'] as $item) {
+                                                                        if($item['ForWho'] == 'Self'){
+                                                                            $income = $item;
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                    <label for="inputAverageMonthIncome">
+                                                                        درآمد متوسط ماهیانه :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputAverageMonthIncome"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputAverageMonthIncome ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputAverageMonthIncome"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputAverageMonthIncome">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputAverageMonthIncome"
+                                                                                    id="inputAverageMonthIncome">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($income['AverageMonthIncome'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($income['AverageMonthIncome'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($income['AverageMonthIncome'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="AverageMonthIncome"
+                                                                data-role="Self">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -1073,173 +2442,347 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Election">
                                                             <span class="divider"></span>
+                                                            <?php
+                                                            $election = "";
+                                                            foreach ($finance['Election'] as $item) {
+                                                                if($item['ForWho'] == 'Self'){
+                                                                    $election = $item;
+                                                                }
+                                                            }
+                                                            ?>
+                                                            <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionPlacePrice">
+                                                                        هزینه دایرکردن محل ستاد انتخابات (اجاره بها ,
+                                                                        حملو نقل و سایر موارد)
+                                                                        -هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionPlacePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionPlacePrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionPlacePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionPlacePrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionPlacePrice"
+                                                                                    id="inputElectionPlacePrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionFlockPrice">
+                                                                        هزینه برپایی تجمعات عمومی مرتبط با اهداف
+                                                                        انتخاباتی – هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionFlockPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionFlockPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionFlockPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionFlockPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionFlockPrice"
+                                                                                    id="inputElectionFlockPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionAdvertisePrice">
+                                                                        هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAdvertisePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAdvertisePrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAdvertisePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAdvertisePrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionAdvertisePrice"
+                                                                                    id="inputElectionAdvertisePrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionStaffPrice">
+                                                                        هزینه و حق الزحمه عوامل اجرایی و کارشناسی در
+                                                                        انتخابات – هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionStaffPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionStaffPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionStaffPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionStaffPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionStaffPrice"
+                                                                                    id="inputElectionStaffPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionAllPrice">
+                                                                        جمع کل هزینه های انتخاباتی :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAllPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAllPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAllPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAllPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionAllPrice"
+                                                                                    id="inputElectionAllPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAllPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAllPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAllPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 
+                                                            </div>
                                                         </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 form">
-
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputElectionPlacePrice">
-                                                                    هزینه دایرکردن محل ستاد انتخابات (اجاره بها , حملو نقل و سایر موارد)
-                                                                    -هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionPlacePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionPlacePrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionPlacePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionPlacePrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputElectionPlacePrice"
-                                                                                id="inputElectionPlacePrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputElectionFlockPrice">
-                                                                    هزینه برپایی تجمعات عمومی مرتبط با اهداف انتخاباتی – هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionFlockPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionFlockPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionFlockPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionFlockPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputElectionFlockPrice"
-                                                                                id="inputElectionFlockPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputElectionAdvertisePrice">
-                                                                    هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionAdvertisePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionAdvertisePrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionAdvertisePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionAdvertisePrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputElectionAdvertisePrice"
-                                                                                id="inputElectionAdvertisePrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputElectionStaffPrice">
-                                                                    هزینه و حق الزحمه عوامل اجرایی و کارشناسی در انتخابات – هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionStaffPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionStaffPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionStaffPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionStaffPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputElectionStaffPrice"
-                                                                                id="inputElectionStaffPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputElectionAllPrice">
-                                                                    جمع کل هزینه های انتخاباتی :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionAllPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionAllPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputElectionAllPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputElectionAllPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputElectionAllPrice"
-                                                                                id="inputElectionAllPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1247,34 +2790,16 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                         <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileConference">
+                                                                data-target="Election"
+                                                                data-role="Self">
                                                             ثبت
                                                         </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="LeftPaneAction">
-                                                <div class="row form-group">
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <a href="<?php echo base_url('Profile/skills'); ?>">
-                                                            <button class="btn btn-block btn-lg CommonButtons waves-effect">
-                                                                مرحله بعد
-                                                            </button>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 prev-step">
-                                                        <a href="<?php echo base_url('Profile/politicBackground'); ?>">
-                                                            <button class="btn btn-block btn-lg waves-effect CommonButtons prev-step">
-                                                                مرحله قبل
-                                                            </button>
-                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!--End Conference -->
-
                                 </div>
                             </div>
                         </div>
@@ -1296,32 +2821,309 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-RealEstate">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['RealEStates'] as $item) {
+                                                                if ($item['ForWho'] == 'Wife') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateType">
+                                                                                نوع کاربری
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateType"
+                                                                                    id="inputRealEstateType">
+                                                                                <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateOwnershipDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateOwnershipDate"
+                                                                                    id="inputRealEstateOwnershipDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateOwnershipDate'], $i); ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateOwnershipType">
+                                                                                نحوه مالکیت
+                                                                            </label>
+                                                                            <select
+                                                                                    class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateOwnershipType"
+                                                                                    id="inputRealEstateOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateOwnershipType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateCountryId">کشور</label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputRealEstateCountryId"
+                                                                                    id="inputRealEstateCountryId">
+                                                                                <option value="">-- انتخاب کنید --
+                                                                                </option>
+                                                                                <?php foreach ($countries as $row) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateCountryId'], $row['CountryId']); ?>
+                                                                                        <?php if ($row['ISO'] == 'IR') echo "selected"; ?>
+                                                                                            value="<?php echo $row['CountryId']; ?>"><?php echo $row['FaName']; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                            <label for="inputRealEstateStateId">
+                                                                                استان
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputRealEstateStateId"
+                                                                                    id="inputRealEstateStateId">
+                                                                                <option value="">-- انتخاب کنید --
+                                                                                </option>
+                                                                                <?php foreach ($states as $state) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
+                                                                                            value="<?php echo $state['StateId']; ?>">
+                                                                                        <?php echo $state['StateName']; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                            <label for="inputRealEstateCityId">
+                                                                                شهر
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputRealEstateCityId"
+                                                                                    id="inputRealEstateCityId">
+                                                                                <option value="8">تهران</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstatePortion">
+                                                                                سهم از ملک(1 تا 6 دانگ)
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input type="number"
+                                                                                <?php setInputValue($item['RealEstatePortion']); ?>
+                                                                                   name="inputRealEstatePortion"
+                                                                                   id="inputRealEstatePortion"
+                                                                                   class="form-control"
+                                                                                   placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateExtent">
+                                                                                متراژ حدودی ملک
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-xs-12 RightFloat">
+                                                                                    <input type="number"
+                                                                                        <?php setInputValue($item['RealEstateExtent']); ?>
+                                                                                           name="inputRealEstateExtent"
+                                                                                           id="inputRealEstateExtent"
+                                                                                           class="form-control"
+                                                                                           placeholder=""/>
+                                                                                </div>
+                                                                                <div class="col-md-6 col-xs-12 RightFloat">
+                                                                                    <select class="form-control form-control-lg city-select"
+                                                                                            name="inputRealEstateExtentUnit"
+                                                                                            id="inputRealEstateExtentUnit">
+                                                                                        <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
+                                                                                            <option
+                                                                                                <?php setOptionSelected($item['RealEstateExtentUnit'], $key); ?>
+                                                                                                    value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                        <?php } ?>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputRealEstateBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                            type="number"
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateBuyTimePrice'])['left']); ?>
+                                                                                            name="inputRealEstateBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputRealEstateBuyTimePrice"
+                                                                                            id="inputRealEstateBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputRealEstateNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateNowTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputRealEstateNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputRealEstateNowTimePrice"
+                                                                                            id="inputRealEstateNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateAddress">آدرس</label>
+                                                                            <input
+                                                                                <?php setInputValue($item['RealEstateAddress']); ?>
+                                                                                    id="inputRealEstateAddress"
+                                                                                    type="text"
+                                                                                    name="inputRealEstateAddress"
+                                                                                    class="input-validate validate valid"
+                                                                                    placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstateType">
+                                                                <label for="inputRealEstateType">
                                                                     نوع کاربری
-                                                                    <span class="text-danger">
-                                             </span>
+                                                                    <span class="text-danger"></span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeRealEstateType"
-                                                                        id="inputWifeRealEstateType">
-                                                                    <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value){ ?>
+                                                                        name="inputRealEstateType"
+                                                                        id="inputRealEstateType">
+                                                                    <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstateOwnershipDate">
+                                                                <label for="inputRealEstateOwnershipDate">
                                                                     سال شروع مالکیت
-                                                                    <span class="text-danger">
-                                             </span>
+                                                                    <span class="text-danger"></span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeRealEstateOwnershipDate"  id="inputWifeRealEstateOwnershipDate"  style="font-family: tahoma;">
+                                                                        name="inputRealEstateOwnershipDate"
+                                                                        id="inputRealEstateOwnershipDate"
+                                                                        style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
                                                                             <?php if ($i == 1398) echo "selected"; ?>
@@ -1332,39 +3134,39 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstateOwnershipType">
+                                                                <label for="inputRealEstateOwnershipType">
                                                                     نحوه مالکیت
                                                                 </label>
                                                                 <select
                                                                         class="form-control form-control-lg city-select"
-                                                                        name="inputWifeRealEstateOwnershipType"
-                                                                        id="inputWifeRealEstateOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                        name="inputRealEstateOwnershipType"
+                                                                        id="inputRealEstateOwnershipType">
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstateCountryId">کشور</label>
-                                                                <select class="form-control form-control-lg state-select" name="inputWifeRealEstateCountryId"
-                                                                        id="inputWifeRealEstateCountryId">
+                                                                <label for="inputRealEstateCountryId">کشور</label>
+                                                                <select class="form-control form-control-lg state-select"
+                                                                        name="inputRealEstateCountryId"
+                                                                        id="inputRealEstateCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
-                                                                    <?php foreach ($countries as $item){ ?>
+                                                                    <?php foreach ($countries as $item) { ?>
                                                                         <option
-                                                                            <?php if($item['ISO'] =='IR') echo "selected"; ?>
+                                                                            <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
                                                                                 value="<?php echo $item['CountryId']; ?>"><?php echo $item['FaName']; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                <label for="inputWifeRealEstateStateId">
+                                                                <label for="inputRealEstateStateId">
                                                                     استان
                                                                 </label>
                                                                 <select class="form-control form-control-lg state-select"
-                                                                        name="inputWifeRealEstateStateId"
-                                                                        id="inputWifeRealEstateStateId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                        name="inputRealEstateStateId"
+                                                                        id="inputRealEstateStateId">
                                                                     <option value="">-- انتخاب کنید --</option>
                                                                     <?php foreach ($states as $state) { ?>
                                                                         <option value="<?php echo $state['StateId']; ?>">
@@ -1374,38 +3176,43 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                <label for="inputWifeRealEstateCityId">
+                                                                <label for="inputRealEstateCityId">
                                                                     شهر
                                                                 </label>
                                                                 <select class="form-control form-control-lg state-select"
-                                                                        name="inputWifeRealEstateCityId"
-                                                                        id="inputWifeRealEstateCityId">
+                                                                        name="inputRealEstateCityId"
+                                                                        id="inputRealEstateCityId">
+                                                                    <option value="8">تهران</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstatePortion">
+                                                                <label for="inputRealEstatePortion">
                                                                     سهم از ملک(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputWifeRealEstatePortion" id="inputWifeRealEstatePortion"
-                                                                       class="form-control" placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                <input type="number" name="inputRealEstatePortion"
+                                                                       id="inputRealEstatePortion"
+                                                                       class="form-control"
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstateExtent">
+                                                                <label for="inputRealEstateExtent">
                                                                     متراژ حدودی ملک
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
-                                                                        <input type="number" name="inputWifeRealEstateExtentUnit"
-                                                                               id="inputWifeRealEstateExtentUnit" class="form-control"
+                                                                        <input type="number"
+                                                                               name="inputRealEstateExtent"
+                                                                               id="inputRealEstateExtent"
+                                                                               class="form-control"
                                                                                placeholder=""/>
                                                                     </div>
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
                                                                         <select class="form-control form-control-lg city-select"
-                                                                                name="inputWifeRealEstateExtentUnit"
-                                                                                id="inputWifeRealEstateExtentUnit">
-                                                                            <?php foreach ($EnumResumeProfile['Extent'] as $key => $value){ ?>
+                                                                                name="inputRealEstateExtentUnit"
+                                                                                id="inputRealEstateExtentUnit">
+                                                                            <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
                                                                                 <option
                                                                                         value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                             <?php } ?>
@@ -1414,7 +3221,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstateBuyTimePrice">
+                                                                <label for="inputRealEstateBuyTimePrice">
                                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -1422,31 +3229,44 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeRealEstateBuyTimePrice" class="form-control"
+                                                                                name="inputRealEstateBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeRealEstateBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputRealEstateBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeRealEstateBuyTimePrice" class="form-control"
+                                                                                name="inputRealEstateBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeRealEstateBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputRealEstateBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeRealEstateBuyTimePrice"
-                                                                                id="inputWifeRealEstateBuyTimePrice">
+                                                                                name="inputRealEstateBuyTimePrice"
+                                                                                id="inputRealEstateBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstateNowTimePrice">
+                                                                <label for="inputRealEstateNowTimePrice">
                                                                     ارزش حدودی کل سهام درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -1454,36 +3274,46 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeRealEstateNowTimePrice" class="form-control"
+                                                                                name="inputRealEstateNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeRealEstateNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputRealEstateNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeRealEstateNowTimePrice" class="form-control"
+                                                                                name="inputRealEstateNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeRealEstateNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputRealEstateNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeRealEstateNowTimePrice"
-                                                                                id="inputWifeRealEstateNowTimePrice">
+                                                                                name="inputRealEstateNowTimePrice"
+                                                                                id="inputRealEstateNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstateAddress">
-                                                                    آدرس
-                                                                    </span>
-                                                                </label>
-                                                                <input id="inputWifeRealEstateAddress" type="text"
-                                                                       name="inputWifeRealEstateAddress"
+                                                                <label for="inputRealEstateAddress">آدرس</label>
+                                                                <input id="inputRealEstateAddress" type="text"
+                                                                       name="inputRealEstateAddress"
                                                                        class="input-validate validate valid"
                                                                        placeholder="نام خیابان اصلی / محله / منطقه">
                                                             </div>
@@ -1494,8 +3324,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileBooks">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="RealEstate"
+                                                                data-role="Wife">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -1518,33 +3350,234 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Vehicle">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Vehicle'] as $item) {
+                                                                if ($item['ForWho'] == 'Wife') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleType">
+                                                                                نوع وسیله نقلیه<span
+                                                                                        class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputVehicleType"
+                                                                                    id="inputVehicleType">
+                                                                                <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['VehicleType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleOwnershipDate">
+                                                                                سال شروع مالکیت<span
+                                                                                        class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputVehicleOwnershipDate"
+                                                                                    id="inputVehicleOwnershipDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['VehicleOwnershipDate'], $i); ?>
+                                                                                        <?php if ($i == 1398) echo "selected"; ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleOwnershipType">
+                                                                                نحوه مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputVehicleOwnershipType"
+                                                                                    id="inputVehicleOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+
+                                                                                        <?php setOptionSelected($item['VehicleOwnershipType'], $i); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleBuyTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputVehicleBuyTimePrice"
+                                                                                            id="inputVehicleBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputVehicleNowTimePrice"
+                                                                                            id="inputVehicleNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehiclePortion">
+                                                                                سهم از ملک(1 تا 6 دانگ)
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['VehiclePortion']); ?>
+                                                                                    type="number"
+                                                                                    name="inputVehiclePortion"
+                                                                                    id="inputVehiclePortion"
+                                                                                    class="form-control"
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeVehicleType">
+                                                                <label for="inputVehicleType">
                                                                     نوع وسیله نقلیه
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeVehicleType"
-                                                                        id="inputWifeVehicleType">
-                                                                    <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value){ ?>
+                                                                        name="inputVehicleType"
+                                                                        id="inputVehicleType">
+                                                                    <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeVehicleOwnershipDate">
+                                                                <label for="inputVehicleOwnershipDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeVehicleOwnershipDate"
-                                                                        id="inputWifeVehicleOwnershipDate"
+                                                                        name="inputVehicleOwnershipDate"
+                                                                        id="inputVehicleOwnershipDate"
                                                                         style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
@@ -1556,22 +3589,22 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeVehicleOwnershipType">
+                                                                <label for="inputVehicleOwnershipType">
                                                                     نحوه مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeVehicleOwnershipType"
-                                                                        id="inputWifeVehicleOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                        name="inputVehicleOwnershipType"
+                                                                        id="inputVehicleOwnershipType">
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeVehicleBuyTimePrice">
+                                                                <label for="inputVehicleBuyTimePrice">
                                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -1579,31 +3612,44 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeVehicleBuyTimePrice" class="form-control"
+                                                                                name="inputVehicleBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeVehicleBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputVehicleBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeVehicleBuyTimePrice" class="form-control"
+                                                                                name="inputVehicleBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeVehicleBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputVehicleBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeVehicleBuyTimePrice"
-                                                                                id="inputWifeVehicleBuyTimePrice">
+                                                                                name="inputVehicleBuyTimePrice"
+                                                                                id="inputVehicleBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeVehicleNowTimePrice">
+                                                                <label for="inputVehicleNowTimePrice">
                                                                     ارزش حدودی کل سهام درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -1611,36 +3657,50 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeVehicleNowTimePrice" class="form-control"
+                                                                                name="inputVehicleNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeVehicleNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputVehicleNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeVehicleNowTimePrice" class="form-control"
+                                                                                name="inputVehicleNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeVehicleNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputVehicleNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeVehicleNowTimePrice"
-                                                                                id="inputWifeVehicleNowTimePrice">
+                                                                                name="inputVehicleNowTimePrice"
+                                                                                id="inputVehicleNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeVehiclePortion">
+                                                                <label for="inputVehiclePortion">
                                                                     سهم از ملک(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputWifeVehiclePortion" id="inputWifeVehiclePortion" class="form-control"
+                                                                <input type="number" name="inputVehiclePortion"
+                                                                       id="inputVehiclePortion" class="form-control"
                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                         </div>
@@ -1650,8 +3710,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileArticles">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Vehicle"
+                                                                data-role="Wife">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -1674,26 +3736,208 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Invest">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Invest'] as $item) {
+                                                                if ($item['ForWho'] == 'Wife') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputInvestTitle">
+                                                                                نام شرکت / موسسه
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['InvestTitle']); ?>
+                                                                                    id="inputInvestTitle" type="text"
+                                                                                    name="inputInvestTitle"
+                                                                                    placeholder="نام شرکت - موسسه - پروژه ">
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger">
+                                             </span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputInvestDate"
+                                                                                    id="inputInvestDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['InvestDate'], $i); ?>
+                                                                                        <?php if ($i == 1398) echo "selected"; ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestOwnershipType">
+                                                                                نحوه مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputInvestOwnershipType"
+                                                                                    id="inputInvestOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['InvestDate'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestBuyTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputInvestBuyTimePrice"
+                                                                                            id="inputInvestBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestNowTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputInvestNowTimePrice"
+                                                                                            id="inputInvestNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 form-group RightFloat">
-                                                                <label for="inputWifeInvestTitle">
+                                                                <label for="inputInvestTitle">
                                                                     نام شرکت / موسسه
                                                                 </label>
                                                                 <input id="inputInvestTitle" type="text"
-                                                                       name="inputWifeInvestTitle"
+                                                                       name="inputInvestTitle"
                                                                        placeholder="نام شرکت - موسسه - پروژه ">
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeInvestDate">
+                                                                <label for="inputInvestDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeInvestDate"
-                                                                        id="inputWifeInvestDate"
+                                                                        name="inputInvestDate"
+                                                                        id="inputInvestDate"
                                                                         style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
@@ -1705,22 +3949,22 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeInvestOwnershipType">
+                                                                <label for="inputInvestOwnershipType">
                                                                     نحوه مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeInvestOwnershipType"
-                                                                        id="inputWifeInvestOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                        name="inputInvestOwnershipType"
+                                                                        id="inputInvestOwnershipType">
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeInvestBuyTimePrice">
+                                                                <label for="inputInvestBuyTimePrice">
                                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -1728,31 +3972,44 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeInvestBuyTimePrice" class="form-control"
+                                                                                name="inputInvestBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeInvestBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputInvestBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeInvestBuyTimePrice" class="form-control"
+                                                                                name="inputInvestBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeInvestBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputInvestBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeInvestBuyTimePrice"
-                                                                                id="inputWifeInvestBuyTimePrice">
+                                                                                name="inputInvestBuyTimePrice"
+                                                                                id="inputInvestBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeInvestNowTimePrice">
+                                                                <label for="inputInvestNowTimePrice">
                                                                     ارزش حدودی کل سهام درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -1760,25 +4017,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeInvestNowTimePrice" class="form-control"
+                                                                                name="inputInvestNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeInvestNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputInvestNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeInvestNowTimePrice" class="form-control"
+                                                                                name="inputInvestNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeInvestNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputInvestNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeInvestNowTimePrice"
-                                                                                id="inputWifeInvestNowTimePrice">
+                                                                                name="inputInvestNowTimePrice"
+                                                                                id="inputInvestNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -1790,8 +4060,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileResearch">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Invest"
+                                                                data-role="Wife">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -1814,19 +4086,119 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-BankAccount">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['BankAccount'] as $item) {
+                                                                if ($item['ForWho'] == 'Wife') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputBankAccountTitle">
+                                                                                عنوان بانک یا موسسه
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['BankAccountTitle']); ?>
+                                                                                    id="inputBankAccountTitle"
+                                                                                    type="text"
+                                                                                    name="inputBankAccountTitle"
+                                                                                    placeholder="عنوان بانک یا موسسه ">
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputBankAccountPrice">
+                                                                                مبلغ :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+
+                                                                                        <?php setInputValue(splitPrice($item['BankAccountPrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputBankAccountPrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputBankAccountPrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+
+                                                                                        <?php setInputValue(splitPrice($item['BankAccountPrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="RealEstateBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputBankAccountPrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputBankAccountPrice"
+                                                                                            id="inputBankAccountPrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['BankAccountPrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['BankAccountPrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['BankAccountPrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputBankAccountCountryId">کشور</label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputBankAccountCountryId"
+                                                                                    id="inputBankAccountCountryId">
+                                                                                <option value="">-- انتخاب کنید --
+                                                                                </option>
+                                                                                <?php foreach ($countries as $row) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['BankAccountCountryId'], $row['CountryId']); ?>
+                                                                                            value="<?php echo $row['CountryId']; ?>"><?php echo $row['FaName']; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 form-group RightFloat">
-                                                                <label for="inputWifeBankAccountTitle">
+                                                                <label for="inputBankAccountTitle">
                                                                     عنوان بانک یا موسسه
                                                                 </label>
-                                                                <input id="inputWifeBankAccountTitle" type="text"
-                                                                       name="inputWifeBankAccountTitle"
+                                                                <input id="inputBankAccountTitle" type="text"
+                                                                       name="inputBankAccountTitle"
                                                                        placeholder="عنوان بانک یا موسسه ">
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeBankAccountPrice">
+                                                                <label for="inputBankAccountPrice">
                                                                     مبلغ :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -1834,42 +4206,55 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeBankAccountPrice" class="form-control"
+                                                                                name="inputBankAccountPrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeBankAccountPrice ">صد تومان</label>
+                                                                        <label for="inputBankAccountPrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeBankAccountPrice" class="form-control"
+                                                                                name="RealEstateBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeBankAccountPrice">هزار تومان</label>
+                                                                        <label for="inputBankAccountPrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeBankAccountPrice"
-                                                                                id="inputWifeBankAccountPrice">
+                                                                                name="inputBankAccountPrice"
+                                                                                id="inputBankAccountPrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
-                                                                <label for="inputWifeBankAccountCountryId">
+                                                                <label for="inputBankAccountCountryId">
                                                                     کشور
                                                                     </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg state-select"
-                                                                        name="inputWifeBankAccountCountryId"
-                                                                        id="inputWifeBankAccountCountryId">
+                                                                        name="inputBankAccountCountryId"
+                                                                        id="inputBankAccountCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
-                                                                    <?php foreach ($countries as $item){ ?>
+                                                                    <?php foreach ($countries as $item) { ?>
                                                                         <option
-                                                                            <?php if($item['ISO'] =='IR') echo "selected"; ?>
+                                                                            <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
                                                                                 value="<?php echo $item['CountryId']; ?>"><?php echo $item['FaName']; ?></option>
                                                                     <?php } ?>
                                                                 </select>
@@ -1881,8 +4266,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="BankAccount"
+                                                                data-role="Wife">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -1904,82 +4291,160 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Credit-Debtor">
                                                             <span class="divider"></span>
+                                                            <?php
+                                                            $creditDebtor = "";
+                                                            foreach ($finance['CreditDebtor'] as $item) {
+                                                                if($item['ForWho'] == 'Wife'){
+                                                                    $creditDebtor = $item;
+                                                                }
+                                                            }
+                                                            ?>
+                                                            <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputCreditPrice">
+                                                                        جمع کل بستانکاری از اشخاص حقیقی یا حقوقی
+                                                                        :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputCreditPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputCreditPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputCreditPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputCreditPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputCreditPrice"
+                                                                                    id="inputCreditPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputDebotrPrice">
+                                                                        جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputDebotrPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputDebotrPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputDebotrPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputDebotrPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputDebotrPrice"
+                                                                                    id="inputDebotrPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <textarea class="EStates-textArea"
+                                                                              name="inputDebotrDescription"><?php echo $creditDebtor['DebotrDescription']; ?></textarea>
+                                                                </div>
+                                                            </div>
                                                         </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 form">
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeCreditPrice">
-                                                                    جمع کل بستانکاری از اشخاص حقیقی یا حقوقی :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeCreditPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeCreditPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeCreditPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeCreditPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeCreditPrice"
-                                                                                id="inputWifeCreditPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeDebotrPrice">
-                                                                    جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeDebotrPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeDebotrPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeDebotrPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeDebotrPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeDebotrPrice"
-                                                                                id="inputWifeDebotrPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <textarea class="EStates-textArea" name="inputWifeDebotrDescription"></textarea>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileInvention">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Credit-Debtor"
+                                                                data-role="Wife">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -2000,33 +4465,244 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                         <hr>
-                                                        <form id="form-Goods ">
+                                                        <form id="form-Goods">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Goods'] as $item) {
+                                                                if ($item['ForWho'] == 'Wife') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsType">
+                                                                                نوع کالا
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputGoodsType"
+                                                                                    id="inputGoodsType">
+                                                                                <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['GoodsType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsOwnershipStartDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputGoodsOwnershipStartDate"
+                                                                                    id="inputGoodsOwnershipStartDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['GoodsOwnershipStartDate'], $i); ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsCount">
+                                                                                حجم / وزن / تعداد کالا
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['GoodsCount']); ?>
+                                                                                    type="text" name="inputGoodsCount"
+                                                                                    id="inputGoodsCount"
+                                                                                    class="form-control"
+                                                                                    placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputGoodsBuyTimePrice"
+                                                                                            id="inputGoodsBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputGoodsNowTimePrice"
+                                                                                            id="inputGoodsNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsOwnershipPercent">
+                                                                                درصد سهم از مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['GoodsOwnershipPercent']); ?>
+                                                                                    type="number"
+                                                                                    name="inputGoodsOwnershipPercent"
+                                                                                    id="inputGoodsOwnershipPercent"
+                                                                                    class="form-control"
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateOwnershipType">
+                                                                                نحوه مالکیت
+                                                                                <span class="text-danger">
+                                             </span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateOwnershipType"
+                                                                                    id="inputRealEstateOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateOwnershipType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeGoodsType">
+                                                                <label for="inputGoodsType">
                                                                     نوع کالا
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeGoodsType"
-                                                                        id="inputWifeGoodsType">
-                                                                    <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value){ ?>
+                                                                        name="inputGoodsType"
+                                                                        id="inputGoodsType">
+                                                                    <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeGoodsOwnershipStartDate">
+                                                                <label for="inputGoodsOwnershipStartDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeGoodsOwnershipStartDate"
-                                                                        id="inputWifeGoodsOwnershipStartDate"
+                                                                        name="inputGoodsOwnershipStartDate"
+                                                                        id="inputGoodsOwnershipStartDate"
                                                                         style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
@@ -2038,15 +4714,17 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeGoodsCount">
+                                                                <label for="inputGoodsCount">
                                                                     حجم / وزن / تعداد کالا
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="text" name="inputWifeGoodsCount" id="inputWifeGoodsCount"
-                                                                       class="form-control" placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                <input type="text" name="inputGoodsCount"
+                                                                       id="inputGoodsCount"
+                                                                       class="form-control"
+                                                                       placeholder="  حجم / وزن / تعداد کالا"/>
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeGoodsBuyTimePrice">
+                                                                <label for="inputGoodsBuyTimePrice">
                                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -2054,31 +4732,44 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeGoodsBuyTimePrice" class="form-control"
+                                                                                name="inputGoodsBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeGoodsBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputGoodsBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeGoodsBuyTimePrice" class="form-control"
+                                                                                name="inputGoodsBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeGoodsBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputGoodsBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeGoodsBuyTimePrice"
-                                                                                id="inputWifeGoodsBuyTimePrice">
+                                                                                name="inputGoodsBuyTimePrice"
+                                                                                id="inputGoodsBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeGoodsNowTimePrice">
+                                                                <label for="inputGoodsNowTimePrice">
                                                                     ارزش حدودی کل سهام درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -2086,49 +4777,63 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeGoodsNowTimePrice" class="form-control"
+                                                                                name="inputGoodsNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeGoodsNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputGoodsNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeGoodsNowTimePrice" class="form-control"
+                                                                                name="inputGoodsNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeGoodsNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputGoodsNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeGoodsNowTimePrice"
-                                                                                id="inputWifeGoodsNowTimePrice">
+                                                                                name="inputGoodsNowTimePrice"
+                                                                                id="inputGoodsNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeGoodsOwnershipPercent">
+                                                                <label for="inputGoodsOwnershipPercent">
                                                                     درصد سهم از مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputWifeGoodsOwnershipPercent"
-                                                                       id="inputWifeGoodsOwnershipPercent" class="form-control"
+                                                                <input type="number" name="inputGoodsOwnershipPercent"
+                                                                       id="inputGoodsOwnershipPercent"
+                                                                       class="form-control"
                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeRealEstateOwnershipType">
+                                                                <label for="inputRealEstateOwnershipType">
                                                                     نحوه مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeRealEstateOwnershipType"
-                                                                        id="inputWifeRealEstateOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                        name="inputRealEstateOwnershipType"
+                                                                        id="inputRealEstateOwnershipType">
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -2141,8 +4846,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Goods"
+                                                                data-role="Wife">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -2165,31 +4872,146 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Fee">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Fee'] as $item) {
+                                                                if ($item['ForWho'] == 'Wife') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeeType">عنوان :</label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputFeeType"
+                                                                                    id="inputFeeType">
+                                                                                <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['FeeType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeeOwnershipStartDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputFeeOwnershipStartDate"
+                                                                                    id="inputFeeOwnershipStartDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['FeeOwnershipStartDate'], $i); ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeePercent">
+                                                                                درصد سهم از مالکیت معنوی:
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['FeePercent']); ?>
+                                                                                    type="number" name="inputFeePercent"
+                                                                                    id="inputFeePercent"
+                                                                                    class="form-control"
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeeAverageInYear">
+                                                                                میزان درآمد متوسط سالیانه از مالکیت
+                                                                                معنوی :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputFeeAverageInYear"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputFeeAverageInYear ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputFeeAverageInYear"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputFeeAverageInYear">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputFeeAverageInYear"
+                                                                                            id="inputFeeAverageInYear">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['FeeAverageInYear'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['FeeAverageInYear'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['FeeAverageInYear'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeFeeType">
+                                                                <label for="inputFeeType">
                                                                     عنوان :
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeFeeType"
-                                                                        id="inputWifeFeeType">
-                                                                    <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value){ ?>
+                                                                        name="inputFeeType"
+                                                                        id="inputFeeType">
+                                                                    <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeFeeOwnershipStartDate">
+                                                                <label for="inputFeeOwnershipStartDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputWifeFeeOwnershipStartDate"
-                                                                        id="inputWifeFeeOwnershipStartDate"
+                                                                        name="inputFeeOwnershipStartDate"
+                                                                        id="inputFeeOwnershipStartDate"
                                                                         style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
@@ -2201,15 +5023,17 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeFeePercent">
+                                                                <label for="inputFeePercent">
                                                                     درصد سهم از مالکیت معنوی:
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputWifeFeePercent" id="inputWifeFeePercent"
-                                                                       class="form-control" placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                <input type="number" name="inputFeePercent"
+                                                                       id="inputFeePercent"
+                                                                       class="form-control"
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeFeeAverageInYear">
+                                                                <label for="inputFeeAverageInYear">
                                                                     میزان درآمد متوسط سالیانه از مالکیت معنوی :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -2217,25 +5041,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeFeeAverageInYear" class="form-control"
+                                                                                name="inputFeeAverageInYear"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeFeeAverageInYear ">صد تومان</label>
+                                                                        <label for="inputFeeAverageInYear ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputWifeFeeAverageInYear" class="form-control"
+                                                                                name="inputFeeAverageInYear"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputWifeFeeAverageInYear">هزار تومان</label>
+                                                                        <label for="inputFeeAverageInYear">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeFeeAverageInYear"
-                                                                                id="inputWifeFeeAverageInYear">
+                                                                                name="inputFeeAverageInYear"
+                                                                                id="inputFeeAverageInYear">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -2247,8 +5084,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Fee"
+                                                                data-role="Wife">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -2263,7 +5102,6 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 در آمد
-                                                <span class="add-form fa fa-plus"></span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -2271,50 +5109,92 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-AverageMonthIncome">
                                                             <span class="divider"></span>
-                                                        </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
-                                                            <span class="remove-form fa fa-times"></span>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeAverageMonthIncome">
-                                                                    درآمد متوسط ماهیانه :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeAverageMonthIncome" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeAverageMonthIncome ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeAverageMonthIncome" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeAverageMonthIncome">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeAverageMonthIncome"
-                                                                                id="inputWifeAverageMonthIncome">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
+                                                            <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <?php
+                                                                    $income = "";
+                                                                    foreach ($finance['Income'] as $item) {
+                                                                        if($item['ForWho'] == 'Wife'){
+                                                                            $income = $item;
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                    <label for="inputAverageMonthIncome">
+                                                                        درآمد متوسط ماهیانه :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputAverageMonthIncome"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputAverageMonthIncome ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputAverageMonthIncome"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputAverageMonthIncome">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputAverageMonthIncome"
+                                                                                    id="inputAverageMonthIncome">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($income['AverageMonthIncome'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($income['AverageMonthIncome'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($income['AverageMonthIncome'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="AverageMonthIncome"
+                                                                data-role="Wife">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -2336,173 +5216,347 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Election">
                                                             <span class="divider"></span>
+                                                            <?php
+                                                            $election = "";
+                                                            foreach ($finance['Election'] as $item) {
+                                                                if($item['ForWho'] == 'Wife'){
+                                                                    $election = $item;
+                                                                }
+                                                            }
+                                                            ?>
+                                                            <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionPlacePrice">
+                                                                        هزینه دایرکردن محل ستاد انتخابات (اجاره بها ,
+                                                                        حملو نقل و سایر موارد)
+                                                                        -هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionPlacePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionPlacePrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionPlacePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionPlacePrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionPlacePrice"
+                                                                                    id="inputElectionPlacePrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionFlockPrice">
+                                                                        هزینه برپایی تجمعات عمومی مرتبط با اهداف
+                                                                        انتخاباتی – هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionFlockPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionFlockPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionFlockPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionFlockPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionFlockPrice"
+                                                                                    id="inputElectionFlockPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionAdvertisePrice">
+                                                                        هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAdvertisePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAdvertisePrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAdvertisePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAdvertisePrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionAdvertisePrice"
+                                                                                    id="inputElectionAdvertisePrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionStaffPrice">
+                                                                        هزینه و حق الزحمه عوامل اجرایی و کارشناسی در
+                                                                        انتخابات – هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionStaffPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionStaffPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionStaffPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionStaffPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionStaffPrice"
+                                                                                    id="inputElectionStaffPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionAllPrice">
+                                                                        جمع کل هزینه های انتخاباتی :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAllPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAllPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAllPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAllPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionAllPrice"
+                                                                                    id="inputElectionAllPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAllPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAllPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAllPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 
+                                                            </div>
                                                         </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 form">
-
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeElectionPlacePrice">
-                                                                    هزینه دایرکردن محل ستاد انتخابات (اجاره بها , حملو نقل و سایر موارد)
-                                                                    -هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionPlacePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionPlacePrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionPlacePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionPlacePrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeElectionPlacePrice"
-                                                                                id="inputWifeElectionPlacePrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeElectionFlockPrice">
-                                                                    هزینه برپایی تجمعات عمومی مرتبط با اهداف انتخاباتی – هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionFlockPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionFlockPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionFlockPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionFlockPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeElectionFlockPrice"
-                                                                                id="inputWifeElectionFlockPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeElectionAdvertisePrice">
-                                                                    هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionAdvertisePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionAdvertisePrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionAdvertisePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionAdvertisePrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeElectionAdvertisePrice"
-                                                                                id="inputWifeElectionAdvertisePrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeElectionStaffPrice">
-                                                                    هزینه و حق الزحمه عوامل اجرایی و کارشناسی در انتخابات – هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionStaffPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionStaffPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionStaffPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionStaffPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeElectionStaffPrice"
-                                                                                id="inputWifeElectionStaffPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputWifeElectionAllPrice">
-                                                                    جمع کل هزینه های انتخاباتی :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionAllPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionAllPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputWifeElectionAllPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputWifeElectionAllPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputWifeElectionAllPrice"
-                                                                                id="inputWifeElectionAllPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2510,39 +5564,22 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                         <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileConference">
+                                                                data-target="Election"
+                                                                data-role="Wife">
                                                             ثبت
                                                         </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="LeftPaneAction">
-                                                <div class="row form-group">
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <a href="<?php echo base_url('Profile/skills'); ?>">
-                                                            <button class="btn btn-block btn-lg CommonButtons waves-effect">
-                                                                مرحله بعد
-                                                            </button>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 prev-step">
-                                                        <a href="<?php echo base_url('Profile/politicBackground'); ?>">
-                                                            <button class="btn btn-block btn-lg waves-effect CommonButtons prev-step">
-                                                                مرحله قبل
-                                                            </button>
-                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!--End Conference -->
-
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="tab3child">
+
                         <div class="LeftPanel">
                             <div class="LeftPanelcontent">
                                 <div class="row">
@@ -2559,32 +5596,309 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-RealEstate">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['RealEStates'] as $item) {
+                                                                if ($item['ForWho'] == 'Child') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateType">
+                                                                                نوع کاربری
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateType"
+                                                                                    id="inputRealEstateType">
+                                                                                <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateOwnershipDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateOwnershipDate"
+                                                                                    id="inputRealEstateOwnershipDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateOwnershipDate'], $i); ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateOwnershipType">
+                                                                                نحوه مالکیت
+                                                                            </label>
+                                                                            <select
+                                                                                    class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateOwnershipType"
+                                                                                    id="inputRealEstateOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateOwnershipType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateCountryId">کشور</label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputRealEstateCountryId"
+                                                                                    id="inputRealEstateCountryId">
+                                                                                <option value="">-- انتخاب کنید --
+                                                                                </option>
+                                                                                <?php foreach ($countries as $row) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateCountryId'], $row['CountryId']); ?>
+                                                                                        <?php if ($row['ISO'] == 'IR') echo "selected"; ?>
+                                                                                            value="<?php echo $row['CountryId']; ?>"><?php echo $row['FaName']; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                            <label for="inputRealEstateStateId">
+                                                                                استان
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputRealEstateStateId"
+                                                                                    id="inputRealEstateStateId">
+                                                                                <option value="">-- انتخاب کنید --
+                                                                                </option>
+                                                                                <?php foreach ($states as $state) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
+                                                                                            value="<?php echo $state['StateId']; ?>">
+                                                                                        <?php echo $state['StateName']; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                            <label for="inputRealEstateCityId">
+                                                                                شهر
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputRealEstateCityId"
+                                                                                    id="inputRealEstateCityId">
+                                                                                <option value="8">تهران</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstatePortion">
+                                                                                سهم از ملک(1 تا 6 دانگ)
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input type="number"
+                                                                                <?php setInputValue($item['RealEstatePortion']); ?>
+                                                                                   name="inputRealEstatePortion"
+                                                                                   id="inputRealEstatePortion"
+                                                                                   class="form-control"
+                                                                                   placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateExtent">
+                                                                                متراژ حدودی ملک
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-xs-12 RightFloat">
+                                                                                    <input type="number"
+                                                                                        <?php setInputValue($item['RealEstateExtent']); ?>
+                                                                                           name="inputRealEstateExtent"
+                                                                                           id="inputRealEstateExtent"
+                                                                                           class="form-control"
+                                                                                           placeholder=""/>
+                                                                                </div>
+                                                                                <div class="col-md-6 col-xs-12 RightFloat">
+                                                                                    <select class="form-control form-control-lg city-select"
+                                                                                            name="inputRealEstateExtentUnit"
+                                                                                            id="inputRealEstateExtentUnit">
+                                                                                        <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
+                                                                                            <option
+                                                                                                <?php setOptionSelected($item['RealEstateExtentUnit'], $key); ?>
+                                                                                                    value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                        <?php } ?>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputRealEstateBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                            type="number"
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateBuyTimePrice'])['left']); ?>
+                                                                                            name="inputRealEstateBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputRealEstateBuyTimePrice"
+                                                                                            id="inputRealEstateBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputRealEstateNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['RealEstateNowTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputRealEstateNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputRealEstateNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputRealEstateNowTimePrice"
+                                                                                            id="inputRealEstateNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateAddress">آدرس</label>
+                                                                            <input
+                                                                                <?php setInputValue($item['RealEstateAddress']); ?>
+                                                                                    id="inputRealEstateAddress"
+                                                                                    type="text"
+                                                                                    name="inputRealEstateAddress"
+                                                                                    class="input-validate validate valid"
+                                                                                    placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstateType">
+                                                                <label for="inputRealEstateType">
                                                                     نوع کاربری
-                                                                    <span class="text-danger">
-                                             </span>
+                                                                    <span class="text-danger"></span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildRealEstateType"
-                                                                        id="inputChildRealEstateType">
-                                                                    <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value){ ?>
+                                                                        name="inputRealEstateType"
+                                                                        id="inputRealEstateType">
+                                                                    <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstateOwnershipDate">
+                                                                <label for="inputRealEstateOwnershipDate">
                                                                     سال شروع مالکیت
-                                                                    <span class="text-danger">
-                                             </span>
+                                                                    <span class="text-danger"></span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildRealEstateOwnershipDate"  id="inputChildRealEstateOwnershipDate"  style="font-family: tahoma;">
+                                                                        name="inputRealEstateOwnershipDate"
+                                                                        id="inputRealEstateOwnershipDate"
+                                                                        style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
                                                                             <?php if ($i == 1398) echo "selected"; ?>
@@ -2595,39 +5909,39 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstateOwnershipType">
+                                                                <label for="inputRealEstateOwnershipType">
                                                                     نحوه مالکیت
                                                                 </label>
                                                                 <select
                                                                         class="form-control form-control-lg city-select"
-                                                                        name="inputChildRealEstateOwnershipType"
-                                                                        id="inputChildRealEstateOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                        name="inputRealEstateOwnershipType"
+                                                                        id="inputRealEstateOwnershipType">
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstateCountryId">کشور</label>
-                                                                <select class="form-control form-control-lg state-select" name="inputChildRealEstateCountryId"
-                                                                        id="inputChildRealEstateCountryId">
+                                                                <label for="inputRealEstateCountryId">کشور</label>
+                                                                <select class="form-control form-control-lg state-select"
+                                                                        name="inputRealEstateCountryId"
+                                                                        id="inputRealEstateCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
-                                                                    <?php foreach ($countries as $item){ ?>
+                                                                    <?php foreach ($countries as $item) { ?>
                                                                         <option
-                                                                            <?php if($item['ISO'] =='IR') echo "selected"; ?>
+                                                                            <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
                                                                                 value="<?php echo $item['CountryId']; ?>"><?php echo $item['FaName']; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                <label for="inputChildRealEstateStateId">
+                                                                <label for="inputRealEstateStateId">
                                                                     استان
                                                                 </label>
                                                                 <select class="form-control form-control-lg state-select"
-                                                                        name="inputChildRealEstateStateId"
-                                                                        id="inputChildRealEstateStateId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                        name="inputRealEstateStateId"
+                                                                        id="inputRealEstateStateId">
                                                                     <option value="">-- انتخاب کنید --</option>
                                                                     <?php foreach ($states as $state) { ?>
                                                                         <option value="<?php echo $state['StateId']; ?>">
@@ -2637,38 +5951,43 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                <label for="inputChildRealEstateCityId">
+                                                                <label for="inputRealEstateCityId">
                                                                     شهر
                                                                 </label>
                                                                 <select class="form-control form-control-lg state-select"
-                                                                        name="inputChildRealEstateCityId"
-                                                                        id="inputChildRealEstateCityId">
+                                                                        name="inputRealEstateCityId"
+                                                                        id="inputRealEstateCityId">
+                                                                    <option value="8">تهران</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstatePortion">
+                                                                <label for="inputRealEstatePortion">
                                                                     سهم از ملک(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputChildRealEstatePortion" id="inputChildRealEstatePortion"
-                                                                       class="form-control" placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                <input type="number" name="inputRealEstatePortion"
+                                                                       id="inputRealEstatePortion"
+                                                                       class="form-control"
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstateExtent">
+                                                                <label for="inputRealEstateExtent">
                                                                     متراژ حدودی ملک
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
-                                                                        <input type="number" name="inputChildRealEstateExtentUnit"
-                                                                               id="inputChildRealEstateExtentUnit" class="form-control"
+                                                                        <input type="number"
+                                                                               name="inputRealEstateExtent"
+                                                                               id="inputRealEstateExtent"
+                                                                               class="form-control"
                                                                                placeholder=""/>
                                                                     </div>
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
                                                                         <select class="form-control form-control-lg city-select"
-                                                                                name="inputChildRealEstateExtentUnit"
-                                                                                id="inputChildRealEstateExtentUnit">
-                                                                            <?php foreach ($EnumResumeProfile['Extent'] as $key => $value){ ?>
+                                                                                name="inputRealEstateExtentUnit"
+                                                                                id="inputRealEstateExtentUnit">
+                                                                            <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
                                                                                 <option
                                                                                         value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                             <?php } ?>
@@ -2677,7 +5996,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstateBuyTimePrice">
+                                                                <label for="inputRealEstateBuyTimePrice">
                                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -2685,31 +6004,44 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildRealEstateBuyTimePrice" class="form-control"
+                                                                                name="inputRealEstateBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildRealEstateBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputRealEstateBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildRealEstateBuyTimePrice" class="form-control"
+                                                                                name="inputRealEstateBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildRealEstateBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputRealEstateBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildRealEstateBuyTimePrice"
-                                                                                id="inputChildRealEstateBuyTimePrice">
+                                                                                name="inputRealEstateBuyTimePrice"
+                                                                                id="inputRealEstateBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstateNowTimePrice">
+                                                                <label for="inputRealEstateNowTimePrice">
                                                                     ارزش حدودی کل سهام درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -2717,36 +6049,46 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildRealEstateNowTimePrice" class="form-control"
+                                                                                name="inputRealEstateNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildRealEstateNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputRealEstateNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildRealEstateNowTimePrice" class="form-control"
+                                                                                name="inputRealEstateNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildRealEstateNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputRealEstateNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildRealEstateNowTimePrice"
-                                                                                id="inputChildRealEstateNowTimePrice">
+                                                                                name="inputRealEstateNowTimePrice"
+                                                                                id="inputRealEstateNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstateAddress">
-                                                                    آدرس
-                                                                    </span>
-                                                                </label>
-                                                                <input id="inputChildRealEstateAddress" type="text"
-                                                                       name="inputChildRealEstateAddress"
+                                                                <label for="inputRealEstateAddress">آدرس</label>
+                                                                <input id="inputRealEstateAddress" type="text"
+                                                                       name="inputRealEstateAddress"
                                                                        class="input-validate validate valid"
                                                                        placeholder="نام خیابان اصلی / محله / منطقه">
                                                             </div>
@@ -2757,8 +6099,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileBooks">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="RealEstate"
+                                                                data-role="Child">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -2781,33 +6125,234 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Vehicle">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Vehicle'] as $item) {
+                                                                if ($item['ForWho'] == 'Child') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleType">
+                                                                                نوع وسیله نقلیه<span
+                                                                                        class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputVehicleType"
+                                                                                    id="inputVehicleType">
+                                                                                <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['VehicleType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleOwnershipDate">
+                                                                                سال شروع مالکیت<span
+                                                                                        class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputVehicleOwnershipDate"
+                                                                                    id="inputVehicleOwnershipDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['VehicleOwnershipDate'], $i); ?>
+                                                                                        <?php if ($i == 1398) echo "selected"; ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleOwnershipType">
+                                                                                نحوه مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputVehicleOwnershipType"
+                                                                                    id="inputVehicleOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+
+                                                                                        <?php setOptionSelected($item['VehicleOwnershipType'], $i); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleBuyTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputVehicleBuyTimePrice"
+                                                                                            id="inputVehicleBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehicleNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputVehicleNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputVehicleNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputVehicleNowTimePrice"
+                                                                                            id="inputVehicleNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputVehiclePortion">
+                                                                                سهم از ملک(1 تا 6 دانگ)
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['VehiclePortion']); ?>
+                                                                                    type="number"
+                                                                                    name="inputVehiclePortion"
+                                                                                    id="inputVehiclePortion"
+                                                                                    class="form-control"
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildVehicleType">
+                                                                <label for="inputVehicleType">
                                                                     نوع وسیله نقلیه
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildVehicleType"
-                                                                        id="inputChildVehicleType">
-                                                                    <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value){ ?>
+                                                                        name="inputVehicleType"
+                                                                        id="inputVehicleType">
+                                                                    <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildVehicleOwnershipDate">
+                                                                <label for="inputVehicleOwnershipDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildVehicleOwnershipDate"
-                                                                        id="inputChildVehicleOwnershipDate"
+                                                                        name="inputVehicleOwnershipDate"
+                                                                        id="inputVehicleOwnershipDate"
                                                                         style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
@@ -2819,22 +6364,22 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildVehicleOwnershipType">
+                                                                <label for="inputVehicleOwnershipType">
                                                                     نحوه مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildVehicleOwnershipType"
-                                                                        id="inputChildVehicleOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                        name="inputVehicleOwnershipType"
+                                                                        id="inputVehicleOwnershipType">
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildVehicleBuyTimePrice">
+                                                                <label for="inputVehicleBuyTimePrice">
                                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -2842,31 +6387,44 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildVehicleBuyTimePrice" class="form-control"
+                                                                                name="inputVehicleBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildVehicleBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputVehicleBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildVehicleBuyTimePrice" class="form-control"
+                                                                                name="inputVehicleBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildVehicleBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputVehicleBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildVehicleBuyTimePrice"
-                                                                                id="inputChildVehicleBuyTimePrice">
+                                                                                name="inputVehicleBuyTimePrice"
+                                                                                id="inputVehicleBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildVehicleNowTimePrice">
+                                                                <label for="inputVehicleNowTimePrice">
                                                                     ارزش حدودی کل سهام درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -2874,36 +6432,50 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildVehicleNowTimePrice" class="form-control"
+                                                                                name="inputVehicleNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildVehicleNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputVehicleNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildVehicleNowTimePrice" class="form-control"
+                                                                                name="inputVehicleNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildVehicleNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputVehicleNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildVehicleNowTimePrice"
-                                                                                id="inputChildVehicleNowTimePrice">
+                                                                                name="inputVehicleNowTimePrice"
+                                                                                id="inputVehicleNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildVehiclePortion">
+                                                                <label for="inputVehiclePortion">
                                                                     سهم از ملک(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputChildVehiclePortion" id="inputChildVehiclePortion" class="form-control"
+                                                                <input type="number" name="inputVehiclePortion"
+                                                                       id="inputVehiclePortion" class="form-control"
                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                         </div>
@@ -2913,8 +6485,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileArticles">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Vehicle"
+                                                                data-role="Child">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -2937,26 +6511,208 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Invest">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Invest'] as $item) {
+                                                                if ($item['ForWho'] == 'Child') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputInvestTitle">
+                                                                                نام شرکت / موسسه
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['InvestTitle']); ?>
+                                                                                    id="inputInvestTitle" type="text"
+                                                                                    name="inputInvestTitle"
+                                                                                    placeholder="نام شرکت - موسسه - پروژه ">
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger">
+                                             </span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputInvestDate"
+                                                                                    id="inputInvestDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['InvestDate'], $i); ?>
+                                                                                        <?php if ($i == 1398) echo "selected"; ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestOwnershipType">
+                                                                                نحوه مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputInvestOwnershipType"
+                                                                                    id="inputInvestOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['InvestDate'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestBuyTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputInvestBuyTimePrice"
+                                                                                            id="inputInvestBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputInvestNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['InvestNowTimePrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="inputInvestNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputInvestNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputInvestNowTimePrice"
+                                                                                            id="inputInvestNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 form-group RightFloat">
-                                                                <label for="inputChildInvestTitle">
+                                                                <label for="inputInvestTitle">
                                                                     نام شرکت / موسسه
                                                                 </label>
-                                                                <input id="inputChildInvestTitle" type="text"
-                                                                       name="inputChildInvestTitle"
+                                                                <input id="inputInvestTitle" type="text"
+                                                                       name="inputInvestTitle"
                                                                        placeholder="نام شرکت - موسسه - پروژه ">
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildInvestDate">
+                                                                <label for="inputInvestDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildInvestDate"
-                                                                        id="inputChildInvestDate"
+                                                                        name="inputInvestDate"
+                                                                        id="inputInvestDate"
                                                                         style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
@@ -2968,22 +6724,22 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildInvestOwnershipType">
+                                                                <label for="inputInvestOwnershipType">
                                                                     نحوه مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildInvestOwnershipType"
-                                                                        id="inputChildInvestOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                        name="inputInvestOwnershipType"
+                                                                        id="inputInvestOwnershipType">
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildInvestBuyTimePrice">
+                                                                <label for="inputInvestBuyTimePrice">
                                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -2991,31 +6747,44 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildInvestBuyTimePrice" class="form-control"
+                                                                                name="inputInvestBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildInvestBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputInvestBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildInvestBuyTimePrice" class="form-control"
+                                                                                name="inputInvestBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildInvestBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputInvestBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildInvestBuyTimePrice"
-                                                                                id="inputChildInvestBuyTimePrice">
+                                                                                name="inputInvestBuyTimePrice"
+                                                                                id="inputInvestBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildInvestNowTimePrice">
+                                                                <label for="inputInvestNowTimePrice">
                                                                     ارزش حدودی کل سهام درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -3023,25 +6792,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildInvestNowTimePrice" class="form-control"
+                                                                                name="inputInvestNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildInvestNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputInvestNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildInvestNowTimePrice" class="form-control"
+                                                                                name="inputInvestNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildInvestNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputInvestNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildInvestNowTimePrice"
-                                                                                id="inputChildInvestNowTimePrice">
+                                                                                name="inputInvestNowTimePrice"
+                                                                                id="inputInvestNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -3053,8 +6835,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileResearch">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Invest"
+                                                                data-role="Child">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -3077,19 +6861,119 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-BankAccount">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['BankAccount'] as $item) {
+                                                                if ($item['ForWho'] == 'Child') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputBankAccountTitle">
+                                                                                عنوان بانک یا موسسه
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['BankAccountTitle']); ?>
+                                                                                    id="inputBankAccountTitle"
+                                                                                    type="text"
+                                                                                    name="inputBankAccountTitle"
+                                                                                    placeholder="عنوان بانک یا موسسه ">
+                                                                        </div>
+                                                                        <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputBankAccountPrice">
+                                                                                مبلغ :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+
+                                                                                        <?php setInputValue(splitPrice($item['BankAccountPrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputBankAccountPrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputBankAccountPrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+
+                                                                                        <?php setInputValue(splitPrice($item['BankAccountPrice'])['left']); ?>
+                                                                                            type="number"
+                                                                                            name="RealEstateBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputBankAccountPrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputBankAccountPrice"
+                                                                                            id="inputBankAccountPrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['BankAccountPrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['BankAccountPrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['BankAccountPrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                            <label for="inputBankAccountCountryId">کشور</label>
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputBankAccountCountryId"
+                                                                                    id="inputBankAccountCountryId">
+                                                                                <option value="">-- انتخاب کنید --
+                                                                                </option>
+                                                                                <?php foreach ($countries as $row) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['BankAccountCountryId'], $row['CountryId']); ?>
+                                                                                            value="<?php echo $row['CountryId']; ?>"><?php echo $row['FaName']; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 form-group RightFloat">
-                                                                <label for="inputChildBankAccountTitle">
+                                                                <label for="inputBankAccountTitle">
                                                                     عنوان بانک یا موسسه
                                                                 </label>
-                                                                <input id="inputChildBankAccountTitle" type="text"
-                                                                       name="inputChildBankAccountTitle"
+                                                                <input id="inputBankAccountTitle" type="text"
+                                                                       name="inputBankAccountTitle"
                                                                        placeholder="عنوان بانک یا موسسه ">
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildBankAccountPrice">
+                                                                <label for="inputBankAccountPrice">
                                                                     مبلغ :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -3097,42 +6981,55 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildBankAccountPrice" class="form-control"
+                                                                                name="inputBankAccountPrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildBankAccountPrice ">صد تومان</label>
+                                                                        <label for="inputBankAccountPrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildBankAccountPrice" class="form-control"
+                                                                                name="RealEstateBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildBankAccountPrice">هزار تومان</label>
+                                                                        <label for="inputBankAccountPrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildBankAccountPrice"
-                                                                                id="inputChildBankAccountPrice">
+                                                                                name="inputBankAccountPrice"
+                                                                                id="inputBankAccountPrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
-                                                                <label for="inputChildBankAccountCountryId">
+                                                                <label for="inputBankAccountCountryId">
                                                                     کشور
                                                                     </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg state-select"
-                                                                        name="inputChildBankAccountCountryId"
-                                                                        id="inputChildBankAccountCountryId">
+                                                                        name="inputBankAccountCountryId"
+                                                                        id="inputBankAccountCountryId">
                                                                     <option value="">-- انتخاب کنید --</option>
-                                                                    <?php foreach ($countries as $item){ ?>
+                                                                    <?php foreach ($countries as $item) { ?>
                                                                         <option
-                                                                            <?php if($item['ISO'] =='IR') echo "selected"; ?>
+                                                                            <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
                                                                                 value="<?php echo $item['CountryId']; ?>"><?php echo $item['FaName']; ?></option>
                                                                     <?php } ?>
                                                                 </select>
@@ -3144,8 +7041,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="BankAccount"
+                                                                data-role="Child">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -3167,82 +7066,160 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Credit-Debtor">
                                                             <span class="divider"></span>
+                                                            <?php
+                                                            $creditDebtor = "";
+                                                            foreach ($finance['CreditDebtor'] as $item) {
+                                                                if($item['ForWho'] == 'Child'){
+                                                                    $creditDebtor = $item;
+                                                                }
+                                                            }
+                                                            ?>
+                                                            <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputCreditPrice">
+                                                                        جمع کل بستانکاری از اشخاص حقیقی یا حقوقی
+                                                                        :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputCreditPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputCreditPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputCreditPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputCreditPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputCreditPrice"
+                                                                                    id="inputCreditPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputDebotrPrice">
+                                                                        جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputDebotrPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputDebotrPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputDebotrPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputDebotrPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputDebotrPrice"
+                                                                                    id="inputDebotrPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <textarea class="EStates-textArea"
+                                                                              name="inputDebotrDescription"><?php echo $creditDebtor['DebotrDescription']; ?></textarea>
+                                                                </div>
+                                                            </div>
                                                         </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 form">
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildCreditPrice">
-                                                                    جمع کل بستانکاری از اشخاص حقیقی یا حقوقی :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildCreditPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildCreditPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildCreditPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildCreditPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildCreditPrice"
-                                                                                id="inputChildCreditPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildDebotrPrice">
-                                                                    جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildDebotrPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildDebotrPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildDebotrPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildDebotrPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildDebotrPrice"
-                                                                                id="inputChildDebotrPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <textarea class="EStates-textArea" name="inputChildDebotrDescription"></textarea>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileInvention">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Credit-Debtor"
+                                                                data-role="Child">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -3263,33 +7240,244 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                         <hr>
-                                                        <form id="form-Goods ">
+                                                        <form id="form-Goods">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Goods'] as $item) {
+                                                                if ($item['ForWho'] == 'Child') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsType">
+                                                                                نوع کالا
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputGoodsType"
+                                                                                    id="inputGoodsType">
+                                                                                <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['GoodsType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsOwnershipStartDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputGoodsOwnershipStartDate"
+                                                                                    id="inputGoodsOwnershipStartDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['GoodsOwnershipStartDate'], $i); ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsCount">
+                                                                                حجم / وزن / تعداد کالا
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['GoodsCount']); ?>
+                                                                                    type="text" name="inputGoodsCount"
+                                                                                    id="inputGoodsCount"
+                                                                                    class="form-control"
+                                                                                    placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsBuyTimePrice">
+                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsBuyTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsBuyTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsBuyTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputGoodsBuyTimePrice"
+                                                                                            id="inputGoodsBuyTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsNowTimePrice">
+                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsNowTimePrice ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputGoodsNowTimePrice"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputGoodsNowTimePrice">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputGoodsNowTimePrice"
+                                                                                            id="inputGoodsNowTimePrice">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputGoodsOwnershipPercent">
+                                                                                درصد سهم از مالکیت :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['GoodsOwnershipPercent']); ?>
+                                                                                    type="number"
+                                                                                    name="inputGoodsOwnershipPercent"
+                                                                                    id="inputGoodsOwnershipPercent"
+                                                                                    class="form-control"
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputRealEstateOwnershipType">
+                                                                                نحوه مالکیت
+                                                                                <span class="text-danger">
+                                             </span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputRealEstateOwnershipType"
+                                                                                    id="inputRealEstateOwnershipType">
+                                                                                <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['RealEstateOwnershipType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildGoodsType">
+                                                                <label for="inputGoodsType">
                                                                     نوع کالا
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildGoodsType"
-                                                                        id="inputChildGoodsType">
-                                                                    <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value){ ?>
+                                                                        name="inputGoodsType"
+                                                                        id="inputGoodsType">
+                                                                    <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildGoodsOwnershipStartDate">
+                                                                <label for="inputGoodsOwnershipStartDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildGoodsOwnershipStartDate"
-                                                                        id="inputChildGoodsOwnershipStartDate"
+                                                                        name="inputGoodsOwnershipStartDate"
+                                                                        id="inputGoodsOwnershipStartDate"
                                                                         style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
@@ -3301,15 +7489,17 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildGoodsCount">
+                                                                <label for="inputGoodsCount">
                                                                     حجم / وزن / تعداد کالا
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="text" name="inputChildGoodsCount" id="inputChildGoodsCount"
-                                                                       class="form-control" placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                <input type="text" name="inputGoodsCount"
+                                                                       id="inputGoodsCount"
+                                                                       class="form-control"
+                                                                       placeholder="  حجم / وزن / تعداد کالا"/>
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildGoodsBuyTimePrice">
+                                                                <label for="inputGoodsBuyTimePrice">
                                                                     ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -3317,31 +7507,44 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildGoodsBuyTimePrice" class="form-control"
+                                                                                name="inputGoodsBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildGoodsBuyTimePrice ">صد تومان</label>
+                                                                        <label for="inputGoodsBuyTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildGoodsBuyTimePrice" class="form-control"
+                                                                                name="inputGoodsBuyTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildGoodsBuyTimePrice">هزار تومان</label>
+                                                                        <label for="inputGoodsBuyTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildGoodsBuyTimePrice"
-                                                                                id="inputChildGoodsBuyTimePrice">
+                                                                                name="inputGoodsBuyTimePrice"
+                                                                                id="inputGoodsBuyTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildGoodsNowTimePrice">
+                                                                <label for="inputGoodsNowTimePrice">
                                                                     ارزش حدودی کل سهام درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -3349,49 +7552,63 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildGoodsNowTimePrice" class="form-control"
+                                                                                name="inputGoodsNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildGoodsNowTimePrice ">صد تومان</label>
+                                                                        <label for="inputGoodsNowTimePrice ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildGoodsNowTimePrice" class="form-control"
+                                                                                name="inputGoodsNowTimePrice"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildGoodsNowTimePrice">هزار تومان</label>
+                                                                        <label for="inputGoodsNowTimePrice">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildGoodsNowTimePrice"
-                                                                                id="inputChildGoodsNowTimePrice">
+                                                                                name="inputGoodsNowTimePrice"
+                                                                                id="inputGoodsNowTimePrice">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildGoodsOwnershipPercent">
+                                                                <label for="inputGoodsOwnershipPercent">
                                                                     درصد سهم از مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputChildGoodsOwnershipPercent"
-                                                                       id="inputChildGoodsOwnershipPercent" class="form-control"
+                                                                <input type="number" name="inputGoodsOwnershipPercent"
+                                                                       id="inputGoodsOwnershipPercent"
+                                                                       class="form-control"
                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildRealEstateOwnershipType">
+                                                                <label for="inputRealEstateOwnershipType">
                                                                     نحوه مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildRealEstateOwnershipType"
-                                                                        id="inputChildRealEstateOwnershipType">
-                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value){ ?>
+                                                                        name="inputRealEstateOwnershipType"
+                                                                        id="inputRealEstateOwnershipType">
+                                                                    <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
@@ -3404,8 +7621,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Goods"
+                                                                data-role="Child">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -3428,31 +7647,146 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Fee">
                                                             <span class="divider"></span>
+                                                            <?php foreach ($finance['Fee'] as $item) {
+                                                                if ($item['ForWho'] == 'Child') { ?>
+                                                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                        <span class="remove-form fa fa-times"></span>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeeType">عنوان :</label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputFeeType"
+                                                                                    id="inputFeeType">
+                                                                                <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['FeeType'], $key); ?>
+                                                                                            value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeeOwnershipStartDate">
+                                                                                سال شروع مالکیت
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg city-select"
+                                                                                    name="inputFeeOwnershipStartDate"
+                                                                                    id="inputFeeOwnershipStartDate"
+                                                                                    style="font-family: tahoma;">
+                                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                    <option
+                                                                                        <?php setOptionSelected($item['FeeOwnershipStartDate'], $i); ?>
+                                                                                            value="<?php echo $i; ?>">
+                                                                                        <?php echo $i; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeePercent">
+                                                                                درصد سهم از مالکیت معنوی:
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <input
+                                                                                <?php setInputValue($item['FeePercent']); ?>
+                                                                                    type="number" name="inputFeePercent"
+                                                                                    id="inputFeePercent"
+                                                                                    class="form-control"
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                            <label for="inputFeeAverageInYear">
+                                                                                میزان درآمد متوسط سالیانه از مالکیت
+                                                                                معنوی :
+                                                                                <span class="text-danger"></span>
+                                                                            </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputFeeAverageInYear"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputFeeAverageInYear ">صد
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                                    <input
+                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['right']); ?>
+                                                                                            type="number"
+                                                                                            name="inputFeeAverageInYear"
+                                                                                            class="form-control"
+                                                                                            placeholder=""/>
+                                                                                    <label for="inputFeeAverageInYear">هزار
+                                                                                        تومان</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                                    <select class="form-control form-control-lg state-select"
+                                                                                            name="inputFeeAverageInYear"
+                                                                                            id="inputFeeAverageInYear">
+                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['FeeAverageInYear'])['unit']) == "HZ") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="HZ"
+                                                                                                data-right-side="SD"
+                                                                                                value="HZ">هزار تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['FeeAverageInYear'])['unit']) == "MI") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="MI"
+                                                                                                data-right-side="HZ"
+                                                                                                value="MI">میلیون تومان
+                                                                                        </option>
+                                                                                        <option
+                                                                                            <?php
+                                                                                            if ((splitPrice($item['FeeAverageInYear'])['unit']) == "ML") {
+                                                                                                echo "selected";
+                                                                                            }
+                                                                                            ?>
+                                                                                                data-left-side="ML"
+                                                                                                data-right-side="MI"
+                                                                                                value="ML">میلیارد تومان
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php }
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildFeeType">
+                                                                <label for="inputFeeType">
                                                                     عنوان :
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildFeeType"
-                                                                        id="inputChildFeeType">
-                                                                    <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value){ ?>
+                                                                        name="inputFeeType"
+                                                                        id="inputFeeType">
+                                                                    <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
                                                                         <option
                                                                                 value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildFeeOwnershipStartDate">
+                                                                <label for="inputFeeOwnershipStartDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
-                                                                        name="inputChildFeeOwnershipStartDate"
-                                                                        id="inputChildFeeOwnershipStartDate"
+                                                                        name="inputFeeOwnershipStartDate"
+                                                                        id="inputFeeOwnershipStartDate"
                                                                         style="font-family: tahoma;">
                                                                     <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                         <option
@@ -3464,15 +7798,17 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildFeePercent">
+                                                                <label for="inputFeePercent">
                                                                     درصد سهم از مالکیت معنوی:
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <input type="number" name="inputChildFeePercent" id="inputChildFeePercent"
-                                                                       class="form-control" placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                <input type="number" name="inputFeePercent"
+                                                                       id="inputFeePercent"
+                                                                       class="form-control"
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildFeeAverageInYear">
+                                                                <label for="inputFeeAverageInYear">
                                                                     میزان درآمد متوسط سالیانه از مالکیت معنوی :
                                                                     <span class="text-danger"></span>
                                                                 </label>
@@ -3480,25 +7816,38 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildFeeAverageInYear" class="form-control"
+                                                                                name="inputFeeAverageInYear"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildFeeAverageInYear ">صد تومان</label>
+                                                                        <label for="inputFeeAverageInYear ">صد
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                         <input
                                                                                 type="number"
-                                                                                name="inputChildFeeAverageInYear" class="form-control"
+                                                                                name="inputFeeAverageInYear"
+                                                                                class="form-control"
                                                                                 placeholder=""/>
-                                                                        <label for="inputChildFeeAverageInYear">هزار تومان</label>
+                                                                        <label for="inputFeeAverageInYear">هزار
+                                                                            تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
                                                                         <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildFeeAverageInYear"
-                                                                                id="inputChildFeeAverageInYear">
+                                                                                name="inputFeeAverageInYear"
+                                                                                id="inputFeeAverageInYear">
                                                                             <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
+                                                                            <option data-left-side="HZ"
+                                                                                    data-right-side="SD" value="HZ">هزار
+                                                                                تومان
+                                                                            </option>
+                                                                            <option data-left-side="MI"
+                                                                                    data-right-side="HZ" value="MI">
+                                                                                میلیون تومان
+                                                                            </option>
+                                                                            <option data-left-side="ML"
+                                                                                    data-right-side="MI" value="ML">
+                                                                                میلیارد تومان
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -3510,8 +7859,10 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="Fee"
+                                                                data-role="Child">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -3526,7 +7877,6 @@ $_DIR = base_url('assets/ui/v3/');
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 در آمد
-                                                <span class="add-form fa fa-plus"></span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -3534,50 +7884,92 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-AverageMonthIncome">
                                                             <span class="divider"></span>
-                                                        </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
-                                                            <span class="remove-form fa fa-times"></span>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildAverageMonthIncome">
-                                                                    درآمد متوسط ماهیانه :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildAverageMonthIncome" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildAverageMonthIncome ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildAverageMonthIncome" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildAverageMonthIncome">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildAverageMonthIncome"
-                                                                                id="inputChildAverageMonthIncome">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
+                                                            <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <?php
+                                                                    $income = "";
+                                                                    foreach ($finance['Income'] as $item) {
+                                                                        if($item['ForWho'] == 'Child'){
+                                                                            $income = $item;
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                    <label for="inputAverageMonthIncome">
+                                                                        درآمد متوسط ماهیانه :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputAverageMonthIncome"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputAverageMonthIncome ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputAverageMonthIncome"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputAverageMonthIncome">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputAverageMonthIncome"
+                                                                                    id="inputAverageMonthIncome">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($income['AverageMonthIncome'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($income['AverageMonthIncome'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($income['AverageMonthIncome'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="LeftPaneAction">
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileTranslation">
+                                                        <button
+                                                                class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                                data-target="AverageMonthIncome"
+                                                                data-role="Child">
                                                             ثبت
                                                         </button>
                                                     </div>
@@ -3599,173 +7991,347 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <hr>
                                                         <form id="form-Election">
                                                             <span class="divider"></span>
+                                                            <?php
+                                                            $election = "";
+                                                            foreach ($finance['Election'] as $item) {
+                                                                if($item['ForWho'] == 'Child'){
+                                                                    $election = $item;
+                                                                }
+                                                            }
+                                                            ?>
+                                                            <div class="col-md-12 col-xs-12 padding-0 form">
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionPlacePrice">
+                                                                        هزینه دایرکردن محل ستاد انتخابات (اجاره بها ,
+                                                                        حملو نقل و سایر موارد)
+                                                                        -هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionPlacePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionPlacePrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionPlacePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionPlacePrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionPlacePrice"
+                                                                                    id="inputElectionPlacePrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionFlockPrice">
+                                                                        هزینه برپایی تجمعات عمومی مرتبط با اهداف
+                                                                        انتخاباتی – هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionFlockPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionFlockPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionFlockPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionFlockPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionFlockPrice"
+                                                                                    id="inputElectionFlockPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionAdvertisePrice">
+                                                                        هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAdvertisePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAdvertisePrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAdvertisePrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAdvertisePrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionAdvertisePrice"
+                                                                                    id="inputElectionAdvertisePrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionStaffPrice">
+                                                                        هزینه و حق الزحمه عوامل اجرایی و کارشناسی در
+                                                                        انتخابات – هزینه کل :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionStaffPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionStaffPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionStaffPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionStaffPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionStaffPrice"
+                                                                                    id="inputElectionStaffPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputElectionAllPrice">
+                                                                        جمع کل هزینه های انتخاباتی :
+                                                                        <span class="text-danger"></span>
+                                                                    </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAllPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAllPrice ">صد
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
+                                                                            <input
+                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['right']); ?>
+                                                                                    type="number"
+                                                                                    name="inputElectionAllPrice"
+                                                                                    class="form-control"
+                                                                                    placeholder=""/>
+                                                                            <label for="inputElectionAllPrice">هزار
+                                                                                تومان</label>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
+                                                                            <select class="form-control form-control-lg state-select"
+                                                                                    name="inputElectionAllPrice"
+                                                                                    id="inputElectionAllPrice">
+                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAllPrice'])['unit']) == "HZ") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="HZ"
+                                                                                        data-right-side="SD"
+                                                                                        value="HZ">هزار تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAllPrice'])['unit']) == "MI") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="MI"
+                                                                                        data-right-side="HZ"
+                                                                                        value="MI">میلیون تومان
+                                                                                </option>
+                                                                                <option
+                                                                                    <?php
+                                                                                    if ((splitPrice($election['ElectionAllPrice'])['unit']) == "ML") {
+                                                                                        echo "selected";
+                                                                                    }
+                                                                                    ?>
+                                                                                        data-left-side="ML"
+                                                                                        data-right-side="MI"
+                                                                                        value="ML">میلیارد تومان
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 
+                                                            </div>
                                                         </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 form">
-
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildElectionPlacePrice">
-                                                                    هزینه دایرکردن محل ستاد انتخابات (اجاره بها , حملو نقل و سایر موارد)
-                                                                    -هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionPlacePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionPlacePrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionPlacePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionPlacePrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildElectionPlacePrice"
-                                                                                id="inputChildElectionPlacePrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildElectionFlockPrice">
-                                                                    هزینه برپایی تجمعات عمومی مرتبط با اهداف انتخاباتی – هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionFlockPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionFlockPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionFlockPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionFlockPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildElectionFlockPrice"
-                                                                                id="inputChildElectionFlockPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildElectionAdvertisePrice">
-                                                                    هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionAdvertisePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionAdvertisePrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionAdvertisePrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionAdvertisePrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildElectionAdvertisePrice"
-                                                                                id="inputChildElectionAdvertisePrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildElectionStaffPrice">
-                                                                    هزینه و حق الزحمه عوامل اجرایی و کارشناسی در انتخابات – هزینه کل :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionStaffPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionStaffPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionStaffPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionStaffPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildElectionStaffPrice"
-                                                                                id="inputChildElectionStaffPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputChildElectionAllPrice">
-                                                                    جمع کل هزینه های انتخاباتی :
-                                                                    <span class="text-danger"></span>
-                                                                </label>
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-left-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionAllPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionAllPrice ">صد تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
-                                                                        <input
-                                                                                type="number"
-                                                                                name="inputChildElectionAllPrice" class="form-control"
-                                                                                placeholder=""/>
-                                                                        <label for="inputChildElectionAllPrice">هزار تومان</label>
-                                                                    </div>
-                                                                    <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
-                                                                                name="inputChildElectionAllPrice"
-                                                                                id="inputChildElectionAllPrice">
-                                                                            <option>انتخاب کنید ---</option>
-                                                                            <option data-left-side="HZ" data-right-side="SD" value="HZ">هزار تومان</option>
-                                                                            <option data-left-side="MI" data-right-side="HZ" value="MI">میلیون تومان</option>
-                                                                            <option data-left-side="ML" data-right-side="MI" value="ML">میلیارد تومان</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -3773,34 +8339,16 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <div class="row form-group">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                         <button class="btn btn-block btn-lg CommonButtons waves-effect"
-                                                                id="updateProfileConference">
+                                                                data-target="Election"
+                                                                data-role="Child">
                                                             ثبت
                                                         </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="LeftPaneAction">
-                                                <div class="row form-group">
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <a href="<?php echo base_url('Profile/skills'); ?>">
-                                                            <button class="btn btn-block btn-lg CommonButtons waves-effect">
-                                                                مرحله بعد
-                                                            </button>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 prev-step">
-                                                        <a href="<?php echo base_url('Profile/politicBackground'); ?>">
-                                                            <button class="btn btn-block btn-lg waves-effect CommonButtons prev-step">
-                                                                مرحله قبل
-                                                            </button>
-                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!--End Conference -->
-
                                 </div>
                             </div>
                         </div>
