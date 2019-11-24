@@ -1,6 +1,5 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
-<?php
-function splitPrice($price)
+<?php function splitPrice($price)
 {
     $price = explode(".", $price);
     $priceLeft = $price[0];
@@ -13,13 +12,10 @@ function splitPrice($price)
         'unit' => $priceUnit,
     );
     return $data;
-}
-
-?>
+} ?>
 <div class="container container-wrapper" style="background: none;">
     <?php echo $resumeSidebar; ?>
     <div class="col-xs-12 col-md-9 pull-right response-padding">
-
         <div class="panel with-nav-tabs panel-default">
             <div class="panel-heading panel-heading-background">
                 <ul class="nav nav-tabs">
@@ -323,7 +319,7 @@ function splitPrice($price)
                                                                         </div>
                                                                     </div>
                                                                 <?php }
-                                                            } ?> 
+                                                            } ?>
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
@@ -1518,7 +1514,9 @@ function splitPrice($price)
                                                         <form id="form-Credit-Debtor">
                                                             <span class="divider"></span>
                                                             <?php
-                                                            $creditDebtor = "";
+                                                            $creditDebtor['CreditPrice'] = "0.0 HZ";
+                                                            $creditDebtor['DebotrPrice'] = "0.0 HZ";
+                                                            $creditDebtor['DebotrDescription'] = "";
                                                             foreach ($finance['CreditDebtor'] as $item) {
                                                                 if($item['ForWho'] == 'Self'){
                                                                     $creditDebtor = $item;
@@ -2338,7 +2336,7 @@ function splitPrice($price)
                                                             <div class="col-md-12 col-xs-12 padding-0 form">
                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                     <?php
-                                                                    $income = "";
+                                                                    $income['AverageMonthIncome'] = "0.0 HZ";
                                                                     foreach ($finance['Income'] as $item) {
                                                                         if($item['ForWho'] == 'Self'){
                                                                             $income = $item;
@@ -2443,7 +2441,11 @@ function splitPrice($price)
                                                         <form id="form-Election">
                                                             <span class="divider"></span>
                                                             <?php
-                                                            $election = "";
+                                                            $election['ElectionPlacePrice'] = "0.0 HZ";
+                                                            $election['ElectionFlockPrice'] = "0.0 HZ";
+                                                            $election['ElectionAdvertisePrice'] = "0.0 HZ";
+                                                            $election['ElectionStaffPrice'] = "0.0 HZ";
+                                                            $election['ElectionAllPrice'] = "0.0 HZ";
                                                             foreach ($finance['Election'] as $item) {
                                                                 if($item['ForWho'] == 'Self'){
                                                                     $election = $item;
@@ -4292,7 +4294,9 @@ function splitPrice($price)
                                                         <form id="form-Credit-Debtor">
                                                             <span class="divider"></span>
                                                             <?php
-                                                            $creditDebtor = "";
+                                                            $creditDebtor['CreditPrice'] = "0.0 HZ";
+                                                            $creditDebtor['DebotrPrice'] = "0.0 HZ";
+                                                            $creditDebtor['DebotrDescription'] = "";
                                                             foreach ($finance['CreditDebtor'] as $item) {
                                                                 if($item['ForWho'] == 'Wife'){
                                                                     $creditDebtor = $item;
@@ -5112,7 +5116,7 @@ function splitPrice($price)
                                                             <div class="col-md-12 col-xs-12 padding-0 form">
                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                     <?php
-                                                                    $income = "";
+                                                                    $income['AverageMonthIncome'] = "0.0 HZ";
                                                                     foreach ($finance['Income'] as $item) {
                                                                         if($item['ForWho'] == 'Wife'){
                                                                             $income = $item;
@@ -5217,7 +5221,11 @@ function splitPrice($price)
                                                         <form id="form-Election">
                                                             <span class="divider"></span>
                                                             <?php
-                                                            $election = "";
+                                                            $election['ElectionPlacePrice'] = "0.0 HZ";
+                                                            $election['ElectionFlockPrice'] = "0.0 HZ";
+                                                            $election['ElectionAdvertisePrice'] = "0.0 HZ";
+                                                            $election['ElectionStaffPrice'] = "0.0 HZ";
+                                                            $election['ElectionAllPrice'] = "0.0 HZ";
                                                             foreach ($finance['Election'] as $item) {
                                                                 if($item['ForWho'] == 'Wife'){
                                                                     $election = $item;
@@ -5579,7 +5587,6 @@ function splitPrice($price)
                         </div>
                     </div>
                     <div class="tab-pane fade" id="tab3child">
-
                         <div class="LeftPanel">
                             <div class="LeftPanelcontent">
                                 <div class="row">
@@ -7067,7 +7074,9 @@ function splitPrice($price)
                                                         <form id="form-Credit-Debtor">
                                                             <span class="divider"></span>
                                                             <?php
-                                                            $creditDebtor = "";
+                                                            $creditDebtor['CreditPrice'] = "0.0 HZ";
+                                                            $creditDebtor['DebotrPrice'] = "0.0 HZ";
+                                                            $creditDebtor['DebotrDescription'] = "";
                                                             foreach ($finance['CreditDebtor'] as $item) {
                                                                 if($item['ForWho'] == 'Child'){
                                                                     $creditDebtor = $item;
@@ -7887,7 +7896,7 @@ function splitPrice($price)
                                                             <div class="col-md-12 col-xs-12 padding-0 form">
                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                     <?php
-                                                                    $income = "";
+                                                                    $income['AverageMonthIncome'] = "0.0 HZ";
                                                                     foreach ($finance['Income'] as $item) {
                                                                         if($item['ForWho'] == 'Child'){
                                                                             $income = $item;
@@ -7992,7 +8001,11 @@ function splitPrice($price)
                                                         <form id="form-Election">
                                                             <span class="divider"></span>
                                                             <?php
-                                                            $election = "";
+                                                            $election['ElectionPlacePrice'] = "0.0 HZ";
+                                                            $election['ElectionFlockPrice'] = "0.0 HZ";
+                                                            $election['ElectionAdvertisePrice'] = "0.0 HZ";
+                                                            $election['ElectionStaffPrice'] = "0.0 HZ";
+                                                            $election['ElectionAllPrice'] = "0.0 HZ";
                                                             foreach ($finance['Election'] as $item) {
                                                                 if($item['ForWho'] == 'Child'){
                                                                     $election = $item;
@@ -8356,8 +8369,5 @@ function splitPrice($price)
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>
-
