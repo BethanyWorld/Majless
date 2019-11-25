@@ -95,7 +95,7 @@
             $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().removeClass('hidden').removeClass('unique-form');
             $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
             setTimeout(function(){
-                $('[name=inputRealEstateCountryId]').change();
+                // $('[name=inputRealEstateCountryId]').change();
                 $('.price-unit').change();
                 updatePrice();
             } , 500);
@@ -104,14 +104,14 @@
             $(this).parent().remove();
         });
         $(document).on('change', '[name=inputRealEstateCountryId]', function () {
-            if ($(this).val() != 118) {
+            if ($(this).val() !== "118" &&  $(this).val() !== "0"  ) {
                 $('[name="inputRealEstateStateId"]').val(0).attr('readonly', 'readonly');
                 $('[name="inputRealEstateCityId"]').val(0).attr('readonly', 'readonly');
                 $('.MoneyStateDiv').css('pointerEvents', 'none');
             } else{
-                if($(this).val() == undefined || $(this).val() == "") {
-                    $('[name="inputRealEstateStateId"]').removeAttr('readonly').val("");
-                    $('[name="inputRealEstateCityId"]').removeAttr('readonly').val("");
+                if($(this).val() === "" || $(this).val() === "0" || $(this).val() === "118") {
+                    $('[name="inputRealEstateStateId"]').removeAttr('readonly');
+                    $('[name="inputRealEstateCityId"]').removeAttr('readonly');
                     $('.MoneyStateDiv').css('pointerEvents', 'auto');
                 }
             }
@@ -155,7 +155,7 @@
             });
         });
 
-        $('[name=inputRealEstateCountryId]').change();
+        // $('[name=inputRealEstateCountryId]').change();
         $('.price-unit').change();
     });
 </script>

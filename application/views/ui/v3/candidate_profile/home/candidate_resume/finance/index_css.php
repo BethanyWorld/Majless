@@ -4,7 +4,6 @@
             padding: 0px;
         }
     }
-
     .EStates-textArea {
         resize: none;
         min-height: 135px;
@@ -29,7 +28,7 @@
         font-size: 10px;
         font-weight: 900;
         color: #d10b20;
-        top: 0
+        /*top: 0;*/
     }
     /*for panel tab*/
     .panel-heading-background {
@@ -50,4 +49,8 @@
         margin-left: 2px;
     }
     /*for panel tab*/
+
+    .clear-div{
+        clear: both;
+    }
 </style>

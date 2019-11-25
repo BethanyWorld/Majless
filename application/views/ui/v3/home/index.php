@@ -630,7 +630,7 @@
                                 <div class="link-type-no tb-icon-box  textaligncenter tbWow fadeIn ">
                                     <div class="tb-icon-box-description rtl">
                                         <h1 class="rtl">
-                                            چه کسانی پشت ما هستند
+                                            چه کسانی از ما حمایت میکنند
                                         </h1>
                                         <div class="tb-icon-box-text">
                                             <div class="fw-page-builder-content">

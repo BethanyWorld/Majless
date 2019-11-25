@@ -46,6 +46,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <select class="form-control form-control-lg city-select"
                                                                 name="inputSkillLevel"
                                                                 id="inputSkillLevel">
+                                                            <option value="">--انتخاب کنید--
+                                                            </option>
                                                             <?php foreach ($EnumResumeProfile['SkillLevel'] as $key => $value) { ?>
                                                                 <option
                                                                         <?php setOptionSelected($item['SkillLevel'], $key); ?>
@@ -65,6 +67,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <select class="form-control form-control-lg city-select"
                                                                 name="inputSkillLearnType"
                                                                 id="inputSkillLearnType">
+                                                            <option value="">--انتخاب کنید--
+                                                            </option>
                                                             <?php foreach ($EnumResumeProfile['SkillLearnType'] as $key => $value) { ?>
                                                                 <option
                                                                     <?php setOptionSelected($item['SkillLearnType'], $key); ?>
@@ -101,6 +105,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputSkillLevel"
                                                         id="inputSkillLevel">
+                                                    <option value="">--انتخاب کنید--
+                                                    </option>
                                                     <?php foreach ($EnumResumeProfile['SkillLevel'] as $key => $value) { ?>
                                                         <option value="<?php echo $key; ?>">
                                                             <?php echo $value; ?>
@@ -118,6 +124,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <select class="form-control form-control-lg city-select"
                                                         name="inputSkillLearnType"
                                                         id="inputSkillLearnType">
+                                                    <option value="">--انتخاب کنید--
+                                                    </option>
                                                     <?php foreach ($EnumResumeProfile['SkillLearnType'] as $key => $value) { ?>
                                                         <option value="<?php echo $key; ?>">
                                                             <?php echo $value; ?>

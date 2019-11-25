@@ -25,7 +25,7 @@
 
 
         //$('#inputCandidateBirthDate').mask("0000/00/00");
-        $('#inputCandidateBirthDate').keyup(function(e){
+        $('#inputCandidateBirthDate').keyup(function(e) {
             if(e.keyCode != 8){
                 var v = toEnglishDigits($(this).val());
                 if (v.match(/^\d{4}$/) !== null) {

@@ -52,7 +52,7 @@
                                                                                 نوع کاربری
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateType"
                                                                                     id="inputRealEstateType">
                                                                                 <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
@@ -67,7 +67,7 @@
                                                                                 سال شروع مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateOwnershipDate"
                                                                                     id="inputRealEstateOwnershipDate"
                                                                                     style="font-family: tahoma;">
@@ -85,7 +85,7 @@
                                                                                 نحوه مالکیت
                                                                             </label>
                                                                             <select
-                                                                                    class="form-control form-control-lg city-select"
+                                                                                    class="form-control form-control-lg"
                                                                                     name="inputRealEstateOwnershipType"
                                                                                     id="inputRealEstateOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -99,12 +99,11 @@
                                                                             <label for="inputRealEstateCountryId">کشور</label>
                                                                             <select
                                                                                     data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
-                                                                                    data-state-id="<?php echo $item['RealEstateStateId']; ?>"
                                                                                     data-city-id="<?php echo $item['RealEstateCityId']; ?>"
-                                                                                    class="form-control form-control-lg state-select"
+                                                                                    class="form-control form-control-lg"
                                                                                     name="inputRealEstateCountryId"
                                                                                     id="inputRealEstateCountryId">
-                                                                                <option value="">-- انتخاب کنید --
+                                                                                <option value="0">-- انتخاب کنید --
                                                                                 </option>
                                                                                 <?php foreach ($countries as $row) { ?>
                                                                                     <option
@@ -121,7 +120,7 @@
                                                                             <select class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateStateId"
                                                                                     id="inputRealEstateStateId">
-                                                                                <option value="">-- انتخاب کنید --</option>
+                                                                                <option value="0">-- انتخاب کنید --</option>
                                                                                 <?php foreach ($states as $state) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
@@ -135,7 +134,7 @@
                                                                             <label for="inputRealEstateCityId">
                                                                                 شهر
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateCityId"
                                                                                     id="inputRealEstateCityId">
                                                                             </select>
@@ -150,7 +149,8 @@
                                                                                    name="inputRealEstatePortion"
                                                                                    id="inputRealEstatePortion"
                                                                                    class="form-control"
-                                                                                   placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                   placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                   min="1" max="6"/>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateExtent">
@@ -164,10 +164,11 @@
                                                                                            name="inputRealEstateExtent"
                                                                                            id="inputRealEstateExtent"
                                                                                            class="form-control"
-                                                                                           placeholder=""/>
+                                                                                           placeholder=""
+                                                                                           min="0"/>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 RightFloat">
-                                                                                    <select class="form-control form-control-lg city-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateExtentUnit"
                                                                                             id="inputRealEstateExtentUnit">
                                                                                         <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
@@ -191,7 +192,8 @@
                                                                                             type="number"
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -201,7 +203,8 @@
                                                                                         <?php setInputValue(splitPrice($item['RealEstateBuyTimePrice'])['left']); ?>
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -209,7 +212,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             id="inputRealEstateBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "HZ") {
@@ -256,7 +259,8 @@
                                                                                             type="number"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -266,7 +270,8 @@
                                                                                             type="number"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -274,7 +279,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             id="inputRealEstateNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "HZ") {
@@ -330,7 +335,7 @@
                                                                     نوع کاربری
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateType"
                                                                         id="inputRealEstateType">
                                                                     <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
@@ -344,7 +349,7 @@
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateOwnershipDate"
                                                                         id="inputRealEstateOwnershipDate"
                                                                         style="font-family: tahoma;">
@@ -362,7 +367,7 @@
                                                                     نحوه مالکیت
                                                                 </label>
                                                                 <select
-                                                                        class="form-control form-control-lg city-select"
+                                                                        class="form-control form-control-lg"
                                                                         name="inputRealEstateOwnershipType"
                                                                         id="inputRealEstateOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -376,7 +381,7 @@
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputRealEstateCountryId"
                                                                         id="inputRealEstateCountryId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                     <?php foreach ($countries as $item) { ?>
                                                                         <option
                                                                             <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
@@ -391,7 +396,7 @@
                                                                 <select class="form-control form-control-lg state-select"
                                                                         name="inputRealEstateStateId"
                                                                         id="inputRealEstateStateId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                     <?php foreach ($states as $state) { ?>
                                                                         <option value="<?php echo $state['StateId']; ?>">
                                                                             <?php echo $state['StateName']; ?>
@@ -416,7 +421,8 @@
                                                                 <input type="number" name="inputRealEstatePortion"
                                                                        id="inputRealEstatePortion"
                                                                        class="form-control"
-                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                       min="0" max="6"/>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateExtent">
@@ -429,10 +435,11 @@
                                                                                name="inputRealEstateExtent"
                                                                                id="inputRealEstateExtent"
                                                                                class="form-control"
-                                                                               placeholder=""/>
+                                                                               placeholder=""
+                                                                               min="0"/>
                                                                     </div>
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
-                                                                        <select class="form-control form-control-lg city-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateExtentUnit"
                                                                                 id="inputRealEstateExtentUnit">
                                                                             <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
@@ -454,7 +461,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -463,7 +471,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -471,7 +480,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 id="inputRealEstateBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -499,7 +508,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -508,7 +518,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -516,7 +527,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 id="inputRealEstateNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -582,7 +593,7 @@
                                                                                 نوع وسیله نقلیه<span
                                                                                         class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputVehicleType"
                                                                                     id="inputVehicleType">
                                                                                 <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
@@ -597,7 +608,7 @@
                                                                                 سال شروع مالکیت<span
                                                                                         class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputVehicleOwnershipDate"
                                                                                     id="inputVehicleOwnershipDate"
                                                                                     style="font-family: tahoma;">
@@ -616,7 +627,7 @@
                                                                                 نحوه مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputVehicleOwnershipType"
                                                                                     id="inputVehicleOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -639,7 +650,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -649,7 +661,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -657,7 +670,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             id="inputVehicleBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "HZ") {
@@ -704,7 +717,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -714,7 +728,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -722,7 +737,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             id="inputVehicleNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "HZ") {
@@ -758,7 +773,8 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                             <label for="inputVehiclePortion">
                                                                                 سهم از ملک(1 تا 6 دانگ)
                                                                                 <span class="text-danger"></span>
@@ -769,7 +785,8 @@
                                                                                     name="inputVehiclePortion"
                                                                                     id="inputVehiclePortion"
                                                                                     class="form-control"
-                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                    min="0" max="6"/>
                                                                         </div>
                                                                     </div>
                                                                 <?php }
@@ -783,7 +800,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputVehicleType"
                                                                         id="inputVehicleType">
                                                                     <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
@@ -798,7 +815,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputVehicleOwnershipDate"
                                                                         id="inputVehicleOwnershipDate"
                                                                         style="font-family: tahoma;">
@@ -817,7 +834,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputVehicleOwnershipType"
                                                                         id="inputVehicleOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -837,7 +854,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -846,7 +864,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -854,7 +873,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 id="inputVehicleBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -882,7 +901,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -891,7 +911,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -899,7 +920,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 id="inputVehicleNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -917,14 +938,15 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                 <label for="inputVehiclePortion">
                                                                     سهم از ملک(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <input type="number" name="inputVehiclePortion"
                                                                        id="inputVehiclePortion" class="form-control"
-                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                       min="0" max="6"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -979,7 +1001,7 @@
                                                                                 <span class="text-danger">
                                              </span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputInvestDate"
                                                                                     id="inputInvestDate"
                                                                                     style="font-family: tahoma;">
@@ -998,7 +1020,7 @@
                                                                                 نحوه مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputInvestOwnershipType"
                                                                                     id="inputInvestOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -1020,7 +1042,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -1030,7 +1053,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -1038,7 +1062,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             id="inputInvestBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "HZ") {
@@ -1085,7 +1109,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -1095,7 +1120,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -1103,7 +1129,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             id="inputInvestNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "HZ") {
@@ -1158,7 +1184,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputInvestDate"
                                                                         id="inputInvestDate"
                                                                         style="font-family: tahoma;">
@@ -1177,7 +1203,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputInvestOwnershipType"
                                                                         id="inputInvestOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -1197,7 +1223,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -1206,7 +1233,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -1214,7 +1242,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 id="inputInvestBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -1242,7 +1270,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -1251,7 +1280,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -1259,7 +1289,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 id="inputInvestNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -1337,7 +1367,8 @@
                                                                                             type="number"
                                                                                             name="inputBankAccountPrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputBankAccountPrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -1348,7 +1379,8 @@
                                                                                             type="number"
                                                                                             name="RealEstateBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputBankAccountPrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -1356,7 +1388,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputBankAccountPrice"
                                                                                             id="inputBankAccountPrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['BankAccountPrice'])['unit']) == "HZ") {
@@ -1397,7 +1429,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputBankAccountCountryId"
                                                                                     id="inputBankAccountCountryId">
-                                                                                <option value="">-- انتخاب کنید --
+                                                                                <option value="0">-- انتخاب کنید --
                                                                                 </option>
                                                                                 <?php foreach ($countries as $row) { ?>
                                                                                     <option
@@ -1431,7 +1463,8 @@
                                                                                 type="number"
                                                                                 name="inputBankAccountPrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputBankAccountPrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -1440,7 +1473,8 @@
                                                                                 type="number"
                                                                                 name="RealEstateBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputBankAccountPrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -1448,7 +1482,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputBankAccountPrice"
                                                                                 id="inputBankAccountPrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -1474,7 +1508,7 @@
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputBankAccountCountryId"
                                                                         id="inputBankAccountCountryId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                     <?php foreach ($countries as $item) { ?>
                                                                         <option
                                                                             <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
@@ -1538,7 +1572,8 @@
                                                                                             type="number"
                                                                                             name="inputCreditPrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputCreditPrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -1548,7 +1583,8 @@
                                                                                             type="number"
                                                                                             name="inputCreditPrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputCreditPrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -1556,7 +1592,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputCreditPrice"
                                                                                             id="inputCreditPrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "HZ") {
@@ -1603,7 +1639,8 @@
                                                                                             type="number"
                                                                                             name="inputDebotrPrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputDebotrPrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -1613,7 +1650,8 @@
                                                                                             type="number"
                                                                                             name="inputDebotrPrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputDebotrPrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -1621,7 +1659,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputDebotrPrice"
                                                                                             id="inputDebotrPrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "HZ") {
@@ -1700,7 +1738,7 @@
                                                                             <label for="inputGoodsType">
                                                                                 نوع کالا
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputGoodsType"
                                                                                     id="inputGoodsType">
                                                                                 <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
@@ -1715,7 +1753,7 @@
                                                                                 سال شروع مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputGoodsOwnershipStartDate"
                                                                                     id="inputGoodsOwnershipStartDate"
                                                                                     style="font-family: tahoma;">
@@ -1752,7 +1790,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -1762,7 +1801,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -1770,7 +1810,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             id="inputGoodsBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "HZ") {
@@ -1817,7 +1857,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -1827,7 +1868,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -1835,7 +1877,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             id="inputGoodsNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "HZ") {
@@ -1882,7 +1924,8 @@
                                                                                     name="inputGoodsOwnershipPercent"
                                                                                     id="inputGoodsOwnershipPercent"
                                                                                     class="form-control"
-                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                    min="0" max="6"/>
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateOwnershipType">
@@ -1890,7 +1933,7 @@
                                                                                 <span class="text-danger">
                                              </span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateOwnershipType"
                                                                                     id="inputRealEstateOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -1910,7 +1953,7 @@
                                                                 <label for="inputGoodsType">
                                                                     نوع کالا
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputGoodsType"
                                                                         id="inputGoodsType">
                                                                     <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
@@ -1925,7 +1968,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputGoodsOwnershipStartDate"
                                                                         id="inputGoodsOwnershipStartDate"
                                                                         style="font-family: tahoma;">
@@ -1959,7 +2002,8 @@
                                                                                 type="number"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -1968,7 +2012,8 @@
                                                                                 type="number"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -1976,7 +2021,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 id="inputGoodsBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -2004,7 +2049,8 @@
                                                                                 type="number"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -2013,15 +2059,16 @@
                                                                                 type="number"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 id="inputGoodsNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -2047,7 +2094,8 @@
                                                                 <input type="number" name="inputGoodsOwnershipPercent"
                                                                        id="inputGoodsOwnershipPercent"
                                                                        class="form-control"
-                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                       min="0" max="6"/>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateOwnershipType">
@@ -2055,7 +2103,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateOwnershipType"
                                                                         id="inputRealEstateOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -2103,7 +2151,7 @@
                                                                         <span class="remove-form fa fa-times"></span>
                                                                         <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputFeeType">عنوان :</label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputFeeType"
                                                                                     id="inputFeeType">
                                                                                 <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
@@ -2118,7 +2166,7 @@
                                                                                 سال شروع مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputFeeOwnershipStartDate"
                                                                                     id="inputFeeOwnershipStartDate"
                                                                                     style="font-family: tahoma;">
@@ -2156,7 +2204,8 @@
                                                                                             type="number"
                                                                                             name="inputFeeAverageInYear"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputFeeAverageInYear ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -2166,7 +2215,8 @@
                                                                                             type="number"
                                                                                             name="inputFeeAverageInYear"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputFeeAverageInYear">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -2174,7 +2224,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputFeeAverageInYear"
                                                                                             id="inputFeeAverageInYear">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['FeeAverageInYear'])['unit']) == "HZ") {
@@ -2219,7 +2269,7 @@
                                                                 <label for="inputFeeType">
                                                                     عنوان :
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputFeeType"
                                                                         id="inputFeeType">
                                                                     <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
@@ -2234,7 +2284,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputFeeOwnershipStartDate"
                                                                         id="inputFeeOwnershipStartDate"
                                                                         style="font-family: tahoma;">
@@ -2268,7 +2318,8 @@
                                                                                 type="number"
                                                                                 name="inputFeeAverageInYear"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputFeeAverageInYear ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -2277,7 +2328,8 @@
                                                                                 type="number"
                                                                                 name="inputFeeAverageInYear"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputFeeAverageInYear">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -2285,7 +2337,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputFeeAverageInYear"
                                                                                 id="inputFeeAverageInYear">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -2355,7 +2407,8 @@
                                                                                     type="number"
                                                                                     name="inputAverageMonthIncome"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputAverageMonthIncome ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -2365,7 +2418,8 @@
                                                                                     type="number"
                                                                                     name="inputAverageMonthIncome"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputAverageMonthIncome">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -2373,7 +2427,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputAverageMonthIncome"
                                                                                     id="inputAverageMonthIncome">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($income['AverageMonthIncome'])['unit']) == "HZ") {
@@ -2468,7 +2522,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionPlacePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0" max="6"/>
                                                                             <label for="inputElectionPlacePrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -2478,7 +2533,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionPlacePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0" max="6"/>
                                                                             <label for="inputElectionPlacePrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -2486,7 +2542,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionPlacePrice"
                                                                                     id="inputElectionPlacePrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "HZ") {
@@ -2534,7 +2590,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionFlockPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionFlockPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -2544,7 +2601,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionFlockPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionFlockPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -2552,7 +2610,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionFlockPrice"
                                                                                     id="inputElectionFlockPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "HZ") {
@@ -2599,7 +2657,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAdvertisePrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -2609,7 +2668,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAdvertisePrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -2617,7 +2677,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     id="inputElectionAdvertisePrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "HZ") {
@@ -2665,7 +2725,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionStaffPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionStaffPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -2675,7 +2736,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionStaffPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionStaffPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -2683,7 +2745,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionStaffPrice"
                                                                                     id="inputElectionStaffPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "HZ") {
@@ -2730,7 +2792,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAllPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAllPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -2740,7 +2803,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAllPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAllPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -2748,7 +2812,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionAllPrice"
                                                                                     id="inputElectionAllPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionAllPrice'])['unit']) == "HZ") {
@@ -2833,7 +2897,7 @@
                                                                                 نوع کاربری
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateType"
                                                                                     id="inputRealEstateType">
                                                                                 <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
@@ -2848,7 +2912,7 @@
                                                                                 سال شروع مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateOwnershipDate"
                                                                                     id="inputRealEstateOwnershipDate"
                                                                                     style="font-family: tahoma;">
@@ -2866,7 +2930,7 @@
                                                                                 نحوه مالکیت
                                                                             </label>
                                                                             <select
-                                                                                    class="form-control form-control-lg city-select"
+                                                                                    class="form-control form-control-lg"
                                                                                     name="inputRealEstateOwnershipType"
                                                                                     id="inputRealEstateOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -2880,12 +2944,11 @@
                                                                             <label for="inputRealEstateCountryId">کشور</label>
                                                                             <select
                                                                                     data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
-                                                                                    data-state-id="<?php echo $item['RealEstateStateId']; ?>"
                                                                                     data-city-id="<?php echo $item['RealEstateCityId']; ?>"
-                                                                                    class="form-control form-control-lg state-select"
+                                                                                    class="form-control form-control-lg"
                                                                                     name="inputRealEstateCountryId"
                                                                                     id="inputRealEstateCountryId">
-                                                                                <option value="">-- انتخاب کنید --
+                                                                                <option value="0">-- انتخاب کنید --
                                                                                 </option>
                                                                                 <?php foreach ($countries as $row) { ?>
                                                                                     <option
@@ -2902,7 +2965,7 @@
                                                                             <select class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateStateId"
                                                                                     id="inputRealEstateStateId">
-                                                                                <option value="">-- انتخاب کنید --</option>
+                                                                                <option value="0">-- انتخاب کنید --</option>
                                                                                 <?php foreach ($states as $state) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
@@ -2931,7 +2994,8 @@
                                                                                    name="inputRealEstatePortion"
                                                                                    id="inputRealEstatePortion"
                                                                                    class="form-control"
-                                                                                   placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                   placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                   min="0" max="6"/>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateExtent">
@@ -2945,10 +3009,11 @@
                                                                                            name="inputRealEstateExtent"
                                                                                            id="inputRealEstateExtent"
                                                                                            class="form-control"
-                                                                                           placeholder=""/>
+                                                                                           placeholder=""
+                                                                                           min="0"/>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 RightFloat">
-                                                                                    <select class="form-control form-control-lg city-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateExtentUnit"
                                                                                             id="inputRealEstateExtentUnit">
                                                                                         <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
@@ -2972,7 +3037,8 @@
                                                                                             type="number"
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -2982,7 +3048,8 @@
                                                                                         <?php setInputValue(splitPrice($item['RealEstateBuyTimePrice'])['left']); ?>
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -2990,7 +3057,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             id="inputRealEstateBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "HZ") {
@@ -3037,7 +3104,8 @@
                                                                                             type="number"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -3047,7 +3115,8 @@
                                                                                             type="number"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -3055,7 +3124,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             id="inputRealEstateNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "HZ") {
@@ -3111,7 +3180,7 @@
                                                                     نوع کاربری
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateType"
                                                                         id="inputRealEstateType">
                                                                     <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
@@ -3125,7 +3194,7 @@
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateOwnershipDate"
                                                                         id="inputRealEstateOwnershipDate"
                                                                         style="font-family: tahoma;">
@@ -3143,7 +3212,7 @@
                                                                     نحوه مالکیت
                                                                 </label>
                                                                 <select
-                                                                        class="form-control form-control-lg city-select"
+                                                                        class="form-control form-control-lg"
                                                                         name="inputRealEstateOwnershipType"
                                                                         id="inputRealEstateOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -3157,7 +3226,7 @@
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputRealEstateCountryId"
                                                                         id="inputRealEstateCountryId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                     <?php foreach ($countries as $item) { ?>
                                                                         <option
                                                                             <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
@@ -3172,7 +3241,7 @@
                                                                 <select class="form-control form-control-lg state-select"
                                                                         name="inputRealEstateStateId"
                                                                         id="inputRealEstateStateId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                     <?php foreach ($states as $state) { ?>
                                                                         <option value="<?php echo $state['StateId']; ?>">
                                                                             <?php echo $state['StateName']; ?>
@@ -3197,7 +3266,8 @@
                                                                 <input type="number" name="inputRealEstatePortion"
                                                                        id="inputRealEstatePortion"
                                                                        class="form-control"
-                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                       min="0" max="6"/>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateExtent">
@@ -3210,10 +3280,11 @@
                                                                                name="inputRealEstateExtent"
                                                                                id="inputRealEstateExtent"
                                                                                class="form-control"
-                                                                               placeholder=""/>
+                                                                               placeholder=""
+                                                                               min="0"/>
                                                                     </div>
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
-                                                                        <select class="form-control form-control-lg city-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateExtentUnit"
                                                                                 id="inputRealEstateExtentUnit">
                                                                             <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
@@ -3235,7 +3306,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -3244,7 +3316,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -3252,7 +3325,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 id="inputRealEstateBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -3280,7 +3353,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -3289,7 +3363,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -3297,7 +3372,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 id="inputRealEstateNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -3363,7 +3438,7 @@
                                                                                 نوع وسیله نقلیه<span
                                                                                         class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputVehicleType"
                                                                                     id="inputVehicleType">
                                                                                 <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
@@ -3378,7 +3453,7 @@
                                                                                 سال شروع مالکیت<span
                                                                                         class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputVehicleOwnershipDate"
                                                                                     id="inputVehicleOwnershipDate"
                                                                                     style="font-family: tahoma;">
@@ -3397,7 +3472,7 @@
                                                                                 نحوه مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputVehicleOwnershipType"
                                                                                     id="inputVehicleOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -3420,7 +3495,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -3430,7 +3506,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -3438,7 +3515,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             id="inputVehicleBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "HZ") {
@@ -3485,7 +3562,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -3495,7 +3573,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -3503,7 +3582,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             id="inputVehicleNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "HZ") {
@@ -3539,7 +3618,8 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                             <label for="inputVehiclePortion">
                                                                                 سهم از ملک(1 تا 6 دانگ)
                                                                                 <span class="text-danger"></span>
@@ -3550,7 +3630,8 @@
                                                                                     name="inputVehiclePortion"
                                                                                     id="inputVehiclePortion"
                                                                                     class="form-control"
-                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                    min="0" max="6"/>
                                                                         </div>
                                                                     </div>
                                                                 <?php }
@@ -3564,7 +3645,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputVehicleType"
                                                                         id="inputVehicleType">
                                                                     <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
@@ -3579,7 +3660,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputVehicleOwnershipDate"
                                                                         id="inputVehicleOwnershipDate"
                                                                         style="font-family: tahoma;">
@@ -3598,7 +3679,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputVehicleOwnershipType"
                                                                         id="inputVehicleOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -3618,7 +3699,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -3627,7 +3709,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -3635,7 +3718,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 id="inputVehicleBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -3663,7 +3746,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -3672,7 +3756,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -3680,7 +3765,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 id="inputVehicleNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -3698,14 +3783,15 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                 <label for="inputVehiclePortion">
                                                                     سهم از ملک(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <input type="number" name="inputVehiclePortion"
                                                                        id="inputVehiclePortion" class="form-control"
-                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                       min="0" max="6"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3760,7 +3846,7 @@
                                                                                 <span class="text-danger">
                                              </span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputInvestDate"
                                                                                     id="inputInvestDate"
                                                                                     style="font-family: tahoma;">
@@ -3779,7 +3865,7 @@
                                                                                 نحوه مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputInvestOwnershipType"
                                                                                     id="inputInvestOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -3801,7 +3887,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -3811,7 +3898,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -3819,7 +3907,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             id="inputInvestBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "HZ") {
@@ -3866,7 +3954,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -3876,7 +3965,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -3884,7 +3974,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             id="inputInvestNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "HZ") {
@@ -3939,7 +4029,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputInvestDate"
                                                                         id="inputInvestDate"
                                                                         style="font-family: tahoma;">
@@ -3958,7 +4048,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputInvestOwnershipType"
                                                                         id="inputInvestOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -3978,7 +4068,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -3987,7 +4078,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder="
+                                                                                min="0"/>
                                                                         <label for="inputInvestBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -3995,7 +4087,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 id="inputInvestBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -4023,7 +4115,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -4032,7 +4125,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -4040,7 +4134,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 id="inputInvestNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -4118,7 +4212,8 @@
                                                                                             type="number"
                                                                                             name="inputBankAccountPrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputBankAccountPrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -4129,7 +4224,8 @@
                                                                                             type="number"
                                                                                             name="RealEstateBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputBankAccountPrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -4137,7 +4233,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputBankAccountPrice"
                                                                                             id="inputBankAccountPrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['BankAccountPrice'])['unit']) == "HZ") {
@@ -4178,7 +4274,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputBankAccountCountryId"
                                                                                     id="inputBankAccountCountryId">
-                                                                                <option value="">-- انتخاب کنید --
+                                                                                <option value="0">-- انتخاب کنید --
                                                                                 </option>
                                                                                 <?php foreach ($countries as $row) { ?>
                                                                                     <option
@@ -4212,7 +4308,8 @@
                                                                                 type="number"
                                                                                 name="inputBankAccountPrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputBankAccountPrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -4221,7 +4318,8 @@
                                                                                 type="number"
                                                                                 name="RealEstateBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputBankAccountPrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -4229,7 +4327,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputBankAccountPrice"
                                                                                 id="inputBankAccountPrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -4255,7 +4353,7 @@
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputBankAccountCountryId"
                                                                         id="inputBankAccountCountryId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                     <?php foreach ($countries as $item) { ?>
                                                                         <option
                                                                             <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
@@ -4319,7 +4417,8 @@
                                                                                     type="number"
                                                                                     name="inputCreditPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputCreditPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -4329,7 +4428,8 @@
                                                                                     type="number"
                                                                                     name="inputCreditPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputCreditPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -4337,7 +4437,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputCreditPrice"
                                                                                     id="inputCreditPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "HZ") {
@@ -4384,7 +4484,8 @@
                                                                                     type="number"
                                                                                     name="inputDebotrPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputDebotrPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -4394,7 +4495,8 @@
                                                                                     type="number"
                                                                                     name="inputDebotrPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputDebotrPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -4402,7 +4504,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputDebotrPrice"
                                                                                     id="inputDebotrPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "HZ") {
@@ -4481,7 +4583,7 @@
                                                                             <label for="inputGoodsType">
                                                                                 نوع کالا
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputGoodsType"
                                                                                     id="inputGoodsType">
                                                                                 <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
@@ -4496,7 +4598,7 @@
                                                                                 سال شروع مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputGoodsOwnershipStartDate"
                                                                                     id="inputGoodsOwnershipStartDate"
                                                                                     style="font-family: tahoma;">
@@ -4533,7 +4635,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -4543,7 +4646,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -4551,7 +4655,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             id="inputGoodsBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "HZ") {
@@ -4598,7 +4702,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -4608,7 +4713,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -4616,7 +4722,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             id="inputGoodsNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "HZ") {
@@ -4663,7 +4769,8 @@
                                                                                     name="inputGoodsOwnershipPercent"
                                                                                     id="inputGoodsOwnershipPercent"
                                                                                     class="form-control"
-                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                    min="0" max="6"/>
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateOwnershipType">
@@ -4671,7 +4778,7 @@
                                                                                 <span class="text-danger">
                                              </span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateOwnershipType"
                                                                                     id="inputRealEstateOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -4691,7 +4798,7 @@
                                                                 <label for="inputGoodsType">
                                                                     نوع کالا
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputGoodsType"
                                                                         id="inputGoodsType">
                                                                     <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
@@ -4706,7 +4813,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputGoodsOwnershipStartDate"
                                                                         id="inputGoodsOwnershipStartDate"
                                                                         style="font-family: tahoma;">
@@ -4740,7 +4847,8 @@
                                                                                 type="number"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -4749,7 +4857,8 @@
                                                                                 type="number"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -4757,7 +4866,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 id="inputGoodsBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -4785,7 +4894,8 @@
                                                                                 type="number"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -4794,15 +4904,16 @@
                                                                                 type="number"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 id="inputGoodsNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -4828,7 +4939,8 @@
                                                                 <input type="number" name="inputGoodsOwnershipPercent"
                                                                        id="inputGoodsOwnershipPercent"
                                                                        class="form-control"
-                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                       min="0" max="6"/>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateOwnershipType">
@@ -4836,7 +4948,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateOwnershipType"
                                                                         id="inputRealEstateOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -4884,7 +4996,7 @@
                                                                         <span class="remove-form fa fa-times"></span>
                                                                         <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputFeeType">عنوان :</label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputFeeType"
                                                                                     id="inputFeeType">
                                                                                 <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
@@ -4899,7 +5011,7 @@
                                                                                 سال شروع مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputFeeOwnershipStartDate"
                                                                                     id="inputFeeOwnershipStartDate"
                                                                                     style="font-family: tahoma;">
@@ -4937,7 +5049,8 @@
                                                                                             type="number"
                                                                                             name="inputFeeAverageInYear"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputFeeAverageInYear ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -4947,7 +5060,8 @@
                                                                                             type="number"
                                                                                             name="inputFeeAverageInYear"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputFeeAverageInYear">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -4955,7 +5069,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputFeeAverageInYear"
                                                                                             id="inputFeeAverageInYear">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['FeeAverageInYear'])['unit']) == "HZ") {
@@ -5000,7 +5114,7 @@
                                                                 <label for="inputFeeType">
                                                                     عنوان :
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputFeeType"
                                                                         id="inputFeeType">
                                                                     <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
@@ -5015,7 +5129,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputFeeOwnershipStartDate"
                                                                         id="inputFeeOwnershipStartDate"
                                                                         style="font-family: tahoma;">
@@ -5049,7 +5163,8 @@
                                                                                 type="number"
                                                                                 name="inputFeeAverageInYear"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputFeeAverageInYear ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -5058,7 +5173,8 @@
                                                                                 type="number"
                                                                                 name="inputFeeAverageInYear"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputFeeAverageInYear">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -5066,7 +5182,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputFeeAverageInYear"
                                                                                 id="inputFeeAverageInYear">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -5136,7 +5252,8 @@
                                                                                     type="number"
                                                                                     name="inputAverageMonthIncome"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputAverageMonthIncome ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -5146,7 +5263,8 @@
                                                                                     type="number"
                                                                                     name="inputAverageMonthIncome"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputAverageMonthIncome">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -5154,7 +5272,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputAverageMonthIncome"
                                                                                     id="inputAverageMonthIncome">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($income['AverageMonthIncome'])['unit']) == "HZ") {
@@ -5249,7 +5367,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionPlacePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0" max="6"/>
                                                                             <label for="inputElectionPlacePrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -5259,7 +5378,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionPlacePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0" max="6"/>
                                                                             <label for="inputElectionPlacePrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -5267,7 +5387,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionPlacePrice"
                                                                                     id="inputElectionPlacePrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "HZ") {
@@ -5315,7 +5435,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionFlockPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionFlockPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -5325,7 +5446,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionFlockPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionFlockPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -5333,7 +5455,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionFlockPrice"
                                                                                     id="inputElectionFlockPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "HZ") {
@@ -5380,7 +5502,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAdvertisePrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -5390,7 +5513,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAdvertisePrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -5398,7 +5522,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     id="inputElectionAdvertisePrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "HZ") {
@@ -5446,7 +5570,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionStaffPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionStaffPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -5456,7 +5581,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionStaffPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionStaffPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -5464,7 +5590,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionStaffPrice"
                                                                                     id="inputElectionStaffPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "HZ") {
@@ -5511,7 +5637,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAllPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAllPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -5521,7 +5648,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAllPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAllPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -5529,7 +5657,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionAllPrice"
                                                                                     id="inputElectionAllPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionAllPrice'])['unit']) == "HZ") {
@@ -5614,7 +5742,7 @@
                                                                                 نوع کاربری
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateType"
                                                                                     id="inputRealEstateType">
                                                                                 <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
@@ -5629,7 +5757,7 @@
                                                                                 سال شروع مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateOwnershipDate"
                                                                                     id="inputRealEstateOwnershipDate"
                                                                                     style="font-family: tahoma;">
@@ -5647,7 +5775,7 @@
                                                                                 نحوه مالکیت
                                                                             </label>
                                                                             <select
-                                                                                    class="form-control form-control-lg city-select"
+                                                                                    class="form-control form-control-lg"
                                                                                     name="inputRealEstateOwnershipType"
                                                                                     id="inputRealEstateOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -5661,12 +5789,11 @@
                                                                             <label for="inputRealEstateCountryId">کشور</label>
                                                                             <select
                                                                                     data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
-                                                                                    data-state-id="<?php echo $item['RealEstateStateId']; ?>"
                                                                                     data-city-id="<?php echo $item['RealEstateCityId']; ?>"
-                                                                                    class="form-control form-control-lg state-select"
+                                                                                    class="form-control form-control-lg"
                                                                                     name="inputRealEstateCountryId"
                                                                                     id="inputRealEstateCountryId">
-                                                                                <option value="">-- انتخاب کنید --
+                                                                                <option value=0">-- انتخاب کنید --
                                                                                 </option>
                                                                                 <?php foreach ($countries as $row) { ?>
                                                                                     <option
@@ -5683,7 +5810,7 @@
                                                                             <select class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateStateId"
                                                                                     id="inputRealEstateStateId">
-                                                                                <option value="">-- انتخاب کنید --</option>
+                                                                                <option value="0">-- انتخاب کنید --</option>
                                                                                 <?php foreach ($states as $state) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
@@ -5712,7 +5839,8 @@
                                                                                    name="inputRealEstatePortion"
                                                                                    id="inputRealEstatePortion"
                                                                                    class="form-control"
-                                                                                   placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                   placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                   min="0" max="6"/>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateExtent">
@@ -5726,10 +5854,11 @@
                                                                                            name="inputRealEstateExtent"
                                                                                            id="inputRealEstateExtent"
                                                                                            class="form-control"
-                                                                                           placeholder=""/>
+                                                                                           placeholder=""
+                                                                                           min="0"/>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 RightFloat">
-                                                                                    <select class="form-control form-control-lg city-select"
+                                                                                    <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateExtentUnit"
                                                                                             id="inputRealEstateExtentUnit">
                                                                                         <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
@@ -5753,7 +5882,8 @@
                                                                                             type="number"
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -5763,7 +5893,8 @@
                                                                                         <?php setInputValue(splitPrice($item['RealEstateBuyTimePrice'])['left']); ?>
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -5771,7 +5902,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateBuyTimePrice"
                                                                                             id="inputRealEstateBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "HZ") {
@@ -5818,7 +5949,8 @@
                                                                                             type="number"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -5828,7 +5960,8 @@
                                                                                             type="number"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputRealEstateNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -5836,7 +5969,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputRealEstateNowTimePrice"
                                                                                             id="inputRealEstateNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "HZ") {
@@ -5892,7 +6025,7 @@
                                                                     نوع کاربری
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateType"
                                                                         id="inputRealEstateType">
                                                                     <?php foreach ($EnumResumeProfile['RealEstateType'] as $key => $value) { ?>
@@ -5906,7 +6039,7 @@
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger"></span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateOwnershipDate"
                                                                         id="inputRealEstateOwnershipDate"
                                                                         style="font-family: tahoma;">
@@ -5924,7 +6057,7 @@
                                                                     نحوه مالکیت
                                                                 </label>
                                                                 <select
-                                                                        class="form-control form-control-lg city-select"
+                                                                        class="form-control form-control-lg"
                                                                         name="inputRealEstateOwnershipType"
                                                                         id="inputRealEstateOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -5938,7 +6071,7 @@
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputRealEstateCountryId"
                                                                         id="inputRealEstateCountryId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                     <?php foreach ($countries as $item) { ?>
                                                                         <option
                                                                             <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
@@ -5953,7 +6086,7 @@
                                                                 <select class="form-control form-control-lg state-select"
                                                                         name="inputRealEstateStateId"
                                                                         id="inputRealEstateStateId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                     <?php foreach ($states as $state) { ?>
                                                                         <option value="<?php echo $state['StateId']; ?>">
                                                                             <?php echo $state['StateName']; ?>
@@ -5978,7 +6111,8 @@
                                                                 <input type="number" name="inputRealEstatePortion"
                                                                        id="inputRealEstatePortion"
                                                                        class="form-control"
-                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                       min="0" max="6"/>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateExtent">
@@ -5991,10 +6125,11 @@
                                                                                name="inputRealEstateExtent"
                                                                                id="inputRealEstateExtent"
                                                                                class="form-control"
-                                                                               placeholder=""/>
+                                                                               placeholder=""
+                                                                               min="0"/>
                                                                     </div>
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
-                                                                        <select class="form-control form-control-lg city-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateExtentUnit"
                                                                                 id="inputRealEstateExtentUnit">
                                                                             <?php foreach ($EnumResumeProfile['Extent'] as $key => $value) { ?>
@@ -6016,7 +6151,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -6025,7 +6161,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -6033,7 +6170,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateBuyTimePrice"
                                                                                 id="inputRealEstateBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -6061,7 +6198,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -6070,7 +6208,8 @@
                                                                                 type="number"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputRealEstateNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -6078,7 +6217,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputRealEstateNowTimePrice"
                                                                                 id="inputRealEstateNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -6144,7 +6283,7 @@
                                                                                 نوع وسیله نقلیه<span
                                                                                         class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputVehicleType"
                                                                                     id="inputVehicleType">
                                                                                 <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
@@ -6159,7 +6298,7 @@
                                                                                 سال شروع مالکیت<span
                                                                                         class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputVehicleOwnershipDate"
                                                                                     id="inputVehicleOwnershipDate"
                                                                                     style="font-family: tahoma;">
@@ -6178,7 +6317,7 @@
                                                                                 نحوه مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputVehicleOwnershipType"
                                                                                     id="inputVehicleOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -6201,7 +6340,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -6211,7 +6351,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -6219,7 +6360,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleBuyTimePrice"
                                                                                             id="inputVehicleBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "HZ") {
@@ -6266,7 +6407,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -6276,7 +6418,8 @@
                                                                                             type="number"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputVehicleNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -6284,7 +6427,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             id="inputVehicleNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "HZ") {
@@ -6320,7 +6463,7 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                             <label for="inputVehiclePortion">
                                                                                 سهم از ملک(1 تا 6 دانگ)
                                                                                 <span class="text-danger"></span>
@@ -6331,7 +6474,8 @@
                                                                                     name="inputVehiclePortion"
                                                                                     id="inputVehiclePortion"
                                                                                     class="form-control"
-                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                    min="0" max="6"/>
                                                                         </div>
                                                                     </div>
                                                                 <?php }
@@ -6345,7 +6489,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputVehicleType"
                                                                         id="inputVehicleType">
                                                                     <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
@@ -6360,7 +6504,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputVehicleOwnershipDate"
                                                                         id="inputVehicleOwnershipDate"
                                                                         style="font-family: tahoma;">
@@ -6379,7 +6523,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputVehicleOwnershipType"
                                                                         id="inputVehicleOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -6399,7 +6543,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -6408,7 +6553,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -6416,7 +6562,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputVehicleBuyTimePrice"
                                                                                 id="inputVehicleBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -6444,7 +6590,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -6453,7 +6600,8 @@
                                                                                 type="number"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputVehicleNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -6461,7 +6609,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputVehicleNowTimePrice"
                                                                                 id="inputVehicleNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -6479,14 +6627,15 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                 <label for="inputVehiclePortion">
                                                                     سهم از ملک(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <input type="number" name="inputVehiclePortion"
                                                                        id="inputVehiclePortion" class="form-control"
-                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                       min="0" max="6"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6541,7 +6690,7 @@
                                                                                 <span class="text-danger">
                                              </span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputInvestDate"
                                                                                     id="inputInvestDate"
                                                                                     style="font-family: tahoma;">
@@ -6560,7 +6709,7 @@
                                                                                 نحوه مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputInvestOwnershipType"
                                                                                     id="inputInvestOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -6582,7 +6731,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -6592,7 +6742,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -6600,7 +6751,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputInvestBuyTimePrice"
                                                                                             id="inputInvestBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "HZ") {
@@ -6647,7 +6798,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -6657,7 +6809,8 @@
                                                                                             type="number"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputInvestNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -6665,7 +6818,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputInvestNowTimePrice"
                                                                                             id="inputInvestNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "HZ") {
@@ -6720,7 +6873,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputInvestDate"
                                                                         id="inputInvestDate"
                                                                         style="font-family: tahoma;">
@@ -6739,7 +6892,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputInvestOwnershipType"
                                                                         id="inputInvestOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -6759,7 +6912,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -6768,7 +6922,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -6776,7 +6931,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 id="inputInvestBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -6804,7 +6959,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -6813,7 +6969,8 @@
                                                                                 type="number"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputInvestNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -6821,7 +6978,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputInvestNowTimePrice"
                                                                                 id="inputInvestNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -6899,7 +7056,8 @@
                                                                                             type="number"
                                                                                             name="inputBankAccountPrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputBankAccountPrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -6910,7 +7068,8 @@
                                                                                             type="number"
                                                                                             name="RealEstateBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputBankAccountPrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -6918,7 +7077,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputBankAccountPrice"
                                                                                             id="inputBankAccountPrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['BankAccountPrice'])['unit']) == "HZ") {
@@ -6959,7 +7118,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputBankAccountCountryId"
                                                                                     id="inputBankAccountCountryId">
-                                                                                <option value="">-- انتخاب کنید --
+                                                                                <option value="0">-- انتخاب کنید --
                                                                                 </option>
                                                                                 <?php foreach ($countries as $row) { ?>
                                                                                     <option
@@ -6993,7 +7152,8 @@
                                                                                 type="number"
                                                                                 name="inputBankAccountPrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputBankAccountPrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -7002,7 +7162,8 @@
                                                                                 type="number"
                                                                                 name="RealEstateBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputBankAccountPrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -7010,7 +7171,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputBankAccountPrice"
                                                                                 id="inputBankAccountPrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -7036,7 +7197,7 @@
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputBankAccountCountryId"
                                                                         id="inputBankAccountCountryId">
-                                                                    <option value="">-- انتخاب کنید --</option>
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                     <?php foreach ($countries as $item) { ?>
                                                                         <option
                                                                             <?php if ($item['ISO'] == 'IR') echo "selected"; ?>
@@ -7100,7 +7261,8 @@
                                                                                     type="number"
                                                                                     name="inputCreditPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputCreditPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -7110,7 +7272,8 @@
                                                                                     type="number"
                                                                                     name="inputCreditPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputCreditPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -7118,7 +7281,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputCreditPrice"
                                                                                     id="inputCreditPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "HZ") {
@@ -7165,7 +7328,8 @@
                                                                                     type="number"
                                                                                     name="inputDebotrPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputDebotrPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -7175,7 +7339,8 @@
                                                                                     type="number"
                                                                                     name="inputDebotrPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputDebotrPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -7183,7 +7348,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputDebotrPrice"
                                                                                     id="inputDebotrPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "HZ") {
@@ -7262,7 +7427,7 @@
                                                                             <label for="inputGoodsType">
                                                                                 نوع کالا
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputGoodsType"
                                                                                     id="inputGoodsType">
                                                                                 <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
@@ -7277,7 +7442,7 @@
                                                                                 سال شروع مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputGoodsOwnershipStartDate"
                                                                                     id="inputGoodsOwnershipStartDate"
                                                                                     style="font-family: tahoma;">
@@ -7314,7 +7479,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsBuyTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -7324,7 +7490,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsBuyTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -7332,7 +7499,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             id="inputGoodsBuyTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "HZ") {
@@ -7379,7 +7546,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsNowTimePrice ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -7389,7 +7557,8 @@
                                                                                             type="number"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputGoodsNowTimePrice">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -7397,7 +7566,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             id="inputGoodsNowTimePrice">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "HZ") {
@@ -7444,7 +7613,8 @@
                                                                                     name="inputGoodsOwnershipPercent"
                                                                                     id="inputGoodsOwnershipPercent"
                                                                                     class="form-control"
-                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                    min="0" max="6"/>
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateOwnershipType">
@@ -7452,7 +7622,7 @@
                                                                                 <span class="text-danger">
                                              </span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputRealEstateOwnershipType"
                                                                                     id="inputRealEstateOwnershipType">
                                                                                 <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -7472,7 +7642,7 @@
                                                                 <label for="inputGoodsType">
                                                                     نوع کالا
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputGoodsType"
                                                                         id="inputGoodsType">
                                                                     <?php foreach ($EnumResumeProfile['GoodsType'] as $key => $value) { ?>
@@ -7487,7 +7657,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputGoodsOwnershipStartDate"
                                                                         id="inputGoodsOwnershipStartDate"
                                                                         style="font-family: tahoma;">
@@ -7521,7 +7691,8 @@
                                                                                 type="number"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsBuyTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -7530,7 +7701,8 @@
                                                                                 type="number"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsBuyTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -7538,7 +7710,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputGoodsBuyTimePrice"
                                                                                 id="inputGoodsBuyTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -7566,7 +7738,8 @@
                                                                                 type="number"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsNowTimePrice ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -7575,15 +7748,16 @@
                                                                                 type="number"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputGoodsNowTimePrice">هزار
                                                                             تومان</label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-4 col-xs-4 form-group RightFloat price-unit">
-                                                                        <select class="form-control form-control-lg state-select"
+                                                                        <select class="form-control form-control-lg"
                                                                                 name="inputGoodsNowTimePrice"
                                                                                 id="inputGoodsNowTimePrice">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -7609,7 +7783,8 @@
                                                                 <input type="number" name="inputGoodsOwnershipPercent"
                                                                        id="inputGoodsOwnershipPercent"
                                                                        class="form-control"
-                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                       placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                       min="0" max="6"/>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateOwnershipType">
@@ -7617,7 +7792,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputRealEstateOwnershipType"
                                                                         id="inputRealEstateOwnershipType">
                                                                     <?php foreach ($EnumResumeProfile['OwnershipType'] as $key => $value) { ?>
@@ -7665,7 +7840,7 @@
                                                                         <span class="remove-form fa fa-times"></span>
                                                                         <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputFeeType">عنوان :</label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputFeeType"
                                                                                     id="inputFeeType">
                                                                                 <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
@@ -7680,7 +7855,7 @@
                                                                                 سال شروع مالکیت
                                                                                 <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg city-select"
+                                                                            <select class="form-control form-control-lg"
                                                                                     name="inputFeeOwnershipStartDate"
                                                                                     id="inputFeeOwnershipStartDate"
                                                                                     style="font-family: tahoma;">
@@ -7718,7 +7893,8 @@
                                                                                             type="number"
                                                                                             name="inputFeeAverageInYear"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputFeeAverageInYear ">صد
                                                                                         تومان</label>
                                                                                 </div>
@@ -7728,7 +7904,8 @@
                                                                                             type="number"
                                                                                             name="inputFeeAverageInYear"
                                                                                             class="form-control"
-                                                                                            placeholder=""/>
+                                                                                            placeholder=""
+                                                                                            min="0"/>
                                                                                     <label for="inputFeeAverageInYear">هزار
                                                                                         تومان</label>
                                                                                 </div>
@@ -7736,7 +7913,7 @@
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputFeeAverageInYear"
                                                                                             id="inputFeeAverageInYear">
-                                                                                        <option>انتخاب کنید ---</option>
+                                                                                        <option value="0">انتخاب کنید ---</option>
                                                                                         <option
                                                                                             <?php
                                                                                             if ((splitPrice($item['FeeAverageInYear'])['unit']) == "HZ") {
@@ -7781,7 +7958,7 @@
                                                                 <label for="inputFeeType">
                                                                     عنوان :
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputFeeType"
                                                                         id="inputFeeType">
                                                                     <?php foreach ($EnumResumeProfile['FeeType'] as $key => $value) { ?>
@@ -7796,7 +7973,7 @@
                                                                     <span class="text-danger">
                                              </span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg city-select"
+                                                                <select class="form-control form-control-lg"
                                                                         name="inputFeeOwnershipStartDate"
                                                                         id="inputFeeOwnershipStartDate"
                                                                         style="font-family: tahoma;">
@@ -7830,7 +8007,8 @@
                                                                                 type="number"
                                                                                 name="inputFeeAverageInYear"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputFeeAverageInYear ">صد
                                                                             تومان</label>
                                                                     </div>
@@ -7839,7 +8017,8 @@
                                                                                 type="number"
                                                                                 name="inputFeeAverageInYear"
                                                                                 class="form-control"
-                                                                                placeholder=""/>
+                                                                                placeholder=""
+                                                                                min="0"/>
                                                                         <label for="inputFeeAverageInYear">هزار
                                                                             تومان</label>
                                                                     </div>
@@ -7847,7 +8026,7 @@
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputFeeAverageInYear"
                                                                                 id="inputFeeAverageInYear">
-                                                                            <option>انتخاب کنید ---</option>
+                                                                            <option value="0">انتخاب کنید ---</option>
                                                                             <option data-left-side="HZ"
                                                                                     data-right-side="SD" value="HZ">هزار
                                                                                 تومان
@@ -7917,7 +8096,8 @@
                                                                                     type="number"
                                                                                     name="inputAverageMonthIncome"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputAverageMonthIncome ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -7927,7 +8107,8 @@
                                                                                     type="number"
                                                                                     name="inputAverageMonthIncome"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputAverageMonthIncome">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -7935,7 +8116,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputAverageMonthIncome"
                                                                                     id="inputAverageMonthIncome">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($income['AverageMonthIncome'])['unit']) == "HZ") {
@@ -8030,7 +8211,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionPlacePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0" max="6"/>
                                                                             <label for="inputElectionPlacePrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -8040,7 +8222,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionPlacePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0" max="6"/>
                                                                             <label for="inputElectionPlacePrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -8048,7 +8231,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionPlacePrice"
                                                                                     id="inputElectionPlacePrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "HZ") {
@@ -8096,7 +8279,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionFlockPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionFlockPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -8106,7 +8290,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionFlockPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionFlockPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -8114,7 +8299,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionFlockPrice"
                                                                                     id="inputElectionFlockPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "HZ") {
@@ -8161,7 +8346,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAdvertisePrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -8171,7 +8357,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAdvertisePrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -8179,7 +8366,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     id="inputElectionAdvertisePrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "HZ") {
@@ -8227,7 +8414,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionStaffPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionStaffPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -8237,7 +8425,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionStaffPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionStaffPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -8245,7 +8434,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionStaffPrice"
                                                                                     id="inputElectionStaffPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "HZ") {
@@ -8292,7 +8481,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAllPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAllPrice ">صد
                                                                                 تومان</label>
                                                                         </div>
@@ -8302,7 +8492,8 @@
                                                                                     type="number"
                                                                                     name="inputElectionAllPrice"
                                                                                     class="form-control"
-                                                                                    placeholder=""/>
+                                                                                    placeholder=""
+                                                                                    min="0"/>
                                                                             <label for="inputElectionAllPrice">هزار
                                                                                 تومان</label>
                                                                         </div>
@@ -8310,7 +8501,7 @@
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputElectionAllPrice"
                                                                                     id="inputElectionAllPrice">
-                                                                                <option>انتخاب کنید ---</option>
+                                                                                <option value="0">انتخاب کنید ---</option>
                                                                                 <option
                                                                                     <?php
                                                                                     if ((splitPrice($election['ElectionAllPrice'])['unit']) == "HZ") {

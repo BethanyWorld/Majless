@@ -40,7 +40,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <script src="<?= $_DIR; ?>js/iziToast.min.js"></script>
     <script src='<?= $_DIR; ?>js/jquery-2.2.4.min.js?ver=2.2.4'></script>
     <script src='<?= $_DIR; ?>js/jquery.mmenu.min.all.js?ver=1.0'></script>
-    <script src='<?= $_DIR; ?>js/jquery.parallax.js?ver=1.0'></script>
+    <script src='<?= $_DIR; ?>js/jquery.parallax.min.js?ver=1.0'></script>
     <script src="<?php echo $_DIR; ?>js/jquery.mask.min.js"></script>
     <script src="<?php echo $_DIR; ?>js/helper.min.js"></script>
     <script type="text/javascript"> var base_url = "<?php echo base_url(); ?>";</script>
