@@ -449,7 +449,6 @@
         transition: all 0.5s ease;
     }
 </style>
-
 <div class="col-md-3 col-xs-12 pull-right">
     <div class="col-xs-12 padding-0 visible-xs visible-sm">
         <div class="col-xs-12 padding-0 MobileStep">
@@ -490,7 +489,6 @@
                     </a>
                 </li>
             </ul>
-
         </div>
     </div>
     <div class="col-md-12 padding-0 visible-lg visible-md">
@@ -509,7 +507,6 @@
                         </div>
                     </a>
                 </li>
-
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/academicBackground'); ?>">
                         <i class="zmdi RightpanelIcon">
@@ -523,7 +520,6 @@
                         </div>
                     </a>
                 </li>
-
                 <?php if($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male'){ ?>
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/militaryStatus'); ?>">
@@ -538,7 +534,6 @@
                     </div>
                 </li>
                 <?php } ?>
-
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/jobHistory'); ?>">
                         <i class="zmdi RightpanelIcon">
@@ -552,7 +547,6 @@
                         </div>
                     </a>
                 </li>
-
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "socialCulturalBackground") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/socialCulturalBackground'); ?>">
                             <i class="zmdi RightpanelIcon">
@@ -566,7 +560,6 @@
                             </div>
                         </a>
                 </li>
-
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "politicBackground") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/politicBackground'); ?>">
                     <i class="zmdi RightpanelIcon">
@@ -579,7 +572,6 @@
                         </div>
                     </div>
                 </li>
-
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "scienceBackground") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/scienceBackground'); ?>">
                         <i class="zmdi RightpanelIcon">
@@ -619,20 +611,21 @@
                         </div>
                     </a>
                 </li>
-                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "active"; ?>">
-                    <a href="<?php echo base_url('Profile/finance'); ?>">
-                        <i class="zmdi RightpanelIcon">
-                            <span class="fa fa-money"></span>
-                        </i>
-                        <div class="RightPanelContent">
-                            <div class="RightPanleTitle">اطلاعات مالی</div>
-                            <div class="RightPanelDescription">
-                                درج خلاصه ای از املاک
+                <?php if($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted'){ ?>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "active"; ?>">
+                        <a href="<?php echo base_url('Profile/finance'); ?>">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-money"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle">اطلاعات مالی</div>
+                                <div class="RightPanelDescription">
+                                    درج خلاصه ای از املاک
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </li>
-
+                        </a>
+                    </li>
+                <?php } ?>
                 <li class="col-md-12 padding-0">
                     <a href="<?php echo base_url('Profile'); ?>">
                         <i class="zmdi RightpanelIcon">

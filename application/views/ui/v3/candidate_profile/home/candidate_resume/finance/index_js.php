@@ -93,8 +93,6 @@
             });
 
         });
-
-
         $(".add-form").click(function () {
             $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().removeClass('hidden').removeClass('unique-form');
             $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
@@ -108,12 +106,12 @@
             $(this).parent().remove();
         });
         $(document).on('change', '[name=inputRealEstateCountryId]', function () {
-            if ($(this).val() !== "118" &&  $(this).val() !== "0"  ) {
+            if ($(this).val() !== "103" &&  $(this).val() !== "0" ) {
                 $('[name="inputRealEstateStateId"]').val(0).attr('readonly', 'readonly');
                 $('[name="inputRealEstateCityId"]').val(0).attr('readonly', 'readonly');
                 $('.MoneyStateDiv').css('pointerEvents', 'none');
             } else{
-                if($(this).val() === "" || $(this).val() === "0" || $(this).val() === "118") {
+                if($(this).val() === "" || $(this).val() === "0" || $(this).val() === "103") {
                     $('[name="inputRealEstateStateId"]').removeAttr('readonly');
                     $('[name="inputRealEstateCityId"]').removeAttr('readonly');
                     $('.MoneyStateDiv').css('pointerEvents', 'auto');
@@ -158,7 +156,6 @@
                 }
             });
         });
-
         $('[name=inputRealEstateCountryId]').change();
         $('.price-unit').change();
     });

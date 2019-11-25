@@ -550,7 +550,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/skills/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdateSkills()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -568,7 +567,6 @@ class Profile extends CI_Controller
         $result = $this->ModelProfile->candidateUpdateSkills($inputs);
         echo json_encode($result);
     }
-
     public function veteran()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -625,7 +623,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/veteran/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function candidateUpdateVeteran()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -635,8 +632,7 @@ class Profile extends CI_Controller
         echo json_encode($result);
     }
 
-    public function finance()
-    {
+    public function finance(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
