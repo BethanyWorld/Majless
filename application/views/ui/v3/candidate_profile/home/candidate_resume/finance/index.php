@@ -99,6 +99,7 @@
                                                                             <label for="inputRealEstateCountryId">کشور</label>
                                                                             <select
                                                                                     data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
+                                                                                    data-state-id="<?php echo $item['RealEstateStateId']; ?>"
                                                                                     data-city-id="<?php echo $item['RealEstateCityId']; ?>"
                                                                                     class="form-control form-control-lg"
                                                                                     name="inputRealEstateCountryId"
@@ -2944,6 +2945,7 @@
                                                                             <label for="inputRealEstateCountryId">کشور</label>
                                                                             <select
                                                                                     data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
+                                                                                    data-state-id="<?php echo $item['RealEstateStateId']; ?>"
                                                                                     data-city-id="<?php echo $item['RealEstateCityId']; ?>"
                                                                                     class="form-control form-control-lg"
                                                                                     name="inputRealEstateCountryId"
@@ -5789,6 +5791,7 @@
                                                                             <label for="inputRealEstateCountryId">کشور</label>
                                                                             <select
                                                                                     data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
+                                                                                    data-state-id="<?php echo $item['RealEstateStateId']; ?>"
                                                                                     data-city-id="<?php echo $item['RealEstateCityId']; ?>"
                                                                                     class="form-control form-control-lg"
                                                                                     name="inputRealEstateCountryId"

@@ -85,6 +85,10 @@
                     toggleLoader();
                     $result = JSON.parse(data);
                     notify($result['content'], $result['type']);
+                },
+                error: function (data) {
+                    toggleLoader();
+                    notify('لطفا تمامی موارد را کامل کنید','red');
                 }
             });
 
@@ -95,7 +99,7 @@
             $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().removeClass('hidden').removeClass('unique-form');
             $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
             setTimeout(function(){
-                // $('[name=inputRealEstateCountryId]').change();
+                $('[name=inputRealEstateCountryId]').change();
                 $('.price-unit').change();
                 updatePrice();
             } , 500);
@@ -155,7 +159,7 @@
             });
         });
 
-        // $('[name=inputRealEstateCountryId]').change();
+        $('[name=inputRealEstateCountryId]').change();
         $('.price-unit').change();
     });
 </script>
