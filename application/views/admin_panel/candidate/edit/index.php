@@ -222,7 +222,7 @@ $_DIR = base_url('assets/empanel/');
                                                     <tr>
                                                         <th class="fit info-department">وضعیت خدمت</th>
                                                         <th class="fit info-educationalAttainment">علت معافیت</th>
-                                                        <th class="fit info-science">توصیحات</th>
+                                                        <th class="fit info-science">توضیحات</th>
                                                         <th class="fit info-studying">تاریخ اتمام خدمت</th>
                                                         <th class="fit info-universityLevelType">ارگان پایان خدمت</th>
                                                         <th class="fit info-universityName">محل پایان خدمت</th>

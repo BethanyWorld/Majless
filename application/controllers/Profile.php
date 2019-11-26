@@ -48,7 +48,6 @@ class Profile extends CI_Controller
         $this->load->view('ui/v3/candidate_profile/home/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     public function getResumeStatus()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');

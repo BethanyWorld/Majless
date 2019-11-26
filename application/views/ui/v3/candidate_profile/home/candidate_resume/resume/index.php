@@ -486,6 +486,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                    name="inputCandidateLandLinePhone"
                                                    class="input-validate validate valid"
                                                    pattern="[0-9]*"
+                                                   maxlength="11"
                                                 <?php setInputValue($userInfo['CandidateLandLinePhone']); ?>
                                                    placeholder="پر کردن این فیلد الزامی می باشد"
                                                    style="font-family: tahoma;">
@@ -499,6 +500,7 @@ $_DIR = base_url('assets/ui/v3/');
                                             </label>
                                             <input id="inputCandidatePhone" type="text"
                                                    pattern="[0-9]*"
+                                                   maxlength="11"
                                                 <?php setInputValue($userInfo['CandidatePhone']); ?>
                                                    name="inputCandidatePhone" class="input-validate validate valid"
                                                    placeholder="پر کردن این فیلد الزامی می باشد"

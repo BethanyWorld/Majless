@@ -88,7 +88,6 @@ class ModelExam extends CI_Model{
         $this->db->order_by('ExamId DESC');
         return $this->db->get()->result_array();
     }
-
     public function getExamsSecondStepByAgentId($agentId){
         $this->db->select('*');
         $this->db->from('exam');
@@ -354,7 +353,6 @@ class ModelExam extends CI_Model{
         $result['data'] = $this->db->get()->result_array();
         return $result;
     }
-
     public function doPresenceCandidateFirstExam($inputs){
         $this->db->trans_start();
         $UserArray = array(
@@ -418,7 +416,6 @@ class ModelExam extends CI_Model{
             return $arr;
         }
     }
-
     public function doPresenceCandidateSecondExam($inputs){
         $this->db->trans_start();
         $UserArray = array(
@@ -482,7 +479,5 @@ class ModelExam extends CI_Model{
             return $arr;
         }
     }
-
-
 }
 ?>

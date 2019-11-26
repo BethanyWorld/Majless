@@ -26,9 +26,6 @@
                                 <div class="hp-join-the-effort tbWow fadeInDown">
                                     <div>
                                         <div class="fw-page-builder-content">
-                                            <h3>
-                                                <span style="color: #ffffff; font-size: 12pt;">همین حالا ثبت نام کنید</span>
-                                            </h3>
                                             <h1><span style="color: #ffffff; font-size: 36pt;">برای ایرانی سربلند مشارکت کنید</span>
                                             </h1>
                                         </div>

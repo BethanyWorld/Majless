@@ -1,6 +1,5 @@
 <script type="text/javascript">
     $(document).ready(function () {
-
         $(document).on('click' , '.preview-exam' , function () {
             $examPlaceTitle = $(this).data('place-title');
             $examPlaceAddress = $(this).data('place-address');
@@ -14,8 +13,6 @@
             $(".time").text($examTime);
             $("#reserveFirstStepExam").attr('data-exam-id', $examId);
         });
-
-
         $(document).on('click' , '#reserveFirstStepExam',function () {
             $examId = $('#reserveFirstStepExam').attr('data-exam-id');
             toggleLoader();
@@ -46,7 +43,9 @@
                                 },
                                 error: function (jqXHR, textStatus, errorThrown) {
                                     toggleLoader();
-                                    notify('مشکلی درخ داده است', 'red');
+                                    setTimeout(function () {
+                                        window.history.back();
+                                    }, 100);
                                 }
                             });
                         }

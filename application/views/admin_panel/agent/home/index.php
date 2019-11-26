@@ -33,7 +33,7 @@
                                 <thead>
                                 <tr>
                                     <th class="fit">#</th>
-                                    <th>نام و نام خانوداگی</th>
+                                    <th>نام و نام خانوادگی</th>
                                     <th class="fit">تلفن</th>
                                     <th class="fit">استان</th>
                                     <th class="fit">ویرایش</th>
