@@ -20,7 +20,7 @@
                 <div class="panel-body">
                     <ul>
                         <li><a href="<?php echo base_url('SignUp?type=candidate') ?>">نامزد انتخاباتی</a></li>
-                        <li><a href="<?php echo base_url('SignUp?type=elite') ?>">بانک نخبگان</a></li>
+<!--                        <li><a href="--><?php //echo base_url('SignUp?type=elite') ?><!--">بانک نخبگان</a></li>-->
                         <li><a href="<?php echo base_url('SignUp?type=sponsor') ?>">حامی</a></li>
                     </ul>
                 </div>
@@ -125,7 +125,8 @@
                                 type="checkbox"
                                 id="inputSignUpTypeEliote"
                                 name="inputSignUpTypeEliote"
-                                class="sign-up-type" value="2"/>
+                                class="sign-up-type" value="2"
+                                checked="checked"/>
                         <label class="label-sign-up-type" for="inputSignUpTypeSponsor">حامی</label>
                         <input
                             <?php if ($signUpType == 'sponsor') echo "checked"; ?>
