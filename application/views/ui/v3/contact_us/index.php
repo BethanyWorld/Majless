@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label>ایتا :</label>
-                            <a target="_blank" href="Eitaa.com/azmaa_net">Eitaa.com/azmaa_net</a>
+                            <a target="_blank" href="https://Eitaa.com/azmaa_net">Eitaa.com/azmaa_net</a>
                         </div>
                         <div class="form-group">
                             <label>بله :</label>
@@ -48,13 +48,13 @@
                         </div>
                         <div class="form-group">
                             <label>سروش :</label>
-                            <a target="_blank" href="sapp.ir/azmaa.net">sapp.ir/azmaa.net</a>
+                            <a target="_blank" href="https://sapp.ir/azmaa.net">sapp.ir/azmaa.net</a>
                         </div>
                         <div class="col-md-12 col-xs-12 social-network-padding-style-div">
                             <ul class="social-network social-circle">
-                                <li><a href="#" class="instagram" title="instagram"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="telegram" title="telegram"><i class="fa fa-telegram"></i></a></li>
+                                <li><a href="http://instagram.com/azmaa_net" class="instagram" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="http://twitter.com/azmaa_net" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="http://t.me/azmaa_net" class="telegram" title="telegram"><i class="fa fa-telegram"></i></a></li>
                             </ul>
                         </div>
                     </div>
