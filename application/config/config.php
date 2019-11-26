@@ -58,7 +58,7 @@ $config['proxy_ips'] = '';
 $config['defaultImage'] = $config['base_url'] . 'assets/ui/v3/images/profile.jpg';
 $config['gifLoader'] = $config['base_url'] . 'assets/ui/v4/images/loader.gif';
 /* عنوان پیش فرض سایت */
-$config['defaultPageTitle'] = 'جنبش ازما - ';
+$config['defaultPageTitle'] = 'جنبش از ما - ';
 /* تعداد سطر های پیش فرض جهت نمایش در پتل ها */
 $config['defaultPageSize'] = 6;
 /* مسیر آپلود فایل های کاربران برای نمایندگی */

@@ -1,20 +1,21 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <!-- #main -->
-<!--<footer id="footer-promo">-->
-<!--    <div class="container">-->
-<!--        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.1s">-->
-<!--            <span aria-hidden="true" class="fa fa-twitter"></span>-->
-<!--        </a>-->
-<!--        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.2s">-->
-<!--            <span aria-hidden="true" class="fa fa-instagram"></span>-->
-<!--        </a>-->
-<!--        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.3s">-->
-<!--            <span aria-hidden="true" class="fa fa-linkedin"></span>-->
-<!--        </a>-->
-<!--        <a target="_blank" href="#" class="tbWow fadeIn" data-wow-delay="0.4s">-->
-<!--            <span aria-hidden="true" class="fa fa-google-plus"></span></a>-->
-<!--    </div>-->
-<!--</footer>-->
+<footer id="footer-promo">
+    <div class="container">
+        <a target="_blank" href="http://twitter.com/azmaa_net" class="tbWow fadeIn" data-wow-delay="0.1s">
+            <span aria-hidden="true" class="fa fa-twitter"></span>
+        </a>
+        <a target="_blank" href="http://instagram.com/azmaa_net" class="tbWow fadeIn" data-wow-delay="0.2s">
+            <span aria-hidden="true" class="fa fa-instagram"></span>
+        </a>
+        <a target="_blank" href="http://t.me/azmaa_net" class="tbWow fadeIn" data-wow-delay="0.3s">
+            <span aria-hidden="true" class="fa fa-telegram"></span>
+        </a>
+        <a target="_blank" href="https://www.aparat.com/azmaa_net" class="tbWow fadeIn" data-wow-delay="0.3s">
+            <span aria-hidden="true" class="fa fa-file-movie-o"></span>
+        </a>
+    </div>
+</footer>
 <footer id="footer-navigation">
     <div class="container">
         <div class="row">

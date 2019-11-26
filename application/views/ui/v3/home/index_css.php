@@ -89,7 +89,9 @@
     }
 
 
-
+    .hp-join-the-team-form input::placeholder{
+        color: #022d6d;
+    }
 
 
 

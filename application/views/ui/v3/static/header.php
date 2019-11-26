@@ -27,6 +27,10 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <meta http-equiv="Expires" content="0">
     <link rel="shortcut icon" href="<?= $_DIR; ?>images/fav16.png">
     <link rel="apple-touch-icon" href="<?= $_DIR; ?>images/fav16.png">
+    <link rel="icon" href="<?= $_DIR; ?>images/fav32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>images/fav152.png" type="image/png" sizes="152x152">
+    <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>images/fav120.png" type="image/png" sizes="120x120">
+    <link rel="icon" href="<?= $_DIR; ?>images/fav96.png" sizes="96x96" type="image/png">
     <link rel='stylesheet' id='style-css' href='<?= $_DIR; ?>css/style.css?ver=1.0' type='text/css' media='all'/>
     <link rel='stylesheet' id='bootstrap-css' href='<?= $_DIR; ?>css/bootstrap.min.css?ver=3.3.7' type='text/css' media='all'/>
     <link rel='stylesheet' id='fontawesome-css' href='<?= $_DIR; ?>css/font-awesome-css.min.css?ver=1.0' type='text/css' media='all'/>
@@ -80,18 +84,6 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                     <div class="col-xs-12 col-sm-6">
                         <div class="menu-top-menu-container">
                             <ul id="menu-top-menu" class="top-nav-menu">
-                                <!--                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">-->
-                                <!--                                        <a href="-->
-                                <?php //echo base_url('SignUp?type=candidate'); ?><!--">ثبت نام</a>-->
-                                <!--                                    </li>-->
-                                <!--                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44">-->
-                                <!--                                        <a href="-->
-                                <?php //echo base_url('SignUp?type=sponsor'); ?><!--">حامیان</a>-->
-                                <!--                                    </li>-->
-                                <!--                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41">-->
-                                <!--                                        <a href="-->
-                                <?php //echo base_url('Content'); ?><!--">اخبار و مقالات</a>-->
-                                <!--                                    </li>-->
                                 <li id="menu-item-840"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-840">
                                     <a href="tel:09029026934">پشتیبانی:09029026934</a>
@@ -122,16 +114,16 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
             <div class="container">
                 <h1 class="site-title" id="main-logo">
                     <a id="main-logo-link" href="<?php echo base_url(); ?>" rel="home">
-                        <img src="<?= $_DIR; ?>images/campaign_logo_color.png"
-                             style=" position: relative;width: 220px;"
-                             alt="جنبش ازما">
+                        <img src="<?= $_DIR; ?>images/main-logo.png"
+                             style="position: relative;width: 95px;top: 10px;"
+                             alt="جنبش از ما">
                     </a>
                 </h1>
                 <nav id="primary-navigation" class="site-navigation primary-navigation rtl">
                     <div class="menu-main-menu-container">
                         <ul id="menu-main-menu" class="nav-menu">
                             <li class="current-menu-item"><a href="<?php echo base_url() ?>">خانه</a></li>
-                            <li><a href="<?php echo base_url('State') ?>">استان ها</a></li>
+                            <li><a href="<?php echo base_url('State') ?>">نامزدهای مجلس یازدهم</a></li>
                             <li class="hidden"><a href="<?php echo base_url('Content') ?>">محتوا</a>
                                 <?php /*<ul>
                                     <?php foreach (array_reverse($categories) as $item){ ?>
@@ -152,38 +144,24 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                 </ul>
                             </li>
                             <li>
-                                <a href="<?php echo base_url('AboutUs/intro') ?>">درباره جنبش</a>
+                                <a href="<?php echo base_url('AboutUs/intro') ?>">آشنایی با جنبش از ما</a>
                                 <ul>
-                                    <li><a href="<?php echo base_url('AboutUs/candidatecriteriacompetencies') ?>">شایستگی
-                                            های نماینده مجلس</a>
-                                    </li>
                                     <li><a href="<?php echo base_url('AboutUs/intro') ?>">معرفی</a></li>
                                     <li><a href="<?php echo base_url('AboutUs/prism') ?>">بیانیه ارزش</a></li>
-                                    <li><a href="<?php echo base_url('AboutUs/measurement_process') ?>">فرآیند سنجش</a>
-                                    </li>
-                                    <li><a href="<?php echo base_url('AboutUs/candidate_commitment_letter') ?>">تعهدنامه
-                                            نامزدها</a>
-                                    </li>
-                                    <li><a href="<?php echo base_url('AboutUs/support') ?>">حامیان</a></li>
-                                    <li><a href="<?php echo base_url('AboutUs/financial_support') ?>">حمایت مالی</a>
-                                    </li>
-                                    <li><a href="<?php echo base_url('AboutUs/testimonials') ?>">نظرات چهره های فرهنگی
-                                            سیاسی</a>
-                                    </li>
+                                    <li><a href="<?php echo base_url('AboutUs/measurement_process') ?>">فرآیند سنجش نامزدها</a></li>
+                                    <li><a href="<?php echo base_url('AboutUs/candidatecriteriacompetencies') ?>">شایستگی های نماینده مجلس</a></li>
+                                    <li><a href="<?php echo base_url('AboutUs/candidate_commitment_letter') ?>">تعهدنامه نامزدها</a></li>
+                                    <li><a href="<?php echo base_url('AboutUs/support') ?>">حامبان و همراهان</a></li>
+                                    <li><a href="<?php echo base_url('AboutUs/financial_support') ?>">حمایت مالی از ما</a></li>
+<!--                                    <li><a href="--><?php //echo base_url('AboutUs/testimonials') ?><!--">نظرات چهره های فرهنگی سیاسی</a></li>-->
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">تماس با ما</a>
-                                <ul>
-                                    <li><a href="<?php echo base_url('ContactUs?type=contact') ?>">راه های ارتباطی</a>
-                                    </li>
-                                    <li><a href="<?php echo base_url('ContactUs?type=report_abuse') ?>">گزارش مردمی</a>
-                                    </li>
-                                </ul>
+                                <a href="<?php echo base_url('ContactUs?type=contact') ?>">تماس با ما</a>
                             </li>
                             <?php if (!$userIsLogged) { ?>
                                 <li>
-                                    <a href="javascript:void(0)">ثبت نام</a>
+                                    <a href="<?php echo base_url('SignUp?type=candidate') ?>">ثبت نام</a>
                                     <ul>
                                         <li><a href="<?php echo base_url('SignUp?type=candidate') ?>">نامزد
                                                 انتخاباتی</a>
@@ -192,7 +170,12 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                         <li><a href="<?php echo base_url('SignUp?type=sponsor') ?>">حامی</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?php echo base_url('Login'); ?>">ورود</a></li>
+                                <li><a  style="
+                                 text-align: center;
+                                 font-size: 14px;
+                                 background-color: #D10B20;
+                                 color: #fff;
+                                 border-radius: 0;" href="<?php echo base_url('Login'); ?>">ورود</a></li>
                             <?php } else { ?>
                                 <li>
                                     <a style="

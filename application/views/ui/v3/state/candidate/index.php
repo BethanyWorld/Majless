@@ -8,7 +8,7 @@
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">جستجو بر اساس حوزه انتخاباتی</h3>
+                <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
             </div>
             <div class="panel-body">
                 <ul class="list-group" style="padding: 0;">

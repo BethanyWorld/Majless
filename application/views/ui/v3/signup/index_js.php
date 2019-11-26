@@ -45,7 +45,6 @@
             $inputConstituencyProvince = $.trim($("#inputConstituencyProvince").val());
             $inputConstituencyProvincePart = $.trim($("#inputConstituencyProvincePart").val());
 
-
             $inputSignUpType = [];
             $(".sign-up-type:checked").each(function () {
                 $inputSignUpType.push($(this).val());
@@ -55,8 +54,6 @@
             $inputSignUpPhone = toEnglishDigits($inputSignUpPhone);
             $inputSignUpNationalCode = toEnglishDigits($inputSignUpNationalCode);
             $inputCaptcha = toEnglishDigits($inputCaptcha);
-
-
 
             if (!is_valid_length_phone($inputSignUpPhone, 11)) {
                 notify("تعداد کاراکتر تلفن همراه نامعتبر است", "red");
@@ -69,7 +66,6 @@
                 toggleLoader();
                 return;
             }
-
 
             /*Start Validation ------------------------------*/
             if (!is_valid_length($inputSignUpFirstName, 80)) {
@@ -151,15 +147,16 @@
                                                 'messageBody': $result['messageBody']
                                             },
                                             success: function (data) {
-                                                // setTimeout(function () {
-                                                //     location.href = base_url + 'Login';
-                                                // }, 500);
-                                                $('.Patron').show();
+                                                 setTimeout(function () {
+                                                    location.href = base_url + 'Login';
+                                                 }, 500);
                                                 toggleLoader();
                                             },
                                             error: function (jqXHR, textStatus, errorThrown) {
+                                                setTimeout(function () {
+                                                    location.href = base_url + 'Login';
+                                                }, 500);
                                                 toggleLoader();
-                                                notify('مشکلی درخ داده است', 'red');
                                             }
                                         });
                                     }
@@ -181,22 +178,6 @@
                 });
             }
         });
-
-        // if($('#inputSignUpTypeSponsor').is(":checked")) {
-        //     debugger;
-        //    $('.ttt').show();
-        // }
-        // else{
-        //     $('.ttt').hide();
-        // }
-
-        //
-        // $('#inputSignUpTypeSponsor').change(function() {
-        //     debugger;
-        //    $tttt =  $(this).is(':checked');
-        // });
-
-
         cutSelectOptionLongText();
         $('#inputConstituencyProvince').change(function () {
             toggleLoader();
@@ -223,6 +204,14 @@
                     toggleLoader();
                 }
             });
+        });
+        $(".recaptcha").click(function () {
+            $(".recaptcha").addClass('fa-spin');
+            $src = $(".captcha_img").attr('src');
+            $(".captcha_img").attr('src', $src + '?' + Date.now());
+            setTimeout(function () {
+                $(".recaptcha").removeClass('fa-spin');
+            }, 2000);
         });
     });
 </script>

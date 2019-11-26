@@ -65,8 +65,9 @@
                                                 } , 1500);
                                             },
                                             error: function (jqXHR, textStatus, errorThrown) {
-                                                toggleLoader();
-                                                notify('مشکلی درخ داده است', 'red');
+                                                setTimeout(function(){
+                                                    window.location.href = base_url + 'Login';
+                                                } , 100);
                                             }
                                         });
                                     }
@@ -84,6 +85,14 @@
                     }
                 });
             }
+        });
+        $(".recaptcha").click(function () {
+            $(".recaptcha").addClass('fa-spin');
+            $src = $(".captcha_img").attr('src');
+            $(".captcha_img").attr('src', $src + '?' + Date.now());
+            setTimeout(function () {
+                $(".recaptcha").removeClass('fa-spin');
+            }, 2000);
         });
 
     });

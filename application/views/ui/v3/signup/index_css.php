@@ -41,5 +41,8 @@
 .Patron h3{
     color: #fff;
 }
+    .modal {
+        z-index: 1000000;
+    }
 
 </style>

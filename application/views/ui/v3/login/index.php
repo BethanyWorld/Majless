@@ -43,11 +43,12 @@
                        style="font-family: tahoma;"/>
             </div>
             <div class="form-group">
-                <div class="pull-right">
+                <div class="">
                     <label>
                         <span class="required"></span>
                         کد امنیتی
                     </label>
+                    <i class="fa fa-refresh recaptcha"></i>
                     <img class="captcha_img"
                          style="margin: 10px 5px;border: 2px solid #ccc;"
                          src="<?php echo base_url('GetCaptcha'); ?>"/>
@@ -63,14 +64,15 @@
                         ورود
                     </button>
                 </div>
-                <div class="row col-xs-12 col-md-7 pull-right">
-                    <a class="d-i-b pull-right" href="<?php echo base_url('ResetPassword') ?>">
+                <div class="gap"></div>
+                <div class="row col-xs-12  pull-right">
+                    <a class="d-i-b pull-right  btn btn btn-default" href="<?php echo base_url('ResetPassword') ?>">
                         <strong style="line-height: 44px;">
-                            فراموشی رمز عبور
+                           رمز عبور را فراموش کرده ام
                         </strong>
                     </a>
-                    /
-                    <a class="d-i-b" href="<?php echo base_url('SignUp') ?>">
+                    &nbsp;
+                    <a class="d-i-b  btn btn btn-default" href="<?php echo base_url('SignUp') ?>">
                         <strong style="line-height: 44px;">
                             ثبت نام کنید
                         </strong>

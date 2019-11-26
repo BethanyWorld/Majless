@@ -119,13 +119,13 @@
                                 id="inputSignUpTypeCandidate"
                                 name="inputSignUpTypeCandidate"
                                 class="sign-up-type" value="1"/>
-                        <label class="label-sign-up-type" for="inputSignUpTypeEliote">بانک نخبگان</label>
+                        <label class="label-sign-up-type hidden" for="inputSignUpTypeEliote">بانک نخبگان</label>
                         <input
                             <?php if ($signUpType == 'elite') echo "checked"; ?>
                                 type="checkbox"
                                 id="inputSignUpTypeEliote"
                                 name="inputSignUpTypeEliote"
-                                class="sign-up-type" value="2"
+                                class="sign-up-type hidden" value="2"
                                 checked="checked"/>
                         <label class="label-sign-up-type" for="inputSignUpTypeSponsor">حامی</label>
                         <input
@@ -143,14 +143,14 @@
                         <span class="required"></span>
                         کد امنیتی
                     </label>
+                    <i class="fa fa-refresh recaptcha"></i>
                     <img class="captcha_img"
                          style="margin: 10px 5px;border: 2px solid #ccc;"
                          src="<?php echo base_url('GetCaptcha'); ?>"/>
                     <input type="text"
                            style="position: relative;top:15px;    width:calc(100% - 175px);float: left;font-family: tahoma;"
                            name="inputCaptcha" id="inputCaptcha" class="form-control"
-                           placeholder="کد امنیتی"
-                    >
+                           placeholder="کد امنیتی">
                 </div>
             </div>
             <div class="form-group">
@@ -159,10 +159,11 @@
                         ثبت نام
                     </button>
                 </div>
-                <div class="col-xs-12 col-md-6 padding-0">
-                    <a class="d-i-b" href="<?php echo base_url('Login') ?>">
+                <div class="gap"></div>
+                <div class="col-xs-12 padding-0">
+                    <a class="d-i-b btn btn btn-default" href="<?php echo base_url('Login') ?>">
                         <strong style="line-height: 44px;">
-                            ورود به صفحه کاربری
+                           قبلا ثبت نام کرده اید؟ وارد شوید
                         </strong>
                     </a>
                 </div>

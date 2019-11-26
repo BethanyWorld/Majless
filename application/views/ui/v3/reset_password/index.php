@@ -23,22 +23,22 @@
         <input type="hidden" id="inputCSRF" name="inputCSRF" value="<?= $CSRF; ?>"/>
         <div class="col-xs-12 col-md-6 col-md-offset-3">
             <div class="form-group">
-                <div class="col-xs-12  pull-right" style="padding-right: 0;">
+                <div class="col-xs-12 pull-right" style="padding-right: 0;">
                     <label>
                         <span class="required"></span>
                         تلفن همراه
                     </label>
-                    <input
-                            style="font-family: tahoma;"
+                    <input style="font-family: tahoma;"
                             class="form-control" type="text" id="inputPhone" name="inputPhone" autofocus/>
                 </div>
             </div>
-            <div class="row col-xs-12 form-group">
-                <div class="pull-right">
+            <div class="col-xs-12 form-group">
+                <div class="">
                     <label>
                         <span class="required"></span>
                         کد امنیتی
                     </label>
+                    <i class="fa fa-refresh recaptcha"></i>
                     <img class="captcha_img"
                          style="margin: 10px 5px;border: 2px solid #ccc;"
                          src="<?php echo base_url('GetCaptcha'); ?>"/>
@@ -54,14 +54,14 @@
                         بازیابی رمز عبور
                     </button>
                 </div>
-                <div class="row col-xs-12 col-md-6 pull-right">
-                    <a class="d-i-b" href="<?php echo base_url('SignUp') ?>">
+                <div class="gap"></div>
+                <div class="row col-xs-12 pull-right">
+                    <a class="d-i-b btn btn-default" href="<?php echo base_url('SignUp') ?>">
                         <strong style="line-height: 44px;">
                             ثبت نام کنید
                         </strong>
                     </a>
-                    /
-                    <a class="d-i-b" href="<?php echo base_url('Login') ?>">
+                    <a class="d-i-b btn btn-default" href="<?php echo base_url('Login') ?>">
                         <strong style="line-height: 44px;">
                             وارد شوید
                         </strong>

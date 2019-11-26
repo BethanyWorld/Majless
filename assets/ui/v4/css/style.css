@@ -796,8 +796,7 @@ button.btn-submit{
 	direction: rtl;
 	padding: 25px 0;
 	background: #fff;
-	min-height: 55vh;
-	direction: rtl;
+	min-height: 65vh;
 	text-align: justify;
 }
 .header-bg {
@@ -2409,6 +2408,11 @@ span + .edit-link:before {
 
 /* Ensure that there is no gap between the header and
 	 the admin bar for WordPress versions before 3.8. */
+.gap{
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+}
 #wpadminbar {
 	min-height: 32px;
 }
@@ -2426,7 +2430,7 @@ span + .edit-link:before {
 }
 
 .header-main {
-	min-height: 48px;
+	min-height: 100px;
 	padding: 0 10px;
 }
 

@@ -764,9 +764,14 @@ input.form-control, textarea.form-control {
 }
 
 #main-logo {
-	transition: all 200ms ease-in-out;	
+	transition: all 200ms ease-in-out;
 	position: relative;
 	z-index: 1000;
+	transition: all 200ms ease-in-out;
+	position: relative;
+	z-index: 1000;
+	float: right;
+	margin-left: 40px;
 }
 
 @media screen and (min-width: 992px) {
@@ -920,6 +925,11 @@ input.form-control, textarea.form-control {
 
 	#mobile-menu li .fa::before {
 		display: none;
+	}
+
+	#main-logo {
+		float: left;
+		margin-left: 0;
 	}
 }
 
