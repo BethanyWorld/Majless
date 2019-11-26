@@ -94,7 +94,7 @@
 
         });
         $(".add-form").click(function () {
-            $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().removeClass('hidden').removeClass('unique-form');
+            $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().attr('id' , UUID()).removeClass('hidden').removeClass('unique-form');
             $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
             setTimeout(function(){
                 $('[name=inputRealEstateCountryId]').change();
@@ -106,15 +106,19 @@
             $(this).parent().remove();
         });
         $(document).on('change', '[name=inputRealEstateCountryId]', function () {
+            debugger;
+            $parentId = $(this).eq(0).parents('div.form').eq(0).attr('id');
+            $parentDom = "#" + $parentId + " ";
+
             if ($(this).val() !== "103" &&  $(this).val() !== "0" ) {
-                $('[name="inputRealEstateStateId"]').val(0).attr('readonly', 'readonly');
-                $('[name="inputRealEstateCityId"]').val(0).attr('readonly', 'readonly');
-                $('.MoneyStateDiv').css('pointerEvents', 'none');
+                $($parentDom + '[name="inputRealEstateStateId"]').val(0).attr('readonly', 'readonly');
+                $($parentDom + '[name="inputRealEstateCityId"]').val(0).attr('readonly', 'readonly');
+                $($parentDom + '.MoneyStateDiv').css('pointerEvents', 'none');
             } else{
                 if($(this).val() === "" || $(this).val() === "0" || $(this).val() === "103") {
-                    $('[name="inputRealEstateStateId"]').removeAttr('readonly');
-                    $('[name="inputRealEstateCityId"]').removeAttr('readonly');
-                    $('.MoneyStateDiv').css('pointerEvents', 'auto');
+                    $($parentDom + '[name="inputRealEstateStateId"]').removeAttr('readonly');
+                    $($parentDom + '[name="inputRealEstateCityId"]').removeAttr('readonly');
+                    $($parentDom + '.MoneyStateDiv').css('pointerEvents', 'auto');
                 }
             }
         });
