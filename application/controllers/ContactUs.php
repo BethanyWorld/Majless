@@ -6,6 +6,44 @@ class ContactUs extends CI_Controller {
         $this->load->model('ui/ModelCommand');
     }
 	public function index(){
+        /*$query = $this->db->query('select CandidateFirstName,CandidateLastName,CandidateNationalCode, data.national_code__code,data.address__city__state__province_part__province__name,data.address__city__state__province_part__name from candidate INNER JOIN data On candidate.CandidateNationalCode = data.national_code__code');
+        $result = $query->result_array();
+        $index = 0;
+        foreach ($result as $item) {
+            $this->db->select('*');
+            $this->db->from('state');
+            $this->db->where('StateName',$item['address__city__state__province_part__province__name']);
+            $data = $this->db->get()->result_array();
+            $result[$index]['StateId'] = $data[0]['StateId'];
+            $index +=1;
+        }
+
+        $index = 0;
+        foreach ($result as $row) {
+            if(isset($row['StateId'])){
+                $this->db->select('*');
+                $this->db->from('city');
+                $this->db->where('CityStateId',$row['StateId']);
+                $result[$index]['CityId'] = $this->db->get()->result_array()[0]['CityId'];
+            }
+            $index +=1;
+        }
+
+        foreach ($result as $row) {
+            if(isset($row['StateId'])){
+                $array = array(
+
+                );
+                $this->db->select('*');
+                $this->db->from('city');
+                $this->db->where('CityStateId',$row['StateId']);
+                $result[$index]['CityId'] = $this->db->get()->result_array()[0]['CityId'];
+            }
+            $index +=1;
+        }
+
+        var_dump($result);*/
+
 
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
@@ -58,9 +96,5 @@ class ContactUs extends CI_Controller {
             );
             echo json_encode($arr);
         }
-
-
-
     }
-
 }
