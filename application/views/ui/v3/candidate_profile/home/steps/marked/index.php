@@ -11,7 +11,7 @@
 <div class="col-xs-12">
     <p class="alert alert-warning">
         <strong>
-            روزمه شما نمره دهی شد. امتیاز رزومه شما
+            رزومه شما نمره دهی شد. امتیاز رزومه شما
             <label class="label label-info"><?php echo $userInfo['CandidateScore']; ?></label>
             می باشد
         </strong>

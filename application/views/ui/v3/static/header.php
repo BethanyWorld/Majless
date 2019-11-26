@@ -37,6 +37,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <link rel='stylesheet' id='bootstrap-theme-css' href='<?= $_DIR; ?>css/bootstrap-theme.min.css?ver=3.3.7' type='text/css' media='all'/>
     <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>css/jquery.mmenu.all.css?ver=1.0' type='text/css' media='all'/>
     <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/animate.min.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/lightbox.min.css?ver=1.0' type='text/css' media='all'/>
     <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>css/options.css?ver=1.0' type='text/css' media='all'/>
     <link rel='stylesheet' id='campaign_style-css' href='<?= $_DIR; ?>css/theme.css?ver=1.0' type='text/css' media='all'/>
     <link rel='stylesheet' id='slick-css' href='<?= $_DIR; ?>css/slick.css?ver=1.0' type='text/css' media='all'/>
@@ -46,6 +47,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <script src='<?= $_DIR; ?>js/jquery.mmenu.min.all.js?ver=1.0'></script>
     <script src='<?= $_DIR; ?>js/jquery.parallax.min.js?ver=1.0'></script>
     <script src="<?php echo $_DIR; ?>js/jquery.mask.min.js"></script>
+    <script src="<?php echo $_DIR; ?>js/lightbox.min.js"></script>
     <script src="<?php echo $_DIR; ?>js/helper.min.js"></script>
     <script type="text/javascript"> var base_url = "<?php echo base_url(); ?>";</script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -123,7 +125,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                     <div class="menu-main-menu-container">
                         <ul id="menu-main-menu" class="nav-menu">
                             <li class="current-menu-item"><a href="<?php echo base_url() ?>">خانه</a></li>
-                            <li><a href="<?php echo base_url('State') ?>">نامزدهای مجلس یازدهم</a></li>
+                            <li><a href="<?php echo base_url('State') ?>">فهرست نامزدها</a></li>
                             <li class="hidden"><a href="<?php echo base_url('Content') ?>">محتوا</a>
                                 <?php /*<ul>
                                     <?php foreach (array_reverse($categories) as $item){ ?>

@@ -45,7 +45,9 @@
                                 },
                                 error: function (jqXHR, textStatus, errorThrown) {
                                     toggleLoader();
-                                    notify('مشکلی درخ داده است', 'red');
+                                    setTimeout(function () {
+                                        window.history.back();
+                                    }, 100);
                                 }
                             });
                         }

@@ -309,14 +309,14 @@ class ModelProfile extends CI_Model{
         if ($this->db->trans_status() === FALSE) {
             $arr = array(
                 'type' => "red",
-                'content' => "بروزرسانی کتب ها با مشکل مواجه شد",
+                'content' => "بروزرسانی کتب  با مشکل مواجه شد",
                 'success' => false
             );
             return $arr;
         } else {
             $arr = array(
                 'type' => "green",
-                'content' => "بروزرسانی کتب ها با موفقیت انجام شد",
+                'content' => "بروزرسانی کتب  با موفقیت انجام شد",
                 'success' => true
             );
             return $arr;
@@ -539,14 +539,14 @@ class ModelProfile extends CI_Model{
         if ($this->db->trans_status() === FALSE) {
             $arr = array(
                 'type' => "red",
-                'content' => "بروزرسانی اختراع با مشکل مواجه شد",
+                'content' => "بروزرسانی همایش های علمی با مشکل مواجه شد",
                 'success' => false
             );
             return $arr;
         } else {
             $arr = array(
                 'type' => "green",
-                'content' => "بروزرسانی اختراع با موفقیت انجام شد",
+                'content' => "بروزرسانی همایش های علمی با موفقیت انجام شد",
                 'success' => true
             );
             return $arr;

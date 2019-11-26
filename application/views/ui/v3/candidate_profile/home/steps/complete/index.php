@@ -11,7 +11,7 @@
     </p>
     <p class="text-danger text-center">
         <strong>
-            <a target="_blank" class="btn btn-danger" href="http://new.moarefin.ir">تکمیل زرومه</a>
+            <a target="_blank" class="btn btn-danger" href="http://new.moarefin.ir">تکمیل رزومه</a>
         </strong>
     </p>
 </div>
