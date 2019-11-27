@@ -95,7 +95,7 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                             <label for="inputRealEstateCountryId">کشور</label>
                                                                             <select
                                                                                     data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
@@ -136,7 +136,7 @@
                                                                             <label for="inputRealEstateCityId">
                                                                                 شهر
                                                                             </label>
-                                                                            <select class="form-control form-control-lg"
+                                                                            <select class="form-control form-control-lg city-select"
                                                                                     name="inputRealEstateCityId"
                                                                                     id="inputRealEstateCityId">
                                                                                 <option value="0">-- انتخاب کنید --</option>
@@ -574,7 +574,6 @@
                                         </div>
                                     </div>
                                     <!--End Books -->
-
                                     <!--Articles -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -971,7 +970,6 @@
                                         </div>
                                     </div>
                                     <!--End Articles -->
-
                                     <!--Research -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -1329,7 +1327,6 @@
                                         </div>
                                     </div>
                                     <!--End Research -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -1539,7 +1536,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!-- Invention -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -1720,7 +1716,6 @@
                                         </div>
                                     </div>
                                     <!--End Invention -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -2135,7 +2130,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -2377,7 +2371,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -2486,7 +2479,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!-- Conference -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -2944,7 +2936,7 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                             <label for="inputRealEstateCountryId">کشور</label>
                                                                             <select
                                                                                     data-country-id="<?php echo $item['RealEstateCountryId']; ?>"
@@ -5790,7 +5782,7 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                             <label for="inputRealEstateCountryId">کشور</label>
                                                                             <select
                                                                                     data-country-id="<?php echo $item['RealEstateCountryId']; ?>"

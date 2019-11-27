@@ -85,8 +85,10 @@
                     </label>
                     <select class="form-control" type="text" id="inputSubject" name="inputSubject">
                         <option value="">-- انتخاب کنید --</option>
-                        <option value="PeopleReport">گزارش های مردمی</option>
-                        <option value="CS">انتقاد یا پیشنهاد</option>
+                        <option value="PeopleReport">گزارش تخلف</option>
+                        <option value="CS">پیشنهاد برای جنبش</option>
+                        <option value="CS">انتقاد از جنبش</option>
+                        <option value="CS">سوال از جنبش</option>
                         <option value="Other">سایر</option>
                     </select>
                 </div>

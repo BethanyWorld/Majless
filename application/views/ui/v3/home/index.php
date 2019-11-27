@@ -16,7 +16,7 @@
                  style="position: absolute;width: 100%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 1;"></div>
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
-            <div class="container" style=' padding-top: 85px; padding-bottom: 85px; '>
+            <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 135px)'>
                 <div class="row">
                     <div class="fw-row nostretch">
                         <div id="column-5d7930f120b6c"
