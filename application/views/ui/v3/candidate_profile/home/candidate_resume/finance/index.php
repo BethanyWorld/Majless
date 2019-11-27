@@ -379,7 +379,7 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                            <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                 <label for="inputRealEstateCountryId">کشور</label>
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputRealEstateCountryId"
@@ -2950,7 +2950,6 @@
                                                                                 <?php foreach ($countries as $row) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['RealEstateCountryId'], $row['CountryId']); ?>
-                                                                                        <?php if ($row['ISO'] == 'IRN') echo "selected"; ?>
                                                                                             value="<?php echo $row['CountryId']; ?>"><?php echo $row['FaName']; ?></option>
                                                                                 <?php } ?>
                                                                             </select>
@@ -2959,7 +2958,9 @@
                                                                             <label for="inputRealEstateStateId">
                                                                                 استان
                                                                             </label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select
+                                                                                    data-city-id="<?php echo $item['RealEstateCityId']; ?>"
+                                                                                    class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateStateId"
                                                                                     id="inputRealEstateStateId">
                                                                                 <option value="0">-- انتخاب کنید --</option>
@@ -2993,7 +2994,7 @@
                                                                                    id="inputRealEstatePortion"
                                                                                    class="form-control"
                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                   min="0" max="6"/>
+                                                                                   min="1" max="6"/>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateExtent">
@@ -3219,7 +3220,7 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                            <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                 <label for="inputRealEstateCountryId">کشور</label>
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputRealEstateCountryId"
@@ -3414,7 +3415,6 @@
                                         </div>
                                     </div>
                                     <!--End Books -->
-
                                     <!--Articles -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -3811,7 +3811,6 @@
                                         </div>
                                     </div>
                                     <!--End Articles -->
-
                                     <!--Research -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -4077,7 +4076,7 @@
                                                                                 type="number"
                                                                                 name="inputInvestBuyTimePrice"
                                                                                 class="form-control"
-                                                                                placeholder="
+                                                                                placeholder=""
                                                                                 min="0"/>
                                                                         <label for="inputInvestBuyTimePrice">هزار
                                                                             تومان</label>
@@ -4169,7 +4168,6 @@
                                         </div>
                                     </div>
                                     <!--End Research -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -4379,7 +4377,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!-- Invention -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -4560,7 +4557,6 @@
                                         </div>
                                     </div>
                                     <!--End Invention -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -4975,7 +4971,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -5217,7 +5212,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -5326,7 +5320,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!-- Conference -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -5793,12 +5786,11 @@
                                                                                     class="form-control form-control-lg"
                                                                                     name="inputRealEstateCountryId"
                                                                                     id="inputRealEstateCountryId">
-                                                                                <option value=0">-- انتخاب کنید --
+                                                                                <option value="0">-- انتخاب کنید --
                                                                                 </option>
                                                                                 <?php foreach ($countries as $row) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['RealEstateCountryId'], $row['CountryId']); ?>
-                                                                                        <?php if ($row['ISO'] == 'IRN') echo "selected"; ?>
                                                                                             value="<?php echo $row['CountryId']; ?>"><?php echo $row['FaName']; ?></option>
                                                                                 <?php } ?>
                                                                             </select>
@@ -5807,7 +5799,9 @@
                                                                             <label for="inputRealEstateStateId">
                                                                                 استان
                                                                             </label>
-                                                                            <select class="form-control form-control-lg state-select"
+                                                                            <select
+                                                                                    data-city-id="<?php echo $item['RealEstateCityId']; ?>"
+                                                                                    class="form-control form-control-lg state-select"
                                                                                     name="inputRealEstateStateId"
                                                                                     id="inputRealEstateStateId">
                                                                                 <option value="0">-- انتخاب کنید --</option>
@@ -5841,7 +5835,7 @@
                                                                                    id="inputRealEstatePortion"
                                                                                    class="form-control"
                                                                                    placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                   min="0" max="6"/>
+                                                                                   min="1" max="6"/>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateExtent">
@@ -6067,7 +6061,7 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
+                                                            <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                 <label for="inputRealEstateCountryId">کشور</label>
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputRealEstateCountryId"
@@ -6262,7 +6256,6 @@
                                         </div>
                                     </div>
                                     <!--End Books -->
-
                                     <!--Articles -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -6465,6 +6458,7 @@
                                                                             </div>
                                                                         </div>
 
+
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                             <label for="inputVehiclePortion">
                                                                                 سهم از ملک(1 تا 6 دانگ)
@@ -6658,7 +6652,6 @@
                                         </div>
                                     </div>
                                     <!--End Articles -->
-
                                     <!--Research -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -7016,7 +7009,6 @@
                                         </div>
                                     </div>
                                     <!--End Research -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -7226,7 +7218,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!-- Invention -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -7407,7 +7398,6 @@
                                         </div>
                                     </div>
                                     <!--End Invention -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -7822,7 +7812,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -8064,7 +8053,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!--Translate -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -8173,7 +8161,6 @@
                                         </div>
                                     </div>
                                     <!--End Translate -->
-
                                     <!-- Conference -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">

@@ -30,7 +30,6 @@
                 }
             });
         }
-
         // for panel tab
         $(function () {
             var $tabButtonItem = $('#tab-button li'),
@@ -106,24 +105,27 @@
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });
-        // $(document).on('change', '[name=inputRealEstateCountryId]', function () {
-        //     $parentId = $(this).eq(0).parents('div.form').eq(0).attr('id');
-        //     $parentDom = "#" + $parentId + " ";
-        //
-        //     if ($(this).val() !== "103" && $(this).val() !== "0") {
-        //         debugger;
-        //         $($parentDom + '[name="inputRealEstateStateId"]').val(0).attr('readonly', 'readonly');
-        //         $($parentDom + '[name="inputRealEstateCityId"]').val(0).attr('readonly', 'readonly');
-        //         $($parentDom + '.MoneyStateDiv').css('pointerEvents', 'none');
-        //     } else {
-        //         if ($(this).val() === "" || $(this).val() === "0" || $(this).val() === "103") {
-        //             debugger;
-        //             $($parentDom + '[name="inputRealEstateStateId"]').removeAttr('readonly');
-        //             $($parentDom + '[name="inputRealEstateCityId"]').removeAttr('readonly');
-        //             $($parentDom + '.MoneyStateDiv').css('pointerEvents', 'auto');
-        //         }
-        //     }
-        // });
+
+        function updateCountriesReadOnly(){
+            $(".countries").each(function(){
+                $val = $(this).find('select').eq(0).val();
+                if ($val == 103) {
+                    $(this).next('div').css('pointerEvents', 'auto');
+                    $(this).next('div').next('div').css('pointerEvents', 'auto');
+                    $(this).next('div').find('select').val(0).removeAttr('readonly');
+                    $(this).next('div').next('div').find('select').val(0).removeAttr('readonly');
+                }
+                else {
+                    $(this).next('div').css('pointerEvents', 'none');
+                    $(this).next('div').next('div').css('pointerEvents', 'none');
+                    $(this).next('div').find('select').val(0).attr('readonly','readonly');
+                    $(this).next('div').next('div').find('select').val(0).attr('readonly','readonly');
+                }
+            });
+        }
+        $(document).on('change', '[name=inputRealEstateCountryId]', function () {
+            updateCountriesReadOnly();
+        });
         $(document).on('change', '.price-unit', function () {
             $RealEstateBuyTimePrice = $('#RealEstateBuyTimePrice').val();
             $leftSide = $(this).find("select option:selected").data('left-side');
@@ -160,7 +162,7 @@
                             });
                         $citySelect.append(selectInnerHtml);
                     });
-                    $citySelect.find('option').eq(0).attr('selected', 'selected');
+                    $citySelect.find('option').eq(1).attr('selected', 'selected');
                     cutSelectOptionLongText();
                 },
                 error: function (data) {
@@ -169,9 +171,7 @@
                 }
             });
         });
-        $('[name=inputRealEstateCountryId]').change();
         $('.price-unit').change();
-
         $ajaxCalls = [];
         $ajaxCallResults = [];
         $requests = [];
@@ -203,7 +203,6 @@
                 })
             );
         }
-
         $.when.apply(this, $requests).then(function () {
             for ($i = 0; $i < $ajaxCallResults.length; $i++) {
                 for ($j = 0; $j < $UUIDs.length; $j++) {
@@ -213,7 +212,6 @@
                     }
                 }
             }
-            console.log("ajaxs", $ajaxCallResults);
             for ($i = 0; $i < $ajaxCallResults.length; $i++) {
                 $result = $ajaxCallResults[$i];
                 $cityId = $result["cityId"];
@@ -226,6 +224,7 @@
                         "value": 0,
                         "text": '-- انتخاب کنید --'
                     });
+                $citySelect.append(selectInnerHtml);
                 $.each($cities, function (index, item) {
                     var selectInnerHtml = $('<option/>', {
                         "class": "",
