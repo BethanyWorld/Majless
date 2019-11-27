@@ -46,7 +46,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                             <input <?php setInputValue($Self['CandidateVeteranPercent']); ?>
                                                                                     type="number"
                                                                                     name="inputCandidatePercentageOfVeterans"
-                                                                                    style="font-family: tahoma;"/>
+                                                                                    style="font-family: tahoma;"
+                                                                                    min="0"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Liberation', $Self['CandidateVeteranType']); ?>
@@ -62,7 +63,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($Self['CandidateVeteranMonth']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationMonth"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
                                                                                 <label for="inputCandidateStartLiberationYear">سال
@@ -70,7 +72,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($Self['CandidateVeteranYear']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationYear"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -120,7 +123,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                             <input <?php setInputValue($Wife['CandidateVeteranPercent']); ?>
                                                                                     type="number"
                                                                                     name="inputCandidatePercentageOfVeterans"
-                                                                                    style="font-family: tahoma;"/>
+                                                                                    style="font-family: tahoma;"
+                                                                                    min="0"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Liberation', $Wife['CandidateVeteranType']); ?>
@@ -135,7 +139,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($Wife['CandidateVeteranMonth']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationMonth"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
                                                                                 <label for="inputCandidateStartLiberationYear">سال
@@ -143,7 +148,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($Wife['CandidateVeteranYear']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationYear"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -195,7 +201,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                             <input <?php setInputValue($Children['CandidateVeteranPercent']); ?>
                                                                                     type="number"
                                                                                     name="inputCandidatePercentageOfVeterans"
-                                                                                    style="font-family: tahoma;"/>
+                                                                                    style="font-family: tahoma;"
+                                                                                    min="0"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Liberation', $Children['CandidateVeteranType']); ?>
@@ -210,7 +217,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($Children['CandidateVeteranMonth']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationMonth"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
                                                                                 <label for="inputCandidateStartLiberationYear">سال
@@ -218,7 +226,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($Children['CandidateVeteranYear']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationYear"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -268,7 +277,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                             <input <?php setInputValue($Parents['CandidateVeteranPercent']); ?>
                                                                                     type="number"
                                                                                     name="inputCandidatePercentageOfVeterans"
-                                                                                    style="font-family: tahoma;"/>
+                                                                                    style="font-family: tahoma;"
+                                                                                    min="0"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Liberation', $Parents['CandidateVeteranType']); ?>
@@ -283,7 +293,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($Parents['CandidateVeteranMonth']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationMonth"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
                                                                                 <label for="inputCandidateStartLiberationYear">سال
@@ -291,7 +302,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($Parents['CandidateVeteranYear']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationYear"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -340,7 +352,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                             <input <?php setInputValue($SisterBrother['CandidateVeteranPercent']); ?>
                                                                                     type="number"
                                                                                     name="inputCandidatePercentageOfVeterans"
-                                                                                    style="font-family: tahoma;"/>
+                                                                                    style="font-family: tahoma;"
+                                                                                    min="0"/>
                                                                         </div>
                                                                         <div class="radio Radio-Display">
                                                                             <input <?php setRadioSelected('Liberation', $SisterBrother['CandidateVeteranType']); ?>
@@ -355,7 +368,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($SisterBrother['CandidateVeteranMonth']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationMonth"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                             <div class="col-md-5 col-xs-12 RightFloat">
                                                                                 <label for="inputCandidateStartLiberationYear">سال
@@ -363,7 +377,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <input <?php setInputValue($SisterBrother['CandidateVeteranYear']); ?>
                                                                                         type="number"
                                                                                         name="inputCandidateStartLiberationYear"
-                                                                                        style="font-family: tahoma;"/>
+                                                                                        style="font-family: tahoma;"
+                                                                                        min="0"/>
                                                                             </div>
                                                                         </div>
                                                                     </div>

@@ -106,22 +106,24 @@
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });
-        $(document).on('change', '[name=inputRealEstateCountryId]', function () {
-            $parentId = $(this).eq(0).parents('div.form').eq(0).attr('id');
-            $parentDom = "#" + $parentId + " ";
-
-            if ($(this).val() !== "103" && $(this).val() !== "0") {
-                $($parentDom + '[name="inputRealEstateStateId"]').val(0).attr('readonly', 'readonly');
-                $($parentDom + '[name="inputRealEstateCityId"]').val(0).attr('readonly', 'readonly');
-                $($parentDom + '.MoneyStateDiv').css('pointerEvents', 'none');
-            } else {
-                if ($(this).val() === "" || $(this).val() === "0" || $(this).val() === "103") {
-                    $($parentDom + '[name="inputRealEstateStateId"]').removeAttr('readonly');
-                    $($parentDom + '[name="inputRealEstateCityId"]').removeAttr('readonly');
-                    $($parentDom + '.MoneyStateDiv').css('pointerEvents', 'auto');
-                }
-            }
-        });
+        // $(document).on('change', '[name=inputRealEstateCountryId]', function () {
+        //     $parentId = $(this).eq(0).parents('div.form').eq(0).attr('id');
+        //     $parentDom = "#" + $parentId + " ";
+        //
+        //     if ($(this).val() !== "103" && $(this).val() !== "0") {
+        //         debugger;
+        //         $($parentDom + '[name="inputRealEstateStateId"]').val(0).attr('readonly', 'readonly');
+        //         $($parentDom + '[name="inputRealEstateCityId"]').val(0).attr('readonly', 'readonly');
+        //         $($parentDom + '.MoneyStateDiv').css('pointerEvents', 'none');
+        //     } else {
+        //         if ($(this).val() === "" || $(this).val() === "0" || $(this).val() === "103") {
+        //             debugger;
+        //             $($parentDom + '[name="inputRealEstateStateId"]').removeAttr('readonly');
+        //             $($parentDom + '[name="inputRealEstateCityId"]').removeAttr('readonly');
+        //             $($parentDom + '.MoneyStateDiv').css('pointerEvents', 'auto');
+        //         }
+        //     }
+        // });
         $(document).on('change', '.price-unit', function () {
             $RealEstateBuyTimePrice = $('#RealEstateBuyTimePrice').val();
             $leftSide = $(this).find("select option:selected").data('left-side');
@@ -142,8 +144,15 @@
                     $result = JSON.parse(data);
                     $citySelect = $this.parent().next('div').find('.city-select').eq(0);
                     $citySelect.html('');
+                    var selectInnerHtml = $('<option/>',
+                        {
+                            "class": "",
+                            "value": 0,
+                            "text": '-- انتخاب کنید --'
+                        });
+                    $citySelect.append(selectInnerHtml);
                     $.each($result, function (index, item) {
-                        var selectInnerHtml = $('<option />',
+                        var selectInnerHtml = $('<option/>',
                             {
                                 "class": "",
                                 "value": item['CityId'],
@@ -211,8 +220,14 @@
                 $cities = JSON.parse($result["data"]);
                 $citySelect = $("#" + $result["uuid"]).next('.MoneyStateDiv').next('.MoneyStateDiv').find('.city-select').eq(0);
                 $citySelect.html('');
+                var selectInnerHtml = $('<option/>',
+                    {
+                        "class": "",
+                        "value": 0,
+                        "text": '-- انتخاب کنید --'
+                    });
                 $.each($cities, function (index, item) {
-                    var selectInnerHtml = $('<option />', {
+                    var selectInnerHtml = $('<option/>', {
                         "class": "",
                         "value": item['CityId'],
                         "text": item['CityName']

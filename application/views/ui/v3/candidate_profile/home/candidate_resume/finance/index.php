@@ -2979,6 +2979,7 @@
                                                                             <select class="form-control form-control-lg city-select"
                                                                                     name="inputRealEstateCityId"
                                                                                     id="inputRealEstateCityId">
+                                                                                <option value="0">-- انتخاب کنید --</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -3253,6 +3254,7 @@
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputRealEstateCityId"
                                                                         id="inputRealEstateCityId">
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -5825,6 +5827,7 @@
                                                                             <select class="form-control form-control-lg city-select"
                                                                                     name="inputRealEstateCityId"
                                                                                     id="inputRealEstateCityId">
+                                                                                <option value="0">-- انتخاب کنید --</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -6099,6 +6102,7 @@
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputRealEstateCityId"
                                                                         id="inputRealEstateCityId">
+                                                                    <option value="0">-- انتخاب کنید --</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">

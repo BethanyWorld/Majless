@@ -197,12 +197,25 @@
         cursor: pointer;
     }
 
-    .panel-heading span {
-        margin-top: 0px;
-        font-size: 15px;
+    /*.panel-heading span {*/
+    /*    margin-top: 0px;*/
+    /*    font-size: 15px;*/
+    /*    position: absolute;*/
+    /*    left: 30px;*/
+    /*    top: 20px;*/
+    /*}*/
+    .add-form {
         position: absolute;
-        left: 15px;
+        left: 30px;
         top: 20px;
+        width: 50px;
+        height: 50px;
+        background: #022d6d;
+        border-radius: 100px;
+        color: #fff;
+        padding: 18px;
+        cursor: pointer;
+        z-index: 1090;
     }
     .veteran .panel-heading{
         position: relative;
