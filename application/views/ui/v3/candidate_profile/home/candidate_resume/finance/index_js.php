@@ -97,7 +97,6 @@
             $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().attr('id', UUID()).removeClass('hidden').removeClass('unique-form');
             $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
             setTimeout(function () {
-                $('[name=inputRealEstateCountryId]').change();
                 $('.price-unit').change();
                 updatePrice();
             }, 500);
@@ -105,15 +104,14 @@
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });
-
         function updateCountriesReadOnly(){
             $(".countries").each(function(){
                 $val = $(this).find('select').eq(0).val();
                 if ($val == 103) {
                     $(this).next('div').css('pointerEvents', 'auto');
                     $(this).next('div').next('div').css('pointerEvents', 'auto');
-                    $(this).next('div').find('select').val(0).removeAttr('readonly');
-                    $(this).next('div').next('div').find('select').val(0).removeAttr('readonly');
+                    $(this).next('div').find('select').removeAttr('readonly');
+                    $(this).next('div').next('div').find('select').removeAttr('readonly');
                 }
                 else {
                     $(this).next('div').css('pointerEvents', 'none');
@@ -204,6 +202,7 @@
             );
         }
         $.when.apply(this, $requests).then(function () {
+            console.log($ajaxCallResults);
             for ($i = 0; $i < $ajaxCallResults.length; $i++) {
                 for ($j = 0; $j < $UUIDs.length; $j++) {
                     if ($ajaxCallResults[$i]["uuid"] === $UUIDs[$j]["uuid"]) {
@@ -236,5 +235,6 @@
                 $citySelect.val($cityId);
             }
         });
+        updateCountriesReadOnly();
     });
 </script>

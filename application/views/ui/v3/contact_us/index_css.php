@@ -113,5 +113,10 @@
         background-color: #03285f;
     }
 
+    @media screen and (max-width: 992px) {
+            .contact-label-with-style .form-group label {
+                min-width: 45px;
+            }
+        }
 
 </style>
