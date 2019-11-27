@@ -158,7 +158,7 @@ class ModelCandidate extends CI_Model
             if (empty($personalInfo) || empty($academicInfo) || empty($militaryInfo)) {
                 $arr = array(
                     'content' => 'Complement Issues',
-                    'message' => 'حداقل موارد لازم برای تکمیل رزومه اطلاعات فردی، سوابق تحصیلی و اطلاعات نطام وظیفه می باشد.لطفا رزومه خود را تکمیل کنید',
+                    'message' => 'حداقل موارد لازم برای تکمیل رزومه اطلاعات فردی، سوابق تحصیلی و اطلاعات نظام وظیفه می باشد.لطفا رزومه خود را تکمیل کنید',
                     'hasConditions' => false,
                     'isCompleted' => false
                 );

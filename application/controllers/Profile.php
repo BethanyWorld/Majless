@@ -917,7 +917,6 @@ class Profile extends CI_Controller{
                 break;
         }
     }
-
     public function support(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'صفحه کاربری';
