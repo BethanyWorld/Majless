@@ -1,4 +1,10 @@
 <style>
+    .margin-b-10{
+        margin-bottom: 10px;
+    }
+    .rightFloat{
+        float: right;
+    }
     .form-group {
         margin-bottom: 0px;
     }
