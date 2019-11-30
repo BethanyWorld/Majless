@@ -120,7 +120,7 @@
 </footer>
 </div>
 <script type='text/javascript' src='<?= $_DIR; ?>js/bootstrap.min.js?ver=3.3.7'></script>
-<script type='text/javascript' src='<?= $_DIR; ?>js/loading_screen.js?ver=1.0'></script>
-<script type='text/javascript' src='<?= $_DIR; ?>js/theme.js?ver=1.0'></script>
+<script type='text/javascript' src='<?= $_DIR; ?>js/loading_screen.js?ver=1.1'></script>
+<script type='text/javascript' src='<?= $_DIR; ?>js/theme.js?ver=1.<?php echo rand(); ?>'></script>
 </body>
 </html>
