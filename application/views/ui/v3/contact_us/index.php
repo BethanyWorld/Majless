@@ -199,8 +199,8 @@
                 <input class="form-control" type="text" id="inputTitle" name="inputTitle"/>
             </div>
             <div class="form-group">
-                <label data-toggle="tooltip" title="اگر باید به پیام شما پاسخی بدهیم لطفا ایمیل یا شماره تماس خود را برای ما بنویسید">
-                    <span class="required"></span>
+                <label>
+                    <span class="fa fa-question question-style" data-toggle="tooltip" title="اگر باید به پیام شما پاسخی بدهیم لطفا ایمیل یا شماره تماس خود را برای ما بنویسید"></span>
 
                     شماره تماس</label>
                 <input class="form-control" type="number" min="0" id="" name=""/>

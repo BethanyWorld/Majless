@@ -72,7 +72,7 @@
                                         <div class="fw-page-builder-content iziToast-rtl"
                                              style="padding: 0 !important;">
                                             <h1>
-                                                <span style="color: #ffffff; font-size: 36pt;">برای ایرانی سربلند...</span>
+                                                <span style="color: #000; font-size: 36pt;">برای ایرانی سربلند...</span>
                                             </h1>
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@
                                         <div class="row col-md-12 col-xs-12">
                                             <button type="submit"
                                                     style="float: left;text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
-                                                ثبت نام
+                                                همین حالا ثبت نام کنید
                                             </button>
                                         </div>
                                     </form>
