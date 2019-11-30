@@ -5,7 +5,7 @@
 
     textarea {
         resize: none;
-        height: 174px !important;
+        height: 260px !important;
     }
 
     label {
@@ -32,7 +32,7 @@
         text-align: center;
     }
 
-    .contact-label-with-style .form-group label{
+    .contact-label-with-style .form-group label {
         min-width: 55px;
     }
 
@@ -109,14 +109,36 @@
         -ms-transition: all 0.8s;
         transition: all 0.8s;
     }
+
     .social-circle a {
         background-color: #03285f;
     }
 
-    @media screen and (max-width: 992px) {
-            .contact-label-with-style .form-group label {
-                min-width: 45px;
-            }
-        }
+    /*for social icon top*/
+    .social-panel-heading {
+        padding: 3px;
+    }
+    .contact-social-main-div-padding {
+        padding: 0px !important;
+    }
+    .contact-social-main-div-padding{
+        text-align: right !important;
+    }
+    .contact-social-main-div-padding a {
+        border: none !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        position: relative;
+        top: -7px;
+    }
+    .contact-social-main-div-padding .contact-svg-icon{
+        top: 5px;
+    }
+    /*for social icon top*/
 
+    @media screen and (max-width: 992px) {
+        .contact-label-with-style .form-group label {
+            min-width: 45px;
+        }
+    }
 </style>
