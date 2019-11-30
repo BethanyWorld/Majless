@@ -63,16 +63,16 @@
                         <img src="<?= $_DIR; ?>images/instagram.png" width="35px" height="35px;">
                         <a href="https://azmaa_net" target="_blank">instagram.azmaa</a>
                     </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <img src="<?= $_DIR; ?>images/twieetr.jpg" width="35px" height="35px;">
-                        <a href="https://azmaa_net" target="_blank">twitter.azmaa</a>
+                    <div class="col-md-3 col-sm-4 col-xs-12 rightFloat">
+                        <img src="<?= $_DIR; ?>images/telegram.png" width="35px" height="35px;">
+                        <a href="https://azmaa_net" target="_blank">telegram.azmaa</a>
                     </div>
                 </div>
 
                 <div class="col-md-12 col-xs-12">
                     <div class="col-md-3 col-sm-4 col-xs-12 rightFloat">
-                        <img src="<?= $_DIR; ?>images/twieetr.jpg" width="35px" height="35px;">
-                        <a href="https://azmaa_net" target="_blank">telegram.azmaa</a>
+                        <img src="<?= $_DIR; ?>images/twitter.png" width="35px" height="35px;" class="twitter-style-image">
+                        <a href="https://azmaa_net" target="_blank">twitter.azmaa</a>
                     </div>
                 </div>
 

@@ -5,6 +5,9 @@
     .rightFloat{
         float: right;
     }
+    .twitter-style-image{
+        border-radius: 50%;
+    }
     .form-group {
         margin-bottom: 0px;
     }
