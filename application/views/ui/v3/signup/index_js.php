@@ -148,13 +148,13 @@
                                             },
                                             success: function (data) {
                                                  setTimeout(function () {
-                                                    location.href = base_url + 'Login';
+                                                    location.href = base_url + 'Login?username='+$result['senderNumber'];
                                                  }, 500);
                                                 toggleLoader();
                                             },
                                             error: function (jqXHR, textStatus, errorThrown) {
                                                 setTimeout(function () {
-                                                    location.href = base_url + 'Login';
+                                                    location.href = base_url + 'Login?username='+$result['senderNumber'];
                                                 }, 500);
                                                 toggleLoader();
                                             }

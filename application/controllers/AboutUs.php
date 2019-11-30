@@ -2,10 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class AboutUs extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
     }
-
     public function index()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -46,6 +46,17 @@ class AboutUs extends CI_Controller{
         $this->load->view('ui/v3/about_us/measurement_process/index', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
+    public function public_invitation()
+    {
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'فراخوان سراسری جنبش اجتماعی ازما برای تشکیل مجلس کارآمد صالح ، سالم و قوی';
+        $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
+        $data['title'] = "فراخوان سراسری جنبش اجتماعی ازما برای تشکیل مجلس کارآمد صالح ، سالم و قوی";
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/about_us/public_invitation/index', $data);
+        $this->load->view('ui/v3/static/footer', $data);
+    }
+
     public function candidate_commitment_letter()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -79,7 +90,7 @@ class AboutUs extends CI_Controller{
     public function candidatecriteriacompetencies()
     {
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'معیار ها و شایستگی ها';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'معیار ها و شایستگی ها نامزد انتخاباتی';
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
         $data['title'] = "معیار ها و شایستگی ها نامزد انتخاباتی";
         $this->load->view('ui/v3/static/header', $data);
@@ -96,7 +107,6 @@ class AboutUs extends CI_Controller{
         $this->load->view('ui/v3/about_us/candidatelegal/index', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
-
     public function support()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -112,7 +122,7 @@ class AboutUs extends CI_Controller{
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'آشنایی با آزمون ها';
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
-        $data['title'] = "حامیان";
+        $data['title'] = "آشنایی با آزمون ها";
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/about_us/exams/index', $data);
         $this->load->view('ui/v3/static/footer', $data);

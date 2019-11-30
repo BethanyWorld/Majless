@@ -20,8 +20,19 @@
         </div>
     </div>
     <div class="col-xs-12 col-md-9">
+
+
         <input type="hidden" id="inputCSRF" name="inputCSRF" value="<?= $CSRF; ?>"/>
         <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <?php if(isset($_GET['username'])){ ?>
+                <div class="alert alert-success">
+                    نام کاربری و رمز عبور شما
+                    <strong>
+                        <?php echo $_GET['username']; ?>
+                    </strong>
+                    می باشد
+                </div>
+            <?php } ?>
             <div class="form-group">
                 <label>
                     <span class="required"></span>
