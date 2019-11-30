@@ -242,11 +242,18 @@ class ModelCommand extends CI_Model{
             $this->db->where(' CandidatePhone', $inputs['inputPhone']);
             $this->db->update('candidate', $arrayCandidate);
             /*-------------------------------------------------------------------------------------*/
+            $html = "اطلاعات ورود به سایت:";
+            $html .= "\n";
+            $html .= "نام کاربری:".$inputs['inputPhone'];
+            $html .= "\n";
+            $html .= "رمز عبور:".$inputs['inputPhone'];
+            $html .= "\n";
+            $html .= "http://azmaa.net";
             $arr = array(
                 'type' => "green",
                 'content' => "رمز عبور جدید به تلفن شما ارسال شد",
                 'senderNumber' => $inputs['inputPhone'],
-                'messageBody' => "رمز عبور شما تغییر یافت.نام کاربری:".$inputs['inputPhone']." و رمز عبور ".$inputs['inputPhone']." می باشد ",
+                'messageBody' => $html,
                 'success' => true
             );
             return $arr;
