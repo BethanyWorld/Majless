@@ -136,6 +136,18 @@
     }
     /*for social icon top*/
 
+    .question-style{
+        float: left;
+        background-color: gray;
+        border-radius: 100%;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        margin-right: 5px;
+    }
+
     @media screen and (max-width: 992px) {
         .contact-label-with-style .form-group label {
             min-width: 45px;

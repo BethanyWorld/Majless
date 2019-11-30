@@ -8,7 +8,7 @@
 <div class="col-xs-12 pull-right sidebar">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">اعلانات</h3>
+            <h3 class="panel-title">آشنایی با جنبش</h3>
         </div>
         <div class="panel-body">
             <ul>

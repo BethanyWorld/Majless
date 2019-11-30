@@ -129,7 +129,7 @@
             <div class="list">
                 <ul>
                     <li class="province">
-                        <span class="text-center">استانها</span>
+                        <span class="text-center">فهرست نامزد ها</span>
                         <ul>
                             <li data-province-id="1" class="azerbaijan-east"><a href="#azerbaijan-east">آذربایجان شرقی</a></li>
                             <li data-province-id="2" class="azerbaijan-west"><a href="#azerbaijan-west">آذربایجان غربی</a></li>
