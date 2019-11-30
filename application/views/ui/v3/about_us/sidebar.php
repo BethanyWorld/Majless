@@ -12,11 +12,14 @@
         </div>
         <div class="panel-body">
             <ul>
-                <li><a href="<?php echo base_url('AboutUs/intro'); ?>">معرفی</a></li>
-                <li><a href="<?php echo base_url('AboutUs/prism'); ?>"> بیانیه ارزش</a></li>
-                <li><a href="<?php echo base_url('AboutUs/measurement_process'); ?>">فرآیند سنجش</a></li>
-                <li><a href="<?php echo base_url('AboutUs/candidate_commitment_letter'); ?>">تعهدنامه نامزد ها</a></li>
-                <li><a href="<?php echo base_url('AboutUs/financial_support'); ?>">حمایت مالی</a></li>
+                <li><a href="<?php echo base_url('AboutUs/intro') ?>">معرفی</a></li>
+                <li><a href="<?php echo base_url('AboutUs/prism') ?>">بیانیه ارزش</a></li>
+                <li><a href="<?php echo base_url('AboutUs/measurement_process') ?>">فرآیند سنجش نامزدها</a></li>
+                <li><a href="<?php echo base_url('AboutUs/exams') ?>">آشنایی با آزمون ها</a></li>
+                <li><a href="<?php echo base_url('AboutUs/candidatecriteriacompetencies') ?>">شایستگی های نماینده مجلس</a></li>
+                <li><a href="<?php echo base_url('AboutUs/candidate_commitment_letter') ?>">تعهدنامه نامزدها</a></li>
+                <li><a href="<?php echo base_url('AboutUs/support') ?>">حامبان و همراهان</a></li>
+                <li><a href="<?php echo base_url('AboutUs/financial_support') ?>">حمایت مالی از ما</a></li>
             </ul>
         </div>
     </div>

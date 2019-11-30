@@ -107,5 +107,15 @@ class AboutUs extends CI_Controller{
         $this->load->view('ui/v3/about_us/support/index', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
+    public function exams()
+    {
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'آشنایی با آزمون ها';
+        $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
+        $data['title'] = "حامیان";
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/about_us/exams/index', $data);
+        $this->load->view('ui/v3/static/footer', $data);
+    }
 
 }

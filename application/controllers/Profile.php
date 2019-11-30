@@ -933,6 +933,66 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/static/footer');
     }
     /* End For Resume -------------------------------------------------------------*/
+
+
+    public function doRegisterExam()
+    {
+        $userInfo = $this->session->userdata('UserLoginInfo')[0];
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputUserId'] = $userInfo['UserId'];
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelUser->doRegisterExam($inputs);
+
+        if (is_numeric($result)) {
+            $this->session->set_userdata('orderId', $result);
+            /* witch means we can pay exam */
+            $examInfo = $this->ModelExams->getExamInfoByExamId($inputs['inputExamId'])[0];
+            $this->load->helper('payment/zarinpal/nusoap');
+            $MerchantID = '2e809336-c5d4-11e6-8edd-000c295eb8fc';
+            $Description = 'خرید توسط کاربر عادی از درگاه زرین پال';
+            $CallbackURL = base_url('User/RegisterExam/paymentResult');
+            $client = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
+            $client->soap_defencoding = 'UTF-8';
+            $result = $client->call('PaymentRequest', [
+                [
+                    'MerchantID' => $MerchantID,
+                    'Amount' => $examInfo['ProductPrice'],
+                    'Description' => $Description,
+                    'Email' => 'info@javankar.net',
+                    'CallbackURL' => $CallbackURL,
+                ],
+            ]);
+            if ($result['Status'] == 100) {
+                $redirectUrl = 'https://www.zarinpal.com/pg/StartPay/' . $result['Authority'];
+                $arr = array(
+                    'type' => "green",
+                    'content' => "در حال اتصال به درگاه",
+                    'redirect' => $redirectUrl,
+                    'success' => true
+                );
+                echo json_encode($arr);
+            } else {
+                $arr = array(
+                    'type' => "red",
+                    'content' => "اتصال با سرور پرداخت برقرار نشد.لطفا یک دقیقه دیگر تلاش کنید",
+                    'success' => false
+                );
+                echo json_encode($arr);
+            }
+            /* Payment Ended  */
+        } else {
+            echo json_encode($result);
+        }
+    }
+
     /* get out of panel - session destroyed */
     public function logOut()
     {
