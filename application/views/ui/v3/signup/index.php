@@ -125,8 +125,7 @@
                                 type="checkbox"
                                 id="inputSignUpTypeEliote"
                                 name="inputSignUpTypeEliote"
-                                class="sign-up-type hidden" value="2"
-                                checked="checked"/>
+                                class="sign-up-type hidden" value="2" />
                         <label class="label-sign-up-type" for="inputSignUpTypeSponsor">حامی</label>
                         <input
                             <?php if ($signUpType == 'sponsor') echo "checked"; ?>

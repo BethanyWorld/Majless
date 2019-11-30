@@ -20,13 +20,15 @@
                 <div class="row">
                     <div class="fw-row nostretch">
                         <div id="column-5d7930f120b6c"
-                             class="tb-column nostretch col-xs-12  col-sm-6 hp-join-the-effort-col nopadding  tbWow fadeIn pull-left">
+                             class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 hp-join-the-effort-col nopadding  tbWow fadeIn pull-left">
                             <div style="  color: #e2ebf1; padding: 0px 0px 150px 0px;"
                                  class=" noabsolutecenter  padding15-xs">
                                 <div class="hp-join-the-effort tbWow fadeInDown">
                                     <div>
-                                        <div class="fw-page-builder-content">
-                                            <h1><span style="color: #ffffff; font-size: 36pt;">برای ایرانی سربلند مشارکت کنید</span>
+                                        <div class="fw-page-builder-content iziToast-rtl"
+                                             style="padding: 0 !important;">
+                                            <h1>
+                                                <span style="color: #ffffff; font-size: 36pt;">برای ایرانی سربلند...</span>
                                             </h1>
                                         </div>
                                     </div>
@@ -34,8 +36,8 @@
                                 <div class="fw-divider-space" style="padding-top: 10px;"></div>
                                 <div class="hp-join-the-effort tbWow fadeInDown">
                                     <div class="fw-page-builder-content"><span style="color: #ffffff;float: left;">
-                              <span class="rtl">
-                              بخشی از جنبش باشید و در ساختن آینده ای بهتر برای کشورمان شرکت کنید! به این کارزار تاریخی بپیوندید و برای ارزشهایی که کشور ما را عالی می کند ، ایستادگی کنید. یک تفاوت ایجاد کنید
+                                        <p>اگر در انتخابات مجلس یازدهم نامزد هستید برای ورود به فرآیند جنبش ثبت نام کنید</p>
+                                        <p>و یا به عنوان حامی جنبش از ما در ساختن آینده‌ای بهتر برای کشورمان مشارکت کنید</p>
                               </span>
                                     </div>
                                 </div>
@@ -43,20 +45,20 @@
                                 <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels">
                                     <form action="<?php echo base_url('SignUp'); ?>" method="get">
                                         <div class="row rtl">
-                                            <div class="col-xs-12 col-md-4 pull-right">
+                                            <div class="col-xs-12 pull-right">
                                                 <input
                                                         style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                                         placeholder="نام"
                                                         class="form-control" type="text" id="fn" name="fn"
                                                         autofocus/>
                                             </div>
-                                            <div class="col-xs-12 col-md-4 pull-right">
+                                            <div class="col-xs-12 pull-right">
                                                 <input
                                                         style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                                         placeholder="نام خانوادگی"
                                                         class="form-control" type="text" id="ln" name="ln"/>
                                             </div>
-                                            <div class="col-xs-12 col-md-4 pull-right">
+                                            <div class="col-xs-12 pull-right">
                                                 <input
                                                         style="font-family: tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                                         placeholder="تلفن همراه"
@@ -67,7 +69,7 @@
                                         <div class="row col-md-12 col-xs-12">
                                             <button type="submit"
                                                     style="float: left;text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
-                                                ثبت نام کنید
+                                                ثبت نام
                                             </button>
                                         </div>
                                     </form>
@@ -286,7 +288,7 @@
                                 <div class="tb-icon-box-description">
                                     <h4>
                                         <a href="<?php echo base_url('ContactUs?type=report_abuse'); ?>">
-                                           گزارش‌های مردمی
+                                            گزارش‌های مردمی
                                         </a>
                                     </h4>
                                     <div class="tb-icon-box-text">
@@ -507,8 +509,9 @@
                                 <div class="link-type-no tb-icon-box  textaligncenter tbWow fadeIn ">
                                     <div class="tb-icon-box-image iconbox-image-type img-rounded "
                                          style=" background: none !important; ">
-                                        <img src="<?php echo $_DIR ?>images/spacer_white_center_no_change.png"
-                                             class="img-rounded" alt=""/>
+                                        <a href="<?php echo base_url(); ?>">
+                                            <img src="<?= $_DIR; ?>images/main-logo.png" width="125px">
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="fw-divider-space" style="padding-top: 35px;"></div>

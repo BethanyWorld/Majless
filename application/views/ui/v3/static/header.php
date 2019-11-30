@@ -51,13 +51,13 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <script src="<?php echo $_DIR; ?>js/helper.min.js"></script>
     <script type="text/javascript"> var base_url = "<?php echo base_url(); ?>";</script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101180356-3"></script>-->
-<!--    <script>-->
-<!--        window.dataLayer = window.dataLayer || [];-->
-<!--        function gtag(){dataLayer.push(arguments);}-->
-<!--        gtag('js', new Date());-->
-<!--        gtag('config', 'UA-101180356-3');-->
-<!--    </script>-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101180356-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-101180356-3');
+    </script>
 </head>
 <div id="loading">
     <div id="loading-center">
@@ -84,29 +84,29 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
             <div class="container">
                 <div class="row rtl">
                     <div class="col-xs-12 col-sm-6">
-                        <div class="menu-top-menu-container">
-                            <ul id="menu-top-menu" class="top-nav-menu">
-                                <li id="menu-item-840"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-840">
-                                    <a href="tel:09029026934">پشتیبانی:09029026934</a>
-                                </li>
-                            </ul>
+                        <div class="alignleft">
+                            <a target="_blank" href="http://twitter.com/azmaa_net">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                            <a target="_blank" href="http://instagram.com/azmaa_net">
+                                <span class="fa fa-instagram"></span>
+                            </a>
+                            <a target="_blank" href="http://t.me/azmaa_net">
+                                <span class="fa fa-telegram"></span>
+                            </a>
+                            <a target="_blank" href="https://www.aparat.com/azmaa_net">
+                                <span class="fa fa-file-movie-o"></span>
+                            </a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
-                        <div class="alignright">
-                            <a target="_blank" href="#">
-                                <span aria-hidden="true" data-feather="twitter"></span>
-                            </a>
-                            <a target="_blank" href="#">
-                                <span aria-hidden="true" data-feather="instagram"></span>
-                            </a>
-                            <a target="_blank" href="#">
-                                <span aria-hidden="true" data-feather="linkedin"></span>
-                            </a>
-                            <a target="_blank" href="#">
-                                <span aria-hidden="true" data-feather="send"></span>
-                            </a>
+                        <div class="menu-top-menu-container">
+<!--                            <ul id="menu-top-menu" class="top-nav-menu">-->
+<!--                                <li id="menu-item-840"-->
+<!--                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-840">-->
+<!--                                    <a href="tel:09029026934">پشتیبانی:09029026934</a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
                         </div>
                     </div>
                 </div>
@@ -139,14 +139,14 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                            </ul>
                            */ ?>
                             </li>
+<!--                            <li>-->
+<!--                                <a href="--><?php //echo base_url('AboutUs/candidatelegal') ?><!--">شاخص ها</a>-->
+<!--                                <ul>-->
+<!--                                    <li><a href="--><?php //echo base_url('AboutUs/candidatelegal') ?><!--">شرایط قانونی</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
                             <li>
-                                <a href="<?php echo base_url('AboutUs/candidatelegal') ?>">شاخص ها</a>
-                                <ul>
-                                    <li><a href="<?php echo base_url('AboutUs/candidatelegal') ?>">شرایط قانونی</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url('AboutUs/intro') ?>">آشنایی با جنبش از ما</a>
+                                <a href="<?php echo base_url('AboutUs/intro') ?>">آشنایی با جنبش</a>
                                 <ul>
                                     <li><a href="<?php echo base_url('AboutUs/intro') ?>">معرفی</a></li>
                                     <li><a href="<?php echo base_url('AboutUs/prism') ?>">بیانیه ارزش</a></li>
@@ -155,7 +155,14 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                     <li><a href="<?php echo base_url('AboutUs/candidatecriteriacompetencies') ?>">شایستگی های نماینده مجلس</a></li>
 <!--                                <li><a href="--><?php //echo base_url('AboutUs/candidate_commitment_letter') ?><!--">تعهدنامه نامزدها</a></li>-->
                                     <li><a href="<?php echo base_url('AboutUs/support') ?>">حامبان و همراهان</a></li>
-                                    <li><a href="<?php echo base_url('AboutUs/financial_support') ?>">حمایت مالی از ما</a></li>
+                                    <li><a href="<?php echo base_url('AboutUs/support') ?>">حمایت از ما</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">همراهی با ما</a>
+                                <ul>
+                                    <!--  <li><a href="--><?php //echo base_url('AboutUs/support') ?><!--">حامبان و همراهان</a></li>-->
+                                    <li><a href="<?php echo base_url('AboutUs/support') ?>">حمایت از ما</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -165,10 +172,8 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                 <li>
                                     <a href="<?php echo base_url('SignUp?type=candidate') ?>">ثبت نام</a>
                                     <ul>
-                                        <li><a href="<?php echo base_url('SignUp?type=candidate') ?>">نامزد
-                                                انتخاباتی</a>
-                                        </li>
-                                        <li><a href="<?php echo base_url('SignUp?type=elite') ?>">بانک نخبگان</a></li>
+                                        <li><a href="<?php echo base_url('SignUp?type=candidate') ?>">نامزد انتخاباتی</a></li>
+<!--                                        <li><a href="--><?php //echo base_url('SignUp?type=elite') ?><!--">بانک نخبگان</a></li>-->
                                         <li><a href="<?php echo base_url('SignUp?type=sponsor') ?>">حامی</a></li>
                                     </ul>
                                 </li>

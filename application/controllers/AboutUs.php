@@ -39,9 +39,9 @@ class AboutUs extends CI_Controller{
     public function measurement_process()
     {
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'فرآیند سنجش';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'فرآیند سنجش نامزدها';
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
-        $data['title'] = "فرآیند سنجش";
+        $data['title'] = "فرآیند سنجش نامزدها";
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/about_us/measurement_process/index', $data);
         $this->load->view('ui/v3/static/footer', $data);
@@ -100,9 +100,9 @@ class AboutUs extends CI_Controller{
     public function support()
     {
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'حامیان';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'حمایت از ما';
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
-        $data['title'] = "حامیان";
+        $data['title'] = "حمایت از ما";
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/about_us/support/index', $data);
         $this->load->view('ui/v3/static/footer', $data);

@@ -32,7 +32,8 @@
                                         href="<?php echo base_url('AboutUs/intro'); ?>">درباره ما</a></li>
                             <li id="menu-item-47"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a
-                                        href="<?php echo base_url('SignUp?type=candidate'); ?>">ثبت نام نامزدهای انتخاباتی</a></li>
+                                        href="<?php echo base_url('SignUp?type=candidate'); ?>">ثبت نام نامزدهای
+                                    انتخاباتی</a></li>
                             <li id="menu-item-841"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-841"><a
                                         href="<?php echo base_url('SignUp?type=sponsor'); ?>">حامیان</a></li>
@@ -44,9 +45,33 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <p class="rtl">
-                    <div class="fw-page-builder-content textalignright">تمامی حقوق برای جنبش ازما محفوظ است</div>
-                </p>
+                <div class="fw-page-builder-content textalignright">تمامی حقوق برای جنبش ازما محفوظ است</div>
+                <style>
+                    ul.tags{
+                        float: right;
+                    }
+                    ul.tags li{
+                        float: right !important;
+                        display: inline-block !important;
+                        margin: 5px !important;
+                        text-transform: uppercase!important;
+                    }
+                    ul.tags a{
+                        color: #7CA1CC;
+                        border: 1px solid #0545a4;
+                        padding: 5px;
+                        float: right;
+                    }
+                </style>
+                <ul class="tags">
+                    <li><a sty href="<?php echo base_url(); ?>">ازما</a></li>
+                    <li><a href="<?php echo base_url(); ?>">از ما</a></li>
+                    <li><a href="<?php echo base_url(); ?>">جنبش ازما</a></li>
+                    <li><a href="<?php echo base_url(); ?>">جنبش از ما</a></li>
+                    <li><a href="<?php echo base_url(); ?>">انتخابات مجلس</a></li>
+                    <li><a href="<?php echo base_url(); ?>">مجلس مردمی</a></li>
+                    <li><a href="<?php echo base_url(); ?>">فرآیند سنجش نامزدها</a></li>
+                </ul>
             </div>
         </div>
     </div>
