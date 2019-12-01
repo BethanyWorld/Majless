@@ -11,6 +11,7 @@
             });
             return str;
         }
+
         function isValidNationalCode(input) {
             input = toEnglishDigits(input);
             if (!/^\d{10}$/.test(input)
@@ -34,6 +35,7 @@
             sum %= 11;
             return (sum < 2 && check == sum) || (sum >= 2 && check + sum == 11);
         }
+
         $("#submitSignUpForm").click(function () {
             toggleLoader();
             $inputSignUpFirstName = $.trim($("#inputSignUpFirstName").val());
@@ -108,8 +110,7 @@
                 $inputSignUpNationalCode == "") {
                 notify("لطفا تمامی موارد را کامل کنید", "red");
                 toggleLoader();
-            }
-            else {
+            } else {
                 $sendData = {
                     'inputCaptcha': $inputCaptcha
                 }
@@ -147,20 +148,19 @@
                                                 'messageBody': $result['messageBody']
                                             },
                                             success: function (data) {
-                                                 setTimeout(function () {
-                                                    location.href = base_url + 'Login?username='+$result['senderNumber'];
-                                                 }, 500);
+                                                setTimeout(function () {
+                                                    location.href = base_url + 'Login?username=' + $result['senderNumber'];
+                                                }, 500);
                                                 toggleLoader();
                                             },
                                             error: function (jqXHR, textStatus, errorThrown) {
                                                 setTimeout(function () {
-                                                    location.href = base_url + 'Login?username='+$result['senderNumber'];
+                                                    location.href = base_url + 'Login?username=' + $result['senderNumber'];
                                                 }, 500);
                                                 toggleLoader();
                                             }
                                         });
-                                    }
-                                    else {
+                                    } else {
                                         /*notify($result['message'], 'red');*/
                                         if ($result['type'] == 'red') {
                                             $('#signUpModal').modal('show');
@@ -169,8 +169,7 @@
                                     }
                                 }
                             });
-                        }
-                        else {
+                        } else {
                             notify($result['content'], $result['type']);
                             toggleLoader();
                         }
@@ -214,18 +213,16 @@
             }, 2000);
         });
 
-
-
         $('#inputSignUpTypeSponsor').change(function () {
-            debugger;
             $truevalue = $('#inputSignUpTypeSponsor').is(":checked");
-            if($truevalue === true){
-                $('.support-div').show();
-            }
-            else{
-                $('.support-div').hide();
+            if ($truevalue === true) {
+                $('.support-div').slideToggle();
+
+            } else {
+                $('.support-div').slideUp();
             }
         });
+        $('#inputSignUpTypeSponsor').change();
 
     });
 </script>
