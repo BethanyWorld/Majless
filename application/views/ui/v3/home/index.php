@@ -153,7 +153,7 @@
                          class="tb-column absolutecenter-stretch col-xs-12  col-sm-6 col-md-3 nopadding">
                         <div class="col-xs-12" style="
 
-    padding: 150px 2px;
+    padding: 145px 2px;
     font-size: 20px;
     direction: rtl;
     text-align: center;
