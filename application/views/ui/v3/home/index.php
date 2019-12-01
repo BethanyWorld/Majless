@@ -125,88 +125,42 @@
                 </div>
             </div>
         </section>
-        <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow fadeIn hidden"
-                 style="background-color:#f9f9f9;">
-            <div class="container" style=' padding-top: 60px; padding-bottom: 60px; '>
-                <div class="row">
-                    <div class="fw-row absolutecenter-stretch">
-                        <div id="column-5d7930f127f86"
-                             class="tb-column absolutecenter-stretch col-xs-12  col-sm-12  nopadding  tbWow fadeIn ">
-                            <div style=" " class=" noabsolutecenter  nopadding-xs">
-                                <div class="link-type-no tb-icon-box  textaligncenter    tbWow fadeInUp ">
-                                    <div class="tb-icon-box-description">
-                                        <h4>
-                                            کمپین شفاف سازی
-                                        </h4>
-                                        <h1>
-                                            آخرین اخبار و اطلاعات انتخابات مجلس
-                                        </h1>
-                                        <div class="tb-icon-box-text">
-                                            <div class="fw-page-builder-content">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="link-type-no tb-icon-box  textaligncenter tbWow fadeInUp ">
-                                    <div class="tb-icon-box-image iconbox-image-type img-rounded "
-                                         style=" background: none !important; ">
-                                        <a href="javascript:void(0);">
-                                            <img src="<?php echo $_DIR ?>images/spacer_center_no_change.png"
-                                                 class="img-rounded" alt=""/>
-                                        </a>
-                                    </div>
-                                    <div class="tb-icon-box-description">
-                                        <div class="tb-icon-box-text">
-                                            <div class="fw-page-builder-content">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tb-posts-carousel">
-                                    <?php if (!empty($posts)) { ?>
-                                        <?php foreach ($posts as $post) { ?>
-                                            <div class="data-bg-hover-children data-color-hover-children rtl"
-                                                 data-bg="#ffffff"
-                                                 data-bg-hover="#b60d21" data-color="#21477f" data-color-hover="#ffffff"
-                                                 data-a-color="#a02e2f" data-a-color-hover="#ffffff">
-                                                <a class="absolute100"
-                                                   href="<?php echo base_url('State/post/' . 8 . '/' . $post['PostId'] . '/' . seoUrl($post['PostTitle'])); ?>">#</a>
-                                                <div class="tb-post-carousel-thumbnail">
-                                                    <div class="post-categories data-color-hover"
-                                                         style="background: #b60d21; color: #ffffff;"
-                                                         data-a-color="#ffffff">
-                                                        <a href="javascript:void(0);"
-                                                           rel="category tag">انتخابات</a>
-                                                    </div>
-                                                    <div class="post-title" style="color: #ffffff;">
-                                                        <div class="post-date">
-                                                            <i class="fa fa-clock"></i>
-                                                            <?php echo formatDate($post['CreateDateTime']); ?>
-                                                        </div>
-                                                    </div>
-                                                    <?php if (isset($post['PostImage']) && !empty($post['PostImage'])) { ?>
-                                                        <img width="600" height="600"
-                                                             src="<?php echo image_url($post['PostImage']); ?>"
-                                                             class="attachment-campaign-thumb-xl size-campaign-thumb-xl wp-post-image"
-                                                             sizes="(max-width: 600px) 100vw, 600px"/>
-                                                        <div class="absolute100"
-                                                             style="background-color: #043174"></div>
-                                                    <?php } else { ?>
-                                                        <div class="pic lazy-bg"></div>
-                                                    <?php } ?>
-                                                </div>
-                                                <div class="changing-data-attr">
-                                                    <p>
-                                                        <?php echo $post['PostTitle']; ?>
-                                                    </p>
-                                                    <div class="read-more">جزئیات بیشتر</div>
-                                                </div>
-                                            </div>
-                                        <?php } ?>
-                                    <?php } ?>
-                                </div>
-                            </div>
+        <!-- Edited Issues-->
+        <section id="hp-the-issues" class="campaign_section nopadding  tbWow fadeIn">
+            <div class="container">
+                <div class="fw-row absolutecenter-stretch">
+                    <div id="column-5d7930f12c6ec"
+                         class="tb-column text-center absolutecenter-stretch col-xs-12 col-sm-12 col-md-3 nopadding tbWow animated fadeIn ">
+
+                        <div class="col-xs-12" style="
+
+    padding: 150px 2px;
+    font-size: 21px;
+    direction: rtl;
+    text-align: center;
+    line-height: 40px;font-weight: 900;">
+                            این وضعیت تغییر نمی‌یابد مگر با تحولی محسوس در سازوکارهایی که بعضاً سفلگان را به مناصب عالی نشانده و نخبگان را از جایگاه‌های مؤثر بر سرنوشت ملت به زیر کشیده است. سازوکارهایی که در آن ورود به عرصه‌ی تقنین و تعیین سرنوشت مردم، منوط به هزینه‌های هنگفت و یا پیوستن به جرگه‌ی جریان‌های قدرت‌طلب و تمامیت‌خواه است.
                         </div>
+                    </div>
+                    <div id="column-5d7930f12c6ec"
+                         class="tb-column text-center absolutecenter-stretch col-xs-12 col-sm-12 col-md-6 nopadding tbWow animated fadeIn ">
+                        <a href="<?php echo base_url('AboutUs/public_invitation'); ?>">
+                            <img style="max-width: 100% !important;height: 620px;margin: 70px 0px;"
+                                 src="<?php echo $_DIR ?>images/banner-2.jpg" />
+                        </a>
+                    </div>
+                    <div id="hp-the-issues-list"
+                         class="tb-column absolutecenter-stretch col-xs-12  col-sm-6 col-md-3 nopadding">
+                        <div class="col-xs-12" style="
+
+    padding: 150px 2px;
+    font-size: 20px;
+    direction: rtl;
+    text-align: center;
+    line-height: 40px;font-weight: 900;">
+                            مردمان پا‌ک‌نهاد و نیک‌سرشت این دیار، شایسته‌ی زندگی و معیشتی پاک و نیکند، که جز با پاک‌دستی و نیک‌اندیشیِ والیان و متولیان امور حاصل نمی‌شود. در پنجمین دهه از تاریخ استقلال این مرزوبوم، فاصله‌ای عمیق میان آنچه ملت از این بالانشینان انتظار دارد، با آنچه امروز بر سر سفره‌ی فرودستان فرود آمده احساس می‌شود، که درد و رنجش بغض گلوگیر روز و شب دلسوزان و دغدغه‌مندان است.
+                        </div>
+
                     </div>
                 </div>
             </div>
