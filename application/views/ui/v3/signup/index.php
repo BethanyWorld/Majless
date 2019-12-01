@@ -133,6 +133,41 @@
                                 id="inputSignUpTypeSponsor"
                                 name="inputSignUpTypeSponsor"
                                 class="sign-up-type" value="3"/>
+
+
+                        <!--when support checked true-->
+                        <div class="col-md-12 col-xs-12 support-div">
+                            <p>در چه زمین هایی قصد دارید به جنبش کمک کنید و از ما حمایت کنید ؟</p>
+                            <input
+                                    type="checkbox"
+                                    id=""
+                                    name=""
+                                    class="" value=""/>
+                            <label for="">تولید محتوای تخصصی ناظر به مسائل کشور</label>
+                            <br>
+                            <input
+                                    type="checkbox"
+                                    id=""
+                                    name=""
+                                    class="" value=""/>
+                            <label for="">تولید محتوای رسانه ای برای ترویج جنبش</label>
+                            <br>
+                            <input
+                                    type="checkbox"
+                                    id=""
+                                    name=""
+                                    class="" value=""/>
+                            <label for="">حمایت مالی یا جذب منابع برای جنبش</label>
+                            <br>
+                            <input
+                                    type="checkbox"
+                                    id=""
+                                    name=""
+                                    class="" value=""/>
+                            <label for="">سازماندهی و ترویج چهره به چهره جنبش</label>
+                        </div>
+                        <!--when support checked true-->
+
                     </div>
                 </div>
             </div>

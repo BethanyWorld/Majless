@@ -213,5 +213,19 @@
                 $(".recaptcha").removeClass('fa-spin');
             }, 2000);
         });
+
+
+
+        $('#inputSignUpTypeSponsor').change(function () {
+            debugger;
+            $truevalue = $('#inputSignUpTypeSponsor').is(":checked");
+            if($truevalue === true){
+                $('.support-div').show();
+            }
+            else{
+                $('.support-div').hide();
+            }
+        });
+
     });
 </script>

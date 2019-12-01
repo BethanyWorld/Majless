@@ -44,5 +44,17 @@
     .modal {
         z-index: 1000000;
     }
-
+    .support-div label{
+        padding-right: 10px;
+    }
+    .support-div{
+        display: none;
+    }
+    .support-div{
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 2px 3px 12px 0px #ccc;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
 </style>
