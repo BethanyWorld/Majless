@@ -56,7 +56,6 @@ class AboutUs extends CI_Controller{
         $this->load->view('ui/v3/about_us/public_invitation/index', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
-
     public function candidate_commitment_letter()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -115,6 +114,16 @@ class AboutUs extends CI_Controller{
         $data['title'] = "حمایت از ما";
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/about_us/support/index', $data);
+        $this->load->view('ui/v3/static/footer', $data);
+    }
+    public function faq()
+    {
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'سوالات متداول';
+        $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
+        $data['title'] = "سوالات متداول";
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/about_us/faq/index', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
     public function exams()

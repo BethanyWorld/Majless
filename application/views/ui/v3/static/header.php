@@ -173,27 +173,6 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                         <ul id="menu-main-menu" class="nav-menu">
                             <li class="current-menu-item"><a href="<?php echo base_url() ?>">صفحه اصلی</a></li>
                             <li><a href="<?php echo base_url('State') ?>">فهرست نامزدها</a></li>
-                            <li class="hidden"><a href="<?php echo base_url('Content') ?>">محتوا</a>
-                                <?php /*<ul>
-                                    <?php foreach (array_reverse($categories) as $item){ ?>
-                              <li>
-                                 <a href="<?php echo base_url('Content/category/').$item['CategoryId']."/".$item['CategoryTitle']; ?>">
-                                 <?php echo $item['CategoryTitle']; ?>
-                                 </a>
-                              </li>
-                              <?php } ?>
-                              <li><a href="<?php echo base_url('Content/sendArticle') ?>">ارسال محتوا</a></li>
-                           </ul>
-                           */ ?>
-                            </li>
-                            <!--                            <li>-->
-                            <!--                                <a href="-->
-                            <?php //echo base_url('AboutUs/candidatelegal') ?><!--">شاخص ها</a>-->
-                            <!--                                <ul>-->
-                            <!--                                    <li><a href="-->
-                            <?php //echo base_url('AboutUs/candidatelegal') ?><!--">شرایط قانونی</a></li>-->
-                            <!--                                </ul>-->
-                            <!--                            </li>-->
                             <li>
                                 <a href="<?php echo base_url('AboutUs/intro') ?>">آشنایی با جنبش از ما</a>
                                 <ul>
@@ -207,8 +186,8 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                     <!--                                <li><a href="-->
                                     <?php //echo base_url('AboutUs/candidate_commitment_letter') ?><!--">تعهدنامه نامزدها</a></li>-->
                                     <li><a href="<?php echo base_url('AboutUs/support') ?>">حمایت مالی از ما</a></li>
-                                    <li><a href="#">صورت مالی</a></li>
-                                    <li><a href="#">سوال های متداول</a></li>
+<!--                                    <li><a href="#">صورت مالی</a></li>-->
+                                    <li><a href="<?php echo base_url('AboutUs/faq') ?>">سوالات متداول</a></li>
                                 </ul>
                             </li>
                             <li>

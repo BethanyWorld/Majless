@@ -435,7 +435,7 @@
                             <div style=" background-color:#043174; color: #ffffff;"
                                  class=" absolutecenter  nopadding-xs">
                                 <div class="tb-single-image tb-single-image-icon  textaligncenter">
-                                    <a class="tb-single-image-wrap" href="<?php echo base_url('Content'); ?>">
+                                    <a class="tb-single-image-wrap" href="<?php echo base_url('AboutUs/intro'); ?>">
                                         <img src="<?php echo $_DIR ?>images/img-1 (2).jpg"
                                              alt="img">
                                         <i class="fa fa-link"></i>
