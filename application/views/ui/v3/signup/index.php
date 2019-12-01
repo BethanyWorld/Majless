@@ -137,7 +137,7 @@
 
                         <!--when support checked true-->
                         <div class="col-md-12 col-xs-12 support-div">
-                            <p>در چه زمین هایی قصد دارید به جنبش کمک کنید و از ما حمایت کنید ؟</p>
+                            <p>در چه زمینه هایی قصد دارید به جنبش کمک کنید و از ما حمایت کنید ؟</p>
                             <input
                                     type="checkbox"
                                     id=""
