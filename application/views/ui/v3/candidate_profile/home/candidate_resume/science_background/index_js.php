@@ -137,7 +137,23 @@
                     }
                 });
         });
+        $("#updateScienceBackgroundAndRedirect").click(function () {
+            $sendData = {
+                inputCandidateScience: $("#form").serializeArray()
+            }
+            toggleLoader();
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Profile/candidateUpdateSkills',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = JSON.parse(data);
+                    notify($result['content'], $result['type']);
+                    location.href = base_url + 'Profile/skills';
+                }
+            });
 
-
+        });
     });
 </script>

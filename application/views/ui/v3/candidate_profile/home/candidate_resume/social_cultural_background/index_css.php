@@ -373,42 +373,7 @@
         margin-bottom: 15px;
     }
 
-    .MobileStep ul {
-        display: flex;
-        position: relative;
-        list-style-type: none;
-        padding-left: 0px;
-    }
 
-    .MobileStep ul li {
-        width: 20.16%;
-        margin-right: 4px;
-    }
-
-    .MobileStep ul li a {
-        text-decoration: none;
-        display: inline-block;
-        width: 100%;
-        height: 20px;
-        background: #999999;
-        color: #ffffff;
-        border-radius: 3.5px;
-        text-shadow: 1px 0px 8px #333;
-        line-height: 0px;
-        padding-bottom: 13px;
-        padding-top: 13px;
-        padding-left: 9px;
-        padding-right: 9px;
-
-    }
-    .MobileStep ul li a i {
-        line-height: 0px;
-    }
-    .MobileStep ul li.first a {
-        background: #022D6D;
-        color: #ffffff;
-        transition: all 0.5s ease;
-    }
 
     .CandidateLevelType {
         display: none;
