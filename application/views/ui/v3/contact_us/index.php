@@ -29,53 +29,58 @@
             <div class="panel-heading social-panel-heading">
                 <h3 class="panel-title" style="color: #fff;padding-right: 10px;">پیام رسان های داخلی</h3>
             </div>
-            <div class="panel-body text-justify">
-                <div class="col-md-12 col-xs-12 margin-b-10">
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <img src="<?= $_DIR; ?>images/com.gapafzar.messenger_512x512.png" width="35px" height="35px;">
-                        <a href="https://gap.im/azmaa" target="_blank">گپ</a>
+            <div class="panel-body text-justify contact-social-icon-div">
+                <div class="col-md-12 col-md-offset-0 col-xs-6 col-xs-offset-3 margin-b-10">
+                    <div class="col-md-4 col-sm-4 col-xs-12 response-margin-b">
+                        <img src="<?= $_DIR; ?>images/instagram.png" width="25px" height="25px;">
+                        <a href="https://instagram.com/azmaa_net" target="_blank">اینستاگرام</a>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <img src="<?= $_DIR; ?>images/net.iGap_512x512.png" width="35px" height="35px;">
-                        <a href="https://iGap.net/azmaa" target="_blank">آی گپ</a>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 response-margin-b rightFloat">
+                        <img src="<?= $_DIR; ?>images/telegram.png" width="25px" height="25px;">
+                        <a href="https://t.me/azmaa_net" target="_blank">تلگرام</a>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <img src="<?= $_DIR; ?>images/com.aparat_512x512.png" width="35px" height="35px;">
-                        <a href="https://www.aparat.com/azmaa_net" target="_blank">آپارات</a>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 response-margin-b rightFloat">
+                        <img src="<?= $_DIR; ?>images/twitter.png" width="25px" height="25px;" class="twitter-style-image">
+                        <a href="https://twitter.com/azmaa_net" target="_blank">توییتر</a>
                     </div>
+
                 </div>
 
+                <div class="col-md-12 col-md-offset-0 col-xs-6 col-xs-offset-3 margin-b-10 ">
 
-                <div class="col-md-12 col-xs-12 margin-b-10 ">
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <img src="<?= $_DIR; ?>images/bale.png" width="35px" height="35px;">
+                    <div class="col-md-4 col-sm-4 col-xs-12 response-margin-b">
+                        <img src="<?= $_DIR; ?>images/com.aparat_512x512.png" width="25px" height="25px;">
+                        <a href="https://www.aparat.com/azmaa_net" target="_blank">آپارات</a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 response-margin-b">
+                        <img src="<?= $_DIR; ?>images/bale.png" width="25px" height="25px;">
                         <a href="https://ble.im/azmaa" target="_blank">بله</a>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <img src="<?= $_DIR; ?>images/ir.eitaa.messenger_512x512.png" width="35px" height="35px;">
-                        <a href="https://Eitaa.com/azmaa_net" target="_blank" class="">ایتا</a>
-                    </div>
 
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <img src="<?= $_DIR; ?>images/sousosh.png" width="35px" height="35px;">
+                    <div class="col-md-4 col-sm-4 col-xs-12 response-margin-b">
+                        <img src="<?= $_DIR; ?>images/sousosh.png" width="25px" height="25px;">
                         <a href="https://sapp.ir/azmaa.net" target="_blank">سروش</a>
                     </div>
 
                 </div>
 
-                <div class="col-md-12 col-xs-12 ">
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <img src="<?= $_DIR; ?>images/instagram.png" width="35px" height="35px;">
-                        <a href="https://azmaa_net" target="_blank">اینستاگرام</a>
+                <div class="col-md-12 col-md-offset-0 col-xs-6 col-xs-offset-3">
+                    <div class="col-md-4 col-sm-4 col-xs-12 response-margin-b">
+                        <img src="<?= $_DIR; ?>images/ir.eitaa.messenger_512x512.png" width="25px" height="25px;">
+                        <a href="https://Eitaa.com/azmaa_net" target="_blank" class="">ایتا</a>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12 rightFloat">
-                        <img src="<?= $_DIR; ?>images/telegram.png" width="35px" height="35px;">
-                        <a href="https://azmaa_net" target="_blank">تلگرام</a>
+                    <div class="col-md-4 col-sm-4 col-xs-12 response-margin-b">
+                        <img src="<?= $_DIR; ?>images/net.iGap_512x512.png" width="25px" height="25px;">
+                        <a href="https://iGap.net/azmaa" target="_blank">آی گپ</a>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12 rightFloat">
-                        <img src="<?= $_DIR; ?>images/twitter.png" width="35px" height="35px;" class="twitter-style-image">
-                        <a href="https://azmaa_net" target="_blank">توییتر</a>
+                    <div class="col-md-4 col-sm-4 col-xs-12 response-margin-b">
+                        <img src="<?= $_DIR; ?>images/com.gapafzar.messenger_512x512.png" width="25px" height="25px;">
+                        <a href="https://gap.im/azmaa" target="_blank">گپ</a>
                     </div>
+
                 </div>
 
 

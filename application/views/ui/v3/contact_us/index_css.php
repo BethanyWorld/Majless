@@ -1,20 +1,28 @@
 <style>
-    .margin-b-10{
+    .margin-b-10 {
         margin-bottom: 10px;
     }
-    .rightFloat{
+
+    .rightFloat {
         float: right;
     }
-    .twitter-style-image{
+
+    .twitter-style-image {
         border-radius: 50%;
     }
+
     .form-group {
         margin-bottom: 0px;
     }
 
-    .padding-right-10{
+    .contact-social-icon-div a {
+        padding-right: 8px;
+    }
+
+    .padding-right-10 {
         padding-right: 10px;
     }
+
     textarea {
         resize: none;
         height: 260px !important;
@@ -130,12 +138,15 @@
     .social-panel-heading {
         padding: 3px;
     }
+
     .contact-social-main-div-padding {
         padding: 0px !important;
     }
-    .contact-social-main-div-padding{
+
+    .contact-social-main-div-padding {
         text-align: right !important;
     }
+
     .contact-social-main-div-padding a {
         border: none !important;
         margin-top: 0px !important;
@@ -143,12 +154,14 @@
         position: relative;
         top: -7px;
     }
-    .contact-social-main-div-padding .contact-svg-icon{
+
+    .contact-social-main-div-padding .contact-svg-icon {
         top: 5px;
     }
+
     /*for social icon top*/
 
-    .question-style{
+    .question-style {
         float: left;
         background-color: gray;
         border-radius: 100%;
@@ -163,6 +176,9 @@
     @media screen and (max-width: 992px) {
         .contact-label-with-style .form-group label {
             min-width: 45px;
+        }
+        .response-margin-b{
+            margin-bottom: 12px;
         }
     }
 </style>
