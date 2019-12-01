@@ -147,7 +147,7 @@
                          style="margin: 10px 5px;border: 2px solid #ccc;"
                          src="<?php echo base_url('GetCaptcha'); ?>"/>
                     <input type="text"
-                           style="position: relative;top:15px;    width:calc(100% - 175px);float: left;font-family: tahoma;"
+                           style="position: relative;top:10px; width:calc(100% - 175px);float: left;font-family: tahoma;"
                            name="inputCaptcha" id="inputCaptcha" class="form-control"
                            placeholder="کد امنیتی">
                 </div>

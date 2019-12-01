@@ -429,7 +429,7 @@
 
     .MobileStep ul li {
         width: 20.16%;
-        margin-right: 25px;
+        margin-right: 8px;
     }
 
     .MobileStep ul li a {
@@ -438,20 +438,27 @@
         width: 100%;
         height: 20px;
         background: #999999;
+        padding: 5px;
+        line-height: 10px;
         color: #ffffff;
         border-radius: 3.5px;
         text-shadow: 1px 0px 8px #333;
     }
-
+    .MobileStep ul li a .fa-refresh{
+        line-height: 10px;
+    }
     .MobileStep ul li.first a {
         background: #022D6D;
         color: #ffffff;
         transition: all 0.5s ease;
     }
+    .padding-0{
+        padding: 0px;
+    }
 </style>
 <div class="col-md-3 col-xs-12 pull-right">
-    <div class="col-xs-12 padding-0 visible-xs visible-sm">
-        <div class="col-xs-12 padding-0 MobileStep">
+    <div class="col-xs-12 padding-0 visible-xs visible-sm" style="padding: 0px;">
+        <div class="col-xs-12 padding-0 MobileStep"  style="padding: 0px;">
             <ul class="col-xs-12">
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/resume'); ?>">1</a>
