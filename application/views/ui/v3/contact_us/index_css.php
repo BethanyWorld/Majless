@@ -12,6 +12,9 @@
         margin-bottom: 0px;
     }
 
+    .padding-right-10{
+        padding-right: 10px;
+    }
     textarea {
         resize: none;
         height: 260px !important;
