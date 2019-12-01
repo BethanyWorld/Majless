@@ -160,8 +160,8 @@
                 </div>
                 <div class="gap"></div>
                 <div class="col-xs-12 padding-0">
-                    <a class="d-i-b btn btn btn-default" href="<?php echo base_url('Login') ?>" style="border: 1px solid #043174;">
-                        <strong style="line-height: 44px;font-size: 18px;">
+                    <a class="d-i-b btn btn btn-default" href="<?php echo base_url('Login') ?>">
+                        <strong style="line-height: 44px;">
                            قبلا ثبت نام کرده اید؟ وارد شوید
                         </strong>
                     </a>

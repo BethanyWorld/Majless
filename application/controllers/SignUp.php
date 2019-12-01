@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class SignUp extends CI_Controller{
+
+class SignUp extends CI_Controller
+{
     public function __construct(){
         parent::__construct();
         $this->load->model('ui/ModelCommand');
@@ -35,8 +37,8 @@ class SignUp extends CI_Controller{
         $this->load->view('ui/v3/signup/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
-
-    public function submitSignUpForm(){
+    public function submitSignUpForm()
+    {
         $inputs = $this->input->post(NULL, TRUE);
         $inputSignUpType = $inputs['inputSignUpType'];
         unset($inputs['inputSignUpType']);
@@ -71,9 +73,9 @@ class SignUp extends CI_Controller{
         }
 
 
-        $inputs['inputSignUpPhone']  = FaToEn($inputs['inputSignUpPhone']);
-        $inputs['inputCaptcha']  = FaToEn($inputs['inputCaptcha']);
-        $inputs['inputSignUpNationalCode']  = FaToEn($inputs['inputSignUpNationalCode']);
+        $inputs['inputSignUpPhone'] = FaToEn($inputs['inputSignUpPhone']);
+        $inputs['inputCaptcha'] = FaToEn($inputs['inputCaptcha']);
+        $inputs['inputSignUpNationalCode'] = FaToEn($inputs['inputSignUpNationalCode']);
 
         $electionId = $this->ModelCountry->getElectionIdByCityId($inputs['inputSignUpCityId'])[0]['ElectionId'];
 
@@ -103,7 +105,7 @@ class SignUp extends CI_Controller{
     public function checkCaptcha()
     {
         $inputs = $this->input->post(NULL, TRUE);
-        $inputs['inputCaptcha']  = FaToEn($inputs['inputCaptcha']);
+        $inputs['inputCaptcha'] = FaToEn($inputs['inputCaptcha']);
         $captchaCode = $this->session->userdata['captchaCode'];
         if (strtolower($inputs['inputCaptcha']) == strtolower($captchaCode)) {
             $arr = array(
@@ -137,7 +139,7 @@ class SignUp extends CI_Controller{
         if ($loginInfo['CandidateStatus'] != 'CandidateRegister' &&
             $loginInfo['CandidateStatus'] != 'CandidateResumeCompleted' &&
             $loginInfo['CandidateStatus'] != 'CandidateResumeAccepted' &&
-            $loginInfo['CandidateStatus'] != 'CandidateResumeRejected'){
+            $loginInfo['CandidateStatus'] != 'CandidateResumeRejected') {
             $result = array(
                 'type' => "warning",
                 'content' => "دسترسی لازم را ندارید",
@@ -164,8 +166,7 @@ class SignUp extends CI_Controller{
         if ($inputs['inputCandidateStatus'] == 'CandidateRegister' || $inputs['inputCandidateStatus'] == 'CandidateResumeCompleted' || $inputs['inputCandidateStatus'] == 'CandidateResumeAccepted' || $inputs['inputCandidateStatus'] == 'CandidateResumeRejected') {
             $result = $this->ModelCommand->doChangeCandidateState($inputs);
             echo json_encode($result);
-        }
-        else {
+        } else {
             $result = array(
                 'type' => "red",
                 'content' => "دسترسی به عملیات را ندارید",
@@ -173,5 +174,52 @@ class SignUp extends CI_Controller{
             );
             echo json_encode($result);
         }
+    }
+    public function importSMS()
+    {
+        /*$this->load->helper('plugins/excel/bootstrap_helper');
+        $this->load->helper('plugins/excel/PHPExcel/iofactory_helper');
+        $inputFileName = APPPATH.'1_142862333.xlsx';
+        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+        $objPHPExcel = $objReader->load($inputFileName);
+        $sheet = $objPHPExcel->getSheet(0);
+        $highestRow = $sheet->getHighestRow();
+        $highestColumn = $sheet->getHighestColumn();
+        for ($row = 1; $row <= $highestRow; $row++) {
+            $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE)[0];
+            $message = 'فرهیخته گرامی';
+            $message .= PHP_EOL;
+            if($rowData[2] == 0 || $rowData[2] == 2){
+                $message .= 'جناب آقای ';
+            }
+            else{
+                $message .= 'سرکار خانم ';
+            }
+            $message .= $rowData[0];
+            $message .= PHP_EOL;
+            $message .= 'با سلام';
+            $message .= PHP_EOL;
+            $message .= 'جنبش ازما می کوشد با ابزاری علمی، شایسته ترین افراد را برای خانه ملت به مردم معرفی نماید.';
+            $message .= PHP_EOL;
+            $message .= 'از شما دعوت می شود ضمن ثبت نام در انتخابات مجلس، با شرکت در فرآیند ارزیابی و سنجش این جنبش، ما را در احیای گفتمان شفافیت و شایسته گزینی یاری نمایید';
+            $message .= PHP_EOL;
+            $message .= 'http://azmaa.net';
+            if($rowData[2] == 2){
+                var_dump($rowData);
+                $data = array(
+                    'senderNumber' => $rowData[1],
+                    'messageBody' => $message
+                );
+                $ch = curl_init( 'http://new.moarefin.ir:8080/api/Messages' );
+                $payload = json_encode( $data );
+                curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
+                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+                curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+                $result = curl_exec($ch);
+                echo "<pre>$result</pre>";
+                curl_close($ch);
+            }
+        }*/
     }
 }

@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Profile extends CI_Controller{
+
     public function __construct()
     {
         parent::__construct();
@@ -933,8 +934,6 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/static/footer');
     }
     /* End For Resume -------------------------------------------------------------*/
-
-
     public function doRegisterExam()
     {
         $userInfo = $this->session->userdata('UserLoginInfo')[0];
@@ -950,7 +949,6 @@ class Profile extends CI_Controller{
             return makeSafeInput($v);
         }, $inputs);
         $result = $this->ModelUser->doRegisterExam($inputs);
-
         if (is_numeric($result)) {
             $this->session->set_userdata('orderId', $result);
             /* witch means we can pay exam */
@@ -992,7 +990,38 @@ class Profile extends CI_Controller{
             echo json_encode($result);
         }
     }
+    public function account()
+    {
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'صفحه کاربری';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'تغییر رمز عبور';
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
 
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/account/index', $data);
+        $this->load->view('ui/v3/candidate_profile/account/index_css');
+        $this->load->view('ui/v3/candidate_profile/account/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function doChangePassword()
+    {
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelProfile->doChangePassword($inputs);
+        echo json_encode($result);
+    }
     /* get out of panel - session destroyed */
     public function logOut()
     {

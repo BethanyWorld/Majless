@@ -704,7 +704,6 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
-
     public function getCandidateFinanceByCandidateId($id)
     {
         $data['BankAccount']=$this->db->select('*')->from('candidate_price_bank_account')->where('CandidateId', $id)->get()->result_array();
@@ -718,5 +717,49 @@ class ModelProfile extends CI_Model{
         $data['Vehicle']=$this->db->select('*')->from('candidate_price_vehicle')->where('CandidateId', $id)->get()->result_array();
         return $data;
     }
+    public function doChangePassword($inputs)
+    {
+        $this->db->select('*');
+        $this->db->from('candidate');
+        $this->db->where(array(
+            'CandidateId' => $inputs['inputCandidateId'],
+            'CandidatePassword' => md5($inputs['inputCurrentPassword'])
+        ));
+        if($this->db->get()->num_rows() > 0){
+            $UserArray = array(
+                'CandidatePassword' => md5($inputs['inputNewPassword'])
+            );
+            $this->db->trans_start();
+            $this->db->where('CandidateId', $inputs['inputCandidateId']);
+            $this->db->update('candidate', $UserArray);
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $arr = array(
+                    'type' => "red",
+                    'content' => "بروزرسانی رمز عبور با مشکل مواجه شد",
+                    'success' => false
+                );
+                return $arr;
+            } else {
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی رمز عبور با موفقیت انجام شد",
+                    'success' => true
+                );
+                return $arr;
+            }
+        }
+        else{
+            $arr = array(
+                'type' => "red",
+                'content' => "رمز عبور فعلی نامعتبر است",
+                'success' => false
+            );
+            return $arr;
+        }
+
+    }
+
+
 }
 ?>
