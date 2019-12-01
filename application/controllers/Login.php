@@ -9,7 +9,9 @@ class Login extends CI_Controller
         $this->load->model('ui/ModelQuery');
         $this->load->model('ui/ModelCountry');
     }
-    public function index(){
+
+    public function index()
+    {
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
         $data['noImg'] = $this->config->item('defaultImage');
@@ -23,7 +25,9 @@ class Login extends CI_Controller
         $this->load->view('ui/v3/login/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
-    public function doLogin(){
+
+    public function doLogin()
+    {
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return strip_tags($v);
@@ -35,8 +39,8 @@ class Login extends CI_Controller
             return makeSafeInput($v);
         }, $inputs);
 
-        $inputs['inputPhone']  = FaToEn($inputs['inputPhone']);
-        $inputs['inputPassword']  = FaToEn($inputs['inputPassword']);
+        $inputs['inputPhone'] = FaToEn($inputs['inputPhone']);
+        $inputs['inputPassword'] = FaToEn($inputs['inputPassword']);
 
         $this->form_validation->set_rules('inputPhone', 'تلفن', 'trim|xss_clean|required|min_length[11]|max_length[11]');
         $this->form_validation->set_rules('inputPassword', 'شهر', 'trim|xss_clean|required|min_length[1]|max_length[80]');
@@ -53,8 +57,7 @@ class Login extends CI_Controller
         if ($inputs['inputCSRF'] == $this->session->userdata['CSRF']) {
             $result = $this->ModelQuery->doLogin($inputs);
             echo json_encode($result);
-        }
-        else {
+        } else {
             $arr = array(
                 'type' => "red",
                 'content' => "کد CSRF نامعتبر است"
@@ -62,4 +65,6 @@ class Login extends CI_Controller
             echo json_encode($arr);
         }
     }
+
+
 }

@@ -3,11 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class SignUp extends CI_Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('ui/ModelCommand');
         $this->load->model('ui/ModelCountry');
     }
+
     public function index()
     {
         $inputs = $this->input->get(NULL, TRUE);
@@ -37,6 +39,7 @@ class SignUp extends CI_Controller
         $this->load->view('ui/v3/signup/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
+
     public function submitSignUpForm()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -102,6 +105,7 @@ class SignUp extends CI_Controller
             echo json_encode($arr);
         }
     }
+
     public function checkCaptcha()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -123,6 +127,7 @@ class SignUp extends CI_Controller
             echo json_encode($arr);
         }
     }
+
     public function changeCandidateState()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -175,6 +180,7 @@ class SignUp extends CI_Controller
             echo json_encode($result);
         }
     }
+
     public function importSMS()
     {
         /*$this->load->helper('plugins/excel/bootstrap_helper');
@@ -190,7 +196,7 @@ class SignUp extends CI_Controller
             $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE)[0];
             $message = 'فرهیخته گرامی';
             $message .= PHP_EOL;
-            if($rowData[2] == 0 || $rowData[2] == 2){
+            if($rowData[2] == 0){
                 $message .= 'جناب آقای ';
             }
             else{
@@ -202,24 +208,22 @@ class SignUp extends CI_Controller
             $message .= PHP_EOL;
             $message .= 'جنبش ازما می کوشد با ابزاری علمی، شایسته ترین افراد را برای خانه ملت به مردم معرفی نماید.';
             $message .= PHP_EOL;
-            $message .= 'از شما دعوت می شود ضمن ثبت نام در انتخابات مجلس، با شرکت در فرآیند ارزیابی و سنجش این جنبش، ما را در احیای گفتمان شفافیت و شایسته گزینی یاری نمایید';
-            $message .= PHP_EOL;
             $message .= 'http://azmaa.net';
-            if($rowData[2] == 2){
-                var_dump($rowData);
-                $data = array(
-                    'senderNumber' => $rowData[1],
-                    'messageBody' => $message
-                );
-                $ch = curl_init( 'http://new.moarefin.ir:8080/api/Messages' );
-                $payload = json_encode( $data );
-                curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-                $result = curl_exec($ch);
-                echo "<pre>$result</pre>";
-                curl_close($ch);
-            }
+            $message .= PHP_EOL;
+            $message .= 'از شما دعوت می شود ضمن ثبت نام در انتخابات مجلس، با شرکت در فرآیند ارزیابی و سنجش این جنبش، ما را در احیای گفتمان شفافیت و شایسته گزینی یاری نمایید';
+            var_dump($rowData);
+            $data = array(
+                'senderNumber' => $rowData[1],
+                'messageBody' => $message
+            );
+            $ch = curl_init( 'http://new.moarefin.ir:8080/api/Messages' );
+            $payload = json_encode( $data );
+            curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
+            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+            $result = curl_exec($ch);
+            echo "<pre>$result</pre>";
+            curl_close($ch);
         }*/
     }
 }
