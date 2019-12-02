@@ -1,6 +1,5 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <div class="page-caption">
-    استان
     <?php echo urldecode($stateName); ?>
 </div>
 <div class="container container-wrapper">

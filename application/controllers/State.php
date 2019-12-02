@@ -20,7 +20,7 @@ class State extends CI_Controller {
 	    $this->load->view('ui/v3/static/footer', $data);
 	}
     public function detail($stateId , $stateName){
-        $provinceAgent = $this->ModelAgent->getAgentByAgentStateId($stateId);
+        /*$provinceAgent = $this->ModelAgent->getAgentByAgentStateId($stateId);
         if(!isset($provinceAgent['AgentId'])){
             show_error("پشتیبانی برای این استان تعریف نشده است" , 200 , "پشتیبان سایت استان");
         }
@@ -37,7 +37,20 @@ class State extends CI_Controller {
             $this->load->view('ui/v3/state/detail/index_css');
             $this->load->view('ui/v3/state/detail/index_js');
             $this->load->view('ui/v3/static/footer', $data);
-        }
+        }*/
+        $provinceAgent = $this->ModelAgent->getAgentByAgentStateId($stateId);
+        $data['data'] = $this->ModelCandidate->getCandidateByStateId($stateId);
+        $data['stateName'] = $stateName;
+        $data['stateId'] = $stateId;
+        $data['cities'] = $this->ModelCountry->getCityByStateId($stateId);
+        $data['elections'] = $this->ModelCountry->getElectionsByStateId($stateId);
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle').' '."فهرست نامزد های انتخاباتی استان ".$stateName;
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/state/candidate/index' , $data);
+        $this->load->view('ui/v3/state/candidate/index_css');
+        $this->load->view('ui/v3/state/candidate/index_js');
+        $this->load->view('ui/v3/static/footer', $data);
     }
     public function page($stateId , $pageId ,  $pageTitle){
 
