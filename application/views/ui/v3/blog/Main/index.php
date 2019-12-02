@@ -16,115 +16,26 @@
                         <input type="submit" class="blog-search-submit" value="جستجو">
                     </form>
                 </div>
-                <div class="blog-widget-recent-post blog-widget">
-                    <h2 class="blog-widget-title">
-                        خبر های اخیر
-                    </h2>
-                    <ul>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="blog-widget-recent-post blog-widget">
-                    <h2 class="blog-widget-title">
-                        خبر های اخیر
-                    </h2>
-                    <ul>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="blog-widget-archive blog-widget">
-                    <h2 class="blog-widget-title">
-                        خبر های اخیر
-                    </h2>
-                    <ul>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="blog-widget-archive blog-widget">
-                    <h2 class="blog-widget-title">
-                        خبر های اخیر
-                    </h2>
-                    <ul>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="blog-widget-meta blog-widget">
-                    <h2 class="blog-widget-title">
-                        خبر های اخیر
-                    </h2>
-                    <ul>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">خبر های اخیر</a>
-                        </li>
-                    </ul>
+                <div class="col-xs-12 col-md-12 pull-right blog-widget-archive blog-widget">
+                    <div class="row sidebar">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">خبر های اخیر</h3>
+                            </div>
+                            <div class="panel-body text-justify">
+                                <ul>
+                                    <li><a href="">معرفی</a></li>
+                                    <li><a href="">بیانیه ارزش</a></li>
+                                    <li><a href="">فرآیند سنجش نامزدها</a></li>
+                                    <li><a href="">آشنایی با آزمون ها</a></li>
+                                    <li><a href="">شایستگی های نماینده مجلس</a></li>
+                                    <li><a href="">تعهدنامه نامزدها</a></li>
+                                    <li><a href="">حامبان و همراهان</a></li>
+                                    <li><a href="">حمایت مالی از ما</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="blog-sidebar-box">
                     <h3>پست های محبوب</h3>
