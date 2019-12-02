@@ -181,12 +181,6 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                     <li><a href="<?php echo base_url('AboutUs/measurement_process') ?>">فرآیند سنجش
                                             نامزدها</a></li>
                                     <li><a href="<?php echo base_url('AboutUs/exams') ?>">آشنایی با آزمون ها</a></li>
-                                    <li><a href="<?php echo base_url('AboutUs/candidatecriteriacompetencies') ?>">شایستگی
-                                            های نماینده مجلس</a></li>
-                                    <!--                                <li><a href="-->
-                                    <?php //echo base_url('AboutUs/candidate_commitment_letter') ?><!--">تعهدنامه نامزدها</a></li>-->
-                                    <li><a href="<?php echo base_url('AboutUs/support') ?>">حمایت مالی از ما</a></li>
-<!--                                    <li><a href="#">صورت مالی</a></li>-->
                                     <li><a href="<?php echo base_url('AboutUs/faq') ?>">سوالات متداول</a></li>
                                 </ul>
                             </li>
@@ -195,7 +189,6 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                 <ul>
                                     <li><a href="<?php echo base_url('AboutUs/support') ?>">حمایت از ما</a></li>
                                     <li><a href="<?php echo base_url('AboutUs/support') ?>">حامیان و همراهان</a></li>
-<!--                                    <li><a href="#">چهره های همراه</a></li>-->
                                 </ul>
                             </li>
                             <li>
@@ -207,8 +200,6 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                     <ul>
                                         <li><a href="<?php echo base_url('SignUp?type=candidate') ?>">نامزد
                                                 انتخاباتی</a></li>
-                                        <!--                                        <li><a href="-->
-                                        <?php //echo base_url('SignUp?type=elite') ?><!--">بانک نخبگان</a></li>-->
                                         <li><a href="<?php echo base_url('SignUp?type=sponsor') ?>">حامی</a></li>
                                     </ul>
                                 </li>
