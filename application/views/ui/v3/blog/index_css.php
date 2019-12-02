@@ -1,8 +1,4 @@
 <style>
-    .padding-0 {
-        padding: 0px;
-    }
-
     #page {
         background-color: #f8f8f8;
     }
@@ -12,8 +8,14 @@
     }
 
     .blog-right-panel-main-div {
+        /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);*/
         margin: 0 auto;
+        /*background: #ffffff;*/
         padding-top: 0px;
+    }
+
+    .blog-left-panel-main-div {
+        padding: 0px;
     }
 
     .padding-right-style {
@@ -24,47 +26,114 @@
         padding-left: 0px;
     }
 
-    /*for breadcrumb*/
-    .breadcrumb {
-        padding: 1px 20px;
-        border-radius: 0;
-        margin-bottom: 30px;
-        background-color: #022d6d;
+    /*for left panel*/
+    .blog-detail-div {
+        display: block;
     }
 
-    .blog-detail-breadcrumb {
-        margin-top: 18px;
+    .blog-post {
+        background-color: #fff;
+        margin-bottom: 40px;
+        padding: 0px;
     }
 
-    .blog-breadcrumb-ul-style {
-        display: table-cell;
-        vertical-align: middle;
-        float: none;
+    .blog-outer {
+        margin-top: 0px;
+        box-shadow: 0 0 15px #cccccc57;
+        padding: 20px;
+        border: 1px solid #f1f1f1;
+    }
+
+    .blog-wrapper {
+        margin-top: -18px;
+        margin-bottom: 18px;
+    }
+
+    .blog-post-image {
         overflow: hidden;
-        zoom: 1;
-        padding-right: 15px;
+        position: relative;
     }
 
-    .breadcrumb li {
+    .blog-post-image-inner {
+        overflow: hidden;
+        position: relative;
+        margin-top: 35px;
+        margin-bottom: 0px;
+        height: 285px;
+    }
+
+    .blog-post-image-inner img {
+        width: 640px;
+        height: 100%;
+    }
+
+    .blog-combine {
+        margin-top: 21px;
+    }
+
+    .blog-cat-link {
+        color: #d10b20;
+        text-decoration: none;
+        position: relative;
+        top: 15px;
+    }
+
+    .blog-post-content {
+        padding: 0px;
+    }
+
+    .blog-cat-link:hover, .blog-cat-link:focus {
+        color: #d10b20;
+    }
+
+    .blog-combine h2 a {
+        color: #222222;
+    }
+
+    .blog-post-meta, .blog-post-meta a {
+        color: #555555;
+        margin-bottom: 5px;
+    }
+
+    .blog-post-content-p {
+        margin-top: 10px;
         font-size: 15px;
-        line-height: 17px;
-        color: #fff;
-        font-weight: 300;
-        display: inline-block;
+        line-height: 2em;
+        margin-bottom: 30px;
+        height: 6em;
+        overflow: hidden;
+        padding-left: 15px;
     }
 
-    .breadcrumb ul li a {
-        color: #fff;
+    .text-center.blog-more-link-button {
+        margin-top: -13px;
+        text-align: right;
     }
 
-    .breadcrumb li + li:before {
-        font-family: FontAwesome;
-        color: inherit;
-        padding: 0 10px;
-        content: "\f100";
+    .blog-more-link-button {
+        margin: 0px 0;
     }
 
-    /*for breadcrumb*/
+    .blog-more-link-button a.btn-default {
+        background-color: #D10B20;
+        border-color: #D10B20;
+        color: #FFF;
+        -webkit-border-radius: 0;
+        text-transform: uppercase;
+        line-height: 38px;
+        padding: 0 29px;
+        font-size: 18px;
+        letter-spacing: 0.1em;
+    }
+
+    .blog-more-link-button a.btn-default:hover {
+        text-decoration: none;
+        background-color: #052452;
+        border-color: #052452;
+    }
+
+    /*for left panel*/
+
 
     /*for right panel*/
     .blog-widget {
@@ -329,123 +398,8 @@
     /*for right panel*/
 
 
-    /*for left panel*/
-    .blog-detail-page-image {
-        /*height: 450px;*/
-        padding-left: 0px;
-    }
 
-    .blog-detail-page-image img {
-        height: auto;
-    }
 
-    .blog-detail-desc-main-div {
-        padding: 40px 60px 60px;
-        border-color: #e9e9e9;
-        border-style: solid;
-        border-width: 0 1px 1px 1px;
-        background-color: #fff;
-    }
-
-    .blog-detail-page-desc-main-div {
-        padding-right: 15px;
-        padding-left: 0px;
-    }
-
-    .blog-categorized-text {
-        text-align: center;
-        color: #052452;
-        font-weight: bold;
-    }
-
-    .blog-detail-desc-main-div {
-        text-align: center;
-    }
-
-    .blog-detail-desc-main-div a {
-        color: #1d434c;
-    }
-
-    .blog-detail-title {
-        text-align: center;
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 1.2;
-        margin: 14px 0;
-        cursor: pointer;
-    }
-
-    .blog-detail-desc-main-div a:hover {
-        color: #d10b20;
-    }
-
-    .blog-detail-desc-main-div a .blog-detail-title:hover {
-        color: #d10b20;
-    }
-
-    .blog-detail-page-separator {
-        margin-top: 20px;
-    }
-
-    h4.blockquote-reverse {
-        padding-right: 15px;
-        padding-left: 0;
-        text-align: right;
-        border-right: 5px solid #567e2c;
-        border-left: 0;
-        line-height: 26px;
-        font-size: 16px;
-        color: #007ac7;
-        font-weight: 900;
-    }
-
-    .blog-contents-div {
-        text-align: right;
-        padding: 0px;
-        margin-top: 15px;
-    }
-
-    .blog-comment-div {
-        margin-top: 50px;
-        padding:0px ;
-    }
-
-    .blog-comment-div h2 {
-        color: #000;
-        font-size: 18px !important;
-        line-height: 40px;
-        border-bottom: 1px solid #567e2c;
-        border-top: 1px solid #567e2c;
-        padding: 10px 0;
-        margin: 25px 0;
-        font-weight: 900;
-    }
-    .blog-comment-div h2 i {
-        padding-left: 10px;
-    }
-    .blog-comment-form-div{
-        text-align: right;
-    }
-    .blog-comment-form-div .form-group{
-        width: 100%;
-    }
-    .blog-comment-form-div textarea{
-        resize: none;
-        height: 200px;
-    }
-    .blog-send-comment-button-div button{
-        float: left;
-        background-color: #d10b20;
-        color: #fff;
-        border-radius: 0px;
-        line-height: 45px;
-        padding: 0 25px;
-    }
-    .blog-send-comment-button-div button:hover{
-        background-color: #d10b20;
-        color: #fff;
-    }
-    /*for left panel*/
 
 
     @media (max-width: 992px) {
@@ -484,5 +438,7 @@
             margin-right: 0px;
         }
     }
+
+
 
 </style>
