@@ -225,5 +225,37 @@ class SignUp extends CI_Controller
             echo "<pre>$result</pre>";
             curl_close($ch);
         }*/
+
+
+        /*Single Send*/
+        /*$message = 'فرهیخته گرامی';
+        $message .= PHP_EOL;
+        $message .= 'جناب آقای ';
+        $message .= 'دکتر محمدامین زارعی ';
+        $message .= PHP_EOL;
+        $message .= 'با سلام';
+        $message .= PHP_EOL;
+        $message .= 'جنبش ازما می کوشد با ابزاری علمی، شایسته ترین افراد را برای خانه ملت به مردم معرفی نماید.';
+        $message .= PHP_EOL;
+        $message .= 'http://azmaa.net';
+        $message .= PHP_EOL;
+        $message .= 'از شما دعوت می شود ضمن ثبت نام در انتخابات مجلس، با شرکت در فرآیند ارزیابی و سنجش این جنبش، ما را در احیای گفتمان شفافیت و شایسته گزینی یاری نمایید';
+
+        $data = array(
+            'senderNumber' => '09124107419',
+            'messageBody' => $message
+        );
+        $ch = curl_init( 'http://new.moarefin.ir:8080/api/Messages' );
+        $payload = json_encode( $data );
+        curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
+        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+        $result = curl_exec($ch);
+        echo "<pre>$result</pre>";
+        curl_close($ch);*/
+
+
+
+
     }
 }
