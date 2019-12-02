@@ -249,8 +249,40 @@
                                                بدون نوشته
                                             </a>
                 </span>
+                <div class="col-md-12 col-xs-12 blog-comment-div">
+                    <h2>
+                        <i class="fa fa-comment"></i>
+                        نظرات خود را ارسال کنید
+                    </h2>
+                    <form>
+                         <div class="col-md-12 col-xs-12">
+                             <div class="col-md-6 col-xs-12 col-sm-6 blog-comment-form-div">
+                                 <div class="form-group pull-right">
+                                     <label for="blogEmail">ایمیل</label>
+                                     <input class="form-control" type="text" id="blogEmail">
+                                 </div>
+                             </div>
+                             <div class="col-md-6 col-xs-12 col-sm-6 blog-comment-form-div">
+                                 <div class="form-group pull-right">
+                                     <label for="fullname">نام و نام خانوادگی</label>
+                                     <input class="form-control" type="text" id="fullname">
+                                 </div>
+                             </div>
 
-                <div class="col-xs-12 col-md-12" style="text-align: right;padding: 0px;margin-top: 15px;">
+                             <div class="col-md-12 col-xs-12 blog-comment-form-div">
+                                 <div class="form-group">
+                                     <label>متن پیام :</label>
+                                     <textarea class="form-control"></textarea>
+                                 </div>
+                             </div>
+
+                             <div class="col-md-12 col-xs-12 blog-send-comment-button-div">
+                                 <button class="btn btn-default" type="submit">ارسال نظر</button>
+                             </div>
+                         </div>
+                    </form>
+                </div>
+                <div class="col-xs-12 col-md-12 blog-contents-div">
                     <div class="col-xs-12 text-justify">
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
                         چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
@@ -413,12 +445,9 @@
                         خویش است.
                     </div>
                 </div>
-
-
                 <div class="col-md-12 col-xs-12 blog-detail-page-separator">
                     <img src="<?= $_DIR; ?>images/spacer_center_no_change.png" width="50px;">
                 </div>
-
             </div>
         </div>
     </div>
