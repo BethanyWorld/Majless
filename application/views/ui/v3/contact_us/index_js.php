@@ -7,20 +7,10 @@
             $inputTitle = $.trim($("#inputTitle").val());
             $inputSubject = $.trim($("#inputSubject").val());
             $inputContent = $.trim($("#inputContent").val());
+            $inputPhone = $.trim($("#inputPhone").val());
             $inputCaptcha = $.trim($("#inputCaptcha").val());
             $inputCSRF = $.trim($("#inputCSRF").val());
 
-            // if(!isText($inputFullName)){
-            //     notify("نام و نام خانوادگی نامعتبر است", "red");
-            //     toggleLoader();
-            //     return;
-            // }
-
-            // if(!isContactTitle($inputTitle)){
-            //     notify("تعداد کاراکتر های عنوان نامعتبر است", "red");
-            //     toggleLoader();
-            //     return;
-            // }
             if(!isCaptcha($inputCaptcha)) {
                 notify("کد امنیتی نامعتبر است", "red");
                 toggleLoader();
@@ -32,11 +22,6 @@
                 return;
             }
 
-            // if ($inputFullName == "" || $inputTitle == "" || $inputSubject == "" || $inputContent == "" || $inputCaptcha == "") {
-            //     notify("لطفا تمامی موارد را کامل کنید", "red");
-            //     toggleLoader();
-            // }
-
             if ($inputContent == "" || $inputCaptcha == "") {
                 notify("لطفا تمامی موارد را کامل کنید", "red");
                 toggleLoader();
@@ -47,6 +32,7 @@
                     'inputTitle': $inputTitle,
                     'inputSubject': $inputSubject,
                     'inputContent': $inputContent,
+                    'inputPhone': $inputPhone,
                     'inputCaptcha': $inputCaptcha,
                     'inputCSRF': $inputCSRF
                 }

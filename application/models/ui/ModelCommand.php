@@ -1,4 +1,5 @@
 <?php
+
 class ModelCommand extends CI_Model{
     /* For Contact Form */
     public function doSendContactForm($inputs)
@@ -8,6 +9,7 @@ class ModelCommand extends CI_Model{
             'ContactTitle' => $inputs['inputTitle'],
             'ContactSubject' => $inputs['inputSubject'],
             'ContactContent' => $inputs['inputContent'],
+            'ContactPhone' => $inputs['inputPhone'],
             'ContactIP' => $this->input->ip_address()
         );
         $this->db->trans_start();

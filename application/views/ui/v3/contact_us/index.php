@@ -106,9 +106,8 @@
                 <label>
                     <span class="fa fa-question question-style" data-toggle="tooltip"
                           title="اگر باید به پیام شما پاسخی بدهیم لطفا ایمیل یا شماره تماس خود را برای ما بنویسید"></span>
-
                     شماره تماس</label>
-                <input class="form-control" type="number" min="0" id="" name=""/>
+                <input  class="form-control" type="text" min="0" id="inputPhone" name=""/>
             </div>
             <div class="form-group">
                 <label>
@@ -118,9 +117,9 @@
                 <select class="form-control" type="text" id="inputSubject" name="inputSubject">
                     <option value="">-- انتخاب کنید --</option>
                     <option value="PeopleReport">گزارش تخلف</option>
-                    <option value="CS">پیشنهاد برای جنبش</option>
-                    <option value="CS">انتقاد از جنبش</option>
-                    <option value="CS">سوال از جنبش</option>
+                    <option value="CSO">پیشنهاد برای جنبش</option>
+                    <option value="CSD">انتقاد از جنبش</option>
+                    <option value="CSQ">سوال از جنبش</option>
                     <option value="Other">سایر</option>
                 </select>
             </div>
