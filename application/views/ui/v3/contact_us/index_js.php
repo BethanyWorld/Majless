@@ -23,7 +23,7 @@
             }
 
             if ($inputContent == "" || $inputCaptcha == "") {
-                notify("لطفا تمامی موارد را کامل کنید", "red");
+                notify("لطفا قسمت پیام را پر کنید", "red");
                 toggleLoader();
             }
             else {

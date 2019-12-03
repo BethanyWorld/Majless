@@ -135,9 +135,9 @@
     }
 
     /*for social icon top*/
-    .social-panel-heading {
-        padding: 3px;
-    }
+    /*.social-panel-heading {*/
+    /*    padding: 3px;*/
+    /*}*/
 
     .contact-social-main-div-padding {
         padding: 0px !important;
