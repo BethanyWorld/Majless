@@ -28,11 +28,41 @@ class Home extends CI_Controller{
         echo "<hr>";
         var_dump($input);
         $this->db->insert('candidate' , $arr);*/
+
+
+        $organizationDB = $this->load->database('blogDB', TRUE);
+        $uploadDir = base_url('blog/wp-content/uploads');
+        $sql = " SELECT
+        p1.*,
+        wm2.meta_value
+    FROM 
+        wp_posts p1
+    LEFT JOIN 
+        wp_postmeta wm1
+        ON (
+            wm1.post_id = p1.id 
+            AND wm1.meta_value IS NOT NULL
+            AND wm1.meta_key = \"_thumbnail_id\"              
+        )
+    LEFT JOIN 
+        wp_postmeta wm2
+        ON (
+            wm1.meta_value = wm2.post_id
+            AND wm2.meta_key = \"_wp_attached_file\"
+            AND wm2.meta_value IS NOT NULL  
+        )
+    WHERE
+        p1.post_status=\"publish\" 
+        AND p1.post_type=\"post\"
+    ORDER BY 
+        p1.post_date DESC";
+        $posts = $organizationDB->query($sql)->result_array();
+
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle').' صفحه اصلی';
         $data['sidebar_map'] = $this->load->view('ui/v3/about_us/sidebar_map', NULL, TRUE);
         $data['sidebar_pages'] = $this->load->view('ui/v3/about_us/sidebar_pages', NULL, TRUE);
-        $data['posts']  = $this->ModelQuery->getLatestPosts();
+        $data['posts']  = $posts;
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/home/index' , $data);

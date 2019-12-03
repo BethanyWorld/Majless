@@ -1,4 +1,10 @@
 <?php
+
+// BEGIN iThemes Security - این خط را تغییر یا حذف نکنید
+// iThemes Security Config Details: 2
+define( 'DISALLOW_FILE_EDIT', true ); // غیرفعال کردن ویرایشگر پرونده - امنیت > تنظیمات > ترفندهای وردپرس > ویرایشگر پرونده
+// END iThemes Security - این خط را تغییر یا حذف نکنید
+
 /**
  * The base configuration for WordPress
  *

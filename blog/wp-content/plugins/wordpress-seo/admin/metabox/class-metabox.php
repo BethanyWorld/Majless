@@ -42,6 +42,11 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	 * Class constructor.
 	 */
 	public function __construct() {
+		if ( $this->is_internet_explorer() ) {
+			add_action( 'add_meta_boxes', array( $this, 'internet_explorer_metabox' ) );
+			return;
+		}
+
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
 		add_action( 'wp_insert_post', array( $this, 'save_postdata' ) );
@@ -62,7 +67,69 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	}
 
 	/**
-	 * Translate text strings for use in the meta box.
+	 * Checks whether the request comes from an IE 11 browser.
+	 *
+	 * @return bool Whether the request comes from an IE 11 browser.
+	 */
+	public static function is_internet_explorer() {
+		$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+		if ( ! stripos( $user_agent, 'Trident/7.0' ) ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Adds an alternative metabox for internet explorer users.
+	 */
+	public function internet_explorer_metabox() {
+		$post_types = WPSEO_Post_Type::get_accessible_post_types();
+		$post_types = array_filter( $post_types, array( $this, 'display_metabox' ) );
+
+		if ( ! is_array( $post_types ) || $post_types === array() ) {
+			return;
+		}
+
+		$product_title = $this->get_product_title();
+
+		foreach ( $post_types as $post_type ) {
+			add_filter( "postbox_classes_{$post_type}_wpseo_meta", array( $this, 'wpseo_metabox_class' ) );
+
+			add_meta_box(
+				'wpseo_meta',
+				$product_title,
+				array( $this, 'render_internet_explorer_notice' ),
+				$post_type,
+				'normal',
+				apply_filters( 'wpseo_metabox_prio', 'high' ),
+				array( '__block_editor_compatible_meta_box' => true )
+			);
+		}
+	}
+
+	/**
+	 * Renders the content for the internet explorer metabox.
+	 */
+	public function render_internet_explorer_notice() {
+		echo '<div class="yoast-alert-box yoast-alert-box__warning">';
+		echo '<span class="icon">';
+		echo '<svg xmlns="http://www.w3.org/2000/svg" fill="#674E00" height="14px" width="14px" viewBox="0 0 576 512" role="img" aria-hidden="true" focusable="false"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg>';
+		echo '</span>';
+		echo '<div style="float: left">';
+		printf(
+			esc_html__( 'The browser you are currently using is unfortunately rather dated. Since we strive to give you the best experience possible, we no longer support this browser. Instead, please use %1$sFirefox%4$s, %2$sChrome%4$s or %3$sMicrosoft Edge%4$s.', 'wordpress-seo' ),
+			'<a href="https://www.mozilla.org/firefox/new/">',
+			'<a href="https://www.google.com/intl/nl/chrome/">',
+			'<a href="https://www.microsoft.com/windows/microsoft-edge">',
+			'</a>'
+		);
+		echo '</div></div>';
+	}
+
+	/**
+	 * Translates text strings for use in the meta box.
 	 *
 	 * IMPORTANT: if you want to add a new string (option) somewhere, make sure you add that array key to
 	 * the main meta box definition array in the class WPSEO_Meta() as well!!!!
@@ -75,7 +142,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 		/* translators: %s expands to the post type name. */
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-noindex']['title'] = __( 'Allow search engines to show this %s in search results?', 'wordpress-seo' );
 		if ( '0' === (string) get_option( 'blog_public' ) ) {
-			WPSEO_Meta::$meta_fields['advanced']['meta-robots-noindex']['description'] = '<p class="error-message">' . __( 'Warning: even though you can set the meta robots setting here, the entire site is set to noindex in the sitewide privacy settings, so these settings won\'t have an effect.', 'wordpress-seo' ) . '</p>';
+			WPSEO_Meta::$meta_fields['advanced']['meta-robots-noindex']['description'] = '<span class="error-message">' . __( 'Warning: even though you can set the meta robots setting here, the entire site is set to noindex in the sitewide privacy settings, so these settings won\'t have an effect.', 'wordpress-seo' ) . '</span>';
 		}
 		/* translators: %1$s expands to Yes or No,  %2$s expands to the post type name.*/
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-noindex']['options']['0'] = __( 'Default for %2$s, currently: %1$s', 'wordpress-seo' );
@@ -88,10 +155,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-nofollow']['options']['1'] = __( 'No', 'wordpress-seo' );
 
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['title']       = __( 'Meta robots advanced', 'wordpress-seo' );
-		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['description'] = __( 'Advanced <code>meta</code> robots settings for this page.', 'wordpress-seo' );
-		/* translators: %s expands to the advanced robots settings default as set in the site-wide settings.*/
-		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['options']['-']            = __( 'Site-wide default: %s', 'wordpress-seo' );
-		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['options']['none']         = __( 'None', 'wordpress-seo' );
+		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['description'] = __( 'If you want to apply advanced <code>meta</code> robots settings for this page, please define them in the following field.', 'wordpress-seo' );
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['options']['noimageindex'] = __( 'No Image Index', 'wordpress-seo' );
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['options']['noarchive']    = __( 'No Archive', 'wordpress-seo' );
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['options']['nosnippet']    = __( 'No Snippet', 'wordpress-seo' );
@@ -144,8 +208,6 @@ class WPSEO_Metabox extends WPSEO_Meta {
 
 		$product_title = $this->get_product_title();
 
-		$this->register_helpcenter_tab();
-
 		foreach ( $post_types as $post_type ) {
 			add_filter( "postbox_classes_{$post_type}_wpseo_meta", array( $this, 'wpseo_metabox_class' ) );
 
@@ -175,7 +237,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	}
 
 	/**
-	 * Pass variables to js for use with the post-scraper.
+	 * Passes variables to js for use with the post-scraper.
 	 *
 	 * @return array
 	 */
@@ -204,7 +266,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	}
 
 	/**
-	 * Pass some variables to js for replacing variables.
+	 * Passes some variables to js for replacing variables.
 	 */
 	public function localize_replace_vars_script() {
 		return array(
@@ -244,7 +306,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	}
 
 	/**
-	 * Pass some variables to js for the edit / post page overview, etc.
+	 * Passes some variables to js for the edit / post page overview, etc.
 	 *
 	 * @return array
 	 */
@@ -256,27 +318,13 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	}
 
 	/**
-	 * Output a tab in the Yoast SEO Metabox.
-	 *
-	 * @param string $id      CSS ID of the tab.
-	 * @param string $heading Heading for the tab.
-	 * @param string $content Content of the tab. This content should be escaped.
-	 */
-	public function do_tab( $id, $heading, $content ) {
-		?>
-		<div id="<?php echo esc_attr( 'wpseo_' . $id ); ?>" class="wpseotab wpseo-form <?php echo esc_attr( $id ); ?>">
-			<?php echo $content; ?>
-		</div>
-		<?php
-	}
-
-	/**
-	 * Output the meta box.
+	 * Outputs the meta box.
 	 */
 	public function meta_box() {
 		$content_sections = $this->get_content_sections();
 
 		echo '<div class="wpseo-metabox-content">';
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Reason: $this->get_product_title is considered safe.
 		printf( '<div class="wpseo-metabox-menu"><ul role="tablist" class="yoast-aria-tabs" aria-label="%s">', $this->get_product_title() );
 
 		foreach ( $content_sections as $content_section ) {
@@ -315,9 +363,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 			$content_sections[] = $this->social_admin->get_meta_section();
 		}
 
-		if ( has_action( 'wpseo_tab_header' ) || has_action( 'wpseo_tab_content' ) ) {
-			$content_sections[] = $this->get_addons_meta_section();
-		}
+		$content_sections = array_merge( $content_sections, $this->get_additional_meta_sections() );
 
 		return $content_sections;
 	}
@@ -381,16 +427,53 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	}
 
 	/**
-	 * Returns a metabox section dedicated to hosting metabox tabs that have been added by other plugins through the
-	 * `wpseo_tab_header` and `wpseo_tab_content` actions.
+	 * Returns the metabox sections that have been added by other plugins.
 	 *
-	 * @return WPSEO_Metabox_Section
+	 * @return WPSEO_Metabox_Section_Additional[]
 	 */
-	private function get_addons_meta_section() {
-		return new WPSEO_Metabox_Addon_Tab_Section(
-			'addons',
-			'<span class="dashicons dashicons-admin-plugins"></span>' . __( 'Add-ons', 'wordpress-seo' )
-		);
+	protected function get_additional_meta_sections() {
+		$sections = array();
+
+		/**
+		 * Private filter: 'yoast_free_additional_metabox_sections'.
+		 *
+		 * Meant for internal use only. Allows adding additional tabs to the Yoast SEO metabox.
+		 *
+		 * @since 11.9
+		 *
+		 * @param array[] $sections {
+		 *     An array of arrays with tab specifications.
+		 *
+		 *     @type array $section {
+		 *          A tab specification.
+		 *
+		 *          @type string $name         The name of the tab. Used in the HTML IDs, href and aria properties.
+		 *          @type string $link_content The content of the tab link.
+		 *          @type string $content      The content of the tab.
+		 *          @type array $options {
+		 *              Optional. Extra options.
+		 *
+		 *              @type string $link_class      Optional. The class for the tab link.
+		 *              @type string $link_aria_label Optional. The aria label of the tab link.
+		 *          }
+		 *     }
+		 * }
+		 */
+		$requested_sections = apply_filters( 'yoast_free_additional_metabox_sections', array() );
+
+		foreach ( $requested_sections as $section ) {
+			if ( is_array( $section ) && array_key_exists( 'name', $section ) && array_key_exists( 'link_content', $section ) && array_key_exists( 'content', $section ) ) {
+				$options    = array_key_exists( 'options', $section ) ? $section['options'] : array();
+				$sections[] = new WPSEO_Metabox_Section_Additional(
+					$section['name'],
+					$section['link_content'],
+					$section['content'],
+					$options
+				);
+			}
+		}
+
+		return $sections;
 	}
 
 	/**
@@ -533,7 +616,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 					' name="' . $esc_form_key . '"' .
 					' value="' . esc_attr( $meta_value ) . '"' . $aria_describedby .
 					' readonly="readonly"' .
-					' />';
+					' /> ';
 				$content .= '<input' .
 					' id="' . esc_attr( $esc_form_key ) . '_button"' .
 					' class="wpseo_image_upload_button button"' .
@@ -586,7 +669,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 				$html = $content;
 			}
 			else {
-				$html = $label . $help_button . $help_panel . $content . $description;
+				$html = $label . $description . $help_button . $help_panel . $content;
 			}
 		}
 
@@ -594,7 +677,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	}
 
 	/**
-	 * Save the WP SEO metadata for posts.
+	 * Saves the WP SEO metadata for posts.
 	 *
 	 * {@internal $_POST parameters are validated via sanitize_post_meta().}}
 	 *
@@ -726,9 +809,14 @@ class WPSEO_Metabox extends WPSEO_Meta {
 			return;
 		}
 
-		if ( get_queried_object_id() !== 0 ) {
+		$post_id = get_queried_object_id();
+		if ( empty( $post_id ) && isset( $_GET['post'] ) ) {
+			$post_id = sanitize_text_field( $_GET['post'] );
+		}
+
+		if ( $post_id !== 0 ) {
 			// Enqueue files needed for upload functionality.
-			wp_enqueue_media( array( 'post' => get_queried_object_id() ) );
+			wp_enqueue_media( array( 'post' => $post_id ) );
 		}
 
 		$asset_manager->enqueue_style( 'metabox-css' );
@@ -737,7 +825,6 @@ class WPSEO_Metabox extends WPSEO_Meta {
 
 		$asset_manager->enqueue_script( 'metabox' );
 		$asset_manager->enqueue_script( 'admin-media' );
-
 
 		$asset_manager->enqueue_script( 'post-scraper' );
 		$asset_manager->enqueue_script( 'replacevar-plugin' );
@@ -768,7 +855,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 		);
 
 		/**
-		 * Remove the emoji script as it is incompatible with both React and any
+		 * Removes the emoji script as it is incompatible with both React and any
 		 * contenteditable fields.
 		 */
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -792,7 +879,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	}
 
 	/**
-	 * Pass some variables to js for upload module.
+	 * Passes some variables to js for upload module.
 	 *
 	 * @return array
 	 */
@@ -992,25 +1079,6 @@ class WPSEO_Metabox extends WPSEO_Meta {
 		return $product_title;
 	}
 
-	/**
-	 * Adds the template variables tab to the helpcenter.
-	 *
-	 * @return void
-	 */
-	protected function register_helpcenter_tab() {
-		static $tab_registered;
-
-		if ( $tab_registered ) {
-			return;
-		}
-
-		// Add template variables tab to the Help Center.
-		$tab = new WPSEO_Help_Center_Template_Variables_Tab();
-		$tab->register_hooks();
-
-		$tab_registered = true;
-	}
-
 	/* ********************* DEPRECATED METHODS ********************* */
 
 	/**
@@ -1035,5 +1103,28 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	 */
 	public function setup_page_analysis() {
 		_deprecated_function( __METHOD__, 'WPSEO 9.6' );
+	}
+
+	/**
+	 * Outputs a tab in the Yoast SEO Metabox.
+	 *
+	 * @deprecated         12.2
+	 * @codeCoverageIgnore
+	 *
+	 * @param string $id      CSS ID of the tab.
+	 * @param string $heading Heading for the tab.
+	 * @param string $content Content of the tab. This content should be escaped.
+	 */
+	public function do_tab( $id, $heading, $content ) {
+		_deprecated_function( __METHOD__, '12.2' );
+
+		?>
+		<div id="<?php echo esc_attr( 'wpseo_' . $id ); ?>" class="wpseotab wpseo-form <?php echo esc_attr( $id ); ?>">
+			<?php
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Reason: deprecated function.
+			echo $content;
+			?>
+		</div>
+		<?php
 	}
 }

@@ -166,21 +166,20 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                             <li class="current-menu-item"><a href="<?php echo base_url() ?>">صفحه اصلی</a></li>
                             <li><a href="<?php echo base_url('State') ?>">فهرست نامزدها</a></li>
                             <li>
-                                <a href="<?php echo base_url('AboutUs/intro') ?>">آشنایی با جنبش از ما</a>
+                                <a href="<?php echo base_url('Blog/?page_id=40'); ?>">آشنایی با جنبش از ما</a>
                                 <ul>
-                                    <li><a href="<?php echo base_url('AboutUs/intro') ?>">معرفی جنبش از ما</a></li>
-                                    <li><a href="<?php echo base_url('AboutUs/prism') ?>">بیانیه ارزش</a></li>
-                                    <li><a href="<?php echo base_url('AboutUs/measurement_process') ?>">فرآیند سنجش
-                                            نامزدها</a></li>
-                                    <li><a href="<?php echo base_url('AboutUs/exams') ?>">آشنایی با آزمون ها</a></li>
-                                    <li><a href="<?php echo base_url('AboutUs/faq') ?>">سوالات متداول</a></li>
+                                    <li><a href="<?php echo base_url('Blog/?page_id=40'); ?>">معرفی جنبش از ما</a></li>
+                                    <li><a href="<?php echo base_url('Blog/?page_id=42'); ?>">بیانیه ارزش</a></li>
+                                    <li><a href="<?php echo base_url('Blog/?page_id=46'); ?>">فرآیند سنجش نامزدها</a></li>
+                                    <li><a href="<?php echo base_url('Blog/?page_id=44'); ?>">آشنایی با آزمون ها</a></li>
+                                    <li><a href="<?php echo base_url('Blog/?page_id=49'); ?>">سوالات متداول</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">همراهی با ما</a>
                                 <ul>
-                                    <li><a href="<?php echo base_url('AboutUs/support') ?>">حمایت از ما</a></li>
-                                    <li><a href="<?php echo base_url('AboutUs/support') ?>">حامیان و همراهان</a></li>
+                                    <li><a href="<?php echo base_url('Blog/?page_id=36'); ?>">حمایت از ما</a></li>
+                                    <li><a href="<?php echo base_url('Blog/?page_id=38'); ?>">حامیان و همراهان</a></li>
                                 </ul>
                             </li>
                             <li>
