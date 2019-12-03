@@ -121,6 +121,35 @@
 </div>
 <script type='text/javascript' src='<?= $_DIR; ?>js/bootstrap.min.js?ver=3.3.7'></script>
 <script type='text/javascript' src='<?= $_DIR; ?>js/loading_screen.js?ver=1.1'></script>
+<script type='text/javascript' src='<?= $_DIR; ?>js/slick.min.js?ver=1.1'></script>
 <script type='text/javascript' src='<?= $_DIR; ?>js/theme.js?ver=1.<?php echo rand(); ?>'></script>
+<script>
+    $(document).ready(function() {
+        $(".tb-posts-carousel").not('.slick-initialized').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            speed: 600,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>
 </body>
 </html>

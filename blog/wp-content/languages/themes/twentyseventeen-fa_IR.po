@@ -11,11 +11,11 @@ msgstr ""
 "Language: fa\n"
 "Project-Id-Version: Themes - Twenty Seventeen\n"
 
-#. Description of the theme
+#. Description of the plugin/theme
 msgid "Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device."
 msgstr "دو هزار و هفده همراه با سربرگ ویدوئی و تصاویر برجسته‌ی گیرا، به سایت شما زندگی می‌بخشد. با متمرکز شدن روی سایت‌های کسب و کار، ویژگی‌هایی مانند برگه نخست چند بخشی همراه با انواع ابزارک‌ها، منوی ویژه‌ی شبکه‌های اجتماعی، نشان و امکاناتی بیشتر را در خود جای داده است. شبکه‌های توری نامتقارن آن را با طرح رنگ دلخواه شخصی سازی کنید و محتوای چند رسانه‌ای خود را توسط ساختارهای مختلف نوشته‌ها به نمایش بگذارید. پوسته‌ی پیش‌فرض ما برای ۲۰۱۷ در زبان‌های متعدد، با هر توانایی و در هر دستگاهی عالی کار می‌کند."
 
-#. Theme Name of the theme
+#. Theme Name of the plugin/theme
 msgid "Twenty Seventeen"
 msgstr "دوهزاروهفده"
 
@@ -23,39 +23,39 @@ msgstr "دوهزاروهفده"
 msgid "Footer"
 msgstr "پانوشت"
 
-#: functions.php:338
+#: functions.php:326
 msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
 msgstr "ابزارک‌ها را اینجا اضافه کنید تا در ناحیه کناری نوشته‌های وبلاگ و برگه بایگانی نمایان شود."
 
-#: sidebar.php:18 functions.php:336
+#: functions.php:324 sidebar.php:18
 msgid "Blog Sidebar"
 msgstr "ناحیه کناری وبلاگ"
 
-#: template-parts/navigation/navigation-top.php:31
 #: template-parts/header/site-branding.php:34
+#: template-parts/navigation/navigation-top.php:31
 msgid "Scroll down to content"
 msgstr "پایین رفتن تا رسیدن به محتوا"
 
-#: functions.php:179
+#: functions.php:167
 msgctxt "Theme starter content"
 msgid "Coffee"
 msgstr "قهوه"
 
-#: functions.php:175
+#: functions.php:163
 msgctxt "Theme starter content"
 msgid "Sandwich"
 msgstr "ساندویچ"
 
-#: functions.php:171
+#: functions.php:159
 msgctxt "Theme starter content"
 msgid "Espresso"
 msgstr "اسپرسو"
 
-#: inc/custom-header.php:128
+#: inc/custom-header.php:126
 msgid "Pause background video"
 msgstr "توقف ویدیوی پس‌زمینه"
 
-#: inc/custom-header.php:127
+#: inc/custom-header.php:125
 msgid "Play background video"
 msgstr "پخش ویدیوی پس‌زمینه"
 
@@ -63,7 +63,7 @@ msgstr "پخش ویدیوی پس‌زمینه"
 msgid "Front Page Section %1$s Placeholder"
 msgstr "نگهدارنده‌ی مکان %1$s صفحه اول"
 
-#: inc/customizer.php:109
+#: inc/customizer.php:99
 msgid "When the two-column layout is assigned, the page title is in one column and content is in the other."
 msgstr "هنگام انتخاب قالب دوستونه، عنوان برگه در یک ستون و محتوا در ستون دیگر قرار می‌گیرد."
 
@@ -106,66 +106,69 @@ msgstr "لطفاً نام یک آیکون SVG را تعریف نمایید."
 msgid "Please define default parameters in the form of an array."
 msgstr "لطفاً پارامترهای پیش‌فرض را به صورت آرایه تعریف نمایید."
 
-#: inc/customizer.php:143
+#: inc/customizer.php:131
 msgid "Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed."
 msgstr "برگه‌ها را برای برجسته شدن در هر منطقه، از منوی کشویی انتخاب کنید. برای اضافه نمودن تصویر به یک بخش باید یک تصویر برجسته در ویرایشگر برگه انتخاب نمایید. بخش‌های خالی نمایش داده نخواهند شد."
 
 #. translators: %d is the front page section number
-#: inc/customizer.php:142
+#: inc/customizer.php:130
 msgid "Front Page Section %d Content"
 msgstr "محتوای بخش %d برگه نخست"
 
-#: inc/customizer.php:112 inc/customizer.php:171
+#: inc/customizer.php:102 inc/customizer.php:158
 msgid "Two Column"
 msgstr "دو ستونه"
 
-#: inc/customizer.php:111 inc/customizer.php:170
+#: inc/customizer.php:101 inc/customizer.php:157
 msgid "One Column"
 msgstr "تک ستونه"
 
-#: inc/customizer.php:106
+#: inc/customizer.php:96
 msgid "Page Layout"
 msgstr "قالب برگه"
 
-#: inc/customizer.php:89
+#: inc/customizer.php:81
 msgid "Theme Options"
 msgstr "تنظیمات پوسته"
 
-#: inc/customizer.php:64
+#: inc/customizer.php:59
 msgid "Custom"
 msgstr "دلخواه"
 
-#: inc/customizer.php:62
+#: inc/customizer.php:57
 msgid "Light"
 msgstr "روشن"
 
-#: inc/customizer.php:60
+#: inc/customizer.php:55
 msgid "Color Scheme"
 msgstr "رنگ‌بندی"
 
-#: inc/custom-header.php:56
+#: inc/custom-header.php:54
 msgid "Default Header Image"
 msgstr "تصویر سربرگ پیش‌فرض"
 
-#: functions.php:360
+#: functions.php:348
 msgid "Footer 2"
 msgstr "پابرگ ۲"
 
-#: functions.php:350 functions.php:362
+#: functions.php:338 functions.php:350
 msgid "Add widgets here to appear in your footer."
 msgstr "ابزارک‌ها را برای نمایش در پابرگ به اینجا بکشید."
 
-#: functions.php:348
+#: functions.php:336
 msgid "Footer 1"
 msgstr "پابرگ ۱"
 
-#: functions.php:289
+#. Translators: If there are characters in your language that are not supported
+#. by Libre Franklin, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:277
 msgctxt "Libre Franklin font: on or off"
 msgid "on"
 msgstr "on"
 
-#: template-parts/navigation/navigation-top.php:12 functions.php:64
-#: functions.php:203
+#: functions.php:64 functions.php:191
+#: template-parts/navigation/navigation-top.php:12
 msgid "Top Menu"
 msgstr "فهرست بالایی"
 
@@ -185,7 +188,7 @@ msgstr "بدبختانه جستجوی شما نتیجه‌ای در بر ندا�
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "میخواهید اولین نوشته‌ی خود را منتشر کنید؟ <a href=\"%1$s\">از اینجا آغاز کنید</a>. "
 
-#: template-parts/post/content-none.php:17 search.php:21
+#: search.php:21 template-parts/post/content-none.php:17
 msgid "Nothing Found"
 msgstr "پیدا نشد"
 
@@ -193,11 +196,11 @@ msgstr "پیدا نشد"
 msgid "Previous Post"
 msgstr "نوشته قبلی"
 
-#: single.php:33 comments.php:71
+#: comments.php:71 single.php:33
 msgid "Previous"
 msgstr "پیشین"
 
-#: single.php:34 comments.php:72
+#: comments.php:72 single.php:34
 msgid "Next"
 msgstr "پسین"
 
@@ -218,36 +221,36 @@ msgstr "جستجو برای "
 
 #: search.php:19
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "نتایج جست‌وجو برای: %s"
 
 #. translators: %s: Name of current post
-#: template-parts/page/content-front-page-panels.php:45
+#: functions.php:378 template-parts/page/content-front-page-panels.php:45
 #: template-parts/page/content-front-page.php:42
-#: template-parts/post/content-audio.php:84 template-parts/post/content.php:57
+#: template-parts/post/content-audio.php:84
 #: template-parts/post/content-gallery.php:71
-#: template-parts/post/content-video.php:83
-#: template-parts/post/content-image.php:61 functions.php:390
+#: template-parts/post/content-image.php:61
+#: template-parts/post/content-video.php:83 template-parts/post/content.php:57
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "ادامه خواندن<span class=\"screen-reader-text\"> \"%s\"</span>"
 
-#: inc/customizer.php:63
+#: inc/customizer.php:58
 msgid "Dark"
 msgstr "تیره"
 
-#: inc/back-compat.php:39 inc/back-compat.php:52 inc/back-compat.php:70
+#: inc/back-compat.php:39 inc/back-compat.php:52 inc/back-compat.php:68
 msgid "Twenty Seventeen requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again."
 msgstr "دوهزاروهفده دستکم به وردپرس ۴٫۷ نیاز دارد. شما در حال حاضر از نگارش %s استفاده می‌کنید. لطفا پس از به‌روزرسانی، دوباره تلاش کنید."
 
 #. translators: %s: Name of current post
 #: inc/template-tags.php:117
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
+msgstr "ویرایش<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #: template-parts/page/content-page.php:26
-#: template-parts/post/content-audio.php:91 template-parts/post/content.php:64
+#: template-parts/post/content-audio.php:91
 #: template-parts/post/content-gallery.php:78
-#: template-parts/post/content-video.php:90
 #: template-parts/post/content-image.php:68
+#: template-parts/post/content-video.php:90 template-parts/post/content.php:64
 msgid "Pages:"
 msgstr "صفحه‌ها:"
 
@@ -259,21 +262,27 @@ msgstr "گزینگان"
 msgid "Skip to content"
 msgstr "رفتن به محتوا"
 
-#: functions.php:482
+#: functions.php:467
 msgid "Collapse child menu"
 msgstr "بستن زیرفهرست"
 
-#: functions.php:481
+#: functions.php:466
 msgid "Expand child menu"
 msgstr "بازکردن زیرفهرست"
 
-#: functions.php:65 functions.php:214
+#: functions.php:65 functions.php:202
 msgid "Social Links Menu"
 msgstr "فهرست شبکه‌های اجتماعی"
 
 #: template-parts/footer/site-info.php:19
 msgid "Proudly powered by %s"
 msgstr "با افتخار، نیرو گرفته از %s"
+
+#. #-#-#-#-#  twentyseventeen.pot (Twenty Seventeen 1.7)  #-#-#-#-#
+#. Author URI of the plugin/theme
+#: template-parts/footer/site-info.php:18
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
 
 #: footer.php:26
 msgid "Footer Social Links Menu"
@@ -288,15 +297,15 @@ msgstr "دیدگاه‌ها بسته شده‌اند."
 msgctxt "comments title"
 msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
-msgstr[0] ""
+msgstr[0] "%1$s دیدگاه برای &ldquo;%2$s&rdquo;"
 
 #. translators: %s: post title
 #: comments.php:37
 msgctxt "comments title"
 msgid "One Reply to &ldquo;%s&rdquo;"
-msgstr ""
+msgstr "یک دیدگاه برای &ldquo;%s&rdquo;"
 
-#: archive.php:50 search.php:47 index.php:54
+#: archive.php:50 index.php:54 search.php:47
 msgid "Page"
 msgstr "برگه"
 
@@ -308,23 +317,18 @@ msgstr "اوه! این برگه پیدا نمی‌شه."
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr "به نظر می‌رسد چیزی اینجا نیست. مایل هستید جستجو کنید؟"
 
-#: archive.php:48 search.php:45 index.php:52
+#: archive.php:48 index.php:52 search.php:45
 msgid "Previous page"
 msgstr "برگه قبلی"
 
-#: archive.php:49 search.php:46 index.php:53
+#: archive.php:49 index.php:53 search.php:46
 msgid "Next page"
 msgstr "برگه بعدی"
 
-#. Author of the theme
+#. Author of the plugin/theme
 msgid "the WordPress team"
 msgstr "گروه وردپرس"
 
-#. Theme URI of the theme
+#. Theme URI of the plugin/theme
 msgid "https://wordpress.org/themes/twentyseventeen/"
 msgstr "https://wordpress.org/themes/twentyseventeen/"
-
-#. Author URI of the theme
-#: template-parts/footer/site-info.php:18
-msgid "https://wordpress.org/"
-msgstr "https://wordpress.org/"

@@ -9,39 +9,57 @@
                  style="position: absolute;width: 100%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 1;"></div>
             <div class="overlay"
                  style="position: absolute;width: 50%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 2;right: 0"></div>
-            <div class="campaign_section_slide" style="background-image:url(<?php echo $_DIR ?>images/slide4_850.jpg);background-size: cover;"></div>
-            <div class="campaign_section_slide" style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
-            <div class="campaign_section_slide" style="background-image:url(<?php echo $_DIR ?>images/slide2_850.jpg);background-size: cover;"></div>
+            <div class="campaign_section_slide"
+                 style="background-image:url(<?php echo $_DIR ?>images/slide4_850.jpg);background-size: cover;"></div>
+            <div class="campaign_section_slide"
+                 style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
+            <div class="campaign_section_slide"
+                 style="background-image:url(<?php echo $_DIR ?>images/slide2_850.jpg);background-size: cover;"></div>
             <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 135px)'>
                 <div class="row">
                     <div class="fw-row nostretch">
                         <div style="float: right;direction: rtl;text-align: justify;color: #fff;"
                              class="tb-column nostretch col-xs-12 col-sm-6 col-md-6 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
                             <style>
-                                .slide-title{
-                                    float: right;direction: rtl;color: #fff;display: inline-block;width: 100%;
+                                .slide-title {
+                                    float: right;
+                                    direction: rtl;
+                                    color: #fff;
+                                    display: inline-block;
+                                    width: 100%;
                                     text-align: center;
                                     display: none;
                                 }
-                                .slide-title button{
+
+                                .slide-title button {
                                     background: #d10b20;
                                     border: 1px solid rgba(253, 183, 46, 0.3);
                                     margin: 30px 0;
                                 }
-                                .slide-title button:hover{
+
+                                .slide-title button:hover {
                                     background: #d10b20;
                                     border: 1px solid rgba(253, 183, 46, 0.3);
                                 }
-                                .slide-title h2{
-                                    color: #fff;font-size: 34px;line-height: 50px;text-align: center;
+
+                                .slide-title h2 {
+                                    color: #fff;
+                                    font-size: 34px;
+                                    line-height: 50px;
+                                    text-align: center;
                                 }
-                                .slide-title h3{
-                                    color: #fff;font-size: 18px;line-height: 50px;text-align: center;
+
+                                .slide-title h3 {
+                                    color: #fff;
+                                    font-size: 18px;
+                                    line-height: 50px;
+                                    text-align: center;
                                 }
                             </style>
-                            <a class="slide-title animated fadeInUp" href="<?php echo base_url('AboutUs/public_invitation'); ?>">
+                            <a class="slide-title animated fadeInUp"
+                               href="<?php echo base_url('AboutUs/public_invitation'); ?>">
                                 <h2>
-                                     دعوت عمومی
+                                    دعوت عمومی
                                     از افراد شایسته نمایندگی مردم
                                 </h2>
                                 <h3>بیانیه جنبش #از_ما پیرامون ثبت نام در انتخابات مجلس یازدهم</h3>
@@ -54,11 +72,13 @@
                                 <h3>به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
                                 <button>جزئیات بیشتر</button>
                             </a>
-                            <a class="slide-title animated fadeInUp" href="<?php echo base_url('AboutUs/measurement_process'); ?>">
+                            <a class="slide-title animated fadeInUp"
+                               href="<?php echo base_url('AboutUs/measurement_process'); ?>">
                                 <h2>
                                     فرآیند سنجش نامزدها
                                 </h2>
-                                <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی کند...</h3>
+                                <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
+                                    کند...</h3>
                                 <button>جزئیات بیشتر</button>
                             </a>
 
@@ -114,7 +134,7 @@
                                         <div class="row col-md-12 col-xs-12">
                                             <button type="submit"
                                                     style="float: left;text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
-                                                  ثبت نام
+                                                ثبت نام
                                             </button>
                                         </div>
                                     </form>
@@ -139,14 +159,17 @@
     direction: rtl;
     text-align: center;
     line-height: 40px;font-weight: 900;">
-                            این وضعیت تغییر نمی‌یابد مگر با تحولی محسوس در سازوکارهایی که بعضاً سفلگان را به مناصب عالی نشانده و نخبگان را از جایگاه‌های مؤثر بر سرنوشت ملت به زیر کشیده است. سازوکارهایی که در آن ورود به عرصه‌ی تقنین و تعیین سرنوشت مردم، منوط به هزینه‌های هنگفت و یا پیوستن به جرگه‌ی جریان‌های قدرت‌طلب و تمامیت‌خواه است.
+                            این وضعیت تغییر نمی‌یابد مگر با تحولی محسوس در سازوکارهایی که بعضاً سفلگان را به مناصب عالی
+                            نشانده و نخبگان را از جایگاه‌های مؤثر بر سرنوشت ملت به زیر کشیده است. سازوکارهایی که در آن
+                            ورود به عرصه‌ی تقنین و تعیین سرنوشت مردم، منوط به هزینه‌های هنگفت و یا پیوستن به جرگه‌ی
+                            جریان‌های قدرت‌طلب و تمامیت‌خواه است.
                         </div>
                     </div>
                     <div id="column-5d7930f12c6ec"
                          class="tb-column text-center absolutecenter-stretch col-xs-12 col-sm-12 col-md-6 nopadding tbWow animated fadeIn ">
                         <a href="<?php echo base_url('AboutUs/public_invitation'); ?>">
                             <img style="max-width: 100% !important;height: 620px;margin: 70px 0px;"
-                                 src="<?php echo $_DIR ?>images/banner-2.jpg" />
+                                 src="<?php echo $_DIR ?>images/banner-2.jpg"/>
                         </a>
                     </div>
                     <div id="hp-the-issues-list"
@@ -158,7 +181,11 @@
     direction: rtl;
     text-align: center;
     line-height: 40px;font-weight: 900;">
-                            مردمان پا‌ک‌نهاد و نیک‌سرشت این دیار، شایسته‌ی زندگی و معیشتی پاک و نیکند، که جز با پاک‌دستی و نیک‌اندیشیِ والیان و متولیان امور حاصل نمی‌شود. در پنجمین دهه از تاریخ استقلال این مرزوبوم، فاصله‌ای عمیق میان آنچه ملت از این بالانشینان انتظار دارد، با آنچه امروز بر سر سفره‌ی فرودستان فرود آمده احساس می‌شود، که درد و رنجش بغض گلوگیر روز و شب دلسوزان و دغدغه‌مندان است.
+                            مردمان پا‌ک‌نهاد و نیک‌سرشت این دیار، شایسته‌ی زندگی و معیشتی پاک و نیکند، که جز با پاک‌دستی
+                            و نیک‌اندیشیِ والیان و متولیان امور حاصل نمی‌شود. در پنجمین دهه از تاریخ استقلال این
+                            مرزوبوم، فاصله‌ای عمیق میان آنچه ملت از این بالانشینان انتظار دارد، با آنچه امروز بر سر
+                            سفره‌ی فرودستان فرود آمده احساس می‌شود، که درد و رنجش بغض گلوگیر روز و شب دلسوزان و
+                            دغدغه‌مندان است.
                         </div>
 
                     </div>
@@ -166,6 +193,188 @@
             </div>
         </section>
         <!-- Edited Issues-->
+
+
+        <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow fadeIn"
+                 style="background-color: rgb(249, 249, 249); visibility: visible; animation-name: fadeIn;">
+            <div class="container" style=" padding-top: 60px; padding-bottom: 60px; ">
+                <div class="row">
+                    <div class="fw-row absolutecenter-stretch">
+                        <div style=" " class=" noabsolutecenter nopadding-xs">
+                            <div class="link-type-no tb-icon-box textaligncenter tbWow fadeInUp row col-xs-12">
+                                <div class="tb-icon-box-description">
+                                    <h4>اخبار و رویداد ها</h4>
+                                    <h1>آخرین اخبار و رویداد ها</h1>
+                                    <div class="tb-icon-box-text">
+                                        <div class="fw-page-builder-content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="link-type-no tb-icon-box textaligncenter tbWow fadeInUp  row col-xs-12">
+                                <div class="tb-icon-box-image iconbox-image-type img-rounded">
+                                    <a href="<?php echo base_url('blog'); ?>" target="_self">
+                                        <img src="<?php echo $_DIR; ?>images/spacer_white_center_no_change.png"
+                                             class="img-rounded" alt="">
+                                    </a>
+                                </div>
+                                <div class="tb-icon-box-description">
+                                    <div class="tb-icon-box-text">
+                                        <div class="fw-page-builder-content">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="column-5de4fd51daddf"
+                         class="tb-column absolutecenter-stretch col-xs-12  col-sm-12  nopadding tbWow fadeIn">
+                        <div class="row col-xs-12">
+                            <div class="tb-posts-carousel slick-slider">
+                                <div>
+                                    <a href="http://www.tbdemos.org/campaign/2015/04/05/senate-confirms-judicial-nominees/"
+                                       title="Senate confirms judicial nominees" class="absolute100"
+                                       tabindex="-1">
+                                        Senate confirms judicial nominees
+                                    </a>
+                                    <div class="tb-post-carousel-thumbnail">
+                                        <div class="post-categories data-color-hover"
+                                             style="background: #b60d21; color: #ffffff;"
+                                             data-a-color="#ffffff">
+                                            <a href="http://www.tbdemos.org/campaign/category/government/"
+                                               rel="category tag" tabindex="-1"
+                                               style="color: rgb(255, 255, 255);">Government</a>, <a
+                                                    href="http://www.tbdemos.org/campaign/category/senate/"
+                                                    rel="category tag" tabindex="-1"
+                                                    style="color: rgb(255, 255, 255);">Senate</a></div>
+
+
+                                        <div class="post-title" style="color: #ffffff;">
+                                            <h1 style="color: #ffffff;">Senate confirms judicial
+                                                nominees</h1>
+
+                                            <div class="post-date"><i class="icon-clock"></i> April 5, 2015
+                                            </div>
+                                        </div>
+
+                                        <img width="600" height="600"
+                                             src="http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-600x600.jpg"
+                                             class="attachment-campaign-thumb-xl size-campaign-thumb-xl wp-post-image"
+                                             alt=""
+                                             srcset="http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-600x600.jpg 600w, http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-150x150.jpg 150w, http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-300x300.jpg 300w"
+                                             sizes="(max-width: 600px) 100vw, 600px">
+                                        <div class="absolute100" style="background-color: #043174"></div>
+                                    </div>
+                                    <div class="changing-data-attr"
+                                         style="background: rgb(255, 255, 255); color: rgb(33, 71, 127);">
+
+                                        <p>The Senate unanimously confirmed four of 38 pending judicial
+                                            nominations Thursday evening, the first of President judicial
+                                            nominees…</p>
+
+                                        <div class="read-more" style="color: rgb(160, 46, 47);">Read more
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="http://www.tbdemos.org/campaign/2015/04/05/senate-confirms-judicial-nominees/"
+                                       title="Senate confirms judicial nominees" class="absolute100"
+                                       tabindex="-1">
+                                        Senate confirms judicial nominees
+                                    </a>
+                                    <div class="tb-post-carousel-thumbnail">
+                                        <div class="post-categories data-color-hover"
+                                             style="background: #b60d21; color: #ffffff;"
+                                             data-a-color="#ffffff">
+                                            <a href="http://www.tbdemos.org/campaign/category/government/"
+                                               rel="category tag" tabindex="-1"
+                                               style="color: rgb(255, 255, 255);">Government</a>, <a
+                                                    href="http://www.tbdemos.org/campaign/category/senate/"
+                                                    rel="category tag" tabindex="-1"
+                                                    style="color: rgb(255, 255, 255);">Senate</a></div>
+
+
+                                        <div class="post-title" style="color: #ffffff;">
+                                            <h1 style="color: #ffffff;">Senate confirms judicial
+                                                nominees</h1>
+
+                                            <div class="post-date"><i class="icon-clock"></i> April 5, 2015
+                                            </div>
+                                        </div>
+
+                                        <img width="600" height="600"
+                                             src="http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-600x600.jpg"
+                                             class="attachment-campaign-thumb-xl size-campaign-thumb-xl wp-post-image"
+                                             alt=""
+                                             srcset="http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-600x600.jpg 600w, http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-150x150.jpg 150w, http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-300x300.jpg 300w"
+                                             sizes="(max-width: 600px) 100vw, 600px">
+                                        <div class="absolute100" style="background-color: #043174"></div>
+                                    </div>
+                                    <div class="changing-data-attr"
+                                         style="background: rgb(255, 255, 255); color: rgb(33, 71, 127);">
+
+                                        <p>The Senate unanimously confirmed four of 38 pending judicial
+                                            nominations Thursday evening, the first of President judicial
+                                            nominees…</p>
+
+                                        <div class="read-more" style="color: rgb(160, 46, 47);">Read more
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="http://www.tbdemos.org/campaign/2015/04/05/senate-confirms-judicial-nominees/"
+                                       title="Senate confirms judicial nominees" class="absolute100"
+                                       tabindex="-1">
+                                        Senate confirms judicial nominees
+                                    </a>
+                                    <div class="tb-post-carousel-thumbnail">
+                                        <div class="post-categories data-color-hover"
+                                             style="background: #b60d21; color: #ffffff;"
+                                             data-a-color="#ffffff">
+                                            <a href="http://www.tbdemos.org/campaign/category/government/"
+                                               rel="category tag" tabindex="-1"
+                                               style="color: rgb(255, 255, 255);">Government</a>, <a
+                                                    href="http://www.tbdemos.org/campaign/category/senate/"
+                                                    rel="category tag" tabindex="-1"
+                                                    style="color: rgb(255, 255, 255);">Senate</a></div>
+
+
+                                        <div class="post-title" style="color: #ffffff;">
+                                            <h1 style="color: #ffffff;">Senate confirms judicial
+                                                nominees</h1>
+
+                                            <div class="post-date"><i class="icon-clock"></i> April 5, 2015
+                                            </div>
+                                        </div>
+
+                                        <img width="600" height="600"
+                                             src="http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-600x600.jpg"
+                                             class="attachment-campaign-thumb-xl size-campaign-thumb-xl wp-post-image"
+                                             alt=""
+                                             srcset="http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-600x600.jpg 600w, http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-150x150.jpg 150w, http://www.tbdemos.org/campaign/wp-content/uploads/2015/07/news_21-300x300.jpg 300w"
+                                             sizes="(max-width: 600px) 100vw, 600px">
+                                        <div class="absolute100" style="background-color: #043174"></div>
+                                    </div>
+                                    <div class="changing-data-attr"
+                                         style="background: rgb(255, 255, 255); color: rgb(33, 71, 127);">
+
+                                        <p>The Senate unanimously confirmed four of 38 pending judicial
+                                            nominations Thursday evening, the first of President judicial
+                                            nominees…</p>
+
+                                        <div class="read-more" style="color: rgb(160, 46, 47);">Read more
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="hp-the-issues" class="campaign_section nopadding  tbWow fadeIn">
             <div class="campaign_no_container">
                 <div class="fw-row absolutecenter-stretch">

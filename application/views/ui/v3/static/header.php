@@ -31,23 +31,15 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>images/fav152.png" type="image/png" sizes="152x152">
     <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>images/fav120.png" type="image/png" sizes="120x120">
     <link rel="icon" href="<?= $_DIR; ?>images/fav96.png" sizes="96x96" type="image/png">
-    <link rel='stylesheet' id='style-css' href='<?= $_DIR; ?>css/style.css?ver=1.0' type='text/css' media='all'/>
-    <link rel='stylesheet' id='bootstrap-css' href='<?= $_DIR; ?>css/bootstrap.min.css?ver=3.3.7' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='fontawesome-css' href='<?= $_DIR; ?>css/font-awesome-css.min.css?ver=1.0' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='bootstrap-theme-css' href='<?= $_DIR; ?>css/bootstrap-theme.min.css?ver=3.3.7'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>css/jquery.mmenu.all.css?ver=1.0' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/animate.min.css?ver=1.0' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/lightbox.min.css?ver=1.0' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>css/options.css?ver=1.<?php echo rand(); ?>'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='campaign_style-css' href='<?= $_DIR; ?>css/theme.css?ver=1.<?php echo rand(); ?>'
-          type='text/css' media='all'/>
+    <link rel='stylesheet' id='style-css' href='<?= $_DIR; ?>css/style.css?ver=1.0'/>
+    <link rel='stylesheet' id='bootstrap-css' href='<?= $_DIR; ?>css/bootstrap.min.css?ver=3.3.7'/>
+    <link rel='stylesheet' id='fontawesome-css' href='<?= $_DIR; ?>css/font-awesome-css.min.css?ver=1.0'/>
+    <link rel='stylesheet' id='bootstrap-theme-css' href='<?= $_DIR; ?>css/bootstrap-theme.min.css?ver=3.3.7'/>
+    <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>css/jquery.mmenu.all.css?ver=1.0'/>
+    <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/animate.min.css?ver=1.0' />
+    <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/lightbox.min.css?ver=1.0' />
+    <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>css/options.css?ver=1.<?php echo rand(); ?>'/>
+    <link rel='stylesheet' id='campaign_style-css' href='<?= $_DIR; ?>css/theme.css?ver=1.<?php echo rand(); ?>'/>
     <link rel='stylesheet' id='slick-css' href='<?= $_DIR; ?>css/slick.css?ver=1.0' type='text/css' media='all'/>
     <link rel="stylesheet" href="<?= $_DIR; ?>css/iziToast.min.css"/>
     <script src="<?= $_DIR; ?>js/iziToast.min.js"></script>
