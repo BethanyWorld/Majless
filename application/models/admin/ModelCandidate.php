@@ -181,9 +181,9 @@ class ModelCandidate extends CI_Model
         if (
             empty($personalInfo['CandidateBirthDate']) ||
             empty($personalInfo['CandidateReligion']) ||
-            empty($personalInfo['CandidateBornStateId']) || empty($personalInfo['CandidateBornCityId']) ||
+            /*empty($personalInfo['CandidateBornStateId']) || empty($personalInfo['CandidateBornCityId']) ||
             empty($personalInfo['CandidateFatherBornStateId']) || empty($personalInfo['CandidateFatherBornCityId']) ||
-            empty($personalInfo['CandidateMotherBornStateId']) || empty($personalInfo['CandidateMotherBornCityId']) ||
+            empty($personalInfo['CandidateMotherBornStateId']) || empty($personalInfo['CandidateMotherBornCityId']) ||*/
             empty($personalInfo['CandidateAddressStateId']) || empty($personalInfo['CandidateAddressCityId']) ||
             empty($personalInfo['CandidateStateId']) || empty($personalInfo['CandidateCityId'])
         ) {
@@ -219,9 +219,9 @@ class ModelCandidate extends CI_Model
         /* Check User Constituency State */
         if ($personalInfo['CandidateReligion'] == 'IslamShia' || $personalInfo['CandidateReligion'] == 'IslamSoni') {
             if (
-                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateBornStateId'] &&
+               /* $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateBornStateId'] &&
                 $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateFatherBornStateId'] &&
-                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateMotherBornStateId'] &&
+                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateMotherBornStateId'] &&*/
                 $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateAddressStateId']
             ) {
                 $arr = array(
@@ -234,9 +234,9 @@ class ModelCandidate extends CI_Model
             }
             /* Check User Constituency City */
             if (
-                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateBornCityId'] &&
+                /*$personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateBornCityId'] &&
                 $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateFatherBornCityId'] &&
-                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateMotherBornCityId'] &&
+                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateMotherBornCityId'] &&*/
                 $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateAddressCityId']
             ) {
                 $arr = array(

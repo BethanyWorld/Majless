@@ -563,7 +563,7 @@ $_DIR = base_url('assets/ui/v3/');
                                             </div>
                                             <div class="col-xs-12 col-sm-12 form-group RightFloat">
                                                 <label class="label label-danger hidden" id="cs">
-                                                    برای نامزدی در انتخابات باید محل تولد خود یا یکی از والدین یا محل
+                                                    برای نامزدی در انتخابات باید محل
                                                     سکونت شما در محدوده حوزه انتخابیه تعیین شده باشد.
                                                 </label>
                                             </div>
