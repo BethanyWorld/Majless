@@ -42,7 +42,7 @@ function _image($source, $size)
     $image->source_path = $source;
     $file_name = basename($source);
     $image->target_path = TEMPLATEPATH . '/cache/[' . $size[0] . 'x' . $size[1] . ']' . $file_name;
-    $image->jpeg_quality = 90;
+    $image->jpeg_quality = 100;
     $image->preserve_aspect_ratio = true;
     $image->enlarge_smaller_images = true;
     $image->preserve_time = true;
@@ -57,7 +57,19 @@ function _jDate($date)
     $year = $date['year'];
     $month = $date['month'];
     $day = $date['day'];
-    return jdate('l , j F Y', strtotime($year . '-' . $month . '-' . $day));
+    $date= jdate('j F Y', strtotime($year . '-' . $month . '-' . $day));
+    $date=str_ireplace("۱","1",$date);
+    $date=str_ireplace("۲","2",$date);
+    $date=str_ireplace("۳","3",$date);
+    $date=str_ireplace("۴","4",$date);
+    $date=str_ireplace("۵","5",$date);
+    $date=str_ireplace("۶","6",$date);
+    $date=str_ireplace("۷","7",$date);
+    $date=str_ireplace("۸","8",$date);
+    $date=str_ireplace("۹","9",$date);
+    $date=str_ireplace(".","0",$date);
+    $date=str_ireplace("۰","",$date);
+    return $date;
 }
 function wp_bootstrap_pagination($args = array())
 {
@@ -138,6 +150,25 @@ function customize_wp_bootstrap_pagination($args)
     return $args;
 }
 add_filter('wp_bootstrap_pagination_defaults', 'customize_wp_bootstrap_pagination');
+
+function content_filter($content) {
+    $content=str_ireplace("۱","1",$content);
+    $content=str_ireplace("۲","2",$content);
+    $content=str_ireplace("۳","3",$content);
+    $content=str_ireplace("۴","4",$content);
+    $content=str_ireplace("۵","5",$content);
+    $content=str_ireplace("۶","6",$content);
+    $content=str_ireplace("۷","7",$content);
+    $content=str_ireplace("۸","8",$content);
+    $content=str_ireplace("۹","9",$content);
+    $content=str_ireplace("۰","0",$content);
+    return $content;
+}
+add_filter( 'the_content', 'content_filter' );
+add_filter( 'the_title', 'content_filter' );
+add_filter( 'get_the_date', 'content_filter' );
+
+
 
 function wpb_set_post_views($postID) {
     $count_key = 'wpb_post_views_count';

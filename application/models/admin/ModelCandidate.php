@@ -264,9 +264,9 @@ class ModelCandidate extends CI_Model
         foreach ($academicInfo as $item) {
             if (
                 ($item['CandidateGrade'] == 'KarshenasiArshad' && $item['CandidateStudyStatus'] == 'Graduated') ||
-                ($item['CandidateGrade'] == 'DoctoryHerfei' && $item['CandidateStudyStatus'] == 'Graduated') ||
-                ($item['CandidateGrade'] == 'DoctoryTakhasosi' && $item['CandidateStudyStatus'] == 'Graduated') ||
-                ($item['CandidateGrade'] == 'FogDoctory' && $item['CandidateStudyStatus'] == 'Graduated') ||
+                ($item['CandidateGrade'] == 'DoctoryHerfei') ||
+                ($item['CandidateGrade'] == 'DoctoryTakhasosi') ||
+                ($item['CandidateGrade'] == 'FogDoctory') ||
                 ($item['CandidateGrade'] == 'Hozeh3' && $item['CandidateStudyStatus'] == 'Graduated') ||
                 ($item['CandidateGrade'] == 'Hozeh4' && $item['CandidateStudyStatus'] == 'Graduated')
             ) {

@@ -474,8 +474,9 @@ h2.blog-widget-title {
 }
 
 .blog-post-image-inner img {
-    width: 640px;
-    height: 100%;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
 }
 
 .blog-combine {

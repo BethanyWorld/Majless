@@ -89,15 +89,16 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <label class="active" for="inputCandidateBirthDate">
                                                     تاریخ تولد
                                                     <span class="text-danger">
-                                                 <b class="text-danger">*</b>
-                                             </span>
+                                                         <b class="text-danger">*</b>
+                                                     </span>
+                                                    (مثلا 1365/05/03)
                                                 </label>
                                                 <input id="inputCandidateBirthDate" type="text"
                                                        name="inputCandidateBirthDate"
                                                        pattern="[0-9]*"
                                                     <?php setInputValue($userInfo['CandidateBirthDate']); ?>
                                                        class="input-validate validate valid"
-                                                       placeholder="1357/12/22"
+                                                       placeholder="1365/05/03"
                                                        style="font-family: tahoma;">
 
                                                 <label class="text-danger" id="DateChecked">

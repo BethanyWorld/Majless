@@ -14,7 +14,7 @@ global $_URL, $_DIR; ?>
                         $url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()), 'full');
                         $thumbnail = _image($url, array(350, 200));
                         $permalink = get_permalink(get_the_ID());
-                        $date = _jDate(get_the_date());
+                        $date = _jDate(get_the_date('Y-m-d' , get_the_ID()));
                         ?>
                         <div class="col-md-12 col-xs-12 blog-post">
                             <div class="col-md-12 col-xs-12 blog-outer">
@@ -37,11 +37,10 @@ global $_URL, $_DIR; ?>
                                                 </h2>
                                                 <span class="blog-post-meta">
                                             <i class="fa fa-user"></i>
-                                            <a href="#"
-                                               target="_blank"><?php the_author_meta('display_name', $author_id); ?>
+                                            <a href="#" target="_blank"><?php the_author_meta('display_name', $author_id); ?>
                                                 /</a>
                                             <i class="fa fa-calendar"></i>
-                                            <a href="#" target="_blank"><?= $date; ?> /</a>
+                                            <a href="javascript:void(0);" ><?= $date; ?> /</a>
                                         </span>
                                             </div>
                                             <p class="blog-post-content-p">

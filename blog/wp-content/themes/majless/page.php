@@ -53,8 +53,8 @@ wpb_set_post_views(get_the_ID());
                                 /
                             </a>
                             <i class="fa fa-calendar"></i>
-                            <a href="#" target="_blank">
-                                <?php echo _jDate(get_the_date()); ?>
+                            <a href="javascript:void(0);">
+                                <?php echo _jDate(get_the_date('Y-m-d' , get_the_ID())); ?>
                             </a>
                                 <!--                            <i class="fa fa-comment-o"></i>-->
                                 <!--                            <a href="#" target="_blank">-->

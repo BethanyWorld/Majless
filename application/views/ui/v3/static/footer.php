@@ -125,18 +125,20 @@
 <script type='text/javascript' src='<?= $_DIR; ?>js/theme.js?ver=1.<?php echo rand(); ?>'></script>
 <script>
     $(document).ready(function() {
-        $(".tb-posts-carousel").not('.slick-initialized').slick({
+        $('.tb-posts-carousel').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
             infinite: true,
             autoplay: true,
             autoplaySpeed: 5000,
             speed: 600,
+            prevArrow : '<span class="fa fa-angle-double-left slick-prev-arrow"></span>',
+            nextArrow : '<span class="fa fa-angle-double-right slick-next-arrow"></span>',
             responsive: [
                 {
                     breakpoint: 600,
                     settings: {
-                        slidesToShow: 2,
+                        slidesToShow: 1,
                         slidesToScroll: 1
                     }
                 },
