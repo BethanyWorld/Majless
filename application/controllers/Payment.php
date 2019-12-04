@@ -20,7 +20,7 @@ class Payment extends CI_Controller{
     public function startPayment($price = 100)
     {
         $this->load->helper('payment/zarinpal/nusoap');
-        $MerchantID = '2e809336-c5d4-11e6-8edd-000c295eb8fc';
+        $MerchantID = 'cef058f0-166d-11ea-a706-000c295eb8fc';
         $Description = 'حمایت مالی از جنبش ازما';
         $CallbackURL = base_url('Payment/endPayment/'.$price);
         $client = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
@@ -43,7 +43,7 @@ class Payment extends CI_Controller{
     }
     public function endPayment($price = 100){
         $this->load->helper('payment/zarinpal/nusoap');
-        $MerchantID = '2e809336-c5d4-11e6-8edd-000c295eb8fc';
+        $MerchantID = 'cef058f0-166d-11ea-a706-000c295eb8fc';
         $Amount = $price;
         $Authority = $_GET['Authority'];
         if ($_GET['Status'] == 'OK') {

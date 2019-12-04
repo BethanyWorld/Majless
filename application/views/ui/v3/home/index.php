@@ -145,6 +145,92 @@
                 </div>
             </div>
         </section>
+
+        <section id="section-5d7930f124ba6" class="campaign_section nopadding relative1 tbWow fadeIn"
+                 style="background-image:url(<?php echo $_DIR ?>images/hp-blocks-no_change.png);background-repeat: repeat; background-position: center center; background-size: auto;">
+            <div class="container">
+                <div class="row">
+                    <div class="fw-row nostretch">
+                        <div id="column-5d7930f1256d2"
+                             class="tb-column nostretch col-xs-12  col-sm-4 call-to-action-cols   tbWow fadeIn ">
+                            <div style="  color: #e3a4ab; padding: 20px 0px 20px 0px;"
+                                 class=" noabsolutecenter  padding15-xs">
+                                <div class="link-type-absolute100 tb-icon-box  absolutecenter-top  textalignleft tbWow fadeInUp   tbWow fadeIn ">
+                                    <div class="tb-icon-box-image iconbox-image-type img-rounded alignleft"
+                                         style=" background: none !important; ">
+                                        <a href="javascript:void(0);">
+                                            <img src="<?php echo $_DIR ?>images/icon_volunteer.png"
+                                                 class="img-rounded" alt=""/>
+                                        </a>
+                                    </div>
+                                    <div class="tb-icon-box-description">
+                                        <div class="tb-icon-box-text">
+                                            <div class="fw-page-builder-content">
+                                                <h3><span style="color: #ffffff;">دغدغه مند شوید</span></h3>
+                                                <p>
+                                                    <span style="color: #e3a4ab;">به کمپین ما بپیوندید</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="column-5d7930f12617b"
+                             class="tb-column nostretch col-xs-12  col-sm-4 call-to-action-cols   tbWow fadeIn "
+                             data-wow-delay="0.3s">
+                            <div style="  color: #e3a4ab; padding: 20px 0px 20px 0px;"
+                                 class=" noabsolutecenter  padding15-xs">
+                                <div class="link-type-absolute100 tb-icon-box  absolutecenter-top  textalignleft tbWow fadeInUp   tbWow fadeIn ">
+
+                                    <div class="tb-icon-box-image iconbox-image-type img-rounded alignleft"
+                                         style=" background: none !important; ">
+                                        <a href="javascript:void(0);">
+                                            <img src="<?php echo $_DIR ?>images/icon_donate.png"
+                                                 class="img-rounded" alt=""/>
+                                        </a>
+                                    </div>
+                                    <div class="tb-icon-box-description">
+                                        <div class="tb-icon-box-text">
+                                            <div class="fw-page-builder-content">
+                                                <h3><span style="color: #ffffff;">حامی ما باشید</span></h3>
+                                                <p><span style="color: #e3a4ab;">مشارکت کنید</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="column-5d7930f126b5d"
+                             class="tb-column nostretch col-xs-12  col-sm-4 call-to-action-cols noborder   tbWow fadeIn "
+                             data-wow-delay="0.6s">
+                            <div style="  color: #e3a4ab; padding: 20px 0px 20px 0px;"
+                                 class=" noabsolutecenter  padding15-xs">
+                                <div class="link-type-absolute100 tb-icon-box  absolutecenter-top  textalignleft tbWow fadeInUp   tbWow fadeIn ">
+                                    <div class="tb-icon-box-image iconbox-image-type img-rounded alignleft"
+                                         style=" background: none !important; ">
+                                        <a href="javascript:void(0);">
+                                            <img src="<?php echo $_DIR ?>images/icon_shop_no_change.png"
+                                                 class="img-rounded" alt=""/>
+                                        </a>
+                                    </div>
+                                    <div class="tb-icon-box-description">
+                                        <div class="tb-icon-box-text">
+                                            <div class="fw-page-builder-content">
+                                                <h3><span style="color: #ffffff;">فهرست نامزد ها را ببینید</span>
+                                                </h3>
+                                                <p><span style="color: #e3a4ab;">نامزد های انتخاباتی هر استان</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Edited Issues-->
         <section id="hp-the-issues" class="campaign_section nopadding  tbWow fadeIn">
             <div class="container">
@@ -302,7 +388,6 @@
                 </div>
             </div>
         </section>
-
         <section id="hp-the-issues" class="campaign_section nopadding  tbWow fadeIn">
             <div class="campaign_no_container">
                 <div class="fw-row absolutecenter-stretch">

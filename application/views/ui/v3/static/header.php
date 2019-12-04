@@ -74,7 +74,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     </div>
 </div>
 <body class="home">
-<div id="themeblossom_loading_screen" class="pace absolutecenter">
+<div id="themeblossom_loading_screen" class="pace absolutecenter hidden-sm hidden-xs">
     <div id="themeblossom_loading_screen_logo">
         <div class="loader_ring"></div>
         <a href="<?php echo base_url(); ?>">
