@@ -226,7 +226,7 @@ class ModelCandidate extends CI_Model
             ) {
                 $arr = array(
                     'content' => 'User Invalid Constituency State',
-                    'message' => 'استان و شهر حوزه انتخابی باید با استان و شهر محل تولد پدر، مادر یا محل سکونت شما یکسان باشد.',
+                    'message' => 'استان و شهر حوزه انتخابی باید با استان و شهر محل محل سکونت شما یکسان باشد.',
                     'hasConditions' => false,
                     'isCompleted' => true
                 );
