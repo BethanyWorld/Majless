@@ -178,8 +178,8 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                             <li>
                                 <a href="javascript:void(0)">همراهی با ما</a>
                                 <ul>
-                                    <li><a href="<?php echo base_url('blog/?page_id=36'); ?>">حمایت از ما</a></li>
-                                    <li><a href="<?php echo base_url('blog/?page_id=38'); ?>">حامیان و همراهان</a></li>
+                                    <li><a href="<?php echo base_url('Payment'); ?>">حمایت از ما</a></li>
+                                    <li><a href="<?php echo base_url('Payment'); ?>">حامیان و همراهان</a></li>
                                 </ul>
                             </li>
                             <li>

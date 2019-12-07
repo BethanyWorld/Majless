@@ -1,85 +1,24 @@
+<?php
+$_DIR = base_url('assets/ui/v4/');
+?>
+<script type='text/javascript' src='<?= $_DIR; ?>js/persian.min.js'></script>
 <script type="text/javascript">
-
     $(document).ready(function () {
-        $(function () {
-            $(window).resize(function () {
-                a()
-            });
-            function a() {
-                var b = $("#IranMap .list").height();
-                var c = $("#IranMap .list").width();
-                if (b > c) {
-                    $("#IranMap svg").height(c).width(c)
-                } else {
-                    $("#IranMap svg").height(b).width(b)
-                }
+        $("#btn-pay").click(function (e) {
+            e.preventDefault();
+            $inputformAmount = $.trim($("#formAmount").val());
+            if ($inputformAmount == '') {
+                $("#alert1").show();
+                return;
             }
-            a();
-            $("#IranMap svg g path").hover(function () {
-                var c = $(this).attr("class");
-                var b = $(this).parent("g").attr("class");
-                var d = $("#IranMap .list ." + b + " ." + c + " a").html();
-                if (d) {
-                    $("#IranMap .list ." + b + " ." + c + " a").addClass("hover");
-                    $("#IranMap .show-title").html(d).css({display: "block"})
-                }
-            }, function () {
-                $("#IranMap .list a").removeClass("hover");
-                $("#IranMap .show-title").html("").css({display: "none"})
-            });
-            $("#IranMap .list ul li ul li a").hover(function () {
-                var e = $(this).parent("li").attr("class");
-                var c = $(this).parent("li").parent("ul").parent("li").attr("class");
-                var b = "#IranMap svg g." + c + " path." + e;
-                var d = $(b).attr("class");
-                $(b).attr("class", d + " hover")
-            }, function () {
-                var e = $(this).parent("li").attr("class");
-                var c = $(this).parent("li").parent("ul").parent("li").attr("class");
-                var b = "#IranMap svg g." + c + " path." + e;
-                var d = $(b).attr("class");
-                $(b).attr("class", d.replace(" hover", ""))
-            });
-            $("#IranMap").mousemove(function (d) {
-                var c = 0;
-                var h = 0;
-                if (!d) {
-                    var d = window.event
-                }
-                if (d.pageX || d.pageY) {
-                    c = d.pageX;
-                    h = d.pageY
-                } else {
-                    if (d.clientX || d.clientY) {
-                        c = d.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-                        h = d.clientY + document.body.scrollTop + document.documentElement.scrollTop
-                    }
-                }
-                if ($("#IranMap .show-title").html()) {
-                    var f = $(this).offset();
-                    var b = (c - f.left + 25) + "px";
-                    var g = (h - f.top - 5) + "px";
-                    $("#IranMap .show-title").css({left: b, top: g})
-                }
-            })
-        });
+            $("#form").submit();
 
-        $(function() {
-            $('#IranMap .map .province path').click(function() {
-                var province = $(this).attr('class');
-                var provinceName = $('#IranMap .list>ul>li>ul>li.' + province + ' a').html();
-                if (provinceName) {
-                    $('#IranMap .city').html( provinceName);
-                }
-            });
-            $('#IranMap .list li.province>ul>li>a').click(function(e) {
-                var provinceName = $(this).html();
-                if (provinceName) {
-                    $('#IranMap .city').html(provinceName);
-                }
-                e.preventDefault();
-            });
         });
+        $("#formAmount").keyup(function () {
+            $('#labal1').addClass('animated fadeIn');
+            $inputformAmount = $(this).cleanVal();
+            $("#labal1").text(persianJs($inputformAmount).digitsToWords().toString() + " تومان ");
+        });
+        $('#formAmount').mask('000,000,000,000,000,000', {reverse: true});
     });
-
 </script>

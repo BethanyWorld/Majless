@@ -20,7 +20,10 @@
                         </li>
                         <li class="list-group-item">
                             <span>مبلغ</span>
-                            <span>100 تومان</span>
+                            <span>
+                                <?php echo number_format($price); ?>
+                                تومان
+                            </span>
                         </li>
                     </ul>
                     <a href="<?php echo base_url(); ?>">

@@ -16,12 +16,25 @@ class Payment extends CI_Controller{
         $this->load->view('ui/v3/payment/index_js');
         $this->load->view('ui/v3/static/footer', $data);
     }
-
     public function startPayment($price = 100)
     {
+        $price = $this->input->post(NULL,TRUE)['formAmount'];
+
+        $Description = $this->input->post(NULL,TRUE)['formFname'];
+        $Description .= "-";
+        $Description .= $this->input->post(NULL,TRUE)['formLname'];
+        $Description .= "-";
+        $Description .= $this->input->post(NULL,TRUE)['formPhone'];
+        $Description .= "-";
+        $Description .= $this->input->post(NULL,TRUE)['formEmail'];
+        $price = str_ireplace(",","",$price);
+        if(isset($price) && !is_numeric($price)){
+            echo "مقدار نامعتبر است";
+            die();
+        }
+
         $this->load->helper('payment/zarinpal/nusoap');
         $MerchantID = 'cef058f0-166d-11ea-a706-000c295eb8fc';
-        $Description = 'حمایت مالی از جنبش ازما';
         $CallbackURL = base_url('Payment/endPayment/'.$price);
         $client = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
         $client->soap_defencoding = 'UTF-8';
@@ -70,6 +83,7 @@ class Payment extends CI_Controller{
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
         $data['title'] = "نتیجه پرداخت";
         $data['pageTitle'] = 'نتیجه پرداخت';
+        $data['price'] = $price;
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/payment/result/index', $data);
         $this->load->view('ui/v3/payment/result/index_css');
