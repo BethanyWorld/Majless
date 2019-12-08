@@ -32,8 +32,8 @@ class SignUpReport extends CI_Controller{
         echo $api;
     }
     public function doExportReport(){
-        $this->load->helper('download');
         $inputs = $this->input->post(NULL, TRUE);
+        $data = json_decode($inputs['inputItems'] , true);
         $result = $this->ModelSignUp->doExportReport($inputs);
 
         $this->load->helper('plugins/excel/bootstrap.php');
@@ -46,37 +46,20 @@ class SignUpReport extends CI_Controller{
         $objPHPExcel->getActiveSheet()->SetCellValue('C1', "نام خانوادگی");
         $objPHPExcel->getActiveSheet()->SetCellValue('D1', "تلفن همراه");
         $objPHPExcel->getActiveSheet()->SetCellValue('E1', "تاریخ ثبت نام");
-        $objPHPExcel->getActiveSheet()->SetCellValue('F1', "نامزد");
-        $objPHPExcel->getActiveSheet()->SetCellValue('G1', "نخبه");
-        $objPHPExcel->getActiveSheet()->SetCellValue('H1', "حامی");
 
         $index = 0;
         $rowCount = 2;
-        foreach ($result as $row) {
-            $objPHPExcel->getActiveSheet()->SetCellValue('A'.$rowCount, $row['CandidateNationalCode']);
-            $objPHPExcel->getActiveSheet()->SetCellValue('B'.$rowCount, $result[$index]['CandidateFirstName']);
-            $objPHPExcel->getActiveSheet()->SetCellValue('C'.$rowCount, $result[$index]['CandidateLastName']);
-            $objPHPExcel->getActiveSheet()->SetCellValue('D'.$rowCount, $result[$index]['CandidatePhone']);
+        foreach ($data['items'] as $row) {
+            $objPHPExcel->getActiveSheet()->SetCellValue('A'.$rowCount, $row['nationalCode']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('B'.$rowCount, $result[$index]['SignUpFirstName']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('C'.$rowCount, $result[$index]['SignUpLastName']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('D'.$rowCount, $result[$index]['SignUpPhone']);
             $objPHPExcel->getActiveSheet()->SetCellValue('E'.$rowCount, $result[$index]['CreateDateTime']);
-            foreach ($result[$index]['roles'] as $role) {
-                switch ($role['Role']){
-                    case 'Candidate':
-                        $objPHPExcel->getActiveSheet()->SetCellValue('F'.$rowCount, 1);
-                        break;
-                    case 'Elite':
-                        $objPHPExcel->getActiveSheet()->SetCellValue('G'.$rowCount, 2);
-                        break;
-                    case 'Sponsor':
-                        $objPHPExcel->getActiveSheet()->SetCellValue('H'.$rowCount, 3);
-                        break;
-                }
-            }
             $index +=1;
             $rowCount++;
         }
         $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
         $objWriter->save('Export.xlsx');
-        readfile('Export.xlsx');
     }
 
     function convertToEnglish($string) {
