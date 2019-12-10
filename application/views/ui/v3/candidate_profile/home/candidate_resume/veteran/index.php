@@ -399,6 +399,13 @@ $_DIR = base_url('assets/ui/v3/');
         </div>
         <div class="LeftPaneAction">
             <div class="row form-group">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 prev-step">
+                    <a href="<?php echo base_url('Profile'); ?>">
+                        <button class="btn btn-block btn-lg waves-effect CommonButtons prev-step">
+                           اتمام
+                        </button>
+                    </a>
+                </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <button class="btn btn-block btn-lg CommonButtons waves-effect" id="updateVeteran">
                         ثبت
