@@ -903,7 +903,11 @@ h2.blog-widget-title {
 }
 
 .copy-link{
-
+    background: #ededed;
+    padding: 10px 20px;
+    width: 95%;
+    float: right;
+    margin: 10px 15px;
 }
 .copy-link button{
     background: #d10b20;
