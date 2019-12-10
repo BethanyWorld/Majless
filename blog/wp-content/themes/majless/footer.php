@@ -1,5 +1,4 @@
-<?php global $_URL, $_DIR; ?>
-<?php global $_DIR , $_URL; ?>
+<?php global $_DIR , $_URL ,$Main_URL; ?>
 <footer id="footer-promo">
     <div class="container">
         <a target="_blank" href="http://twitter.com/azmaa_net" class="tbWow fadeIn" data-wow-delay="0.1s">
@@ -60,17 +59,23 @@
                 <nav>
                     <div class="menu-footer-container">
                         <ul id="menu-footer" class="menu rtl">
-                            <li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-9 current_page_item menu-item-50">
-                                <a href="#">خانه</a>
+                            <li id="menu-item-50"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-9 current_page_item menu-item-50">
+                                <a href="<?php echo $Main_URL; ?>">خانه</a>
                             </li>
-                            <li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49">
-                                <a href="#">درباره ما</a>
+                            <li id="menu-item-49"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49">
+                                <a href="<?php echo $Main_URL.'AboutUs/intro'; ?>">درباره ما</a>
                             </li>
-                            <li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47">
-                                <a href="#">ثبت نام نامزدهای انتخاباتی</a>
+                            <li id="menu-item-47"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47">
+                                <a href="<?php echo $Main_URL.'SignUp?type=candidate'; ?>">
+                                    ثبت نام نامزدهای انتخاباتی
+                                </a>
                             </li>
-                            <li id="menu-item-841" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-841">
-                                <a href="#">حامیان</a>
+                            <li id="menu-item-841"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-841">
+                                <a href="<?php echo $Main_URL.'SignUp?type=sponsor'; ?>">حامیان</a>
                             </li>
                         </ul>
                     </div>

@@ -62,11 +62,8 @@ $(document).ready(function() {
 	DgxDonateUpdateDesignatedDiv();
 	DgxDonateUpdateTributeDiv();
 	DgxDonateUpdateEmployerDiv();
-
 	// Hook up special handling for the OTHER donation amount box
 	DgxDonateAddOnClickOther();
-
-
 
     $('#hp-upcoming-event').parallax("50%", 0.1);
     $('#hp-us-capitol').parallax("50%", 0.1);

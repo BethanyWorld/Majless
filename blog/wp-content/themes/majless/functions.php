@@ -2,6 +2,7 @@
 $_DIR = get_bloginfo('template_directory') . '/';
 $_URL = site_url() . '/';
 $Main_URL = str_ireplace("blog" ,"",  site_url());
+$Main_URL = str_ireplace("Blog" ,"",  site_url());
 add_theme_support('post-thumbnails');
 register_nav_menus(
     array(
