@@ -406,10 +406,12 @@
         $(document).on('change', '#inputCandidateAddressStateId', checkCandidateStateAndCity);
         $(document).on('change', '#inputCandidateAddressCityId', checkCandidateStateAndCity);
     });
+
     $(document).ready(function () {
         $('.inner-form-div-day').hide();
         $('.inner-form-div-month').hide();
         $('.inner-form-div-year').hide();
+
         $('#day').click(function () {
             $('.inner-form-div-day').slideToggle();
             $('.inner-form-div-month').slideUp();
@@ -433,6 +435,7 @@
                 $('.inner-form-div-year').animate({scrollTop: 0});
             }
         });
+
         $('.day').click(function () {
             $dayValuesss = $(this).text();
             $('#day').val($(this).text());
@@ -446,6 +449,10 @@
         $('.month').click(function () {
             $('#month').val($(this).text());
             $selecteMonthNumber = $(this).data('month-number');
+
+            $('.month').removeAttr('selected');
+            $(this).attr('selected' , 'selected');
+
             $('.month').removeClass('background');
             $('.month').removeClass('color');
             $(this).addClass('background');
@@ -519,6 +526,7 @@
             $value1 = arr[2];
             $value2 = arr[1];
             $value3 = arr[0];
+
             $innerDayValue = $('#day').val(arr[2]);
             $innerMonthValue = $('#month').val(arr[1]);
             $innerYearValue = $('#year').val(arr[0]);
@@ -549,11 +557,13 @@
                 $('.month').each(function () {
                     $thisValue = $(this).data('month-number').toString();
                     if($value2  === $thisValue) {
+                        $(this).attr('selected' , 'selected');
                         $(this).addClass('background');
                         $(this).addClass('color');
                         $('#month').val($(this).text());
                     }
                     else{
+                        $(this).removeAttr('selected');
                         $(this).removeClass('background');
                         $(this).removeClass('color');
                     }
@@ -582,7 +592,8 @@
             $dayValues = $('#day').val();
             $monthValues = $('#month').val();
             $yearValues = $('#year').val();
-            $ooo = $selecteMonthNumber;
+            $selecteMonthNumber1 = $('.month').filter('[selected]').data('month-number');
+            $ooo = $selecteMonthNumber1;
 
             $fullDateValue = $yearValues + '/' + $ooo + '/' + $dayValues;
             $('#inputCandidateBirthDate').val($fullDateValue);
@@ -591,8 +602,9 @@
                 $('.save-changes').attr('disabled', 'disabled');
             } else {
                 $('.save-changes').removeAttr('disabled');
-                $('.modal').hide();
+                $('.modal').modal('hide');
             }
+
             $('.inner-form-div-day').slideUp();
             $('.inner-form-div-month').slideUp();
             $('.inner-form-div-year').slideUp();

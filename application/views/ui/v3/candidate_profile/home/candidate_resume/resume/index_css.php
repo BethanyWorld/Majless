@@ -19,6 +19,11 @@
 .modal {
     z-index: 2100000000000000000;
 }
+
+
+
+
+/*for sample date*/
 .form-group{
     direction: rtl !important;
 }
@@ -51,7 +56,6 @@
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
 }
-
 .datepicker.dropdown-menu{
     position: relative !important;
     left: 0px !important;
@@ -60,6 +64,9 @@
     width: 100%;
     height: 190px;
     overflow-x: hidden;
+    text-align: right;
+}
+.datepicker.dropdown-menu table tr td{
     text-align: right;
 }
 .datepicker table{
@@ -83,16 +90,20 @@
 
 #DatePicker .input-group-addon:first-child{
     cursor: pointer;
-    border-left: 0 ;
-    border-top-left-radius: 0 ;
-    border-bottom-left-radius: 0 ;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-right: 1px solid #ccc;
+    /*border-left: 0 ;*/
+    /*border-top-left-radius: 0 ;*/
+    /*border-bottom-left-radius: 0 ;*/
+    /*border-top-right-radius: 4px;*/
+    /*border-bottom-right-radius: 4px;*/
+    /*border-right: 1px solid #ccc;*/
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px;
 }
 #DatePicker .form-control:last-child{
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 .date-modal{
     direction: rtl;
@@ -131,4 +142,5 @@
 .date-modal .modal-body{
     display: flow-root;
 }
+/*for sample date*/
 </style>

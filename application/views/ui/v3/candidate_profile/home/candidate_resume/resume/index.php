@@ -90,30 +90,29 @@ $_DIR = base_url('assets/ui/v3/');
                                                          <b class="text-danger">*</b>
                                                      </span>
                                                 </label>
-<!--                                                <input id="inputCandidateBirthDate" type="text"-->
-<!--                                                       name="inputCandidateBirthDate"-->
-<!--                                                       pattern="[0-9]*"-->
-<!--                                                    --><?php //setInputValue($userInfo['CandidateBirthDate']); ?>
-<!--                                                       class="input-validate validate valid"-->
-<!--                                                       placeholder="1365/05/03"-->
-<!--                                                       style="font-family: tahoma;">-->
-                                                    <div class="col-xs-12 date">
-                                                        <div class="input-group input-append date" id="DatePicker">
+                                                <!--                                                <input id="inputCandidateBirthDate" type="text"-->
+                                                <!--                                                       name="inputCandidateBirthDate"-->
+                                                <!--                                                       pattern="[0-9]*"-->
+                                                <!--                                                    --><?php //setInputValue($userInfo['CandidateBirthDate']); ?>
+                                                <!--                                                       class="input-validate validate valid"-->
+                                                <!--                                                       placeholder="1365/05/03"-->
+                                                <!--                                                       style="font-family: tahoma;">-->
+                                                <div class="col-xs-12 date">
+                                                    <div class="input-group input-append date" id="DatePicker">
                                                             <span class="input-group-addon add-on"
                                                                   data-toggle="modal" data-target="#exampleModal">
                                                                 <span class="fa fa-calendar"></span>
                                                             </span>
-                                                            <input
-                                                                    data-toggle="modal" data-target="#exampleModal"
-                                                                    type="text" class="form-control"
-                                                                <?php setInputValue($userInfo['CandidateBirthDate']); ?>
-                                                                   id="inputCandidateBirthDate"
-                                                                   name="inputCandidateBirthDate"
-                                                                   placeholder="1352/12/05"
-                                                                   style="font-family: tahoma;" />
-                                                        </div>
+                                                        <input
+                                                                data-toggle="modal" data-target="#exampleModal"
+                                                                type="text" class="form-control"
+                                                            <?php setInputValue($userInfo['CandidateBirthDate']); ?>
+                                                                id="inputCandidateBirthDate"
+                                                                name="inputCandidateBirthDate"
+                                                                placeholder="1352/12/05"
+                                                                style="font-family: tahoma;"/>
                                                     </div>
-
+                                                </div>
                                                 <label class="text-danger" id="DateChecked">
                                                     حداقل سن مجاز 30 سال حداکثر سن مجاز 75 سال میباشد
                                                 </label>
@@ -608,7 +607,8 @@ $_DIR = base_url('assets/ui/v3/');
 </div>
 
 
-<div class="modal fade date-modal" data-backdrop="false" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade date-modal" data-backdrop="false" id="exampleModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -745,40 +745,251 @@ $_DIR = base_url('assets/ui/v3/');
                                     <table class=" table-condensed">
                                         <tbody>
                                         <tr>
-                                            <td class="year">1350</td>
+                                            <td class="year">1398</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1351</td>
+                                            <td class="year">1397</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1352</td>
+                                            <td class="year">1396</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1353</td>
+                                            <td class="year">1395</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1354</td>
+                                            <td class="year">1394</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1355</td>
+                                            <td class="year">1393</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1356</td>
+                                            <td class="year">1392</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1357</td>
+                                            <td class="year">1391</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1358</td>
+                                            <td class="year">1390</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1389</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1388</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1387</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1386</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1385</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1384</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1383</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1382</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1381</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1380</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1379</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1378</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1377</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1376</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1375</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1374</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1373</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1372</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1371</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1370</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1369</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1368</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1367</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1366</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1365</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1364</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1363</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1362</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1361</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1360</td>
                                         </tr>
                                         <tr>
                                             <td class="year">1359</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1360</td>
+                                            <td class="year">1358</td>
                                         </tr>
                                         <tr>
-                                            <td class="year">1361</td>
+                                            <td class="year">1357</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1356</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1355</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1354</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1353</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1352</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1351</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1350</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1349</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1348</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1347</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1346</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1345</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1344</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1343</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1342</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1341</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1340</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1339</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1338</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1337</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1336</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1335</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1334</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1333</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1332</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1331</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1330</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1329</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1328</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1327</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1326</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1325</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1324</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1323</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="year">1322</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1321</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1320</td>
                                         </tr>
                                         </tbody>
                                     </table>

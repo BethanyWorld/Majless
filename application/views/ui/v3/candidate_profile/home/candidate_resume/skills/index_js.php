@@ -20,7 +20,7 @@
             //
             //     $(this).find('select').each(function () {
             //         $optionSelected = $(this).find('option').filter('[selected]').length;
-            //         if ($optionSelected === 0) {
+            //         if ($optionSelected === 0) {php
             //             $(this).prev('label').css('color', 'red');
             //         }
             //     });
