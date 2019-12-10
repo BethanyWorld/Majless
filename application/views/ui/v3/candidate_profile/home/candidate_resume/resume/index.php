@@ -2,9 +2,7 @@
 $_DIR = base_url('assets/ui/v3/');
 ?>
 <div class="container container-wrapper" style="background: none;">
-
     <?php echo $resumeSidebar; ?>
-
     <div class="col-xs-12 col-md-9 pull-right response-padding">
         <div class="LeftPanel">
             <div class="LeftPanelcontent">
@@ -91,15 +89,30 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <span class="text-danger">
                                                          <b class="text-danger">*</b>
                                                      </span>
-                                                    (مثلا 1365/05/03)
                                                 </label>
-                                                <input id="inputCandidateBirthDate" type="text"
-                                                       name="inputCandidateBirthDate"
-                                                       pattern="[0-9]*"
-                                                    <?php setInputValue($userInfo['CandidateBirthDate']); ?>
-                                                       class="input-validate validate valid"
-                                                       placeholder="1365/05/03"
-                                                       style="font-family: tahoma;">
+<!--                                                <input id="inputCandidateBirthDate" type="text"-->
+<!--                                                       name="inputCandidateBirthDate"-->
+<!--                                                       pattern="[0-9]*"-->
+<!--                                                    --><?php //setInputValue($userInfo['CandidateBirthDate']); ?>
+<!--                                                       class="input-validate validate valid"-->
+<!--                                                       placeholder="1365/05/03"-->
+<!--                                                       style="font-family: tahoma;">-->
+                                                    <div class="col-xs-12 date">
+                                                        <div class="input-group input-append date" id="DatePicker">
+                                                            <span class="input-group-addon add-on"
+                                                                  data-toggle="modal" data-target="#exampleModal">
+                                                                <span class="fa fa-calendar"></span>
+                                                            </span>
+                                                            <input
+                                                                    data-toggle="modal" data-target="#exampleModal"
+                                                                    type="text" class="form-control"
+                                                                <?php setInputValue($userInfo['CandidateBirthDate']); ?>
+                                                                   id="inputCandidateBirthDate"
+                                                                   name="inputCandidateBirthDate"
+                                                                   placeholder="1352/12/05"
+                                                                   style="font-family: tahoma;" />
+                                                        </div>
+                                                    </div>
 
                                                 <label class="text-danger" id="DateChecked">
                                                     حداقل سن مجاز 30 سال حداکثر سن مجاز 75 سال میباشد
@@ -592,5 +605,194 @@ $_DIR = base_url('assets/ui/v3/');
             </div>
         </div>
     </div>
+</div>
 
+
+<div class="modal fade date-modal" data-backdrop="false" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-right" id="exampleModalLabel">تاریخ تولد</h5>
+                <button type="button" class="close close-modal pull-left" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <div class="col-md-4 col-xs-12">
+                            <label class="pull-right" for="day">روز :</label>
+                            <input type="number" class="form-control" name="day" id="day" placeholder="روز" min="1"
+                                   max="31">
+                            <div class="datepicker inner-form-div inner-form-div-day datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-top"
+                                 style="display: block; top: 191px; left: 222px;">
+                                <div class="datepicker-days" style="display: block;">
+                                    <table class=" table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="day">01</td>
+                                            <td class="day">02</td>
+                                            <td class="day">03</td>
+                                            <td class="day">04</td>
+                                            <td class="day">05</td>
+                                            <td class="day">06</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="day">07</td>
+                                            <td class="day">08</td>
+                                            <td class="day">09</td>
+                                            <td class="day">10</td>
+                                            <td class="day">11</td>
+                                            <td class="day">12</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="day">13</td>
+                                            <td class="day">14</td>
+                                            <td class="day">15</td>
+                                            <td class="day">16</td>
+                                            <td class="day">17</td>
+                                            <td class="day">18</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="day">19</td>
+                                            <td class="day">20</td>
+                                            <td class="day">21</td>
+                                            <td class="day">22</td>
+                                            <td class="day">23</td>
+                                            <td class="day">24</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="day">25</td>
+                                            <td class="day">26</td>
+                                            <td class="day">27</td>
+                                            <td class="day">28</td>
+                                            <td class="day">29</td>
+                                            <td class="day">30</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="day">31</td>
+                                            <!--                                        <td class="new day">1</td>-->
+                                            <!--                                        <td class="new day">2</td>-->
+                                            <!--                                        <td class="new day">3</td>-->
+                                            <!--                                        <td class="new day">4</td>-->
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4 col-xs-12">
+                            <label class="pull-right" for="month">ماه :</label>
+                            <input type="text" class="form-control" name="month" id="month" placeholder="ماه">
+                            <div class="datepicker inner-form-div inner-form-div-month datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-top"
+                                 style="display: block; top: 191px; left: 222px;">
+                                <div class="datepicker-days" style="display: block;">
+                                    <table class=" table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="month" data-month-number="01">فروردین</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="02">اردیبهشت</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="03">خرداد</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="04">تیر</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="05">مرداد</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="06">شهریور</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="07">مهر</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="08">آبان</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="09">آذر</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="10">دی</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="11">بهمن</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="month" data-month-number="12">اسفند</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4 col-xs-12">
+                            <label class="pull-right" for="year">سال :</label>
+                            <input type="number" class="form-control" name="year" id="year" placeholder="سال">
+                            <div class="datepicker inner-form-div inner-form-div-year datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-top"
+                                 style="display: block; top: 191px; left: 222px;">
+                                <div class="datepicker-days" style="display: block;">
+                                    <table class=" table-condensed">
+                                        <tbody>
+                                        <tr>
+                                            <td class="year">1350</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1351</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1352</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1353</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1354</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1355</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1356</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1357</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1358</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1359</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1360</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="year">1361</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default close-modal pull-left" data-dismiss="modal">بستن
+                </button>
+                <button type="button" class="btn save-changes pull-left">ذخیره تغییرات</button>
+            </div>
+        </div>
+    </div>
 </div>
