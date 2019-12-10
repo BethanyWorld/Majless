@@ -96,10 +96,13 @@
     /*border-top-right-radius: 4px;*/
     /*border-bottom-right-radius: 4px;*/
     /*border-right: 1px solid #ccc;*/
+    position: absolute;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #ccc;
     border-radius: 0px;
+}
+#DatePicker input{
+    padding-right: 40px;
 }
 #DatePicker .form-control:last-child{
     border-top-left-radius: 0px;
