@@ -27,6 +27,19 @@
                             </ul>
                         </div>
                     </div>
+                    <strong style="font-size: 14px;text-align: right;display: inline-block;">آخرین ورود:</strong>
+                    <?php
+                    if(!empty($this->session->userdata('UserLoginInfo')['loginRecord'])){
+                        $loginInfo = $this->session->userdata('UserLoginInfo')['loginRecord'][0];
+                        ?>
+                        <strong style="font-size: 14px;text-align: left;display: inline-block;direction: ltr;">
+                            <?php echo $loginInfo['LoginDate'];  ?>
+                        </strong>
+                    <?php } else{ ?>
+                        <strong style="font-size: 14px;text-align: left;display: inline-block;direction: ltr;">
+                            <?php echo jDateTime::date("Y/m/d H:i:s", false, false);  ?>
+                        </strong>
+                    <?php }  ?>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 class ModelQuery extends CI_Model{
     public function getStatePagesByAgentId($agentId)
@@ -72,6 +73,7 @@ class ModelQuery extends CI_Model{
         return $arr;
     }
     public function doLogin($inputs){
+        $this->load->helper('string');
         $this->db->select('*');
         $this->db->from('candidate');
         $this->db->where(array(
@@ -85,6 +87,15 @@ class ModelQuery extends CI_Model{
             $this->db->where('CandidateId' , $result[0]['CandidateId']);
             $roles = $this->db->get()->result_array();
             $result[0]['roles'] = $roles;
+
+            $this->db->select('*');
+            $this->db->from('login_records');
+            $this->db->where('CandidateId' , $result[0]['CandidateId']);
+            $this->db->order_by('RowId','DESC');
+            $this->db->limit(1);
+            $loginRecord = $this->db->get()->result_array();
+            $result[0]['loginRecord'] = $loginRecord;
+
             $this->session->set_userdata('UserLoginInfo' , $result[0]);
             $this->session->set_userdata('UserIsLogged' , true);
             $arr = array(
@@ -92,6 +103,13 @@ class ModelQuery extends CI_Model{
                 'content' => "ورود موفق...در حال انتقال به صفحه کاربری",
                 'success' => true
             );
+
+            $loginToken = array(
+                'CandidateId' => $result[0]['CandidateId'],
+                'LoginDate' => jDateTime::date("Y/m/d H:i:s", false, false),
+                'LoginAccessToken' => random_string('alnum', 32)
+            );
+            $this->db->insert('login_records' , $loginToken);
             return $arr;
         }
         else{
