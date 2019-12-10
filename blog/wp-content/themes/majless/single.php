@@ -152,5 +152,6 @@ $news_comments = get_comments(
             document.execCommand("copy");
             $(".success-copy").css('display','block').hide().fadeIn();
         });
+        $("table").css('width' , '100% !important').addClass('table table-bordered table-hover table-condensed').wrap('<div class="table-responsive"></div>');
     });
 </script>
