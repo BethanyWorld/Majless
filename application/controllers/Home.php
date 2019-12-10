@@ -55,7 +55,7 @@ class Home extends CI_Controller{
         p1.post_status=\"publish\" 
         AND p1.post_type=\"post\"
     ORDER BY 
-        p1.post_date DESC";
+        p1.post_date DESC LIMIT 6";
         $posts = $organizationDB->query($sql)->result_array();
 
         $data['noImg'] = $this->config->item('defaultImage');
