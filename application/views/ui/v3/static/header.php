@@ -37,7 +37,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <link rel='stylesheet' id='bootstrap-theme-css' href='<?= $_DIR; ?>css/bootstrap-theme.min.css?ver=3.3.7'/>
     <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>css/jquery.mmenu.all.css?ver=1.0'/>
     <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/animate.min.css?ver=1.0' />
-    <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/lightbox.min.css?ver=1.0' />
+    <link rel='stylesheet' id='light-box' href='<?= $_DIR; ?>css/lightbox.min.css?ver=1.0' />
     <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>css/options.css?ver=1.<?php echo rand(); ?>'/>
     <link rel='stylesheet' id='campaign_style-css' href='<?= $_DIR; ?>css/theme.css?ver=1.<?php echo rand(); ?>'/>
     <link rel='stylesheet' id='slick-css' href='<?= $_DIR; ?>css/slick.css?ver=1.0' type='text/css' media='all'/>
@@ -219,3 +219,4 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
             </div>
         </div>
     </header>
+</body>
