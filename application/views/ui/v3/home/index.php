@@ -145,7 +145,6 @@
                 </div>
             </div>
         </section>
-
         <section id="section-5d7930f124ba6" class="campaign_section nopadding relative1 tbWow fadeIn"
                  style="background-image:url(<?php echo $_DIR ?>images/hp-blocks-no_change.png);background-repeat: repeat; background-position: center center; background-size: auto;">
             <div class="container">
@@ -231,54 +230,6 @@
                 </div>
             </div>
         </section>
-        <!-- Edited Issues-->
-        <section id="hp-the-issues" class="campaign_section nopadding  tbWow fadeIn">
-            <div class="container">
-                <div class="fw-row absolutecenter-stretch">
-                    <div id="column-5d7930f12c6ec"
-                         class="tb-column text-center absolutecenter-stretch col-xs-12 col-sm-12 col-md-3 nopadding tbWow animated fadeIn ">
-
-                        <div class="col-xs-12" style="
-
-    padding: 150px 2px;
-    font-size: 21px;
-    direction: rtl;
-    text-align: center;
-    line-height: 40px;font-weight: 900;">
-                            این وضعیت تغییر نمی‌یابد مگر با تحولی محسوس در سازوکارهایی که بعضاً سفلگان را به مناصب عالی
-                            نشانده و نخبگان را از جایگاه‌های مؤثر بر سرنوشت ملت به زیر کشیده است. سازوکارهایی که در آن
-                            ورود به عرصه‌ی تقنین و تعیین سرنوشت مردم، منوط به هزینه‌های هنگفت و یا پیوستن به جرگه‌ی
-                            جریان‌های قدرت‌طلب و تمامیت‌خواه است.
-                        </div>
-                    </div>
-                    <div id="column-5d7930f12c6ec"
-                         class="tb-column text-center absolutecenter-stretch col-xs-12 col-sm-12 col-md-6 nopadding tbWow animated fadeIn ">
-                        <a href="<?php echo base_url('AboutUs/public_invitation'); ?>">
-                            <img style="max-width: 100% !important;height: 620px;margin: 70px 0px;"
-                                 src="<?php echo $_DIR ?>images/banner-2.jpg"/>
-                        </a>
-                    </div>
-                    <div id="hp-the-issues-list"
-                         class="tb-column absolutecenter-stretch col-xs-12  col-sm-6 col-md-3 nopadding">
-                        <div class="col-xs-12" style="
-
-    padding: 145px 2px;
-    font-size: 20px;
-    direction: rtl;
-    text-align: center;
-    line-height: 40px;font-weight: 900;">
-                            مردمان پا‌ک‌نهاد و نیک‌سرشت این دیار، شایسته‌ی زندگی و معیشتی پاک و نیکند، که جز با پاک‌دستی
-                            و نیک‌اندیشیِ والیان و متولیان امور حاصل نمی‌شود. در پنجمین دهه از تاریخ استقلال این
-                            مرزوبوم، فاصله‌ای عمیق میان آنچه ملت از این بالانشینان انتظار دارد، با آنچه امروز بر سر
-                            سفره‌ی فرودستان فرود آمده احساس می‌شود، که درد و رنجش بغض گلوگیر روز و شب دلسوزان و
-                            دغدغه‌مندان است.
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Edited Issues-->
         <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow fadeIn" style="background-color: rgb(249, 249, 249); visibility: visible; animation-name: fadeIn;">
             <div class="container" style=" padding-top: 60px; padding-bottom: 60px; ">
                 <div class="row">
