@@ -26,7 +26,7 @@
                                     <td class="fit"><?php echo $candidate['CandidateScore']; ?></td>
                                     <td class="fit"><?php echo candidateStatus($candidate['CandidateStatus']); ?></td>
                                     <td class="fit">
-                                        <a href="<?php echo base_url('Agent/Candidate/edit/') . $candidate['CandidateId']; ?>">
+                                        <a href="<?php echo base_url('Agent/Candidates/detail/') . $candidate['CandidateId']; ?>">
                                             <button type="button"
                                                     class="btn btn-info btn-circle waves-effect waves-circle waves-float">
                                                 <i class="material-icons">rate_review</i>
@@ -39,7 +39,7 @@
                             <tfoot>
                             <tr>
                                 <td colspan="5">
-                                    <a class="btn btn-primary" href="<?php echo base_url('Agent/Candidate/index'); ?>">
+                                    <a class="btn btn-primary" href="<?php echo base_url('Agent/Candidates/index'); ?>">
                                         مشاهده همه
                                     </a>
                                 </td>
