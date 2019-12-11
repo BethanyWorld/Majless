@@ -1,5 +1,4 @@
 <script type="text/javascript">
-
     function toEnglishDigits(str) {
         var e = '۰'.charCodeAt(0);
         str = str.replace(/[۰-۹]/g, function (t) {
@@ -85,7 +84,6 @@
         });
         defaultImage = '<?php echo $noImg ?>';
         function readURL(input) {
-            debugger;
             $FileSize = input.files[0].size / 1024 / 1024;
             if($FileSize < 1) {
                 if (input.files && input.files[0]) {
@@ -95,11 +93,32 @@
                         $('#personInfoImageButtons').attr('src', e.target.result);
                     }
                     reader.readAsDataURL(input.files[0]);
+
+                    var file_data = $('#imgInp').prop('files')[0];
+                    var form_data = new FormData();
+                    form_data.append('file', file_data);
+                    $.ajax({
+                        url: base_url + "Profile/uploadFile",
+                        dataType: 'text',
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        data: form_data,
+                        type: 'post',
+                        success: function (data) {
+                            $result = jQuery.parseJSON(data);
+                            if($result['success']){
+                                $("#profileImage").val($result['fileSrc']);
+                            }
+                        },
+                        error: function (data) {
+                        }
+                    });
                 }
             }
             else{
                 $('#personInfoImageButtons').attr('src', defaultImage);
-                notify("عکس شما باید کمتر از یک مگابایت باشد", "red");
+                notify("عکس شما باید کمتر از یک مگابایت باشد", "red" , 10000);
             }
         }
         $("#imgInp").change(function () {
@@ -251,7 +270,7 @@
         $("#updateProfileInfo").click({redirect: false}, updateProfile);
         $("#updateProfileInfoAndRedirect").click({redirect: true}, updateProfile);
         function updateProfile(param) {
-            $inputCandidateProfileImage = $("#personInfoImageButtons").attr('src');
+            $inputCandidateProfileImage = $("#profileImage").val(); /*$("#personInfoImageButtons").attr('src');*/
             $inputCandidateFirstName = $.trim($("#inputCandidateFirstName").val());
             $inputCandidateLastName = $.trim($("#inputCandidateLastName").val());
             $inputCandidateNationalCode = $.trim($("#inputCandidateNationalCode").val());
@@ -419,7 +438,6 @@
         $('.inner-form-div-day').hide();
         $('.inner-form-div-month').hide();
         $('.inner-form-div-year').hide();
-
         $('#day').click(function () {
             $('.inner-form-div-day').slideToggle();
             $('.inner-form-div-month').slideUp();
@@ -443,7 +461,6 @@
                 $('.inner-form-div-year').animate({scrollTop: 0});
             }
         });
-
         $('.day').click(function () {
             $dayValuesss = $(this).text();
             $('#day').val($(this).text());
@@ -479,7 +496,6 @@
             $('.inner-form-div-year').slideUp();
 
         });
-
         $('#day').keyup(function () {
             $dayinputvalue = $(this).val();
             $('.day').each(function () {
@@ -526,7 +542,6 @@
                 CheckDate();
             });
         });
-
         $('.input-group-addon , #inputCandidateBirthDate').click(function () {
             $fullDateValue = $('#inputCandidateBirthDate').val();
             var data =$('#inputCandidateBirthDate').val();

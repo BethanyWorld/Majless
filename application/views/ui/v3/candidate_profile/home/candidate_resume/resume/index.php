@@ -19,7 +19,9 @@ $_DIR = base_url('assets/ui/v3/');
                                              src="<?php echo $profileImage; ?>">
                                         <div class="">
                                             <span class="btn btn-block personInfoImageButtons ButtonBlueColor">
-                                                 انتخاب تصویر <input type="file" class="upld-file" id="imgInp">
+                                                انتخاب تصویر
+                                                <input type="file" class="upld-file" id="imgInp">
+                                                <input type="hidden"  id="profileImage" value="<?php echo $profileImage; ?>">
                                             </span>
                                         </div>
                                         <button class="btn RemoveImage btn-block personInfoImageButtons ButtonRedColor">
