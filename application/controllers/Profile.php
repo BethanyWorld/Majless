@@ -1022,7 +1022,6 @@ class Profile extends CI_Controller{
         echo json_encode($result);
     }
     /* get out of panel - session destroyed */
-
     public function uploadFile()
     {
         $uploadPath = $this->config->item('upload_path');

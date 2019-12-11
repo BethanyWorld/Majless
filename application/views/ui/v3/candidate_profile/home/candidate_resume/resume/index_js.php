@@ -433,7 +433,6 @@
         $(document).on('change', '#inputCandidateAddressStateId', checkCandidateStateAndCity);
         $(document).on('change', '#inputCandidateAddressCityId', checkCandidateStateAndCity);
     });
-
     $(document).ready(function () {
         $('.inner-form-div-day').hide();
         $('.inner-form-div-month').hide();
