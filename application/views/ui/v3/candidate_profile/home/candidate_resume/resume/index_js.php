@@ -85,13 +85,21 @@
         });
         defaultImage = '<?php echo $noImg ?>';
         function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    var file = e.target.result;
-                    $('#personInfoImageButtons').attr('src', e.target.result);
+            debugger;
+            $FileSize = input.files[0].size / 1024 / 1024;
+            if($FileSize < 1) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var file = e.target.result;
+                        $('#personInfoImageButtons').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
                 }
-                reader.readAsDataURL(input.files[0]);
+            }
+            else{
+                $('#personInfoImageButtons').attr('src', defaultImage);
+                notify("عکس شما باید کمتر از یک مگابایت باشد", "red");
             }
         }
         $("#imgInp").change(function () {
