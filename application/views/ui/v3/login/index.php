@@ -76,19 +76,21 @@
                     </button>
                 </div>
                 <div class="gap"></div>
+                <div class="row col-xs-12 margin-t-10 pull-right">
+                    <a class="d-i-b  btn btn btn-default" href="<?php echo base_url('SignUp') ?>">
+                        <strong style="line-height: 44px;">
+                            اگر هنوز ثبت نام نکرده اید کلیک کنید
+                        </strong>
+                    </a>
+                </div>
                 <div class="row col-xs-12  pull-right">
                     <a class="d-i-b pull-right  btn btn btn-default" href="<?php echo base_url('ResetPassword') ?>">
                         <strong style="line-height: 44px;">
                            رمز عبور را فراموش کرده ام
                         </strong>
                     </a>
-                    &nbsp;
-                    <a class="d-i-b  btn btn btn-default" href="<?php echo base_url('SignUp') ?>">
-                        <strong style="line-height: 44px;">
-                            ثبت نام کنید
-                        </strong>
-                    </a>
                 </div>
+
             </div>
         </div>
     </div>
