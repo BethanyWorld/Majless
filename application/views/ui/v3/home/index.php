@@ -7,8 +7,7 @@
                  class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
                  style=' padding-top: 85px !important; padding-bottom: 85px !important;min-height: calc(100vh - 243px)'>
 
-                        <div class="overlay"
-                             style="position: absolute;top: 0px; width: 50%;height: 100%;background: rgba(2, 39, 93, 0.45);z-index: 2;right: 0"></div>
+            <div class="overlay"></div>
             <div class="campaign_section_slide">
                 <video muted loop id="myVideo">
                     <source src="<?php echo $_DIR ?>images/video2.webm" type="video/mp4">
@@ -16,7 +15,7 @@
                 <button id="myBtn">
                     <i class="fa fa-play"></i>
                 </button>
-                    <span class="full-screen-icon">
+                <span class="full-screen-icon">
                         <img src="<?php echo $_DIR ?>images/switch-to-full-screen32.png">
                     </span>
             </div>
@@ -28,9 +27,8 @@
                  style="background-image:url(<?php echo $_DIR ?>images/slide2_850.jpg);background-size: cover;"></div>
 
 
-
             <div class="fw-row nostretch">
-                <div style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;"
+                <div style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;z-index: 5;"
                      class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
                     <style>
                         .slide-title {
@@ -104,11 +102,11 @@
                     </a>
                 </div>
             </div>
-<!--            <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 243px)'>-->
-<!--                <div class="row">-->
-<!--                -->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 243px)'>-->
+            <!--                <div class="row">-->
+            <!--                -->
+            <!--                </div>-->
+            <!--            </div>-->
 
 
             <a class="prev" onclick="slide('-1')">&#10094;</a>
@@ -765,14 +763,25 @@
 
 
 <style>
-    .full-screen-icon{
+    .overlay {
+        position: absolute;
+        top: 0px;
+        width: 50%;
+        height: 100%;
+        background: rgba(2, 39, 93, 0.45);
+        z-index: 2;
+        right: 0
+    }
+
+    .full-screen-icon {
         position: absolute;
         right: 10px;
         bottom: 3%;
         cursor: pointer;
         z-index: 5;
     }
-    .campaign_section_with_slides .container{
+
+    .campaign_section_with_slides .container {
         z-index: auto;
     }
 
@@ -832,11 +841,14 @@
     }
 
 
-
-    @media (max-width:992px) {
-        #myBtn{
+    @media (max-width: 992px) {
+        #myBtn {
             top: 5%;
             bottom: auto;
+        }
+
+        .overlay {
+            width: 100%;
         }
     }
 </style>
@@ -853,6 +865,7 @@
     var slideIndex = $(".campaign_section_slide").length;
     $slidesLength = $(".campaign_section_slide").length;
     slide(0);
+
     function slide(n) {
         n = parseInt(n);
         slideIndex += n;
@@ -867,6 +880,7 @@
         $(".slide-title").hide();
         $(".slide-title").eq(slideIndex).fadeIn(1000);
     }
+
     $('.full-screen-icon').click(function () {
         $fullscren = $("video").get(0);
         if ($fullscren.requestFullscreen) {
