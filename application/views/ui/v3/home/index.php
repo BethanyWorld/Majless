@@ -6,19 +6,18 @@
         <section id="section-5d7930f11ff35"
                  class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
                  style=' padding-top: 85px !important; padding-bottom: 85px !important;min-height: calc(100vh - 243px)'>
-            <!--            <div class="overlay"-->
-            <!--                 style="position: absolute;width: 100%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 1;"></div>-->
-            <!--            <div class="overlay"-->
-            <!--                 style="position: absolute;width: 50%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 2;right: 0"></div>-->
+
+                        <div class="overlay"
+                             style="position: absolute;top: 0px; width: 50%;height: 100%;background: rgba(2, 39, 93, 0.45);z-index: 2;right: 0"></div>
             <div class="campaign_section_slide">
-                <video autoplay muted loop id="myVideo">
+                <video muted loop id="myVideo">
                     <source src="<?php echo $_DIR ?>images/video2.webm" type="video/mp4">
                 </video>
                 <button id="myBtn">
                     <i class="fa fa-play"></i>
                 </button>
                     <span class="full-screen-icon">
-                        <img src="<?php echo $_DIR ?>images/switch-to-full-screen24.png">
+                        <img src="<?php echo $_DIR ?>images/switch-to-full-screen32.png">
                     </span>
             </div>
             <div class="campaign_section_slide"
@@ -771,6 +770,7 @@
         right: 10px;
         bottom: 3%;
         cursor: pointer;
+        z-index: 5;
     }
     .campaign_section_with_slides .container{
         z-index: auto;
@@ -783,16 +783,16 @@
         width: auto;
         padding: 5px 10px 0px 10px;
         margin-top: -22px;
-        color: white;
+        color: #d10b20;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 40px;
         transition: 0.6s ease;
         border-radius: 0 0px 0px 0;
         user-select: none;
     }
 
     .next {
-        left: 35px;
+        left: 50px;
         border-radius: 0px 0 0 0px;
     }
 
@@ -813,6 +813,7 @@
         color: #fff;
         cursor: pointer;
         border: none;
+        z-index: 5;
     }
 
     #myBtn:hover {
@@ -830,9 +831,7 @@
         object-fit: fill;
     }
 
-    .prev, .next {
-        background-color: #d10b20;
-    }
+
 
     @media (max-width:992px) {
         #myBtn{
