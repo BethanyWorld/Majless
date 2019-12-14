@@ -778,7 +778,7 @@
         right: 10px;
         bottom: 3%;
         cursor: pointer;
-        z-index: 5;
+        z-index: 8;
     }
 
     .campaign_section_with_slides .container {
@@ -798,6 +798,7 @@
         transition: 0.6s ease;
         border-radius: 0 0px 0px 0;
         user-select: none;
+        z-index: 5;
     }
 
     .next {
@@ -824,7 +825,6 @@
         border: none;
         z-index: 5;
     }
-
     #myBtn:hover {
         background: #022D6D;
         border: none;
@@ -840,7 +840,12 @@
         object-fit: fill;
     }
 
-
+    a.prev:hover{
+        color: #02275d;
+    }
+    a.next:hover {
+        color: #02275d;
+    }
     @media (max-width: 992px) {
         #myBtn {
             top: 5%;
