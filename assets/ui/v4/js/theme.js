@@ -208,3 +208,43 @@ $(window).load(function () {
         return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
     };
 })($);
+
+
+
+
+// for index slider
+var video = document.getElementById("myVideo"); // $("video").get(0);
+var btn = document.getElementById("myBtn");
+$('#myBtn').click(function () {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+});
+var slideIndex = $(".campaign_section_slide").length;
+$slidesLength = $(".campaign_section_slide").length;
+slide(0);
+
+function slide(n) {
+    n = parseInt(n);
+    slideIndex += n;
+    if (slideIndex >= $slidesLength) {
+        slideIndex = 0;
+    }
+    if (slideIndex < 0) {
+        slideIndex = $slidesLength - 1;
+    }
+    $(".campaign_section_slide").fadeOut(1200);
+    $(".campaign_section_slide").eq(slideIndex).fadeIn(1000);
+    $(".slide-title").hide();
+    $(".slide-title").eq(slideIndex).fadeIn(1000);
+}
+
+$('.full-screen-icon').click(function () {
+    $fullscren = $("video").get(0);
+    if ($fullscren.requestFullscreen) {
+        $fullscren.requestFullscreen();
+    }
+});
+// for index slider
