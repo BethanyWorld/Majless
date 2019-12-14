@@ -4,146 +4,116 @@
     <div class="fw-page-builder-content">
         <!-- Edited Slider-->
         <section id="section-5d7930f11ff35"
-                 class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn">
-            <div class="overlay"
-                 style="position: absolute;width: 100%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 1;"></div>
-            <div class="overlay"
-                 style="position: absolute;width: 50%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 2;right: 0"></div>
+                 class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
+                 style=' padding-top: 85px !important; padding-bottom: 85px !important;min-height: calc(100vh - 243px)'>
+            <!--            <div class="overlay"-->
+            <!--                 style="position: absolute;width: 100%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 1;"></div>-->
+            <!--            <div class="overlay"-->
+            <!--                 style="position: absolute;width: 50%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 2;right: 0"></div>-->
+            <div class="campaign_section_slide">
+                <video autoplay muted loop id="myVideo">
+                    <source src="<?php echo $_DIR ?>images/video2.webm" type="video/mp4">
+                </video>
+                <button id="myBtn">
+                    <i class="fa fa-play"></i>
+                </button>
+                    <span class="full-screen-icon">
+                        <img src="<?php echo $_DIR ?>images/switch-to-full-screen24.png">
+                    </span>
+            </div>
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide4_850.jpg);background-size: cover;"></div>
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide2_850.jpg);background-size: cover;"></div>
-            <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 135px)'>
-                <div class="row">
-                    <div class="fw-row nostretch">
-                        <div style="float: right;direction: rtl;text-align: justify;color: #fff;"
-                             class="tb-column nostretch col-xs-12 col-sm-6 col-md-6 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
-                            <style>
-                                .slide-title {
-                                    float: right;
-                                    direction: rtl;
-                                    color: #fff;
-                                    display: inline-block;
-                                    width: 100%;
-                                    text-align: center;
-                                    display: none;
-                                }
 
-                                .slide-title button {
-                                    background: #d10b20;
-                                    border: 1px solid rgba(253, 183, 46, 0.3);
-                                    margin: 30px 0;
-                                }
 
-                                .slide-title button:hover {
-                                    background: #d10b20;
-                                    border: 1px solid rgba(253, 183, 46, 0.3);
-                                }
 
-                                .slide-title h2 {
-                                    color: #fff;
-                                    font-size: 34px;
-                                    line-height: 50px;
-                                    text-align: center;
-                                }
+            <div class="fw-row nostretch">
+                <div style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;"
+                     class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
+                    <style>
+                        .slide-title {
+                            float: right;
+                            direction: rtl;
+                            color: #fff;
+                            display: inline-block;
+                            width: 100%;
+                            text-align: center;
+                            display: none;
+                        }
 
-                                .slide-title h3 {
-                                    color: #fff;
-                                    font-size: 18px;
-                                    line-height: 50px;
-                                    text-align: center;
-                                }
-                            </style>
-                            <a class="slide-title animated fadeInUp"
-                               href="<?php echo base_url('AboutUs/public_invitation'); ?>">
-                                <h2>
-                                    دعوت عمومی
-                                    از افراد شایسته نمایندگی مردم
-                                </h2>
-                                <h3>بیانیه جنبش #از_ما پیرامون ثبت نام در انتخابات مجلس یازدهم</h3>
-                                <button>جزئیات بیشتر</button>
-                            </a>
-                            <a class="slide-title animated fadeInUp" href="<?php echo base_url('AboutUs/exams'); ?>">
-                                <h2>
-                                    آزمون‌های جنبش از ما
-                                </h2>
-                                <h3>به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
-                                <button>جزئیات بیشتر</button>
-                            </a>
-                            <a class="slide-title animated fadeInUp"
-                               href="<?php echo base_url('AboutUs/measurement_process'); ?>">
-                                <h2>
-                                    فرآیند سنجش نامزدها
-                                </h2>
-                                <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
-                                    کند...</h3>
-                                <button>جزئیات بیشتر</button>
-                            </a>
+                        .slide-title button {
+                            background: #d10b20;
+                            border: 1px solid rgba(253, 183, 46, 0.3);
+                            margin: 30px 0;
+                        }
 
-                        </div>
-                        <div id="column-5d7930f120b6c"
-                             class="tb-column nostretch col-xs-12 col-sm-6 col-md-6 hp-join-the-effort-col nopadding  tbWow fadeIn">
-                            <div style="  color: #e2ebf1; padding: 0px 0px 150px 0px;"
-                                 class=" noabsolutecenter  padding15-xs">
-                                <div class="hp-join-the-effort tbWow fadeInDown">
-                                    <div>
-                                        <div class="fw-page-builder-content iziToast-rtl"
-                                             style="padding: 0 !important;">
-                                            <h1>
-                                                <span style="color: #fff; font-size: 36pt;">برای ایرانی سربلند...</span>
-                                            </h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="fw-divider-space" style="padding-top: 10px;"></div>
-                                <div class="hp-join-the-effort tbWow fadeInDown">
-                                    <div class="fw-page-builder-content">
-                                        <p>اگر در انتخابات مجلس یازدهم نامزد هستید برای ورود به فرآیند جنبش ثبت نام
-                                            کنید</p>
-                                        <p>و یا به عنوان حامی جنبش از ما در ساختن آینده‌ای بهتر برای کشورمان مشارکت
-                                            کنید</p>
-                                    </div>
-                                </div>
-                                <div class="fw-divider-space" style="padding-top: 30px;"></div>
-                                <div class="row col-xs-12 col-sm-8 col-md-8 form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels">
-                                    <form action="<?php echo base_url('SignUp'); ?>" method="get">
-                                        <div class="row rtl">
-                                            <div class="col-xs-12 pull-right">
-                                                <input
-                                                        style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
-                                                        placeholder="نام"
-                                                        class="form-control" type="text" id="fn" name="fn"
-                                                        autofocus/>
-                                            </div>
-                                            <div class="col-xs-12 pull-right">
-                                                <input
-                                                        style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
-                                                        placeholder="نام خانوادگی"
-                                                        class="form-control" type="text" id="ln" name="ln"/>
-                                            </div>
-                                            <div class="col-xs-12 pull-right">
-                                                <input
-                                                        style="font-family: tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
-                                                        placeholder="تلفن همراه"
-                                                        class="form-control" type="text" id="p" name="p"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div class="row col-md-12 col-xs-12">
-                                            <button type="submit"
-                                                    style="float: left;text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
-                                                ثبت نام
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        .slide-title button:hover {
+                            background: #d10b20;
+                            border: 1px solid rgba(253, 183, 46, 0.3);
+                        }
+
+                        .slide-title h2 {
+                            color: #fff;
+                            font-size: 34px;
+                            line-height: 50px;
+                            text-align: center;
+                        }
+
+                        .slide-title h3 {
+                            color: #fff;
+                            font-size: 18px;
+                            line-height: 50px;
+                            text-align: center;
+                        }
+                    </style>
+                    <a class="slide-title animated fadeInUp"
+                       href="<?php echo base_url('AboutUs/public_invitation'); ?>">
+                        <h2>
+                            1
+                            از افراد شایسته نمایندگی مردم
+                        </h2>
+                        <h3>بیانیه جنبش #از_ما پیرامون ثبت نام در انتخابات مجلس یازدهم</h3>
+                        <button>جزئیات بیشتر</button>
+                    </a>
+                    <a class="slide-title animated fadeInUp" href="<?php echo base_url('AboutUs/exams'); ?>">
+                        <h2>
+                            2
+                        </h2>
+                        <h3>به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
+                        <button>جزئیات بیشتر</button>
+                    </a>
+                    <a class="slide-title animated fadeInUp"
+                       href="<?php echo base_url('AboutUs/measurement_process'); ?>">
+                        <h2>
+                            3
+                        </h2>
+                        <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
+                            کند...</h3>
+                        <button>جزئیات بیشتر</button>
+                    </a>
+                    <a class="slide-title animated fadeInUp"
+                       href="<?php echo base_url('AboutUs/measurement_process'); ?>">
+                        <h2>
+                            4
+                        </h2>
+                        <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
+                            کند...</h3>
+                        <button>جزئیات بیشتر</button>
+                    </a>
                 </div>
             </div>
+<!--            <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 243px)'>-->
+<!--                <div class="row">-->
+<!--                -->
+<!--                </div>-->
+<!--            </div>-->
+
+
+            <a class="prev" onclick="slide('-1')">&#10094;</a>
+            <a class="next" onclick="slide('1')">&#10095;</a>
         </section>
         <section id="section-5d7930f124ba6" class="campaign_section nopadding relative1 tbWow fadeIn"
                  style="background-image:url(<?php echo $_DIR ?>images/hp-blocks-no_change.png);background-repeat: repeat; background-position: center center; background-size: auto;">
@@ -230,7 +200,8 @@
                 </div>
             </div>
         </section>
-        <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow fadeIn" style="background-color: rgb(249, 249, 249); visibility: visible; animation-name: fadeIn;">
+        <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow fadeIn"
+                 style="background-color: rgb(249, 249, 249); visibility: visible; animation-name: fadeIn;">
             <div class="container" style=" padding-top: 60px; padding-bottom: 60px; ">
                 <div class="row">
                     <div class="fw-row absolutecenter-stretch">
@@ -792,3 +763,115 @@
         </section>
     </div>
 </div>
+
+
+<style>
+    .full-screen-icon{
+        position: absolute;
+        right: 10px;
+        bottom: 3%;
+        cursor: pointer;
+    }
+    .campaign_section_with_slides .container{
+        z-index: auto;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        bottom: 4%;
+        width: auto;
+        padding: 5px 10px 0px 10px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 0px 0px 0;
+        user-select: none;
+    }
+
+    .next {
+        left: 35px;
+        border-radius: 0px 0 0 0px;
+    }
+
+    #myBtn {
+        width: 55px;
+        height: 40px;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: #D10B20;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+    }
+
+    #myBtn:hover {
+        background: #022D6D;
+        border: none;
+    }
+
+    #myVideo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        object-fit: fill;
+    }
+
+    .prev, .next {
+        background-color: #d10b20;
+    }
+
+    @media (max-width:992px) {
+        #myBtn{
+            top: 5%;
+            bottom: auto;
+        }
+    }
+</style>
+<script>
+    var video = document.getElementById("myVideo"); // $("video").get(0);
+    var btn = document.getElementById("myBtn");
+    $('#myBtn').click(function () {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+    var slideIndex = $(".campaign_section_slide").length;
+    $slidesLength = $(".campaign_section_slide").length;
+    slide(0);
+    function slide(n) {
+        n = parseInt(n);
+        slideIndex += n;
+        if (slideIndex >= $slidesLength) {
+            slideIndex = 0;
+        }
+        if (slideIndex < 0) {
+            slideIndex = $slidesLength - 1;
+        }
+        $(".campaign_section_slide").fadeOut(1200);
+        $(".campaign_section_slide").eq(slideIndex).fadeIn(1000);
+        $(".slide-title").hide();
+        $(".slide-title").eq(slideIndex).fadeIn(1000);
+    }
+    $('.full-screen-icon').click(function () {
+        $fullscren = $("video").get(0);
+        if ($fullscren.requestFullscreen) {
+            $fullscren.requestFullscreen();
+        }
+    });
+</script>
