@@ -162,11 +162,11 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+
     public function candidateReserveExam()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $candidateStatus = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId'])['CandidateStatus'];
-
         if ($candidateStatus == 'CandidateResumeMarked' || $candidateStatus == 'CandidateExamFirstStep' || $candidateStatus == 'CandidateExamSecondStep') {
             $inputs = $this->input->post(NULL, TRUE);
             $inputs = array_map(function ($v) {
@@ -988,6 +988,90 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/support/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+    public function startPayment($price = 100){
+        $price = $this->input->post(NULL,TRUE)['formAmount'];
+        $Description = $this->input->post(NULL,TRUE)['formFname'];
+        $Description .= "-";
+        $Description .= $this->input->post(NULL,TRUE)['formLname'];
+        $Description .= "-";
+        $Description .= $this->input->post(NULL,TRUE)['formPhone'];
+        $Description .= "-";
+        $Description .= $this->input->post(NULL,TRUE)['formEmail'];
+        $price = str_ireplace(",","",$price);
+        if(isset($price) && !is_numeric($price)){
+            echo "مقدار نامعتبر است";
+            die();
+        }
+        $this->load->helper('payment/zarinpal/nusoap');
+        $MerchantID = 'cef058f0-166d-11ea-a706-000c295eb8fc';
+        $CallbackURL = base_url('Profile/endPayment/'.$price);
+        $client = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
+        $client->soap_defencoding = 'UTF-8';
+        $result = $client->call('PaymentRequest', [
+            [
+                'MerchantID' => $MerchantID,
+                'Amount' => $price,
+                'Description' => $Description,
+                'Email' => 'info@azmaa.net',
+                'CallbackURL' => $CallbackURL,
+            ],
+        ]);
+        if ($result['Status'] == 100) {
+            header('Location: https://www.zarinpal.com/pg/StartPay/' . $result['Authority']);
+        } else {
+            $CallbackURL = base_url('Payment=error?' . $result['Status']);
+            header('Location: ' . $CallbackURL);
+        }
+    }
+    public function endPayment($price = 100){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $this->load->helper('payment/zarinpal/nusoap');
+        $MerchantID = 'cef058f0-166d-11ea-a706-000c295eb8fc';
+        $Amount = $price;
+        $Authority = $_GET['Authority'];
+        if ($_GET['Status'] == 'OK') {
+            $client = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
+            $client->soap_defencoding = 'UTF-8';
+            $result = $client->call('PaymentVerification', [
+                [
+                    'MerchantID' => $MerchantID,
+                    'Authority' => $Authority,
+                    'Amount' => $Amount,
+                ],
+            ]);
+            if ($result['Status'] == 100) {
+                $loginInfo = $this->session->userdata('UserLoginInfo');
+                $paymentArray = array(
+                    'PeymentCandidateId' => $loginInfo['CandidateId'],
+                    'PeymentExamId' => 0,
+                    'PaymentPrice' => $Amount,
+                    'PaymentType' => 'Help',
+                    'PaymentReferenceId' => $result['RefID'],
+                    'PaymentStatus' => 'Done',
+                );
+                $this->ModelProfile->insertPayment($paymentArray);
+            }
+            else {}
+        }
+        else {
+        }
+        if(isset($result)){
+            $data['result'] = $result;
+        }
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'نتیجه پرداخت';
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
+        $data['title'] = "نتیجه پرداخت";
+        $data['pageTitle'] = 'نتیجه پرداخت';
+        $data['price'] = $price;
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/support/result/index', $data);
+        $this->load->view('ui/v3/candidate_profile/support/result/index_css');
+        $this->load->view('ui/v3/candidate_profile/support/result/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
     /* End For Resume -------------------------------------------------------------*/
     public function account()
     {
@@ -997,7 +1081,7 @@ class Profile extends CI_Controller{
         $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'تغییر رمز عبور';
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
-
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/account/index', $data);
         $this->load->view('ui/v3/candidate_profile/account/index_css');

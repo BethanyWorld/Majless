@@ -1,5 +1,7 @@
 <?php
-class ModelProfile extends CI_Model{
+
+class ModelProfile extends CI_Model
+{
     public function candidateUpdatePersonalInfo($inputs)
     {
         $UserArray = array(
@@ -71,15 +73,16 @@ class ModelProfile extends CI_Model{
             $result = $this->db->get()->result_array();
             $this->db->select('*');
             $this->db->from('candidate_roles');
-            $this->db->where('CandidateId' , $result[0]['CandidateId']);
+            $this->db->where('CandidateId', $result[0]['CandidateId']);
             $roles = $this->db->get()->result_array();
             $result[0]['roles'] = $roles;
-            $this->session->set_userdata('UserLoginInfo' , $result[0]);
+            $this->session->set_userdata('UserLoginInfo', $result[0]);
             return $arr;
         }
 
 
     }
+
     public function getCandidateAcademicBackgroundByCandidateId($id)
     {
         return
@@ -89,6 +92,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateAcademicBackground($inputs)
     {
         $this->db->trans_start();
@@ -128,6 +132,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateMilitaryStatusByCandidateId($id)
     {
         return
@@ -137,6 +142,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateMilitaryStatus($inputs)
     {
         $this->db->trans_start();
@@ -176,6 +182,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateJobHistoryByCandidateId($id)
     {
         return
@@ -185,6 +192,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateJobHistory($inputs)
     {
         $this->db->trans_start();
@@ -223,6 +231,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateSocialCulturalBackgroundByCandidateId($id)
     {
         return
@@ -232,6 +241,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateSocialCulturalBackground($inputs)
     {
         $this->db->trans_start();
@@ -277,6 +287,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateBooksByCandidateId($id)
     {
         return
@@ -286,6 +297,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateBooks($inputs)
     {
         $this->db->trans_start();
@@ -322,6 +334,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateResearchByCandidateId($id)
     {
         return
@@ -331,6 +344,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateResearch($inputs)
     {
         $this->db->trans_start();
@@ -369,6 +383,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateArticlesByCandidateId($id)
     {
         return
@@ -378,6 +393,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateArticles($inputs)
     {
         $this->db->trans_start();
@@ -415,6 +431,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateTranslationByCandidateId($id)
     {
         return
@@ -424,6 +441,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateTranslation($inputs)
     {
         $this->db->trans_start();
@@ -461,6 +479,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateInventionByCandidateId($id)
     {
         return
@@ -470,6 +489,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateInvention($inputs)
     {
         $this->db->trans_start();
@@ -506,6 +526,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateConferenceByCandidateId($id)
     {
         return
@@ -515,6 +536,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateConference($inputs)
     {
         $this->db->trans_start();
@@ -552,6 +574,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateUpdatePoliticBackgroundByCandidateId($id)
     {
         return
@@ -561,6 +584,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdatePoliticBackground($inputs)
     {
         $this->db->trans_start();
@@ -610,6 +634,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateSkillsByCandidateId($id)
     {
         return
@@ -619,6 +644,7 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateSkills($inputs)
     {
         $this->db->trans_start();
@@ -654,6 +680,7 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateVeteranByCandidateId($id)
     {
         return
@@ -663,24 +690,24 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
+
     public function candidateUpdateVeteran($inputs)
     {
         $this->db->trans_start();
         $this->db->delete('candidate_veteran', array(
             'CandidateId' => $inputs['inputCandidateId']
         ));
-        foreach($inputs['inputCandidateVeteran'] as $item) {
-            if($item['isTabChecked'] == 'true'){
-                $iActive =  1;
-            }
-            else{
-                $iActive =  0;
+        foreach ($inputs['inputCandidateVeteran'] as $item) {
+            if ($item['isTabChecked'] == 'true') {
+                $iActive = 1;
+            } else {
+                $iActive = 0;
             }
             $UserArray = array(
                 'CandidateId' => $inputs['inputCandidateId'],
                 'IsActive' => $iActive,
                 'CandidateVeteranFamilyTitle' => $item['inputCandidateVeteranFamilyTitle'],
-                'CandidateVeteranType' => (isset($item['inputCandidateVeteranType'])) ? $item['inputCandidateVeteranType']: "",
+                'CandidateVeteranType' => (isset($item['inputCandidateVeteranType'])) ? $item['inputCandidateVeteranType'] : "",
                 'CandidateVeteranPercent' => $item['inputCandidateVeteranPercent'],
                 'CandidateVeteranMonth' => $item['inputCandidateStartLiberationMonth'],
                 'CandidateVeteranYear' => $item['inputCandidateStartLiberationYear']
@@ -704,19 +731,21 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateFinanceByCandidateId($id)
     {
-        $data['BankAccount']=$this->db->select('*')->from('candidate_price_bank_account')->where('CandidateId', $id)->get()->result_array();
-        $data['CreditDebtor']=$this->db->select('*')->from('candidate_price_credit_debtor')->where('CandidateId', $id)->get()->result_array();
-        $data['Election']=$this->db->select('*')->from('candidate_price_election')->where('CandidateId', $id)->get()->result_array();
-        $data['Fee']=$this->db->select('*')->from('candidate_price_fee')->where('CandidateId', $id)->get()->result_array();
-        $data['Goods']=$this->db->select('*')->from('candidate_price_goods')->where('CandidateId', $id)->get()->result_array();
-        $data['Income']=$this->db->select('*')->from('candidate_price_income')->where('CandidateId', $id)->get()->result_array();
-        $data['Invest']=$this->db->select('*')->from('candidate_price_invest')->where('CandidateId', $id)->get()->result_array();
-        $data['RealEStates']=$this->db->select('*')->from('candidate_price_realestates')->where('CandidateId', $id)->get()->result_array();
-        $data['Vehicle']=$this->db->select('*')->from('candidate_price_vehicle')->where('CandidateId', $id)->get()->result_array();
+        $data['BankAccount'] = $this->db->select('*')->from('candidate_price_bank_account')->where('CandidateId', $id)->get()->result_array();
+        $data['CreditDebtor'] = $this->db->select('*')->from('candidate_price_credit_debtor')->where('CandidateId', $id)->get()->result_array();
+        $data['Election'] = $this->db->select('*')->from('candidate_price_election')->where('CandidateId', $id)->get()->result_array();
+        $data['Fee'] = $this->db->select('*')->from('candidate_price_fee')->where('CandidateId', $id)->get()->result_array();
+        $data['Goods'] = $this->db->select('*')->from('candidate_price_goods')->where('CandidateId', $id)->get()->result_array();
+        $data['Income'] = $this->db->select('*')->from('candidate_price_income')->where('CandidateId', $id)->get()->result_array();
+        $data['Invest'] = $this->db->select('*')->from('candidate_price_invest')->where('CandidateId', $id)->get()->result_array();
+        $data['RealEStates'] = $this->db->select('*')->from('candidate_price_realestates')->where('CandidateId', $id)->get()->result_array();
+        $data['Vehicle'] = $this->db->select('*')->from('candidate_price_vehicle')->where('CandidateId', $id)->get()->result_array();
         return $data;
     }
+
     public function doChangePassword($inputs)
     {
         $this->db->select('*');
@@ -725,7 +754,7 @@ class ModelProfile extends CI_Model{
             'CandidateId' => $inputs['inputCandidateId'],
             'CandidatePassword' => md5($inputs['inputCurrentPassword'])
         ));
-        if($this->db->get()->num_rows() > 0){
+        if ($this->db->get()->num_rows() > 0) {
             $UserArray = array(
                 'CandidatePassword' => md5($inputs['inputNewPassword'])
             );
@@ -748,8 +777,7 @@ class ModelProfile extends CI_Model{
                 );
                 return $arr;
             }
-        }
-        else{
+        } else {
             $arr = array(
                 'type' => "red",
                 'content' => "رمز عبور فعلی نامعتبر است",
@@ -760,6 +788,8 @@ class ModelProfile extends CI_Model{
 
     }
 
-
+    public function insertPayment($inputs){
+        $this->db->insert('candidate_exam_payment' , $inputs);
+    }
 }
 ?>

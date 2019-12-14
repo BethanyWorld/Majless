@@ -1,6 +1,40 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <div class="container container-wrapper">
-    <div class="row col-xs-12 col-md-3 pull-right"><?php echo $sidebar; ?></div>
+    <div class="row col-xs-12 col-md-3 pull-right">
+        <div class="row col-xs-12 pull-right sidebar">
+            <div class="col-md-12 col-md-offset-0 col-sm-6 col-s-offset-3 col-xs-6 col-xs-offset-3 padding-0">
+                <img class="thumbnail profile-image"
+                     width="100%" height="135px"
+                     id="imageProfile"
+                     src="<?php echo $noImg; ?>"/>
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12 padding-0">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <?php echo $userInfo['CandidateFirstName'] . " " . $userInfo['CandidateLastName']; ?>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <?php echo $sidebar; ?>
+                    </div>
+                </div>
+                <strong style="font-size: 14px;text-align: right;display: inline-block;">آخرین ورود:</strong>
+                <?php
+                if (!empty($this->session->userdata('UserLoginInfo')['loginRecord'])) {
+                    $loginInfo = $this->session->userdata('UserLoginInfo')['loginRecord'][0];
+                    ?>
+                    <strong style="font-size: 14px;text-align: left;display: inline-block;direction: ltr;">
+                        <?php echo $loginInfo['LoginDate']; ?>
+                    </strong>
+                <?php } else { ?>
+                    <strong style="font-size: 14px;text-align: left;display: inline-block;direction: ltr;">
+                        <?php echo jDateTime::date("Y/m/d H:i:s", false, false); ?>
+                    </strong>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
     <div class="col-xs-12 col-md-9 pull-right table-responsive">
         <div class="row">
             <strong style="margin: 8px;"
