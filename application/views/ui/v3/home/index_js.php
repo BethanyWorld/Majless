@@ -1,84 +1,75 @@
 <script type="text/javascript">
-
     $(document).ready(function () {
-        $(function () {
-            $(window).resize(function () {
-                a()
-            });
-            function a() {
-                var b = $("#IranMap .list").height();
-                var c = $("#IranMap .list").width();
-                if (b > c) {
-                    $("#IranMap svg").height(c).width(c)
-                } else {
-                    $("#IranMap svg").height(b).width(b)
-                }
+        $continueSlide = true;
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+        $('#myBtn').click(function () {
+            $continueSlide = false;
+            if (video.paused) {
+                video.play();
+                $(this).find('i').removeClass('fa-play');
+                $(this).find('i').addClass('fa-pause');
+            } else {
+                video.pause();
+                $(this).find('i').addClass('fa-play');
+                $(this).find('i').removeClass('fa-pause');
             }
-            a();
-            $("#IranMap svg g path").hover(function () {
-                var c = $(this).attr("class");
-                var b = $(this).parent("g").attr("class");
-                var d = $("#IranMap .list ." + b + " ." + c + " a").html();
-                if (d) {
-                    $("#IranMap .list ." + b + " ." + c + " a").addClass("hover");
-                    $("#IranMap .show-title").html(d).css({display: "block"})
-                }
-            }, function () {
-                $("#IranMap .list a").removeClass("hover");
-                $("#IranMap .show-title").html("").css({display: "none"})
-            });
-            $("#IranMap .list ul li ul li a").hover(function () {
-                var e = $(this).parent("li").attr("class");
-                var c = $(this).parent("li").parent("ul").parent("li").attr("class");
-                var b = "#IranMap svg g." + c + " path." + e;
-                var d = $(b).attr("class");
-                $(b).attr("class", d + " hover")
-            }, function () {
-                var e = $(this).parent("li").attr("class");
-                var c = $(this).parent("li").parent("ul").parent("li").attr("class");
-                var b = "#IranMap svg g." + c + " path." + e;
-                var d = $(b).attr("class");
-                $(b).attr("class", d.replace(" hover", ""))
-            });
-            $("#IranMap").mousemove(function (d) {
-                var c = 0;
-                var h = 0;
-                if (!d) {
-                    var d = window.event
-                }
-                if (d.pageX || d.pageY) {
-                    c = d.pageX;
-                    h = d.pageY
-                } else {
-                    if (d.clientX || d.clientY) {
-                        c = d.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-                        h = d.clientY + document.body.scrollTop + document.documentElement.scrollTop
-                    }
-                }
-                if ($("#IranMap .show-title").html()) {
-                    var f = $(this).offset();
-                    var b = (c - f.left + 25) + "px";
-                    var g = (h - f.top - 5) + "px";
-                    $("#IranMap .show-title").css({left: b, top: g})
-                }
-            })
         });
-        $(function() {
-            $('#IranMap .map .province path').click(function() {
-                var province = $(this).attr('class');
-                var provinceName = $('#IranMap .list>ul>li>ul>li.' + province + ' a').html();
-                if (provinceName) {
-                    $('#IranMap .city').html( provinceName);
-                }
-            });
-            $('#IranMap .list li.province>ul>li>a').click(function(e) {
-                var provinceName = $(this).html();
-                if (provinceName) {
-                    $('#IranMap .city').html(provinceName);
-                }
-                e.preventDefault();
-            });
+        var slideIndex = $(".campaign_section_slide").length;
+        $slidesLength = $(".campaign_section_slide").length;
+
+        $(".prev").click(function(){
+            $continueSlide = true;
+            $(".slider-timer").stop().css({width: "0%"});
+            slide(-1);
+            animateImages();
+        });
+        $(".next").click(function(){
+            $continueSlide = true;
+            $(".slider-timer").stop().css({width: "0%"});
+            slide(1);
+            animateImages();
+        });
+
+        slide(0);
+        function slide(n) {
+            n = parseInt(n);
+            slideIndex += n;
+            if (slideIndex >= $slidesLength) {
+                debugger;
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = $slidesLength - 1;
+            }
+            $(".campaign_section_slide").fadeOut(1200);
+            $(".campaign_section_slide").eq(slideIndex).fadeIn(1000);
+            $(".slide-title").hide();
+            $(".slide-title").eq(slideIndex).fadeIn(1000);
+        }
+        animateImages();
+        function animateImages() {
+            if($continueSlide){
+                $(".slider-timer").stop().animate({
+                    width: "100%"
+                }, 9000);
+                $(".slider-timer").animate({
+                    width: '0px',
+                }, 10, function () {
+                    setTimeout(animateImages, 1000);
+                    slide(1);
+                });
+            }
+            else{
+                slide(-1);
+            }
+        }
+        $('.full-screen-icon').click(function () {
+            $continueSlide = false;
+            $fullscren = $("video").get(0);
+            if ($fullscren.requestFullscreen) {
+                $fullscren.requestFullscreen();
+            }
         });
     });
-
 </script>

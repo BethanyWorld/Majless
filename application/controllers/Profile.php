@@ -14,12 +14,16 @@ class Profile extends CI_Controller{
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'صفحه کاربری';
-        $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'صفحه کاربری';
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
-
+        if($data['userInfo']['CandidateProfileImage'] != NULL && $data['userInfo']['CandidateProfileImage'] != ''){
+            $data['noImg'] = $data['userInfo']['CandidateProfileImage'];
+        }
+        else{
+            $data['noImg'] = $this->config->item('defaultImage');
+        }
         $data['allFirstStepExamRequests'] = $this->ModelCandidate->getCandidateFirstStepExamByCandidateId($loginInfo['CandidateId']);
         $data['firstStepExam'] = $data['allFirstStepExamRequests'];
         if (isset($data['firstStepExam']) && !empty($data['firstStepExam'])) {
@@ -119,6 +123,7 @@ class Profile extends CI_Controller{
     public function examListSecond()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['title'] = 'فهرست آزمون های مرحله دوم';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'فهرست آزمون های مرحله دوم';
@@ -142,6 +147,7 @@ class Profile extends CI_Controller{
     public function evaluationExam()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['title'] = 'فهرست آزمون کانون ارزیابی';
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'فهرست آزمون کانون ارزیابی';
@@ -162,12 +168,126 @@ class Profile extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+    public function startExamPayment(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
 
-    public function candidateReserveExam()
-    {
+        //$price = 1000000;
+        $price = 100;
+        $this->load->helper('payment/zarinpal/nusoap');
+        $MerchantID = 'cef058f0-166d-11ea-a706-000c295eb8fc';
+        $CallbackURL = base_url('Profile/endExamPayment/'.$price);
+        $client = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
+        $client->soap_defencoding = 'UTF-8';
+        $result = $client->call('PaymentRequest', [
+            [
+                'MerchantID' => $MerchantID,
+                'Amount' => $price,
+                'Description' => 'پرداخت هزینه آزمون',
+                'Email' => 'info@azmaa.net',
+                'CallbackURL' => $CallbackURL,
+            ],
+        ]);
+        if ($result['Status'] == 100) {
+            $PaymentToken =  md5(rand());
+            $this->session->set_userdata('PaymentToken' , $PaymentToken);
+            $loginInfo = $this->session->userdata('UserLoginInfo');
+            $paymentArray = array(
+                'PaymentCandidateId' => $loginInfo['CandidateId'],
+                'PaymentExamId' => $inputs['inputExamId'],
+                'PaymentCandidateRequestedStatus' => $inputs['inputCandidateStatus'],
+                'PaymentPrice' => $price,
+                'PaymentType' => 'Exam',
+                'PaymentReferenceId' => 0,
+                'PaymentToken' => $PaymentToken,
+                'PaymentStatus' => 'Pend',
+                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+            );
+            $this->ModelProfile->insertPayment($paymentArray);
+            $arr = array(
+                'type' => "green",
+                'content' => "در حال اتصال به درگاه...لطفا شکیبا باشید.",
+                'refId' => $result['Authority'],
+                'success' => true
+            );
+            echo json_encode($arr);
+        } else {
+            $arr = array(
+                'type' => "red",
+                'content' => "خطا در اتصال به درگاه..لطفا دقایقی دیگر مجددا تلاش کنید",
+                'success' => false
+            );
+            echo json_encode($arr);
+        }
+    }
+    public function endExamPayment($price = 100){
+        $PaymentToken = $this->session->userdata('PaymentToken');
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $this->load->helper('payment/zarinpal/nusoap');
+        $MerchantID = 'cef058f0-166d-11ea-a706-000c295eb8fc';
+        $Amount = $price;
+        $Authority = $_GET['Authority'];
+        if ($_GET['Status'] == 'OK') {
+            $client = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
+            $client->soap_defencoding = 'UTF-8';
+            $result = $client->call('PaymentVerification', [
+                [
+                    'MerchantID' => $MerchantID,
+                    'Authority' => $Authority,
+                    'Amount' => $Amount,
+                ],
+            ]);
+            if ($result['Status'] == 100 || $result['Status'] == 101 ) {
+                $loginInfo = $this->session->userdata('UserLoginInfo');
+                $paymentInfo = $this->ModelProfile->getExamPaymentByPaymentToken($PaymentToken);
+                //var_dump($paymentInfo);
+                $paymentArray = array(
+                    'PaymentStatus' => 'Done',
+                    'PaymentReferenceId' => $result['RefID'],
+                    'PaymentToken' => $PaymentToken
+                );
+                $this->ModelProfile->updateSuccessPayment($paymentArray , $paymentInfo);
+            }
+            else {}
+        }
+        else {
+        }
+        if(isset($result)){
+            $data['result'] = $result;
+        }
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
+        $data['title'] = "نتیجه پرداخت";
+        $data['pageTitle'] = 'نتیجه پرداخت';
+        $data['price'] = $price;
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/exams/result/index', $data);
+        $this->load->view('ui/v3/candidate_profile/exams/result/index_css');
+        $this->load->view('ui/v3/candidate_profile/exams/result/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    protected function candidateReserveExam(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $candidateStatus = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId'])['CandidateStatus'];
-        if ($candidateStatus == 'CandidateResumeMarked' || $candidateStatus == 'CandidateExamFirstStep' || $candidateStatus == 'CandidateExamSecondStep') {
+        if ($candidateStatus != 'CandidateResumeMarked' && $candidateStatus != 'CandidateExamFirstStep' && $candidateStatus != 'CandidateExamSecondStep') {
+            $result = array(
+                'type' => "warning",
+                'content' => "دسترسی لازم را ندارید",
+                'success' => true
+            );
+            echo json_encode($result);
+            return false;
+        }
+        else {
             $inputs = $this->input->post(NULL, TRUE);
             $inputs = array_map(function ($v) {
                 return strip_tags($v);
@@ -180,14 +300,6 @@ class Profile extends CI_Controller{
             }, $inputs);
             $result = $this->ModelCandidate->candidateReserveExam($inputs);
             echo json_encode($result);
-        } else {
-            $result = array(
-                'type' => "warning",
-                'content' => "دسترسی لازم را ندارید",
-                'success' => true
-            );
-            echo json_encode($result);
-            return false;
         }
     }
     public function doRegisterExam()
@@ -1042,12 +1154,14 @@ class Profile extends CI_Controller{
             if ($result['Status'] == 100) {
                 $loginInfo = $this->session->userdata('UserLoginInfo');
                 $paymentArray = array(
-                    'PeymentCandidateId' => $loginInfo['CandidateId'],
-                    'PeymentExamId' => 0,
+                    'PaymentCandidateId' => $loginInfo['CandidateId'],
+                    'PaymentExamId' => 0,
+                    'PaymentCandidateRequestedStatus' => NULL,
                     'PaymentPrice' => $Amount,
                     'PaymentType' => 'Help',
                     'PaymentReferenceId' => $result['RefID'],
                     'PaymentStatus' => 'Done',
+                    'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
                 );
                 $this->ModelProfile->insertPayment($paymentArray);
             }
@@ -1104,6 +1218,22 @@ class Profile extends CI_Controller{
         }, $inputs);
         $result = $this->ModelProfile->doChangePassword($inputs);
         echo json_encode($result);
+    }
+    public function paymentHistory()
+    {
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'صفحه کاربری';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'تغییر رمز عبور';
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($loginInfo['CandidateId']);
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/payment_history/index', $data);
+        $this->load->view('ui/v3/candidate_profile/payment_history/index_css');
+        $this->load->view('ui/v3/candidate_profile/payment_history/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
     }
     /* get out of panel - session destroyed */
     public function uploadFile()

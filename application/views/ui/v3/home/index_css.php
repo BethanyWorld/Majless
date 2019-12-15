@@ -1,4 +1,143 @@
 <style>
+    .slide-title {
+        float: right;
+        direction: rtl;
+        color: #fff;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .slide-title button {
+        background: #d10b20;
+        border: 1px solid rgba(253, 183, 46, 0.3);
+        margin: 30px 0;
+    }
+
+    .slide-title button:hover {
+        background: #d10b20;
+        border: 1px solid rgba(253, 183, 46, 0.3);
+    }
+
+    .slide-title h2 {
+        color: #fff;
+        font-size: 34px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .slide-title h3 {
+        color: #fff;
+        font-size: 18px;
+        line-height: 50px;
+        text-align: center;
+    }
+</style>
+<style>
+    .slider-timer{
+        width: 0px;
+        height: 2px;
+        background-color: #fdb72e;
+        position: absolute;
+        top: 0px;
+        z-index: 5;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        right: 0
+    }
+
+    .full-screen-icon {
+        position: absolute;
+        right: 10px;
+        bottom: 3%;
+        cursor: pointer;
+        z-index: 8;
+    }
+
+    .campaign_section_with_slides .container {
+        z-index: auto;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        bottom: 4%;
+        width: auto;
+        padding: 5px 10px 0px 10px;
+        margin-top: -22px;
+        color: #d10b20;
+        font-weight: bold;
+        font-size: 40px;
+        transition: 0.6s ease;
+        border-radius: 0 0px 0px 0;
+        user-select: none;
+        z-index: 5;
+    }
+
+    .next {
+        left: 50px;
+        border-radius: 0px 0 0 0px;
+    }
+
+    #myBtn {
+        width: 55px;
+        height: 40px;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: #D10B20;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        z-index: 5;
+    }
+    #myBtn:hover {
+        background: #022D6D;
+        border: none;
+    }
+
+    #myVideo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        object-fit: fill;
+    }
+
+    a.prev:hover{
+        color: #02275d;
+    }
+    a.next:hover {
+        color: #02275d;
+    }
+    @media (max-width: 992px) {
+        #myBtn {
+            top: 5%;
+            bottom: auto;
+        }
+
+        .overlay {
+            width: 100%;
+        }
+    }
+</style>
+<style>
     .tb-icon-box-description{
         padding-left: 5px;
         padding-right: 5px;

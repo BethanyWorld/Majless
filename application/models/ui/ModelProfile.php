@@ -791,5 +791,54 @@ class ModelProfile extends CI_Model
     public function insertPayment($inputs){
         $this->db->insert('candidate_exam_payment' , $inputs);
     }
+    public function getExamPaymentByPaymentToken($token){
+        return $this->db->select('*')->from('candidate_exam_payment')->where('PaymentToken', $token)->get()->result_array();
+    }
+    public function updateSuccessPayment($inputs , $paymentInfo){
+            $UserArray = array(
+                'PaymentStatus' => $inputs['PaymentStatus'],
+                'PaymentReferenceId' => $inputs['PaymentReferenceId'],
+            );
+
+            $examRequestArray = array(
+                'CandidateId' => $paymentInfo[0]['PaymentCandidateId'],
+                'ExamId' => $paymentInfo[0]['PaymentExamId'],
+                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+            );
+            $candidateStatusAfterExamReserveArray = array(
+                'CandidateStatus' => $paymentInfo[0]['PaymentCandidateRequestedStatus']
+            );
+            $this->db->trans_start();
+
+            /* Update Payment Record To Success */
+            $this->db->where('PaymentToken', $inputs['PaymentToken']);
+            $this->db->update('candidate_exam_payment', $UserArray);
+
+            /* Add Exam Request And Reserve For Candidate */
+            $this->db->insert('candidate_exam_request', $examRequestArray);
+
+            /* Update Candidate Status After Reserve Exam */
+            $this->db->where('CandidateId', $paymentInfo[0]['PaymentCandidateId']);
+            $this->db->update('candidate', $candidateStatusAfterExamReserveArray);
+
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $arr = array(
+                    'type' => "red",
+                    'content' => "بروزرسانی رمز عبور با مشکل مواجه شد",
+                    'success' => false
+                );
+                return $arr;
+            }
+            else {
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی رمز عبور با موفقیت انجام شد",
+                    'success' => true
+                );
+                return $arr;
+            }
+    }
+
 }
 ?>

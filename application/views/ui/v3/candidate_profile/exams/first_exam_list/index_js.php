@@ -18,7 +18,7 @@
             toggleLoader();
             $.ajax({
                 type: 'post',
-                url: base_url + 'Profile/candidateReserveExam',
+                url: base_url + 'Profile/startExamPayment',
                 data: {
                     'inputExamId': $examId,
                     'inputCandidateStatus': 'CandidateExamFirstStep'
@@ -26,29 +26,8 @@
                 success: function (data) {
                     $result = JSON.parse(data);
                     notify($result['content'], $result['type']);
-                    if ($result['success']){
-                        if($result['senderNumber'] != "" && $result['senderNumber'] != null) {
-                            $.ajax({
-                                type: 'POST',
-                                url: '<?php echo $api['SMS']; ?>',
-                                data: {
-                                    'senderNumber': $result['senderNumber'],
-                                    'messageBody': $result['messageBody']
-                                },
-                                success: function (data) {
-                                    toggleLoader();
-                                    setTimeout(function () {
-                                        window.history.back();
-                                    }, 1000);
-                                },
-                                error: function (jqXHR, textStatus, errorThrown) {
-                                    toggleLoader();
-                                    setTimeout(function () {
-                                        window.history.back();
-                                    }, 100);
-                                }
-                            });
-                        }
+                    if($result['success']){
+                        window.location.href = "https://www.zarinpal.com/pg/StartPay/"+ $result['refId'];
                     }
                 }
             });

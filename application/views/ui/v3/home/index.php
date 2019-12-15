@@ -6,7 +6,6 @@
         <section id="section-5d7930f11ff35"
                  class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
                  style=' padding-top: 85px !important; padding-bottom: 85px !important;min-height: calc(100vh - 243px)'>
-
             <div class="slider-timer"></div>
             <div class="overlay"></div>
             <div class="campaign_section_slide">
@@ -26,47 +25,10 @@
                  style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide2_850.jpg);background-size: cover;"></div>
-
-
             <div class="fw-row nostretch">
                 <div style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;z-index: 5;"
                      class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
-                    <style>
-                        .slide-title {
-                            float: right;
-                            direction: rtl;
-                            color: #fff;
-                            display: inline-block;
-                            width: 100%;
-                            text-align: center;
-                            display: none;
-                        }
 
-                        .slide-title button {
-                            background: #d10b20;
-                            border: 1px solid rgba(253, 183, 46, 0.3);
-                            margin: 30px 0;
-                        }
-
-                        .slide-title button:hover {
-                            background: #d10b20;
-                            border: 1px solid rgba(253, 183, 46, 0.3);
-                        }
-
-                        .slide-title h2 {
-                            color: #fff;
-                            font-size: 34px;
-                            line-height: 50px;
-                            text-align: center;
-                        }
-
-                        .slide-title h3 {
-                            color: #fff;
-                            font-size: 18px;
-                            line-height: 50px;
-                            text-align: center;
-                        }
-                    </style>
                     <a class="slide-title animated fadeInUp"
                        href="<?php echo base_url('AboutUs/public_invitation'); ?>">
                         <h2>
@@ -108,10 +70,8 @@
             <!--                -->
             <!--                </div>-->
             <!--            </div>-->
-
-
-            <a class="prev" onclick="slide('-1')">&#10094;</a>
-            <a class="next" onclick="slide('1')">&#10095;</a>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
         </section>
         <section id="section-5d7930f124ba6" class="campaign_section nopadding relative1 tbWow fadeIn"
                  style="background-image:url(<?php echo $_DIR ?>images/hp-blocks-no_change.png);background-repeat: repeat; background-position: center center; background-size: auto;">
@@ -125,20 +85,22 @@
                                 <div class="link-type-absolute100 tb-icon-box  absolutecenter-top  textalignleft tbWow fadeInUp   tbWow fadeIn ">
                                     <div class="tb-icon-box-image iconbox-image-type img-rounded alignleft"
                                          style=" background: none !important; ">
-                                        <a href="javascript:void(0);">
+                                        <a href="<?php echo base_url('SignUp?type=sponsor'); ?>">
                                             <img src="<?php echo $_DIR ?>images/icon_volunteer.png"
                                                  class="img-rounded" alt=""/>
                                         </a>
                                     </div>
                                     <div class="tb-icon-box-description">
-                                        <div class="tb-icon-box-text">
-                                            <div class="fw-page-builder-content">
-                                                <h3><span style="color: #ffffff;">دغدغه مند شوید</span></h3>
-                                                <p>
-                                                    <span style="color: #e3a4ab;">به کمپین ما بپیوندید</span>
-                                                </p>
+                                        <a href="<?php echo base_url('SignUp?type=sponsor'); ?>">
+                                            <div class="tb-icon-box-text">
+                                                <div class="fw-page-builder-content">
+                                                    <h3><span style="color: #ffffff;">دغدغه مند شوید</span></h3>
+                                                    <p>
+                                                        <span style="color: #e3a4ab;">به کمپین ما بپیوندید</span>
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -152,17 +114,19 @@
 
                                     <div class="tb-icon-box-image iconbox-image-type img-rounded alignleft"
                                          style=" background: none !important; ">
-                                        <a href="javascript:void(0);">
+                                        <a href="<?php echo base_url('Payment'); ?>">
                                             <img src="<?php echo $_DIR ?>images/icon_donate.png"
                                                  class="img-rounded" alt=""/>
                                         </a>
                                     </div>
                                     <div class="tb-icon-box-description">
                                         <div class="tb-icon-box-text">
-                                            <div class="fw-page-builder-content">
-                                                <h3><span style="color: #ffffff;">حامی ما باشید</span></h3>
-                                                <p><span style="color: #e3a4ab;">مشارکت کنید</span>
-                                            </div>
+                                            <a href="<?php echo base_url('Payment'); ?>">
+                                                <div class="fw-page-builder-content">
+                                                    <h3><span style="color: #ffffff;">حامی ما باشید</span></h3>
+                                                    <p><span style="color: #e3a4ab;">مشارکت کنید</span>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -176,19 +140,21 @@
                                 <div class="link-type-absolute100 tb-icon-box  absolutecenter-top  textalignleft tbWow fadeInUp   tbWow fadeIn ">
                                     <div class="tb-icon-box-image iconbox-image-type img-rounded alignleft"
                                          style=" background: none !important; ">
-                                        <a href="javascript:void(0);">
+                                        <a href="<?php echo base_url('State'); ?>">
                                             <img src="<?php echo $_DIR ?>images/icon_shop_no_change.png"
                                                  class="img-rounded" alt=""/>
                                         </a>
                                     </div>
                                     <div class="tb-icon-box-description">
                                         <div class="tb-icon-box-text">
-                                            <div class="fw-page-builder-content">
-                                                <h3><span style="color: #ffffff;">فهرست نامزد ها را ببینید</span>
-                                                </h3>
-                                                <p><span style="color: #e3a4ab;">نامزد های انتخاباتی هر استان</span>
-                                                </p>
-                                            </div>
+                                            <a href="<?php echo base_url('State'); ?>">
+                                                <div class="fw-page-builder-content">
+                                                    <h3><span style="color: #ffffff;">فهرست نامزد ها را ببینید</span>
+                                                    </h3>
+                                                    <p><span style="color: #e3a4ab;">نامزد های انتخاباتی هر استان</span>
+                                                    </p>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -762,107 +728,3 @@
     </div>
 </div>
 
-
-<style>
-    .slider-timer{
-        width: 0px;
-        height: 5px;
-        background-color: #fdb72e;
-        position: absolute;
-        top: 0px;
-        z-index: 5;
-    }
-    .overlay {
-        position: absolute;
-        top: 0px;
-        width: 50%;
-        height: 100%;
-        background: rgba(2, 39, 93, 0.45);
-        z-index: 2;
-        right: 0
-    }
-
-    .full-screen-icon {
-        position: absolute;
-        right: 10px;
-        bottom: 3%;
-        cursor: pointer;
-        z-index: 8;
-    }
-
-    .campaign_section_with_slides .container {
-        z-index: auto;
-    }
-
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        bottom: 4%;
-        width: auto;
-        padding: 5px 10px 0px 10px;
-        margin-top: -22px;
-        color: #d10b20;
-        font-weight: bold;
-        font-size: 40px;
-        transition: 0.6s ease;
-        border-radius: 0 0px 0px 0;
-        user-select: none;
-        z-index: 5;
-    }
-
-    .next {
-        left: 50px;
-        border-radius: 0px 0 0 0px;
-    }
-
-    #myBtn {
-        width: 55px;
-        height: 40px;
-        text-align: center;
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        margin: auto;
-        font-size: 18px;
-        padding: 10px;
-        border: none;
-        background: #D10B20;
-        color: #fff;
-        cursor: pointer;
-        border: none;
-        z-index: 5;
-    }
-    #myBtn:hover {
-        background: #022D6D;
-        border: none;
-    }
-
-    #myVideo {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        margin: 0px;
-        object-fit: fill;
-    }
-
-    a.prev:hover{
-        color: #02275d;
-    }
-    a.next:hover {
-        color: #02275d;
-    }
-    @media (max-width: 992px) {
-        #myBtn {
-            top: 5%;
-            bottom: auto;
-        }
-
-        .overlay {
-            width: 100%;
-        }
-    }
-</style>

@@ -667,13 +667,22 @@ class ModelCandidate extends CI_Model
             );
             return $arr;
         } else {
-            $arr = array(
-                'type' => "green",
-                'content' => "تایید آزمون مرحله اول با موفقیت انجام شد",
-                'senderNumber' => $candidateInfo['CandidatePhone'],
-                'messageBody' => 'کاربر گرامی لطفا برای اطلاع از زمان و مکان آزمون مرحله دوم به صفحه شخصی خود به آدرس http://majless11.com/Profile  مراجعه کند',
-                'success' => true
-            );
+            if($RequestId == 0){
+                $arr = array(
+                    'type' => "red",
+                    'content' => "ثبت حصور در آزمون هنوز انجام نشده است",
+                    'success' => false
+                );
+            }
+            else{
+                $arr = array(
+                    'type' => "green",
+                    'content' => "تایید آزمون مرحله اول با موفقیت انجام شد",
+                    'senderNumber' => $candidateInfo['CandidatePhone'],
+                    'messageBody' => 'کاربر گرامی لطفا برای اطلاع از زمان و مکان آزمون مرحله دوم به صفحه شخصی خود به آدرس http://majless11.com/Profile  مراجعه کند',
+                    'success' => true
+                );
+            }
             return $arr;
         }
 
@@ -847,6 +856,22 @@ class ModelCandidate extends CI_Model
             return $arr;
         }
     }
+
+    public function getCandidatePaymentHistoryCandidateId($id)
+    {
+        $this->db->select('*');
+        $this->db->from('candidate_exam_payment');
+        $this->db->where(
+            array('PaymentCandidateId' => $id)
+        );
+        $this->db->order_by('RowId', 'DESC');
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        return array();
+    }
+
 }
 
 ?>
