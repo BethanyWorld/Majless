@@ -37,7 +37,7 @@
 <style>
     .slider-timer{
         width: 0px;
-        height: 2px;
+        height: 3px;
         background-color: #fdb72e;
         position: absolute;
         top: 0px;
