@@ -218,18 +218,22 @@ var btn = document.getElementById("myBtn");
 $('#myBtn').click(function () {
     if (video.paused) {
         video.play();
+        $(this).find('i').removeClass('fa-play');
+        $(this).find('i').addClass('fa-pause');
     } else {
         video.pause();
+        $(this).find('i').addClass('fa-play');
+        $(this).find('i').removeClass('fa-pause');
     }
 });
 var slideIndex = $(".campaign_section_slide").length;
 $slidesLength = $(".campaign_section_slide").length;
 slide(0);
-
 function slide(n) {
     n = parseInt(n);
     slideIndex += n;
     if (slideIndex >= $slidesLength) {
+        debugger;
         slideIndex = 0;
     }
     if (slideIndex < 0) {
@@ -240,6 +244,21 @@ function slide(n) {
     $(".slide-title").hide();
     $(".slide-title").eq(slideIndex).fadeIn(1000);
 }
+
+animateImages();
+function animateImages() {
+    $( ".slider-timer" ).animate({
+        width: "100%"
+    }, 9000);
+    $( ".slider-timer" ).animate({
+        width: '0px',
+    }, 1000, function(){
+        setTimeout(animateImages, 1000);
+        slide(1);
+    });
+}
+
+
 
 $('.full-screen-icon').click(function () {
     $fullscren = $("video").get(0);

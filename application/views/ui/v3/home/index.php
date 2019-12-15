@@ -7,6 +7,7 @@
                  class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
                  style=' padding-top: 85px !important; padding-bottom: 85px !important;min-height: calc(100vh - 243px)'>
 
+            <div class="slider-timer"></div>
             <div class="overlay"></div>
             <div class="campaign_section_slide">
                 <video muted loop id="myVideo">
@@ -763,6 +764,14 @@
 
 
 <style>
+    .slider-timer{
+        width: 0px;
+        height: 5px;
+        background-color: #fdb72e;
+        position: absolute;
+        top: 0px;
+        z-index: 5;
+    }
     .overlay {
         position: absolute;
         top: 0px;
