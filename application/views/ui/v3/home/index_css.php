@@ -37,8 +37,9 @@
     .slide-title h2 {
         color: #fff;
         font-size: 34px;
-        line-height: 50px;
+        line-height: 45px;
         text-align: center;
+        margin-top: 30px;
     }
 
     .slide-title h3 {
@@ -52,16 +53,16 @@
     .container-responsive-style {
         padding-top: 85px;
         padding-bottom: 85px;
-        min-height: calc(100vh - 243px)
+        min-height: calc(100vh - 135px)
     }
 
     .slider-form-title {
-        color: #ffffff;
-        font-size: 36pt;
+        color: #fff;
+        font-size: 28px;
     }
     .slider-form-text{
         color: #fff;
-        font-size: 14pt;
+        font-size: 15px;
         margin-top: 15px;
         margin-bottom: 15px;
     }
@@ -77,7 +78,7 @@
     .overlay {
         position: absolute;
         top: 0;
-        width: 50%;
+        width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.3);
         z-index: 2;
@@ -118,17 +119,17 @@
     }
 
     .myBtn {
-        width: 55px;
-        height: 55px;
+        width: 40px;
+        height: 35px;
         text-align: center;
         position: absolute;
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
+        /* top: 0px; */
+        bottom: 14px;
+        /* left: 0px; */
+        right: 60px;
         margin: auto;
         font-size: 16px;
-        padding: 20px 15px;
+        padding: 10px 10px;
         border: none;
         background: #D10B20;
         color: #fff;

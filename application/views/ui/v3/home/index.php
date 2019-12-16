@@ -243,7 +243,82 @@
                             </div>
                         </div>
                     </div>
+                    <div id="column-5de4fd51daddf"
+                         class="tb-column absolutecenter-stretch col-xs-12  col-sm-12  nopadding tbWow fadeIn">
+                        <div class="row col-xs-12">
+                            <style>
+                                .slick-slide:hover div.read-more {
+                                    background: #b60d21;
+                                    color: #fff !important;
+                                }
 
+                                .slick-prev-arrow,
+                                .slick-next-arrow {
+                                    display: inline-block;
+                                    position: absolute;
+                                    bottom: 0;
+                                    top: 0;
+                                    height: 50px;
+                                    margin: auto;
+                                    left: -55px;
+                                    width: 50px;
+                                    background: #fff;
+                                    color: #000;
+                                    border: 1px solid #b60d21;
+                                    padding: 15px 20px;
+                                    cursor: pointer;
+                                }
+
+                                .slick-next-arrow {
+                                    right: -55px;
+                                    left: auto;
+                                }
+                            </style>
+                            <div class="tb-posts-carousel slick-slider">
+                                <?php foreach ($posts as $post) { ?>
+                                    <div>
+                                        <a href="<?php echo $post['guid']; ?>"
+                                           title="<?php echo $post['post_title']; ?>"
+                                           class="absolute100"
+                                           tabindex="-1">
+                                            <?php echo $post['post_title']; ?>
+                                        </a>
+                                        <div class="tb-post-carousel-thumbnail">
+                                            <div class="post-categories data-color-hover"
+                                                 style="background: #b60d21; color: #ffffff;"
+                                                 data-a-color="#ffffff">
+                                                <a href="<?php echo $post['guid']; ?>"
+                                                   rel="category tag" tabindex="-1"
+                                                   style="color: rgb(255, 255, 255);">اخبار و رویداد
+                                                </a>
+                                            </div>
+                                            <div class="post-title" style="color: #ffffff;">
+                                                <h1 style="color: #ffffff;text-align: right;font-size: 16px;height: 45px;"><?php echo $post['post_title']; ?></h1>
+                                                <div class="post-date text-right">
+                                                    <i class="icon-clock"></i>
+                                                    <?php /*echo jDateTime::date("Y/m/d", false, false, $post['post_date']);*/ ?>
+                                                </div>
+                                            </div>
+                                            <img width="600" height="600"
+                                                 src="<?php echo base_url('blog/wp-content/uploads/') . $post['meta_value']; ?>"
+                                                 class="attachment-campaign-thumb-xl size-campaign-thumb-xl wp-post-image"
+                                                 alt="">
+                                            <div class="absolute100" style="background-color: #043174"></div>
+                                        </div>
+                                        <div class="changing-data-attr"
+                                             style="background: rgb(255, 255, 255); color: rgb(33, 71, 127);">
+                                            <p style="color: #000;direction: rtl;text-align: justify;">
+                                                <?php echo $post['post_excerpt']; ?>
+                                            </p>
+                                            <div class="read-more" style="color: rgb(160, 46, 47);">
+                                                ادامه مطلب
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
