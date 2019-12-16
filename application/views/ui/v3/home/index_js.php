@@ -2,7 +2,7 @@
     $(document).ready(function () {
         $continueSlide = true;
         var timer = "";
-        $('#myBtn').click(function () {
+        $('.myBtn').click(function () {
             var video = $(this).prev('video').get(0);
             $continueSlide = false;
             $(".slider-timer").stop().css({width: "0%"});
@@ -19,7 +19,6 @@
         });
         var slideIndex = $(".campaign_section_slide").length;
         $slidesLength = $(".campaign_section_slide").length;
-
         $(".prev").click(function () {
             $continueSlide = true;
             $(".slider-timer").stop().css({width: "0%"});
@@ -32,9 +31,7 @@
             slide(1);
             animateImages();
         });
-
         slide(0);
-
         function slide(n) {
 
             if ($continueSlide) {
@@ -52,14 +49,12 @@
                 $(".slide-title").eq(slideIndex).fadeIn(1000);
             }
         }
-
         animateImages();
-
         function animateImages() {
             if ($continueSlide) {
                 $(".slider-timer").stop().animate({
                     width: "100%"
-                }, 9000);
+                }, 10000);
                 $(".slider-timer").animate({
                     width: '0px',
                 }, 10, function () {
@@ -71,7 +66,6 @@
                 clearTimeout(timer);
             }
         }
-
         $('.full-screen-icon').click(function () {
             $continueSlide = false;
             $fullscren = $("video").get(0);

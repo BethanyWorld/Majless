@@ -48,7 +48,7 @@
 <style>
     .slider-timer {
         width: 0px;
-        height: 3px;
+        height: 1px;
         background-color: #fdb72e;
         position: absolute;
         top: 0px;
@@ -58,7 +58,7 @@
     .overlay {
         position: absolute;
         top: 0;
-        width: 50%;
+        width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.3);
         z-index: 2;
@@ -80,13 +80,13 @@
     .prev, .next {
         cursor: pointer;
         position: absolute;
-        bottom: 4%;
+        bottom: 4px;
         width: auto;
         padding: 5px 10px 0px 10px;
         margin-top: -22px;
         color: #d10b20;
         font-weight: bold;
-        font-size: 40px;
+        font-size: 26px;
         transition: 0.6s ease;
         border-radius: 0 0px 0px 0;
         user-select: none;
@@ -94,13 +94,13 @@
     }
 
     .next {
-        left: 50px;
+        left: 20px;
         border-radius: 0px 0 0 0px;
     }
 
-    #myBtn {
+    .myBtn {
         width: 55px;
-        height: 40px;
+        height: 55px;
         text-align: center;
         position: absolute;
         top: 0px;
@@ -108,8 +108,8 @@
         left: 0px;
         right: 0px;
         margin: auto;
-        font-size: 18px;
-        padding: 10px 10px 10px 13px;
+        font-size: 16px;
+        padding: 20px 15px;
         border: none;
         background: #D10B20;
         color: #fff;
@@ -118,12 +118,12 @@
         z-index: 5;
     }
 
-    #myBtn:hover {
+    .myBtn:hover {
         background: #022D6D;
         border: none;
     }
 
-    #myVideo {
+    .myVideo {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -256,5 +256,9 @@
         color: #022d6d;
     }
 
+    video{
+        object-fit: cover;
+        width: 100%;
+    }
 
 </style>

@@ -7,11 +7,25 @@
                  class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn">
             <div class="slider-timer"></div>
             <div class="overlay"></div>
+
             <div class="campaign_section_slide">
-                <video muted loop id="myVideo" poster="<?php echo $_DIR ?>images/process.jpg">
-                    <source src="<?php echo $_DIR ?>images/video2.webm" type="video/mp4">
+                <video id="myVideo" poster="<?php echo $_DIR; ?>images/process.jpg">
+                    <source src="https://hw18.cdn.asset.aparat.com/aparat-video/7c655b0e2ec5e50f152e4516bb2b2aae18039752-480p__96924.mp4"
+                            type="video/mp4">
                 </video>
-                <button id="myBtn">
+                <button class="myBtn">
+                    <i class="fa fa-play"></i>
+                </button>
+                <span class="full-screen-icon">
+                        <img src="<?php echo $_DIR ?>images/switch-to-full-screen32.png">
+                    </span>
+            </div>
+            <div class="campaign_section_slide">
+                <video id="myVideo" poster="<?php echo $_DIR; ?>images/azmoon.jpg">
+                    <source src="https://hw17.cdn.asset.aparat.com/aparat-video/13bb9582b55a568db78a5558382fa47c18039686-720p__64800.mp4"
+                            type="video/mp4">
+                </video>
+                <button class="myBtn">
                     <i class="fa fa-play"></i>
                 </button>
                 <span class="full-screen-icon">
@@ -20,10 +34,7 @@
             </div>
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide4_850.jpg);background-size: cover;"></div>
-            <div class="campaign_section_slide"
-                 style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
-            <div class="campaign_section_slide"
-                 style="background-image:url(<?php echo $_DIR ?>images/slide2_850.jpg);background-size: cover;"></div>
+
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 243px)'>
@@ -31,36 +42,26 @@
                     <div class="fw-row nostretch">
                         <div style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;z-index: 5;"
                              class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
-
                             <a class="slide-title animated fadeInUp"
-                               href="<?php echo base_url('AboutUs/public_invitation'); ?>">
+                               href="<?php echo base_url('blog/?page_id=44'); ?>">
                                 <h2>
-                                    1
-                                    از افراد شایسته نمایندگی مردم
+                                    آزمون‌های جنبش از ما
                                 </h2>
-                                <h3>بیانیه جنبش #از_ما پیرامون ثبت نام در انتخابات مجلس یازدهم</h3>
-                                <button>جزئیات بیشتر</button>
-                            </a>
-                            <a class="slide-title animated fadeInUp" href="<?php echo base_url('AboutUs/exams'); ?>">
-                                <h2>
-                                    2
-                                </h2>
-                                <h3>به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
+                                <h3>  به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
                                 <button>جزئیات بیشتر</button>
                             </a>
                             <a class="slide-title animated fadeInUp"
-                               href="<?php echo base_url('AboutUs/measurement_process'); ?>">
+                               href="<?php echo base_url('blog/?page_id=46'); ?>">
                                 <h2>
-                                    3
+                                    فرآیند سنجش نامزدها در جنبش از ما
                                 </h2>
-                                <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
-                                    کند...</h3>
+                                <h3> جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی کند...</h3>
                                 <button>جزئیات بیشتر</button>
                             </a>
                             <a class="slide-title animated fadeInUp"
-                               href="<?php echo base_url('AboutUs/measurement_process'); ?>">
+                               href="<?php echo base_url('blog/?page_id=100'); ?>">
                                 <h2>
-                                    4
+                                    آغاز فرآیند سنجش شایستگی داوطلبان نمایندگی مجلس در جنبش از ما
                                 </h2>
                                 <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
                                     کند...</h3>
