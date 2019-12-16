@@ -121,28 +121,28 @@ $_DIR = base_url('assets/empanel/');
                                                 <div class="alert exam-info-container">
                                                     <?php
                                                     if (empty($exams['firstExams']) || !isset($exams['firstExams']) || count($exams['firstExams']) <= 0) {
-                                                        echo "<div class='row col-xs-12 text-danger'>🆕";
+                                                        echo "<div class='row col-xs-12 text-danger'>";
                                                         echo "آزمون مرحله اول یافت نشد";
                                                         echo "</div>";
                                                     } else {
                                                         foreach ($exams['firstExams'] as $exam) {
                                                             if ($exam['ExamState'] == 'Done') {
-                                                                echo "<div class='row col-xs-12 text-success'>🆕";
+                                                                echo "<div class='row col-xs-12 text-success'>";
                                                                 echo "آزمون مرحله اول با شناسه " . $exam['RequestId'] . " تایید شده است و به مرحله آزمون مرحله دوم رفته ست";
                                                                 echo "</div>";
                                                             }
                                                             if ($exam['ExamState'] == 'Absence') {
-                                                                echo "<div class='row col-xs-12 text-danger'>🆕";
+                                                                echo "<div class='row col-xs-12 text-danger'>";
                                                                 echo "آزمون مرحله اول با شناسه " . $exam['RequestId'] . " ثبت غیبت شده است";
                                                                 echo "</div>";
                                                             }
                                                             if ($exam['ExamState'] == 'Presence') {
-                                                                echo "<div class='row col-xs-12 text-warning'>🆕";
+                                                                echo "<div class='row col-xs-12 text-warning'>";
                                                                 echo "آزمون مرحله اول با شناسه " . $exam['RequestId'] . " ثبت حضور شده است";
                                                                 echo "</div>";
                                                             }
                                                             if ($exam['ExamState'] == 'Pend') {
-                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "<div class='row col-xs-12 text-primary'>";
                                                                 echo "آزمون مرحله اول با شناسه " . $exam['RequestId'] . " رزرو شده است";
                                                                 echo "</div>";
                                                             }
@@ -151,28 +151,28 @@ $_DIR = base_url('assets/empanel/');
                                                     ?>
                                                     <?php
                                                     if (empty($exams['secondExams']) || !isset($exams['secondExams']) || count($exams['secondExams']) <= 0) {
-                                                        echo "<div class='row col-xs-12 text-danger'>🆕";
+                                                        echo "<div class='row col-xs-12 text-danger'>";
                                                         echo "آزمون مرحله دوم یافت نشد";
                                                         echo "</div>";
                                                     } else {
                                                         foreach ($exams['secondExams'] as $exam) {
                                                             if ($exam['ExamState'] == 'Done') {
-                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "<div class='row col-xs-12 text-primary'>";
                                                                 echo "آزمون مرحله دوم با شناسه " . $exam['RequestId'] . " تایید شده است و به مرحله آزمون کانون ارزیابی رفته ست";
                                                                 echo "</div>";
                                                             }
                                                             if ($exam['ExamState'] == 'Absence') {
-                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "<div class='row col-xs-12 text-primary'>";
                                                                 echo "آزمون مرحله دوم با شناسه " . $exam['RequestId'] . " ثبت غیبت شده است";
                                                                 echo "</div>";
                                                             }
                                                             if ($exam['ExamState'] == 'Presence') {
-                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "<div class='row col-xs-12 text-primary'>";
                                                                 echo "آزمون مرحله دوم با شناسه " . $exam['RequestId'] . " ثبت حضور شده است";
                                                                 echo "</div>";
                                                             }
                                                             if ($exam['ExamState'] == 'Pend') {
-                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "<div class='row col-xs-12 text-primary'>";
                                                                 echo "آزمون مرحله دوم با شناسه " . $exam['RequestId'] . " رزرو شده است";
                                                                 echo "</div>";
                                                             }
@@ -181,28 +181,28 @@ $_DIR = base_url('assets/empanel/');
                                                     ?>
                                                     <?php
                                                     if (empty($exams['evalExams']) || !isset($exams['evalExams']) || count($exams['evalExams']) <= 0) {
-                                                        echo "<div class='row col-xs-12 text-danger'>--";
+                                                        echo "<div class='row col-xs-12 text-danger'>";
                                                         echo "آزمون مرحله کانون یافت نشد";
                                                         echo "</div>";
                                                     } else {
                                                         foreach ($exams['evalExams'] as $exam) {
                                                             if ($exam['ExamState'] == 'Done') {
-                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "<div class='row col-xs-12 text-primary'>";
                                                                 echo "آزمون کانون ارزیابی با شناسه " . $exam['RequestId'] . " تایید شده است";
                                                                 echo "</div>";
                                                             }
                                                             if ($exam['ExamState'] == 'Absence') {
-                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "<div class='row col-xs-12 text-primary'>";
                                                                 echo "آزمون کانون ارزیابی با شناسه " . $exam['RequestId'] . " ثبت غیبت شده است";
                                                                 echo "</div>";
                                                             }
                                                             if ($exam['ExamState'] == 'Presence') {
-                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "<div class='row col-xs-12 text-primary'>";
                                                                 echo "آزمون کانون ارزیابی با شناسه " . $exam['RequestId'] . " ثبت حضور شده است";
                                                                 echo "</div>";
                                                             }
                                                             if ($exam['ExamState'] == 'Pend') {
-                                                                echo "<div class='row col-xs-12 text-primary'>🆕";
+                                                                echo "<div class='row col-xs-12 text-primary'>";
                                                                 echo "آزمون کانون ارزیابی با شناسه " . $exam['RequestId'] . " رزرو شده است";
                                                                 echo "</div>";
                                                             }
