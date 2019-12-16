@@ -47,7 +47,7 @@
                                 <h2>
                                     آزمون‌های جنبش از ما
                                 </h2>
-                                <h3>  به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
+                                <h3> به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
                                 <button>جزئیات بیشتر</button>
                             </a>
                             <a class="slide-title animated fadeInUp"
@@ -55,7 +55,8 @@
                                 <h2>
                                     فرآیند سنجش نامزدها در جنبش از ما
                                 </h2>
-                                <h3> جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی کند...</h3>
+                                <h3> جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
+                                    کند...</h3>
                                 <button>جزئیات بیشتر</button>
                             </a>
                             <a class="slide-title animated fadeInUp"
@@ -70,16 +71,30 @@
                         </div>
                     </div>
                     <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels slider-form">
+                        <div class="hp-join-the-effort tbWow fadeInDown">
+                            <div class="fw-page-builder-content">
+                                <h1>
+                                    <span class="slider-form-title">برای ایرانی سربلند مشارکت کنید</span>
+
+                                    <p class="slider-form-text">اگر در انتخابات مجلس یازدهم نامزد هستید برای ورود به
+                                        فرآیند جنبش ثبت نام کنید</p>
+                                    <p class="slider-form-text">و یا به عنوان حامی جنبش از ما در ساختن آیندهای بهتر برای
+                                        کشورمان مشارکت کنید</p>
+                                </h1>
+
+
+                            </div>
+                        </div>
                         <form action="<?php echo base_url('SignUp'); ?>" method="get">
                             <div class="row rtl">
-                                <div class="col-xs-12 col-md-12 pull-right">
+                                <div class="col-xs-12 col-md-8 col-md-offset-2">
                                     <input
                                             style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                             placeholder="نام"
                                             class="form-control" type="text" id="fn" name="fn"
                                             autofocus/>
                                 </div>
-                                <div class="col-xs-12 col-md-12">
+                                <div class="col-xs-12 col-md-8 col-md-offset-2">
                                     <input
                                             style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                             placeholder="نام خانوادگی"
@@ -87,7 +102,7 @@
                                 </div>
                             </div>
                             <div class="row rtl">
-                                <div class="col-xs-12 col-md-12 pull-right">
+                                <div class="col-xs-12 col-md-8 col-md-offset-2">
                                     <input
                                             style="font-family: tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                             placeholder="تلفن همراه"
