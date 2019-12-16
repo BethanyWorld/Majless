@@ -10,10 +10,14 @@
                 video.play();
                 $(this).find('i').removeClass('fa-play');
                 $(this).find('i').addClass('fa-pause');
+                $('.right-text-slider').fadeOut();
+                $('.slider-form').fadeOut();
             } else {
                 video.pause();
                 $(this).find('i').addClass('fa-play');
                 $(this).find('i').removeClass('fa-pause');
+                $('.right-text-slider').fadeIn();
+                $('.slider-form').fadeIn();
             }
             clearTimeout(timer);
         });

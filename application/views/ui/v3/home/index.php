@@ -40,7 +40,7 @@
             <div class="container container-responsive-style">
                 <div class="row">
                     <div class="fw-row nostretch">
-                        <div style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;z-index: 5;"
+                        <div class="right-text-slider" style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;z-index: 5;"
                              class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
                             <a class="slide-title animated fadeInUp"
                                href="<?php echo base_url('blog/?page_id=44'); ?>">
@@ -70,7 +70,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels slider-form">
+                    <div class="hidden-sm hidden-xs form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels slider-form">
                         <div class="hp-join-the-effort tbWow fadeInDown">
                             <div class="fw-page-builder-content">
                                 <h1 class="text-center">
@@ -121,6 +121,62 @@
                 </div>
             </div>
         </section>
+
+        <section class="hidden-md hidden-lg campaign_section nopadding relative1 tbWow fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels">
+                        <div class="hp-join-the-effort tbWow fadeInDown">
+                            <div class="fw-page-builder-content">
+                                <h1 class="text-center">
+                                    <span class="slider-form-title-xs">برای ایرانی سربلند مشارکت کنید</span>
+
+                                    <p class="slider-form-text-xs">اگر در انتخابات مجلس یازدهم نامزد هستید برای ورود به
+                                        فرآیند جنبش ثبت نام کنید</p>
+                                    <p class="slider-form-text-xs">و یا به عنوان حامی جنبش از ما در ساختن آیندهای بهتر برای
+                                        کشورمان مشارکت کنید</p>
+                                </h1>
+
+
+                            </div>
+                        </div>
+                        <form action="<?php echo base_url('SignUp'); ?>" method="get">
+                            <div class="row rtl">
+                                <div class="col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+                                    <input
+                                            style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
+                                            placeholder="نام"
+                                            class="form-control" type="text" id="fn" name="fn"
+                                            autofocus/>
+                                </div>
+                                <div class="col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+                                    <input
+                                            style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
+                                            placeholder="نام خانوادگی"
+                                            class="form-control" type="text" id="ln" name="ln"/>
+                                </div>
+                            </div>
+                            <div class="row rtl">
+                                <div class="col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+                                    <input
+                                            style="font-family: tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
+                                            placeholder="تلفن همراه"
+                                            class="form-control" type="text" id="p" name="p"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12 text-center padding-0 margin-b-15">
+                                <button type="submit"
+                                        style="text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
+                                    ثبت نام کنید
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="section-5d7930f124ba6" class="campaign_section nopadding relative1 tbWow fadeIn"
                  style="background-image:url(<?php echo $_DIR ?>images/hp-blocks-no_change.png);background-repeat: repeat; background-position: center center; background-size: auto;">
             <div class="container">

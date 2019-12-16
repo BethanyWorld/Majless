@@ -2,7 +2,9 @@
     .padding-left-0 {
         padding-left: 0px;
     }
-
+    .margin-b-15{
+        margin-bottom: 15px;
+    }
     .slide-title {
         float: right;
         direction: rtl;
@@ -60,11 +62,21 @@
         color: #fff;
         font-size: 28px;
     }
+    .slider-form-title-xs{
+        color: #022d6d;
+        font-size: 20pt;
+    }
     .slider-form-text{
         color: #fff;
         font-size: 15px;
         margin-top: 15px;
         margin-bottom: 15px;
+    }
+    .slider-form-text-xs{
+        color: #022d6d;
+        font-size: 15px;
+        margin-top: 0px;
+        margin-bottom: 5px;
     }
     .slider-timer {
         width: 0px;
@@ -80,15 +92,17 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.3);
+        /*background: rgba(0, 0, 0, 0.3);*/
         z-index: 2;
+        background-color: #000;
+        opacity: 0.8;
         right: 0
     }
 
     .full-screen-icon {
         position: absolute;
         right: 10px;
-        bottom: 3%;
+        bottom: 2.5%;
         cursor: pointer;
         z-index: 8;
     }
@@ -162,19 +176,11 @@
     }
 
     @media (max-width: 992px) {
-        /*.myBtn {*/
-        /*    top: 5%;*/
-        /*    bottom: auto;*/
-        /*}*/
-        .slider-form-text{
-            display: none;
+        .myBtn {
+            bottom: 5px;
         }
         .overlay {
             width: 100%;
-        }
-        .slider-form-title {
-            color: #ffffff;
-            font-size: 12pt;
         }
         .slider-timer{
             height: 3px;
@@ -191,7 +197,7 @@
         }
 
         .full-screen-icon {
-            bottom: 1%;
+            bottom: 1.5%;
         }
 
         .slide-title h2 {
@@ -199,7 +205,7 @@
         }
 
         .container-responsive-style {
-            min-height: calc(100vh - 0px);
+            min-height: calc(100vh - 310px);
             padding-top: 5px;
         }
     }
