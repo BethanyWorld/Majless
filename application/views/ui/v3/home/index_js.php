@@ -1,9 +1,9 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $continueSlide = true;
-        var video = document.getElementById("myVideo");
-        var btn = document.getElementById("myBtn");
-        $('#myBtn').click(function () {
+
+        $('.myBtn').click(function () {
+            var video = $(this).prev('video').get(0);
             $continueSlide = false;
             if (video.paused) {
                 video.play();
