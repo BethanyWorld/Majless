@@ -40,7 +40,7 @@
             <div class="container container-responsive-style">
                 <div class="row">
                     <div class="fw-row nostretch">
-                        <div class="right-text-slider" style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;z-index: 5;"
+                        <div class="right-text-slider"
                              class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
                             <a class="slide-title animated fadeInUp"
                                href="<?php echo base_url('blog/?page_id=44'); ?>">
@@ -122,7 +122,7 @@
             </div>
         </section>
 
-        <section class="hidden-md hidden-lg campaign_section nopadding relative1 tbWow fadeIn">
+        <section class="hidden-md hidden-lg campaign_section nopadding relative1 tbWow fadeIn response-background">
             <div class="container">
                 <div class="row">
                     <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels">

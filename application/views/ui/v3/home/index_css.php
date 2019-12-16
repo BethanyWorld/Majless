@@ -2,9 +2,21 @@
     .padding-left-0 {
         padding-left: 0px;
     }
-    .margin-b-15{
+
+    .right-text-slider {
+        float: right;
+        direction: rtl;
+        text-align: justify;
+        color: #fff;
+        position: absolute;
+        right: 0px;
+        z-index: 5;
+    }
+
+    .margin-b-15 {
         margin-bottom: 15px;
     }
+
     .slide-title {
         float: right;
         direction: rtl;
@@ -62,22 +74,30 @@
         color: #fff;
         font-size: 28px;
     }
-    .slider-form-title-xs{
-        color: #022d6d;
+
+    .slider-form-title-xs {
+        color: #fff;
         font-size: 20pt;
     }
-    .slider-form-text{
+
+    .response-background {
+        background-color: #022d6d;
+    }
+
+    .slider-form-text {
         color: #fff;
         font-size: 15px;
         margin-top: 15px;
         margin-bottom: 15px;
     }
-    .slider-form-text-xs{
-        color: #022d6d;
+
+    .slider-form-text-xs {
+        color: #fff;
         font-size: 15px;
         margin-top: 0px;
         margin-bottom: 5px;
     }
+
     .slider-timer {
         width: 0px;
         height: 1px;
@@ -179,12 +199,15 @@
         .myBtn {
             bottom: 5px;
         }
+
         .overlay {
             width: 100%;
         }
-        .slider-timer{
+
+        .slider-timer {
             height: 3px;
         }
+
         .slider-form {
             position: absolute;
             z-index: 5;
@@ -202,10 +225,15 @@
 
         .slide-title h2 {
             line-height: 40px;
+            padding: 0px 10px 0px 10px;
+        }
+
+        .right-text-slider {
+            position: relative;
         }
 
         .container-responsive-style {
-            min-height: calc(100vh - 310px);
+            min-height: calc(100vh - 390px);
             padding-top: 5px;
         }
     }
