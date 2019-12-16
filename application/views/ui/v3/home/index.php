@@ -42,7 +42,7 @@
                     <div class="fw-row nostretch">
                         <div class="right-text-slider"
                              class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
-                            <a class="slide-title animated fadeInUp"
+                            <a class="slide-title animated fadeInRight"
                                href="<?php echo base_url('blog/?page_id=44'); ?>">
                                 <h2>
                                     آزمون‌های جنبش از ما
@@ -50,7 +50,7 @@
                                 <h3> به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
                                 <button>جزئیات بیشتر</button>
                             </a>
-                            <a class="slide-title animated fadeInUp"
+                            <a class="slide-title animated fadeInRight"
                                href="<?php echo base_url('blog/?page_id=46'); ?>">
                                 <h2>
                                     فرآیند سنجش نامزدها در جنبش از ما
@@ -59,7 +59,7 @@
                                     کند...</h3>
                                 <button>جزئیات بیشتر</button>
                             </a>
-                            <a class="slide-title animated fadeInUp"
+                            <a class="slide-title animated fadeInRight"
                                href="<?php echo base_url('blog/?page_id=100'); ?>">
                                 <h2>
                                     آغاز فرآیند سنجش شایستگی داوطلبان نمایندگی مجلس در جنبش از ما
@@ -74,15 +74,12 @@
                         <div class="hp-join-the-effort tbWow fadeInDown">
                             <div class="fw-page-builder-content">
                                 <h1 class="text-center">
-                                    <span class="slider-form-title">برای ایرانی سربلند مشارکت کنید</span>
-
+                                    <span class="slider-form-title rtl">برای ایرانی سربلند...</span>
                                     <p class="slider-form-text">اگر در انتخابات مجلس یازدهم نامزد هستید برای ورود به
                                         فرآیند جنبش ثبت نام کنید</p>
                                     <p class="slider-form-text">و یا به عنوان حامی جنبش از ما در ساختن آیندهای بهتر برای
                                         کشورمان مشارکت کنید</p>
                                 </h1>
-
-
                             </div>
                         </div>
                         <form action="<?php echo base_url('SignUp'); ?>" method="get">
@@ -113,7 +110,7 @@
                             <div class="col-md-12 col-xs-12 text-center padding-0">
                                 <button type="submit"
                                         style="text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
-                                    ثبت نام کنید
+                                    ثبت نام
                                 </button>
                             </div>
                         </form>

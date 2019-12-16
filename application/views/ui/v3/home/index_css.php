@@ -50,15 +50,15 @@
 
     .slide-title h2 {
         color: #fff;
-        font-size: 34px;
+        font-size: 24px;
         line-height: 45px;
         text-align: center;
-        margin-top: 30px;
+        margin-top: 25px;
     }
 
     .slide-title h3 {
         color: #fff;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 50px;
         text-align: center;
     }
@@ -73,6 +73,8 @@
     .slider-form-title {
         color: #fff;
         font-size: 28px;
+        direction: rtl !important;
+        display: inline-block;
     }
 
     .slider-form-title-xs {
@@ -158,7 +160,7 @@
         text-align: center;
         position: absolute;
         /* top: 0px; */
-        bottom: 14px;
+        bottom: 11px;
         /* left: 0px; */
         right: 60px;
         margin: auto;
