@@ -37,7 +37,7 @@
 
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
-            <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 243px)'>
+            <div class="container container-responsive-style">
                 <div class="row">
                     <div class="fw-row nostretch">
                         <div style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;z-index: 5;"
@@ -95,7 +95,7 @@
                                     />
                                 </div>
                             </div>
-                            <div class="col-md-12 col-xs-12 text-center padding-left-0">
+                            <div class="col-md-12 col-xs-12 text-center padding-0">
                                 <button type="submit"
                                         style="text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
                                     ثبت نام کنید

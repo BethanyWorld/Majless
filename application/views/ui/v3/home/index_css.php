@@ -1,7 +1,8 @@
 <style>
-    .padding-left-0{
+    .padding-left-0 {
         padding-left: 0px;
     }
+
     .slide-title {
         float: right;
         direction: rtl;
@@ -11,11 +12,13 @@
         text-align: center;
         display: none;
     }
-.slider-form{
-    position: absolute;
-    z-index: 5;
-    left: 0px;
-}
+
+    .slider-form {
+        position: absolute;
+        z-index: 5;
+        left: 0px;
+    }
+
     .slide-title:hover {
         color: #fff;
     }
@@ -46,6 +49,12 @@
     }
 </style>
 <style>
+    .container-responsive-style {
+        padding-top: 85px;
+        padding-bottom: 85px;
+        min-height: calc(100vh - 243px)
+    }
+
     .slider-timer {
         width: 0px;
         height: 1px;
@@ -58,7 +67,7 @@
     .overlay {
         position: absolute;
         top: 0;
-        width: 100%;
+        width: 50%;
         height: 100%;
         background: rgba(0, 0, 0, 0.3);
         z-index: 2;
@@ -90,7 +99,7 @@
         transition: 0.6s ease;
         border-radius: 0 0px 0px 0;
         user-select: none;
-        z-index: 5;
+        z-index: 8;
     }
 
     .next {
@@ -142,13 +151,33 @@
     }
 
     @media (max-width: 992px) {
-        #myBtn {
+        .myBtn {
             top: 5%;
             bottom: auto;
         }
 
         .overlay {
             width: 100%;
+        }
+
+        .slider-form {
+            position: absolute;
+            z-index: 5;
+            left: 0px;
+            bottom: 10px;
+            margin: auto;
+            right: 0px;
+            text-align: center;
+            width: 50%;
+        }
+        .full-screen-icon{
+            bottom: 1%;
+        }
+        .slide-title h2{
+            line-height: 40px;
+        }
+        .container-responsive-style {
+            min-height: calc(100vh - 0px);
         }
     }
 </style>
@@ -256,7 +285,7 @@
         color: #022d6d;
     }
 
-    video{
+    video {
         object-fit: cover;
         width: 100%;
     }
