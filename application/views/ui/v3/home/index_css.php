@@ -1,4 +1,7 @@
 <style>
+    .padding-left-0{
+        padding-left: 0px;
+    }
     .slide-title {
         float: right;
         direction: rtl;
@@ -55,7 +58,7 @@
     .overlay {
         position: absolute;
         top: 0;
-        width: 100%;
+        width: 50%;
         height: 100%;
         background: rgba(0, 0, 0, 0.3);
         z-index: 2;
@@ -106,7 +109,7 @@
         right: 0px;
         margin: auto;
         font-size: 18px;
-        padding: 10px;
+        padding: 10px 10px 10px 13px;
         border: none;
         background: #D10B20;
         color: #fff;

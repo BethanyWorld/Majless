@@ -71,14 +71,14 @@
                     <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels slider-form">
                         <form action="<?php echo base_url('SignUp'); ?>" method="get">
                             <div class="row rtl">
-                                <div class="col-xs-12 col-md-6 pull-right">
+                                <div class="col-xs-12 col-md-12 pull-right">
                                     <input
                                             style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                             placeholder="نام"
                                             class="form-control" type="text" id="fn" name="fn"
                                             autofocus/>
                                 </div>
-                                <div class="col-xs-12 col-md-6">
+                                <div class="col-xs-12 col-md-12">
                                     <input
                                             style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                             placeholder="نام خانوادگی"
@@ -86,23 +86,17 @@
                                 </div>
                             </div>
                             <div class="row rtl">
-                                <div class="col-xs-12 col-md-6 pull-right">
+                                <div class="col-xs-12 col-md-12 pull-right">
                                     <input
                                             style="font-family: tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                             placeholder="تلفن همراه"
                                             class="form-control" type="text" id="p" name="p"
                                     />
                                 </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <input
-                                            style="font-family:tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
-                                            placeholder="کد ملی"
-                                            class="form-control" type="text" id="nc" name="nc"
-                                </div>
                             </div>
-                            <div class="col-md-12 col-xs-12">
+                            <div class="col-md-12 col-xs-12 text-center padding-left-0">
                                 <button type="submit"
-                                        style="float: left;text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
+                                        style="text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
                                     ثبت نام کنید
                                 </button>
                             </div>
