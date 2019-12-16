@@ -12,12 +12,18 @@
                 $(this).find('i').addClass('fa-pause');
                 $('.right-text-slider').fadeOut();
                 $('.slider-form').fadeOut();
+                $('.overlay').fadeOut();
+                $('.prev').fadeOut();
+                $('.next').fadeOut();
             } else {
                 video.pause();
                 $(this).find('i').addClass('fa-play');
                 $(this).find('i').removeClass('fa-pause');
                 $('.right-text-slider').fadeIn();
                 $('.slider-form').fadeIn();
+                $('.overlay').fadeIn();
+                $('.prev').fadeIn();
+                $('.next').fadeIn();
             }
             clearTimeout(timer);
         });
