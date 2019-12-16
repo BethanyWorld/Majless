@@ -36,7 +36,6 @@
             n = parseInt(n);
             slideIndex += n;
             if (slideIndex >= $slidesLength) {
-                debugger;
                 slideIndex = 0;
             }
             if (slideIndex < 0) {

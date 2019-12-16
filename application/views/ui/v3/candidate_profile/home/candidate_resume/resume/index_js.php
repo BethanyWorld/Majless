@@ -22,6 +22,19 @@
             $('#inputCandidateAddressVillagePart').addClass('InputNotAllow');
         }
 
+        $inputCandidateAddressVillage = $('#inputCandidateAddressVillage').val();
+        if ($inputCandidateAddressVillage != null) {
+            $('#inputCandidateAddressCityPart').attr("disabled", "disabled");
+            $('#inputCandidateAddressCityPart').removeAttr('placeholder');
+            $('#inputCandidateAddressCityPart').addClass('InputNotAllow');
+        }
+        if ($inputCandidateAddressVillage == "" ) {
+            $('#inputCandidateAddressCityPart').removeAttr('disabled');
+            $("#inputCandidateAddressCityPart").attr("placeholder", "پرکردن این فیلد اجباری می باشد");
+            $('#inputCandidateAddressCityPart').removeClass('InputNotAllow');
+        }
+
+
         //$('#inputCandidateBirthDate').mask("0000/00/00");
         $('#inputCandidateBirthDate').keyup(function(e) {
             if(e.keyCode != 8){
@@ -181,13 +194,13 @@
             }
         });
         $(document).on('keyup', '#inputCandidateAddressVillage', function () {
-            $inputCandidateAddressCityPart = $(this).val();
-            if ($inputCandidateAddressCityPart != null) {
+            $inputCandidateAddressVillage = $(this).val();
+            if ($inputCandidateAddressVillage != null) {
                 $('#inputCandidateAddressCityPart').attr("disabled", "disabled");
                 $('#inputCandidateAddressCityPart').removeAttr('placeholder');
                 $('#inputCandidateAddressCityPart').addClass('InputNotAllow');
             }
-            if ($inputCandidateAddressCityPart == "") {
+            if ($inputCandidateAddressVillage == "") {
                 $('#inputCandidateAddressCityPart').removeAttr('disabled');
                 $("#inputCandidateAddressCityPart").attr("placeholder", "پرکردن این فیلد اجباری می باشد");
                 $('#inputCandidateAddressCityPart').removeClass('InputNotAllow');
@@ -330,7 +343,11 @@
                 $inputCandidateAddressStateId == "" ||
                 $inputCandidateAddressCityId == "" ||
                 $inputCandidateAddressPart == "" ||
-                $inputCandidateAddressCityPart == "" ||
+
+                $inputCandidateAddressCityPart == "" &&
+                $inputCandidateAddressVillage == "" &&
+                $inputCandidateAddressVillagePart == "" ||
+
                 $inputCandidateAddress == "" ||
                 $inputCandidateLandLinePhone == "" ||
                 $inputCandidatePhone == "" ||

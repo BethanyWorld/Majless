@@ -8,6 +8,14 @@
         text-align: center;
         display: none;
     }
+.slider-form{
+    position: absolute;
+    z-index: 5;
+    left: 0px;
+}
+    .slide-title:hover {
+        color: #fff;
+    }
 
     .slide-title button {
         background: #d10b20;
@@ -35,7 +43,7 @@
     }
 </style>
 <style>
-    .slider-timer{
+    .slider-timer {
         width: 0px;
         height: 3px;
         background-color: #fdb72e;
@@ -43,6 +51,7 @@
         top: 0px;
         z-index: 5;
     }
+
     .overlay {
         position: absolute;
         top: 0;
@@ -105,6 +114,7 @@
         border: none;
         z-index: 5;
     }
+
     #myBtn:hover {
         background: #022D6D;
         border: none;
@@ -120,12 +130,14 @@
         object-fit: fill;
     }
 
-    a.prev:hover{
+    a.prev:hover {
         color: #02275d;
     }
+
     a.next:hover {
         color: #02275d;
     }
+
     @media (max-width: 992px) {
         #myBtn {
             top: 5%;
@@ -138,14 +150,17 @@
     }
 </style>
 <style>
-    .tb-icon-box-description{
+    .tb-icon-box-description {
         padding-left: 5px;
         padding-right: 5px;
     }
-    .state-news{
+
+    .state-news {
         padding: 0 15px;
     }
-    .pic{    height: 160px;
+
+    .pic {
+        height: 160px;
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
@@ -153,14 +168,16 @@
         margin-bottom: 0px;
         max-width: 100%;
     }
-    .content{
+
+    .content {
         direction: rtl;
         text-align: justify;
         line-height: 25px;
         color: #000;
         padding: 5px 0;
     }
-    .item{
+
+    .item {
         -webkit-transition: ease-in 0.2s;
         -moz-transition: ease-in 0.2s;
         -ms-transition: ease-in 0.2s;
@@ -169,23 +186,25 @@
     }
 
 
-    .news-slider{
+    .news-slider {
         background: #fff;
         box-shadow: 0px 0px 4px 1px #ccc;
     }
-    .news-slider-container .owl-nav{
+
+    .news-slider-container .owl-nav {
         position: absolute;
         background: rgba(92, 131, 51, 0.7);
         right: 0;
         bottom: 0;
     }
+
     .news-slider-container .owl-carousel .owl-nav button.owl-next,
     .news-slider-container .owl-carousel .owl-nav button.owl-prev {
         outline: 0;
         background: 0 0;
         color: inherit;
         border: none;
-        padding: 0!important;
+        padding: 0 !important;
         font: inherit;
         color: #fff;
         font-size: 35px;
@@ -196,8 +215,7 @@
     }
 
 
-
-    .icon-box{
+    .icon-box {
         height: 190px;
         background: #fff;
         border: 8px solid #fbfbfb;
@@ -207,31 +225,33 @@
         border-top: 0;
     }
 
-    .icon-box a{
+    .icon-box a {
         color: #688c45;
         line-height: 25px;
         display: inline-block;
     }
-    .icon-box i{
+
+    .icon-box i {
         display: block;
         font-size: 75px;
         margin: 20px 0;
         color: #535353;
         font-weight: 900;
     }
-    .icon-box:hover i{
+
+    .icon-box:hover i {
         color: #00851a;
     }
-    .icon-box span{
+
+    .icon-box span {
         font-size: 18px;
         font-weight: 900;
     }
 
 
-    .hp-join-the-team-form input::placeholder{
+    .hp-join-the-team-form input::placeholder {
         color: #022d6d;
     }
-
 
 
 </style>

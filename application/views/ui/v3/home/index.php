@@ -4,12 +4,11 @@
     <div class="fw-page-builder-content">
         <!-- Edited Slider-->
         <section id="section-5d7930f11ff35"
-                 class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn"
-                 style=' padding-top: 85px !important; padding-bottom: 85px !important;min-height: calc(100vh - 243px)'>
+                 class="campaign_section nopadding campaign_section_with_slides  relative0 tbWow fadeIn">
             <div class="slider-timer"></div>
             <div class="overlay"></div>
             <div class="campaign_section_slide">
-                <video muted loop id="myVideo">
+                <video muted loop id="myVideo" poster="<?php echo $_DIR ?>images/process.jpg">
                     <source src="<?php echo $_DIR ?>images/video2.webm" type="video/mp4">
                 </video>
                 <button id="myBtn">
@@ -17,7 +16,7 @@
                 </button>
                 <span class="full-screen-icon">
                         <img src="<?php echo $_DIR ?>images/switch-to-full-screen32.png">
-                    </span>
+                </span>
             </div>
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide4_850.jpg);background-size: cover;"></div>
@@ -25,53 +24,92 @@
                  style="background-image:url(<?php echo $_DIR ?>images/slide3_850.jpg);background-size: cover;"></div>
             <div class="campaign_section_slide"
                  style="background-image:url(<?php echo $_DIR ?>images/slide2_850.jpg);background-size: cover;"></div>
-            <div class="fw-row nostretch">
-                <div style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;z-index: 5;"
-                     class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
-
-                    <a class="slide-title animated fadeInUp"
-                       href="<?php echo base_url('AboutUs/public_invitation'); ?>">
-                        <h2>
-                            1
-                            از افراد شایسته نمایندگی مردم
-                        </h2>
-                        <h3>بیانیه جنبش #از_ما پیرامون ثبت نام در انتخابات مجلس یازدهم</h3>
-                        <button>جزئیات بیشتر</button>
-                    </a>
-                    <a class="slide-title animated fadeInUp" href="<?php echo base_url('AboutUs/exams'); ?>">
-                        <h2>
-                            2
-                        </h2>
-                        <h3>به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
-                        <button>جزئیات بیشتر</button>
-                    </a>
-                    <a class="slide-title animated fadeInUp"
-                       href="<?php echo base_url('AboutUs/measurement_process'); ?>">
-                        <h2>
-                            3
-                        </h2>
-                        <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
-                            کند...</h3>
-                        <button>جزئیات بیشتر</button>
-                    </a>
-                    <a class="slide-title animated fadeInUp"
-                       href="<?php echo base_url('AboutUs/measurement_process'); ?>">
-                        <h2>
-                            4
-                        </h2>
-                        <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
-                            کند...</h3>
-                        <button>جزئیات بیشتر</button>
-                    </a>
-                </div>
-            </div>
-            <!--            <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 243px)'>-->
-            <!--                <div class="row">-->
-            <!--                -->
-            <!--                </div>-->
-            <!--            </div>-->
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
+            <div class="container" style=' padding-top: 85px; padding-bottom: 85px;min-height: calc(100vh - 243px)'>
+                <div class="row">
+                    <div class="fw-row nostretch">
+                        <div style="float: right;direction: rtl;text-align: justify;color: #fff;position: absolute;right: 0px;z-index: 5;"
+                             class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
+
+                            <a class="slide-title animated fadeInUp"
+                               href="<?php echo base_url('AboutUs/public_invitation'); ?>">
+                                <h2>
+                                    1
+                                    از افراد شایسته نمایندگی مردم
+                                </h2>
+                                <h3>بیانیه جنبش #از_ما پیرامون ثبت نام در انتخابات مجلس یازدهم</h3>
+                                <button>جزئیات بیشتر</button>
+                            </a>
+                            <a class="slide-title animated fadeInUp" href="<?php echo base_url('AboutUs/exams'); ?>">
+                                <h2>
+                                    2
+                                </h2>
+                                <h3>به منظور انجام ارزیابی دقیق و علمی از وضعیت تناسب داوطلبان نمایندگی مجلس...</h3>
+                                <button>جزئیات بیشتر</button>
+                            </a>
+                            <a class="slide-title animated fadeInUp"
+                               href="<?php echo base_url('AboutUs/measurement_process'); ?>">
+                                <h2>
+                                    3
+                                </h2>
+                                <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
+                                    کند...</h3>
+                                <button>جزئیات بیشتر</button>
+                            </a>
+                            <a class="slide-title animated fadeInUp"
+                               href="<?php echo base_url('AboutUs/measurement_process'); ?>">
+                                <h2>
+                                    4
+                                </h2>
+                                <h3>جنبش از ما برای آنکه شایسته‌ترین افراد را به مردم به عنوان نامزد انتخابات معرفی
+                                    کند...</h3>
+                                <button>جزئیات بیشتر</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels slider-form">
+                        <form action="<?php echo base_url('SignUp'); ?>" method="get">
+                            <div class="row rtl">
+                                <div class="col-xs-12 col-md-6 pull-right">
+                                    <input
+                                            style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
+                                            placeholder="نام"
+                                            class="form-control" type="text" id="fn" name="fn"
+                                            autofocus/>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <input
+                                            style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
+                                            placeholder="نام خانوادگی"
+                                            class="form-control" type="text" id="ln" name="ln"/>
+                                </div>
+                            </div>
+                            <div class="row rtl">
+                                <div class="col-xs-12 col-md-6 pull-right">
+                                    <input
+                                            style="font-family: tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
+                                            placeholder="تلفن همراه"
+                                            class="form-control" type="text" id="p" name="p"
+                                    />
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <input
+                                            style="font-family:tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
+                                            placeholder="کد ملی"
+                                            class="form-control" type="text" id="nc" name="nc"
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <button type="submit"
+                                        style="float: left;text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
+                                    ثبت نام کنید
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="section-5d7930f124ba6" class="campaign_section nopadding relative1 tbWow fadeIn"
                  style="background-image:url(<?php echo $_DIR ?>images/hp-blocks-no_change.png);background-repeat: repeat; background-position: center center; background-size: auto;">
@@ -195,82 +233,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="column-5de4fd51daddf"
-                         class="tb-column absolutecenter-stretch col-xs-12  col-sm-12  nopadding tbWow fadeIn">
-                        <div class="row col-xs-12">
-                            <style>
-                                .slick-slide:hover div.read-more {
-                                    background: #b60d21;
-                                    color: #fff !important;
-                                }
 
-                                .slick-prev-arrow,
-                                .slick-next-arrow {
-                                    display: inline-block;
-                                    position: absolute;
-                                    bottom: 0;
-                                    top: 0;
-                                    height: 50px;
-                                    margin: auto;
-                                    left: -55px;
-                                    width: 50px;
-                                    background: #fff;
-                                    color: #000;
-                                    border: 1px solid #b60d21;
-                                    padding: 15px 20px;
-                                    cursor: pointer;
-                                }
-
-                                .slick-next-arrow {
-                                    right: -55px;
-                                    left: auto;
-                                }
-                            </style>
-                            <div class="tb-posts-carousel slick-slider">
-                                <?php foreach ($posts as $post) { ?>
-                                    <div>
-                                        <a href="<?php echo $post['guid']; ?>"
-                                           title="<?php echo $post['post_title']; ?>"
-                                           class="absolute100"
-                                           tabindex="-1">
-                                            <?php echo $post['post_title']; ?>
-                                        </a>
-                                        <div class="tb-post-carousel-thumbnail">
-                                            <div class="post-categories data-color-hover"
-                                                 style="background: #b60d21; color: #ffffff;"
-                                                 data-a-color="#ffffff">
-                                                <a href="<?php echo $post['guid']; ?>"
-                                                   rel="category tag" tabindex="-1"
-                                                   style="color: rgb(255, 255, 255);">اخبار و رویداد
-                                                </a>
-                                            </div>
-                                            <div class="post-title" style="color: #ffffff;">
-                                                <h1 style="color: #ffffff;text-align: right;font-size: 16px;height: 45px;"><?php echo $post['post_title']; ?></h1>
-                                                <div class="post-date text-right">
-                                                    <i class="icon-clock"></i>
-                                                    <?php /*echo jDateTime::date("Y/m/d", false, false, $post['post_date']);*/ ?>
-                                                </div>
-                                            </div>
-                                            <img width="600" height="600"
-                                                 src="<?php echo base_url('blog/wp-content/uploads/') . $post['meta_value']; ?>"
-                                                 class="attachment-campaign-thumb-xl size-campaign-thumb-xl wp-post-image"
-                                                 alt="">
-                                            <div class="absolute100" style="background-color: #043174"></div>
-                                        </div>
-                                        <div class="changing-data-attr"
-                                             style="background: rgb(255, 255, 255); color: rgb(33, 71, 127);">
-                                            <p style="color: #000;direction: rtl;text-align: justify;">
-                                                <?php echo $post['post_excerpt']; ?>
-                                            </p>
-                                            <div class="read-more" style="color: rgb(160, 46, 47);">
-                                                ادامه مطلب
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
