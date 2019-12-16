@@ -3,7 +3,6 @@
         $nationalCode = "<?php echo $userInfo['CandidateNationalCode']; ?>";
         $personalInfoApi = "<?php echo $this->config->item('api')['PersonalInformationWeb']; ?>nationalCode=" + $nationalCode;
         $legalConditionsApi = "<?php echo $this->config->item('api')['LegalConditionsWeb']; ?>nationalCodeList=" + $nationalCode;
-
         $currentCandidateStatus = "<?php echo $userInfo['CandidateStatus']; ?>";
         $candidateStatus = "";
         $.ajax({
@@ -11,13 +10,10 @@
             url: base_url + 'Profile/getResumeStatus',
             success: function (data) {
                 $result = JSON.parse(data);
-
                 if($result['message'] !== undefined){
-                    $message = "<ul  class='list-group'><li  class='list-group-item'>"+$result['message']+"</li></ul>";
+                    $message = "<hr><div class='row col-xs-12' style='padding:0;'><ul class='list-group'><li  class='list-group-item'>"+$result['message']+"</li></ul></div>";
                     $(".alerts-container").append($message);
                 }
-
-
                 /*اگر نامزد انتخاباتی رزومه خود را تکمیل کرده بود*/
                 if ($result['isCompleted']) {
                     $candidateStatus = "CandidateResumeCompleted";
@@ -52,7 +48,6 @@
                 }
             }
         });
-
         $("#hasNotNormalCondition").click(function () {
             toggleLoader();
             $.ajax({
