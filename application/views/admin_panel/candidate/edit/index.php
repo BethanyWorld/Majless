@@ -1,7 +1,4 @@
-<?php
-$_DIR = base_url('assets/empanel/');
-
-?>
+<?php $_DIR = base_url('assets/empanel/'); ?>
 <section class="content">
     <div class="container-fluid">
         <div class="row clearfix">
@@ -93,6 +90,10 @@ $_DIR = base_url('assets/empanel/');
                                     <li role="presentation" class="active">
                                         <a href="#info" aria-controls="info"
                                            role="tab" data-toggle="tab">رزومه</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#payments" aria-controls="payments"
+                                           role="tab" data-toggle="tab">تراکنش های مالی</a>
                                     </li>
                                     <li role="presentation">
                                         <a href="#Grading" aria-controls="Grading"
@@ -859,6 +860,49 @@ $_DIR = base_url('assets/empanel/');
                                             </div>
                                         </div>
                                     </div>
+                                    <div role="tabpanel" class="tab-pane fade in" id="payments">
+                                        <div class="panel panel-default panel-post">
+                                            <div class="panel-heading">
+                                                تراکنش ها
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="col-xs-12 pull-right table-responsive">
+                                                    <table class="table table-hover table-bordered table-condensed">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="fit text-center">ردیف</th>
+                                                            <th class="fit text-center">نوع</th>
+                                                            <th>مبلغ</th>
+                                                            <th class="fit text-center">کد مرجع</th>
+                                                            <th class="fit text-center">وضعیت</th>
+                                                            <th class="fit text-center">تاریخ</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <?php $i=0; foreach ($paymentHistory as $item) { ?>
+                                                            <tr>
+                                                                <td class="fit text-center"><?php echo $i+=1;; ?></td>
+                                                                <td class="fit text-center"><?php echo PaymentType($item['PaymentType']); ?></td>
+                                                                <td><?php echo number_format($item['PaymentPrice']); ?></td>
+                                                                <td class="fit text-center"><?php echo $item['PaymentReferenceId']; ?></td>
+                                                                <td class="fit text-center"><?php echo paymentStatus($item['PaymentStatus']); ?></td>
+                                                                <td class="fit text-center"><?php echo $item['CreateDateTime']; ?></td>
+                                                            </tr>
+                                                        <?php } ?>
+                                                        <?php if (empty($paymentHistory)) { ?>
+                                                            <tr>
+                                                                <td class="fit text-center" colspan="6">
+                                                                    موردی یافت نشد
+                                                                </td>
+                                                            </tr>
+                                                        <?php } ?>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div role="tabpanel" class="tab-pane fade in" id="Grading">
                                         <form class="form-horizontal">
                                             <div class="form-group">
@@ -944,7 +988,6 @@ $_DIR = base_url('assets/empanel/');
                                             </div>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

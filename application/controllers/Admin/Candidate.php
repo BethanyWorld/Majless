@@ -49,6 +49,9 @@ class Candidate extends CI_Controller{
         $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
         $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
 
+
+        $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);
+
         $data['api'] = $this->config->item('api');
         $this->load->view('admin_panel/static/header', $data);
         $this->load->view('admin_panel/candidate/edit/index', $data);

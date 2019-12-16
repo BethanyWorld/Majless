@@ -42,6 +42,8 @@ class Profile extends CI_Controller{
             $data['EvaluationExam'] = $data['EvaluationExam'][0];
         }
 
+
+
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/index', $data);
         $this->load->view('ui/v3/candidate_profile/home/index_css');
