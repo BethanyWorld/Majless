@@ -73,7 +73,7 @@
                     <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels slider-form">
                         <div class="hp-join-the-effort tbWow fadeInDown">
                             <div class="fw-page-builder-content">
-                                <h1>
+                                <h1 class="text-center">
                                     <span class="slider-form-title">برای ایرانی سربلند مشارکت کنید</span>
 
                                     <p class="slider-form-text">اگر در انتخابات مجلس یازدهم نامزد هستید برای ورود به
