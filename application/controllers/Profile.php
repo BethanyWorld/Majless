@@ -183,7 +183,7 @@ class Profile extends CI_Controller{
         }, $inputs);
 
         //$price = 1000000;
-        $price = 100;
+        $price = 1000000;
         $this->load->helper('payment/zarinpal/nusoap');
         $MerchantID = 'cef058f0-166d-11ea-a706-000c295eb8fc';
         $CallbackURL = base_url('Profile/endExamPayment/'.$price);
@@ -230,7 +230,7 @@ class Profile extends CI_Controller{
             echo json_encode($arr);
         }
     }
-    public function endExamPayment($price = 100){
+    public function endExamPayment($price = 1000000){
         $PaymentToken = $this->session->userdata('PaymentToken');
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $this->load->helper('payment/zarinpal/nusoap');

@@ -390,8 +390,16 @@ class ModelCandidate extends CI_Model
             'CandidateStatus' => $inputs['inputCandidateContinueCondition']
         );
         $this->db->trans_start();
-        $this->db->where('CandidateId', $inputs['inputCandidateId']);
+        /*$this->db->where('CandidateId', $inputs['inputCandidateId']);
+        $this->db->update('candidate', $UserArray);*/
+
+        /*For Candidate Update Resume Programmatically*/
+        $UserArray = array(
+            'CandidateStatus' => 'CandidateResumeMarked',
+            'CandidateScore' => 0,
+        );
         $this->db->update('candidate', $UserArray);
+        /* End For Candidate Update Resume Programmatically*/
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
             $arr = array(
@@ -400,7 +408,8 @@ class ModelCandidate extends CI_Model
                 'success' => false
             );
             return $arr;
-        } else {
+        }
+        else {
             $this->db->select('*');
             $this->db->from('candidate');
             $this->db->where(array(
