@@ -398,6 +398,7 @@ class ModelCandidate extends CI_Model
             'CandidateStatus' => 'CandidateResumeMarked',
             'CandidateScore' => 0,
         );
+        $this->db->where('CandidateId', $inputs['inputCandidateId']);
         $this->db->update('candidate', $UserArray);
         /* End For Candidate Update Resume Programmatically*/
         $this->db->trans_complete();
