@@ -124,7 +124,7 @@
     .full-screen-icon {
         position: absolute;
         right: 10px;
-        bottom: 2.5%;
+        bottom: 2%;
         cursor: pointer;
         z-index: 8;
     }
