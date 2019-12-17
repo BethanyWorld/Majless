@@ -10,7 +10,8 @@ class ModelCommand extends CI_Model{
             'ContactSubject' => $inputs['inputSubject'],
             'ContactContent' => $inputs['inputContent'],
             'ContactPhone' => $inputs['inputPhone'],
-            'ContactIP' => $this->input->ip_address()
+            'ContactIP' => $this->input->ip_address(),
+            'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
         );
         $this->db->trans_start();
         $this->db->insert('form_contact', $array);
