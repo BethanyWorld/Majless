@@ -80,6 +80,17 @@
                                 </li>
                             </ul>
                         </div>
+
+                        <h5 style="display: inline-block;width: 100%;padding: 15px 0;"
+                            class="col-xs-12 label label-success text-center">آخرین فعالیت ها</h5>
+                       <hr>
+                        <ul class="list-group" style="padding: 0;display: inline-block;width: 100%;">
+                            <?php foreach ($loginHistory as $item){ ?>
+                            <li class="list-group-item"  style="direction: ltr;">
+                                <?php echo $item['LoginDate']; ?>
+                            </li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-9" style="padding-left: 0;">

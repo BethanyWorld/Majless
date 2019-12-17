@@ -386,7 +386,6 @@ class ModelCandidate extends CI_Model
             echo json_encode($result);
             die();
         }
-
         $UserArray = array(
             'CandidateStatus' => $inputs['inputCandidateContinueCondition']
         );
@@ -863,6 +862,20 @@ class ModelCandidate extends CI_Model
         $this->db->from('candidate_exam_payment');
         $this->db->where(
             array('PaymentCandidateId' => $id)
+        );
+        $this->db->order_by('RowId', 'DESC');
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        return array();
+    }
+    public function getCandidateLoginHistoryCandidateId($id)
+    {
+        $this->db->select('*');
+        $this->db->from('login_records');
+        $this->db->where(
+            array('CandidateId' => $id)
         );
         $this->db->order_by('RowId', 'DESC');
         $query = $this->db->get();

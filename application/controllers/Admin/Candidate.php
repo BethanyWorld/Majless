@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Candidate extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
         $this->load->helper('admin/admin_login');
@@ -51,6 +52,7 @@ class Candidate extends CI_Controller{
 
 
         $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);
+        $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
 
         $data['api'] = $this->config->item('api');
         $this->load->view('admin_panel/static/header', $data);
