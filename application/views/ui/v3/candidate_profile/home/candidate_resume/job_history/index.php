@@ -245,6 +245,8 @@ $_DIR = base_url('assets/ui/v3/');
                             ثبت
                         </button>
                     </div>
+
+                    <?php if($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male'){ ?>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 prev-step">
                         <a href="<?php echo base_url('Profile/militaryStatus'); ?>">
                             <button class="btn btn-block btn-lg waves-effect CommonButtons prev-step">
@@ -252,6 +254,15 @@ $_DIR = base_url('assets/ui/v3/');
                             </button>
                         </a>
                     </div>
+                    <?php } else {?>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 prev-step">
+                            <a href="<?php echo base_url('Profile/academicBackground'); ?>">
+                                <button class="btn btn-block btn-lg waves-effect CommonButtons prev-step">
+                                    مرحله قبل
+                                </button>
+                            </a>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
