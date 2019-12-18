@@ -58,5 +58,15 @@
             }
         });
 
+
+        $(".recaptcha").click(function () {
+            $(".recaptcha").addClass('fa-spin');
+            $src = $(".captcha_img").attr('src');
+            $(".captcha_img").attr('src', $src + '?' + Date.now());
+            setTimeout(function () {
+                $(".recaptcha").removeClass('fa-spin');
+            }, 2000);
+        });
+
     });
 </script>

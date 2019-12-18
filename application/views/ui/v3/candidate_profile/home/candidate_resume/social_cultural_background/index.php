@@ -83,7 +83,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6 col-xs-12 RightFloat margin-b-30 paddingRight-0 Description ttt">
+                                                            <div class="col-md-6 col-xs-12 RightFloat margin-b-30 Description ttt">
                                                                 <div class="col-md-12 col-sm-12 col-xs-12 RightFloat">
                                                                     <label for="inputCandidateMemberShipDescription"
                                                                            class="Lable">توضیحات</label>

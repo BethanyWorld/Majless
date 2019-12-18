@@ -54,6 +54,7 @@
         line-height: 45px;
         text-align: center;
         margin-top: 25px;
+        word-break: break-word;
     }
 
     .slide-title h3 {
@@ -61,6 +62,9 @@
         font-size: 16px;
         line-height: 50px;
         text-align: center;
+    }
+    .slick-slide a{
+        outline: none;
     }
 </style>
 <style>

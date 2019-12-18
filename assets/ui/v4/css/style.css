@@ -83,7 +83,6 @@ table .fit {
     -webkit-animation: lazyloadeffect 1s infinite linear forwards;
     animation: lazyloadeffect 1s infinite linear forwards
 }
-
 #loading {
     background-color: rgba(0, 0, 0, .6);
     height: 100%;
@@ -5478,13 +5477,13 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 
 .hp-facts-row1 h1, .hp-facts-row2 h1 {
     color: #fff;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 40px;
     margin: 20px 0
 }
 
 .hp-facts-row1 h4, .hp-facts-row2 h4 {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 18px;
     color: rgba(255, 255, 255, .4)
 }
@@ -5634,4 +5633,20 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
     text-align: justify;
     direction: rtl;
     line-height: 25px
+}
+
+
+@media (max-width: 992px){
+    .hp-title-sections h1 {
+        margin: 0;
+        font-size: 35px;
+        line-height: 90px;
+    }
+}
+@media (max-width: 400px){
+    .hp-title-sections h1 {
+        margin: 0;
+        font-size: 28px;
+        line-height: 90px;
+    }
 }

@@ -99,7 +99,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 <!--                                                       class="input-validate validate valid"-->
                                                 <!--                                                       placeholder="1365/05/03"-->
                                                 <!--                                                       style="font-family: tahoma;">-->
-                                                <div class="col-xs-12 date">
+                                                <div class="col-xs-12 date padding-0">
                                                     <div class="input-group input-append date" id="DatePicker">
                                                             <span class="input-group-addon add-on"
                                                                   data-toggle="modal" data-target="#exampleModal">

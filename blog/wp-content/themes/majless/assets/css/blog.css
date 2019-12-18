@@ -244,6 +244,9 @@ input[type="submit"] {
 .blog-widget-title {
     background: #d6002a;
 }
+.blog-contents-div p{
+    line-height: 35px;
+}
 
 h2.blog-widget-title {
     float: left;

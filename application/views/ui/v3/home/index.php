@@ -39,7 +39,7 @@
             <a class="next">&#10095;</a>
             <div class="container container-responsive-style">
                 <div class="row">
-                    <div class="fw-row nostretch">
+                    <div class="col-md-8 col-xs-12 pull-right nostretch">
                         <div class="right-text-slider"
                              class="tb-column nostretch col-xs-12 col-sm-6 col-md-5 alignright hp-join-the-effort-col nopadding  tbWow animated fadeInUp">
                             <a class="slide-title animated fadeInRight"
@@ -70,36 +70,31 @@
                             </a>
                         </div>
                     </div>
-                    <div class="hidden-sm hidden-xs form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels slider-form">
+                    <div class="col-md-3 padding-0 col-xs-12 hidden-sm hidden-xs form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels slider-form">
                         <div class="hp-join-the-effort tbWow fadeInDown">
                             <div class="fw-page-builder-content">
                                 <h1 class="text-center">
                                     <span class="slider-form-title rtl">برای ایرانی سربلند...</span>
-                                    <p class="slider-form-text">اگر در انتخابات مجلس یازدهم نامزد هستید برای ورود به
-                                        فرآیند جنبش ثبت نام کنید</p>
-                                    <p class="slider-form-text">و یا به عنوان حامی جنبش از ما در ساختن آیندهای بهتر برای
-                                        کشورمان مشارکت کنید</p>
+                                    <p class="slider-form-text">به عنوان حامی یا نامزد انتخابی ثبت نام کنید</p>
                                 </h1>
                             </div>
                         </div>
                         <form action="<?php echo base_url('SignUp'); ?>" method="get">
                             <div class="row rtl">
-                                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <div class="col-xs-12 col-md-12">
                                     <input
                                             style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                             placeholder="نام"
                                             class="form-control" type="text" id="fn" name="fn"
                                             autofocus/>
                                 </div>
-                                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <div class="col-xs-12 col-md-12">
                                     <input
                                             style="margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                             placeholder="نام خانوادگی"
                                             class="form-control" type="text" id="ln" name="ln"/>
                                 </div>
-                            </div>
-                            <div class="row rtl">
-                                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <div class="col-xs-12 col-md-12">
                                     <input
                                             style="font-family: tahoma;margin-bottom: 10px;border: 1px solid #ccc; padding: 2px 5px;height: 45px;"
                                             placeholder="تلفن همراه"

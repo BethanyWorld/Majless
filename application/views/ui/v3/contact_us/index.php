@@ -138,11 +138,12 @@
                         <span class="required"></span>
                         کد امنیتی
                     </label>
+                    <i class="fa fa-refresh recaptcha"></i>
                     <img class="captcha_img"
                          style="margin: 10px 5px;border: 2px solid #ccc;"
                          src="<?php echo base_url('GetCaptcha'); ?>"/>
                     <input type="text"
-                           style="position: relative;top:15px;    width: calc(100% - 175px);float: left;"
+                           style="position: relative;top:15px;    width: calc(100% - 205px);float: left;"
                            name="inputCaptcha" id="inputCaptcha" class="form-control"
                            placeholder="کد امنیتی">
                 </div>
