@@ -92,7 +92,7 @@
 
     .slider-form-text {
         color: #fff;
-        font-size: 15px;
+        font-size: 13px;
         margin-top: 15px;
         margin-bottom: 15px;
     }
