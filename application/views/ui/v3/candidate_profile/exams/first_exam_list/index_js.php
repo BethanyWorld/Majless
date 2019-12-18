@@ -44,7 +44,9 @@
                 }
             });
         }
-        $candidateStateId = "<?php echo $candidateStateId; ?>";
+
+        $candidateStateId = "8";
+        /*$candidateStateId = "<php echo $candidateStateId; ?>";*/
         loadData($candidateStateId);
         $("#searchButton").click(function () {
             $inputStateId = $("#inputStateId").val();

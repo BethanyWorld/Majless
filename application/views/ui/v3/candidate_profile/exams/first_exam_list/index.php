@@ -48,7 +48,7 @@
         </div>
     <?php } else { ?>
         <div class="col-xs-12 col-md-9 pull-right table-responsive">
-            <div class="row">
+            <div class="row hidden">
                 <strong style="margin: 8px;" class="pull-right">استان برگزاری آزمون مرحله اول:</strong>
                 <select name="inputStateId" id="inputStateId" style="width: 165px;float: right;margin-left: 15px;">
                     <?php foreach ($states as $state) { ?>

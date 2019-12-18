@@ -64,7 +64,7 @@ class ModelExam extends CI_Model
             'ExamPlaceStateId' => $stateId,
             'ExamType' => 'FirstStep',
         ));
-        $this->db->order_by('ExamId DESC');
+        $this->db->order_by('ExamId ASC');
         return $this->db->get()->result_array();
     }
     public function getSecondStepExamByStateId($stateId)
