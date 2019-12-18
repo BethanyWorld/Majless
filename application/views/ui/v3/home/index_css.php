@@ -31,6 +31,9 @@
         position: absolute;
         z-index: 5;
         left: 0px;
+        background: #022d6d;
+        padding: 30px 25px;
+        padding-top: 0;
     }
 
     .slide-title:hover {
@@ -92,7 +95,7 @@
 
     .slider-form-text {
         color: #fff;
-        font-size: 13px;
+        font-size: 12px;
         margin-top: 15px;
         margin-bottom: 15px;
     }

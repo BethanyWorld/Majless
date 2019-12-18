@@ -75,7 +75,7 @@
                             <div class="fw-page-builder-content">
                                 <h1 class="text-center">
                                     <span class="slider-form-title rtl">برای ایرانی سربلند...</span>
-                                    <p class="slider-form-text">به عنوان حامی یا نامزد انتخابی ثبت نام کنید</p>
+                                    <p class="slider-form-text">به عنوان حامی یا نامزد انتخابات ثبت نام کنید</p>
                                 </h1>
                             </div>
                         </div>
