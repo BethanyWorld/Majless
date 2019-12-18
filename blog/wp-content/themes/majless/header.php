@@ -39,15 +39,14 @@
     </title>
     <link rel="shortcut icon" href="<?= $_DIR; ?>assets/images/fav16.png">
     <link rel="apple-touch-icon" href="<?= $_DIR; ?>assets/images/fav16.png">
-    <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>assets/images/fav152.png" type="image/png"
-          sizes="152x152">
-    <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>assets/images/fav120.png" type="image/png"
-          sizes="120x120">
+    <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>assets/images/fav152.png" type="image/png" sizes="152x152">
+    <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>assets/images/fav120.png" type="image/png" sizes="120x120">
     <link rel="icon" href="<?= $_DIR; ?>assets/images/fav96.png" sizes="96x96" type="image/png">
     <link rel='stylesheet' id='style-css' href='<?= $_DIR; ?>assets/css/style.css?ver=1.0'/>
     <link rel='stylesheet' id='bootstrap-css' href='<?= $_DIR; ?>assets/css/bootstrap.min.css?ver=3.3.7'/>
     <link rel='stylesheet' id='fontawesome-css' href='<?= $_DIR; ?>assets/css/font-awesome-css.min.css?ver=1.0'/>
-     <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>assets/css/jquery.mmenu.all.css?ver=1.0'/>
+    <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>assets/css/jquery.mmenu.all.css?ver=1.0'/>
+    <link rel='stylesheet' id='fonts-css' href='<?= $_DIR; ?>assets/css/font-style.css?ver=1.1'/>
     <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>assets/css/options.css?ver=1.1'/>
     <link rel='stylesheet' id='campaign_style-css' href='<?= $_DIR; ?>assets/css/theme.css?ver=1.1'/>
     <link rel='stylesheet' id='slick-css' href='<?= $_DIR; ?>assets/css/blog.css?ver=1.0'/>
