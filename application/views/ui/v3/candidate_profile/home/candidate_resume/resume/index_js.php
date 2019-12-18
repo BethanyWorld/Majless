@@ -319,6 +319,7 @@
             $inputParliamentaryCandidate = $('#inputParliamentaryCandidate').is(":checked");
             $inputParliamentaryElectionBank = $('#inputParliamentaryElectionBank').is(":checked");
             $inputSponsorColleague = $('#inputSponsorColleague').is(":checked");
+
             if ($inputCandidateFirstName == "" ||
                 $inputCandidateLastName == "" ||
                 $inputCandidateNationalCode == "" ||
@@ -338,8 +339,8 @@
                 $inputCandidateFatherBornStateId == "" ||
                 $inputCandidateFatherBornCityId == "" ||
                 $inputCandidateMotherBornStateId == "" ||
-
                 $inputCandidateMotherBornCityId == "" ||
+
                 $inputCandidateAddressStateId == "" ||
                 $inputCandidateAddressCityId == "" ||
                 $inputCandidateAddressPart == "" ||

@@ -394,7 +394,7 @@
 
     .GradeNotify {
         color: #D10B20;
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.7em;
     }
 

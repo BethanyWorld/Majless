@@ -11,8 +11,9 @@
 
     .c-progress-steps li {
         position: relative;
-        font-size: 14px !important;
+        font-size: 11px !important;
         color: #7f8c8d;
+        font-weight: bold;
         padding: 2px 0 2px 23px;
     }
     .c-progress-steps li a {
@@ -94,7 +95,7 @@
     }
 
     .alerts-container .alert {
-        font-size: 22px;
+        font-size: 16px;
     }
 
 

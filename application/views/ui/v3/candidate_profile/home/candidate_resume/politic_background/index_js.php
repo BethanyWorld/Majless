@@ -174,11 +174,9 @@
 
 
             // for date 98
-            debugger;
             $inputCandidateMediaStartYear = $('#inputCandidateMediaStartYear').find('option').filter('[selected]').length;
             $inputCandidateMediaEndYear = $('#inputCandidateMediaEndYear').find('option').filter('[selected]').length;
             if ($inputCandidateMediaEndYear === 0 || $inputCandidateMediaStartYear === 0) {
-                debugger;
                 $('#inputCandidateMediaStartYear').find('option:last-child').attr('selected' , 'selected');
                 $('#inputCandidateMediaEndYear').find('option:last-child').attr('selected' , 'selected');
             }

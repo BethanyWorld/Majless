@@ -158,7 +158,7 @@
     }
 
     ul.RightPanelUl li .RightPanleTitle {
-        font-size: 1.14285714em;
+        font-size: 1em;
         font-weight: 700;
         color: #777;
     }
@@ -169,7 +169,7 @@
 
     ul.RightPanelUl li .RightPanelDescription {
         font-weight: 400;
-        font-size: 0.85em;
+        font-size: 0.8em;
         color: rgba(0, 0, 0, .87);
     }
 
@@ -389,7 +389,9 @@
     .RegistrationTypeDiv input[type="checkbox"] + label:last-child {
         margin-bottom: 0;
     }
-
+    .RegistrationTypeDiv input[type="checkbox"] + label{
+        font-size: 12px;
+    }
     .RegistrationTypeDiv input[type="checkbox"] + label:before {
         content: '';
         display: block;
@@ -535,7 +537,7 @@
                     </i>
                     <div class="RightPanelContent">
                         <div class="RightPanleTitle"> نظام وظیفه</div>
-                        <div class="RightPanelDescription">,
+                        <div class="RightPanelDescription">
                             پایان خدمت , معافیت , مشمول
                         </div>
                     </div>
@@ -548,7 +550,7 @@
                         </i>
                         <div class="RightPanelContent">
                             <div class="RightPanleTitle"> سوابق شغلی</div>
-                            <div class="RightPanelDescription">,
+                            <div class="RightPanelDescription">
                                 اطلاعات شغل های قبل
                             </div>
                         </div>
@@ -639,13 +641,25 @@
                             <span class="fa fa-share-square-o"></span>
                         </i>
                         <div class="RightPanelContent">
-                            <div class="RightPanleTitle">بارگشت</div>
+                            <div class="RightPanleTitle">بازگشت</div>
                             <div class="RightPanelDescription">
                                 پیشخوان
                             </div>
                         </div>
                     </a>
                 </li>
+
+                <li class="col-md-12 padding-0">
+                    <a href="<?php echo base_url('Profile/logOut') ?>">
+                        <i class="zmdi RightpanelIcon">
+                            <span class="fa fa-share-square-o"></span>
+                        </i>
+                        <div class="RightPanelContent">
+                            <div class="RightPanleTitle">خروج از سیستم</div>
+                        </div>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>

@@ -45,7 +45,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                             </div>
 
                                                             <!--For Other-->
-                                                            <div class="col-md-6 col-xs-12 ttt RightFloat margin-b-30 other-title">
+                                                            <div class="col-md-6 col-xs-12 RightFloat margin-b-30 other-title">
                                                                 <div class="col-md-12 col-xs-12 RightFloat">
                                                                     <label class="Lable"
                                                                            for="inputCandidateActivityFieldOtherTypeTitle">عنوان</label>
@@ -56,7 +56,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                             </div>
 
                                                             <!--For exept mobilization-->
-                                                            <div class="col-md-12 col-xs-12 margin-b-30 RightFloat ttt Collectionname">
+                                                            <div class="col-md-12 col-xs-12 margin-b-30 RightFloat Collectionname">
                                                                 <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
                                                                     <label for="inputCandidateOrganizationName"
                                                                            class="Lable">نام مجموعه</label>
@@ -83,7 +83,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6 col-xs-12 RightFloat margin-b-30 Description ttt">
+                                                            <div class="col-md-6 col-xs-12 RightFloat margin-b-30 Description">
                                                                 <div class="col-md-12 col-sm-12 col-xs-12 RightFloat">
                                                                     <label for="inputCandidateMemberShipDescription"
                                                                            class="Lable">توضیحات</label>
@@ -114,7 +114,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </div>
 
                                                             </div>
-                                                            <div class="col-md-3 col-x-12 ttt RightFloat other-mobilization">
+                                                            <div class="col-md-3 col-x-12 RightFloat other-mobilization">
                                                                 <label for="inputCandidateBasijTypeOtherTitle"
                                                                        class="Lable">سایر</label>
                                                                 <input <?php setInputValue($item['CandidateBasijTypeOtherTitle']); ?>
@@ -138,7 +138,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-3 col-x-12 ttt RightFloat domain-name">
+                                                            <div class="col-md-3 col-x-12 RightFloat domain-name">
                                                                 <label for="inputCandidateBasijAreaTitle" class="Lable">نام
                                                                     حوزه</label>
                                                                 <input <?php setInputValue($item['CandidateBasijAreaTitle']); ?>
@@ -241,7 +241,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                     </div>
 
                                                     <!--For Other-->
-                                                    <div class="col-md-6 col-xs-12 ttt RightFloat margin-b-30 other-title">
+                                                    <div class="col-md-6 col-xs-12 RightFloat margin-b-30 other-title">
                                                         <div class="col-md-12 col-xs-12 RightFloat">
                                                             <label class="Lable"
                                                                    for="inputCandidateActivityFieldOtherTypeTitle">عنوان</label>
@@ -251,7 +251,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                     </div>
 
                                                     <!--For exept mobilization-->
-                                                    <div class="col-md-12 col-xs-12 margin-b-30 RightFloat ttt Collectionname">
+                                                    <div class="col-md-12 col-xs-12 margin-b-30 RightFloat Collectionname">
                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
                                                             <label for="inputCandidateOrganizationName" class="Lable">نام
                                                                 مجموعه</label>
@@ -275,7 +275,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6 col-xs-12 RightFloat margin-b-30 paddingRight-0 Description ttt">
+                                                    <div class="col-md-6 col-xs-12 RightFloat margin-b-30 paddingRight-0 Description">
                                                         <div class="col-md-12 col-sm-12 col-xs-12 RightFloat">
                                                             <label for="inputCandidateMemberShipDescription"
                                                                    class="Lable">توضیحات</label>
@@ -300,7 +300,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         </div>
 
                                                     </div>
-                                                    <div class="col-md-3 col-x-12 ttt RightFloat other-mobilization">
+                                                    <div class="col-md-3 col-x-12  RightFloat other-mobilization">
                                                         <label for="inputCandidateBasijTypeOtherTitle" class="Lable">سایر</label>
                                                         <input data-name="inputCandidateBasijTypeOtherTitle"
                                                                class="ytyt" type="text" required>
@@ -320,7 +320,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-3 col-x-12 ttt RightFloat domain-name">
+                                                    <div class="col-md-3 col-x-12 RightFloat domain-name">
                                                         <label for="inputCandidateBasijAreaTitle" class="Lable">نام
                                                             حوزه</label>
                                                         <input data-name="inputCandidateBasijAreaTitle" class="ytyt"

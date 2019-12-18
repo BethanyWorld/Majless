@@ -20,8 +20,16 @@
     z-index: 2100000000000000000;
 }
 
+.mother-father-div-hidden{
+    display: none;
+}
 
-
+#ReligionNotify{
+    font-size: 13px;
+}
+#DateChecked{
+    font-size: 13px;
+}
 
 /*for sample date*/
 .form-group{

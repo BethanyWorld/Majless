@@ -1044,7 +1044,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <?php } ?>
                                                 </select>
                                             </div>
-                                            <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
+                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                 <label for="inputCandidateConferenceYear">
                                                     سال همایش
                                                     <span class="text-danger">

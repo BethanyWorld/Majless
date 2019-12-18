@@ -82,7 +82,7 @@
 
     .radiotextsty {
         color: #A5A4BF;
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .customradio {

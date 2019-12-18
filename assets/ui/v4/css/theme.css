@@ -2522,3 +2522,9 @@ aside.widget_newsletterwidget input[type="submit"] {
     -ms-transition: all 0.8s;
     transition: all 0.8s
 }
+
+@media (max-width: 992px) {
+    .form-control{
+        margin-bottom: 15px;
+    }
+}
