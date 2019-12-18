@@ -7,6 +7,7 @@
     $hasPagination = false;
     function loadData(selectedPage = $selectedPage) {
         $sendData = {
+            'inputState' : $("#inputState").val(),
             'pageIndex': selectedPage
         }
         $.ajax({
@@ -41,6 +42,9 @@
     }
     $(document).ready(function () {
         loadData();
+        $("#searchButton").click(function () {
+            loadData(1);
+        });
         $(document).on('click', '.remove-exam', function () {
             $this = $(this);
             $title = "<strong class='badge'> " + $this.data('title') + " </strong>";

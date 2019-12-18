@@ -14,8 +14,11 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             <th class="fit"><?php echo $item['ExamCapacity']; ?></th>
             <th class="fit"><?php echo $item['ExamPlaceDefaultCapacity']; ?></th>
             <th class="fit"><?php echo examType($item['ExamType']); ?></th>
+            <th class="fit"><?php echo $item['AgentFullName']; ?></th>
+            <th class="fit"><?php echo $item['StateName']; ?></th>
             <td class="fit">
                 <a href="<?php echo base_url('Admin/Exams/requests/') . $item['ExamId']; ?>">
+                    <span class="label label-success"><?php echo $item['ExamRequestCount']; ?></span>
                     <button type="button"
                             class="btn btn-info btn-circle waves-effect waves-circle waves-float">
                         <i class="material-icons">rate_review</i>

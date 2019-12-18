@@ -141,7 +141,6 @@ class ModelExam extends CI_Model{
             return $arr;
         }
     }
-
     /* Exams */
     public function getExamByAgentId($inputs)
     {
@@ -169,6 +168,44 @@ class ModelExam extends CI_Model{
         }
         return $result;
     }
+    public function getAllExams($inputs){
+        $limit = $inputs['pageIndex'];
+        $start = ($limit - 1) * $this->config->item('defaultPageSize');
+        $end = $this->config->item('defaultPageSize');
+        $this->db->select('*');
+        $this->db->from('exam');
+        $this->db->join('agent', 'exam.ExamAgentId = agent.AgentId');
+        $this->db->join('state', 'agent.AgentStateId = state.StateId');
+        $this->db->join('exam_places', 'exam.ExamPlaceId = exam_places.ExamPlaceId', 'left');
+        if(isset($inputs['inputState']) && !empty($inputs['inputState'])){
+            $this->db->where('state.StateId', $inputs['inputState']);
+        }
+        $this->db->order_by('ExamId DESC');
+        $tempDb = clone $this->db;
+        $result['count'] = $tempDb->get()->num_rows();
+        $this->db->limit($end, $start);
+        $query = $this->db->get()->result_array();
+        $index = 0;
+        foreach ($query as $item) {
+            $query[$index]['ExamRequestCount'] = $this->getExamRequestsByExamId($item['ExamId']);
+            $index +=1;
+        }
+        if (count($query) > 0) {
+            $result['data'] = $query;
+            $result['startPage'] = $start;
+        } else {
+            $result['data'] = array();
+        }
+        return $result;
+    }
+    public function getExamRequestsByExamId($examId){
+        $this->db->select('*');
+        $this->db->from('candidate_exam_request');
+        $this->db->where(array('ExamId' => $examId,));
+        $this->db->order_by('ExamId DESC');
+        return $this->db->get()->num_rows();
+    }
+
     public function getExamByExamId($id)
     {
         $agentId = 0;

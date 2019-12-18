@@ -6,10 +6,12 @@ class Exams extends CI_Controller{
         $this->load->helper('admin/admin_login');
         $this->load->helper('pipes/pipe');
         $this->load->model('admin/ModelExam');
+        $this->load->model('ui/ModelCountry');
     }
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'آزمون ها';
+        $data['states'] = $this->ModelCountry->getStateList();
         $this->load->view('admin_panel/static/header', $data);
         $this->load->view('admin_panel/exams/home/index', $data);
         $this->load->view('admin_panel/exams/home/index_css');
@@ -18,7 +20,7 @@ class Exams extends CI_Controller{
     }
     public function doPagination(){
         $inputs = $this->input->post(NULL, TRUE);
-        $data = $this->ModelExam->getExamByAgentId($inputs);
+        $data = $this->ModelExam->getAllExams($inputs);
         $data['htmlResult'] = $this->load->view('admin_panel/exams/home/pagination', $data, TRUE);
         unset($data['data']);
         echo json_encode($data);

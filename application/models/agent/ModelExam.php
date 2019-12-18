@@ -1,5 +1,7 @@
 <?php
-class ModelExam extends CI_Model{
+
+class ModelExam extends CI_Model
+{
     /* Exam Places*/
     public function getExamPlaceByAgentId($inputs){
         $agentId = $this->session->userdata('AgentLoginInfo')[0]['AgentId'];
@@ -52,11 +54,12 @@ class ModelExam extends CI_Model{
         $this->db->where(array('AgentStateId' => $stateId));
         return $this->db->get()->result_array();
     }
-    public function getFirstStepExamByStateId($stateId){
+    public function getFirstStepExamByStateId($stateId)
+    {
         $this->db->select('*');
         $this->db->from('exam');
-        $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
-        $this->db->join('state' , 'exam_places.ExamPlaceStateId = state.StateId');
+        $this->db->join('exam_places', 'exam.ExamPlaceId = exam_places.ExamPlaceId');
+        $this->db->join('state', 'exam_places.ExamPlaceStateId = state.StateId');
         $this->db->where(array(
             'ExamPlaceStateId' => $stateId,
             'ExamType' => 'FirstStep',
@@ -64,11 +67,12 @@ class ModelExam extends CI_Model{
         $this->db->order_by('ExamId DESC');
         return $this->db->get()->result_array();
     }
-    public function getSecondStepExamByStateId($stateId){
+    public function getSecondStepExamByStateId($stateId)
+    {
         $this->db->select('*');
         $this->db->from('exam');
-        $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
-        $this->db->join('state' , 'exam_places.ExamPlaceStateId = state.StateId');
+        $this->db->join('exam_places', 'exam.ExamPlaceId = exam_places.ExamPlaceId');
+        $this->db->join('state', 'exam_places.ExamPlaceStateId = state.StateId');
         $this->db->where(array(
             'ExamPlaceStateId' => $stateId,
             'ExamType' => 'SecondStep',
@@ -76,11 +80,12 @@ class ModelExam extends CI_Model{
         $this->db->order_by('ExamId DESC');
         return $this->db->get()->result_array();
     }
-    public function getEvaluationExamList(){
+    public function getEvaluationExamList()
+    {
         $this->db->select('*');
         $this->db->from('exam');
-        $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
-        $this->db->join('state' , 'exam_places.ExamPlaceStateId = state.StateId');
+        $this->db->join('exam_places', 'exam.ExamPlaceId = exam_places.ExamPlaceId');
+        $this->db->join('state', 'exam_places.ExamPlaceStateId = state.StateId');
         $this->db->where(array(
             'ExamAgentId' => 0,
             'ExamType' => 'Evaluation'
@@ -88,11 +93,12 @@ class ModelExam extends CI_Model{
         $this->db->order_by('ExamId DESC');
         return $this->db->get()->result_array();
     }
-    public function getExamsSecondStepByAgentId($agentId){
+    public function getExamsSecondStepByAgentId($agentId)
+    {
         $this->db->select('*');
         $this->db->from('exam');
-        $this->db->join('exam_places' , 'exam.ExamPlaceId = exam_places.ExamPlaceId');
-        $this->db->join('state' , 'exam_places.ExamPlaceStateId = state.StateId');
+        $this->db->join('exam_places', 'exam.ExamPlaceId = exam_places.ExamPlaceId');
+        $this->db->join('state', 'exam_places.ExamPlaceStateId = state.StateId');
         $this->db->where(array(
             'ExamAgentId' => $agentId,
             'ExamType' => 'SecondStep',
@@ -199,7 +205,6 @@ class ModelExam extends CI_Model{
             return $arr;
         }
     }
-
     /* Exams */
     public function getExamByAgentId($inputs)
     {
@@ -216,17 +221,30 @@ class ModelExam extends CI_Model{
 
         $tempDb = clone $this->db;
         $result['count'] = $tempDb->get()->num_rows();
-
         $this->db->limit($end, $start);
         $query = $this->db->get()->result_array();
+
+        $index = 0;
+        foreach ($query as $item) {
+            $query[$index]['ExamRequestCount'] = $this->getExamRequestsByExamId($item['ExamId']);
+            $index +=1;
+        }
         if (count($query) > 0) {
             $result['data'] = $query;
             $result['startPage'] = $start;
         } else {
-            $result['data'] = false;
+            $result['data'] = array();
         }
         return $result;
     }
+    public function getExamRequestsByExamId($examId){
+        $this->db->select('*');
+        $this->db->from('candidate_exam_request');
+        $this->db->where(array('ExamId' => $examId,));
+        $this->db->order_by('ExamId DESC');
+        return $this->db->get()->num_rows();
+    }
+
     public function getExamByExamId($id)
     {
         $agentId = $this->session->userdata('AgentLoginInfo')[0]['AgentId'];
@@ -377,7 +395,8 @@ class ModelExam extends CI_Model{
             return $arr;
         }
     }
-    public function doAbsenceCandidateFirstExam($inputs){
+    public function doAbsenceCandidateFirstExam($inputs)
+    {
         $this->db->select('*');
         $this->db->from('candidate_exam_request');
         $this->db->where('RequestId', $inputs['inputRequestId']);
@@ -404,8 +423,7 @@ class ModelExam extends CI_Model{
                 'success' => false
             );
             return $arr;
-        }
-        else {
+        } else {
             $arr = array(
                 'type' => "green",
                 'content' => "ثبت غیبت آزمون با موفقیت انجام شد",
@@ -440,7 +458,8 @@ class ModelExam extends CI_Model{
             return $arr;
         }
     }
-    public function doAbsenceCandidateSecondExam($inputs){
+    public function doAbsenceCandidateSecondExam($inputs)
+    {
         $this->db->select('*');
         $this->db->from('candidate_exam_request');
         $this->db->where('RequestId', $inputs['inputRequestId']);
@@ -467,8 +486,7 @@ class ModelExam extends CI_Model{
                 'success' => false
             );
             return $arr;
-        }
-        else {
+        } else {
             $arr = array(
                 'type' => "green",
                 'content' => "ثبت غیبت آزمون با موفقیت انجام شد",
@@ -480,4 +498,5 @@ class ModelExam extends CI_Model{
         }
     }
 }
+
 ?>

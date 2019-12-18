@@ -2,6 +2,28 @@
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-xs-12 rtl">
+                <div class="row col-xs-12 card info-box">
+                    <div class="body">
+                        <div class="col-xs-12">
+                            <label for="inputCandidateState">استان:</label>
+                            <select name="inputState" id="inputState">
+                                <option value="">همه</option>
+                                <?php foreach ($states as $item) { ?>
+                                    <option value="<?php echo $item['StateId']; ?>">
+                                        <?php echo $item['StateName']; ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                            <button type="button"
+                                    id="searchButton"
+                                    class="btn btn-info btn-circle waves-effect waves-circle waves-float pull-left btn-search">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 rtl">
                 <div class="row col-xs-12 card">
                     <div class="body">
                         <div class="col-xs-12 table-responsive">
@@ -10,10 +32,11 @@
                                 <tr>
                                     <th class="fit">#</th>
                                     <th>تاریخ برگزاری آزمون</th>
-                                    <th class="fit">عنوان محل آزمون</th>
+                                    <th class="fit">محل آزمون</th>
                                     <th class="fit">ظرفیت</th>
-                                    <th class="fit">ظرفیت پیش فرض</th>
                                     <th class="fit">نوع</th>
+                                    <th class="fit">پشتیبان</th>
+                                    <th class="fit">استان</th>
                                     <th class="fit">متقاضیان</th>
                                     <th class="fit">ویرایش</th>
                                     <th class="fit">حذف</th>
