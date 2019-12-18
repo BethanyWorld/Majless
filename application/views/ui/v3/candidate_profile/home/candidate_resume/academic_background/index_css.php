@@ -108,15 +108,7 @@
         color: #00695c;
     }
 
-    ul.RightPanelUl li .RightPanleTitle {
-        font-size: 1.14285714em;
-        font-weight: 700;
-        color: #777;
-    }
 
-    ul.RightPanelUl li .RightPanleTitle ~ .RightPanelDescription {
-        margin-top: .25em;
-    }
 
     ul.RightPanelUl li .RightPanelDescription {
         font-weight: 400;
