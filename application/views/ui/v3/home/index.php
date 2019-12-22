@@ -266,7 +266,7 @@
                 <div class="row">
                     <div class="fw-row absolutecenter-stretch">
                         <div style=" " class=" noabsolutecenter nopadding-xs">
-                            <div class="link-type-no tb-icon-box textaligncenter tbWow fadeInUp row col-xs-12">
+                            <div class="link-type-no tb-icon-box textaligncenter tbWow fadeInUp row col-xs-12 auto-margin">
                                 <div class="tb-icon-box-description">
                                     <h4>اخبار و رویدادها</h4>
                                     <h1>آخرین اخبار و رویدادها</h1>
@@ -275,7 +275,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="link-type-no tb-icon-box textaligncenter tbWow fadeInUp  row col-xs-12">
+                            <div class="link-type-no tb-icon-box textaligncenter tbWow fadeInUp  row col-xs-12 auto-margin">
                                 <div class="tb-icon-box-image iconbox-image-type img-rounded">
                                     <a href="<?php echo base_url('blog'); ?>" target="_self">
                                         <img src="<?php echo $_DIR; ?>images/spacer_white_center_no_change.png"

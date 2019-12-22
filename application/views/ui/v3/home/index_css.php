@@ -359,6 +359,9 @@
         .tb-column.absolutecenter-stretch > div{
             margin: auto;
         }
+        .auto-margin{
+            margin: auto;
+        }
     }
 </style>
 

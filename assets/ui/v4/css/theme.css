@@ -666,6 +666,10 @@ blockquote {
 canvas {
     max-width: 100%
 }
+@font-face {
+    font-family: fontawesome;
+    src: url("/assets/ui/v4/fonts/fontawesome-webfont.svg");
+}
 
 #toTop {
     background-color: #333;
@@ -682,7 +686,8 @@ canvas {
     padding-top: 10px;
     opacity: .9;
     z-index: 10000;
-    text-decoration: none !important
+    text-decoration: none !important;
+    font-family: fontawesome !important;
 }
 
 #toTop:hover {
