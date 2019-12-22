@@ -4,20 +4,17 @@
             $form = $("#unique-form").clone().removeClass('hidden').attr('id', UUID());
             $(".skill-divider").after($form);
         });
-
-
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });
-        $("#updateProfileSkills").click(function () {
-
+        $("#updateProfilePromise").click(function () {
             $sendData = {
-                inputCandidateSkills: $("#form").serializeArray()
+                'inputElectionPromise': $("#form").serializeArray()
             }
             toggleLoader();
             $.ajax({
                 type: 'post',
-                url: base_url + 'Profile/candidateUpdateSkills',
+                url: base_url + 'Profile/candidateUpdatePromises',
                 data: $sendData,
                 success: function (data) {
                     toggleLoader();
@@ -27,14 +24,14 @@
             });
 
         });
-        $("#updateProfileSkillsAndRedirect").click(function () {
+        $("#updateProfilePromiseAndRedirect").click(function () {
             $sendData = {
-                inputCandidateSkills: $("#form").serializeArray()
+                'inputElectionPromise': $("#form").serializeArray()
             }
             toggleLoader();
             $.ajax({
                 type: 'post',
-                url: base_url + 'Profile/candidateUpdateSkills',
+                url: base_url + 'Profile/candidateUpdatePromises',
                 data: $sendData,
                 success: function (data) {
                     toggleLoader();

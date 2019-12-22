@@ -1,7 +1,5 @@
 <?php
-
-class ModelProfile extends CI_Model
-{
+class ModelProfile extends CI_Model{
     public function candidateUpdatePersonalInfo($inputs)
     {
         $UserArray = array(
@@ -82,7 +80,6 @@ class ModelProfile extends CI_Model
 
 
     }
-
     public function getCandidateAcademicBackgroundByCandidateId($id)
     {
         return
@@ -92,7 +89,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateAcademicBackground($inputs)
     {
         $this->db->trans_start();
@@ -132,7 +128,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateMilitaryStatusByCandidateId($id)
     {
         return
@@ -142,7 +137,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateMilitaryStatus($inputs)
     {
         $this->db->trans_start();
@@ -182,7 +176,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateJobHistoryByCandidateId($id)
     {
         return
@@ -192,7 +185,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateJobHistory($inputs)
     {
         $this->db->trans_start();
@@ -231,7 +223,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateSocialCulturalBackgroundByCandidateId($id)
     {
         return
@@ -241,7 +232,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateSocialCulturalBackground($inputs)
     {
         $this->db->trans_start();
@@ -287,7 +277,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateBooksByCandidateId($id)
     {
         return
@@ -297,7 +286,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateBooks($inputs)
     {
         $this->db->trans_start();
@@ -334,7 +322,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateResearchByCandidateId($id)
     {
         return
@@ -344,7 +331,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateResearch($inputs)
     {
         $this->db->trans_start();
@@ -383,7 +369,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateArticlesByCandidateId($id)
     {
         return
@@ -393,7 +378,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateArticles($inputs)
     {
         $this->db->trans_start();
@@ -431,7 +415,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateTranslationByCandidateId($id)
     {
         return
@@ -441,7 +424,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateTranslation($inputs)
     {
         $this->db->trans_start();
@@ -479,7 +461,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateInventionByCandidateId($id)
     {
         return
@@ -489,7 +470,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateInvention($inputs)
     {
         $this->db->trans_start();
@@ -526,7 +506,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateConferenceByCandidateId($id)
     {
         return
@@ -536,7 +515,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateConference($inputs)
     {
         $this->db->trans_start();
@@ -574,7 +552,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateUpdatePoliticBackgroundByCandidateId($id)
     {
         return
@@ -584,7 +561,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdatePoliticBackground($inputs)
     {
         $this->db->trans_start();
@@ -634,7 +610,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateSkillsByCandidateId($id)
     {
         return
@@ -644,7 +619,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateSkills($inputs)
     {
         $this->db->trans_start();
@@ -680,7 +654,6 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
     public function getCandidateVeteranByCandidateId($id)
     {
         return
@@ -690,7 +663,6 @@ class ModelProfile extends CI_Model
                 ->get()
                 ->result_array();
     }
-
     public function candidateUpdateVeteran($inputs)
     {
         $this->db->trans_start();
@@ -731,7 +703,47 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
+    public function candidateUpdatePromises($inputs){
+        $this->db->trans_start();
+        $this->db->delete('candidate_election_promise', array(
+            'CandidateId' => $inputs['inputCandidateId']
+        ));
+        if (isset($inputs['inputElectionPromise'])) {
+            for ($i = 0; $i < count($inputs['inputElectionPromise']);) {
+                $UserArray = array(
+                    'CandidateId' => $inputs['inputCandidateId'],
+                    'CandidateElectionPromise' => $inputs['inputElectionPromise'][$i]['value'],
+                );
+                $this->db->insert('candidate_election_promise', $UserArray);
+                $i = $i + 1;
+            }
+        }
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "بروزرسانی وعده های انتخاباتی با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "بروزرسانی وعده های انتخاباتی با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+    public function getCandidateElectionPromisesByCandidateId($id)
+    {
+        return
+            $this->db->select('*')
+                ->from('candidate_election_promise')
+                ->where('CandidateId', $id)
+                ->get()
+                ->result_array();
+    }
     public function getCandidateFinanceByCandidateId($id)
     {
         $data['BankAccount'] = $this->db->select('*')->from('candidate_price_bank_account')->where('CandidateId', $id)->get()->result_array();
@@ -745,7 +757,6 @@ class ModelProfile extends CI_Model
         $data['Vehicle'] = $this->db->select('*')->from('candidate_price_vehicle')->where('CandidateId', $id)->get()->result_array();
         return $data;
     }
-
     public function doChangePassword($inputs)
     {
         $this->db->select('*');
@@ -787,17 +798,14 @@ class ModelProfile extends CI_Model
         }
 
     }
-
     public function insertPayment($inputs)
     {
         $this->db->insert('candidate_exam_payment', $inputs);
     }
-
     public function getExamPaymentByPaymentToken($token)
     {
         return $this->db->select('*')->from('candidate_exam_payment')->where('PaymentToken', $token)->get()->result_array();
     }
-
     public function updateSuccessPayment($inputs, $paymentInfo)
     {
         $UserArray = array(
@@ -848,7 +856,5 @@ class ModelProfile extends CI_Model
             return $arr;
         }
     }
-
 }
-
 ?>
