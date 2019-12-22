@@ -1,11 +1,12 @@
 <?php
 $_URL = base_url();
 $_DIR = base_url('assets/ui/v4/');
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <title>پنل مدیریت</title>
-    <base href="<?php echo base_url(); ?>"/>
+    <base href="<?php echo base_url(); ?>" />
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
@@ -18,8 +19,7 @@ $_DIR = base_url('assets/ui/v4/');
     <link href="<?php echo base_url('assets/ui/v1/css/custom.css'); ?>" rel="stylesheet"/>
     <link href="<?php echo base_url('assets/ui/v1/css/responsive.css'); ?>" rel="stylesheet"/>
     <script type="text/javascript" src="<?php echo base_url('assets/ui/v1/js/jquery-2.1.4.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/ui/v1/js/iziToast.min.js'); ?>"></script>\
-    <script type="text/javascript"> var site_url = "<?php echo base_url(); ?>";</script>
+    <script type="text/javascript" src="<?php echo base_url('assets/ui/v1/js/iziToast.min.js'); ?>"></script>
     <script type="text/javascript">
         var base_url = "<?php echo base_url(); ?>Admin/";
         function toggleLoader() {
@@ -45,9 +45,6 @@ $_DIR = base_url('assets/ui/v4/');
             }, 400);
         }
     </script>
-
-
-
 </head>
 <body>
 <div class="container-fluid">
@@ -56,10 +53,8 @@ $_DIR = base_url('assets/ui/v4/');
             <form class="login-form validate-form ">
                 <img src="<?php echo $_DIR; ?>/images/main-logo.png" style="width: 100px ; text-align: center"/>
                 <span class="login-form-title p-b-34 p-t-27">
-                   ورود نماینده به حساب کاربری
+                   ورود مدیر به حساب کاربری
                </span>
-
-
                 <div class="wrap-input validate-input">
                     <input class="input" id="inputPhone" type="text" name="inputPhone" placeholder="شماره همراه">
                     <span class="focus-input " style="text-align: right"><img src="<?php echo $_DIR; ?>/images/call-answer.png"
