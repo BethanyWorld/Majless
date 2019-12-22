@@ -1079,6 +1079,7 @@ h2.blog-widget-title {
 @media (max-width: 992px) {
     .main-single-container {
         border-right: 0px solid #f8f8f8;
+        padding: 0px 0px;
     }
     .blog-detail-div {
         padding: 0px;
@@ -1088,11 +1089,17 @@ h2.blog-widget-title {
         padding: 0px;
         margin-top: 15px;
     }
+    .blog-contents-div{
+        padding: 0px;
+    }
+    .blog-contents-div .text-justify{
+        padding: 0px;
+    }
 }
 
 @media (max-width: 768px) {
 
     .blog-sidebar-box {
-        margin-right: -15px;
+        margin-right: 0px;
     }
 } /*for breadcrumb*/

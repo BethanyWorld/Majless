@@ -8,7 +8,7 @@
         <div class="row sidebar">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">تماس با ما</h3>
+                    <h3 class="panel-title responsive-font-size">تماس با ما</h3>
                 </div>
                 <div class="panel-body text-justify">
                     لطفاً جهت تسريع در امر پاسخگويی و برقراری ارتباط صحيح با بخش مورد نظر خود به موضوع ارتباط آن بخش
@@ -22,12 +22,12 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-12 col-md-9">
+    <div class="col-xs-12 col-md-9  responsive-padding-0">
         <input type="hidden" id="inputCSRF" name="inputCSRF" value="<?= $CSRF; ?>"/>
 
         <div class="panel panel-default">
             <div class="panel-heading social-panel-heading">
-                <h3 class="panel-title" style="color: #fff;padding-right: 10px;">ارتباط با ما در شبکه‌های اجتماعی و پیام‌رسان‌ها</h3>
+                <h3 class="panel-title responsive-font-size" style="color: #fff;padding-right: 10px;">ارتباط با ما در شبکه‌های اجتماعی و پیام‌رسان‌ها</h3>
             </div>
             <div class="panel-body text-justify contact-social-icon-div">
                 <div class="col-md-12 col-md-offset-0 col-xs-6 col-xs-offset-3 margin-b-10">
