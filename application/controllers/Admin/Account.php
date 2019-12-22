@@ -17,6 +17,7 @@ class Account extends CI_Controller{
     public function index()
     {
         $this->load->view('admin_panel/login/index');
+        $this->load->view('admin_panel/login/index_css');
         $this->load->view('admin_panel/login/index_js');
     }
 

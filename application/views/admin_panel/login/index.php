@@ -1,6 +1,6 @@
 <?php
 $_URL = base_url();
-$_DIR = base_url('assets/ui/');
+$_DIR = base_url('assets/ui/v4/');
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -18,17 +18,16 @@ $_DIR = base_url('assets/ui/');
     <link href="<?php echo base_url('assets/ui/v1/css/custom.css'); ?>" rel="stylesheet"/>
     <link href="<?php echo base_url('assets/ui/v1/css/responsive.css'); ?>" rel="stylesheet"/>
     <script type="text/javascript" src="<?php echo base_url('assets/ui/v1/js/jquery-2.1.4.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/ui/v1/js/iziToast.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/ui/v1/js/iziToast.min.js'); ?>"></script>\
+    <script type="text/javascript"> var site_url = "<?php echo base_url(); ?>";</script>
     <script type="text/javascript">
         var base_url = "<?php echo base_url(); ?>Admin/";
-
         function toggleLoader() {
             $(".preloader").fadeToggle();
         }
-
         function reCaptcha() {
             $(".recaptcha").addClass('fa-spin');
-            $src = $(".captcha_img").attr('src');
+            $src = $(".captcha").attr('src');
             $(".captcha_img").attr('src', '').css({
                 width: '100px',
                 height: '50px',
@@ -46,73 +45,58 @@ $_DIR = base_url('assets/ui/');
             }, 400);
         }
     </script>
+
+
+
 </head>
 <body>
-<?php
-$_URL = base_url();
-$_DIR = base_url('assets/ui/v1/');
-?>
-<!-- container-fluid -->
 <div class="container-fluid">
-    <div class="preloader">
-        <div class="sk-fading-circle">
-            <div class="sk-circle1 sk-circle"></div>
-            <div class="sk-circle2 sk-circle"></div>
-            <div class="sk-circle3 sk-circle"></div>
-            <div class="sk-circle4 sk-circle"></div>
-            <div class="sk-circle5 sk-circle"></div>
-            <div class="sk-circle6 sk-circle"></div>
-            <div class="sk-circle7 sk-circle"></div>
-            <div class="sk-circle8 sk-circle"></div>
-            <div class="sk-circle9 sk-circle"></div>
-            <div class="sk-circle10 sk-circle"></div>
-            <div class="sk-circle11 sk-circle"></div>
-            <div class="sk-circle12 sk-circle"></div>
-        </div>
-    </div>
-    <link rel="stylesheet" href="<?php echo $_DIR . 'css/page.css'; ?>"/>
+    <div class="container-login" style="background-color: #2b669a">
+        <div class="wrap-login" style="text-align: center ">
+            <form class="login-form validate-form ">
+                <img src="<?php echo $_DIR; ?>/images/main-logo.png" style="width: 100px ; text-align: center"/>
+                <span class="login-form-title p-b-34 p-t-27">
+                   ورود نماینده به حساب کاربری
+               </span>
 
-    <div class="col-xs-12" id="main-page-container-wrapper">
-        <div class="container">
-            <div id="loginForm" class="col-xs-12 col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-4 ">
-                <div class="login-wrap">
-                    <h2>ورود مدیر به حساب کاربری</h2>
-                    <div class="form">
-                        <div class="row col-xs-12 rtl">
-                            <label>شماره همراه</label>
-                            <input type="text" name="inputPhone" id="inputPhone" placeholder="شماره همراه" autofocus/>
-                        </div>
-                        <div class="row col-xs-12 rtl">
-                            <label>رمز عبور</label>
-                            <input type="password" name="inputPassword" id="inputPassword" placeholder="رمز عبور"/>
-                        </div>
 
-                        <div class="row form-group col-xs-12"
-                             style="padding-right: 20px !important;margin-bottom: 15px !important;">
-                            <div class="row text-right col-xs-12 pull-left">
-                                <label>کد امنیتی</label>
-                            </div>
-                            <div class="row text-right col-sm-6 col-xs-12 pull-left">
-                                <i class="fa fa-refresh recaptcha"
-                                   style="cursor: pointer;position: relative;top: -20px;right:-4px;"
-                                   id="recaptcha"></i>
-                                <img class="captcha_img" src="<?php echo base_url('GetCaptcha'); ?>"/>
-                            </div>
-                            <div class="row text-center col-sm-6 col-xs-12 pull-right">
-                                <input type="text" name="inputCaptcha" id="inputCaptcha" class="form-control"
-                                       placeholder="کد امنیتی" autofocus>
-                            </div>
+                <div class="wrap-input validate-input">
+                    <input class="input" id="inputPhone" type="text" name="inputPhone" placeholder="شماره همراه">
+                    <span class="focus-input " style="text-align: right"><img src="<?php echo $_DIR; ?>/images/call-answer.png"
+                          style="width: 7% ;padding-top: 13px ;padding-right: 8px ;"></span>
 
-                        </div>
-                        <div class="row col-xs-12 rtl">
-                            <button id="buttonLogin">ورود</button>
-                        </div>
+                </div>
+
+                <div class="wrap-input validate-input" >
+                    <input class="input" id="inputPassword" type="text" name="inputPassword" placeholder="رمز عبور">
+                    <span class="focus-input " style="text-align: right"><img src="<?php echo $_DIR; ?>/images/locked-padlock.png"
+                          style="width: 7% ;padding-top: 13px ;padding-right: 8px"></span>
+                </div>
+                <div class="form-group">
+                    <img class="refresh" src="<?php echo $_DIR; ?>/images/update-arrows%20(1).png" style="float:left">
+                    <img class="captcha" src="<?php echo base_url('GetCaptcha'); ?>" style="float:left">
+                    <div class="wrap-input-secode  " >
+                        <input class="input" id="inputCaptcha" type="text" name="inputCaptcha" placeholder="کد امنیتی">
+                        <span class="focus-input" data-placeholder=""></span>
                     </div>
                 </div>
-            </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="button">
+                        <span id="log">ورود</span><i style="width: 100% ;height: 32px;display: none" class="fa-li fa fa-spinner fa-spin"></i>
+                    </button>
+                </div>
+
+                <div class="text-center p-t-90">
+                    <a class="txt1" href="#">
+                        آیا رمز عبور خود را فراموش کرده اید؟
+                    </a>
+                </div>
+
+            </form>
         </div>
     </div>
+
 </div>
-<!-- container-fluid -->
 </body>
 </html>
