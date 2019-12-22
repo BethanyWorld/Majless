@@ -53,6 +53,13 @@ class Account extends CI_Controller{
         }
     }
 
+    //load view
+    public function resetPassword()
+    {
+        $this->load->view('admin_panel/reset_password/index');
+        $this->load->view('admin_panel/reset_password/index_css');
+        $this->load->view('admin_panel/reset_password/index_js');
+    }
     //logout admin
     //clear session is enough
     public function doLogOut()
