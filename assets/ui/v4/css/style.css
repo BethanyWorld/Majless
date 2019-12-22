@@ -83,6 +83,7 @@ table .fit {
     -webkit-animation: lazyloadeffect 1s infinite linear forwards;
     animation: lazyloadeffect 1s infinite linear forwards
 }
+
 #loading {
     background-color: rgba(0, 0, 0, .6);
     height: 100%;
@@ -5635,15 +5636,15 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
     line-height: 25px
 }
 
-
-@media (max-width: 992px){
+@media (max-width: 992px) {
     .hp-title-sections h1 {
         margin: 0;
         font-size: 35px;
         line-height: 90px;
     }
 }
-@media (max-width: 400px){
+
+@media (max-width: 400px) {
     .hp-title-sections h1 {
         margin: 0;
         font-size: 28px;

@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Candidate extends CI_Controller{
-
     public function __construct(){
         parent::__construct();
         $this->load->helper('admin/admin_login');
@@ -28,7 +27,6 @@ class Candidate extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
-
     public function edit($candidateId){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
@@ -60,6 +58,28 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/edit/index_css');
         $this->load->view('admin_panel/candidate/edit/index_js', $data);
         $this->load->view('admin_panel/static/footer');
+    }
+    public function printResume($candidateId){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+        $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
+        $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
+        $data['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($candidateId);
+        $data['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($candidateId);
+
+        $data['candidateBooks'] = $this->ModelProfile->getCandidateBooksByCandidateId($candidateId);
+        $data['candidateArticles'] = $this->ModelProfile->getCandidateArticlesByCandidateId($candidateId);
+        $data['candidateResearch'] = $this->ModelProfile->getCandidateResearchByCandidateId($candidateId);
+        $data['candidateTranslation'] = $this->ModelProfile->getCandidateTranslationByCandidateId($candidateId);
+        $data['candidateInvention'] = $this->ModelProfile->getCandidateInventionByCandidateId($candidateId);
+        $data['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($candidateId);
+        $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
+        $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
+
+        $this->load->view('admin_panel/candidate/print_resume/index', $data);
+        $this->load->view('admin_panel/candidate/print_resume/index_css');
     }
     public function doMarkCandidate()
     {

@@ -2524,7 +2524,7 @@ aside.widget_newsletterwidget input[type="submit"] {
 }
 
 @media (max-width: 992px) {
-    .form-control{
+    .form-control {
         margin-bottom: 15px;
     }
 }

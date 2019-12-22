@@ -23,8 +23,7 @@
         if (is_category()) {
             echo single_cat_title();
         } elseif (is_tag()) {
-            single_tag_title();
-            echo ' | ' . bloginfo('name');
+            echo single_tag_title();
         } elseif (is_archive()) {
             wp_title('');
         } elseif (is_search()) {

@@ -22,10 +22,10 @@
                     <div class="col-md-6 col-xs-12">
                         <div class="col-md-12 col-xs-12 blog-post-content">
                             <div class="blog-combine">
-                                <a href="<?= $permalink; ?>" target="_blank" class="blog-cat-link">
-                                    <?php echo get_the_category(get_the_ID())[0]->name; ?>
-                                </a>
-                                <h2>
+<!--                                <a href="--><?//= $permalink; ?><!--" target="_blank" class="blog-cat-link">-->
+<!--                                    --><?php //echo get_the_category(get_the_ID())[0]->name; ?>
+<!--                                </a>-->
+                                <h2 style="font-size: 16px;font-weight: 900;text-align: right;">
                                     <a href="<?= $permalink; ?>" target="_blank"><?= $title; ?></a>
                                 </h2>
                                 <span class="blog-post-meta">

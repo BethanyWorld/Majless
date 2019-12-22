@@ -177,14 +177,19 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                 </ul>
                             </li>
                             <li>
+                                <a href="<?php echo base_url('blog') ?>">اخبار و رویداد</a>
+                                <ul>
+                                    <li><a href="<?php echo base_url('blog/tag/اطلاعیه/'); ?>">اطلاعیه ها</a></li>
+                                    <li><a href="<?php echo base_url('blog'); ?>">بلاگ</a></li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a href="javascript:void(0)">همراهی با ما</a>
                                 <ul>
                                     <li><a href="<?php echo base_url('Payment'); ?>">حمایت از ما</a></li>
                                     <li><a href="<?php echo base_url('Payment'); ?>">حامیان و همراهان</a></li>
+                                    <li><a href="<?php echo base_url('ContactUs?type=contact') ?>">تماس با ما</a></li>
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url('ContactUs?type=contact') ?>">تماس با ما</a>
                             </li>
                             <?php if (!$userIsLogged) { ?>
                                 <li>

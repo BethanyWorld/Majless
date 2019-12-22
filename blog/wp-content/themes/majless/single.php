@@ -53,11 +53,11 @@ $news_comments = get_comments(
                     </div>
                 </div>
                 <div class="col-md-12 col-xs-12 blog-detail-desc-main-div">
-                    <p class="blog-categorized-text text-center">
-                        <a href="<?= get_category_link(get_the_category(get_the_ID())[0]->term_id); ?>">
-                            <?= get_the_category(get_the_ID())[0]->name; ?>
-                        </a>
-                    </p>
+<!--                    <p class="blog-categorized-text text-center">-->
+<!--                        <a href="--><?//= get_category_link(get_the_category(get_the_ID())[0]->term_id); ?><!--">-->
+<!--                            --><?//= get_the_category(get_the_ID())[0]->name; ?>
+<!--                        </a>-->
+<!--                    </p>-->
                     <a href="<?php the_permalink(); ?>" target="_blank">
                         <h1 class="blog-detail-title text-center"><?= the_title(); ?></h1>
                     </a>

@@ -141,7 +141,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #breadcrumbs, .info-line, .info-line a {
-    font-family: 'BYekan', "PT Sans";
+    font-family: iranyekan , 'BYekan', "PT Sans";
     text-align: left;
     text-transform: none;
     line-height: 20px;
@@ -235,7 +235,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #featured-image h2 {
-    font-family: 'BYekan', Lora;
+    font-family: iranyekan , 'BYekan', Lora;
     text-align: left;
     text-transform: none;
     line-height: 38px;
@@ -259,7 +259,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #featured-image h3 {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: left;
     text-transform: uppercase;
     line-height: 22px;
@@ -291,7 +291,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #promo {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: left;
     text-transform: uppercase;
     line-height: 33px;
@@ -364,7 +364,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #wide-footer {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: left;
     line-height: 32px;
     font-weight: 400;
@@ -387,7 +387,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #wide-footer h2 {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: left;
     text-transform: uppercase;
     line-height: 30px;
@@ -432,7 +432,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #main-footer {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: left;
     line-height: 18px;
     font-weight: 400;
@@ -455,7 +455,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #main-footer h3 {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: right;
     text-transform: uppercase;
     line-height: 30px;
@@ -500,7 +500,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #footer-navigation {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: left;
     line-height: 28px;
     font-weight: 400;
@@ -530,7 +530,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #primary-navigation > div > ul > li > a, #overlay-menu-holder span {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: center;
     text-transform: uppercase;
     line-height: 100px;
@@ -586,7 +586,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #primary-navigation div div li > a, #primary-navigation ul ul a {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: justify;
     text-transform: uppercase;
     line-height: 24px;
@@ -656,7 +656,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 body {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: left;
     line-height: 23px;
     font-weight: 400;
@@ -679,7 +679,7 @@ body {
 }
 
 h1 {
-    font-family: 'BYekan', Lora;
+    font-family: iranyekan , 'BYekan', Lora;
     text-align: left;
     line-height: 65px;
     font-weight: 400;
@@ -702,7 +702,7 @@ h1 {
 }
 
 h1.smaller {
-    font-family: 'BYekan', Lora;
+    font-family: iranyekan , 'BYekan', Lora;
     line-height: 45px;
     font-weight: 400;
     font-style: normal;
@@ -724,7 +724,7 @@ h1.smaller {
 }
 
 h2 {
-    font-family: 'BYekan', Lora;
+    font-family: iranyekan , 'BYekan', Lora;
     line-height: 40px;
     font-weight: 400;
     font-style: normal;
@@ -746,7 +746,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     line-height: 35px;
     font-weight: 400;
     font-style: normal;
@@ -768,7 +768,7 @@ h3 {
 }
 
 h4 {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     line-height: 30px;
     font-weight: 400;
     font-style: normal;
@@ -790,7 +790,7 @@ h4 {
 }
 
 h5 {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     line-height: 30px;
     font-weight: 400;
     font-style: normal;
@@ -812,7 +812,7 @@ h5 {
 }
 
 h6 {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     line-height: 30px;
     font-weight: 400;
     font-style: normal;
@@ -834,7 +834,7 @@ h6 {
 }
 
 .featured-image-holder.show-date .date-box {
-    font-family: 'BYekan', Oswald;
+    font-family: iranyekan , 'BYekan', Oswald;
     text-align: center;
     text-transform: uppercase;
     line-height: 36px;
@@ -858,7 +858,7 @@ h6 {
 }
 
 #secondary h3, .custom-sidebar-widget h3 {
-    font-family: 'BYekan', Lato;
+    font-family: iranyekan , 'BYekan', Lato;
     text-align: left;
     text-transform: uppercase;
     line-height: 30px;
@@ -882,7 +882,7 @@ h6 {
 }
 
 #secondary h4, .custom-sidebar-widget h4 {
-    font-family: 'BYekan', "PT Sans";
+    font-family: iranyekan , 'BYekan', "PT Sans";
     line-height: 25px;
     font-weight: 400;
     font-style: normal;
@@ -904,7 +904,7 @@ h6 {
 }
 
 #secondary, .custom-sidebar-widget {
-    font-family: 'BYekan', "PT Sans";
+    font-family: iranyekan , 'BYekan', "PT Sans";
     line-height: 20px;
     font-weight: 400;
     font-style: normal;
@@ -926,7 +926,7 @@ h6 {
 }
 
 .tb-primary-font {
-    font-family: 'BYekan', Lora;
+    font-family: iranyekan , 'BYekan', Lora;
     line-height: 21px;
     font-weight: 400;
     font-style: normal;
@@ -948,7 +948,7 @@ h6 {
 }
 
 .tb-secondary-font {
-    font-family: 'BYekan', Oswald;
+    font-family: iranyekan , 'BYekan', Oswald;
     line-height: 21px;
     font-weight: 400;
     font-style: normal;
@@ -970,7 +970,7 @@ h6 {
 }
 
 #tb-product-catalogue span.price, .woocommerce div.product span.price, .woocommerce div.product p.price, .woocommerce #content div.product span.price, .woocommerce #content div.product p.price, .woocommerce-page div.product span.price, .woocommerce-page div.product p.price, .woocommerce-page #content div.product span.price, .woocommerce-page #content div.product p.price {
-    font-family: 'BYekan', "PT Sans";
+    font-family: iranyekan , 'BYekan', "PT Sans";
     text-transform: uppercase;
     line-height: 24px;
     font-weight: 400;
@@ -993,7 +993,7 @@ h6 {
 }
 
 body div.product div#single-product-summary p.price, body div.product div#single-product-summary p.price span.amount {
-    font-family: 'BYekan', "PT Sans";
+    font-family: iranyekan , 'BYekan', "PT Sans";
     text-transform: uppercase;
     line-height: 44px;
     font-weight: 400;

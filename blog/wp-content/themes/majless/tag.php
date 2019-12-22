@@ -1,7 +1,7 @@
 <?php get_header();
 global $_URL, $_DIR; ?>
     <div class="page-caption">
-        هشتگ
+        برچسب
         "<?=single_cat_title(); ?>"
     </div>
     <div class="container container-wrapper">
