@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Profile extends CI_Controller{
-
     public function __construct()
     {
         parent::__construct();
@@ -1087,6 +1086,31 @@ class Profile extends CI_Controller{
                 /*******************************************************************************************************/
                 break;
         }
+    }
+    public function promises()
+    {
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'رزومه';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'سوابق ایثارگری';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/promises/index', $data);
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/promises/index_css');
+        $this->load->view('ui/v3/candidate_profile/home/candidate_resume/promises/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function candidateUpdatePromises()
+    {
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $result = $this->ModelProfile->candidateUpdatePromises($inputs);
+        echo json_encode($result);
     }
     public function support(){
         $loginInfo = $this->session->userdata('UserLoginInfo');

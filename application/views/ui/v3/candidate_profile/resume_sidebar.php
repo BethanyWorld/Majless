@@ -607,6 +607,19 @@
                         </div>
                     </a>
                 </li>
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "promises") !== false) echo "active"; ?>">
+                    <a href="<?php echo base_url('Profile/promises'); ?>">
+                        <i class="zmdi RightpanelIcon">
+                            <span class="fa fa-outdent"></span>
+                        </i>
+                        <div class="RightPanelContent">
+                            <div class="RightPanleTitle">وعده های انتخاباتی</div>
+                            <div class="RightPanelDescription">
+                                درج عده های انتخاباتی
+                            </div>
+                        </div>
+                    </a>
+                </li>
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/veteran'); ?>">
                         <i class="zmdi RightpanelIcon">
