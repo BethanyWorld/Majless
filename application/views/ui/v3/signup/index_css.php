@@ -62,7 +62,6 @@
 
     @media (max-width: 992px){
         .support-div{
-
             font-size: 12px;
         }
     }
