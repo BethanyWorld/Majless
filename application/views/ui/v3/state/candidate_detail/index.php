@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="row col-xs-12 col-md-9 pull-left">
+    <div class="row col-xs-12 col-md-9 pull-left responsive-style-auto-margin">
         <div class="row">
             <div class="col-xs-12">
                 <div class="alert alert-info text-center">
@@ -420,7 +420,7 @@
                         <div class="panel-heading">
                             مهارت ها
                         </div>
-                        <div class="panel-body skill-info-container">
+                        <div class="panel-body skill-info-container table-responsive">
                             <table class="table table-bordered table-condensed table-striped">
                                 <thead>
                                 <tr>

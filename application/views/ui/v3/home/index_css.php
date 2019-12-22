@@ -69,8 +69,7 @@
     .slick-slide a{
         outline: none;
     }
-</style>
-<style>
+
     .container-responsive-style {
         padding-top: 85px;
         padding-bottom: 85px;
@@ -86,7 +85,7 @@
 
     .slider-form-title-xs {
         color: #fff;
-        font-size: 20pt;
+        font-size: 18pt;
     }
 
     .response-background {
@@ -204,50 +203,6 @@
         color: #02275d;
     }
 
-    @media (max-width: 992px) {
-        .myBtn {
-            bottom: 5px;
-        }
-
-        .overlay {
-            width: 100%;
-        }
-
-        .slider-timer {
-            height: 3px;
-        }
-
-        .slider-form {
-            position: absolute;
-            z-index: 5;
-            left: 0px;
-            bottom: 10px;
-            margin: auto;
-            right: 0px;
-            text-align: center;
-            width: 50%;
-        }
-
-        .full-screen-icon {
-            bottom: 1.5%;
-        }
-
-        .slide-title h2 {
-            line-height: 40px;
-            padding: 0px 10px 0px 10px;
-        }
-
-        .right-text-slider {
-            position: relative;
-        }
-
-        .container-responsive-style {
-            min-height: calc(100vh - 390px);
-            padding-top: 5px;
-        }
-    }
-</style>
-<style>
     .tb-icon-box-description {
         padding-left: 5px;
         padding-right: 5px;
@@ -356,4 +311,55 @@
         width: 100%;
     }
 
+
+    @media (max-width: 992px) {
+        .slick-arrow{
+            display: none !important;
+        }
+        .myBtn {
+            bottom: 5px;
+        }
+
+        .overlay {
+            width: 100%;
+        }
+
+        .slider-timer {
+            height: 3px;
+        }
+
+        .slider-form {
+            position: absolute;
+            z-index: 5;
+            left: 0px;
+            bottom: 10px;
+            margin: auto;
+            right: 0px;
+            text-align: center;
+            width: 50%;
+        }
+
+        .full-screen-icon {
+            bottom: 1.5%;
+        }
+
+        .slide-title h2 {
+            line-height: 40px;
+            padding: 0px 10px 0px 10px;
+        }
+
+        .right-text-slider {
+            position: relative;
+        }
+
+        .container-responsive-style {
+            min-height: calc(100vh - 390px);
+            padding-top: 5px;
+        }
+        .tb-column.absolutecenter-stretch > div{
+            margin: auto;
+        }
+    }
 </style>
+
+

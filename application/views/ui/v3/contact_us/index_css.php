@@ -173,12 +173,18 @@
         margin-right: 5px;
     }
 
-    @media screen and (max-width: 992px) {
+    @media (max-width: 992px) {
         .contact-label-with-style .form-group label {
             min-width: 45px;
         }
         .response-margin-b{
             margin-bottom: 12px;
+        }
+        .responsive-padding-0{
+            padding: 0px;
+        }
+        .responsive-font-size{
+            font-size: 13px;
         }
     }
 </style>

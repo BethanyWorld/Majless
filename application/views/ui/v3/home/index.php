@@ -118,7 +118,7 @@
             <div class="container">
                 <div class="row">
                     <div class="form-wrapper contact-form hp-join-the-team-form campaign_form_default nolabels">
-                        <div class="hp-join-the-effort tbWow fadeInDown">
+                        <div class="hp-join-the-effort tbWow col-xs-12 fadeInDown">
                             <div class="fw-page-builder-content">
                                 <h1 class="text-center">
                                     <span class="slider-form-title-xs">برای ایرانی سربلند مشارکت کنید</span>

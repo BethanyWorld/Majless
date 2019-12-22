@@ -71,4 +71,28 @@
     .panel-default>.panel-heading {
          color: #fff;
      }
+
+    @media (max-width: 992px) {
+        .sidebar{
+            padding: 0px;
+            margin: auto;
+        }
+        .responsive-style-auto-margin{
+            padding: 0px;
+            margin: auto;
+        }
+        .mp-section{
+            padding: 0px;
+        }
+        .nav > li > a {
+            position: relative;
+            display: block;
+            font-weight: bold;
+            padding: 10px 4px;
+            font-size: 12px;
+        }
+        .panel-post{
+            overflow-y: scroll;
+        }
+    }
 </style>

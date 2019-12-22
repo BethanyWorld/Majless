@@ -1097,6 +1097,7 @@ class Profile extends CI_Controller{
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
+        $data['userInfo']['candidateElectionPromise'] = $this->ModelProfile->getCandidateElectionPromisesByCandidateId($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/promises/index', $data);

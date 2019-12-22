@@ -538,7 +538,7 @@
                     <div class="RightPanelContent">
                         <div class="RightPanleTitle"> نظام وظیفه</div>
                         <div class="RightPanelDescription">
-                            پایان خدمت , معافیت , مشمول
+                            پایان خدمت, معافیت,مشمول
                         </div>
                     </div>
                 </li>

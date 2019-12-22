@@ -53,11 +53,13 @@ $news_comments = get_comments(
                     </div>
                 </div>
                 <div class="col-md-12 col-xs-12 blog-detail-desc-main-div">
-<!--                    <p class="blog-categorized-text text-center">-->
-<!--                        <a href="--><?//= get_category_link(get_the_category(get_the_ID())[0]->term_id); ?><!--">-->
-<!--                            --><?//= get_the_category(get_the_ID())[0]->name; ?>
-<!--                        </a>-->
-<!--                    </p>-->
+                    <?php /*
+                                <!--                    <p class="blog-categorized-text text-center">-->
+                                <!--                        <a href="--><?//= get_category_link(get_the_category(get_the_ID())[0]->term_id); ?><!--">-->
+                                <!--                            --><?//= get_the_category(get_the_ID())[0]->name; ?>
+                                <!--                        </a>-->
+                                <!--                    </p>-->
+                    */ ?>
                     <a href="<?php the_permalink(); ?>" target="_blank">
                         <h1 class="blog-detail-title text-center"><?= the_title(); ?></h1>
                     </a>
@@ -77,7 +79,8 @@ $news_comments = get_comments(
                     </div>
                     <div class="col-xs-12 col-md-12 copy-link">
                         <span>لینک کوتاه:</span>
-                        <input class="copy" readonly type="text" value="<?= $_URL . '?p=' . get_the_ID(); ?>" id="myInput">
+                        <input class="copy" readonly type="text" value="<?= $_URL . '?p=' . get_the_ID(); ?>"
+                               id="myInput">
                         <button class="copy"><i class="fa fa-link"></i></button>
                         <span class="success-copy">لینک صفحه کپی شد</span>
                     </div>
@@ -146,13 +149,13 @@ $news_comments = get_comments(
 </div>
 <?php get_footer(); ?>
 <script>
-    $(document).ready(function(){
-        $(".copy").click(function(){
+    $(document).ready(function () {
+        $(".copy").click(function () {
             var copyText = $("#myInput");
             copyText.select();
             document.execCommand("copy");
             $(".success-copy").hide().fadeIn();
         });
-        $("table").css('width' , '100% !important').addClass('table table-bordered table-hover table-condensed').wrap('<div class="table-responsive"></div>');
+        $("table").css('width', '100% !important').addClass('table table-bordered table-hover table-condensed').wrap('<div class="table-responsive"></div>');
     });
 </script>

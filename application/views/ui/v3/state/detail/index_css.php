@@ -31,5 +31,15 @@
         box-shadow: 0px 0px 25px 0px #ccc;
     }
 
+    @media (max-width: 992px) {
+        .sidebar{
+            padding: 0px;
+            margin: auto;
+        }
+        .responsive-style-auto-margin{
+            padding: 0px;
+            margin: auto;
+        }
+    }
 
 </style>

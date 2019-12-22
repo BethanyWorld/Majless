@@ -307,7 +307,16 @@
         align-items: center;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     }
-
+    @media (max-width: 992px) {
+        .sidebar{
+            padding: 0px;
+            margin: auto;
+        }
+        .responsive-style-auto-margin{
+            padding: 0px;
+            margin: auto;
+        }
+    }
 
     /**/
 </style>
