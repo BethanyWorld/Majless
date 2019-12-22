@@ -39,7 +39,7 @@
         <?php } ?>
     </div>
 
-    <div class="row col-xs-12 col-md-9 pull-left">
+    <div class="row col-xs-12 col-md-9 pull-left responsive-style-auto-margin">
         <section class="state-news">
             <?php if (!empty($statePosts)) { ?>
                 <?php foreach ($statePosts as $statePost) { ?>

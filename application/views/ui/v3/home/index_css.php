@@ -86,7 +86,7 @@
 
     .slider-form-title-xs {
         color: #fff;
-        font-size: 20pt;
+        font-size: 18pt;
     }
 
     .response-background {

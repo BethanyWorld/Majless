@@ -967,22 +967,6 @@ h2.blog-widget-title {
 
 /*for right panel*/
 
-@media (max-width: 992px) {
-    .blog-detail-div {
-        padding: 0px;
-    }
-
-    .response-style-for-left-div {
-        padding: 0px;
-        margin-top: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .blog-sidebar-box {
-        margin-right: -15px;
-    }
-} /*for breadcrumb*/
 .breadcrumb {
     padding: 1px 20px;
     border-radius: 0;
@@ -1089,3 +1073,26 @@ h2.blog-widget-title {
     display: none;
     margin: 5px 0;
 }
+
+
+
+@media (max-width: 992px) {
+    .main-single-container {
+        border-right: 0px solid #f8f8f8;
+    }
+    .blog-detail-div {
+        padding: 0px;
+    }
+
+    .response-style-for-left-div {
+        padding: 0px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .blog-sidebar-box {
+        margin-right: -15px;
+    }
+} /*for breadcrumb*/

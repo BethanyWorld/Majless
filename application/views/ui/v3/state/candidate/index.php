@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="row col-xs-12 col-md-8 pull-left">
+    <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <section class="mp-section">
 
             <div class="row">
