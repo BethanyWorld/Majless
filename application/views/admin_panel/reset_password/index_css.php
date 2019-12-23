@@ -310,11 +310,13 @@
 
     }
     .refresh{
-        width:10%;
-
+        width:6%;
+        float:left;
+        margin-right: 14px;
+        padding-top: 9px;
         margin-bottom: 30px;
         cursor: pointer;
-        margin-right: 14px;
+
 
     }
     #input-code{
@@ -334,6 +336,9 @@
         width: 2.14285714em;
         top: .14285714em;
         text-align: center;
+        margin-top: 5px;
+        margin-left: 3px;
+
     }
 
     .fa {

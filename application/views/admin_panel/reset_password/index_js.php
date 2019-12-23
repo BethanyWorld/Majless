@@ -28,17 +28,17 @@
                     endLoading();
                     return;
                 }
-                $inputPasswordVal = $.trim($("#inputPassword").val());
-                $passReg = /^[0-9]{80}$/g;
-                if ($inputPasswordVal == '') {
-                    iziToast.info({
-                        position: "topCenter",
-                        title: 'رمز عبور نامعتبر است',
-                        // message: 'iziToast.info()'
-                    });
-                    endLoading();
-                    return;
-                }
+                // $inputPasswordVal = $.trim($("#inputPassword").val());
+                // $passReg = /^[0-9]{80}$/g;
+                // if ($inputPasswordVal == '') {
+                //     iziToast.info({
+                //         position: "topCenter",
+                //         title: 'رمز عبور نامعتبر است',
+                //         // message: 'iziToast.info()'
+                //     });
+                //     endLoading();
+                //     return;
+                // }
                 $inputCaptchaVal = $.trim($("#inputCaptcha").val());
                 $lencaptcha = $inputCaptchaVal.length;
                 if ($lencaptcha != 5) {
@@ -54,7 +54,7 @@
                 /* Send Request */
                 $sendData = {
                     'inputPhone': $inputPhoneVal,
-                    'inputPassword': $inputPasswordVal,
+                    // 'inputPassword': $inputPasswordVal,
                     'inputCaptcha': $inputCaptchaVal
                 }
                 $.ajax({
@@ -67,7 +67,7 @@
                             title: $result['content'],
                             color: $result['type'],
                             zindex: 2030,
-                            position: 'topLeft'
+                            position: 'topCenter'
                         });
                         if ($result['success']) {
                             setTimeout(function () {
