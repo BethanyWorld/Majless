@@ -1,21 +1,16 @@
 <script type="text/javascript">
     $(document).ready(function () {
-
-        function isLoading() {
+  function isLoading() {
             $(".fa-li").show();
             $("#log").hide();
         }
-
         function endLoading() {
             $(".fa-li").hide();
             $("#log").show();
         }
-
-
         $(".login100-form-btn").click(function (e) {
                 e.preventDefault();
                 isLoading();
-
                 /* Validation */
                 $inputPhoneVal = $.trim($("#inputPhone").val());
                 $mobileReg = /^[0][9][0-9][0-9]{8,8}$/g;
@@ -23,22 +18,10 @@
                     iziToast.info({
                         position: "topCenter",
                         title: 'تعداد کاراکتر تلفن همراه نامعتبر است',
-                        // message: 'iziToast.info()'
                     });
                     endLoading();
                     return;
                 }
-                // $inputPasswordVal = $.trim($("#inputPassword").val());
-                // $passReg = /^[0-9]{80}$/g;
-                // if ($inputPasswordVal == '') {
-                //     iziToast.info({
-                //         position: "topCenter",
-                //         title: 'رمز عبور نامعتبر است',
-                //         // message: 'iziToast.info()'
-                //     });
-                //     endLoading();
-                //     return;
-                // }
                 $inputCaptchaVal = $.trim($("#inputCaptcha").val());
                 $lencaptcha = $inputCaptchaVal.length;
                 if ($lencaptcha != 5) {
@@ -50,16 +33,14 @@
                     endLoading();
                     return;
                 }
-
                 /* Send Request */
                 $sendData = {
                     'inputPhone': $inputPhoneVal,
-                    // 'inputPassword': $inputPasswordVal,
                     'inputCaptcha': $inputCaptchaVal
                 }
                 $.ajax({
                     type: 'post',
-                    url: base_url + 'Account/doLogin',
+                    url: base_url + 'Account/doResetPassword',
                     data: $sendData,
                     success: function (data){
                         $result = jQuery.parseJSON(data);
@@ -71,7 +52,7 @@
                         });
                         if ($result['success']) {
                             setTimeout(function () {
-                                window.location.href = "<?php echo base_url('Admin/Home');  ?>";
+                                window.location.href = "<?php echo base_url('Admin/Account/');  ?>";
                             }, 2000);
                         }
                         endLoading();
@@ -88,9 +69,7 @@
                 });
 
 
-            }
-        );
-
+            });
         function reCaptcha() {
             $(".recaptcha").addClass('fa-spin');
             $src = $(".captcha").attr('src');
@@ -99,12 +78,9 @@
                 $(".refresh").removeClass('fa fa-spin');
             } , 1500);
         }
-
         $(".refresh").click(function () {
             $(this).addClass('fa fa-spin');
             reCaptcha();
         });
-
-
     });
 </script>

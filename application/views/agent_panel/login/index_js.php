@@ -15,19 +15,8 @@
         $(".login100-form-btn").click(function (e) {
                 e.preventDefault();
                 isLoading();
-
                 /* Validation */
                 $inputPhoneVal = $.trim($("#inputPhone").val());
-                $mobileReg = /^[0][9][0-9][0-9]{8,8}$/g;
-                if (!$mobileReg.test($inputPhoneVal)) {
-                    iziToast.info({
-                        position: "topCenter",
-                        title: 'تعداد کاراکتر تلفن همراه نامعتبر است',
-                        // message: 'iziToast.info()'
-                    });
-                    endLoading();
-                    return;
-                }
                 $inputPasswordVal = $.trim($("#inputPassword").val());
                 $passReg = /^[0-9]{80}$/g;
                 if ($inputPasswordVal == '') {
@@ -71,7 +60,7 @@
                         });
                         if ($result['success']) {
                             setTimeout(function () {
-                                window.location.href = "<?php echo base_url('Admin/Home');  ?>";
+                                window.location.href = "<?php echo base_url('Agent/Home');  ?>";
                             }, 2000);
                         }
                         endLoading();

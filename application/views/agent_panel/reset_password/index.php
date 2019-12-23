@@ -21,7 +21,7 @@ $_DIR = base_url('assets/ui/v4/');
     <script type="text/javascript" src="<?php echo base_url('assets/ui/v1/js/jquery-2.1.4.min.js'); ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/ui/v1/js/iziToast.min.js'); ?>"></script>
     <script type="text/javascript">
-        var base_url = "<?php echo base_url(); ?>Admin/";
+        var base_url = "<?php echo base_url(); ?>Agent/";
         function toggleLoader() {
             $(".preloader").fadeToggle();
         }
