@@ -1,74 +1,109 @@
 <style type="text/css">
-    .panel-post .panel-heading {
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        border-radius: 0;
-        text-align: center;
-        background: #2196f3;
+    .margin-t-20{
+        margin-top: 20px;
+    }
+    .print {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    #section-to-print {
+        direction: rtl;
+    }
+    #section-to-print input {
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0px;
+        background-color: transparent;
+    }
+    .padding-right-15{
+        padding-right: 15px;
+    }
+    .padding-0 {
+        padding: 0px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        float: right;
+    }
+    .RegistrationTypeDiv {
+        padding: 20px 0px 10px 0px;
+    }
+    .RegistrationTypeDiv .radio {
+        display: inline-block;
+    }
+    .form-group input {
+        transition: 0.3s linear;
+    }
+    .form-group input:focus {
+        border: 1px solid crimson;
+        box-shadow: 0 0 0 0;
+    }
+    #section-to-print .print-title {
+        margin-top: 40px;
+        margin-bottom: 0px;
+        background-color: #022D6D;
+        padding: 15px;
+        font-size: 15px;
         color: #fff;
+        width: 200px;
     }
-    .profile-card .profile-footer ul li {
-        border-bottom: 1px solid #eee;
-        padding: 4px 0;
-        display: inline-block;
-        width: 100%;
-        text-align: justify;
-        margin: 0 !important;
-        margin: 0 !important;
+    .title-hr{
+        border-color:#022d6d ;
+        margin-top: 0px;
     }
-    .profile-card .profile-footer ul li span {
-        float: none !important;
+    .fa-angle-double-left{
+        color:  #022D6D;;
     }
-    .skills .label {
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        -ms-border-radius: 0;
-        border-radius: 0;
-        margin: 2px 4px;
-        display: inline-block;
-        padding: 8px 4px;
-        white-space: unset;
-        line-height: 15px;
+    @media print {
+        body {
+            font-family: font1;
+        }
+        body * {
+            visibility: hidden;
+        }
+        #section-to-print * {
+            visibility: visible;
+            color: red;
+            font-size: 1.5rem;
+            background-color: red;
+        }
+        #section-to-print {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .print-title {
+            margin-top: 40px;
+            margin-bottom: 0px;
+            background-color: #022D6D;
+            padding: 15px;
+            font-size: 15px;
+            color: #fff;
+            width: 200px;
+        }
+        .title-hr{
+            border-color:#022d6d ;
+            margin-top: 0px;
+        }
     }
-    .card-about-me .body ul li .content {
-        margin-top: 10px;
-        color: #999;
-        font-size: 13px;
-        padding: 0 16px;
+    @page {
+        margin-top: 2cm;
+        margin-bottom: 2cm;
+        padding-left: 1cm;
+        padding-right: 1cm;
+        size: A4;
     }
-    .profile-card .profile-body .content-area p:last-child {
-        font-weight: 600;
-        color: #2196f3;
-        margin-top: 10px;
-        font-size: 1rem;
-    }
-    .card .header {
-        color: #555;
-        padding: 12px;
-        position: relative;
-        border-bottom: 1px solid rgba(204, 204, 204, 0.35);
-        text-align: center;
-        font-weight: 900;
-    }
-    .card .body {
-        font-size: 14px;
-        color: #555;
-        padding: 6px 0;
-        display: inline-block;
-        width: 100%;
-    }
-    .profile-card .profile-body .image-area img {
-        border: 3px solid #2196f3;
-        padding: 2px;
-        margin: 2px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        border-radius: 50%;
-        padding: 6px;
-    }
-    .profile-card .profile-header {
-        background-color: #2196f3;
-        padding: 42px 0;
+    @media (max-width:992px) {
+        #section-to-print .print-title{
+            margin-top: 40px;
+            margin-bottom: 0px;
+            background-color: #022D6D;
+            padding: 10px;
+            font-size: 14px;
+            color: #fff;
+            width: 150px;
+        }
     }
 </style>

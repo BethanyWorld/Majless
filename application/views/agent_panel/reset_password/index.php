@@ -53,7 +53,7 @@ $_DIR = base_url('assets/ui/v4/');
             <form class="login-form validate-form ">
                 <img src="<?php echo $_DIR; ?>/images/main-logo.png" style="width: 100px ; text-align: center"/>
                 <span class="login-form-title p-b-34 p-t-27">
-                   ورود مدیر به حساب کاربری
+                  بازیابی رمز عبور
                </span>
                 <div class="wrap-input validate-input">
                     <input class="input" id="inputPhone" type="text" name="inputPhone" placeholder="شماره همراه">
@@ -61,18 +61,18 @@ $_DIR = base_url('assets/ui/v4/');
                           style="width: 7% ;padding-top: 13px ;padding-right: 8px ;"></span>
 
                 </div>
-
-                <div class="wrap-input validate-input" >
-                    <input class="input" id="inputPassword" type="text" name="inputPassword" placeholder="رمز عبور">
-                    <span class="focus-input " style="text-align: right"><img src="<?php echo $_DIR; ?>/images/locked-padlock.png"
-                          style="width: 7% ;padding-top: 13px ;padding-right: 8px"></span>
-                </div>
+<!---->
+<!--                <div class="wrap-input validate-input" >-->
+<!--                    <input class="input" id="inputPassword" type="text" name="inputPassword" placeholder="رمز عبور">-->
+<!--                    <span class="focus-input " style="text-align: right"><img src="--><?php //echo $_DIR; ?><!--/images/locked-padlock.png"-->
+<!--                          style="width: 7% ;padding-top: 13px ;padding-right: 8px"></span>-->
+<!--                </div>-->
                 <div class="form-group">
-                    <img class="refresh" src="<?php echo $_DIR; ?>/images/update-arrows%20(1).png" style="float:left">
+                    <img class="refresh" src="<?php echo $_DIR; ?>/images/update-arrows%20(1).png" >
                     <img class="captcha" src="<?php echo base_url('GetCaptcha'); ?>" style="float:left">
                     <div class="wrap-input-secode  " >
                         <input class="input" id="inputCaptcha" type="text" name="inputCaptcha" placeholder="کد امنیتی">
-                        <span class="focus-input" data-placeholder=""></span>
+
                     </div>
                 </div>
 
@@ -81,12 +81,12 @@ $_DIR = base_url('assets/ui/v4/');
                         <span id="log">ورود</span><i style="width: 100% ;height: 32px;display: none" class="fa-li fa fa-spinner fa-spin"></i>
                     </button>
                 </div>
-
-                <div class="text-center p-t-90">
-                    <a class="txt1" href="http://localhost:8080/Majless/Admin/Account/resetPassword">
-                        آیا رمز عبور خود را فراموش کرده اید؟
-                    </a>
-                </div>
+<!---->
+<!--                <div class="text-center p-t-90">-->
+<!--                    <a class="txt1" href="#">-->
+<!--                        آیا رمز عبور خود را فراموش کرده اید؟-->
+<!--                    </a>-->
+<!--                </div>-->
 
             </form>
         </div>

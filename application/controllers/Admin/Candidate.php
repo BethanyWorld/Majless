@@ -60,8 +60,6 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/static/footer');
     }
     public function printResume($candidateId){
-        $data['noImg'] = $this->config->item('defaultImage');
-        $data['gifLoader'] = $this->config->item('gifLoader');
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
         $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
@@ -80,6 +78,7 @@ class Candidate extends CI_Controller{
 
         $this->load->view('admin_panel/candidate/print_resume/index', $data);
         $this->load->view('admin_panel/candidate/print_resume/index_css');
+        $this->load->view('admin_panel/candidate/print_resume/index_js');
     }
     public function doMarkCandidate()
     {

@@ -338,6 +338,7 @@
         text-align: center;
         margin-top: 5px;
         margin-left: 3px;
+
     }
 
     .fa {
