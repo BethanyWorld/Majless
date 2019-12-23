@@ -78,15 +78,15 @@ $_DIR = base_url('assets/ui/v4/');
 
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn" type="button">
-                        <span id="log">ورود</span><i style="width: 100% ;height: 32px;display: none" class="fa-li fa fa-spinner fa-spin"></i>
+                        <span id="log">بازیابی</span><i style="width: 100% ;height: 32px;display: none" class="fa-li fa fa-spinner fa-spin"></i>
                     </button>
                 </div>
-<!---->
-<!--                <div class="text-center p-t-90">-->
-<!--                    <a class="txt1" href="#">-->
-<!--                        آیا رمز عبور خود را فراموش کرده اید؟-->
-<!--                    </a>-->
-<!--                </div>-->
+
+                <div class="text-center p-t-90">
+                    <a class="txt1" href="http://localhost:8080/Majless/Agent/Account/" style="font-size: 14px">
+                        ورود
+                    </a>
+                </div>
 
             </form>
         </div>

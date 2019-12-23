@@ -83,7 +83,7 @@ $_DIR = base_url('assets/ui/v4/');
                 </div>
 
                 <div class="text-center p-t-90">
-                    <a class="txt1" href="http://localhost:8080/Majless/Admin/Account/resetPassword">
+                    <a class="txt1" href="http://localhost:8080/Majless/Agent/Account/resetPassword">
                         آیا رمز عبور خود را فراموش کرده اید؟
                     </a>
                 </div>

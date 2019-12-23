@@ -288,7 +288,7 @@
         position: relative;
         z-index: 1;
         border: none;
-        font-weight: 800;
+        
         float: left;
 
     }
