@@ -1,8 +1,8 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
     .login-wrap {
-         background: rgba(255, 255, 255, 0.9);
-     }
+        background: rgba(255, 255, 255, 0.9);
+    }
 
 
     * {
@@ -23,7 +23,7 @@
     }
     a {
 
-        font-size: 16px;
+        font-size: 12px;
         line-height: 1.7;
         color: #FFFFFF;
         margin: 0px;
@@ -31,6 +31,8 @@
         -webkit-transition: all 0.4s;
         -o-transition: all 0.4s;
         -moz-transition: all 0.4s;
+        float: right;
+        margin-top: -30px;
     }
 
     a:focus {
@@ -261,8 +263,9 @@
     }
     .container-login100-form-btn {
         width: 100%;
-        display: flex;
-        justify-content: center;
+        /*display: flex;*/
+        /*justify-content: center;*/
+
     }
     .login100-form-btn:focus,
     .login100-form-btn:hover{
@@ -286,6 +289,7 @@
         z-index: 1;
         border: none;
         font-weight: 800;
+        float: left;
 
     }
 
@@ -338,7 +342,6 @@
         text-align: center;
         margin-top: 5px;
         margin-left: 3px;
-
     }
 
     .fa {
