@@ -19,3 +19,4 @@ application/logs/*
 application/config/database.php
 .idea/workspace.xml
 .idea/dataSources.local.xml
+.idea/workspace.xml
