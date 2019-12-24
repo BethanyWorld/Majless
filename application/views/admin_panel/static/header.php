@@ -211,6 +211,21 @@ $CI =& get_instance();
                         </li>
                     </ul>
                 </li>
+                <li <?php echo $CI->uri->segment(2) == 'Candidate/special' ? 'class="active"' : '' ?> >
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">bookmark</i>
+                        <span>نامزد های ویژه</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li <?php if (strpos($CI->uri->uri_string, '/Candidate/special') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Candidate/special'); ?>"
+                               class="waves-effect waves-block">فهرست</a>
+                        </li>
+                        <li <?php if (strpos($CI->uri->uri_string, '/Candidate/specialAdd') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Candidate/specialAdd'); ?>" class="waves-effect waves-block">افزودن</a>
+                        </li>
+                    </ul>
+                </li>
                 <li <?php echo $CI->uri->segment(2) == 'ExamPlaces' ? 'class="active"' : '' ?> >
                     <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
                         <i class="material-icons">bookmark</i>

@@ -286,4 +286,87 @@ class Candidate extends CI_Controller{
         echo json_encode($result);
 
     }
+
+
+    /*Admin Special Candidates*/
+    public function special(){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = 'نامزد های انتخاباتی';
+        $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
+        $data['states'] = $this->ModelCountry->getStateList();
+
+        $this->load->view('admin_panel/static/header', $data);
+        $this->load->view('admin_panel/candidate_special/home/index');
+        $this->load->view('admin_panel/candidate_special/home/index_css');
+        $this->load->view('admin_panel/candidate_special/home/index_js');
+        $this->load->view('admin_panel/static/footer');
+    }
+    public function specialAdd(){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = 'نامزد های انتخاباتی';
+        $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
+        $data['states'] = $this->ModelCountry->getStateList();
+
+        $this->load->view('admin_panel/static/header', $data);
+        $this->load->view('admin_panel/candidate_special/add/index');
+        $this->load->view('admin_panel/candidate_special/add/index_css');
+        $this->load->view('admin_panel/candidate_special/add/index_js');
+        $this->load->view('admin_panel/static/footer');
+    }
+    public function doSpecialAdd()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            if(!is_array($v)){
+                return strip_tags($v);
+            }
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $inputs['inputCandidateCode'] = rand(10000,99999);
+        $result = $this->ModelCandidate->doSpecialAdd($inputs);
+        echo json_encode($result);
+    }
+    public function specialEdit($rowId){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = 'نامزد های انتخاباتی';
+        $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
+        $data['states'] = $this->ModelCountry->getStateList();
+        $data['candidate'] = $this->ModelCandidate->getCandidateSpecialByCandidateId($rowId);
+        $this->load->view('admin_panel/static/header', $data);
+        $this->load->view('admin_panel/candidate_special/edit/index');
+        $this->load->view('admin_panel/candidate_special/edit/index_css');
+        $this->load->view('admin_panel/candidate_special/edit/index_js');
+        $this->load->view('admin_panel/static/footer');
+    }
+    public function doEditCandidateSpecial()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            if(!is_array($v)){
+                return strip_tags($v);
+            }
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelCandidate->doEditCandidateSpecial($inputs);
+        echo json_encode($result);
+    }
+    public function doSpecialPagination(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $data = $this->ModelCandidate->getCandidateSpecial($inputs);
+        $data['htmlResult'] = $this->load->view('admin_panel/candidate_special/home/pagination', $data, TRUE);
+        unset($data['data']);
+        echo json_encode($data);
+    }
+    /*End Admin Special Candidates*/
+
 }

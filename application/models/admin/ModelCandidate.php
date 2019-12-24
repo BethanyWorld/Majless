@@ -1,7 +1,5 @@
 <?php
-
-class ModelCandidate extends CI_Model
-{
+class ModelCandidate extends CI_Model{
     public function getCandidate($inputs)
     {
         $limit = $inputs['pageIndex'];
@@ -43,6 +41,7 @@ class ModelCandidate extends CI_Model
         }
         return $result;
     }
+
 
     public function getCandidateRolesByCandidateId($candidateId)
     {
@@ -894,6 +893,132 @@ class ModelCandidate extends CI_Model
         }
         return array();
     }
+
+
+
+    public function getCandidateSpecial($inputs)
+    {
+        $limit = $inputs['pageIndex'];
+        $start = ($limit - 1) * $this->config->item('defaultPageSize');
+        $end = $this->config->item('defaultPageSize');
+        $this->db->select('*');
+        $this->db->from('candidate_special');
+        $this->db->join('state', 'candidate_special.CandidateStateId = state.StateId');
+        $this->db->order_by('RowId', 'ASC');
+
+        if (!empty($inputs['inputCandidateState'])) {
+            $this->db->where('CandidateStateId', $inputs['inputCandidateState']);
+        }
+
+        if (!empty($inputs['inputCandidateFullName'])) {
+            $this->db->like('CandidateFirstName', $inputs['inputCandidateFullName']);
+            $this->db->or_like('CandidateLastName', $inputs['inputCandidateFullName']);
+        }
+
+
+        $tempDb = clone $this->db;
+        $result['count'] = $tempDb->get()->num_rows();
+
+        $this->db->limit($end, $start);
+        $query = $this->db->get()->result_array();
+        if (count($query) > 0) {
+            $result['data'] = $query;
+            $result['startPage'] = $start;
+        } else {
+            $result['data'] = false;
+        }
+        return $result;
+    }
+    public function getCandidateSpecialByCandidateId($rowId){
+        $this->db->select('*');
+        $this->db->from('candidate_special');
+        $this->db->where(array('RowId' => $rowId));
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array()[0];
+            return $result;
+        }
+        return array();
+    }
+    public function doSpecialAdd($inputs)
+    {
+        $this->db->trans_start();
+        $UserArray = array(
+            'CandidateCode' => $inputs['inputCandidateCode'],
+            'CandidateFirstName ' => $inputs['inputCandidateFirstName'],
+            'CandidateLastName' => $inputs['inputCandidateLastName'],
+            'CandidateStateId' => $inputs['inputCandidateStateId'],
+            'CandidateProfileImage' =>  $inputs['inputCandidateProfileImage']
+        );
+        $this->db->insert('candidate_special', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "درج نامزد ویژه با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "درج نامزد ویژه با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+    public function doEditCandidateSpecial($inputs){
+        $this->db->trans_start();
+        $UserArray = array(
+            'CandidateFirstName ' => $inputs['inputCandidateFirstName'],
+            'CandidateLastName' => $inputs['inputCandidateLastName'],
+            'CandidateStateId' => $inputs['inputCandidateStateId'],
+            'CandidateProfileImage' =>  $inputs['inputCandidateProfileImage']
+        );
+        $this->db->where('RowId', $inputs['inputRowId']);
+        $this->db->update('candidate_special', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "ویرایش نامزد ویژه با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "ویرایش نامزد ویژه با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+    public function doDeleteCandidateSpecial($inputs){
+        $this->db->trans_start();
+        $this->db->delete('candidate_special', array(
+            'CandidateCode' => $inputs['inputCandidateCode']
+        ));
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "حذف نامرد ویژه با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "حذف نامرد ویژه با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
+
 
 }
 
