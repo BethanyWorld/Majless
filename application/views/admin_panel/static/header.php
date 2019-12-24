@@ -271,6 +271,13 @@ $CI =& get_instance();
                         <span>گزارش  ثبت نام</span>
                     </a>
                 </li>
+                <li <?php if (strpos($CI->uri->uri_string, 'Admin/Reports') !== false) echo "class='active'"; ?>>
+                    <a
+                            href="<?php echo base_url('Admin/Reports'); ?>">
+                        <i class="material-icons">person</i>
+                        <span>گزارش گیری</span>
+                    </a>
+                </li>
                 <li <?php if (strpos($CI->uri->uri_string, 'Admin/Profile') !== false) echo "class='active'"; ?>>
                     <a
                             href="<?php echo base_url('Admin/Profile'); ?>">
