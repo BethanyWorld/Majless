@@ -179,6 +179,7 @@
         }
         .response-margin-b{
             margin-bottom: 12px;
+            padding: 0px;
         }
         .responsive-padding-0{
             padding: 0px;

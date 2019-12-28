@@ -5642,6 +5642,9 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
         font-size: 35px;
         line-height: 90px;
     }
+    #hp-the-issues-list .tb-icon-box{
+        width: 80%;
+    }
 }
 
 @media (max-width: 400px) {
