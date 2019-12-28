@@ -1,6 +1,4 @@
 <?php
-
-
 class ModelCountry extends CI_Model
 {
 
@@ -27,7 +25,6 @@ class ModelCountry extends CI_Model
         $arr = array();
         return $arr;
     }
-
     public function getStateById($stateId)
     {
         $this->db->select('*');
@@ -40,7 +37,6 @@ class ModelCountry extends CI_Model
         $arr = array();
         return $arr;
     }
-
     public function getCityByStateId($stateId)
     {
         $this->db->select('*');
@@ -53,7 +49,6 @@ class ModelCountry extends CI_Model
         $arr = array();
         return $arr;
     }
-
     /* For Admin Panel*/
     public function getStates($inputs)
     {
@@ -80,7 +75,6 @@ class ModelCountry extends CI_Model
         }
         return $result;
     }
-
     public function getStateByStateId($stateId)
     {
         $this->db->select('*');
@@ -93,7 +87,6 @@ class ModelCountry extends CI_Model
         $arr = array();
         return $arr;
     }
-
     public function getStateCitiesByStateId($stateId)
     {
         $this->db->select('*');
@@ -106,7 +99,6 @@ class ModelCountry extends CI_Model
         $arr = array();
         return $arr;
     }
-
     public function getStateIdByStateName($stateName)
     {
         $this->db->select('*');
@@ -119,7 +111,6 @@ class ModelCountry extends CI_Model
         $arr = array();
         return $arr;
     }
-
     public function getStateCityIdByCityName($cityName)
     {
         $this->db->select('*');
@@ -132,7 +123,6 @@ class ModelCountry extends CI_Model
         $arr = array();
         return $arr;
     }
-
     public function getElectionIdByCityId($electionCityId)
     {
         $this->db->select('*');
@@ -145,7 +135,6 @@ class ModelCountry extends CI_Model
         $arr = array();
         return $arr;
     }
-
     public function doEditState($inputs)
     {
         $UserArray = array(
@@ -171,7 +160,6 @@ class ModelCountry extends CI_Model
             return $arr;
         }
     }
-
     public function doAddStateCity($inputs)
     {
         $UserArray = array(
@@ -197,7 +185,6 @@ class ModelCountry extends CI_Model
             return $arr;
         }
     }
-
     public function doEditStateCity($inputs)
     {
         $UserArray = array(
@@ -223,7 +210,6 @@ class ModelCountry extends CI_Model
             return $arr;
         }
     }
-
     public function doDeleteStateCity($inputs)
     {
         $this->db->trans_start();
@@ -250,7 +236,6 @@ class ModelCountry extends CI_Model
 
 
     }
-
     public function getElections($inputs)
     {
         $limit = $inputs['pageIndex'];
@@ -277,7 +262,6 @@ class ModelCountry extends CI_Model
         }
         return $result;
     }
-
     public function doAddElection($inputs)
     {
         $UserArray = array(
@@ -311,7 +295,6 @@ class ModelCountry extends CI_Model
             return $arr;
         }
     }
-
     public function doEditElection($inputs)
     {
         $UserArray = array(
@@ -350,7 +333,6 @@ class ModelCountry extends CI_Model
             return $arr;
         }
     }
-
     public function doDeleteElection($inputs)
     {
         $this->db->trans_start();
@@ -379,7 +361,6 @@ class ModelCountry extends CI_Model
 
 
     }
-
     public function getElectionInfo($electionId)
     {
         $this->db->select('*');
@@ -395,7 +376,6 @@ class ModelCountry extends CI_Model
         $result['electionCities'] = $this->db->get()->result_array();
         return $result;
     }
-
     public function getElectionsByStateId($stateId)
     {
         $this->db->select('*');
@@ -407,10 +387,6 @@ class ModelCountry extends CI_Model
         }
         return array();
     }
-
     /* End For Admin Panel*/
-
-
 }
-
 ?>

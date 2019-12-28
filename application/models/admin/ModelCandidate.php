@@ -41,8 +41,6 @@ class ModelCandidate extends CI_Model{
         }
         return $result;
     }
-
-
     public function getCandidateRolesByCandidateId($candidateId)
     {
         $this->db->select('*');
@@ -50,7 +48,6 @@ class ModelCandidate extends CI_Model{
         $this->db->where(array('CandidateId' => $candidateId));
         return $this->db->get()->result_array();
     }
-
     public function getCandidateByCandidateId($candidateId)
     {
         $this->db->select('*');
@@ -75,7 +72,6 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
-
     public function getCandidateByCandidateNationalCode($CandidateNationalCode)
     {
         /*$this->db->select('*');
@@ -97,7 +93,6 @@ class ModelCandidate extends CI_Model{
         $arr = array();
         return $arr;
     }
-
     public function doImportScores($inputs)
     {
         $this->db->trans_start();
@@ -127,7 +122,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function getResumeStatus($inputs)
     {
         $isComplete = "";
@@ -292,7 +286,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     /* For Candidate News */
     public function getCandidateCandidatePostByCandidateId($candidateId)
     {
@@ -311,7 +304,6 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
-
     /* End For Candidate News  */
     public function getCandidateByStateId($stateId)
     {
@@ -327,7 +319,6 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-
     public function getCandidateByStateIdAndCityId($stateId, $cityId)
     {
         $this->db->select('*');
@@ -342,7 +333,6 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-
     public function getCandidateByStateName($stateName)
     {
         $this->db->select('*');
@@ -356,7 +346,6 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-
     public function getCandidatesByElectionId($electionId)
     {
         $this->db->select('*');
@@ -370,7 +359,6 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-
     /* Candidate Panel */
     public function candidateHasOtherConditionToContinue($inputs)
     {
@@ -431,7 +419,6 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
-
     public function getCandidateFirstStepExamByCandidateId($id)
     {
         $this->db->select('*');
@@ -451,7 +438,6 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-
     public function getCandidateSecondStepExamByCandidateId($id)
     {
         $this->db->select('*');
@@ -471,7 +457,6 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-
     public function getCandidateEvaluationExamByCandidateId($id)
     {
         $this->db->select('*');
@@ -491,7 +476,6 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-
     public function doMarkCandidate($inputs)
     {
         $UserArray = array(
@@ -520,7 +504,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function doUpdateMarkCandidate($inputs)
     {
         $UserArray = array(
@@ -548,7 +531,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function candidateReserveExam($inputs)
     {
         $candidateId = $this->session->userdata('UserLoginInfo')['CandidateId'];
@@ -646,7 +628,6 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
-
     public function doAcceptCandidateFirstExam($inputs)
     {
         $candidateInfo = $this->getCandidateByCandidateId($inputs['inputCandidateId']);
@@ -696,7 +677,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function doRejectCandidateFirstExam($inputs)
     {
         $UserArray = array(
@@ -724,7 +704,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function doAcceptCandidateSecondExam($inputs)
     {
         $userStatusArray = array(
@@ -767,7 +746,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function doRejectCandidateSecondExam($inputs)
     {
         $UserArray = array(
@@ -795,7 +773,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function doAcceptEvaluationExam($inputs)
     {
         $userStatusArray = array(
@@ -838,7 +815,6 @@ class ModelCandidate extends CI_Model{
 
 
     }
-
     public function doRejectEvaluationExam($inputs)
     {
         $UserArray = array(
@@ -894,8 +870,6 @@ class ModelCandidate extends CI_Model{
         return array();
     }
 
-
-
     public function getCandidateSpecial($inputs)
     {
         $limit = $inputs['pageIndex'];
@@ -948,7 +922,9 @@ class ModelCandidate extends CI_Model{
             'CandidateFirstName ' => $inputs['inputCandidateFirstName'],
             'CandidateLastName' => $inputs['inputCandidateLastName'],
             'CandidateStateId' => $inputs['inputCandidateStateId'],
-            'CandidateProfileImage' =>  $inputs['inputCandidateProfileImage']
+            'CandidateElectionId' => $inputs['inputCandidateElectionId'],
+            'CandidateProfileImage' =>  $inputs['inputCandidateProfileImage'],
+            'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
         );
         $this->db->insert('candidate_special', $UserArray);
         $this->db->trans_complete();
@@ -970,12 +946,25 @@ class ModelCandidate extends CI_Model{
     }
     public function doEditCandidateSpecial($inputs){
         $this->db->trans_start();
-        $UserArray = array(
-            'CandidateFirstName ' => $inputs['inputCandidateFirstName'],
-            'CandidateLastName' => $inputs['inputCandidateLastName'],
-            'CandidateStateId' => $inputs['inputCandidateStateId'],
-            'CandidateProfileImage' =>  $inputs['inputCandidateProfileImage']
-        );
+        if($inputs['inputCandidateProfileImage'] != ""){
+            $UserArray = array(
+                'CandidateFirstName ' => $inputs['inputCandidateFirstName'],
+                'CandidateLastName' => $inputs['inputCandidateLastName'],
+                'CandidateStateId' => $inputs['inputCandidateStateId'],
+                'CandidateElectionId' => $inputs['inputCandidateElectionId'],
+                'CandidateProfileImage' =>  $inputs['inputCandidateProfileImage'],
+                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+            );
+        }
+        else{
+            $UserArray = array(
+                'CandidateFirstName ' => $inputs['inputCandidateFirstName'],
+                'CandidateLastName' => $inputs['inputCandidateLastName'],
+                'CandidateStateId' => $inputs['inputCandidateStateId'],
+                'CandidateElectionId' => $inputs['inputCandidateElectionId'],
+                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+            );
+        }
         $this->db->where('RowId', $inputs['inputRowId']);
         $this->db->update('candidate_special', $UserArray);
         $this->db->trans_complete();
@@ -1018,8 +1007,5 @@ class ModelCandidate extends CI_Model{
         }
     }
 
-
-
 }
-
 ?>

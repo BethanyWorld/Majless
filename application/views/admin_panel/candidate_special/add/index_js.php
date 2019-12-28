@@ -20,13 +20,15 @@
                     $inputCandidateLastName = $.trim($("#inputCandidateLastName").val());
                     $inputCandidateImage = $result['fileSrc'];
                     $inputCandidateStateId = $.trim($("#inputCandidateStateId").val());
+                    $inputCandidateElectionId = $.trim($("#inputCandidateElectionId").val());
                     /* End Validation */
                     toggleLoader();
                     $sendData = {
                         'inputCandidateFirstName': $inputCandidateFirstName,
                         'inputCandidateLastName': $inputCandidateLastName,
                         'inputCandidateProfileImage': $inputCandidateImage,
-                        'inputCandidateStateId': $inputCandidateStateId
+                        'inputCandidateStateId': $inputCandidateStateId,
+                        'inputCandidateElectionId': $inputCandidateElectionId
                     }
                     $.ajax({
                         type: 'post',
@@ -51,5 +53,30 @@
             });
         });
         /* End Update User Info */
+        $('#inputCandidateStateId').change(function(){
+            toggleLoader();
+            $("#inputCandidateCityId").html('');
+            $stateId = $(this).val();
+            $.ajax({
+                type: 'post',
+                url: "<?php echo base_url(); ?>" + 'State/getElectionsByStateId/'+$stateId,
+                success: function (data) {
+                    toggleLoader();
+                    $result = jQuery.parseJSON(data);
+                    for(let i=0;i<$result.length;i++){
+                        $("#inputCandidateElectionId").append('<option value="'+$result[i].ElectionId+'">'+$result[i].ElectionName+'</option>');
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    iziToast.show({
+                        title: 'خطای ارتباط با سرور.دقایقی دیگر تلاش کنید',
+                        color: 'red',
+                        zindex: 9060,
+                        position: 'topLeft'
+                    });
+                    toggleLoader();
+                }
+            });
+        });
     });
 </script>

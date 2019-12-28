@@ -5,7 +5,7 @@
             <div class="col-xs-12 rtl">
                 <div class="row col-xs-12 card">
                     <div class="body">
-                        <div  class="col-xs-12">
+                        <div class="col-xs-12">
                             <div class="col-xs-12 col-sm-6 col-md-3">
                                 <input type="hidden" class="form-control"
                                        value="<?php echo $candidate['RowId']; ?>"
@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-4 col-md-3" id="step2">
+                            <div class="col-xs-12 col-sm-4 col-md-2">
                                 <label for="inputExamPlaceMapImage">تصویر محل آزمون</label>
                                 <div class="form-group">
                                     <div class="form-line">
@@ -40,18 +40,18 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="col-xs-12 col-sm-4 col-md-2">
                                 <label for="inputCandidateStateId">استان</label>
                                 <div class="form-group">
                                     <div class="form-group">
                                         <div class="form-line">
                                             <select name="inputCandidateStateId" id="inputCandidateStateId"
+                                                    data-election-id="<?php echo $candidate['CandidateElectionId']; ?>"
                                                     class="btn-group bootstrap-select form-control show-tick">
                                                 <option value="">-- انتخاب کنید --</option>
                                                 <?php foreach ($states as $state) { ?>
                                                     <option
-                                                            <?php if($candidate['CandidateStateId'] == $state['StateId']) echo "selected"; ?>
+                                                        <?php if ($candidate['CandidateStateId'] == $state['StateId']) echo "selected"; ?>
                                                             value="<?php echo $state['StateId']; ?>">
                                                         <?php echo $state['StateName']; ?>
                                                     </option>
@@ -61,8 +61,22 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-xs-12 col-sm-4 col-md-2">
+                                <label for="inputCandidateElectionId">حوزه انتخابیه</label>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <select name="inputCandidateElectionId" id="inputCandidateElectionId"
+                                                    class="btn-group bootstrap-select form-control show-tick">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-xs-12">
-                                <button type="button" id="editCandidateSpecial" class="btn btn-primary waves-effect">ذخیره</button>
+                                <button type="button" id="editCandidateSpecial" class="btn btn-primary waves-effect">
+                                    ذخیره
+                                </button>
                             </div>
                         </div>
                     </div>

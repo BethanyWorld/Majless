@@ -158,6 +158,9 @@ class State extends CI_Controller {
     public function getCityByStateId($stateId){
         echo json_encode($this->ModelCountry->getCityByStateId($stateId));
     }
+    public function getElectionsByStateId($stateId){
+        echo json_encode($this->ModelCountry->getElectionsByStateId($stateId));
+    }
     public function getCandidateByStateIdAndCityId($stateId,$cityId,$stateName){
         $data['stateName'] = $stateName;
         $data['stateId'] = $stateId;

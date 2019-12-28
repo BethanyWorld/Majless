@@ -1,4 +1,7 @@
 <style>
+    .list-group-item {
+        padding: 10px 5px;
+    }
     label {
         display: inline-block;
         max-width: 100%;
@@ -17,36 +20,72 @@
         box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
         margin-right: 0;
     }
-    .inputElectionId {
-        visibility: hidden;
+
+    .check {
+        cursor: pointer;
+        position: relative;
+        margin: auto;
+        -webkit-tap-highlight-color: transparent;
+        transform: translate3d(0, 0, 0);
+        width: 100%;
     }
-    .inputElectionId:checked ~ .left {
-        transform: translateY(-50%) scale(0);
-    }
-    .inputElectionId:checked ~ .right {
-        transform: translateY(-50%) scale(1);
-        z-index: 10;
-    }
-    .left, .right {
-        height: 1rem;
-        width: 1rem;
-        display: inline-block;
+    .check:before {
+        content: "";
         position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
-        top: 50%;
+        background: rgba(34,50,84,0.03);
+        opacity: 0;
+        transition: opacity 0.2s ease;
     }
-    .left {
-        background: #324047;
-        left: 10%;
-        z-index: 10;
-        transform: translateY(-50%) scale(1);
-        transition: all 200ms cubic-bezier(0.8, 0.7, 0.72, 0.78);
+    .check span{
+        font-size: 14px;
     }
-    .right {
-        background: #60863b;
-        right: 10%;
-        transform: translateY(-50%) scale(0);
-        transition: all 200ms cubic-bezier(0.8, 0.7, 0.72, 0.78);
+    .check svg {
+        position: relative;
+        z-index: 1;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #c8ccd4;
+        stroke-width: 1.5;
+        transform: translate3d(0, 0, 0);
+        transition: all 0.2s ease;
+        top: 6px;
+        margin: 0px 6px;
+    }
+    .check svg path {
+        stroke-dasharray: 60;
+        stroke-dashoffset: 0;
+    }
+    .check svg polyline {
+        stroke-dasharray: 22;
+        stroke-dashoffset: 66;
+    }
+    .check:hover:before {
+        opacity: 1;
+    }
+    .check:hover svg {
+        stroke: #4285f4;
+    }
+
+    .inputElectionId{
+        display: none;
+    }
+    .inputElectionId:checked + .check svg {
+        stroke: #4285f4;
+    }
+    .inputElectionId:checked + .check svg path {
+        stroke-dashoffset: 60;
+        transition: all 0.3s linear;
+    }
+    .inputElectionId:checked + .check svg polyline {
+        stroke-dashoffset: 42;
+        transition: all 0.2s linear;
+        transition-delay: 0.15s;
     }
 
 

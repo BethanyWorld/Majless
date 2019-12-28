@@ -8,7 +8,6 @@ $CI =& get_instance();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Google Fonts -->
     <title><?php echo $pageTitle; ?></title>
     <!-- Favicon-->
     <link rel="icon" href="<?php echo $_DIR; ?>favicon.ico" type="image/x-icon">
@@ -93,10 +92,7 @@ $CI =& get_instance();
             <div class="image">
                 <img src="<?php echo $_DIR; ?>images/user.png" width="48" height="48" alt="User"/>
             </div>
-            <?php
-            $CI =& get_instance();
-            $adminInfo = $CI->session->userdata('AdminLoginInfo')[0];
-            ?>
+            <?php $CI =& get_instance(); $adminInfo = $CI->session->userdata('AdminLoginInfo')[0]; ?>
             <div class="info-container">
                 <div class="name" data-toggle="dropdown" aria-haspopup="true"
                      aria-expanded="false"><?php echo $adminInfo['AdminPhone']; ?></div>
@@ -104,6 +100,11 @@ $CI =& get_instance();
                 <div class="btn-group user-helper-dropdown">
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                     <ul class="dropdown-menu pull-right">
+                        <li>
+                            <a target="_blank" href="<?php echo base_url(); ?>">
+                                <i class="material-icons">input</i>WebSite
+                            </a>
+                        </li>
                         <li>
                             <a href="<?php echo base_url('Admin/Account/doLogOut'); ?>">
                                 <i class="material-icons">input</i>خروج
@@ -116,8 +117,9 @@ $CI =& get_instance();
         <!-- #User Info -->
         <!-- Menu -->
         <div class="menu">
+            <?php $uri = $CI->uri->uri_string; ?>
             <ul class="list">
-                <li <?php if (strpos($CI->uri->uri_string, '/Home') !== false) echo "class='active'"; ?>>
+                <li <?php if (strstr($uri , "Home") !== false) echo "class='active'"; ?>>
                     <a href="<?php echo base_url('Admin/Home'); ?>">
                         <i class="material-icons">home</i>
                         <span>پیشخوان</span>
@@ -129,10 +131,10 @@ $CI =& get_instance();
                         <span>پشتیبان استان ها</span>
                     </a>
                     <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/Agent/index') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Agent/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Agent/index'); ?>" class="waves-effect waves-block">فهرست</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/Agent/add') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Agent/add') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Agent/add'); ?>"
                                class="waves-effect waves-block">افزودن</a>
                         </li>
@@ -144,10 +146,10 @@ $CI =& get_instance();
                         <span>پشتیبان پنل ایثارگر</span>
                     </a>
                     <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/Veteran/index') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Veteran/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Veteran/index'); ?>" class="waves-effect waves-block">فهرست</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/Veteran/add') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Veteran/add') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Veteran/add'); ?>"
                                class="waves-effect waves-block">افزودن</a>
                         </li>
@@ -159,14 +161,14 @@ $CI =& get_instance();
                         <span>تقسیم بندی استان ها</span>
                     </a>
                     <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/States/index') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/States/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/States/index'); ?>" class="waves-effect waves-block">فهرست</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/States/elections') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/States/elections') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/States/elections'); ?>"
                                class="waves-effect waves-block">حوزه های انتخاباتی</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/States/addElection') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/States/addElection') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/States/addElection'); ?>"
                                class="waves-effect waves-block">افزودن حوزه انتخاباتی</a>
                         </li>
@@ -178,19 +180,19 @@ $CI =& get_instance();
                         <span>محتوا</span>
                     </a>
                     <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/Content/category') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Content/category') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Content/category'); ?>"
                                class="waves-effect waves-block">دسته بندی</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/Content/addCategory') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Content/addCategory') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Content/addCategory'); ?>"
                                class="waves-effect waves-block">افزودن دسته جدید</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/Content/index') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Content/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Content/index'); ?>" class="waves-effect waves-block">فهرست
                                 محتوا</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/Content/add') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Content/add') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Content/add'); ?>" class="waves-effect waves-block">افزودن
                                 محتوا</a>
                         </li>
@@ -202,27 +204,19 @@ $CI =& get_instance();
                         <span>نامزد های انتخاباتی</span>
                     </a>
                     <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/Candidate/index') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Candidate/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Candidate/index'); ?>" class="waves-effect waves-block">فهرست</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/Candidate/importScores') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Candidate/importScores') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Candidate/importScores'); ?>"
                                class="waves-effect waves-block">بارگذاری فایل نمره</a>
                         </li>
-                    </ul>
-                </li>
-                <li <?php echo $CI->uri->segment(2) == 'Candidate/special' ? 'class="active"' : '' ?> >
-                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
-                        <i class="material-icons">bookmark</i>
-                        <span>نامزد های ویژه</span>
-                    </a>
-                    <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/Candidate/special') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Candidate/special') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Candidate/special'); ?>"
-                               class="waves-effect waves-block">فهرست</a>
+                               class="waves-effect waves-block">فهرست نامزد ویژه</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/Candidate/specialAdd') !== false) echo "class='active'"; ?>>
-                            <a href="<?php echo base_url('Admin/Candidate/specialAdd'); ?>" class="waves-effect waves-block">افزودن</a>
+                        <li <?php if (strstr($uri, '/Candidate/specialAdd') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Candidate/specialAdd'); ?>" class="waves-effect waves-block">افزودن نامزد ویژه</a>
                         </li>
                     </ul>
                 </li>
@@ -232,11 +226,11 @@ $CI =& get_instance();
                         <span>محل آزمون ها</span>
                     </a>
                     <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/ExamPlaces/index') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/ExamPlaces/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/ExamPlaces/index'); ?>"
                                class="waves-effect waves-block">فهرست</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/ExamPlaces/add') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/ExamPlaces/add') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/ExamPlaces/add'); ?>" class="waves-effect waves-block">افزودن</a>
                         </li>
                     </ul>
@@ -247,10 +241,10 @@ $CI =& get_instance();
                         <span>آزمون ها</span>
                     </a>
                     <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/Exams/index') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Exams/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Exams/index'); ?>" class="waves-effect waves-block">فهرست</a>
                         </li>
-                        <li <?php if (strpos($CI->uri->uri_string, '/Exams/add') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Exams/add') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Exams/add'); ?>"
                                class="waves-effect waves-block">افزودن</a>
                         </li>
@@ -262,7 +256,7 @@ $CI =& get_instance();
                         <span>گزارش تخلف</span>
                     </a>
                     <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/ReportAbuse/index') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/ReportAbuse/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/ReportAbuse/index'); ?>"
                                class="waves-effect waves-block">فهرست</a>
                         </li>
@@ -274,26 +268,26 @@ $CI =& get_instance();
                         <span>ارتباطات مردمی</span>
                     </a>
                     <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strpos($CI->uri->uri_string, '/Contact/index') !== false) echo "class='active'"; ?>>
+                        <li <?php if (strstr($uri, '/Contact/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Contact/index'); ?>" class="waves-effect waves-block">فهرست</a>
                         </li>
                     </ul>
                 </li>
-                <li <?php if (strpos($CI->uri->uri_string, 'Admin/SignUpReport') !== false) echo "class='active'"; ?>>
+                <li <?php if (strstr($uri, 'Admin/SignUpReport') !== false) echo "class='active'"; ?>>
                     <a
                             href="<?php echo base_url('Admin/SignUpReport'); ?>">
                         <i class="material-icons">person</i>
                         <span>گزارش  ثبت نام</span>
                     </a>
                 </li>
-                <li <?php if (strpos($CI->uri->uri_string, 'Admin/Reports') !== false) echo "class='active'"; ?>>
+                <li <?php if (strstr($uri, 'Admin/Reports') !== false) echo "class='active'"; ?>>
                     <a
                             href="<?php echo base_url('Admin/Reports'); ?>">
                         <i class="material-icons">person</i>
                         <span>گزارش گیری</span>
                     </a>
                 </li>
-                <li <?php if (strpos($CI->uri->uri_string, 'Admin/Profile') !== false) echo "class='active'"; ?>>
+                <li <?php if (strstr($uri, 'Admin/Profile') !== false) echo "class='active'"; ?>>
                     <a
                             href="<?php echo base_url('Admin/Profile'); ?>">
                         <i class="material-icons">person</i>

@@ -287,11 +287,10 @@ class Candidate extends CI_Controller{
 
     }
 
-
     /*Admin Special Candidates*/
     public function special(){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'نامزد های انتخاباتی';
+        $data['pageTitle'] = 'نامزد های ویژه';
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
         $data['states'] = $this->ModelCountry->getStateList();
 
@@ -303,7 +302,7 @@ class Candidate extends CI_Controller{
     }
     public function specialAdd(){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'نامزد های انتخاباتی';
+        $data['pageTitle'] = 'نامزد های ویژه';
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
         $data['states'] = $this->ModelCountry->getStateList();
 
@@ -333,7 +332,7 @@ class Candidate extends CI_Controller{
     }
     public function specialEdit($rowId){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'نامزد های انتخاباتی';
+        $data['pageTitle'] = 'نامزد های ویژه';
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
         $data['states'] = $this->ModelCountry->getStateList();
         $data['candidate'] = $this->ModelCandidate->getCandidateSpecialByCandidateId($rowId);
@@ -368,5 +367,4 @@ class Candidate extends CI_Controller{
         echo json_encode($data);
     }
     /*End Admin Special Candidates*/
-
 }

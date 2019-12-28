@@ -21,6 +21,7 @@
                     $inputRowId = $.trim($("#inputRowId").val());
                     $inputCandidateImage = $result['fileSrc'];
                     $inputCandidateStateId = $.trim($("#inputCandidateStateId").val());
+                    $inputCandidateElectionId = $.trim($("#inputCandidateElectionId").val());
                     /* End Validation */
                     toggleLoader();
                     $sendData = {
@@ -28,7 +29,8 @@
                         'inputCandidateFirstName': $inputCandidateFirstName,
                         'inputCandidateLastName': $inputCandidateLastName,
                         'inputCandidateProfileImage': $inputCandidateImage,
-                        'inputCandidateStateId': $inputCandidateStateId
+                        'inputCandidateStateId': $inputCandidateStateId,
+                        'inputCandidateElectionId': $inputCandidateElectionId
                     }
                     $.ajax({
                         type: 'post',
@@ -52,6 +54,32 @@
                 }
             });
         });
+
+        $('#inputCandidateStateId').change(function(){
+            $("#inputCandidateCityId").html('');
+            $stateId = $(this).val();
+            $.ajax({
+                type: 'post',
+                url: "<?php echo base_url(); ?>" + 'State/getElectionsByStateId/'+$stateId,
+                success: function (data) {
+                    $result = jQuery.parseJSON(data);
+                    for(let i=0;i<$result.length;i++){
+                        $("#inputCandidateElectionId").append('<option value="'+$result[i].ElectionId+'">'+$result[i].ElectionName+'</option>');
+                    }
+                    $electionId = $("#inputCandidateStateId").data('election-id');
+                    $("#inputCandidateElectionId").val($electionId);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    iziToast.show({
+                        title: 'خطای ارتباط با سرور.دقایقی دیگر تلاش کنید',
+                        color: 'red',
+                        zindex: 9060,
+                        position: 'topLeft'
+                    });
+                }
+            });
+        });
+        $('#inputCandidateStateId').change();
         /* End Update User Info */
     });
 </script>

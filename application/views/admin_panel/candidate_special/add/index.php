@@ -26,7 +26,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-4 col-md-3" id="step2">
+                            <div class="col-xs-12 col-sm-4 col-md-2">
                                 <label for="inputExamPlaceMapImage">تصویر محل آزمون</label>
                                 <div class="form-group">
                                     <div class="form-line">
@@ -35,8 +35,7 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="col-xs-12 col-sm-4 col-md-2">
                                 <label for="inputCandidateStateId">استان</label>
                                 <div class="form-group">
                                     <div class="form-group">
@@ -49,6 +48,17 @@
                                                         <?php echo $state['StateName']; ?>
                                                     </option>
                                                 <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-2">
+                                <label for="inputCandidateElectionId">حوزه انتخابیه</label>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <select name="inputCandidateElectionId" id="inputCandidateElectionId" class="btn-group bootstrap-select form-control show-tick">
                                             </select>
                                         </div>
                                     </div>
