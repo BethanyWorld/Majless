@@ -71,7 +71,9 @@
     .check:hover svg {
         stroke: #4285f4;
     }
-
+    #IranMap .map svg {
+        height: 265px !important;
+    }
     .inputElectionId{
         display: none;
     }

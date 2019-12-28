@@ -346,13 +346,25 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-    public function getCandidatesByElectionId($electionId)
+    public function getCandidatesByElectionId($inputs)
     {
         $this->db->select('*');
         $this->db->from('candidate');
         $this->db->join('election_location', 'election_location.ElectionId = candidate.CandidateElectionId');
-        $this->db->where(array('CandidateElectionId' => $electionId));
+        $this->db->where_in('CandidateElectionId', $inputs['inputElectionIds']);
         $this->db->where(array('CandidateStatus' => 'CandidateAccepted'));
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        return array();
+    }
+    public function getCandidatesSpecialByElectionId($inputs)
+    {
+        $this->db->select('*');
+        $this->db->from('candidate_special');
+        $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
+        $this->db->where_in('CandidateElectionId', $inputs['inputElectionIds']);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();

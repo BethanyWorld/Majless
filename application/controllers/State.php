@@ -167,10 +167,21 @@ class State extends CI_Controller {
         $data['data'] = $this->ModelCandidate->getCandidateByStateIdAndCityId($stateId,$cityId);
         echo $this->load->view('ui/v3/state/candidate/ajax' , $data, TRUE);
     }
-    public function getCandidatesByElectionId($stateId,$electionId,$stateName){
-        $data['stateName'] = $stateName;
-        $data['stateId'] = $stateId;
-        $data['data'] = $this->ModelCandidate->getCandidatesByElectionId($electionId);
+    public function getCandidatesByElectionId(){
+
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $data['stateName'] = $inputs['inputStateName'];
+        $data['stateId'] = $inputs['inputStateId'];
+        $data['electionIds'] = $inputs['inputElectionIds'];
+        $inputs['inputElectionIds'] = array_values($inputs['inputElectionIds']);
+        $data['data'] = $this->ModelCandidate->getCandidatesByElectionId($inputs);
+        $data['dataSpecial'] = $this->ModelCandidate->getCandidatesSpecialByElectionId($inputs);
         echo $this->load->view('ui/v3/state/candidate/ajax' , $data, TRUE);
     }
     /* End Helper Functions*/

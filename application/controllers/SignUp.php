@@ -175,7 +175,7 @@ class SignUp extends CI_Controller{
         }
     }
     public function importSMS(){
-        $this->load->helper('plugins/excel/bootstrap_helper');
+        /*$this->load->helper('plugins/excel/bootstrap_helper');
         $this->load->helper('plugins/excel/PHPExcel/iofactory_helper');
         $inputFileName = APPPATH.'Export-1398-09-30.xlsx';
         $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
@@ -194,8 +194,7 @@ class SignUp extends CI_Controller{
             $message .= 'با توجه به ثبت نام شما در سامانه جنبش ازما در صورتیکه به عنوان نامزد انتخاباتی در مراجع رسمی کشور ثبت نام نموده اید برای آگاهی از چگونگی ادامه مراحل آزمون و ارزیابی به پنل خود در سایت جنبش ازما مراجعه فرمایید.';
             $message .= PHP_EOL;
             $message .= 'azmaa. net';
-            var_dump($rowData);
-            /*$data = array(
+            $data = array(
                 'senderNumber' => $rowData[3],
                 'messageBody' => $message
             );
@@ -206,7 +205,7 @@ class SignUp extends CI_Controller{
             curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
             $result = curl_exec($ch);
             echo "<pre>$result</pre>";
-            curl_close($ch);*/
+            curl_close($ch);
         }
         /*Single Send*/
         /*$message = 'فرهیخته گرامی';
@@ -225,7 +224,7 @@ class SignUp extends CI_Controller{
 
 
 
-        $message = 'فرهیخته گرامی';
+        /*$message = 'فرهیخته گرامی';
         $message .= " محمدرضا اسماعیلی ";
         $message .= PHP_EOL;
         $message .= 'با سلام';
@@ -244,6 +243,6 @@ class SignUp extends CI_Controller{
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
         $result = curl_exec($ch);
         echo "<pre>$result</pre>";
-        curl_close($ch);
+        curl_close($ch);*/
     }
 }

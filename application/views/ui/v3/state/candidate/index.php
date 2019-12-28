@@ -3,9 +3,7 @@
     <?php echo urldecode($stateName); ?>
 </div>
 <div class="container container-wrapper">
-
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
-
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
@@ -153,12 +151,9 @@
                 </svg>
                 </div>
         </div>
-
     </div>
-
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <section class="mp-section">
-
             <div class="row">
                 <div class="col-xs-12">
                     <div class="alert alert-info text-center">
@@ -204,7 +199,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row candidate-container">
                 <?php
                 if (0) {
@@ -256,8 +250,5 @@
                 } ?>
             </div>
         </section>
-
     </div>
-
-
 </div>
