@@ -635,6 +635,10 @@ button.btn-submit {
     opacity: .8
 }
 
+#IranMap path.active {
+    fill: #da1f26 !important;
+    cursor: pointer
+}
 #IranMap .map {
     display: block;
     float: left;
