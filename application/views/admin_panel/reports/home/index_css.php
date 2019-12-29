@@ -150,4 +150,20 @@
         min-height: 150px;
         padding: 15px !important;
     }
+
+    .row-card{
+        width: 836px;
+        height: 200px;
+        margin-left: 10px ;
+
+    }
+    .row-card1{
+        width: 400px;
+        height: 200px;
+        margin-left: 10px ;
+
+    }
+
+
+
 </style>
