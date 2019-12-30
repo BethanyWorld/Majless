@@ -1,6 +1,6 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <?php
-/*
+
 if (empty($data)) { ?>
     <div class="alert alert-warning" style="margin: 10px;display: inline-block;width: 100%;">موردی یافت نشد</div>
 <?php } else { ?>
@@ -33,11 +33,11 @@ if (empty($data)) { ?>
             </div>
         </div>
     <?php } ?>
-<?php }*/
+<?php }
 ?>
 
-<div class="row col-xs-12 alert alert-info"  style="margin: 10px;display: inline-block;width: 100%;">نامزد های ویژه</div>
-<?php foreach ($dataSpecial as $candidate) { ?>
+<div class="row col-xs-12 alert alert-info hidden"  style="margin: 10px;display: inline-block;width: 100%;">نامزد های ویژه</div>
+<?php /* foreach ($dataSpecial as $candidate) { ?>
     <div class="col-md-4 col-sm-6 mp">
         <div class="mp-brief">
             <div class="pic">
@@ -53,4 +53,4 @@ if (empty($data)) { ?>
             </div>
         </div>
     </div>
-<?php } ?>
+<?php }*/  ?>

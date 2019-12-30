@@ -61,6 +61,7 @@
                 success: function (data) {
                     toggleLoader();
                     $result = jQuery.parseJSON(data);
+                    $("#inputCandidateElectionId").html('');
                     for(let i=0;i<$result.length;i++){
                         $("#inputCandidateElectionId").append('<option value="'+$result[i].ElectionId+'">'+$result[i].ElectionName+'</option>');
                     }

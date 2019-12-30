@@ -39,6 +39,7 @@
                                     <th>نام و نام خانوادگی</th>
                                     <th class="fit">استان</th>
                                     <th class="fit">کد</th>
+                                    <th class="fit">تصویر</th>
                                     <th class="fit">جزئیات</th>
                                 </tr>
                                 </thead>

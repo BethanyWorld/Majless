@@ -13,6 +13,11 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             <td class="fit"><?php echo $candidate['StateName']; ?></td>
             <td class="fit"><?php echo $candidate['CandidateCode']; ?></td>
             <td class="fit">
+                <a target="_blank" href="<?php echo base_url('uploads/').$candidate['CandidateProfileImage']; ?>">
+                    <img width="100px" src="<?php echo base_url('uploads/').$candidate['CandidateProfileImage']; ?>" />
+                </a>
+            </td>
+            <td class="fit">
                 <a href="<?php echo base_url('Admin/Candidate/specialEdit/') . $candidate['RowId']; ?>">
                     <button type="button"
                             class="btn btn-info btn-circle waves-effect waves-circle waves-float">

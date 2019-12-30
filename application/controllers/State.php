@@ -47,7 +47,7 @@ class State extends CI_Controller {
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle').' '."فهرست نامزد های انتخاباتی استان ".$stateName;
 
-        $data['dataSpecial'] = $this->ModelCandidate->getCandidateSpecialByStateId($stateId);
+        //$data['dataSpecial'] = $this->ModelCandidate->getCandidateSpecialByStateId($stateId);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/state/candidate/index' , $data);
