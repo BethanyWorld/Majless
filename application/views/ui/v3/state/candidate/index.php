@@ -252,9 +252,10 @@
                 <div class="col-md-4">
                     <div class="mp-brief">
                         <div class="pic">
-                            <img src="<?php echo $noImg; ?>" id="candidateImage">
+                            <img src="<?php echo $_DIR; ?>images/post-man.png" id="candidateImage">
                         </div>
                         <div class="">
+                            <h3 class="candidateName">مهندس تینا عطرگیر</h3>
                             <button class="btn invite-button" type="button" data-toggle="modal" data-target="#myModal">دعوت به
                                 جنبش ازما
                             </button>
@@ -281,7 +282,7 @@
                         </p>
                     </div>
                     <div class="candidate-name">
-                        <h1>دکتر علیرضا زاکانی</h1>
+                        <h1 class="modalCandidateName"></h1>
                     </div>
                     <div class="candidate-text-invite">
                         <p>
@@ -312,7 +313,7 @@
                         </p>
                     </div>
                     <div class="candidate-name">
-                        <h1>دکتر علیرضا زاکانی</h1>
+                        <h1 class="modalCandidateName"></h1>
                     </div>
                     <div class="candidate-text-invite">
                         <p>
@@ -331,7 +332,7 @@
     </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog" data-backdrop="false">
+<div class="modal fade candidate-modal" id="myModal" role="dialog" data-backdrop="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -352,7 +353,7 @@
                                         </p>
                                     </div>
                                     <div class="candidate-name">
-                                        <h1>دکتر علیرضا زاکانی</h1>
+                                        <h1 class="modalCandidateName"></h1>
                                     </div>
                                     <div class="candidate-text-invite">
                                         <p>

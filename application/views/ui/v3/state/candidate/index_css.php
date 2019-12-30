@@ -363,8 +363,12 @@
 
 
 
-
-
+    .candidate-modal{
+        z-index: 20000;
+    }
+    .candidate-modal .modal-header{
+        text-align: right;
+    }
     button {
         outline: none;
     }
@@ -407,7 +411,7 @@
     }
 
     .mp-brief {
-        padding: 5px 0 5px;
+        padding: 5px 0 15px;
         background: #f9f9f9;
         text-align: center;
         overflow: hidden;
@@ -419,7 +423,7 @@
 
     .mp-brief .pic {
         width: 100%;
-        height: 250px;
+        height: 225px;
         border-radius: 10%;
         transition: all 0.9s ease 0s;
         box-shadow: 0 0 0 14px #f7f5ec;
@@ -437,6 +441,7 @@
     .invite-button:hover, .invite-button:focus {
         color: #fff;
         outline: none;
+        background-color:#052452 ;
     }
 
     .mp-brief .pic img {
@@ -538,7 +543,7 @@
     }
     #hidden-box2 .inner-border-div img {
         position: relative;
-        width: auto;
+        width: auto !important;
         height: auto;
     }
     .candidate-image-div {
@@ -676,23 +681,28 @@
     }
     .inner-candidate-image{
         background: url(<?php echo $_DIR; ?>/images/post-frame.png);
-        padding: 25px 52px 33px 25px;
+        padding: 21px 23px 30px 21px;
         background-size: contain;
         background-repeat: no-repeat;
-        width: 30% !important;
+        width: 31% !important;
+        background-position: center;
     }
     #hidden-box2 .inner-candidate-image{
         background: url(<?php echo $_DIR; ?>/images/post-frame.png);
         padding: 44px 55px 60px 45px;
         background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
+
     }
     #hidden-box1 .inner-candidate-image{
         background: url(<?php echo $_DIR; ?>/images/story-frame.png);
-        padding: 12px 8px 35px 10px;
+        padding: 30px 30px 34px 23px;
         background-size: contain;
         background-repeat: no-repeat;
-        width: 45% !important;
+        width: 40% !important;
+        background-position: center;
+
     }
     /*for modal body*/
 

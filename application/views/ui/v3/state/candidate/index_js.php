@@ -44,11 +44,13 @@
 
 
         /* Export*/
-
+        debugger;
         $srcImage = $('#candidateImage').attr('src');
-        $('.modalLogo').attr('src', $srcImage);
+        $('.inner-candidate-image').attr('src', $srcImage);
+        $candidateName = $('.candidateName').text();
+        $('.modalCandidateName').text($candidateName);
         $("#receiveFile").click(function () {
-            var node = document.getElementById('hidden-box');
+          var node = document.getElementById('hidden-box');
             domtoimage.toBlob(document.getElementById('hidden-box1'))
                 .then(function (blob) {
                     window.saveAs(blob, 'my-node.png');
