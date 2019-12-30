@@ -379,16 +379,17 @@
         top: 0px;
         left: 0px;
         right: -6000px;
-        position: relative;
+        position: absolute;
+        z-index: -2;
     }
-
     .hidden-box2 {
         height: 1000px;
         width: 1000px;
         top: 0px;
         left: 0px;
         right: -6000px;
-        position: relative;
+        position: absolute;
+        z-index: -2;
     }
 
     /*.hidden-box2 .modal-border{*/
