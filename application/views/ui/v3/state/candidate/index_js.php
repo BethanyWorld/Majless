@@ -7,13 +7,11 @@
 
         $stateName = "<?php echo $stateName; ?>";
         $stateId = <?php echo $stateId; ?>;
-
         $("path").each(function () {
             if($(this).data('province-id') == $stateId){
                 $(this).addClass('active');
             }
         });
-
         $(".inputElectionId").click(function(){
             toggleLoader();
             $electionId = $(this).val();
@@ -43,5 +41,25 @@
                 }
             });
         });
+
+
+        /* Export*/
+
+        $srcImage = $('#candidateImage').attr('src');
+        $('.modalLogo').attr('src', $srcImage);
+        $("#receiveFile").click(function () {
+            var node = document.getElementById('hidden-box');
+            domtoimage.toBlob(document.getElementById('hidden-box1'))
+                .then(function (blob) {
+                    window.saveAs(blob, 'my-node.png');
+                });
+            domtoimage.toBlob(document.getElementById('hidden-box2'))
+                .then(function (blob) {
+                    window.saveAs(blob, 'my-node.png');
+                });
+        });
+        /* End Export*/
+
+
     });
 </script>

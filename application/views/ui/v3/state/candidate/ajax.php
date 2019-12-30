@@ -43,7 +43,7 @@ if (empty($data)) { ?>
             </div>
             <div class="team-content">
                 <h3 class="title">
-                    <?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?>
+                    <?php echo $candidate['CandidateFullName']; ?>
                 </h3>
                 <span class="post">
                     نامزد انتخاباتی <?php echo $candidate['ElectionName']; ?>

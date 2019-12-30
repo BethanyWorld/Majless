@@ -16,16 +16,14 @@
                 type: 'post',
                 success: function (data) {
                     $result = jQuery.parseJSON(data);
-                    $inputCandidateFirstName = $.trim($("#inputCandidateFirstName").val());
-                    $inputCandidateLastName = $.trim($("#inputCandidateLastName").val());
+                    $inputCandidateFullName = $.trim($("#inputCandidateFullName").val());
                     $inputCandidateImage = $result['fileSrc'];
                     $inputCandidateStateId = $.trim($("#inputCandidateStateId").val());
                     $inputCandidateElectionId = $.trim($("#inputCandidateElectionId").val());
                     /* End Validation */
                     toggleLoader();
                     $sendData = {
-                        'inputCandidateFirstName': $inputCandidateFirstName,
-                        'inputCandidateLastName': $inputCandidateLastName,
+                        'inputCandidateFullName': $inputCandidateFullName,
                         'inputCandidateProfileImage': $inputCandidateImage,
                         'inputCandidateStateId': $inputCandidateStateId,
                         'inputCandidateElectionId': $inputCandidateElectionId

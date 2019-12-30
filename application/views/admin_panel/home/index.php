@@ -88,9 +88,10 @@
                     </div>
                 </div>
                 <div class="col-xs-12">
-                    <div class="info-box-4">
-                        <div class="icon">
-                            <i class="material-icons col-red">face</i>
+
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon bg-pink">
+                            <i class="material-icons">account_circle</i>
                         </div>
                         <div class="content">
                             <div class="text">کل کاربران</div>
@@ -99,9 +100,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="info-box-4">
-                        <div class="icon">
-                            <i class="material-icons col-red">face</i>
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon bg-pink">
+                            <i class="material-icons">perm_identity</i>
                         </div>
                         <div class="content">
                             <div class="text">تعداد آقایان</div>
@@ -110,9 +111,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="info-box-4">
-                        <div class="icon">
-                            <i class="material-icons col-red">face</i>
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon bg-pink">
+                            <i class="material-icons">face</i>
                         </div>
                         <div class="content">
                             <div class="text">تعداد خانم ها</div>
@@ -121,6 +122,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-xs-12">
                     <div class="info-box-4">
@@ -161,7 +163,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
         </div>

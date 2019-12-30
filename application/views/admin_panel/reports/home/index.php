@@ -1,300 +1,178 @@
 <section class="content">
     <div class="container-fluid">
-        <div class="row clearfix" >
-            <div class="col-md-12 col-xs-12" >
-<!--                <div class="card rtl"  style="min-height: 1000px">-->
-<!--ROW1-->
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <div class="header bg-orange">
-                                <h2>
-                                    Orange - Title <small>Description text here...</small>
-                                </h2>
-                                <ul class="header-dropdown m-r--5">
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                            <i class="material-icons">more_vert</i>
+        <div class="row clearfix">
+            <div class="col-md-9 col-xs-12 p-l-0">
+
+                <div class="col-xs-12">
+                    <div class="card rtl">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <thead>
+                            <tr class="bg-info">
+                                <th class="text-center" colspan="5">آخرین نامزد های انتخاباتی</th>
+                            </tr>
+                            <tr>
+                                <th>نام و نام خانوداگی</th>
+                                <th class="fit">کد ملی</th>
+                                <th class="fit">امتیاز</th>
+                                <th class="fit">وضعیت</th>
+                                <th class="fit">جزئیات</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($latestCandidates as $candidate) { ?>
+                                <tr>
+                                    <td><?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?></td>
+                                    <td class="fit"><?php echo $candidate['CandidateNationalCode']; ?></td>
+                                    <td class="fit"><?php echo $candidate['CandidateScore']; ?></td>
+                                    <td class="fit"><?php echo candidateStatus($candidate['CandidateStatus']); ?></td>
+                                    <td class="fit">
+                                        <a href="<?php echo base_url('Admin/Candidate/edit/') . $candidate['CandidateId']; ?>">
+                                            <button type="button"
+                                                    class="btn btn-info btn-circle waves-effect waves-circle waves-float">
+                                                <i class="material-icons">rate_review</i>
+                                            </button>
                                         </a>
-                                        <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
-                                            <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
-                                            <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="body">
-                                Quis pharetra a pharetra fames blandit. Risus faucibus velit Risus imperdiet mattis neque volutpat, etiam lacinia netus dictum magnis per facilisi sociosqu. Volutpat. Ridiculus nostra.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <div class="header bg-blue-grey">
-                                <h2>
-                                    Blue Grey - Title <small>Description text here...</small>
-                                </h2>
-                                <ul class="header-dropdown m-r--5">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <i class="material-icons">mic</i>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                            <i class="material-icons">more_vert</i>
-                                        </a>
-                                        <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
-                                            <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
-                                            <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="body">
-                                Quis pharetra a pharetra fames blandit. Risus faucibus velit Risus imperdiet mattis neque volutpat, etiam lacinia netus dictum magnis per facilisi sociosqu. Volutpat. Ridiculus nostra.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <div class="header bg-pink">
-                                <h2>
-                                    Pink - Title <small>Description text here...</small>
-                                </h2>
-                                <ul class="header-dropdown m-r-0">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <i class="material-icons">info_outline</i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <i class="material-icons">help_outline</i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="body">
-                                Quis pharetra a pharetra fames blandit. Risus faucibus velit Risus imperdiet mattis neque volutpat, etiam lacinia netus dictum magnis per facilisi sociosqu. Volutpat. Ridiculus nostra.
-                            </div>
-                        </div>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    <a class="btn btn-primary" href="<?php echo base_url('Admin/Candidate/index'); ?>">
+                                        مشاهده همه
+                                    </a>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
-
-                <div class="row clearfix">
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box hover-zoom-effect">
-                            <div class="icon bg-pink">
-                                <i class="material-icons">email</i>
-                            </div>
-                            <div class="content">
-                                <div class="text">MESSAGES</div>
-                                <div class="number">15</div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box hover-zoom-effect">
-                            <div class="icon bg-blue">
-                                <i class="material-icons">devices</i>
-                            </div>
-                            <div class="content">
-                                <div class="text">CPU USAGE</div>
-                                <div class="number">92%</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box hover-zoom-effect">
-                            <div class="icon bg-light-blue">
-                                <i class="material-icons">access_alarm</i>
-                            </div>
-                            <div class="content">
-                                <div class="text">ALARM</div>
-                                <div class="number">07:00 AM</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box hover-zoom-effect">
-                            <div class="icon bg-cyan">
-                                <i class="material-icons">gps_fixed</i>
-                            </div>
-                            <div class="content">
-                                <div class="text">LOCATION</div>
-                                <div class="number">Turkey</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="row">
-
-
-
-                    <div class="col-md-9 col-xs-12  row-card "   >
-
-                    </div>
-                    <div class="col-md-3 col-xs-12 card row-card1"   id="TestStatus" >
-
-                    </div>
-
-
-                            <div class="col-md-9 col-xs-12  row-card"   >
-
-                            </div>
-
-                            <div class="col-md-3 col-xs-12 card row-card1"   id="Religion" >
-
-                            </div>
-
-
-
-
-
-                        <!--ROW3-->
-
-
-                            <div class="col-md-9 col-xs-12 row-card"   >
-
-                            </div>
-
-                            <div class="col-md-3 col-xs-12 card row-card1"   id="Condition" >
-
-                            </div>
-
-
-
-
-                        <!--ROW4-->
-
-
-                            <div class="col-md-9 col-xs-12  row-card"   >
-
-                            </div>
-
-                            <div class="col-md-3 col-xs-12 card row-card1"   id="totaluser">
-
-                            </div>
-
-
-
-
-                        <!--ROW5-->
-
-
-                            <div class="col-md-9 col-xs-12  row-card"   >
-
-                            </div>
-
-                            <div class="col-md-3 col-xs-12 card row-card1"    id="degreeOfEducation" >
-
-                            </div>
-
-
-
-
-                        <!--ROW6-->
-
-
-                            <div class="col-md-9 col-xs-12  row-card"   >
-
-                            </div>
-
-                            <div class="col-md-3 col-xs-12 card row-card1"   id="Gender">
-
-                            </div>
-
-
-
-
-                    </div>
-
-
-
-<!--ROW2-->
-<!--                    <div class="row">-->
-<!---->
-<!--                        <div class="col-md-9 col-xs-12 card row-card"   >-->
-<!---->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="col-md-3 col-xs-12 card row-card1"   id="Religion" >-->
-<!---->
-<!--                        </div>-->
-<!---->
-<!---->
-<!--                        </div>-->
-<!---->
-<!---->
-<!-- <!--ROW3-->-->
-<!--                <div class="row">-->
-<!---->
-<!--                    <div class="col-md-9 col-xs-12 card row-card"   >-->
-<!---->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="col-md-3 col-xs-12 card row-card1"   id="Condition" >-->
-<!---->
-<!--                    </div>-->
-<!---->
-<!---->
-<!--                </div>-->
-<!---->
-<!--                <!--ROW4-->-->
-<!--                <div class="row">-->
-<!---->
-<!--                    <div class="col-md-9 col-xs-12 card row-card"   >-->
-<!---->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="col-md-3 col-xs-12 card row-card1"   id="totaluser">-->
-<!---->
-<!--                    </div>-->
-<!---->
-<!---->
-<!--                </div>-->
-<!---->
-<!--                <!--ROW5-->-->
-<!--                <div class="row">-->
-<!---->
-<!--                    <div class="col-md-9 col-xs-12 card row-card"   >-->
-<!---->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="col-md-3 col-xs-12 card row-card1"    id="degreeOfEducation" >-->
-<!---->
-<!--                    </div>-->
-<!---->
-<!---->
-<!--                </div>-->
-<!---->
-<!--                <!--ROW6-->-->
-<!--                <div class="row">-->
-<!--                    -->
-<!--                    <div class="col-md-9 col-xs-12 card row-card"   >-->
-<!---->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="col-md-3 col-xs-12 card row-card1"   id="Gender">-->
-<!---->
-<!--                    </div>-->
-<!---->
-<!---->
-<!--                </div>-->
-
+                <div class="col-xs-12">
+                    <div class="card rtl">
+                        <table class="table table-bordered table-striped table-condensed table-hover">
+                            <thead>
+                            <tr>
+                                <th class="fit text-center">ردیف</th>
+                                <th>استان</th>
+                                <th class="fit text-center">تعداد ثبت نام</th>
+                                <th class="fit text-center">تعداد نامزد</th>
+                                <th class="fit text-center">تعداد نخبه</th>
+                                <th class="fit text-center">تعداد حامی</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php $index = 1;
+                            foreach ($report['StateCandidatesCount'] as $item) { ?>
+                                <tr>
+                                    <td class="text-center"><?php echo $index++; ?></td>
+                                    <td><?php echo $item['StateName']; ?></td>
+                                    <td class="text-center"><label><?php echo $item['candidateCount']; ?></label></td>
+                                    <td class="text-center"><label><?php echo $item['RoleCandidateCount']; ?></label></td>
+                                    <td class="text-center"><label><?php echo $item['RoleEliteCount']; ?></label></td>
+                                    <td class="text-center"><label><?php echo $item['RoleSponsorCount']; ?></label></td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-        <!-- #END# Widgets -->
-
+            <div class="col-md-3 col-xs-12 p-r-0">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <div class="header text-center hidden"><h2>نوع کاربران</h2></div>
+                        <div class="body" style="padding: 0;">
+                            <div id="donut_chart" class="graph"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon bg-pink">
+                            <i class="material-icons">account_circle</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">کل کاربران</div>
+                            <div class="number">
+                                <?php echo $report['CandidatesCount']; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon bg-pink">
+                            <i class="material-icons">perm_identity</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">تعداد آقایان</div>
+                            <div class="number">
+                                <?php echo $report['GenderCount']['MaleCount']; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon bg-pink">
+                            <i class="material-icons">face</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">تعداد خانم ها</div>
+                            <div class="number">
+                                <?php echo $report['GenderCount']['FemaleCount']; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon bg-pink">
+                            <i class="material-icons">face</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">ثبت نام امروز</div>
+                            <div class="number">
+                                <?php echo $report['todaySignUpCount']; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="info-box-4">
+                        <div class="icon">
+                            <i class="material-icons col-indigo">report</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">گزارش تخلف</div>
+                            <div class="number">
+                                <?php echo $report['ReportAbusesCount']; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="info-box-4">
+                        <div class="icon">
+                            <i class="material-icons col-purple">bookmark</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">آزمون ها</div>
+                            <div class="number">
+                                <?php echo $report['ExamsCount']; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="info-box-4">
+                        <div class="icon">
+                            <i class="material-icons col-deep-purple">favorite</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">ثبت نام کنندگان آزمون</div>
+                            <div class="number">
+                                <?php echo $report['ExamRequestsCount']; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

@@ -288,8 +288,7 @@ $CI =& get_instance();
                     </a>
                 </li>
                 <li <?php if (strstr($uri, 'Admin/Profile') !== false) echo "class='active'"; ?>>
-                    <a
-                            href="<?php echo base_url('Admin/Profile'); ?>">
+                    <a href="<?php echo base_url('Admin/Profile'); ?>">
                         <i class="material-icons">person</i>
                         <span>پروفایل</span>
                     </a>

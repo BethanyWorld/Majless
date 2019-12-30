@@ -1,114 +1,163 @@
-<?php $ci =& get_instance(); ?>
 <script type="text/javascript">
-
-    function toEnglishDigits(str) {
-        var e = '۰'.charCodeAt(0);
-        str = str.replace(/[۰-۹]/g, function (t) {
-            return t.charCodeAt(0) - e;
-        });
-        e = '٠'.charCodeAt(0);
-        str = str.replace(/[٠-٩]/g, function (t) {
-            return t.charCodeAt(0) - e;
-        });
-        return str;
-    }
-
-    $(document).ready(function(){
-        $("#searchButton").click(function () {
-            toggleLoader();
-            /* Get Api Generated  Address */
-            $.ajax({
-                type: 'post',
-                url: base_url + 'SignUpReport/doExportReport',
-                success: function (data) {
-                    toggleLoader();
-                    var a = document.createElement("a");
-                    a.href = "<?php echo base_url(); ?>"+ 'Export.xlsx';
-                    document.body.appendChild(a);
-                    a.click();
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    notify('اطلاعات نمایندگی تکراری ست', 'red');
-                    toggleLoader();
+    function getMorris(type, element) {
+        if (type === 'line') {
+            Morris.Line({
+                element: element,
+                data: [{
+                    'period': '2011 Q3',
+                    'licensed': 3407,
+                    'sorned': 660
+                }, {
+                    'period': '2011 Q2',
+                    'licensed': 3351,
+                    'sorned': 629
+                }, {
+                    'period': '2011 Q1',
+                    'licensed': 3269,
+                    'sorned': 618
+                }, {
+                    'period': '2010 Q4',
+                    'licensed': 3246,
+                    'sorned': 661
+                }, {
+                    'period': '2009 Q4',
+                    'licensed': 3171,
+                    'sorned': 676
+                }, {
+                    'period': '2008 Q4',
+                    'licensed': 3155,
+                    'sorned': 681
+                }, {
+                    'period': '2007 Q4',
+                    'licensed': 3226,
+                    'sorned': 620
+                }, {
+                    'period': '2006 Q4',
+                    'licensed': 3245,
+                    'sorned': null
+                }, {
+                    'period': '2005 Q4',
+                    'licensed': 3289,
+                    'sorned': null
+                }],
+                xkey: 'period',
+                ykeys: ['licensed', 'sorned'],
+                labels: ['Licensed', 'Off the road'],
+                lineColors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)'],
+                lineWidth: 3
+            });
+        }
+        else if (type === 'bar') {
+            Morris.Bar({
+                element: element,
+                data: [{
+                    x: '2011 Q1',
+                    y: 3,
+                    z: 2,
+                    a: 3
+                }, {
+                    x: '2011 Q2',
+                    y: 2,
+                    z: null,
+                    a: 1
+                }, {
+                    x: '2011 Q3',
+                    y: 0,
+                    z: 2,
+                    a: 4
+                }, {
+                    x: '2011 Q4',
+                    y: 2,
+                    z: 4,
+                    a: 3
+                }],
+                xkey: 'x',
+                ykeys: ['y', 'z', 'a'],
+                labels: ['Y', 'Z', 'A'],
+                barColors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)', 'rgb(0, 150, 136)'],
+            });
+        }
+        else if (type === 'area') {
+            Morris.Area({
+                element: element,
+                data: [{
+                    period: '2010 Q1',
+                    iphone: 2666,
+                    ipad: null,
+                    itouch: 2647
+                }, {
+                    period: '2010 Q2',
+                    iphone: 2778,
+                    ipad: 2294,
+                    itouch: 2441
+                }, {
+                    period: '2010 Q3',
+                    iphone: 4912,
+                    ipad: 1969,
+                    itouch: 2501
+                }, {
+                    period: '2010 Q4',
+                    iphone: 3767,
+                    ipad: 3597,
+                    itouch: 5689
+                }, {
+                    period: '2011 Q1',
+                    iphone: 6810,
+                    ipad: 1914,
+                    itouch: 2293
+                }, {
+                    period: '2011 Q2',
+                    iphone: 5670,
+                    ipad: 4293,
+                    itouch: 1881
+                }, {
+                    period: '2011 Q3',
+                    iphone: 4820,
+                    ipad: 3795,
+                    itouch: 1588
+                }, {
+                    period: '2011 Q4',
+                    iphone: 15073,
+                    ipad: 5967,
+                    itouch: 5175
+                }, {
+                    period: '2012 Q1',
+                    iphone: 10687,
+                    ipad: 4460,
+                    itouch: 2028
+                }, {
+                    period: '2012 Q2',
+                    iphone: 8432,
+                    ipad: 5713,
+                    itouch: 1791
+                }],
+                xkey: 'period',
+                ykeys: ['iphone', 'ipad', 'itouch'],
+                labels: ['iPhone', 'iPad', 'iPod Touch'],
+                pointSize: 2,
+                hideHover: 'auto',
+                lineColors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)', 'rgb(0, 150, 136)']
+            });
+        }
+        else if (type === 'donut') {
+            Morris.Donut({
+                element: element,
+                data: [
+                    <?php foreach ($report['Roles'] as $key=>$value) { ?>
+                    {
+                        label: "<?php echo candidateRolesForChart($key); ?>",
+                        value: <?php echo $value; ?>
+                    },
+                    <?php } ?>
+                ],
+                colors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)', 'rgb(255, 152, 0)', 'rgb(0, 150, 136)'],
+                formatter: function (y) {
+                    return  y
                 }
             });
-        });
+        }
+    }
+    $(document).ready(function(){
+        getMorris('donut', 'donut_chart');
     });
-
-    Morris.Donut({
-        element: 'totaluser',
-        data: [
-            {label: "نامزد انتخاباتی", value: 12 ,color:"rgb(175,22,89)"},
-            {label: "حامی", value: 30 ,color:"rgb(239,108,2)"},
-            {label: "نخبه", value: 20 ,color:"rgb(244,67,54)"}
-        ]
-    });
-    Morris.Donut({
-        element: 'Gender',
-        data: [
-            {label: "مرد", value: 12 ,color:"rgb(175,22,89)"},
-
-            {label: "زن", value: 20 ,color:"rgb(244,67,54)"}
-        ]
-    });
-    Morris.Donut({
-        element: 'TestStatus',
-        data: [
-            {label: "آزمون دهندگان مرحله1", value: 12 ,color:"rgb(175,22,89)"},
-            {label: "آزمون دهندگان مرحله2", value: 20 ,color:"rgb(239,108,2)"},
-            {label: "آزمون دهندگان کانون ارزیابی", value: 20 ,color:"rgb(244,67,54)"}
-        ]
-    });
-    Morris.Donut({
-        element: 'Religion',
-        data: [
-            {label: "اسلام-شیعه", value: 80 ,color:"rgb(175,22,89)"},
-            {label: "نامشخص", value: 20 ,color:"rgb(239,108,2)"},
-            {label: "اسلام-سنی", value: 20 ,color:"rgb(244,67,54)"},
-            {label: "مسیحی", value: 20 ,color:"#ffcc80"},
-            {label: "یهودی", value: 20 ,color:"#ec407a"},
-            {label: "زرشت", value: 20 ,color:"#ffcdd2"},
-            {label: "سایر", value: 20 ,color:"#ffd740"}
-        ]
-    });
-
-    Morris.Donut({
-        element: 'degreeOfEducation',
-        data: [
-            {label: "زیردیپلم", value: 80 ,color:"rgb(175,22,89)"},
-            {label: "دیپلم", value: 20 ,color:"rgb(239,108,2)"},
-            {label: "کاردانی", value: 20 ,color:"rgb(244,67,54)"},
-            {label: "کارشناسی", value: 20 ,color:"#ffcc80"},
-            {label: "کارشناسی ارشد", value: 20 ,color:"#ec407a"},
-            {label: "دکتری حرفه ای", value: 20 ,color:"#ffcdd2"},
-            {label: "دکتری تخصصی", value: 20 ,color:"#ffd740"},
-            {label: "فوق دکتری", value: 80 ,color:"rgb(175,22,89)"},
-            {label: "حوزه سطح یک", value: 20 ,color:"rgb(239,108,2)"},
-            {label: "حوزه سطح دو", value: 20 ,color:"rgb(244,67,54)"},
-            {label: "حوزه سطح سه", value: 20 ,color:"#ffcc80"},
-            {label: "حوزه سطح چهار", value: 20 ,color:"#ec407a"},
-        ]
-    });
-
-    Morris.Donut({
-        element: 'Condition',
-        data: [
-            {label: "ثبت نام اولیه", value: 80 ,color:"rgb(175,22,89)"},
-            {label: "تکمیل رزومه", value: 20 ,color:"rgb(239,108,2)"},
-            {label: "تایید رزومه", value: 20 ,color:"rgb(244,67,54)"},
-            {label: "رد رزومه", value: 20 ,color:"#ffcc80"},
-            {label: "عدم احراز سایر شرایط", value: 20 ,color:"#ec407a"},
-            {label: "در انتظار نمره دهی", value: 20 ,color:"#ffcdd2"},
-            {label: "امتیاز بندی رزومه", value: 20 ,color:"#ffd740"},
-            {label: "آزمون مرحله اول", value: 80 ,color:"rgb(175,22,89)"},
-            {label: "عدم موفقیت در آزمون مرحله اول", value: 20 ,color:"rgb(239,108,2)"},
-            {label: "آزمون مرحله دوم", value: 20 ,color:"rgb(244,67,54)"},
-            {label: "عدم موفقیت در آزمون مرحله دوم", value: 20 ,color:"#ffcc80"},
-            {label: "کانون ارزیابی", value: 20 ,color:"#ec407a"},
-            {label: "تایید نهایی", value: 20 ,color:"#ec407a"},
-        ]
-    });
-
-
-
 </script>

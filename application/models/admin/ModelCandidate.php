@@ -931,8 +931,7 @@ class ModelCandidate extends CI_Model{
         $this->db->trans_start();
         $UserArray = array(
             'CandidateCode' => $inputs['inputCandidateCode'],
-            'CandidateFirstName ' => $inputs['inputCandidateFirstName'],
-            'CandidateLastName' => $inputs['inputCandidateLastName'],
+            'CandidateFullName ' => $inputs['inputCandidateFullName'],
             'CandidateStateId' => $inputs['inputCandidateStateId'],
             'CandidateElectionId' => $inputs['inputCandidateElectionId'],
             'CandidateProfileImage' =>  $inputs['inputCandidateProfileImage'],
@@ -960,8 +959,7 @@ class ModelCandidate extends CI_Model{
         $this->db->trans_start();
         if($inputs['inputCandidateProfileImage'] != ""){
             $UserArray = array(
-                'CandidateFirstName ' => $inputs['inputCandidateFirstName'],
-                'CandidateLastName' => $inputs['inputCandidateLastName'],
+                'CandidateFullName ' => $inputs['inputCandidateFullName'],
                 'CandidateStateId' => $inputs['inputCandidateStateId'],
                 'CandidateElectionId' => $inputs['inputCandidateElectionId'],
                 'CandidateProfileImage' =>  $inputs['inputCandidateProfileImage'],
@@ -970,8 +968,7 @@ class ModelCandidate extends CI_Model{
         }
         else{
             $UserArray = array(
-                'CandidateFirstName ' => $inputs['inputCandidateFirstName'],
-                'CandidateLastName' => $inputs['inputCandidateLastName'],
+                'CandidateFullName ' => $inputs['inputCandidateFullName'],
                 'CandidateStateId' => $inputs['inputCandidateStateId'],
                 'CandidateElectionId' => $inputs['inputCandidateElectionId'],
                 'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
@@ -1018,6 +1015,5 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
-
 }
 ?>

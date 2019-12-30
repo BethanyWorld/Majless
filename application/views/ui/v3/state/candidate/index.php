@@ -1,4 +1,4 @@
-<?php $_DIR = base_url('assets/ui/v3/'); ?>
+<?php $_DIR = base_url('assets/ui/v4/'); ?>
 <div class="page-caption">
     <?php echo urldecode($stateName); ?>
 </div>
@@ -248,7 +248,124 @@
                         </div>
                     <?php }
                 } ?>
+
+                <div class="col-md-3 col-sm-6 mp">
+                    <div class="mp-brief">
+                        <div class="pic">
+                            <img src="<?php echo $noImg; ?>" id="candidateImage">
+                        </div>
+                        <div class="">
+                            <button class="btn invite-button" type="button" data-toggle="modal" data-target="#myModal">دعوت به
+                                جنبش ازما
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-left close-icon" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">دعوت به جنبش از ما</h4>
+            </div>
+            <div class="modal-body">
+                <div class="show-box" id="show-box">
+                    <div class="modal-border">
+                        <div class="inner-border-div">
+                            <div class="candidate-image-div">
+                                <img src="<?php echo $noImg; ?>" class="modalLogo">
+                            </div>
+                            <div class="candidate-text-invite">
+                                <p>
+                                    بدین وسیله احتراما دعوت می شود از
+                                </p>
+                            </div>
+                            <div class="candidate-name">
+                                <h1>دکتر علیرضا زاکانی</h1>
+                            </div>
+                            <div class="candidate-text-invite">
+                                <p>
+                                    برای پیوست به جنبش
+                                    <a>
+                                        <span class="fa fa-angle-double-right"></span>
+                                        ازما
+                                        <span class="fa fa-angle-double-left"></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-box1" id="hidden-box1">
+                    <div class="modal-border">
+                        <div class="inner-border-div">
+                            <div class="candidate-image-div">
+                                <img src="<?php echo $noImg; ?>" class="modalLogo">
+                            </div>
+                            <div class="candidate-text-invite">
+                                <p>
+                                    بدین وسیله احتراما دعوت می شود از
+                                </p>
+                            </div>
+                            <div class="candidate-name">
+                                <h1>دکتر علیرضا زاکانی</h1>
+                            </div>
+                            <div class="candidate-text-invite">
+                                <p>
+                                    برای پیوست به جنبش
+                                    <a>
+                                        <span class="fa fa-angle-double-right"></span>
+                                        ازما
+                                        <span class="fa fa-angle-double-left"></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-box2" id="hidden-box2">
+                    <div class="modal-border">
+                        <div class="inner-border-div">
+                            <div class="candidate-image-div">
+                                <img src="<?php echo $noImg; ?>" class="modalLogo">
+                            </div>
+                            <div class="candidate-text-invite">
+                                <p>
+                                    بدین وسیله احتراما دعوت می شود از
+                                </p>
+                            </div>
+                            <div class="candidate-name">
+                                <h1>دکتر علیرضا زاکانی</h1>
+                            </div>
+                            <div class="candidate-text-invite">
+                                <p>
+                                    برای پیوست به جنبش
+                                    <a>
+                                        <span class="fa fa-angle-double-right"></span>
+                                        ازما
+                                        <span class="fa fa-angle-double-left"></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn pull-left close-btn" data-dismiss="modal">بستن</button>
+                <a type="button" class="btn pull-left receive-btn" id="receiveFile" href="#">دریافت فایل</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="<?php echo $_DIR; ?>js/dom-to-image.js"></script>
+<script src="<?php echo $_DIR; ?>js/file-to-save.js"></script>

@@ -1,5 +1,4 @@
 <?php
-
 class ModelReport extends CI_Model{
     public function getAllCandidatesCount($stateId = 0){
         $this->db->select('*');
@@ -114,8 +113,17 @@ class ModelReport extends CI_Model{
         if($stateId > 0){
             $this->db->where('CandidateStateId' , $stateId);
         }
-        $this->db->limit(8);
+        $this->db->order_by('CandidateId' , 'DESC');
+        $this->db->limit(5);
         return $this->db->get()->result_array();
+    }
+
+    public function getTodayCandidates(){
+        $this->db->select('*');
+        $this->db->from('candidate');
+        $this->db->like('CreateDateTime' , jDateTime::date("Y/m/d", false, false));
+        $this->db->order_by('CandidateId' , 'DESC');
+        return $this->db->get()->num_rows();
     }
 
 }

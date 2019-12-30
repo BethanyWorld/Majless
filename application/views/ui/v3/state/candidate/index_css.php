@@ -358,6 +358,175 @@
             margin: auto;
         }
     }
-
     /**/
+
+
+
+
+
+    button{
+        outline: none;
+    }
+    .modal-body{
+        margin: auto;
+    }
+    .hidden-box1{
+        height: 960px;
+        width: 540px;
+        top: 0px;
+        left: 0px;
+        right: -3000px;
+        position: absolute;
+    }
+    .hidden-box2{
+        height: 1000px;
+        width: 1000px;
+        top: 0px;
+        left: 0px;
+        right: -3000px;
+        position: absolute;
+    }
+    .mp{
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 100;
+        height: 330px;
+    }
+    .mp-brief{
+        padding: 5px 0 5px;
+        background: #f9f9f9;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 5px solid #da1f26;
+        margin-bottom: 25px;
+        height: 100%;
+    }
+    .mp-brief .pic {
+        width: 100%;
+        height: 250px;
+        border-radius: 10%;
+        transition: all 0.9s ease 0s;
+        box-shadow: 0 0 0 14px #f7f5ec;
+        transform: scale(.7);
+        position: relative;
+        z-index: 2;
+    }
+
+    .invite-button{
+        padding: 15px;
+        background: #da1f26;
+        color: #fff;
+    }
+    .invite-button:hover , .invite-button:focus{
+        color: #fff;
+        outline: none;
+    }
+    .mp-brief .pic img {
+        width: 100%;
+        height: auto;
+        border-radius: 10%;
+        transition: all 0.9s ease 0s;
+        box-shadow: 0 0 0 14px #f7f5ec;
+        transform: scale(.7);
+        position: relative;
+        z-index: 2;
+        max-height: 255px;
+    }
+
+    .mp-brief .pic:before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #da1f26;
+        position: absolute;
+        bottom: 135%;
+        right: 0;
+        left: 0;
+        opacity: 1;
+        transform: scale(3);
+        transition: all 0.3s linear 0s;
+    }
+    .mp-brief .pic:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 25%;
+        background: #ffffff00;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: all 0.3s linear 0s;
+    }
+
+    .close-btn{
+        background-color: #da1f26;
+        border-radius: 0px;
+        color: #fff;
+    }
+    .close-icon{
+        color: #da1f26;
+        opacity: 1;
+        font-weight: bold;
+    }
+    .close-btn:hover , .close-btn:focus{
+        color: #fff;
+        outline: none;
+    }
+    .close-icon:hover{
+        color: #da1f26;
+    }
+    .receive-btn:hover , .receive-btn:focus {
+        color: #fff;
+        outline: none;
+    }
+    .receive-btn{
+        color: #fff;
+        background-color: #2ecc71;
+    }
+
+
+    /*for modal body*/
+    .modal-border{
+        border: 20px solid #ECAF3A;
+        height: 100%;
+    }
+    .inner-border-div{
+        height: 100%;
+        background-color: #ccc;
+        border-top-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+        padding-top: 50px;
+    }
+    .candidate-image-div{
+        border: 15px solid #C88745;
+        height: 200px;
+        position: relative;
+        width: 35%;
+        margin: auto;
+    }
+    .candidate-image-div img{
+        width: 100%;
+        height: 100%;
+    }
+    .candidate-name{
+        text-align: center;
+        color: #0B5E4A;
+    }
+    .candidate-text-invite{
+        color: #0B5E4A;
+        text-align: center;
+    }
+    .candidate-text-invite p{
+        margin: 0px;
+    }
+    .candidate-text-invite a{
+        cursor: pointer;
+        color: #0B5E4A;
+        text-align: center;
+    }
+    /*for modal body*/
 </style>
