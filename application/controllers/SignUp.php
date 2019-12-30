@@ -177,7 +177,7 @@ class SignUp extends CI_Controller{
     public function importSMS(){
         /*$this->load->helper('plugins/excel/bootstrap_helper');
         $this->load->helper('plugins/excel/PHPExcel/iofactory_helper');
-        $inputFileName = APPPATH.'Export-1398-09-30.xlsx';
+        $inputFileName = APPPATH.'ImportSP.xlsx';
         $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
         $objReader = PHPExcel_IOFactory::createReader($inputFileType);
         $objPHPExcel = $objReader->load($inputFileName);
@@ -186,6 +186,17 @@ class SignUp extends CI_Controller{
         $highestColumn = $sheet->getHighestColumn();
         for ($row = 2; $row <= $highestRow; $row++) {
             $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE)[0];
+            var_dump($rowData);
+            $arr = array(
+                rand(10000,99999),
+                $rowData[1],
+                8,
+                62,
+                NULL,
+                jDateTime::date("Y/m/d H:i:s", false, false)
+            );
+            $this->db->query("INSERT INTO candidate_special (CandidateCode,CandidateFullName,CandidateStateId,CandidateElectionId,CandidateProfileImage,CreateDateTime) VALUES (?,?,?,?,?,?)" , $arr);
+
             $message = 'فرهیخته گرامی';
             $message .= " ".$rowData[1]." ".$rowData[2];
             $message .= PHP_EOL;
@@ -206,7 +217,7 @@ class SignUp extends CI_Controller{
             $result = curl_exec($ch);
             echo "<pre>$result</pre>";
             curl_close($ch);
-        }
+        }*/
         /*Single Send*/
         /*$message = 'فرهیخته گرامی';
         $message .= PHP_EOL;
