@@ -1,3 +1,4 @@
+<?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
     .list-group-item {
         padding: 10px 5px;
@@ -364,36 +365,47 @@
 
 
 
-    button{
+    button {
         outline: none;
     }
-    .modal-body{
+
+    .modal-body {
         margin: auto;
     }
-    .hidden-box1{
+
+    .hidden-box1 {
         height: 960px;
         width: 540px;
         top: 0px;
         left: 0px;
-        right: -3000px;
-        position: absolute;
+        right: -6000px;
+        position: relative;
     }
-    .hidden-box2{
+
+    .hidden-box2 {
         height: 1000px;
         width: 1000px;
         top: 0px;
         left: 0px;
-        right: -3000px;
-        position: absolute;
+        right: -6000px;
+        position: relative;
     }
-    .mp{
+
+    /*.hidden-box2 .modal-border{*/
+    /*    height: 100%;*/
+    /*}*/
+    /*.hidden-box1 .modal-border{*/
+    /*    height: 100%;*/
+    /*}*/
+    .mp {
         cursor: pointer;
         position: relative;
         overflow: hidden;
         z-index: 100;
         height: 330px;
     }
-    .mp-brief{
+
+    .mp-brief {
         padding: 5px 0 5px;
         background: #f9f9f9;
         text-align: center;
@@ -403,6 +415,7 @@
         margin-bottom: 25px;
         height: 100%;
     }
+
     .mp-brief .pic {
         width: 100%;
         height: 250px;
@@ -414,15 +427,17 @@
         z-index: 2;
     }
 
-    .invite-button{
+    .invite-button {
         padding: 15px;
         background: #da1f26;
         color: #fff;
     }
-    .invite-button:hover , .invite-button:focus{
+
+    .invite-button:hover, .invite-button:focus {
         color: #fff;
         outline: none;
     }
+
     .mp-brief .pic img {
         width: 100%;
         height: auto;
@@ -435,7 +450,7 @@
         max-height: 255px;
     }
 
-    .mp-brief .pic:before{
+    .mp-brief .pic:before {
         content: "";
         width: 100%;
         height: 100%;
@@ -449,6 +464,7 @@
         transform: scale(3);
         transition: all 0.3s linear 0s;
     }
+
     .mp-brief .pic:after {
         content: "";
         width: 100%;
@@ -462,71 +478,258 @@
         transition: all 0.3s linear 0s;
     }
 
-    .close-btn{
+    .close-btn {
         background-color: #da1f26;
         border-radius: 0px;
         color: #fff;
     }
-    .close-icon{
+
+    .close-icon {
         color: #da1f26;
         opacity: 1;
         font-weight: bold;
     }
-    .close-btn:hover , .close-btn:focus{
+
+    .close-btn:hover, .close-btn:focus {
         color: #fff;
         outline: none;
     }
-    .close-icon:hover{
+
+    .close-icon:hover {
         color: #da1f26;
     }
-    .receive-btn:hover , .receive-btn:focus {
+
+    .receive-btn:hover, .receive-btn:focus {
         color: #fff;
         outline: none;
     }
-    .receive-btn{
+
+    .receive-btn {
         color: #fff;
         background-color: #2ecc71;
     }
 
 
     /*for modal body*/
-    .modal-border{
-        border: 20px solid #ECAF3A;
-        height: 100%;
+    .modal-border {
+        /*border: 20px solid #ECAF3A;*/
+        /*height: 100%;*/
+        /*background-image: url("../images/Candidate/post-bg.png");*/
+        /*background-repeat: no-repeat;*/
+        /*background-size: contain;*/
+        /*background-position: center;*/
+        /*height: 72vh;*/
+        /*padding: 10% 0%  20% 0%;*/
     }
-    .inner-border-div{
-        height: 100%;
-        background-color: #ccc;
-        border-top-left-radius: 20%;
-        border-bottom-right-radius: 20%;
-        padding-top: 50px;
+
+    .inner-border-div {
+        /*height: 100%;*/
+        /*background-color: #ccc;*/
+        /*border-top-left-radius: 20%;*/
+        /*border-bottom-right-radius: 20%;*/
+        /*padding-top: 50px;*/
     }
-    .candidate-image-div{
-        border: 15px solid #C88745;
-        height: 200px;
+
+    .inner-border-div img {
         position: relative;
-        width: 35%;
-        margin: auto;
-    }
-    .candidate-image-div img{
         width: 100%;
         height: 100%;
     }
-    .candidate-name{
+    #hidden-box2 .inner-border-div img {
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+    .candidate-image-div {
+        /*background-image: url(../images/Candidate/post-frame.png);*/
+        /*height: 200px;*/
+        /*width: 200px;*/
+        /*background-repeat: no-repeat;*/
+        /*background-size: contain;*/
+        /*background-position: center;*/
+        margin: auto;
+        position: absolute;
+        top: 10%;
+        left: 0px;
+        right: 0px;
+        text-align: center;
+    }
+
+    .candidate-inner-div-image {
+        /*height:328px;*/
+        /*background-image: url(../images/Candidate/post-man.png);*/
+        /*background-repeat: no-repeat;*/
+        /*background-size: contain;*/
+        /*background-position: center;*/
+        margin: auto;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        top: -7px;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    /*.candidate-image-div img {*/
+    /*    width: 100%;*/
+    /*    height: 100%;*/
+    /*}*/
+    .candidate-name {
         text-align: center;
         color: #0B5E4A;
     }
-    .candidate-text-invite{
-        color: #0B5E4A;
+
+    .candidate-name h1 {
+        font-weight: bold;
+        font-size: 45px;
+        padding-top: 10px;
+        margin-top: 0px;
         text-align: center;
     }
-    .candidate-text-invite p{
+    #hidden-box2 .candidate-name h1 {
+        font-weight: bold;
+        font-size: 75px;
+        padding-top: 15px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+    #hidden-box1 .candidate-name h1 {
+        font-weight: bold;
+        font-size: 55px;
+        padding-top: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .candidate-text-invite {
+        color: #0B5E4A;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 500;
+    }
+    #hidden-box1 .candidate-text-invite {
+        color: #0B5E4A;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+    }
+    #hidden-box2 .candidate-text-invite {
+        color: #0B5E4A;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 500;
+    }
+    .candidate-text-invite p {
         margin: 0px;
     }
-    .candidate-text-invite a{
+
+    .candidate-text-invite a {
         cursor: pointer;
         color: #0B5E4A;
         text-align: center;
     }
+
+    .tttt {
+        position: absolute;
+        top: 50%;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+    }
+    #hidden-box1 .tttt{
+        position: absolute;
+        top: 28%;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+    }
+    /*#hidden-box1 .candidate-image-div{*/
+    /*    top: 10%;*/
+    /*}*/
+    #hidden-box1 .modal-border{
+        height: 100%;
+    }
+    #hidden-box1 .inner-border-div{
+        height: 100%;
+    }
+
+    #hidden-box2 .tttt{
+        position: absolute;
+        top: 28%;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+    }
+    #hidden-box2 .candidate-image-div{
+        top: 5%;
+    }
+    #hidden-box2 .modal-border{
+        height: 100%;
+    }
+    #hidden-box2 .inner-border-div{
+        height: 100%;
+    }
+    .inner-candidate-image{
+        background: url(<?php echo $_DIR; ?>/images/post-frame.png);
+        padding: 25px 52px 33px 25px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 30% !important;
+    }
+    #hidden-box2 .inner-candidate-image{
+        background: url(<?php echo $_DIR; ?>/images/post-frame.png);
+        padding: 44px 55px 60px 45px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #hidden-box1 .inner-candidate-image{
+        background: url(<?php echo $_DIR; ?>/images/story-frame.png);
+        padding: 12px 8px 35px 10px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 45% !important;
+    }
     /*for modal body*/
+
+
+    @media (max-width: 992px) {
+        /*.inner-border-div{*/
+        /*    padding-top: 20px;*/
+        /*}*/
+        /*.candidate-image-div {*/
+        /*    height: 135px;*/
+        /*    width: 200px;*/
+        /*}*/
+        .inner-candidate-image{
+            padding: 10px 11px 25px 11px;
+            width: 27% !important;
+        }
+        .candidate-text-invite {
+            color: #0B5E4A;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .candidate-name h1 {
+            font-weight: bold;
+            font-size: 19px;
+            padding-top: 4px;
+            margin-top: 0px;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+
+        .candidate-inner-div-image {
+            height: 110px;
+        }
+
+        /*.modal-border{*/
+        /*    height: 50vh;*/
+        /*}*/
+    }
 </style>
