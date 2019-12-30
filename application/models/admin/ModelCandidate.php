@@ -371,6 +371,19 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+    public function getCandidateSpecialByStateId($stateId)
+    {
+        $this->db->select('*');
+        $this->db->from('candidate_special');
+        $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
+        $this->db->where_in('CandidateStateId', $stateId);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        return array();
+    }
+
     /* Candidate Panel */
     public function candidateHasOtherConditionToContinue($inputs)
     {
@@ -897,8 +910,7 @@ class ModelCandidate extends CI_Model{
         }
 
         if (!empty($inputs['inputCandidateFullName'])) {
-            $this->db->like('CandidateFirstName', $inputs['inputCandidateFullName']);
-            $this->db->or_like('CandidateLastName', $inputs['inputCandidateFullName']);
+            $this->db->like('CandidateFullName', $inputs['inputCandidateFullName']);
         }
 
 
