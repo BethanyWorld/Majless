@@ -9,6 +9,17 @@
                                 <input type="hidden" class="form-control"
                                        value="<?php echo $candidate['RowId']; ?>"
                                        id="inputRowId" name="inputRowId"/>
+                            <div class="col-xs-12 col-sm-6 col-md-2">
+                                <label for="inputCandidatePreName">پیشوند</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control"
+                                               maxlength="80" minlength="3"
+                                               value="<?php echo $candidate['CandidatePreName']; ?>"
+                                               id="inputCandidatePreName" name="inputCandidatePreName"/>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-xs-12 col-sm-6 col-md-3">
                                 <label for="inputCandidateFullName">نام و نام خانوادگی</label>
                                 <div class="form-group">

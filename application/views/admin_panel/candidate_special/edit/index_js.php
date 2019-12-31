@@ -16,6 +16,7 @@
                 type: 'post',
                 success: function (data) {
                     $result = jQuery.parseJSON(data);
+                    $inputCandidatePreName = $.trim($("#inputCandidatePreName").val());
                     $inputCandidateFullName = $.trim($("#inputCandidateFullName").val());
                     $inputRowId = $.trim($("#inputRowId").val());
                     $inputCandidateImage = $result['fileSrc'];
@@ -25,6 +26,7 @@
                     toggleLoader();
                     $sendData = {
                         'inputRowId': $inputRowId,
+                        'inputCandidatePreName': $inputCandidatePreName,
                         'inputCandidateFullName': $inputCandidateFullName,
                         'inputCandidateProfileImage': $inputCandidateImage,
                         'inputCandidateStateId': $inputCandidateStateId,

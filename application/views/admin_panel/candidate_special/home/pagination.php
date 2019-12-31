@@ -9,7 +9,7 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
     foreach ($data as $candidate) { ?>
         <tr>
             <td class="fit"><?php echo $counter++; ?></td>
-            <td><?php echo $candidate['CandidateFullName']; ?></td>
+            <td><?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?></td>
             <td class="fit"><?php echo $candidate['StateName']; ?></td>
             <td class="fit"><?php echo $candidate['CandidateCode']; ?></td>
             <td class="fit">

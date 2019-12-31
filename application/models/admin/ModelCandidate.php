@@ -943,6 +943,7 @@ class ModelCandidate extends CI_Model{
         $this->db->trans_start();
         $UserArray = array(
             'CandidateCode' => $inputs['inputCandidateCode'],
+            'CandidatePreName' => $inputs['inputCandidatePreName'],
             'CandidateFullName ' => $inputs['inputCandidateFullName'],
             'CandidateStateId' => $inputs['inputCandidateStateId'],
             'CandidateElectionId' => $inputs['inputCandidateElectionId'],
@@ -971,6 +972,7 @@ class ModelCandidate extends CI_Model{
         $this->db->trans_start();
         if($inputs['inputCandidateProfileImage'] != ""){
             $UserArray = array(
+                'CandidatePreName' => $inputs['inputCandidatePreName'],
                 'CandidateFullName ' => $inputs['inputCandidateFullName'],
                 'CandidateStateId' => $inputs['inputCandidateStateId'],
                 'CandidateElectionId' => $inputs['inputCandidateElectionId'],
@@ -980,6 +982,7 @@ class ModelCandidate extends CI_Model{
         }
         else{
             $UserArray = array(
+                'CandidatePreName' => $inputs['inputCandidatePreName'],
                 'CandidateFullName ' => $inputs['inputCandidateFullName'],
                 'CandidateStateId' => $inputs['inputCandidateStateId'],
                 'CandidateElectionId' => $inputs['inputCandidateElectionId'],
