@@ -543,7 +543,7 @@
     }
     #hidden-box2 .inner-border-div img {
         position: relative;
-        width: auto !important;
+        width: auto;
         height: auto;
     }
     .candidate-image-div {
@@ -555,7 +555,7 @@
         /*background-position: center;*/
         margin: auto;
         position: absolute;
-        top: 10%;
+        top: 35px;
         left: 0px;
         right: 0px;
         text-align: center;
@@ -589,26 +589,27 @@
     .candidate-name h1 {
         font-weight: bold;
         font-size: 45px;
-        padding-top: 10px;
+        padding-top: 0px;
         margin-top: 0px;
         text-align: center;
+        margin-bottom: 0px;
     }
     #hidden-box2 .candidate-name h1 {
         font-weight: bold;
-        font-size: 75px;
-        padding-top: 15px;
+        font-size: 55px;
+        padding-top: 0px;
         margin-top: 0px;
         margin-bottom: 0px;
-        padding-bottom: 15px;
+        padding-bottom: 0px;
         text-align: center;
     }
     #hidden-box1 .candidate-name h1 {
         font-weight: bold;
-        font-size: 55px;
-        padding-top: 20px;
+        font-size: 40px;
+        padding-top: 0px;
         margin-top: 0px;
         margin-bottom: 0px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         text-align: center;
     }
     .candidate-text-invite {
@@ -620,7 +621,7 @@
     #hidden-box1 .candidate-text-invite {
         color: #0B5E4A;
         text-align: center;
-        font-size: 30px;
+        font-size: 27px;
         font-weight: 500;
     }
     #hidden-box2 .candidate-text-invite {
@@ -631,6 +632,7 @@
     }
     .candidate-text-invite p {
         margin: 0px;
+        line-height: normal;
     }
 
     .candidate-text-invite a {
@@ -653,9 +655,9 @@
         left: 0px;
         right: 0px;
     }
-    /*#hidden-box1 .candidate-image-div{*/
-    /*    top: 10%;*/
-    /*}*/
+    #hidden-box1 .candidate-image-div{
+        top: 60px;
+    }
     #hidden-box1 .modal-border{
         height: 100%;
     }
@@ -671,7 +673,7 @@
         right: 0px;
     }
     #hidden-box2 .candidate-image-div{
-        top: 5%;
+        top: 45px;
     }
     #hidden-box2 .modal-border{
         height: 100%;
@@ -684,15 +686,16 @@
         padding: 21px 23px 30px 21px;
         background-size: contain;
         background-repeat: no-repeat;
-        width: 31% !important;
+        width: 180px !important;
         background-position: center;
     }
     #hidden-box2 .inner-candidate-image{
         background: url(<?php echo $_DIR; ?>/images/post-frame.png);
-        padding: 44px 55px 60px 45px;
+        padding: 41px 51px 58px 45px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        width: 370px !important;
 
     }
     #hidden-box1 .inner-candidate-image{
@@ -700,7 +703,7 @@
         padding: 30px 30px 34px 23px;
         background-size: contain;
         background-repeat: no-repeat;
-        width: 40% !important;
+        width: 220px !important;
         background-position: center;
 
     }
@@ -715,9 +718,15 @@
         /*    height: 135px;*/
         /*    width: 200px;*/
         /*}*/
+        #hidden-box1 .candidate-name h1{
+            padding-bottom:0px; ;
+        }
+        .candidate-image-div{
+            top: 10%;
+        }
         .inner-candidate-image{
-            padding: 10px 11px 25px 11px;
-            width: 27% !important;
+            padding: 9px 11px 13px 11px;
+            width: 25% !important;
         }
         .candidate-text-invite {
             color: #0B5E4A;
@@ -729,10 +738,11 @@
         .candidate-name h1 {
             font-weight: bold;
             font-size: 19px;
-            padding-top: 4px;
+            padding-top: 0px;
             margin-top: 0px;
-            margin-bottom: 4px;
+            margin-bottom: 0px;
             text-align: center;
+            line-height: 2em;
         }
 
         .candidate-inner-div-image {

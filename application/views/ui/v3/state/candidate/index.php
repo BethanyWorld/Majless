@@ -253,27 +253,28 @@
                 } ?>
 
                 <?php foreach ($dataSpecial as $candidate) {
-                    if($candidate['CandidateProfileImage'] !== NULL){
-                    ?>
-                    <div class="col-md-4">
-                        <div class="mp-brief">
-                            <div class="pic">
-                                <img src="<?php echo base_url('uploads/').$candidate['CandidateProfileImage']; ?>"
-                                     id="candidateImage" />
-                            </div>
-                            <div class="">
-                                <h3 class="candidateName"><?php echo $candidate['CandidateFullName']; ?></h3>
-                                <button
-                                        data-title="<?php echo $candidate['CandidateFullName']; ?>"
-                                        data-image="<?php echo base_url('uploads/').$candidate['CandidateProfileImage']; ?>"
-                                        class="btn invite-button" type="button"
-                                        data-toggle="modal" data-target="#myModal">
-                                    دعوت به جنبش از ما
-                                </button>
+                    if ($candidate['CandidateProfileImage'] !== NULL) {
+                        ?>
+                        <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+                            <div class="mp-brief">
+                                <div class="pic">
+                                    <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                         id="candidateImage"/>
+                                </div>
+                                <div class="">
+                                    <h3 class="candidateName"><?php echo $candidate['CandidateFullName']; ?></h3>
+                                    <button
+                                            data-title="<?php echo $candidate['CandidateFullName']; ?>"
+                                            data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                            class="btn invite-button" type="button"
+                                            data-toggle="modal" data-target="#myModal">
+                                        دعوت به جنبش از ما
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php } } ?>
+                    <?php }
+                } ?>
 
 
             </div>
@@ -291,7 +292,7 @@
                 <div class="">
                     <div class="candidate-text-invite">
                         <p>
-                            بدین وسیله احتراما دعوت می شود از
+                            دعوت میکنیم از
                         </p>
                     </div>
                     <div class="candidate-name">
@@ -299,12 +300,11 @@
                     </div>
                     <div class="candidate-text-invite">
                         <p>
-                            برای پیوست به جنبش
-                            <a>
-                                <span class="fa fa-angle-double-right"></span>
-                                ازما
-                                <span class="fa fa-angle-double-left"></span>
-                            </a>
+                            برای شرکت در
+                        </p>
+                        <p>
+                            فرایند سنجش و شفافیت جنبش
+                            <a> #از_ما</a>
                         </p>
                     </div>
                 </div>
@@ -322,7 +322,7 @@
                 <div class="">
                     <div class="candidate-text-invite">
                         <p>
-                            بدین وسیله احتراما دعوت می شود از
+                            دعوت میکنیم از
                         </p>
                     </div>
                     <div class="candidate-name">
@@ -330,12 +330,11 @@
                     </div>
                     <div class="candidate-text-invite">
                         <p>
-                            برای پیوست به جنبش
-                            <a>
-                                <span class="fa fa-angle-double-right"></span>
-                                ازما
-                                <span class="fa fa-angle-double-left"></span>
-                            </a>
+                            برای شرکت در
+                        </p>
+                        <p>
+                            فرایند سنجش و شفافیت جنبش
+                            <a> #از_ما</a>
                         </p>
                     </div>
                 </div>
@@ -362,7 +361,7 @@
                                 <div class="">
                                     <div class="candidate-text-invite">
                                         <p>
-                                            بدین وسیله احتراما دعوت می شود از
+                                            دعوت میکنیم از
                                         </p>
                                     </div>
                                     <div class="candidate-name">
@@ -370,12 +369,11 @@
                                     </div>
                                     <div class="candidate-text-invite">
                                         <p>
-                                            برای پیوست به جنبش
-                                            <a>
-                                                <span class="fa fa-angle-double-right"></span>
-                                                ازما
-                                                <span class="fa fa-angle-double-left"></span>
-                                            </a>
+                                            برای شرکت در
+                                        </p>
+                                        <p>
+                                            فرایند سنجش و شفافیت جنبش
+                                            <a> #از_ما</a>
                                         </p>
                                     </div>
                                 </div>
