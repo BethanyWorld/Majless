@@ -484,6 +484,11 @@
         transition: all 0.3s linear 0s;
     }
 
+    .close-btn , .close-btn:hover{
+        background-color: #da1f26;
+        border-radius: 0px;
+        color: #fff;
+    }
     .close-btn {
         background-color: #da1f26;
         border-radius: 0px;
@@ -509,10 +514,16 @@
         color: #fff;
         outline: none;
     }
-
     .receive-btn {
         color: #fff;
-        background-color: #2ecc71;
+        background-color: #052452;
+        border-radius: 0;
+    }
+
+    h3.candidateName{
+        font-size: 13px;
+        font-weight: 900;
+        text-align: center;
     }
 
 
@@ -588,7 +599,7 @@
 
     .candidate-name h1 {
         font-weight: bold;
-        font-size: 45px;
+        font-size: 26px;
         padding-top: 0px;
         margin-top: 0px;
         text-align: center;
@@ -596,7 +607,7 @@
     }
     #hidden-box2 .candidate-name h1 {
         font-weight: bold;
-        font-size: 55px;
+        font-size: 28px;
         padding-top: 0px;
         margin-top: 0px;
         margin-bottom: 0px;
@@ -605,7 +616,7 @@
     }
     #hidden-box1 .candidate-name h1 {
         font-weight: bold;
-        font-size: 40px;
+        font-size: 26px;
         padding-top: 0px;
         margin-top: 0px;
         margin-bottom: 0px;

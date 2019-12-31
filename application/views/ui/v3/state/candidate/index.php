@@ -203,55 +203,6 @@
                 </div>
             </div>
             <div class="row candidate-container">
-                <?php
-                if (0) {
-                    foreach ($data as $candidate) { ?>
-                        <div class="col-md-4 col-sm-6 mp">
-                            <div class="mp-brief">
-                                <div class="menu">
-                                    <ul>
-                                        <li>
-                                            <a href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . "/" . $stateName); ?>">رزومه</a>
-                                        </li>
-                                        <li>
-                                            <a href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . "/" . $stateName); ?>">فهرست
-                                                اموال</a></li>
-                                        <li>
-                                            <a href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . "/" . $stateName); ?>">وعده
-                                                های انتخاباتی</a></li>
-                                        <li>
-                                            <a href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . "/" . $stateName); ?>">هزینه
-                                                های انتخابات</a></li>
-                                        <li>
-                                            <a href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . "/" . $stateName); ?>">تعهدنامه</a>
-                                        </li>
-                                        <li>
-                                            <a href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . "/" . $stateName); ?>">نتایج
-                                                سنجش</a></li>
-                                        <li>
-                                            <a href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . "/" . $stateName); ?>">اخبار </a>
-                                        </li>
-                                        <li>
-                                            <a href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . "/" . $stateName); ?>">گزارش
-                                                تخلف </a></li>
-                                    </ul>
-                                </div>
-                                <div class="pic">
-                                    <img src="<?php echo $_DIR; ?>/images/profile.jpg">
-                                </div>
-                                <div class="team-content">
-                                    <h3 class="title">
-                                        <?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?>
-                                    </h3>
-                                    <span class="post">
-                                    نامزد انتخاباتی <?php echo $candidate['ElectionName']; ?>
-                                </span>
-                                </div>
-                            </div>
-                        </div>
-                    <?php }
-                } ?>
-
                 <?php foreach ($dataSpecial as $candidate) {
                     if ($candidate['CandidateProfileImage'] !== NULL) {
                         ?>
@@ -259,12 +210,14 @@
                             <div class="mp-brief">
                                 <div class="pic">
                                     <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
-                                         id="candidateImage"/>
+                                         class="candidateImage"/>
                                 </div>
                                 <div class="">
-                                    <h3 class="candidateName"><?php echo $candidate['CandidateFullName']; ?></h3>
+                                    <h3 class="candidateName">
+                                        <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
+                                    </h3>
                                     <button
-                                            data-title="<?php echo $candidate['CandidateFullName']; ?>"
+                                            data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
                                             data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
                                             class="btn invite-button" type="button"
                                             data-toggle="modal" data-target="#myModal">
@@ -275,8 +228,6 @@
                         </div>
                     <?php }
                 } ?>
-
-
             </div>
         </section>
     </div>

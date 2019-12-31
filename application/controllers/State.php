@@ -181,6 +181,9 @@ class State extends CI_Controller {
         }, $inputs);
         $data['stateName'] = $inputs['inputStateName'];
         $data['stateId'] = $inputs['inputStateId'];
+        if(!isset($inputs['inputElectionIds'])) {
+            $inputs['inputElectionIds'] = array();
+        }
         $data['electionIds'] = $inputs['inputElectionIds'];
         $inputs['inputElectionIds'] = array_values($inputs['inputElectionIds']);
         $data['data'] = $this->ModelCandidate->getCandidatesByElectionId($inputs);

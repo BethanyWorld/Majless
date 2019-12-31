@@ -2,7 +2,6 @@
 <?php
 
 if (empty($data)) { ?>
-    <div class="alert alert-warning" style="margin: 10px;display: inline-block;width: 100%;">موردی یافت نشد</div>
 <?php } else { ?>
     <?php foreach ($data as $candidate) { ?>
         <div class="col-md-4 col-sm-6 mp">
@@ -36,21 +35,28 @@ if (empty($data)) { ?>
 <?php }
 ?>
 
-<div class="row col-xs-12 alert alert-info hidden"  style="margin: 10px;display: inline-block;width: 100%;">نامزد های ویژه</div>
-<?php /* foreach ($dataSpecial as $candidate) { ?>
-    <div class="col-md-4 col-sm-6 mp">
-        <div class="mp-brief">
-            <div class="pic">
-                <img src="<?php echo $_DIR; ?>/images/profile.jpg">
-            </div>
-            <div class="team-content">
-                <h3 class="title">
-                    <?php echo $candidate['CandidateFullName']; ?>
-                </h3>
-                <span class="post">
-                    نامزد انتخاباتی <?php echo $candidate['ElectionName']; ?>
-                </span>
+<?php foreach ($dataSpecial as $candidate) {
+    if ($candidate['CandidateProfileImage'] !== NULL) {
+        ?>
+        <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+            <div class="mp-brief">
+                <div class="pic">
+                    <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                         class="candidateImage"/>
+                </div>
+                <div class="">
+                    <h3 class="candidateName">
+                        <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
+                    </h3>
+                    <button
+                            data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
+                            data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                            class="btn invite-button" type="button"
+                            data-toggle="modal" data-target="#myModal">
+                        دعوت به جنبش از ما
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-<?php }*/  ?>
+    <?php }
+} ?>

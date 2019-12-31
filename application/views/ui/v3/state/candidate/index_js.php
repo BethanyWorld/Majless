@@ -45,7 +45,7 @@
         $srcImage = '';
         $candidateName = '';
         /* Export*/
-        $(".invite-button").click(function () {
+        $(document).on('click',".invite-button",function () {
             $srcImage = $(this).data('image');
             $candidateName = $(this).data('title');
             $('.inner-candidate-image').attr('src', $srcImage);
@@ -54,7 +54,7 @@
         /* End Export*/
 
         /* Export*/
-        $("#receiveFile").click(function () {
+        $(document).on('click',"#receiveFile",function () {
             var node = document.getElementById('hidden-box');
             domtoimage.toBlob(document.getElementById('hidden-box1'))
                 .then(function (blob) {
@@ -66,7 +66,6 @@
                 });
         });
         /* End Export*/
-
 
     });
 </script>
