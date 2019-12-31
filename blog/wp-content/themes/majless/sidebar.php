@@ -28,7 +28,7 @@
                                     </a>
                                 </h4>
                                 <span class="popular-date-div">
-                                    <?= _jDate($post->date); ?>
+                                    <?=_jDate($post->post_date); ?>
                                 </span>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                     </a>
                                 </h4>
                                 <span class="popular-date-div">
-                                    <?= _jDate(get_the_date()); ?>
+                                    <?=_jDate(get_the_date('y-m-d')); ?>
                                 </span>
                             </div>
                         </div>

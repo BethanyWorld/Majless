@@ -58,11 +58,11 @@
             var node = document.getElementById('hidden-box');
             domtoimage.toBlob(document.getElementById('hidden-box1'))
                 .then(function (blob) {
-                    window.saveAs(blob, 'my-node.png');
+                    window.saveAs(blob, 'azmaa_campaign.jpg');
                 });
             domtoimage.toBlob(document.getElementById('hidden-box2'))
                 .then(function (blob) {
-                    window.saveAs(blob, 'my-node.png');
+                    window.saveAs(blob, 'azmaa_campaign.jpg');
                 });
         });
         /* End Export*/

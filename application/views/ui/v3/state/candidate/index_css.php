@@ -607,7 +607,7 @@
     }
     #hidden-box2 .candidate-name h1 {
         font-weight: bold;
-        font-size: 28px;
+        font-size: 46px;
         padding-top: 0px;
         margin-top: 0px;
         margin-bottom: 0px;
@@ -615,12 +615,12 @@
         text-align: center;
     }
     #hidden-box1 .candidate-name h1 {
-        font-weight: bold;
-        font-size: 26px;
+        font-weight: 900;
+        font-size: 32px;
         padding-top: 0px;
         margin-top: 0px;
         margin-bottom: 0px;
-        padding-bottom: 10px;
+        padding-bottom: 0;
         text-align: center;
     }
     .candidate-text-invite {

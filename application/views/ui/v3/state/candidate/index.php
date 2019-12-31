@@ -243,7 +243,7 @@
                 <div class="">
                     <div class="candidate-text-invite">
                         <p>
-                            دعوت میکنیم از
+                            دعوت می کنیم از
                         </p>
                     </div>
                     <div class="candidate-name">
@@ -254,7 +254,7 @@
                             برای شرکت در
                         </p>
                         <p>
-                            فرایند سنجش و شفافیت جنبش
+                            فرآیند سنجش و شفافیت جنبش
                             <a> #از_ما</a>
                         </p>
                     </div>
@@ -273,7 +273,7 @@
                 <div class="">
                     <div class="candidate-text-invite">
                         <p>
-                            دعوت میکنیم از
+                            دعوت می کنیم از
                         </p>
                     </div>
                     <div class="candidate-name">
@@ -284,7 +284,7 @@
                             برای شرکت در
                         </p>
                         <p>
-                            فرایند سنجش و شفافیت جنبش
+                            فرآیند سنجش و شفافیت جنبش
                             <a> #از_ما</a>
                         </p>
                     </div>
@@ -312,7 +312,7 @@
                                 <div class="">
                                     <div class="candidate-text-invite">
                                         <p>
-                                            دعوت میکنیم از
+                                            دعوت می کنیم از
                                         </p>
                                     </div>
                                     <div class="candidate-name">
@@ -323,7 +323,7 @@
                                             برای شرکت در
                                         </p>
                                         <p>
-                                            فرایند سنجش و شفافیت جنبش
+                                            فرآیند سنجش و شفافیت جنبش
                                             <a> #از_ما</a>
                                         </p>
                                     </div>
