@@ -219,7 +219,6 @@
                 </div>
             </div>
         </div>
-        <canvas width="250px" height="250px"></canvas>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
@@ -327,7 +326,12 @@
             </div>
             <div class="modal-body">
                 <div class="show-box" id="show-box">
-
+                    <div style="display: inline-block">
+                        <p style="text-align: center;font-size: 12px;font-weight: 900;">مناسب برای استوری اینستاگرام</p>
+                    </div>
+                    <div style="display: inline-block">
+                        <p style="text-align: center;font-size: 12px;font-weight: 900;">مناسب برای پست اینستاگرام</p>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

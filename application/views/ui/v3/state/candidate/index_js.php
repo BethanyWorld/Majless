@@ -48,25 +48,33 @@
              $candidateName = $(this).data('title');
              $('.inner-candidate-image').attr('src', $srcImage);
              $('.modalCandidateName').text($candidateName);
-
             domtoimage.toJpeg(document.getElementById('hidden-box1'), { quality: 1 }).then(function (dataUrl) {
                 var img = new Image();
                 img.src = dataUrl;
                 document.body.appendChild(img);
-                $("#show-box").append(img);
-                //window.saveAs(blob, 'azmaa_campaign_story'+(Math.floor(Math.random() * 100000) + 1)+'.jpg');
+                $("#show-box div:first").append(img);
+                var link = document.createElement('a');
+                link.href = dataUrl;
+                link.download = Math.floor(Math.random() * 10000)+'Story.jpg';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             });
             domtoimage.toJpeg(document.getElementById('hidden-box2'), { quality: 1 })
                 .then(function (dataUrl) {
                     var img = new Image();
                     img.src = dataUrl;
                     document.body.appendChild(img);
-                    $("#show-box").append(img);
-                    //window.saveAs(blob, 'azmaa_campaign_post'+(Math.floor(Math.random() * 100000) + 1)+'.jpg');
+                    $("#show-box div:last").append(img);
+                    var link = document.createElement('a');
+                    link.href = dataUrl;
+                    link.download = Math.floor(Math.random() * 10000)+'Post.jpg';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                 });
         });
         /* End Export*/
-
         $(document).on('click', ".close-modal", function () {
             $("#show-box").empty();
         });
@@ -86,7 +94,6 @@
                 $("#IranMap .show-title").html("").css({display: "none"})
             });
     });
-
     $(document).ready(function () {
         $(function () {
             $('.lazy').Lazy();
