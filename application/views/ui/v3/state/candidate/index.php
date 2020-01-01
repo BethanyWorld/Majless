@@ -339,10 +339,7 @@
 
 
 <div style="display: inline-block"  class="loading-text hidden">
-    <p style="text-align: center;font-size: 12px;font-weight: 900;">مناسب برای استوری اینستاگرام</p>
-</div>
-<div style="display: inline-block">
-    <p style="text-align: center;font-size: 12px;font-weight: 900;">مناسب برای پست اینستاگرام</p>
+    <p style="text-align: right;font-size: 14px;font-weight: 900;">مناسب برای پست و استوری اینستاگرام</p>
 </div>
 <div class="col-xs-12 text-center loading-demo hidden" style="direction: rtl;">
     لطفا منتظر بمانید...
