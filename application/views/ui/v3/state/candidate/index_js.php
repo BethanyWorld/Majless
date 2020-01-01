@@ -53,13 +53,18 @@
         /* Export*/
         $(document).on('click', "#receiveFile", function () {
             toggleLoader();
-            domtoimage.toBlob(document.getElementById('hidden-box1'))
-                .then(function (blob) {
-                    window.saveAs(blob, 'azmaa_campaign_story.jpg');
+            domtoimage.toJpeg(document.getElementById('hidden-box1'), { quality: 1 }).then(function (dataUrl) {
+                var img = new Image();
+                img.src = dataUrl;
+                document.body.appendChild(img);
+                    //window.saveAs(blob, 'azmaa_campaign_story'+(Math.floor(Math.random() * 100000) + 1)+'.jpg');
                 });
-            domtoimage.toBlob(document.getElementById('hidden-box2'))
-                .then(function (blob) {
-                    window.saveAs(blob, 'azmaa_campaign_post.jpg');
+            domtoimage.toPng(document.getElementById('hidden-box2'), { quality: 1 })
+                .then(function (dataUrl) {
+                    var img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
+                    //window.saveAs(blob, 'azmaa_campaign_post'+(Math.floor(Math.random() * 100000) + 1)+'.jpg');
                     toggleLoader();
                 });
         });
@@ -70,18 +75,19 @@
             var provinceName = $(this).data('province-name');
             window.location.href = base_url + "State/detail/" + provinceId + "/" + provinceName;
         });
-
-        $("#IranMap svg g path").hover(function () {
-            var provinceName = $(this).data('province-name');
-            $("#IranMap .show-title").html(provinceName).css({display: "block"})
-        }, function () {
-            $("#IranMap .list a").removeClass("hover");
-            $("#IranMap .show-title").html("").css({display: "none"})
-        });
+        $("#IranMap svg g path").hover(
+            function () {
+                var provinceName = $(this).data('province-name');
+                $("#IranMap .show-title").html(provinceName).css({display: "block"})
+            },
+            function () {
+                $("#IranMap .list a").removeClass("hover");
+                $("#IranMap .show-title").html("").css({display: "none"})
+            });
     });
 
-    $(document).ready(function(){
-        $(function() {
+    $(document).ready(function () {
+        $(function () {
             $('.lazy').Lazy();
         });
     });

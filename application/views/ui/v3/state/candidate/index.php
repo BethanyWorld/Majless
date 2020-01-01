@@ -3,6 +3,86 @@
     نامزد انتخاباتی خود را در شبکه های اجتماعی به جنبش از ما دعوت کنید
 </div>
 <div class="container container-wrapper">
+    <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
+        <section class="mp-section">
+            <div class="row hidden">
+                <div class="col-xs-12">
+                    <div class="alert alert-warning text-center">
+                        <h6 class="hidden">
+                            اطلاعات بصورت نمونه آورده شده است.به محض تایید شورای نگهبان اطلاعات نامزد های انتخاباتی مجلس
+                            یازدهم در این قسمت قرار خواهد گرفت
+                        </h6>
+                        <h6>
+                            نامزد انتخاباتی خود را به جنبش از ما دعوت کنید
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mp hidden demo-candidate">
+                <div class="mp-brief">
+                    <div class="menu">
+                        <ul>
+                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">رزومه</a></li>
+                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">فهرست اموال</a>
+                            </li>
+                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">وعده های
+                                    انتخاباتی</a></li>
+                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">هزینه های
+                                    انتخابات</a></li>
+                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">تعهدنامه</a></li>
+                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">نتایج سنجش</a>
+                            </li>
+                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">اخبار </a></li>
+                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">گزارش تخلف </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pic">
+                        <img src="<?php echo $_DIR; ?>/images/profile.jpg">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="title">
+                            محمد محمدی
+                        </h3>
+                        <h3 class="title">
+                            01234567899
+                        </h3>
+                        <span class="post">
+                                    نامزد انتخاباتی
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row candidate-container">
+                <?php foreach ($dataSpecial as $candidate) {
+                    if ($candidate['CandidateProfileImage'] !== NULL) {
+                        ?>
+                        <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+                            <div class="mp-brief">
+                                <div class="pic">
+                                    <img
+                                            data-src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                            class="lazy candidateImage"/>
+                                </div>
+                                <div class="">
+                                    <h3 class="candidateName">
+                                        <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
+                                    </h3>
+                                    <button
+                                            data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
+                                            data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                            class="btn invite-button" type="button"
+                                            data-toggle="modal" data-target="#myModal">
+                                        دعوت به جنبش از ما
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    <?php }
+                } ?>
+            </div>
+        </section>
+    </div>
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
         <div class="clearfix"></div>
         <div class="panel panel-default">
@@ -138,13 +218,14 @@
                 </div>
             </div>
         </div>
-
+        <canvas width="250px" height="250px"></canvas>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
             </div>
             <div class="panel-body">
                 <ul class="list-group" style="padding: 0;">
+
                     <?php foreach ($elections as $election) { ?>
                         <li class="list-group-item">
                             <input type="checkbox"
@@ -165,86 +246,6 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
-        <section class="mp-section">
-            <div class="row hidden">
-                <div class="col-xs-12">
-                    <div class="alert alert-warning text-center">
-                        <h6 class="hidden">
-                            اطلاعات بصورت نمونه آورده شده است.به محض تایید شورای نگهبان اطلاعات نامزد های انتخاباتی مجلس
-                            یازدهم در این قسمت قرار خواهد گرفت
-                        </h6>
-                        <h6>
-                            نامزد انتخاباتی خود را به جنبش از ما دعوت کنید
-                        </h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mp hidden demo-candidate">
-                <div class="mp-brief">
-                    <div class="menu">
-                        <ul>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">رزومه</a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">فهرست اموال</a>
-                            </li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">وعده های
-                                    انتخاباتی</a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">هزینه های
-                                    انتخابات</a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">تعهدنامه</a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">نتایج سنجش</a>
-                            </li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">اخبار </a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">گزارش تخلف </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pic">
-                        <img src="<?php echo $_DIR; ?>/images/profile.jpg">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">
-                            محمد محمدی
-                        </h3>
-                        <h3 class="title">
-                            01234567899
-                        </h3>
-                        <span class="post">
-                                    نامزد انتخاباتی
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="row candidate-container">
-                <?php foreach ($dataSpecial as $candidate) {
-                    if ($candidate['CandidateProfileImage'] !== NULL) {
-                        ?>
-                        <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-                            <div class="mp-brief">
-                                <div class="pic">
-                                    <img
-                                         data-src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
-                                         class="lazy candidateImage"/>
-                                </div>
-                                <div class="">
-                                    <h3 class="candidateName">
-                                        <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
-                                    </h3>
-                                    <button
-                                            data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
-                                            data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
-                                            class="btn invite-button" type="button"
-                                            data-toggle="modal" data-target="#myModal">
-                                        دعوت به جنبش از ما
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    <?php }
-                } ?>
-            </div>
-        </section>
     </div>
 </div>
 
