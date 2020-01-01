@@ -223,8 +223,9 @@
                         <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
                             <div class="mp-brief">
                                 <div class="pic">
-                                    <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
-                                         class="candidateImage"/>
+                                    <img
+                                         data-src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                         class="lazy candidateImage"/>
                                 </div>
                                 <div class="">
                                     <h3 class="candidateName">
@@ -363,3 +364,6 @@
 </div>
 <script src="<?php echo $_DIR; ?>js/dom-to-image.js"></script>
 <script src="<?php echo $_DIR; ?>js/file-to-save.js"></script>
+<script src="<?php echo $_DIR; ?>js/jquery.lazy.min"></script>
+<script src="<?php echo $_DIR; ?>js/jquery.lazy.plugins.min"></script>
+

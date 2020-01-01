@@ -64,8 +64,6 @@
                 });
         });
         /* End Export*/
-
-
         /*$('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');
             var provinceId = $(this).data('province-id');
@@ -73,5 +71,11 @@
             window.location.href = base_url + "State/detail/" + provinceId + "/" + provinceName;
         });*/
 
+    });
+
+    $(document).ready(function(){
+        $(function() {
+            $('.lazy').Lazy();
+        });
     });
 </script>
