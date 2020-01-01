@@ -44,31 +44,32 @@
         $candidateName = '';
         /* Export*/
         $(document).on('click', ".invite-button", function () {
-            $srcImage = $(this).data('image');
-            $candidateName = $(this).data('title');
-            $('.inner-candidate-image').attr('src', $srcImage);
-            $('.modalCandidateName').text($candidateName);
-        });
-        /* End Export*/
-        /* Export*/
-        $(document).on('click', "#receiveFile", function () {
-            toggleLoader();
+             $srcImage = $(this).data('image');
+             $candidateName = $(this).data('title');
+             $('.inner-candidate-image').attr('src', $srcImage);
+             $('.modalCandidateName').text($candidateName);
+
             domtoimage.toJpeg(document.getElementById('hidden-box1'), { quality: 1 }).then(function (dataUrl) {
                 var img = new Image();
                 img.src = dataUrl;
                 document.body.appendChild(img);
-                    //window.saveAs(blob, 'azmaa_campaign_story'+(Math.floor(Math.random() * 100000) + 1)+'.jpg');
-                });
-            domtoimage.toPng(document.getElementById('hidden-box2'), { quality: 1 })
+                $("#show-box").append(img);
+                //window.saveAs(blob, 'azmaa_campaign_story'+(Math.floor(Math.random() * 100000) + 1)+'.jpg');
+            });
+            domtoimage.toJpeg(document.getElementById('hidden-box2'), { quality: 1 })
                 .then(function (dataUrl) {
                     var img = new Image();
                     img.src = dataUrl;
                     document.body.appendChild(img);
+                    $("#show-box").append(img);
                     //window.saveAs(blob, 'azmaa_campaign_post'+(Math.floor(Math.random() * 100000) + 1)+'.jpg');
-                    toggleLoader();
                 });
         });
         /* End Export*/
+
+        $(document).on('click', ".close-modal", function () {
+            $("#show-box").empty();
+        });
         $('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');
             var provinceId = $(this).data('province-id');

@@ -60,9 +60,10 @@
                         <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
                             <div class="mp-brief">
                                 <div class="pic">
-                                    <img
-                                            data-src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
-                                            class="lazy candidateImage"/>
+                                    <a download href="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>">
+                                        <img data-src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                             class="lazy candidateImage"/>
+                                    </a>
                                 </div>
                                 <div class="">
                                     <h3 class="candidateName">
@@ -89,7 +90,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title">
                     <?php if(urldecode($stateName) == 'اقلیت های مذهبی'){ ?>
-                         <?php echo urldecode($stateName); ?>
+                        <?php echo urldecode($stateName); ?>
                     <?php } else{ ?>
                         استان <?php echo urldecode($stateName); ?>
                     <?php } ?>
@@ -315,50 +316,24 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close pull-left close-icon" data-dismiss="modal">&times;</button>
+                <button type="button" class="close pull-left close-icon close-modal" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title rtl">
                     داوطلب مورد نظر و
                     <a target="_blank" href="https://www.instagram.com/azmaa_net/">
                         azmaa_net@
                     </a>
-                     را منشن کنید
+                    را منشن کنید
                 </h4>
             </div>
             <div class="modal-body">
                 <div class="show-box" id="show-box">
-                    <div class="modal-border">
-                        <div class="inner-border-div">
-                            <img src="<?php echo $_DIR; ?>images/post-bg.png">
-                            <div class="candidate-image-div">
-                                <img src="<?php echo $_DIR; ?>images/post-man.png" class="inner-candidate-image">
-                                <div class="">
-                                    <div class="candidate-text-invite">
-                                        <p>
-                                            دعوت می&hairsp;کنیم از
-                                        </p>
-                                    </div>
-                                    <div class="candidate-name">
-                                        <h1 class="modalCandidateName"></h1>
-                                    </div>
-                                    <div class="candidate-text-invite">
-                                        <p>
-                                            برای شرکت در
-                                        </p>
-                                        <p>
-                                            چالش شایستگی و شفافیت جنبش
-                                            <a> #از_ما</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn pull-left close-btn" data-dismiss="modal">بستن</button>
-                <a type="button" class="btn pull-left receive-btn" id="receiveFile" href="javascript:void(0);">دریافت
-                    فایل</a>
+                <button type="button" class="btn pull-left close-btn close-modal" data-dismiss="modal">بستن</button>
+<!--                <a type="button" class="btn pull-left receive-btn" id="receiveFile" href="javascript:void(0);">دریافت-->
+<!--                    فایل</a>-->
             </div>
         </div>
     </div>

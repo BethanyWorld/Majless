@@ -1,5 +1,10 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
+    #show-box img{
+        height: 355px;
+        display: inline-block;
+        margin-left: 5px;
+    }
     .list-group-item {
         padding: 10px 5px;
     }
@@ -358,6 +363,11 @@
             padding: 0px;
             margin: auto;
         }
+        #show-box img {
+            height: 185px;
+            display: inline-block;
+            margin-left: 5px;
+        }
     }
     /**/
 
@@ -375,6 +385,8 @@
 
     .modal-body {
         margin: auto;
+        display: flex;
+        padding: 10px;
     }
 
     .hidden-box1 {
@@ -420,7 +432,9 @@
         margin-bottom: 25px;
         height: 100%;
     }
-
+    .show-box{
+        width: 100%;
+    }
     .mp-brief .pic {
         width: 100%;
         height: 225px;
@@ -537,6 +551,10 @@
         /*background-position: center;*/
         /*height: 72vh;*/
         /*padding: 10% 0%  20% 0%;*/
+        position: relative;
+        width: 50%;
+        text-align: center;
+        float: right;
     }
 
     .inner-border-div {
@@ -626,7 +644,7 @@
     .candidate-text-invite {
         color: #0B5E4A;
         text-align: center;
-        font-size: 25px;
+        font-size:20px;
         font-weight: 500;
     }
     #hidden-box1 .candidate-text-invite {
@@ -671,6 +689,7 @@
     }
     #hidden-box1 .modal-border{
         height: 100%;
+        width: 100%;
     }
     #hidden-box1 .inner-border-div{
         height: 100%;
@@ -688,6 +707,7 @@
     }
     #hidden-box2 .modal-border{
         height: 100%;
+        width: 100%;
     }
     #hidden-box2 .inner-border-div{
         height: 100%;
@@ -698,10 +718,10 @@
     }
     .inner-candidate-image{
         background: url(<?php echo $_DIR; ?>/images/post-frame.png);
-        padding: 21px 23px 30px 21px;
+        padding: 15px 25px 19px 21px;
         background-size: contain;
         background-repeat: no-repeat;
-        width: 180px !important;
+        width: 140px !important;
         background-position: center;
     }
     #hidden-box2 .inner-candidate-image{
@@ -715,10 +735,10 @@
     }
     #hidden-box1 .inner-candidate-image{
         background: url(<?php echo $_DIR; ?>/images/story-frame.png);
-        padding: 30px 30px 34px 23px;
+        padding: 25px 33px 33px 28px;
         background-size: contain;
         background-repeat: no-repeat;
-        width: 220px !important;
+        width: 240px !important;
         background-position: center;
 
     }
