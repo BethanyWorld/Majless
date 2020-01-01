@@ -44,10 +44,10 @@
         $candidateName = '';
         /* Export*/
         $(document).on('click', ".invite-button", function () {
-
             $('.show-box').hide();
+            $("#show-box").html('');
+            $("#show-box").append($(".loading-text").clone().removeClass('hidden'));
             $(".modal-body").append($(".loading-demo").clone().removeClass('hidden'));
-
              $srcImage = $(this).data('image');
              $candidateName = $(this).data('title');
              $('.inner-candidate-image').attr('src', $srcImage);
@@ -66,8 +66,7 @@
                 link.click();
                 document.body.removeChild(link);
             });
-            domtoimage.toJpeg(document.getElementById('hidden-box2'), { quality: 1 })
-                .then(function (dataUrl) {
+            domtoimage.toJpeg(document.getElementById('hidden-box2'), { quality: 1 }).then(function (dataUrl) {
                     var img = new Image();
                     img.src = dataUrl;
                     document.body.appendChild(img);
@@ -95,7 +94,8 @@
             function () {
                 $("#IranMap .list a").removeClass("hover");
                 $("#IranMap .show-title").html("").css({display: "none"})
-            });
+            }
+        );
     });
     $(document).ready(function () {
         $(function () {

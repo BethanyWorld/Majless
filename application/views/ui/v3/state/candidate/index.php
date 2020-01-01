@@ -325,15 +325,7 @@
                 </h4>
             </div>
             <div class="modal-body">
-
-                <div class="show-box" id="show-box">
-                    <div style="display: inline-block">
-                        <p style="text-align: center;font-size: 12px;font-weight: 900;">مناسب برای استوری اینستاگرام</p>
-                    </div>
-                    <div style="display: inline-block">
-                        <p style="text-align: center;font-size: 12px;font-weight: 900;">مناسب برای پست اینستاگرام</p>
-                    </div>
-                </div>
+                <div class="show-box" id="show-box"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn pull-left close-btn close-modal" data-dismiss="modal">بستن</button>
@@ -346,6 +338,12 @@
 
 
 
+<div style="display: inline-block"  class="loading-text hidden">
+    <p style="text-align: center;font-size: 12px;font-weight: 900;">مناسب برای استوری اینستاگرام</p>
+</div>
+<div style="display: inline-block">
+    <p style="text-align: center;font-size: 12px;font-weight: 900;">مناسب برای پست اینستاگرام</p>
+</div>
 <div class="col-xs-12 text-center loading-demo hidden" style="direction: rtl;">
     لطفا منتظر بمانید...
 </div>
