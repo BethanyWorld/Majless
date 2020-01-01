@@ -21,7 +21,6 @@
             $('#inputCandidateAddressVillagePart').removeAttr('placeholder');
             $('#inputCandidateAddressVillagePart').addClass('InputNotAllow');
         }
-
         $inputCandidateAddressVillage = $('#inputCandidateAddressVillage').val();
         if ($inputCandidateAddressVillage != null) {
             $('#inputCandidateAddressCityPart').attr("disabled", "disabled");
@@ -33,7 +32,6 @@
             $("#inputCandidateAddressCityPart").attr("placeholder", "پرکردن این فیلد اجباری می باشد");
             $('#inputCandidateAddressCityPart').removeClass('InputNotAllow');
         }
-
 
         //$('#inputCandidateBirthDate').mask("0000/00/00");
         $('#inputCandidateBirthDate').keyup(function(e) {
@@ -214,8 +212,8 @@
                 $inputCandidateReligion = $('#inputCandidateReligion').val();
                 if ($inputCandidateReligion === "Undefined" || $inputCandidateReligion === "Other") {
                     $("#ReligionNotify").removeClass('hidden');
-
-                } else {
+                }
+                else {
                     $("#ReligionNotify").addClass('hidden');
                 }
                 /*End relegion check*/
@@ -229,7 +227,8 @@
                 if ($candidateage <= 29 || $candidateage >= 76) {
                     $('#DateChecked').show();
 
-                } else {
+                }
+                else {
                     $('#DateChecked').hide();
                 }
                 /*checked date*/
@@ -246,11 +245,10 @@
                 $inputCandidateMotherBornCityId = $("#inputCandidateMotherBornCityId").val();
                 $inputCandidateAddressStateId = $("#inputCandidateAddressStateId").val();
                 $inputCandidateAddressCityId = $("#inputCandidateAddressCityId").val();
-                $inputCandidateReligion = $('#inputCandidateReligion').val();
-                if (
-                    /*$inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId &&
-                    $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId &&*/
-                    $inputCandidateConstituencyStateId != $inputCandidateAddressStateId &&
+                /*if (
+                  $inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId &&
+                   $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId &&
+                   $inputCandidateConstituencyStateId != $inputCandidateAddressStateId &&
                     $inputCandidateReligion != "Cristian" &&
                     $inputCandidateReligion != "Jush" &&
                     $inputCandidateReligion != "Zartosht") {
@@ -258,15 +256,15 @@
                     return;
                 }
                 if (
-                    /*$inputCandidateConstituencyCityId != $inputCandidateFatherBornCityId &&
-                    $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId &&*/
+                    $inputCandidateConstituencyCityId != $inputCandidateFatherBornCityId &&
+                    $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId &&
                     $inputCandidateConstituencyCityId != $inputCandidateAddressCityId &&
                     $inputCandidateReligion != "Cristian" &&
                     $inputCandidateReligion != "Jush" &&
                     $inputCandidateReligion != "Zartosht") {
                     $cs.removeClass('hidden');
                     return;
-                }
+                }*/
 
                 $cs.addClass('hidden');
                 /**/
@@ -419,8 +417,8 @@
             $inputCandidateAddressCityId = $("#inputCandidateAddressCityId").val();
             if (
                 /*$inputCandidateConstituencyStateId != $inputCandidateFatherBornStateId &&
-                $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId &&*/
-                $inputCandidateConstituencyStateId != $inputCandidateAddressStateId &&
+                $inputCandidateConstituencyStateId != $inputCandidateMotherBornStateId &&
+                $inputCandidateConstituencyStateId != $inputCandidateAddressStateId &&*/
                 $inputCandidateReligion != "Cristian" &&
                 $inputCandidateReligion != "Jush" &&
                 $inputCandidateReligion != "Zartosht"
@@ -431,8 +429,8 @@
             }
             if (
                 /*$inputCandidateConstituencyCityId != $inputCandidateFatherBornCityId &&
-                $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId &&*/
-                $inputCandidateConstituencyCityId != $inputCandidateAddressCityId &&
+                $inputCandidateConstituencyCityId != $inputCandidateMotherBornCityId &&
+                $inputCandidateConstituencyCityId != $inputCandidateAddressCityId &&*/
                 $inputCandidateReligion != "Cristian" &&
                 $inputCandidateReligion != "Jush" &&
                 $inputCandidateReligion != "Zartosht"

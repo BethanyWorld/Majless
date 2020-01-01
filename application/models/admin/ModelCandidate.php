@@ -214,8 +214,9 @@ class ModelCandidate extends CI_Model{
             if (
                /* $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateBornStateId'] &&
                 $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateFatherBornStateId'] &&
-                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateMotherBornStateId'] &&*/
-                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateAddressStateId']
+                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateMotherBornStateId'] &&
+                $personalInfo['CandidateConstituencyStateId'] !== $personalInfo['CandidateAddressStateId']*/
+               0
             ) {
                 $arr = array(
                     'content' => 'User Invalid Constituency State',
@@ -229,8 +230,9 @@ class ModelCandidate extends CI_Model{
             if (
                 /*$personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateBornCityId'] &&
                 $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateFatherBornCityId'] &&
-                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateMotherBornCityId'] &&*/
-                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateAddressCityId']
+                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateMotherBornCityId'] &&
+                $personalInfo['CandidateConstituencyCityId'] !== $personalInfo['CandidateAddressCityId']*/
+                0
             ) {
                 $arr = array(
                     'content' => 'User Invalid Constituency City',
