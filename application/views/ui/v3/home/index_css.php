@@ -311,7 +311,9 @@
         /*width: 100%;*/
         height: 100%;
     }
-
+    .campaign_section_slide{
+        text-align: center !important;
+    }
 
     @media (max-width: 992px) {
         .slick-arrow{
