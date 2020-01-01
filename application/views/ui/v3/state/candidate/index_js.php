@@ -44,11 +44,17 @@
         $candidateName = '';
         /* Export*/
         $(document).on('click', ".invite-button", function () {
+
+            $('.show-box').hide();
+            $(".modal-body").append($(".loading-demo").clone().removeClass('hidden'));
+
              $srcImage = $(this).data('image');
              $candidateName = $(this).data('title');
              $('.inner-candidate-image').attr('src', $srcImage);
              $('.modalCandidateName').text($candidateName);
             domtoimage.toJpeg(document.getElementById('hidden-box1'), { quality: 1 }).then(function (dataUrl) {
+
+                $(".modal-body").find(".loading-demo").remove();
                 var img = new Image();
                 img.src = dataUrl;
                 document.body.appendChild(img);
@@ -72,11 +78,8 @@
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
+                    $('.show-box').fadeIn();
                 });
-        });
-        /* End Export*/
-        $(document).on('click', ".close-modal", function () {
-            $("#show-box").empty();
         });
         $('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');

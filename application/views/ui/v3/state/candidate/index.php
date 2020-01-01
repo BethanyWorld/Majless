@@ -325,6 +325,7 @@
                 </h4>
             </div>
             <div class="modal-body">
+
                 <div class="show-box" id="show-box">
                     <div style="display: inline-block">
                         <p style="text-align: center;font-size: 12px;font-weight: 900;">مناسب برای استوری اینستاگرام</p>
@@ -341,6 +342,12 @@
             </div>
         </div>
     </div>
+</div>
+
+
+
+<div class="col-xs-12 text-center loading-demo hidden" style="direction: rtl;">
+    لطفا منتظر بمانید...
 </div>
 <script src="<?php echo $_DIR; ?>js/dom-to-image.js"></script>
 <script src="<?php echo $_DIR; ?>js/file-to-save.js"></script>
