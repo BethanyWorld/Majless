@@ -192,7 +192,7 @@
         width: 100%;
         height: 100%;
         margin: 0px;
-        object-fit: fill;
+        object-fit: contain;
     }
 
     a.prev:hover {
@@ -307,8 +307,9 @@
     }
 
     video {
-        object-fit: cover;
-        width: 100%;
+        object-fit: contain;
+        /*width: 100%;*/
+        height: 100%;
     }
 
 

@@ -1655,14 +1655,18 @@ ol.comment-list ul {
 
 .campaign_section_slide {
     position: absolute;
-    top: 0;
-    left: 0;
+    left: 0px;
+    bottom: 0px;
+    top: 0px;
+    margin: auto;
+    background-color: #000;
     display: none;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center
+    background-position: center center;
+    text-align: center;
 }
 
 .campaign_section_with_slides .container, .campaign_section_with_slides .campaign_no_container {
