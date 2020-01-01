@@ -424,9 +424,9 @@
     .mp-brief .pic {
         width: 100%;
         height: 225px;
-        border-radius: 10%;
+        border-radius: 0;
         transition: all 0.9s ease 0s;
-        box-shadow: 0 0 0 14px #f7f5ec;
+        box-shadow: 0 0 0 0px #f7f5ec;
         position: relative;
         z-index: 2;
     }
@@ -446,9 +446,9 @@
     .mp-brief .pic img {
         width: 100%;
         height: auto;
-        border-radius: 10%;
+        border-radius: 0;
         transition: all 0.9s ease 0s;
-        box-shadow: 0 0 0 14px #f7f5ec;
+        box-shadow: 0 0 0 0px #f7f5ec;
         transform: scale(1) !important;
         position: relative;
         z-index: 2;
@@ -691,6 +691,10 @@
     }
     #hidden-box2 .inner-border-div{
         height: 100%;
+    }
+    .mp-brief:hover .pic img {
+        box-shadow: 0 0 0 0px #f7f5ec !important;
+        transform: scale(1);
     }
     .inner-candidate-image{
         background: url(<?php echo $_DIR; ?>/images/post-frame.png);

@@ -64,13 +64,20 @@
                 });
         });
         /* End Export*/
-        /*$('#IranMap .map .province path').click(function () {
+        $('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');
             var provinceId = $(this).data('province-id');
-            var provinceName = "-";
+            var provinceName = $(this).data('province-name');
             window.location.href = base_url + "State/detail/" + provinceId + "/" + provinceName;
-        });*/
+        });
 
+        $("#IranMap svg g path").hover(function () {
+            var provinceName = $(this).data('province-name');
+            $("#IranMap .show-title").html(provinceName).css({display: "block"})
+        }, function () {
+            $("#IranMap .list a").removeClass("hover");
+            $("#IranMap .show-title").html("").css({display: "none"})
+        });
     });
 
     $(document).ready(function(){
