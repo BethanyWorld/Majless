@@ -50,7 +50,7 @@
             loadData(1);
         });
     });
-    $(document).on('click', '.remove-candidate', function () {
+    $(document).on('click', '.remove-special-candidate', function () {
         $this = $(this);
         $title = "<strong class='badge'> " + $this.data('title') + " </strong>";
         $.confirm({
@@ -63,11 +63,11 @@
                     action: function () {
                         toggleLoader();
                         $sendData = {
-                            'inputCandidateId': $this.data('id')
+                            'inputRowId': $this.data('id')
                         }
                         $.ajax({
                             type: 'post',
-                            url: base_url + 'Candidate/doDelete',
+                            url: base_url + 'Candidate/doDeleteCandidateSpecial',
                             data: $sendData,
                             success: function (data) {
                                 toggleLoader();

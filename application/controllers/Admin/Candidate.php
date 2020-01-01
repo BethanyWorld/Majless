@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Candidate extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
         $this->load->helper('admin/admin_login');
@@ -366,5 +367,17 @@ class Candidate extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+    public function doDeleteCandidateSpecial()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $result = $this->ModelCandidate->doDeleteCandidateSpecial($inputs);
+        echo json_encode($result);
+    }
+    public function doIncreaseCandidateSpecialInviteCount(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $result = $this->ModelCandidate->doIncreaseCandidateSpecialInviteCount($inputs);
+        echo json_encode($result);
+    }
+
     /*End Admin Special Candidates*/
 }

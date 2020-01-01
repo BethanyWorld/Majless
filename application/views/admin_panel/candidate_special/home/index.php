@@ -41,6 +41,7 @@
                                     <th class="fit">کد</th>
                                     <th class="fit">تصویر</th>
                                     <th class="fit">جزئیات</th>
+                                    <th class="fit">حذف</th>
                                 </tr>
                                 </thead>
                                 <tbody class="table-rows"></tbody>

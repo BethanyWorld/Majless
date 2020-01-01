@@ -1,4 +1,5 @@
 <?php
+
 class ModelExam extends CI_Model{
     /* Exam Places*/
     public function getExamPlace($inputs){

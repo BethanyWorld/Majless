@@ -139,7 +139,7 @@
                             <li data-province-id="6" class="ilam"><a href="#ilam">ایلام</a></li>
                             <li data-province-id="7" class="bushehr"><a href="#bushehr">بوشهر</a></li>
                             <li data-province-id="8" class="tehran"><a href="#tehran">تهران</a></li>
-                            <li data-province-id="9" class="chahar-mahaal-bakhtiari"><a href="#chahar-mahaal-bakhtiari">چهارمحال بختیاری</a></li>
+                            <li data-province-id="9" class="chahar-mahaal-bakhtiari"><a href="#chahar-mahaal-bakhtiari">چهارمحال و بختیاری</a></li>
                             <li data-province-id="10" class="khorasan-south"><a href="#khorasan-south">خراسان جنوبی</a></li>
                             <li data-province-id="11" class="khorasan-razavi"><a href="#khorasan-razavi">خراسان رضوی</a></li>
                             <li data-province-id="12" class="khorasan-north"><a href="#khorasan-north">خراسان شمالی</a></li>

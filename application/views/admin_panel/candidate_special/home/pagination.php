@@ -25,15 +25,15 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
                     </button>
                 </a>
             </td>
-<!--            <td class="fit">-->
-<!--                <a class="remove-candidate"-->
-<!--                   data-id="--><?php //echo $candidate['CandidateId']; ?><!--" data-title="--><?php //echo $candidate['CandidateNationalCode']; ?><!--">-->
-<!--                    <button type="button"-->
-<!--                            class="btn btn-danger btn-circle waves-effect waves-circle waves-float">-->
-<!--                        <i class="material-icons">close</i>-->
-<!--                    </button>-->
-<!--                </a>-->
-<!--            </td>-->
+            <td class="fit">
+                <a class="remove-special-candidate"
+                   data-id="<?php echo $candidate['RowId']; ?>" data-title="<?php echo  $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>">
+                    <button type="button"
+                            class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
+                        <i class="material-icons">close</i>
+                    </button>
+                </a>
+            </td>
         </tr>
     <?php }
 } ?>
