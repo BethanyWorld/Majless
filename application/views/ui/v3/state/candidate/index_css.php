@@ -427,7 +427,6 @@
         border-radius: 10%;
         transition: all 0.9s ease 0s;
         box-shadow: 0 0 0 14px #f7f5ec;
-        transform: scale(.7);
         position: relative;
         z-index: 2;
     }
@@ -450,7 +449,7 @@
         border-radius: 10%;
         transition: all 0.9s ease 0s;
         box-shadow: 0 0 0 14px #f7f5ec;
-        transform: scale(.7);
+        transform: scale(1) !important;
         position: relative;
         z-index: 2;
         max-height: 255px;
@@ -524,6 +523,7 @@
         font-size: 13px;
         font-weight: 900;
         text-align: center;
+        min-height: 80px;
     }
 
 

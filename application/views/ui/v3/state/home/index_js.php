@@ -63,7 +63,6 @@
                 }
             })
         });
-
         $(function() {
             $('#IranMap .map .province path').click(function() {
                 var province = $(this).attr('class');
