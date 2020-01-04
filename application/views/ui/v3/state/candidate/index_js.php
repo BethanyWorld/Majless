@@ -1,5 +1,10 @@
 <script type="text/javascript">
     $(document).ready(function () {
+        $(function () {
+            $('.lazy').Lazy();
+        });
+    });
+    $(document).ready(function () {
         $(document).on('click', '.mp-section .mp', function () {
             $(".mp-section .mp .menu").slideUp();
             $(this).find(".menu").eq(0).slideToggle();
@@ -14,19 +19,18 @@
         $(".inputElectionId").click(function () {
             toggleLoader();
             $electionId = $(this).val();
+            $inputFullName = $("#inputFullName").val();
             $electionIds = [];
             $(".inputElectionId").each(function () {
                 if ($(this).is(":checked")) {
                     $electionIds.push($(this).val());
                 }
             });
-
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
                 'inputElectionIds': $electionIds
             }
-
             $.ajax({
                 type: 'post',
                 url: base_url + 'State/getCandidatesByElectionId',
@@ -42,6 +46,36 @@
         });
         $srcImage = '';
         $candidateName = '';
+
+        $(".blog-search-submit").click(function (e) {
+            e.preventDefault();
+            toggleLoader();
+            $electionId = $(this).val();
+            $inputFullName = $("#inputFullName").val();
+            $electionIds = [];
+            $(".inputElectionId").each(function () {
+                if ($(this).is(":checked")) {
+                    $electionIds.push($(this).val());
+                }
+            });
+            $sendData = {
+                'inputStateName': $stateName,
+                'inputStateId': $stateId,
+                'inputFullName': $inputFullName
+            }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'State/getCandidatesByElectionId',
+                data: $sendData,
+                success: function (data) {
+                    $(".candidate-container").html(data);
+                    toggleLoader();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    toggleLoader();
+                }
+            });
+        });
         /* Export*/
         $(document).on('click', ".invite-button", function () {
             $('.show-box').hide();
@@ -96,10 +130,5 @@
                 $("#IranMap .show-title").html("").css({display: "none"})
             }
         );
-    });
-    $(document).ready(function () {
-        $(function () {
-            $('.lazy').Lazy();
-        });
     });
 </script>

@@ -794,4 +794,107 @@
         padding: 10px 4px;
         font-size: 10px;
     }
+
+
+
+    /*for right panel*/
+    .blog-widget {
+        margin: 0 0 1.5em;
+    }
+
+    .blog-right-panel-main-div .blog-sidebar-col {
+        clear: both;
+    }
+
+    .blog-sidebar-col {
+        position: relative;
+    }
+
+    .blog-widget {
+        display: block;
+    }
+
+    .blog-widget {
+        margin: 0 0 1.5em;
+    }
+
+    .blog-sidebar-col .blog-widget {
+        background-color: #fff;
+    }
+
+    .blog-widget .search-form {
+        border: 1px solid #eee;
+        position: relative;
+    }
+
+    .blog-widget .search-form label {
+        display: block;
+    }
+
+    .blog-sidebar-col .blog-widget.blog-widget-search label {
+        margin-bottom: 0;
+    }
+
+    .blog-text-search {
+        border: 0;
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute !important;
+        width: 1px;
+        word-wrap: normal !important;
+    }
+
+    .blog-widget .search-form .blog-search-field {
+        border: 0;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 300;
+        padding: 13px 10px 12px 20px;
+        width: 100%;
+        background-color: transparent;
+        box-shadow: none !important;
+    }
+
+    input[type="submit"] {
+        -webkit-appearance: button;
+        cursor: pointer;
+    }
+
+    input[type="submit"] {
+        border: 1px solid;
+        border-color: #ccc #ccc #bbb;
+        border-radius: 3px;
+        background: #e6e6e6;
+        color: #FFF;
+        font-size: 14px !important;
+        font-size: 0.75rem;
+        line-height: 1;
+        padding: .6em 1em .4em;
+    }
+
+    .blog-widget .blog-search-submit {
+        background-color: #d10b20;
+        border: 0;
+        color: #fff;
+        font-size: 14px;
+        height: 100%;
+        padding-right: 18px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 0.3s ease 0s;
+        border-radius: 0;
+    }
+
+    .blog-search-submit {
+        background-color: #d6002a;
+    }
+
+    .blog-widget-title {
+        background: #d6002a;
+    }
 </style>
