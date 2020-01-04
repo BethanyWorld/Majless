@@ -76,7 +76,7 @@
                                     <button
                                             data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
                                             data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
-                                            data-area="<?php echo $candidate['ElectionName']." ".$candidate['ElectionName']; ?>"
+                                            data-area="<?php echo $candidate['ElectionName']?>"
                                             class="btn invite-button" type="button"
                                             data-toggle="modal" data-target="#myModal">
                                         دعوت به جنبش از ما
