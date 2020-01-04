@@ -5,7 +5,6 @@
         });
     });
     $(document).ready(function () {
-
         if(findBootstrapEnvironment() == 'xs' || findBootstrapEnvironment() == 'sm'){
             $election = $(".elections").html();
             $("#election-place-holder").after($election);
@@ -14,7 +13,6 @@
                 $(this).attr('id' , Math.round(10000000));
             });
         }
-
         $(document).on('click', '.mp-section .mp', function () {
             $(".mp-section .mp .menu").slideUp();
             $(this).find(".menu").eq(0).slideToggle();
@@ -30,7 +28,6 @@
             $('.mp-section').css('backgroundColor', '#fff');
             $('.mp-section').css('opacity', '0.5');
             $electionId = $(this).val();
-            $inputFullName = $("#inputFullName").val();
             $electionIds = [];
             $(".inputElectionId").each(function () {
                 if ($(this).is(":checked")) {
@@ -61,18 +58,10 @@
         });
         $srcImage = '';
         $candidateName = '';
-
         $(".blog-search-submit").click(function (e) {
             e.preventDefault();
             toggleLoader();
-            $electionId = $(this).val();
-            $inputFullName = $("#inputFullName").val();
-            $electionIds = [];
-            $(".inputElectionId").each(function () {
-                if ($(this).is(":checked")) {
-                    $electionIds.push($(this).val());
-                }
-            });
+            $inputFullName = $(this).prev('label').find(':input').val();
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
@@ -99,7 +88,6 @@
             document.getElementById("mySidenav").style.paddingRight = "0";
             document.getElementById("mySidenav").style.paddingLeft = "0";
         });
-
         /* Export*/
         $(document).on('click', ".invite-button", function () {
             $('.show-box').hide();
@@ -156,54 +144,43 @@
                 $("#IranMap .show-title").html("").css({display: "none"})
             }
         );
-    });
-
-
-    $('.open-sidebar').click(function () {
-        $('body').addClass('over-flow-style');
-        $('html').addClass('over-flow-style');
-        document.getElementById("mySidenav").style.width = "100%";
-        document.getElementById("mySidenav").style.paddingRight = "15px";
-        document.getElementById("mySidenav").style.paddingLeft = "15px";
-        document.getElementById("main").style.marginLeft = "250px";
-    });
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.getElementById("mySidenav").style.paddingRight = "0";
-        document.getElementById("mySidenav").style.paddingLeft = "0";
-        $('body').removeClass('over-flow-style');
-        $('html').removeClass('over-flow-style');
-    }
-
-
-
-    function findBootstrapEnvironment() {
-        var envs = ["xs", "sm", "md", "lg"];
-        var envValues = ["xs", "sm", "md", "lg"];
-        var $el = $('<div>');
-        $el.appendTo($('body'));
-        for (var i = envValues.length - 1; i >= 0; i--) {
-            var envVal = envValues[i];
-            $el.addClass('hidden-'+envVal);
-            if ($el.is(':hidden')) {
-                $el.remove();
-                return envs[i]
+        $('.open-sidebar').click(function () {
+            $('body').addClass('over-flow-style');
+            $('html').addClass('over-flow-style');
+            document.getElementById("mySidenav").style.width = "100%";
+            document.getElementById("mySidenav").style.paddingRight = "15px";
+            document.getElementById("mySidenav").style.paddingLeft = "15px";
+            document.getElementById("main").style.marginLeft = "250px";
+        });
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("mySidenav").style.paddingRight = "0";
+            document.getElementById("mySidenav").style.paddingLeft = "0";
+            $('body').removeClass('over-flow-style');
+            $('html').removeClass('over-flow-style');
+        }
+        function findBootstrapEnvironment() {
+            var envs = ["xs", "sm", "md", "lg"];
+            var envValues = ["xs", "sm", "md", "lg"];
+            var $el = $('<div>');
+            $el.appendTo($('body'));
+            for (var i = envValues.length - 1; i >= 0; i--) {
+                var envVal = envValues[i];
+                $el.addClass('hidden-'+envVal);
+                if ($el.is(':hidden')) {
+                    $el.remove();
+                    return envs[i]
+                }
             }
         }
-    }
-
-    var btn = $('.open-sidebar');
-    $(window).scroll(function() {
-        if ($(window).scrollTop() > 200) {
-            btn.addClass('new-style-button-xs');
-        } else {
-            btn.removeClass('new-style-button-xs');
-        }
+        var btn = $('.open-sidebar');
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 200) {
+                btn.addClass('new-style-button-xs');
+            } else {
+                btn.removeClass('new-style-button-xs');
+            }
+        });
     });
-
-
-
-
 </script>
