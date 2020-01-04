@@ -388,6 +388,9 @@
         .over-flow-style{
             overflow: hidden !important;
         }
+        .page-caption{
+            font-size: 12px;
+        }
     }
 
     /**/
@@ -1070,7 +1073,7 @@
         height: 38px;
         width: 40px;
         position: fixed;
-        right: 50px;
+        left: 10px;
         text-align: center;
         text-transform: uppercase;
         padding-top: 10px;

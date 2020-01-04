@@ -5,7 +5,7 @@
 <div class="container container-wrapper">
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div id="mySidenav" class="sidenav hidden-md hidden-lg">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="javascript:void(0)" class="closebtn">×</a>
 
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div id="main" class="hidden-lg hidden-md">
-            <span style="font-size:30px;cursor:pointer" class="open-sidebar">☰</span>
+            <span style="font-size:30px;cursor:pointer" class="open-sidebar new-style-button-xs">☰</span>
         </div>
 
         <section class="mp-section">

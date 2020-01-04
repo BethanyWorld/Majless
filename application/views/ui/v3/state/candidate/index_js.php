@@ -76,6 +76,8 @@
                     $('#mySidenav').css('width', '0px');
                     document.getElementById("mySidenav").style.paddingRight = "0";
                     document.getElementById("mySidenav").style.paddingLeft = "0";
+                    $('body').removeClass('over-flow-style');
+                    $('html').removeClass('over-flow-style');
                     toggleLoader();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -87,6 +89,8 @@
             $('#mySidenav').css('width', '0px');
             document.getElementById("mySidenav").style.paddingRight = "0";
             document.getElementById("mySidenav").style.paddingLeft = "0";
+            $('body').removeClass('over-flow-style');
+            $('html').removeClass('over-flow-style');
         });
         /* Export*/
         $(document).on('click', ".invite-button", function () {
@@ -152,14 +156,17 @@
             document.getElementById("mySidenav").style.paddingLeft = "15px";
             document.getElementById("main").style.marginLeft = "250px";
         });
-        function closeNav() {
+
+        $('.closebtn').click(function () {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
             document.getElementById("mySidenav").style.paddingRight = "0";
             document.getElementById("mySidenav").style.paddingLeft = "0";
             $('body').removeClass('over-flow-style');
             $('html').removeClass('over-flow-style');
-        }
+        });
+
+
         function findBootstrapEnvironment() {
             var envs = ["xs", "sm", "md", "lg"];
             var envValues = ["xs", "sm", "md", "lg"];
@@ -174,13 +181,13 @@
                 }
             }
         }
-        var btn = $('.open-sidebar');
-        $(window).scroll(function() {
-            if ($(window).scrollTop() > 200) {
-                btn.addClass('new-style-button-xs');
-            } else {
-                btn.removeClass('new-style-button-xs');
-            }
-        });
+        // var btn = $('.open-sidebar');
+        // $(window).scroll(function() {
+        //     if ($(window).scrollTop() > 200) {
+        //         btn.addClass('new-style-button-xs');
+        //     } else {
+        //         btn.removeClass('new-style-button-xs');
+        //     }
+        // });
     });
 </script>
