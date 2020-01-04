@@ -94,6 +94,25 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
+                    جستجوی نامزد انتخاباتی
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="blog-widget-search blog-widget">
+                    <form role="search" class="search-form">
+                        <label>
+                            <span class="blog-text-search">جستجو</span>
+                            <input type="search" class="blog-search-field" name="inputFullName" id="inputFullName" placeholder="جستجو ...">
+                        </label>
+                        <input type="submit" class="blog-search-submit" value="جستجو">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
                     <?php if(urldecode($stateName) == 'اقلیت های مذهبی'){ ?>
                         <?php echo urldecode($stateName); ?>
                     <?php } else{ ?>
@@ -224,6 +243,7 @@
                 </div>
             </div>
         </div>
+        <div class="clearfix"></div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
