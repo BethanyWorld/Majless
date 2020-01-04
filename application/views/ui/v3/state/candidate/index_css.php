@@ -844,10 +844,10 @@
     }
 
     .election {
-        background: #022d6d;
+        background: #e5e5e5;
         padding: 10px 4px;
-        font-size: 13px;
-        color: #fff;
+        font-size: 10px;
+        color: #000;
     }
 
 

@@ -32,12 +32,14 @@ if (empty($data)) { ?>
             </div>
         </div>
     <?php } ?>
-<?php }
-?>
-
+<?php } ?>
+<?php if (empty($dataSpecial)) { ?>
+    <div class="alert alert-warning">
+        موردی یافت نشد
+    </div>
+<?php } else { ?>
 <?php foreach ($dataSpecial as $candidate) {
-    if ($candidate['CandidateProfileImage'] !== NULL) {
-        ?>
+    if ($candidate['CandidateProfileImage'] !== NULL) { ?>
         <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
             <div class="mp-brief">
                 <div class="pic">
@@ -62,5 +64,5 @@ if (empty($data)) { ?>
                 </div>
             </div>
         </div>
-    <?php }
-} ?>
+    <?php } } ?>
+<?php } ?>
