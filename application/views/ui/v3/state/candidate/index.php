@@ -4,6 +4,45 @@
 </div>
 <div class="container container-wrapper">
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
+        <div id="mySidenav" class="sidenav hidden-md hidden-lg">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        جستجوی نامزد انتخاباتی
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="blog-widget-search blog-widget">
+                        <form role="search" class="search-form">
+                            <label>
+                                <span class="blog-text-search">جستجو</span>
+                                <input type="search" class="blog-search-field" name="inputFullName" id="inputFullName" placeholder="جستجو ...">
+                            </label>
+                            <input type="submit" class="blog-search-submit" value="جستجو">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
+                </div>
+                <div class="panel-body">
+                    <!--  Election PLaceJolder  -->
+                    <span id="election-place-holder"></span>
+                    <div class="text-center" style="padding-top: 10px">
+                        <button class="btn hidden-lg hidden-md filter-button">فیلتر</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main" class="hidden-lg hidden-md">
+            <span style="font-size:30px;cursor:pointer" class="open-sidebar">☰</span>
+        </div>
+
         <section class="mp-section">
             <div class="row hidden">
                 <div class="col-xs-12">
@@ -91,7 +130,7 @@
     </div>
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
         <div class="clearfix"></div>
-        <div class="panel panel-default">
+        <div class="panel panel-default hidden-xs hidden-sm">
             <div class="panel-heading">
                 <h3 class="panel-title">
                     جستجوی نامزد انتخاباتی
@@ -244,13 +283,12 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="panel panel-default">
+        <div class="panel panel-default hidden-xs hidden-sm">
             <div class="panel-heading">
                 <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
             </div>
-            <div class="panel-body">
-                <ul class="list-group" style="padding: 0;">
-
+            <div class="panel-body desktop-panel">
+                <ul class="list-group elections" style="padding: 0;">
                     <?php foreach ($elections as $election) { ?>
                         <li class="list-group-item">
                             <input type="checkbox"
