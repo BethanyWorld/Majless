@@ -50,8 +50,10 @@
             $(".modal-body").append($(".loading-demo").clone().removeClass('hidden'));
              $srcImage = $(this).data('image');
              $candidateName = $(this).data('title');
+             $candidateArea = $(this).data('area');
              $('.inner-candidate-image').attr('src', $srcImage);
              $('.modalCandidateName').text($candidateName);
+             $('.modalCandidateArea').text($candidateArea);
             domtoimage.toJpeg(document.getElementById('hidden-box1'), { quality: 1 }).then(function (dataUrl) {
 
                 $(".modal-body").find(".loading-demo").remove();

@@ -454,7 +454,7 @@
     .invite-button:hover, .invite-button:focus {
         color: #fff;
         outline: none;
-        background-color:#052452 ;
+        background-color:#da1f26 ;
     }
 
     .mp-brief .pic img {
@@ -612,9 +612,11 @@
     /*}*/
     .candidate-name {
         text-align: center;
-        color: #0B5E4A;
+        color: #0B5E4A ;
     }
-
+    .candidate-name h1 , .candidate-name h3{
+        color: #0B5E4A ;
+    }
     .candidate-name h1 {
         font-weight: bold;
         font-size: 26px;
@@ -726,11 +728,11 @@
     }
     #hidden-box2 .inner-candidate-image{
         background: url(<?php echo $_DIR; ?>/images/post-frame.png);
-        padding: 41px 51px 58px 45px;
+        padding: 34px 51px 45px 45px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        width: 370px !important;
+        width: 335px !important;
 
     }
     #hidden-box1 .inner-candidate-image{
@@ -790,8 +792,9 @@
     }
 
     .election{
-        background: #cccc;
+        background: #022d6d;
         padding: 10px 4px;
-        font-size: 10px;
+        font-size: 13px;
+        color: #fff;
     }
 </style>

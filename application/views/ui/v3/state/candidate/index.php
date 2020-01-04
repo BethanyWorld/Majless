@@ -76,6 +76,7 @@
                                     <button
                                             data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
                                             data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                            data-area="<?php echo $candidate['ElectionName']." ".$candidate['ElectionName']; ?>"
                                             class="btn invite-button" type="button"
                                             data-toggle="modal" data-target="#myModal">
                                         دعوت به جنبش از ما
@@ -259,7 +260,7 @@
             <img src="<?php echo $_DIR; ?>images/Story-bg.png">
             <div class="candidate-image-div">
                 <img src="<?php echo $_DIR; ?>images/Story-man.png" class="inner-candidate-image">
-                <div style="padding: 50px 0;" >
+                <div style="padding: 15px 0;" >
                     <div class="candidate-text-invite">
                         <p style="line-height: 60px !important;">
                             دعوت می&hairsp;کنیم از
@@ -267,6 +268,10 @@
                     </div>
                     <div class="candidate-name">
                         <h1 class="modalCandidateName"></h1>
+                    </div>
+                    <div class="candidate-name">
+                        <h3>حوزه انتخابیه</h3>
+                        <h3 class="modalCandidateArea"></h3>
                     </div>
                     <div class="candidate-text-invite">
                         <p style="line-height: 60px !important;">
@@ -297,6 +302,10 @@
                     </div>
                     <div class="candidate-name">
                         <h1 class="modalCandidateName"></h1>
+                    </div>
+                    <div class="candidate-name">
+                        <h3>حوزه انتخابیه</h3>
+                        <h3 class="modalCandidateArea"></h3>
                     </div>
                     <div class="candidate-text-invite">
                         <p>
