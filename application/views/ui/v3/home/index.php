@@ -13,7 +13,7 @@
                     <source src="https://hw18.cdn.asset.aparat.com/aparat-video/7c655b0e2ec5e50f152e4516bb2b2aae18039752-480p__96924.mp4"
                             type="video/mp4">
                 </video>
-                <button class="myBtn">
+                <button class="myBtn active">
                     <i class="fa fa-play"></i>
                 </button>
                 <span class="full-screen-icon">
@@ -25,7 +25,7 @@
                     <source src="https://hw17.cdn.asset.aparat.com/aparat-video/13bb9582b55a568db78a5558382fa47c18039686-720p__64800.mp4"
                             type="video/mp4">
                 </video>
-                <button class="myBtn">
+                <button class="myBtn active">
                     <i class="fa fa-play"></i>
                 </button>
                 <span class="full-screen-icon">

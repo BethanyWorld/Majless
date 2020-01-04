@@ -365,6 +365,22 @@
         .auto-margin{
             margin: auto;
         }
+        .myBtn.active{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 12px;
+            margin: auto;
+            width: 75px;
+            height: 75px;
+            border-radius: 100px;
+            font-size: 22px;
+            z-index: 1090;
+        }
+        .slide-title button{
+            display: none;
+        }
+
     }
 </style>
 

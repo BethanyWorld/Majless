@@ -15,6 +15,7 @@
                 $('.overlay').fadeOut();
                 $('.prev').fadeOut();
                 $('.next').fadeOut();
+                $(this).removeClass('active');
             } else {
                 video.pause();
                 $(this).find('i').addClass('fa-play');
@@ -24,6 +25,7 @@
                 $('.overlay').fadeIn();
                 $('.prev').fadeIn();
                 $('.next').fadeIn();
+                $(this).addClass('active');
             }
             clearTimeout(timer);
         });
@@ -64,7 +66,7 @@
             if ($continueSlide) {
                 $(".slider-timer").stop().animate({
                     width: "100%"
-                }, 10000);
+                }, 1000000);
                 $(".slider-timer").animate({
                     width: '0px',
                 }, 10, function () {
