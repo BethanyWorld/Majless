@@ -26,8 +26,8 @@ if (empty($data)) { ?>
                         <?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?>
                     </h3>
                     <span class="post">
-                                    نامزد انتخاباتی <?php echo $candidate['ElectionName']; ?>
-                                </span>
+                        نامزد انتخاباتی <?php echo $candidate['ElectionName']; ?>
+                    </span>
                 </div>
             </div>
         </div>
@@ -47,6 +47,10 @@ if (empty($data)) { ?>
                 <div class="">
                     <h3 class="candidateName">
                         <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
+                        <div class="election">
+                            <p>حوزه انتخابیه</p>
+                            <p><?php echo $candidate['ElectionName']; ?></p>
+                        </div>
                     </h3>
                     <button
                             data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"

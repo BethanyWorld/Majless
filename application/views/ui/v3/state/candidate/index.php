@@ -68,6 +68,10 @@
                                 <div class="">
                                     <h3 class="candidateName">
                                         <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
+                                        <div class="election">
+                                            <p>حوزه انتخابیه</p>
+                                            <p><?php echo $candidate['ElectionName']; ?></p>
+                                        </div>
                                     </h3>
                                     <button
                                             data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
@@ -249,7 +253,6 @@
     </div>
 </div>
 
-
 <div class="hidden-box1" id="hidden-box1">
     <div class="modal-border">
         <div class="inner-border-div">
@@ -335,9 +338,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div style="display: inline-block"  class="loading-text hidden">
     <p style="text-align: right;font-size: 14px;font-weight: 900;">مناسب برای پست و استوری اینستاگرام</p>
 </div>
@@ -348,4 +348,3 @@
 <script src="<?php echo $_DIR; ?>js/file-to-save.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.min.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.plugins.min.js"></script>
-

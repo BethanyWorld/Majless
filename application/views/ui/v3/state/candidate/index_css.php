@@ -788,4 +788,10 @@
         /*    height: 50vh;*/
         /*}*/
     }
+
+    .election{
+        background: #cccc;
+        padding: 10px 4px;
+        font-size: 10px;
+    }
 </style>
