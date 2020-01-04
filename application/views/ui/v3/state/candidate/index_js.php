@@ -197,9 +197,9 @@
     var btn = $('.open-sidebar');
     $(window).scroll(function() {
         if ($(window).scrollTop() > 200) {
-            btn.addClass('tina');
+            btn.addClass('new-style-button-xs');
         } else {
-            btn.removeClass('tina');
+            btn.removeClass('new-style-button-xs');
         }
     });
 

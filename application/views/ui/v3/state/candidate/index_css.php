@@ -1062,7 +1062,7 @@
         border-radius: 0px;
     }
 
-    .tina{
+    .new-style-button-xs{
         background-color: #333;
         border-radius: 4px;
         bottom: 10px;
