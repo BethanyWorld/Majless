@@ -93,7 +93,6 @@
                 </div>
             </div>
             <div class="row candidate-container">
-                <input type="text" id="inputCSRF" name="inputCSRF" value="<?php echo $CSRF; ?>" />
                 <?php foreach ($dataSpecial as $candidate) {
                     if ($candidate['CandidateProfileImage'] !== NULL) {
                         ?>
@@ -114,20 +113,13 @@
                                         </div>
                                     </h3>
                                     <button
+                                            data-id="<?php echo $candidate['RowId']?>"
                                             data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
                                             data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
                                             data-area="<?php echo $candidate['ElectionName']?>"
                                             class="btn invite-button" type="button"
                                             data-toggle="modal" data-target="#myModal">
                                         دعوت به جنبش از ما
-                                    </button>
-                                    <button
-                                            data-id="<?php echo $candidate['RowId']?>"
-                                            data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
-                                            data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
-                                            data-area="<?php echo $candidate['ElectionName']?>"
-                                            class="btn" type="button">
-                                        افزایش دعوت
                                     </button>
                                 </div>
                             </div>

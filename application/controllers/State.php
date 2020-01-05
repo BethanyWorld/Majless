@@ -210,17 +210,8 @@ class State extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        if ($inputs['inputCSRF'] == $this->session->userdata['CSRF']) {
-            $this->session->set_userdata('CSRF', "");
-            $result = $this->ModelCandidate->doIncreaseCandidateSpecialInviteCount();
-            echo json_encode($result);
-        } else {
-            $arr = array(
-                'type' => "red",
-                'content' => "کد CSRF نامعتبر است"
-            );
-            echo json_encode($arr);
-        }
+        $result = $this->ModelCandidate->doIncreaseCandidateSpecialInviteCount($inputs);
+        echo json_encode($result);
     }
     public function doInviteCandidateSpecial()
     {

@@ -37,7 +37,8 @@
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
-                'inputElectionIds': $electionIds
+                'inputElectionIds': $electionIds,
+
             }
             $.ajax({
                 type: 'post',
@@ -131,6 +132,20 @@
                 document.body.removeChild(link);
                 $('.show-box').fadeIn();
             });
+
+
+            /* Increase Invite Count */
+            $candidateId = $(this).data('id');
+            $sendData = {'inputRowId': $candidateId}
+            $.ajax({
+                type: 'post',
+                url: base_url + 'State/doIncreaseCandidateSpecialInviteCount',
+                data: $sendData,
+                success: function (data){}
+            });
+            /* End Increase Invite Count*/
+
+
         });
         $('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');
@@ -156,7 +171,6 @@
             document.getElementById("mySidenav").style.paddingLeft = "15px";
             document.getElementById("main").style.marginLeft = "250px";
         });
-
         $('.closebtn').click(function () {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
@@ -181,6 +195,10 @@
                 }
             }
         }
+
+
+
+
         // var btn = $('.open-sidebar');
         // $(window).scroll(function() {
         //     if ($(window).scrollTop() > 200) {
