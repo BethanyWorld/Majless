@@ -5,12 +5,12 @@
         });
     });
     $(document).ready(function () {
-        if(findBootstrapEnvironment() == 'xs' || findBootstrapEnvironment() == 'sm'){
+        if (findBootstrapEnvironment() == 'xs' || findBootstrapEnvironment() == 'sm') {
             $election = $(".elections").html();
             $("#election-place-holder").after($election);
             // $(".elections").eq(1).remove();
-            $(".desktop-panel .elections").find(':checkbox').each(function(){
-                $(this).attr('id' , Math.round(10000000));
+            $(".desktop-panel .elections").find(':checkbox').each(function () {
+                $(this).attr('id', Math.round(10000000));
             });
         }
         $(document).on('click', '.mp-section .mp', function () {
@@ -135,14 +135,21 @@
 
 
             /* Increase Invite Count */
-            $candidateId = $(this).data('id');
-            $sendData = {'inputRowId': $candidateId}
-            $.ajax({
-                type: 'post',
-                url: base_url + 'State/doIncreaseCandidateSpecialInviteCount',
-                data: $sendData,
-                success: function (data){}
-            });
+
+            $this = $(this);
+            if($(this).attr('data-id')) {
+                $candidateId = $(this).data('id');
+                $sendData = {'inputRowId': $candidateId}
+                $.ajax({
+                    type: 'post',
+                    url: base_url + 'State/doIncreaseCandidateSpecialInviteCount',
+                    data: $sendData,
+                    success: function (data) {
+                        $this.removeAttr('data-id');
+                    }
+                });
+            }
+
             /* End Increase Invite Count*/
 
 
@@ -188,15 +195,13 @@
             $el.appendTo($('body'));
             for (var i = envValues.length - 1; i >= 0; i--) {
                 var envVal = envValues[i];
-                $el.addClass('hidden-'+envVal);
+                $el.addClass('hidden-' + envVal);
                 if ($el.is(':hidden')) {
                     $el.remove();
                     return envs[i]
                 }
             }
         }
-
-
 
 
         // var btn = $('.open-sidebar');
