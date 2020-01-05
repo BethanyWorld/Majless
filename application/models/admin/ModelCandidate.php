@@ -1099,6 +1099,36 @@ class ModelCandidate extends CI_Model
         }
     }
 
+    public function doInviteSpecial($inputs)
+    {
+        $this->db->trans_start();
+        $UserArray = array(
+            'CandidateCode' => $inputs['inputCandidateCode'],
+            'CandidatePreName' => $inputs['inputCandidatePreName'],
+            'CandidateFullName ' => $inputs['inputCandidateFullName'],
+            'CandidateStateId' => $inputs['inputCandidateStateId'],
+            'CandidateElectionId' => $inputs['inputCandidateElectionId'],
+            'CandidateProfileImage' => $inputs['inputCandidateProfileImage'],
+            'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+        );
+        $this->db->insert('candidate_invite', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "درج نامزد ویژه با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "درج نامزد ویژه با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
 }
 
 ?>

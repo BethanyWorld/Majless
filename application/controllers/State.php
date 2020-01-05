@@ -42,6 +42,16 @@ class State extends CI_Controller{
         $this->load->view('ui/v3/state/candidate/index_js');
         $this->load->view('ui/v3/static/footer', $data);
     }
+    public function invite(){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' ' . "دعوت نامزد انتخاباتی ";
+        $data['states'] = $this->ModelCountry->getStateList();
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/state/invite/index', $data);
+        $this->load->view('ui/v3/state/invite/index_css');
+        $this->load->view('ui/v3/state/invite/index_js');
+        $this->load->view('ui/v3/static/footer', $data);
+    }
     public function page($stateId, $pageId, $pageTitle)
     {
 
@@ -211,6 +221,34 @@ class State extends CI_Controller{
             );
             echo json_encode($arr);
         }
+    }
+    public function doInviteCandidateSpecial()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $captchaCode = $this->session->userdata['captchaCode'];
+        if (strtolower($inputs['inputCaptcha']) == strtolower($captchaCode)) {
+            $inputs['inputCandidateCode'] = rand(10000,99999);
+            $inputs['inputCandidatePreName'] = 'جناب آقای';
+            $result = $this->ModelCandidate->doInviteSpecial($inputs);
+            echo json_encode($result);
+        } else {
+            $arr = array(
+                'type' => "red",
+                'content' => "کد امنیتی نامعتبر است"
+            );
+            echo json_encode($arr);
+        }
+
+
     }
     /* End Helper Functions*/
 }

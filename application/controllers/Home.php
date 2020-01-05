@@ -6,6 +6,85 @@ class Home extends CI_Controller{
         $this->load->model('ui/ModelQuery');
     }
 
+    public function uploadFile()
+    {
+        $uploadPath = $this->config->item('upload_path');
+        $error = array();
+        $errorClass = "alert alert-danger";
+        $this->session->set_flashdata('class', $errorClass);
+        if (!empty($_FILES["file"])) {
+            $myFile = $_FILES["file"];
+            if ($myFile["error"] !== UPLOAD_ERR_OK) {
+                $result = array(
+                    'type' => "red",
+                    'content' => "خطای ارتباط با سرور",
+                    'success' => false
+                );
+                echo json_encode($result);
+                die();
+            }
+            $name = preg_replace("/[^A-Z0-9._-]/i", "_", $myFile["name"]);
+            $i = 0;
+            $parts = pathinfo($name);
+            while (file_exists($uploadPath . $name)) {
+                $i++;
+                $name = $parts["filename"] . "_" . $i . "." . $parts["extension"];
+            }
+            if ($myFile['size'] > 10242880) {
+                $result = array(
+                    'type' => "red",
+                    'content' => "حجم فایل بیشتر از 10 مگابایت است",
+                    'success' => false
+                );
+                echo json_encode($result);
+                die();
+            }
+            $allowedExtensions = array('jpg', 'png', 'gif', 'jpeg');
+            $temp = explode(".", $myFile["name"]);
+            $extension = strtolower(end($temp));
+            if (!in_array($extension, $allowedExtensions)) {
+                $result = array(
+                    'type' => "red",
+                    'content' => "فقط مجاز به بارگذاری تصویر هستید",
+                    'success' => false
+                );
+                echo json_encode($result);
+                die();
+            }
+            $fileName = md5(rand(100, 9999) . microtime()) . '_' . $name;
+            $success = move_uploaded_file($myFile["tmp_name"], $uploadPath . $fileName);
+            if (!$success) {
+                $result = array(
+                    'type' => "red",
+                    'content' => "خطایی رخ داده است",
+                    'success' => false
+                );
+                echo json_encode($result);
+                die();
+            }
+            else {
+                chmod($uploadPath . $fileName, 0644);
+                $result = array(
+                    'type' => "green",
+                    'content' => "بارگذاری با موفقیت انجام شد",
+                    'fileSrc' => $fileName,
+                    'success' => true
+                );
+                echo json_encode($result);
+                die();
+            }
+        }
+        else {
+            $result = array(
+                'type' => "green",
+                'content' => "بارگذاری با موفقیت انجام شد",
+                'fileSrc' => "",
+                'success' => true
+            );
+            echo json_encode($result);
+            die();
+        }
+    }
     public function index(){
         /*$json = '{ "_id" : { "$binary" : "0CSsLVgWlUayO+rku8noNw==", "$type" : "03" }, "Code" : null, "Name" : "حسین رمضانی", "RegistrationDateTime" : { "$date" : "2019-09-24T15:54:28.253+0000" }, "Nationality" : { "Name" : "ایران" }, "NationalCode" : { "Code" : "1292650834", "IsForigenPersonAccepted" : true }, "PassportNo" : null, "BirthCertificateNo" : null, "CertificationCity" : { "_t" : "City", "Name" : null, "State" : { "ProvincePart" : { "Province" : { "Country" : { "Name" : "ایران" }, "Name" : null }, "Name" : null }, "Name" : null } }, "BirthDate" : { "$date" : "1987-09-04T00:00:00.000+0000" }, "BirthCity" : { "_t" : "City", "Name" : null, "State" : { "ProvincePart" : { "Province" : { "Country" : { "Name" : "ایران" }, "Name" : "اصفهان" }, "Name" : "اصفهان " }, "Name" : null } }, "FullName" : { "FirstName" : "حسین", "LastName" : "رمضانی" }, "PreLastName" : null, "FatherName" : "هوشنگ", "Gender" : 1, "Allegiance" : null, "Religion" : 1, "MaritalStatus" : 2, "Weight" : 0, "Height" : 0, "Email" : null, "Address" : { "City" : { "_t" : "City", "Name" : "تهران", "State" : { "ProvincePart" : { "Province" : { "Country" : { "Name" : "ایران" }, "Name" : "تهران" }, "Name" : "تهران" }, "Name" : "مرکزی" } }, "ResidenceAddress" : "خ ولیعصر" }, "TermOfResidence" : 0, "PostalCode" : null, "PhoneNumbers" : [ "02188527014" ], "CellPhoneNumbers" : [ { "_id" : "09131653476", "IsPrimary" : true } ], "CriminalHistory" : null, "MilitaryStatus" : { "_t" : "ExemptOtherSubcomponent", "_id" : { "$binary" : "xMgwSOqFT0iG5preVMoNTA==", "$type" : "03" }, "CreateDateTime" : { "$date" : "2019-09-24T16:06:22.222+0000" }, "LastModificationDateTime" : { "$date" : "2019-09-24T16:06:22.222+0000" }, "Other" : "مواردخاص" }, "AcademyTypes" : [  ], "Certificates" : [  ], "JobHistories" : [ { "_id" : { "$binary" : "4MFgiW5sBUSRtcSjOnCX3g==", "$type" : "03" }, "JobTitle" : "مدیرعامل", "CategoriedJobTitle" : { "_t" : "CategoriedJobTitle", "Code" : 0 }, "OrganizationName" : "پتروشیمی پتروانتخاب اصفهان", "InsuranceHistory" : 0, "CutoffReason" : "", "EmploymentType" : 0, "CreateDateTime" : { "$date" : "2019-09-24T16:06:56.973+0000" }, "LastModificationDateTime" : { "$date" : "2019-09-24T16:06:56.973+0000" }, "BeginMonth" : 0, "BeginYear" : 0, "EndMonth" : 0, "EndYear" : 0 } ], "EducationalInformation" : [ { "_id" : { "$binary" : "URvsDw0pSkmHHrpEJaCchg==", "$type" : "03" }, "EducationalAttainment" : { "_t" : "EducationalAttainment", "SubcomponentType" : 12 }, "AcademicGrade" : 0.0, "AcademyType" : { "_t" : "AcademyType", "SubcomponentType" : 1, "UniversityName" : "پژوهشکده امام خمینی" }, "Department" : 4, "Science" : 35, "OtherScience" : null, "Studying" : false, "CreateDateTime" : { "$date" : "2019-09-24T16:05:58.893+0000" }, "LastModificationDateTime" : { "$date" : "2019-09-24T16:05:58.893+0000" }, "EnteringYear" : "", "ExitYear" : "" }, { "_id" : { "$binary" : "Id1p6j7jiUa4zbya8IgkJA==", "$type" : "03" }, "EducationalAttainment" : { "_t" : "EducationalAttainment", "SubcomponentType" : 14 }, "AcademicGrade" : 0.0, "AcademyType" : { "_t" : "AcademyType", "SubcomponentType" : 1, "UniversityName" : "پژوهشکده امام خمینی" }, "Department" : 4, "Science" : 35, "OtherScience" : "", "Studying" : false, "CreateDateTime" : { "$date" : "2019-09-24T16:05:58.893+0000" }, "LastModificationDateTime" : { "$date" : "2019-09-24T16:05:58.893+0000" }, "EnteringYear" : "", "ExitYear" : "" } ], "Health" : { "_t" : "Healthy", "CreateDateTime" : { "$date" : "2019-09-24T15:54:28.253+0000" }, "LastModificationDateTime" : { "$date" : "2019-09-24T15:54:28.253+0000" } }, "ArtisticSkills" : [  ], "SocialActivityHistories" : [  ], "VocationalSkills" : [  ], "ComputerSkills" : [  ], "SportSkills" : [  ], "LanguageSkills" : [  ], "ResearchSkills" : [  ], "QuranSkills" : [  ], "OtherSkills" : [ { "_id" : { "$binary" : "9AV4XfRO10WMGDLVbpxNyw==", "$type" : "03" }, "SkillNameType" : "تحلیلی/ اجرایی", "SkillLevel" : 2, "LearningType" : 1, "CreateDateTime" : { "$date" : "2019-09-24T16:09:45.336+0000" }, "LastModificationDateTime" : { "$date" : "2019-09-24T16:09:45.336+0000" } } ], "PoliticalRecords" : [  ], "JobFeatures" : null, "sendSms" : false, "UserTypes" : [ 1, 2, 3 ], "sendSmsDateTime" : { "$date" : "0001-01-01T00:00:00.000+0000" }, "ImageId" : { "$binary" : "j2Se3//cGEKWWRoG1+9/Qw==", "$type" : "03" }, "CreateDateTime" : { "$date" : "2019-09-24T15:54:28.253+0000" }, "LastModificationDateTime" : { "$date" : "2019-09-24T16:02:44.514+0000" }, "PersonnelCode" : null, "NativeLanguage" : null, "LastReadDateTime" : { "$date" : "0001-01-01T00:00:00.000+0000" }, "FatherBirthplace" : { "_t" : "City", "Name" : "", "State" : { "ProvincePart" : { "Province" : { "Country" : { "Name" : "ایران" }, "Name" : "خوزستان" }, "Name" : "آبادان" }, "Name" : "" } }, "MotherBirthplace" : { "_t" : "City", "Name" : "", "State" : { "ProvincePart" : { "Province" : { "Country" : { "Name" : "ایران" }, "Name" : "اصفهان" }, "Name" : "اصفهان " }, "Name" : "" } }, "Constituency" : { "_t" : "City", "Name" : "", "State" : { "ProvincePart" : { "Province" : { "Country" : { "Name" : "ایران" }, "Name" : "اصفهان" }, "Name" : "اصفهان " }, "Name" : "" } } }
 ';
