@@ -66,7 +66,7 @@
             if ($continueSlide) {
                 $(".slider-timer").stop().animate({
                     width: "100%"
-                }, 1000000);
+                }, 10000);
                 $(".slider-timer").animate({
                     width: '0px',
                 }, 10, function () {

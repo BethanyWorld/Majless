@@ -2,6 +2,9 @@
 <div class="page-caption">
     نامزد انتخاباتی خود را در شبکه های اجتماعی به جنبش از ما دعوت کنید
 </div>
+<a class="invite visible-sm visible-xs" href="<?php echo base_url('State/invite'); ?>">
+    نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
+</a>
 <div class="container container-wrapper">
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div id="mySidenav" class="sidenav hidden-md hidden-lg">
@@ -130,6 +133,9 @@
         </section>
     </div>
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
+        <a class="invite hidden-sm hidden-xs" href="<?php echo base_url('State/invite'); ?>">
+            نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
+        </a>
         <div class="clearfix"></div>
         <div class="panel panel-default hidden-xs hidden-sm">
             <div class="panel-heading">

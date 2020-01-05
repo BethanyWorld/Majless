@@ -856,7 +856,8 @@
 
     /*for right panel*/
     .blog-widget {
-        margin: 0 0 1.5em;
+        margin: 0;
+        margin-bottom: 7px !important;
     }
 
     .blog-right-panel-main-div .blog-sidebar-col {
@@ -1105,5 +1106,16 @@
         font-size: 14px;
         cursor: pointer;
         padding: 15px;
+    }
+    .invite{
+
+        display: inline-block;
+        width: 100%;
+        padding: 8px 4px;
+        font-size: 14px;
+        text-align: center;
+        background: #032961;
+        color: #fff;
+        margin-bottom: 10px;
     }
 </style>
