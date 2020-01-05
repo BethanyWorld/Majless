@@ -21,8 +21,6 @@ class State extends CI_Controller{
         $this->load->view('ui/v3/static/footer', $data);
     }
     public function detail($stateId, $stateName){
-        $CSRF = random_string('alnum', 32);
-        $this->session->set_userdata('CSRF', $CSRF);
         $provinceAgent = $this->ModelAgent->getAgentByAgentStateId($stateId);
         $data['data'] = $this->ModelCandidate->getCandidateByStateId($stateId);
         $data['stateName'] = $stateName;
@@ -31,7 +29,11 @@ class State extends CI_Controller{
         $data['elections'] = $this->ModelCountry->getElectionsByStateId($stateId);
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' ' . "فهرست نامزد های انتخاباتی استان " . $stateName;
+
+        $CSRF = random_string('alnum', 32);
+        $this->session->set_userdata('CSRF', $CSRF);
         $data['CSRF'] = $CSRF;
+
         $data['dataSpecial'] = $this->ModelCandidate->getCandidateSpecialByStateId($stateId);
 
         $this->load->view('ui/v3/static/header', $data);
