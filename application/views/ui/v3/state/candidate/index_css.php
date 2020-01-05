@@ -1006,7 +1006,7 @@
         background-color: #fff;
         overflow-x: hidden;
         transition: 0.4s;
-        padding-top: 30px;
+        padding-top: 15px;
         display: block;
         overflow-y: scroll;
     }
@@ -1031,11 +1031,20 @@
 
     .sidenav .closebtn {
         position: absolute;
-        top: 0;
-        right: 0px;
-        font-size: 50px;
+        bottom: 15px;
+        left: 15px;
         margin-right: 5px;
-        color: #d10b20;
+        background-color: #da1f26;
+        color: #FFF;
+        border-radius: 4px;
+        text-align: center;
+        text-transform: uppercase;
+        opacity: 1;
+        z-index: 10000;
+        text-decoration: none !important;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 5px;
     }
 
     #main {
@@ -1065,20 +1074,36 @@
         border-radius: 0px;
     }
 
+    /*.new-style-button-xs{*/
+    /*    background-color: #333;*/
+    /*    border-radius: 4px;*/
+    /*    bottom: 10px;*/
+    /*    color: #FFF;*/
+    /*    height: 38px;*/
+    /*    width: 40px;*/
+    /*    position: fixed;*/
+    /*    left: 10px;*/
+    /*    text-align: center;*/
+    /*    text-transform: uppercase;*/
+    /*    padding-top: 10px;*/
+    /*    opacity: .9;*/
+    /*    z-index: 10000;*/
+    /*    text-decoration: none !important;*/
+    /*}*/
     .new-style-button-xs{
-        background-color: #333;
-        border-radius: 4px;
+        background-color: #da1f26;
         bottom: 10px;
         color: #FFF;
-        height: 38px;
-        width: 40px;
+        border-radius: 4px;
         position: fixed;
         left: 10px;
         text-align: center;
         text-transform: uppercase;
-        padding-top: 10px;
-        opacity: .9;
+        opacity: 1;
         z-index: 10000;
         text-decoration: none !important;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 15px;
     }
 </style>
