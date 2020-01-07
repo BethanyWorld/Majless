@@ -59,8 +59,10 @@ if (empty($data)) { ?>
                         </div>
                     </h3>
                     <button
+                            data-id="<?php echo $candidate['RowId']?>"
                             data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
                             data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                            data-area="<?php echo $candidate['ElectionName']?>"
                             class="btn invite-button" type="button"
                             data-toggle="modal" data-target="#myModal">
                         دعوت به جنبش از ما
