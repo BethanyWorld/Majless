@@ -250,8 +250,6 @@ class ModelCommand extends CI_Model{
             $html .= "نام کاربری:".$inputs['inputPhone'];
             $html .= "\n";
             $html .= "رمز عبور:".$inputs['inputPhone'];
-            /*$html .= "\n";
-            $html .= "http://azmaa.net";*/
             $arr = array(
                 'type' => "green",
                 'content' => "رمز عبور جدید به تلفن شما ارسال شد",

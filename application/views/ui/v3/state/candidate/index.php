@@ -111,8 +111,7 @@
                                     <h3 class="candidateName">
                                         <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
                                         <div class="election">
-                                            <p>حوزه انتخابیه</p>
-                                            <p><?php echo $candidate['ElectionName']; ?></p>
+                                            <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
                                         </div>
                                     </h3>
                                     <button
@@ -134,7 +133,10 @@
     </div>
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
         <a class="invite hidden-sm hidden-xs" href="<?php echo base_url('State/invite'); ?>">
-            نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
+            نامزد انتخاباتی خود را پیدا نکردید؟
+            <span>
+                او را دعوت کنید
+            </span>
         </a>
         <div class="clearfix"></div>
         <div class="panel panel-default hidden-xs hidden-sm">

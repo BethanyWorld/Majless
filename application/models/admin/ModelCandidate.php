@@ -940,6 +940,7 @@ class ModelCandidate extends CI_Model
         $end = $this->config->item('defaultPageSize');
         $this->db->select('*');
         $this->db->from('candidate_special');
+        $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
         $this->db->join('state', 'candidate_special.CandidateStateId = state.StateId');
         $this->db->order_by('RowId', 'ASC');
 

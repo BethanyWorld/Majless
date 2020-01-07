@@ -564,7 +564,7 @@
     }
 
     h3.candidateName {
-        font-size: 13px;
+        font-size: 11px;
         font-weight: 900;
         text-align: center;
         min-height: 80px;
@@ -1114,7 +1114,7 @@
         padding: 8px 4px;
         font-size: 14px;
         text-align: center;
-        background: #032961;
+        background: #da1f26;
         color: #fff;
         margin-bottom: 10px;
     }

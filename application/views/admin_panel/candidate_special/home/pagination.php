@@ -6,12 +6,13 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
     </tr>
 <?php } else {
     $counter = $startPage+1;
-    foreach ($data as $candidate) { ?>
+    foreach ($data as $candidate) {?>
         <tr>
             <td class="fit"><?php echo $counter++; ?></td>
             <td><?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?></td>
             <td class="fit"><?php echo $candidate['StateName']; ?></td>
             <td class="fit"><?php echo $candidate['CandidateCode']; ?></td>
+            <td class="fit"><?php echo $candidate['ElectionName']; ?></td>
             <td class="fit">
                 <a target="_blank" href="<?php echo base_url('uploads/').$candidate['CandidateProfileImage']; ?>">
                     <img width="100px" src="<?php echo base_url('uploads/').$candidate['CandidateProfileImage']; ?>" />

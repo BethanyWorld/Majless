@@ -8,7 +8,7 @@
                             <label for="inputCandidateState">استان:</label>
                             <select name="inputCandidateState" id="inputCandidateState">
                                 <option value="">همه</option>
-                                <?php foreach ($states as $item) { ?>
+                                <?php foreach ($states as $item) {?>
                                     <option value="<?php echo $item['StateId']; ?>">
                                         <?php echo $item['StateName']; ?>
                                     </option>
@@ -39,6 +39,7 @@
                                     <th>نام و نام خانوادگی</th>
                                     <th class="fit">استان</th>
                                     <th class="fit">کد</th>
+                                    <th class="fit">حوزه انتخاباتی</th>
                                     <th class="fit">تصویر</th>
                                     <th class="fit">جزئیات</th>
                                     <th class="fit">حذف</th>

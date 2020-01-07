@@ -26,7 +26,8 @@ if (empty($data)) { ?>
                         <?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?>
                     </h3>
                     <span class="post">
-                        نامزد انتخاباتی <?php echo $candidate['ElectionName']; ?>
+                        نامزد انتخاباتی
+                        <?php echo $candidate['ElectionName']; ?>
                     </span>
                 </div>
             </div>
@@ -36,6 +37,10 @@ if (empty($data)) { ?>
 <?php if (empty($dataSpecial)) { ?>
     <div class="alert alert-warning">
         موردی یافت نشد
+
+        <a href="<?php echo base_url('State/invite'); ?>">
+            نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
+        </a>
     </div>
 <?php } else { ?>
 <?php foreach ($dataSpecial as $candidate) {
@@ -50,8 +55,7 @@ if (empty($data)) { ?>
                     <h3 class="candidateName">
                         <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
                         <div class="election">
-                            <p>حوزه انتخابیه</p>
-                            <p><?php echo $candidate['ElectionName']; ?></p>
+                            <p  style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
                         </div>
                     </h3>
                     <button
