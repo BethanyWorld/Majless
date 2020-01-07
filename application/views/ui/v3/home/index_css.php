@@ -1,4 +1,31 @@
 <style>
+    .padding-10{
+        padding: 10px;
+    }
+    .see-candidate-list-btn{
+        background-color: #d10b20;
+        color: #fff;
+        border-radius: 0px;
+        margin: auto;
+        padding: 15px;
+    }
+    .see-candidate-list-btn:hover{
+        background-color: #d10b20;
+        color: #fff;
+    }
+    .see-candidate-list-btn:focus{
+        background-color: #d10b20;
+        color: #fff;
+    }
+    #themeblossom_loading_screen_logo {
+        padding: 15px;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        margin: auto;
+    }
     .padding-left-0 {
         padding-left: 0px;
     }
