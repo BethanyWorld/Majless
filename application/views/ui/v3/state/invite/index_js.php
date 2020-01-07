@@ -19,6 +19,7 @@
         );
 
         $("#inviteCandidate").click(function () {
+            debugger;
             event.preventDefault();
             var file_data = $('#inputCandidateProfileImage').prop('files')[0];
             var form_data = new FormData();
@@ -32,6 +33,7 @@
                 data: form_data,
                 type: 'post',
                 success: function (data) {
+                    debugger;
                     $result = jQuery.parseJSON(data);
                     $inputCandidateFullName = $.trim($("#inputCandidateFullName").val());
                     $inputCandidateImage = $result['fileSrc'];
@@ -39,31 +41,36 @@
                     $inputCandidateElectionId = $.trim($("#inputCandidateElectionId").val());
                     $inputCaptcha = $.trim($("#inputCaptcha").val());
                     /* End Validation */
-                    toggleLoader();
-                    $sendData = {
-                        'inputCandidateFullName': $inputCandidateFullName,
-                        'inputCandidateProfileImage': $inputCandidateImage,
-                        'inputCandidateStateId': $inputCandidateStateId,
-                        'inputCandidateElectionId': $inputCandidateElectionId,
-                        'inputCaptcha': $inputCaptcha
+
+                    if(file_data === undefined || file_data === "" ){
+                        notify("لطفا عکس را وارد کنید", "red");
                     }
-                    $.ajax({
-                        type: 'post',
-                        url: base_url + 'State/doInviteCandidateSpecial',
-                        data: $sendData,
-                        success: function (data) {
-                            toggleLoader();
-                            $result = jQuery.parseJSON(data);
-                            notify($result['content'], $result['type']);
-                            if($result['success']){
-                                location.reload();
-                            }
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
-                            notify('اطلاعات نامزد انتخاباتی تکراری ست', 'red');
-                            toggleLoader();
+                    else {
+                        $sendData = {
+                            'inputCandidateFullName': $inputCandidateFullName,
+                            'inputCandidateProfileImage': $inputCandidateImage,
+                            'inputCandidateStateId': $inputCandidateStateId,
+                            'inputCandidateElectionId': $inputCandidateElectionId,
+                            'inputCaptcha': $inputCaptcha
                         }
-                    });
+                        $.ajax({
+                            type: 'post',
+                            url: base_url + 'State/doInviteCandidateSpecial',
+                            data: $sendData,
+                            success: function (data) {
+                                toggleLoader();
+                                $result = jQuery.parseJSON(data);
+                                notify($result['content'], $result['type']);
+                                if($result['success']){
+                                    location.reload();
+                                }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                notify('اطلاعات نامزد انتخاباتی تکراری ست', 'red');
+                                toggleLoader();
+                            }
+                        });
+                    }
                 },
                 error: function (data) {
                     toggleLoader();
