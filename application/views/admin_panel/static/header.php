@@ -218,6 +218,9 @@ $CI =& get_instance();
                         <li <?php if (strstr($uri, '/Candidate/specialAdd') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Candidate/specialAdd'); ?>" class="waves-effect waves-block">افزودن نامزد ویژه</a>
                         </li>
+                        <li <?php if (strstr($uri, '/Candidate/invite') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Candidate/invite'); ?>" class="waves-effect waves-block">پیشنهاد مردم</a>
+                        </li>
                     </ul>
                 </li>
                 <li <?php echo $CI->uri->segment(2) == 'ExamPlaces' ? 'class="active"' : '' ?> >

@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Candidate extends CI_Controller{
-
     public function __construct(){
         parent::__construct();
         $this->load->helper('admin/admin_login');
@@ -376,6 +375,70 @@ class Candidate extends CI_Controller{
     public function doIncreaseCandidateSpecialInviteCount(){
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doIncreaseCandidateSpecialInviteCount($inputs);
+        echo json_encode($result);
+    }
+
+
+    public function invite(){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = 'نامزد های انتخاباتی';
+        $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
+        $data['states'] = $this->ModelCountry->getStateList();
+
+        $this->load->view('admin_panel/static/header', $data);
+        $this->load->view('admin_panel/candidate/invite/index');
+        $this->load->view('admin_panel/candidate/invite/index_css');
+        $this->load->view('admin_panel/candidate/invite/index_js');
+        $this->load->view('admin_panel/static/footer');
+    }
+    public function doInvitePagination(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $data = $this->ModelCandidate->getInviteCandidate($inputs);
+        $data['htmlResult'] = $this->load->view('admin_panel/candidate/invite/pagination', $data, TRUE);
+        unset($data['data']);
+        echo json_encode($data);
+    }
+    public function inviteDetail($candidateId){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = 'ویرایش نامزد انتخاباتی';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['exams'] = $this->getCandidateExams($candidateId);
+        $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+        $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
+        $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
+        $data['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($candidateId);
+        $data['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($candidateId);
+
+        $data['candidateBooks'] = $this->ModelProfile->getCandidateBooksByCandidateId($candidateId);
+        $data['candidateArticles'] = $this->ModelProfile->getCandidateArticlesByCandidateId($candidateId);
+        $data['candidateResearch'] = $this->ModelProfile->getCandidateResearchByCandidateId($candidateId);
+        $data['candidateTranslation'] = $this->ModelProfile->getCandidateTranslationByCandidateId($candidateId);
+        $data['candidateInvention'] = $this->ModelProfile->getCandidateInventionByCandidateId($candidateId);
+        $data['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($candidateId);
+        $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
+        $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
+
+
+        $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);
+        $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
+
+        $data['api'] = $this->config->item('api');
+        $this->load->view('admin_panel/static/header', $data);
+        $this->load->view('admin_panel/candidate/edit/index', $data);
+        $this->load->view('admin_panel/candidate/edit/index_css');
+        $this->load->view('admin_panel/candidate/edit/index_js', $data);
+        $this->load->view('admin_panel/static/footer');
+    }
+    public function doInviteDelete()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $result = $this->ModelCandidate->doInviteDelete($inputs);
+        echo json_encode($result);
+    }
+    public function doInviteAccept(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $result = $this->ModelCandidate->doInviteAccept($inputs);
         echo json_encode($result);
     }
 
