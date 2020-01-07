@@ -12,6 +12,7 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             <td><?php echo $candidate['CandidateFullName']; ?></td>
             <td class="fit"><?php echo $candidate['StateName']; ?></td>
             <td class="fit"><?php echo $candidate['ElectionName']; ?>
+            <td class="fit"><?php echo $candidate['CandidateInstaAccount']; ?>
             <td class="fit">
                 <a target="_blank" href="<?php echo base_url('uploads/').$candidate['CandidateProfileImage']; ?>">
                     <img width="100px" src="<?php echo base_url('uploads/').$candidate['CandidateProfileImage']; ?>" />

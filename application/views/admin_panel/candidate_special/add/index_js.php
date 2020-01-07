@@ -21,6 +21,7 @@
                     $inputCandidateImage = $result['fileSrc'];
                     $inputCandidateStateId = $.trim($("#inputCandidateStateId").val());
                     $inputCandidateElectionId = $.trim($("#inputCandidateElectionId").val());
+                    $inputCandidateInstaAccount = $.trim($("#inputCandidateInstaAccount").val());
                     /* End Validation */
                     toggleLoader();
                     $sendData = {
@@ -28,7 +29,8 @@
                         'inputCandidateFullName': $inputCandidateFullName,
                         'inputCandidateProfileImage': $inputCandidateImage,
                         'inputCandidateStateId': $inputCandidateStateId,
-                        'inputCandidateElectionId': $inputCandidateElectionId
+                        'inputCandidateElectionId': $inputCandidateElectionId,
+                        'inputCandidateInstaAccount': $inputCandidateInstaAccount
                     }
                     $.ajax({
                         type: 'post',

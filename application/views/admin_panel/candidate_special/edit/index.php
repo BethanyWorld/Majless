@@ -9,7 +9,7 @@
                                 <input type="hidden" class="form-control"
                                        value="<?php echo $candidate['RowId']; ?>"
                                        id="inputRowId" name="inputRowId"/>
-                            <div class="col-xs-12 col-sm-6 col-md-2">
+                            <div class="col-xs-12 col-sm-4 col-md-2">
                                 <label for="inputCandidatePreName">پیشوند</label>
                                 <div class="form-group">
                                     <div class="form-line">
@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="col-xs-12 col-sm-4 col-md-3">
                                 <label for="inputCandidateFullName">نام و نام خانوادگی</label>
                                 <div class="form-group">
                                     <div class="form-line">
@@ -70,6 +70,16 @@
                                                     class="btn-group bootstrap-select form-control show-tick">
                                             </select>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-2">
+                                <label for="inputCandidateInstaAccount">آی دی اینستاگرام</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control"
+                                               value="<?php echo $candidate['CandidateInstaAccount']; ?>"
+                                               id="inputCandidateInstaAccount" name="inputCandidateInstaAccount"/>
                                     </div>
                                 </div>
                             </div>

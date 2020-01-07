@@ -40,6 +40,7 @@
                                     <th class="fit">استان</th>
                                     <th class="fit">کد</th>
                                     <th class="fit">حوزه انتخاباتی</th>
+                                    <th class="fit">اینستاگرام</th>
                                     <th class="fit">تصویر</th>
                                     <th class="fit">جزئیات</th>
                                     <th class="fit">حذف</th>

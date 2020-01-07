@@ -10,8 +10,6 @@
                     <input class="form-control" type="text"
                            id="inputCandidateFullName" name="inputCandidateFullName"/>
                 </div>
-            </div>
-            <div class="form-group">
                 <div class="col-xs-12 col-md-6 padding-right-0">
                     <label for="inputCandidateProfileImage">تصویر </label>
                     <div class="form-group">
@@ -43,6 +41,14 @@
                             id="inputCandidateElectionId"
                             class="form-control">
                     </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12 padding-right-0 pull-right">
+                    <label for="inputCandidateInstaAccount">
+                        <span class="required"></span>شناسه اینستاگرام</label>
+                    <input class="form-control" type="text"
+                           id="inputCandidateInstaAccount" name="inputCandidateInstaAccount"/>
                 </div>
             </div>
 

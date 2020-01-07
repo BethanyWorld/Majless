@@ -985,6 +985,7 @@ class ModelCandidate extends CI_Model{
             'CandidateStateId' => $inputs['inputCandidateStateId'],
             'CandidateElectionId' => $inputs['inputCandidateElectionId'],
             'CandidateProfileImage' => $inputs['inputCandidateProfileImage'],
+            'CandidateInstaAccount' => $inputs['inputCandidateInstaAccount'],
             'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
         );
         $this->db->insert('candidate_special', $UserArray);
@@ -1015,6 +1016,7 @@ class ModelCandidate extends CI_Model{
                 'CandidateStateId' => $inputs['inputCandidateStateId'],
                 'CandidateElectionId' => $inputs['inputCandidateElectionId'],
                 'CandidateProfileImage' => $inputs['inputCandidateProfileImage'],
+                'CandidateInstaAccount' => $inputs['inputCandidateInstaAccount'],
                 'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
         } else {
@@ -1023,6 +1025,7 @@ class ModelCandidate extends CI_Model{
                 'CandidateFullName ' => $inputs['inputCandidateFullName'],
                 'CandidateStateId' => $inputs['inputCandidateStateId'],
                 'CandidateElectionId' => $inputs['inputCandidateElectionId'],
+                'CandidateInstaAccount' => $inputs['inputCandidateInstaAccount'],
                 'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
         }
@@ -1101,6 +1104,7 @@ class ModelCandidate extends CI_Model{
             'CandidateStateId' => $inputs['inputCandidateStateId'],
             'CandidateElectionId' => $inputs['inputCandidateElectionId'],
             'CandidateProfileImage' => $inputs['inputCandidateProfileImage'],
+            'CandidateInstaAccount' => $inputs['inputCandidateInstaAccount'],
             'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
         );
         $this->db->insert('candidate_invite', $UserArray);
@@ -1157,6 +1161,7 @@ class ModelCandidate extends CI_Model{
             'CandidateStateId' => $result['CandidateStateId'],
             'CandidateElectionId' => $result['CandidateElectionId'],
             'CandidateProfileImage' => $result['CandidateProfileImage'],
+            'CandidateInstaAccount' => $result['CandidateInstaAccount'],
             'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
         );
         $this->db->insert('candidate_special', $UserArray);

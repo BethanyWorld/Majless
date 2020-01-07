@@ -18,8 +18,8 @@
             }
         );
 
-        $("#inviteCandidate").click(function () {
-            debugger;
+        $("#inviteCandidate").click(function (event) {
+            toggleLoader();
             event.preventDefault();
             var file_data = $('#inputCandidateProfileImage').prop('files')[0];
             var form_data = new FormData();
@@ -33,17 +33,17 @@
                 data: form_data,
                 type: 'post',
                 success: function (data) {
-                    debugger;
                     $result = jQuery.parseJSON(data);
                     $inputCandidateFullName = $.trim($("#inputCandidateFullName").val());
                     $inputCandidateImage = $result['fileSrc'];
                     $inputCandidateStateId = $.trim($("#inputCandidateStateId").val());
                     $inputCandidateElectionId = $.trim($("#inputCandidateElectionId").val());
+                    $inputCandidateInstaAccount = $.trim($("#inputCandidateInstaAccount").val());
                     $inputCaptcha = $.trim($("#inputCaptcha").val());
                     /* End Validation */
-
                     if(file_data === undefined || file_data === "" ){
                         notify("لطفا عکس را وارد کنید", "red");
+                        toggleLoader();
                     }
                     else {
                         $sendData = {
@@ -51,6 +51,7 @@
                             'inputCandidateProfileImage': $inputCandidateImage,
                             'inputCandidateStateId': $inputCandidateStateId,
                             'inputCandidateElectionId': $inputCandidateElectionId,
+                            'inputCandidateInstaAccount': $inputCandidateInstaAccount,
                             'inputCaptcha': $inputCaptcha
                         }
                         $.ajax({
@@ -61,9 +62,11 @@
                                 toggleLoader();
                                 $result = jQuery.parseJSON(data);
                                 notify($result['content'], $result['type']);
-                                if($result['success']){
-                                    location.reload();
-                                }
+                                setTimeout(function(){
+                                    if($result['success']){
+                                        location.reload();
+                                    }
+                                } , 2000);
                             },
                             error: function (jqXHR, textStatus, errorThrown) {
                                 notify('اطلاعات نامزد انتخاباتی تکراری ست', 'red');
