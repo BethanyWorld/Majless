@@ -403,7 +403,7 @@ class ModelCandidate extends CI_Model{
         if (isset($inputs['inputFullName']) && !empty($inputs['inputFullName'])) {
             $this->db->like('CandidateFullName', $inputs['inputFullName']);
         }
-        $this->db->where(array('CandidateStateId' => $inputs['inputStateId']));
+        //$this->db->where(array('CandidateStateId' => $inputs['inputStateId']));
 
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
@@ -1119,7 +1119,7 @@ class ModelCandidate extends CI_Model{
         } else {
             $arr = array(
                 'type' => "green",
-                'content' => "درج نامزد ویژه با موفقیت انجام شد",
+                'content' => "بعد از آماده شدن تصویر نامزد انتخاباتی بر روی سایت منتشر خواهد شد",
                 'success' => true
             );
             return $arr;
