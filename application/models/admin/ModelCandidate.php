@@ -81,6 +81,7 @@ class ModelCandidate extends CI_Model{
         $this->db->from('candidate');
         $this->db->join('state', 'candidate.CandidateStateId = state.StateId');
         $this->db->join('city', 'candidate.CandidateCityId = city.CityId');
+        $this->db->join('election_location', 'candidate.CandidateElectionId = election_location.ElectionId');
         $this->db->where(array('CandidateId' => $candidateId));
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
@@ -342,6 +343,7 @@ class ModelCandidate extends CI_Model{
         $this->db->join('city', 'candidate.CandidateCityId = city.CityId');
         $this->db->join('election_location', 'election_location.ElectionId = candidate.CandidateElectionId');
         $this->db->where(array('CandidateStateId' => $stateId));
+        $this->db->where(array('CandidateStatus' => 'CandidateAccepted'));
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();

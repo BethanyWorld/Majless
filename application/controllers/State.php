@@ -9,6 +9,7 @@ class State extends CI_Controller{
         $this->load->model('ui/ModelAgent');
         $this->load->model('ui/ModelCountry');
         $this->load->model('admin/ModelCandidate');
+        $this->load->model('ui/ModelProfile');
     }
     public function index()
     {
@@ -106,17 +107,29 @@ class State extends CI_Controller{
         $this->load->view('ui/v3/state/candidate/index_js');
         $this->load->view('ui/v3/static/footer', $data);
     }
-    public function candidate_detail($candidateId, $stateId, $stateName)
-    {
+    public function candidate_detail($candidateId, $stateId, $stateName){
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
         $data['CSRF'] = $CSRF;
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
-        $provinceAgent = $this->ModelAgent->getAgentByAgentStateId($stateId);
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
-        $data['posts'] = $this->ModelCandidate->getCandidateCandidatePostByCandidateId($candidateId);
-        $data['api'] = $this->config->item('api');
+        $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
+        $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
+        $data['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($candidateId);
+        $data['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($candidateId);
+        $data['candidateBooks'] = $this->ModelProfile->getCandidateBooksByCandidateId($candidateId);
+        $data['candidateArticles'] = $this->ModelProfile->getCandidateArticlesByCandidateId($candidateId);
+        $data['candidateResearch'] = $this->ModelProfile->getCandidateResearchByCandidateId($candidateId);
+        $data['candidateTranslation'] = $this->ModelProfile->getCandidateTranslationByCandidateId($candidateId);
+        $data['candidateInvention'] = $this->ModelProfile->getCandidateInventionByCandidateId($candidateId);
+        $data['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($candidateId);
+        $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
+        $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
+        $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);
+        $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
+
         $data['stateName'] = $stateName;
         $data['stateId'] = $stateId;
         $data['noImg'] = $this->config->item('defaultImage');

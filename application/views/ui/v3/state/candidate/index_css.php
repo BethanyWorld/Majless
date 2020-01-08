@@ -562,7 +562,12 @@
         background-color: #052452;
         border-radius: 0;
     }
-
+    .panel-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 12px;
+        color: inherit;
+    }
     h3.candidateName {
         font-size: 11px;
         font-weight: 900;

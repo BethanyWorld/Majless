@@ -9,7 +9,6 @@
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div id="mySidenav" class="sidenav hidden-md hidden-lg">
             <a href="javascript:void(0)" class="closebtn">بستن</a>
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
@@ -61,46 +60,36 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 mp hidden demo-candidate">
-                <div class="mp-brief">
-                    <div class="menu">
-                        <ul>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">رزومه</a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">فهرست اموال</a>
-                            </li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">وعده های
-                                    انتخاباتی</a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">هزینه های
-                                    انتخابات</a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">تعهدنامه</a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">نتایج سنجش</a>
-                            </li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">اخبار </a></li>
-                            <li><a href="<?php echo base_url('State/candidate_detail/1/1/استان'); ?>">گزارش تخلف </a>
-                            </li>
-                        </ul>
+            <div class="row candidate-container">
+                <?php foreach ($data as $candidate) {  ?>
+                    <div class="col-md-4 col-sm-6 mp">
+                        <div class="mp-brief">
+                            <div class="menu">
+                                <?php $url = base_url('State/candidate_detail/'.$candidate['CandidateId'].'/'.$stateId.'/'.$stateName); ?>
+                                <ul>
+                                    <li><a href="<?php echo $url; ?>">رزومه</a></li>
+                                    <li><a href="<?php echo $url; ?>">فهرست اموال</a></li>
+                                    <li><a href="<?php echo $url; ?>">وعده های انتخاباتی</a></li>
+                                    <li><a href="<?php echo $url; ?>">هزینه های انتخابات</a></li>
+                                    <li><a href="<?php echo $url; ?>">تعهدنامه</a></li>
+                                    <li><a href="<?php echo $url; ?>">نتایج سنجش</a></li>
+                                    <li><a href="<?php echo $url; ?>">اخبار </a></li>
+                                    <li><a href="<?php echo $url; ?>">گزارش تخلف </a></li>
+                                </ul>
+                            </div>
+                            <div class="pic">
+                                <img src="<?php echo $candidate['CandidateProfileImage']; ?>">
+                            </div>
+                            <div class="team-content">
+                                <h3 class="title"><?php echo $candidate['CandidateFirstName']." ".$candidate['CandidateLastName']; ?></h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pic">
-                        <img src="<?php echo $_DIR; ?>/images/profile.jpg">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">
-                            محمد محمدی
-                        </h3>
-                        <h3 class="title">
-                            01234567899
-                        </h3>
-                        <span class="post">
-                                    نامزد انتخاباتی
-                        </span>
-                    </div>
-                </div>
+                <?php  } ?>
             </div>
             <div class="row candidate-container">
-                <?php foreach ($dataSpecial as $candidate) {
-                    if ($candidate['CandidateProfileImage'] !== NULL) {
-                        ?>
-                        <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+                <?php foreach ($dataSpecial as $candidate) { if ($candidate['CandidateProfileImage'] !== NULL) {?>
+                    <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
                             <div class="mp-brief">
                                 <div class="pic">
                                     <a download
@@ -128,8 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php }
-                } ?>
+                <?php } } ?>
             </div>
         </section>
     </div>
@@ -140,6 +128,14 @@
                 او را دعوت کنید
             </span>
         </a>
+        <div class="clearfix"></div>
+        <div class="panel panel-default">
+            <div class="panel-body" style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
+                همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم.
+                شما نیز با انتخاب گزینه "دعوت به جنش از ما"
+                و انتشار پوسترهای دعوت به چالش در شبکه های اجتماعی نامزد حوزه انتخابیه خود را به این چالش دعوت کنید.
+            </div>
+        </div>
         <div class="clearfix"></div>
         <div class="panel panel-default hidden-xs hidden-sm">
             <div class="panel-heading">
@@ -429,6 +425,5 @@
     لطفا منتظر بمانید...
 </div>
 <script src="<?php echo $_DIR; ?>js/dom-to-image.js"></script>
-<script src="<?php echo $_DIR; ?>js/file-to-save.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.min.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.plugins.min.js"></script>

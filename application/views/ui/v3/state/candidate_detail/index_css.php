@@ -151,6 +151,8 @@
         color: #d10b20;
         padding-left: 5px;
         font-size: 10px;
+        float: right;
+        margin: 8px 5px;
     }
     .resume-ul li{
         margin-bottom: 8px;
@@ -185,4 +187,27 @@
             overflow-y: scroll;
         }
     }
+
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 700;
+        font-size: 13px;
+    }
+    .submit-form{
+        background-color: #d10b20;
+        border: 0;
+        color: #fff;
+        border-radius: 0;
+        padding: 10px 25px;
+    }
+
+    .panel {
+        margin-bottom: 10px;
+    }
+    .have-border-bottom h3{
+        font-size: 20px !important;
+    }
+
 </style>
