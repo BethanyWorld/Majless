@@ -6,6 +6,16 @@
     نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
 </a>
 <div class="container container-wrapper">
+
+    <div class="panel panel-default hidden-lg hidden-md">
+        <div class="panel-body"
+             style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
+            همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم.
+            شما نیز با انتخاب گزینه "دعوت به جنش از ما"
+            و انتشار پوسترهای دعوت به چالش در شبکه های اجتماعی نامزد حوزه انتخابیه خود را به این چالش دعوت کنید.
+        </div>
+    </div>
+
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div id="mySidenav" class="sidenav hidden-md hidden-lg">
             <a href="javascript:void(0)" class="closebtn">بستن</a>
@@ -141,7 +151,7 @@
             </span>
         </a>
         <div class="clearfix"></div>
-        <div class="panel panel-default margin-t-response">
+        <div class="panel panel-default margin-t-response hidden-xs hidden-sm">
             <div class="panel-body"
                  style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
                 همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم.

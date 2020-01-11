@@ -1,10 +1,10 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
-    .candidate-detail-parent-div{
-        height: 1420px;
-        overflow: scroll;
-        overflow-x: hidden;
-    }
+    /*.candidate-detail-parent-div{*/
+    /*        height: 1420px;*/
+    /*        overflow: scroll;*/
+    /*        overflow-x: hidden;*/
+    /*    }*/
     #show-box img {
         height: 355px;
         display: inline-block;

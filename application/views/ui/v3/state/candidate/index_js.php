@@ -220,13 +220,16 @@
         //     }
         // });
 
-        $(".candidate-detail-parent-div").niceScroll({
-            cursorcolor:"#022d6d",
-            cursorwidth:"5px",
-            background:"rgb(249, 249, 249)",
-            cursorborder:"1px solid #022d6d",
-            cursorborderradius:0
-        });
+        // for nice scroll
+        // $(".candidate-detail-parent-div").niceScroll({
+        //     cursorcolor:"#022d6d",
+        //     cursorwidth:"5px",
+        //     background:"rgb(249, 249, 249)",
+        //     cursorborder:"1px solid #022d6d",
+        //     cursorborderradius:0
+        // });
+        // for nice scroll
+
 
         $('.candidate-detail-parent-div').on('mousewheel DOMMouseScroll', function(e) {
             if(typeof e.originalEvent.detail == 'number' && e.originalEvent.detail !== 0) {
