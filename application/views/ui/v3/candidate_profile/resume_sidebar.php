@@ -468,9 +468,11 @@
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/academicBackground'); ?>">2</a>
                 </li>
+                <?php if($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male'){ ?>
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/militaryStatus'); ?>">3</a>
                 </li>
+                <?php } ?>
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/jobHistory'); ?>">4</a>
                 </li>
@@ -489,9 +491,11 @@
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/veteran'); ?>">9</a>
                 </li>
+                <?php if($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted'){ ?>
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/finance'); ?>">10</a>
                 </li>
+                <?php} ?>
                 <li class="text-center">
                     <a href="<?php echo base_url('Profile'); ?>">
                         <i class="fa fa-refresh"></i>
@@ -661,7 +665,6 @@
                         </div>
                     </a>
                 </li>
-
                 <li class="col-md-12 padding-0">
                     <a href="<?php echo base_url('Profile/logOut') ?>">
                         <i class="zmdi RightpanelIcon">
@@ -672,7 +675,6 @@
                         </div>
                     </a>
                 </li>
-
             </ul>
         </div>
     </div>
