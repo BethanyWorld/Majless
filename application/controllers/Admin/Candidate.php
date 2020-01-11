@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Candidate extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
         $this->load->helper('admin/admin_login');
@@ -58,6 +59,53 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/edit/index_css');
         $this->load->view('admin_panel/candidate/edit/index_js', $data);
         $this->load->view('admin_panel/static/footer');
+    }
+    public function badge($candidateId){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = 'ویرایش نامزد انتخاباتی';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['exams'] = $this->getCandidateExams($candidateId);
+        $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+        $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
+        $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
+        $data['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($candidateId);
+        $data['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($candidateId);
+
+        $data['candidateBooks'] = $this->ModelProfile->getCandidateBooksByCandidateId($candidateId);
+        $data['candidateArticles'] = $this->ModelProfile->getCandidateArticlesByCandidateId($candidateId);
+        $data['candidateResearch'] = $this->ModelProfile->getCandidateResearchByCandidateId($candidateId);
+        $data['candidateTranslation'] = $this->ModelProfile->getCandidateTranslationByCandidateId($candidateId);
+        $data['candidateInvention'] = $this->ModelProfile->getCandidateInventionByCandidateId($candidateId);
+        $data['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($candidateId);
+        $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
+        $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
+
+        $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);
+        $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
+
+        $data['api'] = $this->config->item('api');
+        $this->load->view('admin_panel/static/header', $data);
+        $this->load->view('admin_panel/candidate/badge/index', $data);
+        $this->load->view('admin_panel/candidate/badge/index_css');
+        $this->load->view('admin_panel/candidate/badge/index_js', $data);
+        $this->load->view('admin_panel/static/footer');
+    }
+    public function doAssignBadge(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            if(!is_array($v)){
+                return strip_tags($v);
+            }
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelCandidate->doAssignBadge($inputs);
+        echo json_encode($result);
     }
     public function printResume($candidateId){
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
