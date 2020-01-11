@@ -90,6 +90,22 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/badge/index_js', $data);
         $this->load->view('admin_panel/static/footer');
     }
+    public function doAssignBadge(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            if(!is_array($v)){
+                return strip_tags($v);
+            }
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelCandidate->doAssignBadge($inputs);
+        echo json_encode($result);
+    }
     public function printResume($candidateId){
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
@@ -317,7 +333,6 @@ class Candidate extends CI_Controller{
         echo json_encode($result);
 
     }
-
     /*Admin Special Candidates*/
     public function special(){
         $data['noImg'] = $this->config->item('defaultImage');
@@ -408,8 +423,6 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doIncreaseCandidateSpecialInviteCount($inputs);
         echo json_encode($result);
     }
-
-
     public function invite(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نامزد های انتخاباتی';
@@ -472,6 +485,5 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doInviteAccept($inputs);
         echo json_encode($result);
     }
-
     /*End Admin Special Candidates*/
 }

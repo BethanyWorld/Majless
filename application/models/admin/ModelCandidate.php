@@ -67,7 +67,6 @@ class ModelCandidate extends CI_Model{
         }
         return $result;
     }
-
     public function getCandidateRolesByCandidateId($candidateId)
     {
         $this->db->select('*');
@@ -1177,6 +1176,37 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
-
+    public function doAssignBadge($inputs){
+        $candidateId = $inputs['inputCandidateId'];
+        $actionType = $inputs['inputActionType'];
+        $actionType = $inputs['inputActionType'];
+        switch ($actionType){
+            case 'Assign':
+                $UserArray = array(
+                    'CandidateId' => $candidateId,
+                    'CandidateBadge' => $inputs['inputCandidateBadge']
+                );
+                $this->db->insert('candidate_badge', $UserArray);
+                $arr = array(
+                    'type' => "green",
+                    'content' => "درج برچسب با موفقیت انجام شد",
+                    'success' => true
+                );
+                return $arr;
+                break;
+            case 'UnAssign':
+                $this->db->delete('candidate_badge', array(
+                    'CandidateId' => $candidateId,
+                    'CandidateBadge' => $inputs['inputCandidateBadge'],
+                ));
+                $arr = array(
+                    'type' => "green",
+                    'content' => "حذف برچسب ناموفق بود",
+                    'success' => true
+                );
+                return $arr;
+                break;
+        }
+    }
 }
 ?>

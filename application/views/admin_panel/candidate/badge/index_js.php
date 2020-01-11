@@ -23,8 +23,9 @@
             /* End Validation */
             toggleLoader();
             $sendData = {
-                'inputCandidateId': $inputCandidateId,
-                'inputGrade': $inputGrade
+                'inputCandidateId': '',
+                'inputActionType': '',
+                'inputAction': ''
             }
             $.ajax({
                 type: 'post',
