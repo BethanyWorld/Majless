@@ -152,7 +152,6 @@
 
             /* End Increase Invite Count*/
 
-
         });
         $('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');
@@ -203,7 +202,13 @@
             }
         }
 
-
+        $candidateLengh = $(".candidate-detail-parent-div").children().length;
+        if($candidateLengh <= 9){
+            $(".candidate-detail-parent-div").removeClass('over-flow-scroll')
+        }
+        else {
+            $(".candidate-detail-parent-div").addClass('over-flow-scroll')
+        }
         // var btn = $('.open-sidebar');
         // $(window).scroll(function() {
         //     if ($(window).scrollTop() > 200) {
@@ -212,5 +217,31 @@
         //         btn.removeClass('new-style-button-xs');
         //     }
         // });
+
+        $(".candidate-detail-parent-div").niceScroll({
+            cursorcolor:"#022d6d",
+            cursorwidth:"5px",
+            background:"rgb(249, 249, 249)",
+            cursorborder:"1px solid #022d6d",
+            cursorborderradius:0
+        });
+
+        $('.candidate-detail-parent-div').on('mousewheel DOMMouseScroll', function(e) {
+            if(typeof e.originalEvent.detail == 'number' && e.originalEvent.detail !== 0) {
+                if(e.originalEvent.detail > 0) {
+                    console.log('Down');
+                } else if(e.originalEvent.detail < 0){
+                    console.log('Up');
+                }
+            } else if (typeof e.originalEvent.wheelDelta == 'number') {
+                if(e.originalEvent.wheelDelta < 0) {
+                    console.log('Down');
+                } else if(e.originalEvent.wheelDelta > 0) {
+                    console.log('Up');
+                }
+            }
+        });
+
+
     });
 </script>

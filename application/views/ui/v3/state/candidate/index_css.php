@@ -1,5 +1,10 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
+    .candidate-detail-parent-div{
+        height: 1420px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
     #show-box img {
         height: 355px;
         display: inline-block;
@@ -390,6 +395,9 @@
         }
         .page-caption{
             font-size: 12px;
+        }
+        .margin-t-response{
+            margin-top: 15px;
         }
     }
 
@@ -1123,4 +1131,26 @@
         color: #fff;
         margin-bottom: 10px;
     }
+
+
+
+
+
+
+
+    /*for tag*/
+
+    .badge {
+        position: relative;
+        z-index: 1;
+        height: 50px;
+        flex: 1 0;
+        background: none;
+    }
+    .badge img {
+        width: 35px;
+        height: 100%;
+    }
+
+    /*for tag*/
 </style>

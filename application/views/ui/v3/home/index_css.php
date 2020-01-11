@@ -2,12 +2,20 @@
     .padding-10{
         padding: 10px;
     }
+    .see-candidate-list-div{
+        background-color: #d10b20;
+    }
     .see-candidate-list-btn{
         background-color: #d10b20;
         color: #fff;
         border-radius: 0px;
         margin: auto;
         padding: 15px;
+    }
+    .see-candidate-list-btn span{
+        color: #022D6D;
+        font-weight: bold;
+        font-size: 15px;
     }
     .see-candidate-list-btn:hover{
         background-color: #d10b20;

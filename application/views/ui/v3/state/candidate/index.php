@@ -61,11 +61,11 @@
                 </div>
             </div>
             <div class="row candidate-container">
-                <?php foreach ($data as $candidate) {  ?>
+                <?php foreach ($data as $candidate) { ?>
                     <div class="col-md-4 col-sm-6 mp">
                         <div class="mp-brief">
                             <div class="menu">
-                                <?php $url = base_url('State/candidate_detail/'.$candidate['CandidateId'].'/'.$stateId.'/'.$stateName); ?>
+                                <?php $url = base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . '/' . $stateName); ?>
                                 <ul>
                                     <li><a href="<?php echo $url; ?>">رزومه</a></li>
                                     <li><a href="<?php echo $url; ?>">فهرست اموال</a></li>
@@ -81,15 +81,16 @@
                                 <img src="<?php echo $candidate['CandidateProfileImage']; ?>">
                             </div>
                             <div class="team-content">
-                                <h3 class="title"><?php echo $candidate['CandidateFirstName']." ".$candidate['CandidateLastName']; ?></h3>
+                                <h3 class="title"><?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?></h3>
                             </div>
                         </div>
                     </div>
-                <?php  } ?>
+                <?php } ?>
             </div>
-            <div class="row candidate-container">
-                <?php foreach ($dataSpecial as $candidate) { if ($candidate['CandidateProfileImage'] !== NULL) {?>
-                    <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+            <div class="row candidate-container candidate-detail-parent-div">
+                <?php foreach ($dataSpecial as $candidate) {
+                    if ($candidate['CandidateProfileImage'] !== NULL) { ?>
+                        <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
                             <div class="mp-brief">
                                 <div class="pic">
                                     <a download
@@ -98,6 +99,15 @@
                                              class="lazy candidateImage"/>
                                     </a>
                                 </div>
+                                <!-- for badge-->
+
+                                    <div class="badge">
+                                        <img src="http://mortensassi.com/create/assets/certificate.svg"/>
+                                        <img src="http://mortensassi.com/create/assets/certificate.svg"/>
+                                        <img src="http://mortensassi.com/create/assets/certificate.svg"/>
+                                    </div>
+                                <!-- for badge-->
+
                                 <div class="">
                                     <h3 class="candidateName">
                                         <?php echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName']; ?>
@@ -117,7 +127,8 @@
                                 </div>
                             </div>
                         </div>
-                <?php } } ?>
+                    <?php }
+                } ?>
             </div>
         </section>
     </div>
@@ -129,8 +140,9 @@
             </span>
         </a>
         <div class="clearfix"></div>
-        <div class="panel panel-default">
-            <div class="panel-body" style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
+        <div class="panel panel-default margin-t-response">
+            <div class="panel-body"
+                 style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
                 همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم.
                 شما نیز با انتخاب گزینه "دعوت به جنش از ما"
                 و انتشار پوسترهای دعوت به چالش در شبکه های اجتماعی نامزد حوزه انتخابیه خود را به این چالش دعوت کنید.
@@ -427,3 +439,4 @@
 <script src="<?php echo $_DIR; ?>js/dom-to-image.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.min.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.plugins.min.js"></script>
+<script src="<?php echo $_DIR; ?>js/jquery.nicescroll.min.js"></script>

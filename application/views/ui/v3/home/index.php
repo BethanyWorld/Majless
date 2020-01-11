@@ -1,8 +1,11 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <!-- #masthead -->
-<div class="hidden-lg hidden-md text-center padding-10">
+<div class="hidden-lg hidden-md text-center see-candidate-list-div">
     <a href="<?php echo base_url('State') ?>">
-        <button class="btn see-candidate-list-btn">مشاهده فهرست نامزد ها</button>
+        <button class="btn see-candidate-list-btn">برای مشاهده فهرست نامزد ها
+        <span>اینجا</span>
+            کلیلک کنید
+        </button>
     </a>
 </div>
 <div id="main" class="site-main nopadding">
