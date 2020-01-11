@@ -1,6 +1,6 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <div class="page-caption">
-    استان مورد نظر خود را انتخاب کنید
+    برای دعوت از نامزدها به چالش شایستگی و شفافیت، استان مورد نظر خود را انتخاب کنید
 </div>
 <div class="container container-wrapper">
 

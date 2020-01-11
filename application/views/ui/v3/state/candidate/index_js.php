@@ -37,8 +37,7 @@
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
-                'inputElectionIds': $electionIds,
-
+                'inputElectionIds': $electionIds
             }
             $.ajax({
                 type: 'post',
@@ -231,7 +230,7 @@
         // for nice scroll
 
 
-        $('.candidate-detail-parent-div').on('mousewheel DOMMouseScroll', function(e) {
+        /*$('.candidate-detail-parent-div').on('mousewheel DOMMouseScroll', function(e) {
             if(typeof e.originalEvent.detail == 'number' && e.originalEvent.detail !== 0) {
                 if(e.originalEvent.detail > 0) {
                     console.log('Down');
@@ -245,7 +244,7 @@
                     console.log('Up');
                 }
             }
-        });
+        });*/
 
 
     });

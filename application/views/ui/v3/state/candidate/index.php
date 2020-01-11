@@ -1,6 +1,6 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <div class="page-caption">
-    نامزد انتخاباتی خود را در شبکه های اجتماعی به جنبش از ما دعوت کنید
+    کاندیدای نمایندگی حوزه انتخابیه خود را به چالش شایستگی و شفافیت جنبش از ما دعوت کنید
 </div>
 <a class="invite visible-sm visible-xs" href="<?php echo base_url('State/invite'); ?>">
     نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row candidate-container">
+            <div class="row candidate-container0">
                 <?php foreach ($data as $candidate) { ?>
                     <div class="col-md-4 col-sm-6 mp">
                         <div class="mp-brief">
@@ -111,11 +111,11 @@
                                 </div>
                                 <!-- for badge-->
 
-                                <div class="badge">
-                                    <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">
-                                        <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">
-                                        <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">
-                                </div>
+<!--                                <div class="badge hidden">-->
+<!--                                    <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+<!--                                        <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+<!--                                        <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+<!--                                </div>-->
 
                                 <!-- for badge-->
 

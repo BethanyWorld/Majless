@@ -405,6 +405,7 @@ class ModelCandidate extends CI_Model{
         if (isset($inputs['inputFullName']) && !empty($inputs['inputFullName'])) {
             $this->db->like('CandidateFullName', $inputs['inputFullName']);
         }
+        $this->db->order_by('CandidateFullName', 'ASC');
         //$this->db->where(array('CandidateStateId' => $inputs['inputStateId']));
 
         $query = $this->db->get();
