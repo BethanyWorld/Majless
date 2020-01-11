@@ -45,8 +45,7 @@
             </div>
             <div class="form-group">
                 <div class="col-xs-12 padding-right-0 pull-right">
-                    <label for="inputCandidateInstaAccount">
-                        <span class="required"></span>شناسه اینستاگرام</label>
+                    <label for="inputCandidateInstaAccount">شناسه اینستاگرام</label>
                     <input class="form-control" type="text"
                            id="inputCandidateInstaAccount" name="inputCandidateInstaAccount"/>
                 </div>

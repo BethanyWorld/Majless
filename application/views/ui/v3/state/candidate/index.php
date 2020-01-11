@@ -60,6 +60,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="row candidate-container">
                 <?php foreach ($data as $candidate) { ?>
                     <div class="col-md-4 col-sm-6 mp">
@@ -91,6 +92,38 @@
                 <?php foreach ($dataSpecial as $candidate) {
                     if ($candidate['CandidateProfileImage'] !== NULL) { ?>
                         <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+=======
+<!--            <div class="row candidate-container">-->
+<!--                --><?php //foreach ($data as $candidate) {  ?>
+<!--                    <div class="col-md-4 col-sm-6 mp">-->
+<!--                        <div class="mp-brief">-->
+<!--                            <div class="menu">-->
+<!--                                --><?php //$url = base_url('State/candidate_detail/'.$candidate['CandidateId'].'/'.$stateId.'/'.$stateName); ?>
+<!--                                <ul>-->
+<!--                                    <li><a href="--><?php //echo $url; ?><!--">رزومه</a></li>-->
+<!--                                    <li><a href="--><?php //echo $url; ?><!--">فهرست اموال</a></li>-->
+<!--                                    <li><a href="--><?php //echo $url; ?><!--">وعده های انتخاباتی</a></li>-->
+<!--                                    <li><a href="--><?php //echo $url; ?><!--">هزینه های انتخابات</a></li>-->
+<!--                                    <li><a href="--><?php //echo $url; ?><!--">تعهدنامه</a></li>-->
+<!--                                    <li><a href="--><?php //echo $url; ?><!--">نتایج سنجش</a></li>-->
+<!--                                    <li><a href="--><?php //echo $url; ?><!--">اخبار </a></li>-->
+<!--                                    <li><a href="--><?php //echo $url; ?><!--">گزارش تخلف </a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <div class="pic">-->
+<!--                                <img src="--><?php //echo $candidate['CandidateProfileImage']; ?><!--">-->
+<!--                            </div>-->
+<!--                            <div class="team-content">-->
+<!--                                <h3 class="title">--><?php //echo $candidate['CandidateFirstName']." ".$candidate['CandidateLastName']; ?><!--</h3>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                --><?php // } ?>
+<!--            </div>-->
+            <div class="row candidate-container">
+                <?php foreach ($dataSpecial as $candidate) { if ($candidate['CandidateProfileImage'] !== NULL) {?>
+                    <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+>>>>>>> 5c1b88fb87081715e261939e00b55c92ac2b1bf8
                             <div class="mp-brief">
                                 <div class="pic">
                                     <a download

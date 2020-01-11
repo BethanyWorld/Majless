@@ -79,6 +79,7 @@
                     document.getElementById("mySidenav").style.paddingLeft = "0";
                     $('body').removeClass('over-flow-style');
                     $('html').removeClass('over-flow-style');
+                    $("html, body").animate({scrollTop: 0}, "slow");
                     toggleLoader();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -92,6 +93,7 @@
             document.getElementById("mySidenav").style.paddingLeft = "0";
             $('body').removeClass('over-flow-style');
             $('html').removeClass('over-flow-style');
+            $("html, body").animate({scrollTop: 0}, "slow");
         });
         /* Export*/
         $(document).on('click', ".invite-button", function () {

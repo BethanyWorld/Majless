@@ -1,6 +1,5 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <?php
-
 if (empty($data)) { ?>
 <?php } else { ?>
     <?php foreach ($data as $candidate) { ?>

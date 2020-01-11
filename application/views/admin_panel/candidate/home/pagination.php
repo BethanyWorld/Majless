@@ -17,6 +17,14 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             <td class="fit"><?php echo $candidate['ElectionName']; ?></td>
             <td class="fit"><?php echo candidateStatus($candidate['CandidateStatus']); ?></td>
             <td class="fit">
+                <a href="<?php echo base_url('Admin/Candidate/badge/') . $candidate['CandidateId']; ?>">
+                    <button type="button"
+                            class="btn btn-success btn-circle waves-effect waves-circle waves-float">
+                        <i class="material-icons">rate_review</i>
+                    </button>
+                </a>
+            </td>
+            <td class="fit">
                 <a href="<?php echo base_url('Admin/Candidate/edit/') . $candidate['CandidateId']; ?>">
                     <button type="button"
                             class="btn btn-info btn-circle waves-effect waves-circle waves-float">
@@ -24,15 +32,6 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
                     </button>
                 </a>
             </td>
-<!--            <td class="fit">-->
-<!--                <a class="remove-candidate"-->
-<!--                   data-id="--><?php //echo $candidate['CandidateId']; ?><!--" data-title="--><?php //echo $candidate['CandidateNationalCode']; ?><!--">-->
-<!--                    <button type="button"-->
-<!--                            class="btn btn-danger btn-circle waves-effect waves-circle waves-float">-->
-<!--                        <i class="material-icons">close</i>-->
-<!--                    </button>-->
-<!--                </a>-->
-<!--            </td>-->
         </tr>
     <?php }
 } ?>
