@@ -419,6 +419,7 @@ class ModelCandidate extends CI_Model{
         $this->db->from('candidate_special');
         $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
         $this->db->where_in('CandidateStateId', $stateId);
+        $this->db->order_by('CandidateFullName', 'ASC');
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();
@@ -1178,6 +1179,7 @@ class ModelCandidate extends CI_Model{
         return $arr;
     }
     public function doAssignBadge($inputs){
+        $arr = array();
         $candidateId = $inputs['inputCandidateId'];
         $actionType = $inputs['inputActionType'];
         $actionType = $inputs['inputActionType'];
@@ -1193,7 +1195,6 @@ class ModelCandidate extends CI_Model{
                     'content' => "درج برچسب با موفقیت انجام شد",
                     'success' => true
                 );
-                return $arr;
                 break;
             case 'UnAssign':
                 $this->db->delete('candidate_badge', array(
@@ -1205,9 +1206,9 @@ class ModelCandidate extends CI_Model{
                     'content' => "حذف برچسب ناموفق بود",
                     'success' => true
                 );
-                return $arr;
                 break;
         }
+        return $arr;
     }
 }
 ?>
