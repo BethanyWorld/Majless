@@ -173,18 +173,25 @@
         margin-right: 5px;
     }
 
+    .have-padding-all-side {
+        padding: 20px 0px 10px 0px;
+    }
+
     @media (max-width: 992px) {
         .contact-label-with-style .form-group label {
             min-width: 45px;
         }
-        .response-margin-b{
+
+        .response-margin-b {
             margin-bottom: 12px;
             padding: 0px;
         }
-        .responsive-padding-0{
+
+        .responsive-padding-0 {
             padding: 0px;
         }
-        .responsive-font-size{
+
+        .responsive-font-size {
             font-size: 13px;
         }
     }

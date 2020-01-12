@@ -145,7 +145,7 @@ blockquote {
 .active-menu{
     text-align: center;
     font-size: 17px;
-    background-color: #D10B20;
+    background-color: #fdb72e;
     color: #fff;
     border-radius: 0;
 }
@@ -225,7 +225,7 @@ blockquote {
 }
 
 .blog-cat-link {
-    color: #d10b20;
+    color: #fdb72e;
     text-decoration: none;
     position: relative;
     top: 15px;
@@ -236,7 +236,7 @@ blockquote {
 }
 
 .blog-cat-link:hover, .blog-cat-link:focus {
-    color: #d10b20;
+    color: #fdb72e;
 }
 
 .blog-combine h2 a {
@@ -268,9 +268,9 @@ blockquote {
 }
 
 .blog-more-link-button a.btn-default {
-    background-color: #D10B20;
-    border-color: #D10B20;
-    color: #FFF;
+    background-color: #fdb72e;
+    border-color: #fdb72e;
+    color: #000;
     -webkit-border-radius: 0;
     text-transform: uppercase;
     line-height: 38px;
@@ -281,8 +281,9 @@ blockquote {
 
 .blog-more-link-button a.btn-default:hover {
     text-decoration: none;
-    background-color: #052452;
-    border-color: #052452;
+    background-color: #0f342f;
+    border-color: #0f342f;
+    color: #fff;
 }
 
 /*for left panel*/
@@ -367,9 +368,9 @@ input[type="submit"] {
 }
 
 .blog-widget .blog-search-submit {
-    background-color: #d10b20;
+    background-color: #fdb72e;
     border: 0;
-    color: #fff;
+    color: #000;
     font-size: 14px;
     height: 100%;
     padding-right: 18px;
@@ -400,7 +401,7 @@ h2.blog-widget-title {
     position: relative;
     display: block;
     padding: 10px 20px;
-    background: #052452;
+    background: #0f342f;
     color: #fff;
     text-transform: uppercase;
     font-weight: 500 !important;
@@ -642,7 +643,7 @@ h2.blog-widget-title {
 }
 
 .blog-cat-link {
-    color: #d10b20;
+    color: #fdb72e;
     text-decoration: none;
     position: relative;
     top: 15px;
@@ -653,7 +654,7 @@ h2.blog-widget-title {
 }
 
 .blog-cat-link:hover, .blog-cat-link:focus {
-    color: #d10b20;
+    color: #fdb72e;
 }
 
 .blog-combine h2 a {
@@ -685,9 +686,9 @@ h2.blog-widget-title {
 }
 
 .blog-more-link-button a.btn-default {
-    background-color: #D10B20;
-    border-color: #D10B20;
-    color: #FFF;
+    background-color: #fdb72e;
+    border-color: #fdb72e;
+    color: #000;
     -webkit-border-radius: 0;
     text-transform: uppercase;
     line-height: 38px;
@@ -698,8 +699,9 @@ h2.blog-widget-title {
 
 .blog-more-link-button a.btn-default:hover {
     text-decoration: none;
-    background-color: #052452;
-    border-color: #052452;
+    background-color: #0f342f;
+    border-color: #0f342f;
+    color: #fff;
 }
 
 /*for left panel*/
@@ -784,9 +786,9 @@ input[type="submit"] {
 }
 
 .blog-widget .blog-search-submit {
-    background-color: #d10b20;
+    background-color: #fdb72e;
     border: 0;
-    color: #fff;
+    color: #000;
     font-size: 14px;
     height: 100%;
     padding-right: 18px;
@@ -812,7 +814,7 @@ h2.blog-widget-title {
     position: relative;
     display: block;
     padding: 10px 20px;
-    background: #052452;
+    background: #0f342f;
     color: #fff;
     text-transform: uppercase;
     font-weight: 500 !important;
@@ -973,7 +975,7 @@ h2.blog-widget-title {
     padding: 1px 20px;
     border-radius: 0;
     margin-bottom: 30px;
-    background-color: #022d6d;
+    background-color: #0f342f;
 }
 
 .blog-detail-breadcrumb {
@@ -1021,7 +1023,7 @@ h2.blog-widget-title {
     margin: 0;
 }
 .blog-categorized-text a{
-    color: #d10b20;
+    color: #fdb72e;
     font-weight: 900;
     margin-top: 25px;
     display: inline-block;
@@ -1055,7 +1057,7 @@ h2.blog-widget-title {
     margin: 10px 15px;
 }
 .copy-link button{
-    background: #d10b20;
+    background: #fdb72e;
     color: #fff;
     padding: 8px 14px;
     line-height: 10px;

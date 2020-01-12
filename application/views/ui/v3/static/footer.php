@@ -100,7 +100,7 @@
 
                     ul.tags a {
                         color: #7CA1CC;
-                        border: 1px solid #0545a4;
+                        border: 1px solid #095644;
                         padding: 5px;
                         float: right;
                     }

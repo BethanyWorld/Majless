@@ -275,29 +275,6 @@
         padding: 20px;
     }
 
-    .CommonButtons {
-        text-align: center;
-        line-height: 45px;
-        font-size: 16px;
-        background-color: #052452;
-        color: #fff;
-        padding: 0 25px;
-        border-radius: 0;
-    }
-
-    .CommonButtons:hover {
-        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2);
-        color: #9e9e9e;
-        background-color: #052452;
-        opacity: 0.8;
-    }
-
-    .CommonButtons:focus {
-        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2);
-        color: #9e9e9e;
-        background-color: #052452;
-        opacity: 0.8;
-    }
 
     .upld-file {
         position: absolute;

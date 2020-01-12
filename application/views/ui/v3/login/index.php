@@ -71,7 +71,7 @@
             </div>
             <div class="form-group">
                 <div class="row col-xs-12 col-md-5">
-                    <button class="btn btn-danger btn-submit  pull-left" id="submitLoginForm">
+                    <button class="btn btn-submit  pull-left" id="submitLoginForm">
                         ورود
                     </button>
                 </div>

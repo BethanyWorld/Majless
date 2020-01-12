@@ -9,6 +9,13 @@
         list-style-type: none;
     }
 
+    #changePassword{
+        background-color: #fdb72e;
+        padding:10px 15px;
+    }
+    #changePassword:focus{
+        outline: none;
+    }
     .c-progress-steps li {
         position: relative;
         font-size: 14px !important;

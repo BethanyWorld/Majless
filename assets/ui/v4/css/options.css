@@ -31,9 +31,12 @@ a {
 a:hover {
     color: #0860ba
 }
+#mobile-menu{
+    background-color:#0f342f ;
+}
 
 #main h1 a, #main h2 a, #main h1 a, #main h3 a, #main h4 a, #main h5 a, #main h6 a {
-    color: #043174
+    color: #095644
 }
 
 #main h1 a:hover, #main h2 a:hover, #main h1 a:hover, #main h3 a:hover, #main h4 a:hover, #main h5 a:hover, #main h6 a:hover {
@@ -73,7 +76,7 @@ a:hover {
 }
 
 .btn-border2:hover {
-    color: #043174
+    color: #095644
 }
 
 .btn-border2 {
@@ -121,7 +124,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 .widget_newsletterwidget, #secondary .widget_newsletterwidget h3.widget-title, .widget_newsletterwidget .widget-title {
-    background-color: #02275D
+    background-color: #0f342f
 }
 
 .widget_newsletterwidget p, #secondary .widget_newsletterwidget h3.widget-title, .widget_newsletterwidget .widget-title {
@@ -217,7 +220,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #site-branding {
-    background-color: #022D6D;
+    background-color: #095644;
     background-repeat: no-repeat;
     background-position: center top
 }
@@ -283,7 +286,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #promo, .search-box {
-    background-color: #02275D
+    background-color: #0f342f
 }
 
 #promo, .search-box {
@@ -324,7 +327,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #footer-promo {
-    background-color: #043174
+    background-color: #095644
 }
 
 #footer-promo {
@@ -415,7 +418,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #main-footer {
-    background-color: #043174
+    background-color: #095644
 }
 
 #main-footer {
@@ -479,7 +482,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #footer-navigation {
-    background-color: #022A65
+    background-color: #0f342f
 }
 
 #footer-navigation {
@@ -536,7 +539,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
     line-height: 100px;
     font-weight: 700;
     font-style: normal;
-    color: #3ebcd8;
+    color: #fff;
     font-size: 16px;
     opacity: 1;
     visibility: visible;
@@ -554,7 +557,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #primary-navigation > div > ul > li > a {
-    color: #3ebcd8
+    color: #fff
 }
 
 #primary-navigation > div > ul > li > a:hover {
@@ -566,7 +569,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #primary-navigation > div > ul > li:hover > a, #primary-navigation > div > ul > li.current-menu-item > a, #primary-navigation > div > ul > li.current-menu-ancestor > a {
-    background-color: #02275D
+    background-color: #0f342f
 }
 
 #primary-navigation div > ul > li.special > a {
@@ -592,7 +595,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
     line-height: 24px;
     font-weight: 700;
     font-style: normal;
-    color: #3ebcd8;
+    color: #fff;
     font-size: 14px;
     opacity: 1;
     visibility: visible;
@@ -612,15 +615,15 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #primary-navigation div div li > a, #primary-navigation ul ul a, #primary-navigation div > ul ul {
-    background-color: #02275D
+    background-color: #0f342f
 }
 
 #primary-navigation div > ul ul li > a:hover, #primary-navigation div > ul ul li.current_page_item > a, #primary-navigation div > ul ul li.current_page_ancestor > a, #primary-navigation div > ul ul li.current-menu-item > a, #primary-navigation div > ul ul li.current-menu-ancestor > a {
-    background-color: #022D6D
+    background-color: #095644
 }
 
 #primary-navigation div.mega-menu a:hover, #primary-navigation div.mega-menu li.current_page_item > a, #primary-navigation div.mega-menu li.current_page_ancestor > a, #primary-navigation div.mega-menu li.current-menu-item > a, #primary-navigation div.mega-menu li.current-menu-ancestor > a {
-    background-color: #022D6D
+    background-color: #095644
 }
 
 #secondary a:not(.btn), .custom-sidebar-widget a:not(.btn) {
@@ -1028,7 +1031,7 @@ body div.product div#single-product-summary p.price, body div.product div#single
 }
 
 .tribe-events-calendar thead th {
-    background-color: #022D6D;
+    background-color: #095644;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center top

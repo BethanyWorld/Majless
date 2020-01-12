@@ -16,7 +16,7 @@
         top: 20px;
         width: 50px;
         height: 50px;
-        background: #022d6d;
+        background: #095644;
         border-radius: 100px;
         color: #fff;
         padding: 18px;
@@ -25,15 +25,15 @@
     }
 
     .add-form:hover {
-        background: #0f4f6d;
+        background: #095644;
     }
 
     .remove-form {
         position: absolute;
         left: 0;
         top: 0;
-        background: red;
-        color: #fff;
+        background: #fdb72e ;
+        color: #000;
         width: 25px;
         height: 25px;
         padding: 4px 5px;
@@ -42,7 +42,7 @@
     }
 
     .remove-form:hover {
-        background: #ff6966;
+        background: #fdb72e ;
     }
 
     /*Helper*/
@@ -259,23 +259,25 @@
     }
 
     .ButtonRedColor {
-        background-color: #D10B20;
+        background-color: #fdb72e ;
+        color: #000;
     }
 
     .ButtonBlueColor {
-        background-color: #052452;
+        background-color: #095644 ;
+        color: #fff;
     }
 
     .ButtonRedColor:hover {
-        background-color: #D10B20;
+        background-color: #fdb72e;
         opacity: 0.8;
-        color: #ccc;
+        color: #000;
     }
 
     .ButtonBlueColor:hover {
-        background-color: #052452;
+        background-color: #095644;
         opacity: 0.8;
-        color: #ccc;
+        color: #fff;
     }
 
     .ButtonRedColor:focus {
@@ -331,7 +333,7 @@
         text-align: center;
         line-height: 45px;
         font-size: 16px;
-        background-color: #052452;
+        background-color: #095644  ;
         color: #fff;
         padding: 0 25px;
         border-radius: 0;
@@ -339,15 +341,13 @@
 
     .CommonButtons:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2);
-        color: #9e9e9e;
-        background-color: #052452;
+        background-color: #095644 ;
         opacity: 0.8;
     }
 
     .CommonButtons:focus {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2);
-        color: #9e9e9e;
-        background-color: #052452;
+        background-color: #095644;
         opacity: 0.8;
     }
 

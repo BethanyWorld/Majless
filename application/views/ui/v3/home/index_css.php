@@ -3,26 +3,26 @@
         padding: 10px;
     }
     .see-candidate-list-div{
-        background-color: #d10b20;
+        background-color: #0f342f;
     }
     .see-candidate-list-btn{
-        background-color: #d10b20;
+        background-color: #0f342f;
         color: #fff;
         border-radius: 0px;
         margin: auto;
         padding: 15px;
     }
     .see-candidate-list-btn span{
-        color: #022D6D;
+        color: #fdb72e;
         font-weight: bold;
         font-size: 15px;
     }
     .see-candidate-list-btn:hover{
-        background-color: #d10b20;
+        background-color: #0f342f;
         color: #fff;
     }
     .see-candidate-list-btn:focus{
-        background-color: #d10b20;
+        background-color: #0f342f;
         color: #fff;
     }
     #themeblossom_loading_screen_logo {
@@ -66,7 +66,7 @@
         position: absolute;
         z-index: 5;
         left: 0px;
-        background: #022d6d;
+        background: #095644;
         padding: 30px 25px;
         padding-top: 0;
     }
@@ -76,13 +76,14 @@
     }
 
     .slide-title button {
-        background: #d10b20;
+        background:#fdb72e ;
         border: 1px solid rgba(253, 183, 46, 0.3);
         margin: 30px 0;
+        color: #000;
     }
 
     .slide-title button:hover {
-        background: #d10b20;
+        background: #fdb72e ;
         border: 1px solid rgba(253, 183, 46, 0.3);
     }
 
@@ -124,7 +125,7 @@
     }
 
     .response-background {
-        background-color: #022d6d;
+        background-color: #095644;
     }
 
     .slider-form-text {
@@ -158,7 +159,7 @@
         /*background: rgba(0, 0, 0, 0.3);*/
         z-index: 2;
         background-color: #000;
-        opacity: 0.8;
+        opacity: 0.5;
         right: 0
     }
 
@@ -181,7 +182,7 @@
         width: auto;
         padding: 5px 10px 0px 10px;
         margin-top: -22px;
-        color: #d10b20;
+        color: #fdb72e;
         font-weight: bold;
         font-size: 26px;
         transition: 0.6s ease;
@@ -206,18 +207,19 @@
         right: 60px;
         margin: auto;
         font-size: 16px;
-        padding: 10px 10px;
+        padding: 9px 16px;
         border: none;
-        background: #D10B20;
-        color: #fff;
+        background: #fdb72e ;
+        color: #000;
         cursor: pointer;
         border: none;
         z-index: 5;
     }
 
     .myBtn:hover {
-        background: #022D6D;
+        background: #fdb72e;
         border: none;
+        color: #000;
     }
 
     .myVideo {
@@ -231,11 +233,11 @@
     }
 
     a.prev:hover {
-        color: #02275d;
+        color: #fdb72e;
     }
 
     a.next:hover {
-        color: #02275d;
+        color: #fdb72e;
     }
 
     .tb-icon-box-description {
@@ -338,7 +340,7 @@
 
 
     .hp-join-the-team-form input::placeholder {
-        color: #022d6d;
+        color: #095644 ;
     }
 
     video {

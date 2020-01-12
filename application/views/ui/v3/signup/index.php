@@ -189,7 +189,7 @@
             </div>
             <div class="form-group">
                 <div class="col-xs-12 col-md-6 padding-0">
-                    <button class="btn btn-danger btn-submit pull-left" id="submitSignUpForm">
+                    <button class="btn btn-submit pull-left" id="submitSignUpForm">
                         ثبت نام
                     </button>
                 </div>

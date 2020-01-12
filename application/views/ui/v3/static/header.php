@@ -204,15 +204,15 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                 <li><a style="
                                  text-align: center;
                                  font-size: 17px;
-                                 background-color: #D10B20;
-                                 color: #fff;
+                                 background-color: #fdb72e;
+                                 color: #000;
                                  border-radius: 0;" href="<?php echo base_url('Login'); ?>">ورود</a></li>
                             <?php } else { ?>
                                 <li>
                                     <a style="
                                  text-align: center;
                                  font-size: 14px;
-                                 background-color: #D10B20;
+                                 background-color: #0f342f;
                                  color: #fff;
                                  border-radius: 0;"
                                        href="<?php echo base_url('Profile'); ?>">

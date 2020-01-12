@@ -557,13 +557,13 @@ a.hover-effect + i {
 }
 
 .panel-heading {
-    background-color: #052452;
+    background-color: #0f342f;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…0iMTAwJSIgc3R5bGU9ImZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50KTsiLz4NCjwvc3ZnPg==) !important;
-    background-image: -moz-linear-gradient(top, #052452, #022d6d) !important;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#052452), to(#022d6d)) !important;
-    background-image: -webkit-linear-gradient(top, #052452, #022d6d) !important;
-    background-image: -o-linear-gradient(top, #052452, #022d6d) !important;
-    background-image: linear-gradient(to bottom, #052452, #022d6d) !important;
+    background-image: -moz-linear-gradient(top, #0f342f, #022d6d) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0f342f), to(#022d6d)) !important;
+    background-image: -webkit-linear-gradient(top, #0f342f, #022d6d) !important;
+    background-image: -o-linear-gradient(top, #0f342f, #022d6d) !important;
+    background-image: linear-gradient(to bottom, #0f342f, #022d6d) !important;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#61863c', endColorstr='#61863c') !important;
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#61863c', endColorstr='#61863c')";
     background-repeat: repeat-x;
@@ -781,7 +781,7 @@ button.btn-submit {
     padding: 20px 10px;
     line-height: 30px;
     font-size: 20px;
-    background-color: #052452;
+    background-color: #0f342f;
     color: #fff;
     direction: rtl
 }
@@ -5230,7 +5230,7 @@ a.pp_arrow_previous, a.pp_arrow_next {
 }
 
 #primary-navigation div div li > a:hover, #primary-navigation ul ul a:hover {
-    color: #3ebcd8
+    color: #fff
 }
 
 #primary-navigation div div li > a, #primary-navigation ul ul a {
@@ -5264,7 +5264,7 @@ a.pp_arrow_previous, a.pp_arrow_next {
 }
 
 #masthead .primary-navigation .mega-menu ul .current-menu-item a {
-    color: #3ebcd8
+    color: #fff
 }
 
 #site-branding.make-it-sticky #primary-navigation > div > ul > li > a {
@@ -5281,8 +5281,8 @@ a.pp_arrow_previous, a.pp_arrow_next {
 }
 
 .btn-tb-primary:hover, .btn-tb-secondary.current, #tribe-bar-form .tribe-bar-submit input.btn-tb-primary[type="submit"]:hover, .woocommerce .button.btn-tb-primary:hover, .woocommerce a.button.btn-tb-primary:hover {
-    background-color: #F30A26 !important;
-    background: #F30A26 !important
+    background-color: #fdb72e !important;
+    background: #fdb72e !important
 }
 
 .btn-tb-secondary, #tribe-bar-form .tribe-bar-submit input.btn-tb-secondary[type="submit"], .woocommerce .button.btn-tb-secondary, .woocommerce a.button.btn-tb-secondary {
@@ -5325,13 +5325,13 @@ aside.widget_newsletterwidget input[type="submit"].newsletter-submit {
 }
 
 aside.widget_newsletterwidget input[type="submit"].newsletter-submit:hover, aside.widget_newsletterwidget input[type="submit"].newsletter-submit:focus {
-    background-color: #F30A26;
-    background: #F30A26
+    background-color: #fdb72e;
+    background: #fdb72e
 }
 
 aside.widget_newsletterwidget input[type="submit"].newsletter-submit:active {
-    background-color: #F30A26;
-    background: #F30A26
+    background-color: #fdb72e;
+    background: #fdb72e
 }
 
 input[type="button"], input[type="reset"], input[type="submit"] {
@@ -5340,13 +5340,13 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus {
-    background-color: #F30A26;
-    background: #F30A26
+    background-color: #fdb72e;
+    background: #fdb72e
 }
 
 input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
-    background-color: #F30A26;
-    background: #F30A26
+    background-color: #fdb72e;
+    background: #fdb72e
 }
 
 .campaign_form_style1 input[type="button"], .campaign_form_style1 input[type="reset"], .campaign_form_style1 input[type="submit"] {
@@ -5355,13 +5355,13 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 .campaign_form_style1 input[type="button"]:hover, .campaign_form_style1 input[type="reset"]:hover, .campaign_form_style1 input[type="submit"]:hover, .campaign_form_style1 input[type="button"]:focus, .campaign_form_style1 input[type="reset"]:focus, .campaign_form_style1 input[type="submit"]:focus {
-    background-color: #F30A26;
-    background: #F30A26
+    background-color: #fdb72e;
+    background: #fdb72e
 }
 
 .campaign_form_style1 input[type="button"]:active, .campaign_form_style1 input[type="reset"]:active, .campaign_form_style1 input[type="submit"]:active {
-    background-color: #F30A26;
-    background: #F30A26
+    background-color: #fdb72e;
+    background: #fdb72e
 }
 
 .campaign_form_style1 .wrap-forms input[type="text"], .campaign_form_style1 .wrap-forms input[type="email"], .campaign_form_style1 .wrap-forms input[type="password"], .campaign_form_style1 .wrap-forms textarea, .campaign_form_style1 .wrap-forms select, .campaign_form_style1 .wrap-forms .selectize-input, .campaign_form_style1 .wrap-forms .selectize-dropdown, .campaign_form_style1 .wrap-forms .selectize-control .selectize-dropdown-content > div[data-selectable] {

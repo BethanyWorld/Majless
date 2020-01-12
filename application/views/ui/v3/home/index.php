@@ -112,7 +112,7 @@
                             </div>
                             <div class="col-md-12 col-xs-12 text-center padding-0">
                                 <button type="submit"
-                                        style="text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
+                                        style="text-align: center;line-height: 40px;font-size: 16px; background-color: #fdb72e;color: #000;padding: 0 20px;">
                                     ثبت نام
                                 </button>
                             </div>
@@ -167,7 +167,7 @@
                             </div>
                             <div class="col-md-12 col-xs-12 text-center padding-0 margin-b-15">
                                 <button type="submit"
-                                        style="text-align: center;line-height: 40px;font-size: 16px; background-color: #D10B20;color: #fff;padding: 0 20px;">
+                                        style="text-align: center;line-height: 40px;font-size: 16px; background-color: #fdb72e;color: #000;padding: 0 20px;">
                                     ثبت نام کنید
                                 </button>
                             </div>
@@ -178,7 +178,7 @@
         </section>
 
         <section id="section-5d7930f124ba6" class="campaign_section nopadding relative1 tbWow fadeIn"
-                 style="background-image:url(<?php echo $_DIR ?>images/hp-blocks-no_change.png);background-repeat: repeat; background-position: center center; background-size: auto;">
+                 style="background-color:#fdb72e ;background-repeat: repeat; background-position: center center; background-size: auto;">
             <div class="container">
                 <div class="row">
                     <div class="fw-row nostretch">
@@ -198,9 +198,9 @@
                                         <a href="<?php echo base_url('SignUp?type=sponsor'); ?>">
                                             <div class="tb-icon-box-text">
                                                 <div class="fw-page-builder-content">
-                                                    <h3><span style="color: #ffffff;">دغدغه مند شوید</span></h3>
+                                                    <h3><span style="color: #000;">دغدغه مند شوید</span></h3>
                                                     <p>
-                                                        <span style="color: #e3a4ab;">به کمپین ما بپیوندید</span>
+                                                        <span style="color: #095644;">به کمپین ما بپیوندید</span>
                                                     </p>
                                                 </div>
                                             </div>
@@ -227,8 +227,8 @@
                                         <div class="tb-icon-box-text">
                                             <a href="<?php echo base_url('Payment'); ?>">
                                                 <div class="fw-page-builder-content">
-                                                    <h3><span style="color: #ffffff;">حامی ما باشید</span></h3>
-                                                    <p><span style="color: #e3a4ab;">مشارکت کنید</span>
+                                                    <h3><span style="color: #000;">حامی ما باشید</span></h3>
+                                                    <p><span style="color: #095644;">مشارکت کنید</span>
                                                 </div>
                                             </a>
                                         </div>
@@ -253,9 +253,9 @@
                                         <div class="tb-icon-box-text">
                                             <a href="<?php echo base_url('State'); ?>">
                                                 <div class="fw-page-builder-content">
-                                                    <h3><span style="color: #ffffff;">فهرست نامزد ها را ببینید</span>
+                                                    <h3><span style="color: #000;">فهرست نامزد ها را ببینید</span>
                                                     </h3>
-                                                    <p><span style="color: #e3a4ab;">نامزد های انتخاباتی هر استان</span>
+                                                    <p><span style="color: #095644;">نامزد های انتخاباتی هر استان</span>
                                                     </p>
                                                 </div>
                                             </a>
@@ -304,8 +304,8 @@
                         <div class="row col-xs-12">
                             <style>
                                 .slick-slide:hover div.read-more {
-                                    background: #b60d21;
-                                    color: #fff !important;
+                                    background: #fdb72e;
+                                    color: #000 !important;
                                 }
 
                                 .slick-prev-arrow,
@@ -320,7 +320,7 @@
                                     width: 50px;
                                     background: #fff;
                                     color: #000;
-                                    border: 1px solid #b60d21;
+                                    border: 1px solid #fdb72e;
                                     padding: 15px 20px;
                                     cursor: pointer;
                                 }
@@ -341,8 +341,8 @@
                                         </a>
                                         <div class="tb-post-carousel-thumbnail">
                                             <div class="post-categories data-color-hover"
-                                                 style="background: #b60d21; color: #ffffff;"
-                                                 data-a-color="#ffffff">
+                                                 style="background: #fdb72e; color: #000;"
+                                                 data-a-color="#000">
                                                 <a href="<?php echo $post['guid']; ?>"
                                                    rel="category tag" tabindex="-1"
                                                    style="color: rgb(255, 255, 255);">اخبار و رویداد
@@ -359,14 +359,14 @@
                                                  src="<?php echo base_url('blog/wp-content/uploads/') . $post['meta_value']; ?>"
                                                  class="attachment-campaign-thumb-xl size-campaign-thumb-xl wp-post-image"
                                                  alt="">
-                                            <div class="absolute100" style="background-color: #043174"></div>
+                                            <div class="absolute100" style="background-color: #095644"></div>
                                         </div>
                                         <div class="changing-data-attr"
                                              style="background: rgb(255, 255, 255); color: rgb(33, 71, 127);">
                                             <p style="color: #000;direction: rtl;text-align: justify;">
                                                 <?php echo $post['post_excerpt']; ?>
                                             </p>
-                                            <div class="read-more" style="color: rgb(160, 46, 47);">
+                                            <div class="read-more" style="color: #fdb72e">
                                                 ادامه مطلب
                                             </div>
                                         </div>
@@ -392,7 +392,7 @@
                     </div>
                     <div id="hp-the-issues-list"
                          class="tb-column absolutecenter-stretch col-xs-12  col-sm-6  nopadding ">
-                        <div style=" background-color:#043174; color: #ffffff; padding: 80px 0px 80px 0px;"
+                        <div style=" background-color:#095644; color: #ffffff; padding: 80px 0px 80px 0px;"
                              class=" noabsolutecenter  padding15-xs">
                             <div class="link-type-absolute100 tb-icon-box  absolutecenter-top  textalignleft    tbWow fadeInRight ">
                                 <a class="absolute100" href="<?php echo base_url('AboutUs/intro'); ?>"
@@ -521,7 +521,7 @@
                         <div id="column-5d7930f12f94d"
                              class="tb-column absolutecenter-stretch col-xs-12 col-sm-6 col-md-3 hp-facts-row1 nopadding  tbWow fadeIn "
                              data-wow-delay="0.4s">
-                            <div style=" background-color:#b60d21; color: #ffffff; padding: 0px 15px 0px 15px;"
+                            <div style=" background-color:#fdb72e; color: #ffffff; padding: 0px 15px 0px 15px;"
                                  class=" absolutecenter  padding15-xs">
                                 <div class="link-type-no tb-icon-box  textaligncenter tbWow fadeIn ">
                                     <div class="tb-icon-box-description">
@@ -544,7 +544,7 @@
                         <div id="column-5d7930f1302a6"
                              class="tb-column absolutecenter-stretch col-xs-12 col-sm-6 col-md-3 hp-facts-row1 nopadding  tbWow fadeIn "
                              data-wow-delay="0.6s">
-                            <div style=" background-color:#b60d21; color: #ffffff;"
+                            <div style=" background-color:#fdb72e; color: #ffffff;"
                                  class=" absolutecenter  nopadding-xs">
                                 <div class="tb-single-image tb-single-image-icon  textaligncenter">
                                     <a class="tb-single-image-wrap"
@@ -559,7 +559,7 @@
                         <div id="column-5d7930f13111a"
                              class="tb-column absolutecenter-stretch col-xs-12 col-sm-6 col-md-3 hp-facts-row1 nopadding  tbWow fadeIn "
                              data-wow-delay="0.8s">
-                            <div style=" background-color:#b60d21; color: #ffffff; padding: 0px 15px 0px 15px;"
+                            <div style=" background-color:#fdb72e; color: #ffffff; padding: 0px 15px 0px 15px;"
                                  class=" absolutecenter  padding15-xs">
                                 <div class="link-type-no tb-icon-box  textaligncenter  tbWow fadeIn ">
                                     <div class="tb-icon-box-description">
@@ -583,7 +583,7 @@
                         <div id="column-5d7930f131a14"
                              class="tb-column absolutecenter-stretch col-xs-12 col-sm-6 col-md-3 hp-facts-row1 nopadding  tbWow fadeIn "
                              data-wow-delay="1s">
-                            <div style=" background-color:#b60d21; color: #ffffff;"
+                            <div style=" background-color:#fdb72e; color: #ffffff;"
                                  class=" absolutecenter  nopadding-xs">
                                 <div class="tb-single-image tb-single-image-icon  textaligncenter">
                                     <a class="tb-single-image-wrap" href="<?php echo base_url('AboutUs/prism'); ?>">
@@ -598,7 +598,7 @@
                     <div class="fw-row absolutecenter-stretch">
                         <div id="column-5d7930f132b82"
                              class="tb-column absolutecenter-stretch col-xs-12 col-sm-6 col-md-3 hp-facts-row2 nopadding  tbWow fadeIn ">
-                            <div style=" background-color:#043174; color: #ffffff;"
+                            <div style=" background-color:#095644; color: #ffffff;"
                                  class=" absolutecenter  nopadding-xs">
                                 <div class="tb-single-image tb-single-image-icon  textaligncenter">
                                     <a class="tb-single-image-wrap" href="<?php echo base_url('AboutUs/intro'); ?>">
@@ -612,7 +612,7 @@
                         <div id="column-5d7930f1337b5"
                              class="tb-column absolutecenter-stretch col-xs-12 col-sm-6 col-md-3 hp-facts-row2 nopadding  tbWow fadeIn "
                              data-wow-delay="0.2s">
-                            <div style=" background-color:#043174; color: #ffffff; padding: 0px 15px 0px 15px;"
+                            <div style=" background-color:#095644; color: #ffffff; padding: 0px 15px 0px 15px;"
                                  class=" absolutecenter  padding15-xs">
                                 <div class="link-type-no tb-icon-box  textaligncenter tbWow fadeIn ">
                                     <div class="tb-icon-box-description">
@@ -636,7 +636,7 @@
                         <div id="column-5d7930f1340c1"
                              class="tb-column absolutecenter-stretch col-xs-12 col-sm-6 col-md-3 hp-facts-row2 nopadding  tbWow fadeIn "
                              data-wow-delay="0.4s">
-                            <div style=" background-color:#043174; color: #ffffff;"
+                            <div style=" background-color:#095644; color: #ffffff;"
                                  class=" absolutecenter  nopadding-xs">
                                 <div class="tb-single-image tb-single-image-icon  textaligncenter">
                                     <a class="tb-single-image-wrap"
@@ -651,7 +651,7 @@
                         <div id="column-5d7930f134d63"
                              class="tb-column absolutecenter-stretch col-xs-12 col-sm-6 col-md-3 hp-facts-row2 nopadding  tbWow fadeIn "
                              data-wow-delay="0.6s">
-                            <div style=" background-color:#043174; color: #ffffff; padding: 0px 15px 0px 15px;"
+                            <div style=" background-color:#095644; color: #ffffff; padding: 0px 15px 0px 15px;"
                                  class=" absolutecenter  padding15-xs">
                                 <div class="link-type-no tb-icon-box  textaligncenter  tbWow fadeIn ">
                                     <div class="tb-icon-box-description">
@@ -700,7 +700,7 @@
         <section id="hp-us-capitol" class="campaign_section nopadding parallax-section  tbWow fadeIn"
                  style="background-color:#0e2b53; background-image:url(<?php echo $_DIR ?>images/wwsf_all2.jpg); background-repeat: no-repeat; background-position: right center; background-size: cover;  ">
             <div class="overlay"
-                 style="position: absolute;width: 100%;height: 100%;background: rgba(2, 39, 93, 0.4);z-index: 0;"></div>
+                 style="position: absolute;width: 100%;height: 100%;background: #0f342f;z-index: 0;"></div>
             <div class="container" style=' padding-top: 200px; padding-bottom: 200px; '>
                 <div class="row">
                     <div class="fw-row nostretch">

@@ -15,7 +15,7 @@
                     توجه فرمائيد.
                     <br>
                     پاسخگویی در روز های شنبه تا چهارشنبه از ساعت 9 الی 17 می باشد
-                    <strong class="col-xs-12 text-center">
+                    <strong class="col-xs-12 text-center have-padding-all-side">
                         <a href="tel:09029026934">پشتیبانی:09029026934</a>
                     </strong>
                 </div>
@@ -150,7 +150,7 @@
             </div>
             <div class="row col-xs-12"></div>
             <div class="form-group">
-                <button class="btn btn-danger btn-submit  pull-left" id="submitContactForm">
+                <button class="btn btn-submit  pull-left" id="submitContactForm">
                     ارسال
                 </button>
             </div>

@@ -42,7 +42,7 @@
             </div>
             <div class="gap"></div>
             <div class="col-xs-12 form-group">
-                <button  id="changePassword" class="btn btn-danger">
+                <button  id="changePassword" class="btn">
                     تغییر رمز عبور
                 </button>
             </div>
