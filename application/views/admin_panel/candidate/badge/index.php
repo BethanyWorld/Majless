@@ -1,4 +1,5 @@
 <?php $_DIR = base_url('assets/empanel/'); ?>
+
 <section class="content">
     <div class="container-fluid">
         <div class="row clearfix">
@@ -107,7 +108,43 @@
                         </div>
                     </div>
                     <div class="card">
+                        <table class="table table-responsive" >
+                            <thead>
+                            <tr >
+                                <th>نوع نشان</th>
+                                <th class="td-c fit">تخصیص</th>
+                                <th class="td-c fit">حذف</th>
+                            </tr>
 
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>نشان شایستگی طلایی</td>
+                                <td class="td-c fit" ><button data-action-type="GoldenMerit" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                <td  class="td-c fit"><button data-action-type="GoldenMerit" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                            </tr>
+                            <tr>
+                                <td>نشان شایستگی نقره ای</td>
+                                <td class="td-c fit "><button data-action-type="SilverMerit" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                <td  class="td-c fit"><button data-action-type="SilverMerit" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                            </tr>
+                            <tr>
+                                <td>نشان شفافیت طلایی</td>
+                                <td class="td-c fit "><button data-action-type="GoldenTransparency" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                <td  class="td-c fit"><button data-action-type="GoldenTransparency" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                            </tr>
+                            <tr>
+                                <td>نشان شفافیت نقره ای</td>
+                                <td class="td-c fit "><button data-action-type="SilverTransparency" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                <td  class="td-c fit"><button data-action-type="SilverTransparency" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                            </tr>
+                            <tr>
+                                <td>نشان تعهدنامه</td>
+                                <td class="td-c fit "><button data-action-type="Obligation" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                <td  class="td-c fit"><button data-action-type="Obligation" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

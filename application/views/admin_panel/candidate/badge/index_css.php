@@ -71,4 +71,9 @@
         background-color: #2196f3;
         padding: 42px 0;
     }
+
+
+ .td-c{
+   text-align: center
+    }
 </style>
