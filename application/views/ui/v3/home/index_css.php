@@ -221,7 +221,10 @@
         border: none;
         color: #000;
     }
-
+    .myBtn:focus{
+        background: #fdb72e;
+        color: #000;
+    }
     .myVideo {
         position: absolute;
         right: 0;
