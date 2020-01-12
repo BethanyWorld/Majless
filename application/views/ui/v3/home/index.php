@@ -270,7 +270,7 @@
         </section>
         <section id="hp-latest-news" class="campaign_section nopadding hp-title-sections tbWow fadeIn"
                  style="background-color: rgb(249, 249, 249); visibility: visible; animation-name: fadeIn;">
-            <div class="container" style=" padding-top: 60px; padding-bottom: 60px; ">
+            <div class="container" style=" padding-top: 30px; padding-bottom: 30px;">
                 <div class="row">
                     <div class="fw-row absolutecenter-stretch">
                         <div style=" " class=" noabsolutecenter nopadding-xs">
