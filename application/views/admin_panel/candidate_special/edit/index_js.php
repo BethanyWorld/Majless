@@ -56,7 +56,6 @@
                 }
             });
         });
-
         $('#inputCandidateStateId').change(function(){
             $("#inputCandidateCityId").html('');
             $stateId = $(this).val();
@@ -84,5 +83,50 @@
         });
         $('#inputCandidateStateId').change();
         /* End Update User Info */
+
+        /*
+        * Transparency
+        * Obligation
+        * Merit
+        * */
+        $inputCandidateCode = $.trim($("#inputCandidateCode").val());
+        $('.Assignment').click(function () {
+            toggleLoader();
+            $sendData = {
+                'inputCandidateId':$inputCandidateCode,
+                'inputCandidateBadge': $(this).data('action-type'),
+                'inputCandidateType': 'Special',
+                'inputAction': 'Assign'
+            }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doAssignBadge',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                },
+            });
+        });
+        $('.Delete').click(function () {
+            toggleLoader();
+            $sendData = {
+                'inputCandidateId':$inputCandidateCode,
+                'inputCandidateBadge': $(this).data('action-type'),
+                'inputCandidateType': 'Special',
+                'inputAction': 'Delete'
+            }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doAssignBadge',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                },
+            });
+        });
     });
 </script>

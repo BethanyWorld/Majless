@@ -67,7 +67,6 @@ class ModelCandidate extends CI_Model{
         }
         return $result;
     }
-
     public function getCandidateRolesByCandidateId($candidateId)
     {
         $this->db->select('*');
@@ -1182,29 +1181,35 @@ class ModelCandidate extends CI_Model{
     public function doAssignBadge($inputs){
         $arr = array();
         $candidateId = $inputs['inputCandidateId'];
-        $actionType = $inputs['inputActionType'];
-        $actionType = $inputs['inputActionType'];
+        $actionType = $inputs['inputAction'];
         switch ($actionType){
             case 'Assign':
+                $this->db->delete('candidate_badge', array(
+                    'CandidateId' => $candidateId,
+                    'CandidateType' => $inputs['inputCandidateType'],
+                    'CandidateBadge' => $inputs['inputCandidateBadge']
+                ));
                 $UserArray = array(
                     'CandidateId' => $candidateId,
+                    'CandidateType' => $inputs['inputCandidateType'],
                     'CandidateBadge' => $inputs['inputCandidateBadge']
                 );
                 $this->db->insert('candidate_badge', $UserArray);
                 $arr = array(
                     'type' => "green",
-                    'content' => "درج برچسب با موفقیت انجام شد",
+                    'content' => "درج نشان با موفقیت انجام شد",
                     'success' => true
                 );
                 break;
-            case 'UnAssign':
+            case 'Delete':
                 $this->db->delete('candidate_badge', array(
                     'CandidateId' => $candidateId,
-                    'CandidateBadge' => $inputs['inputCandidateBadge'],
+                    'CandidateType' => $inputs['inputCandidateType'],
+                    'CandidateBadge' => $inputs['inputCandidateBadge']
                 ));
                 $arr = array(
                     'type' => "green",
-                    'content' => "حذف برچسب ناموفق بود",
+                    'content' => "حذف نشان ناموفق بود",
                     'success' => true
                 );
                 break;

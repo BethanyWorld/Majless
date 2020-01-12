@@ -334,7 +334,6 @@ class Candidate extends CI_Controller{
         echo json_encode($result);
 
     }
-
     /*Admin Special Candidates*/
     public function special(){
         $data['noImg'] = $this->config->item('defaultImage');
@@ -425,8 +424,6 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doIncreaseCandidateSpecialInviteCount($inputs);
         echo json_encode($result);
     }
-
-
     public function invite(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نامزد های انتخاباتی';
