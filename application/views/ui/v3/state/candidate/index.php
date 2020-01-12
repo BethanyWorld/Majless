@@ -6,7 +6,6 @@
     نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
 </a>
 <div class="container container-wrapper">
-
     <div class="panel panel-default hidden-lg hidden-md">
         <div class="panel-body"
              style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
@@ -15,7 +14,6 @@
             و انتشار پوسترهای دعوت به چالش در شبکه های اجتماعی نامزد حوزه انتخابیه خود را به این چالش دعوت کنید.
         </div>
     </div>
-
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div id="mySidenav" class="sidenav hidden-md hidden-lg">
             <a href="javascript:void(0)" class="closebtn">بستن</a>
@@ -98,6 +96,17 @@
                 <?php } ?>
             </div>
             <div class="row candidate-container candidate-detail-parent-div">
+
+                <?php if (empty($dataSpecial)) { ?>
+                    <div class="alert alert-warning">
+                        موردی یافت نشد
+
+                        <a href="<?php echo base_url('State/invite'); ?>">
+                            نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
+                        </a>
+                    </div>
+                <?php } ?>
+
                 <?php foreach ($dataSpecial as $candidate) {
                     if ($candidate['CandidateProfileImage'] !== NULL) { ?>
                         <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">

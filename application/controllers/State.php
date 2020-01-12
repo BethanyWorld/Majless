@@ -1,8 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class State extends CI_Controller{
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
         $this->load->model('ui/ModelQuery');
         $this->load->model('ui/ModelCommand');
@@ -133,6 +132,8 @@ class State extends CI_Controller{
         $data['finance'] = $this->ModelProfile->getCandidateFinanceByCandidateId($candidateId);
         $data['stateName'] = $stateName;
         $data['stateId'] = $stateId;
+        $data['countries'] = $this->ModelCountry->getCountryList();
+        $data['states'] = $this->ModelCountry->getStateList();
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' ' . "فهرست نامزد های انتخاباتی استان " . $stateName;
         $this->load->view('ui/v3/static/header', $data);

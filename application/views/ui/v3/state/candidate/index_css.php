@@ -497,7 +497,8 @@
     }
 
     .mp-brief .pic img {
-        width: 100%;
+        max-width: 100%;
+        width: auto !important;
         height: auto;
         border-radius: 0;
         transition: all 0.9s ease 0s;

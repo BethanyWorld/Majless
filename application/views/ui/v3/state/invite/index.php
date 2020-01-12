@@ -3,6 +3,13 @@
 <div class="container container-wrapper">
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div class="col-xs-12 col-md-8 col-md-offset-2 padding-right-0">
+            <div class="alert alert-info" style="
+    text-align: justify;
+    direction: rtl;
+    font-weight: 900;">
+                اطلاعات نامزدی که معرفی می‌کنید، بعد از تنظیم عکس در صفحه استانی به فهرست داوطلبان نمایندگی اضافه می‌شود.
+                با انتخاب گزینه »دعوت به جنش از ما« و انتشار پوسترهای دعوت به چالش در شبکه های اجتماعی نامزد حوزه انتخابیه خود را به این چالش دعوت کنید
+            </div>
             <div class="form-group">
                 <div class="col-xs-12 col-md-6 padding-right-0 pull-right">
                     <label for="inputCandidateFullName">
@@ -70,8 +77,8 @@
             </div>
             <div class="form-group">
                 <div class="col-xs-12 col-md-6 padding-right-0">
-                    <button class="btn btn-danger btn-submit pull-left"
-                            id="inviteCandidate">ثبت نام
+                    <button class="btn btn-danger btn-submit pull-left" id="inviteCandidate">
+                      ثبت نامزد در فهرست چالش
                     </button>
                 </div>
             </div>
