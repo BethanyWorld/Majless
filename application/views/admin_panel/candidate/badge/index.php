@@ -102,49 +102,71 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-9" style="padding-left: 0;">
-                    <div class="card">
-                        <div class="alert alert-warning">
-                            رتبه های مورد نظر را انتخاب کرده و ذخیره را بزنید
+
+                    <div class="row col-xs-12">
+                        <div class="card">
+                            <div class="alert alert-success">
+                                نشان های اختصاص داده شده
+                            </div>
+                            <table class="table table-responsive">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <?php foreach ($badges as $item) {
+                                            badgePipe($item['CandidateBadge']);
+                                            echo "  -  ";
+                                        } ?>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="card">
-                        <table class="table table-responsive" >
-                            <thead>
-                            <tr >
-                                <th>نوع نشان</th>
-                                <th class="td-c fit">تخصیص</th>
-                                <th class="td-c fit">حذف</th>
-                            </tr>
+                    <div class="row col-xs-12">
+                        <div class="card">
+                            <div class="alert alert-warning">
+                                رتبه های مورد نظر را انتخاب کرده و ذخیره را بزنید
+                            </div>
+                        </div>
+                        <div class="card">
+                            <table class="table table-responsive" >
+                                <thead>
+                                <tr >
+                                    <th>نوع نشان</th>
+                                    <th class="td-c fit">تخصیص</th>
+                                    <th class="td-c fit">حذف</th>
+                                </tr>
 
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>نشان شایستگی طلایی</td>
-                                <td class="td-c fit" ><button data-action-type="GoldenMerit" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
-                                <td  class="td-c fit"><button data-action-type="GoldenMerit" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
-                            </tr>
-                            <tr>
-                                <td>نشان شایستگی نقره ای</td>
-                                <td class="td-c fit "><button data-action-type="SilverMerit" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
-                                <td  class="td-c fit"><button data-action-type="SilverMerit" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
-                            </tr>
-                            <tr>
-                                <td>نشان شفافیت طلایی</td>
-                                <td class="td-c fit "><button data-action-type="GoldenTransparency" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
-                                <td  class="td-c fit"><button data-action-type="GoldenTransparency" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
-                            </tr>
-                            <tr>
-                                <td>نشان شفافیت نقره ای</td>
-                                <td class="td-c fit "><button data-action-type="SilverTransparency" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
-                                <td  class="td-c fit"><button data-action-type="SilverTransparency" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
-                            </tr>
-                            <tr>
-                                <td>نشان تعهدنامه</td>
-                                <td class="td-c fit "><button data-action-type="Obligation" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
-                                <td  class="td-c fit"><button data-action-type="Obligation" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>نشان شایستگی طلایی</td>
+                                    <td class="td-c fit" ><button data-action-type="GoldenMerit" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                    <td  class="td-c fit"><button data-action-type="GoldenMerit" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                                </tr>
+                                <tr>
+                                    <td>نشان شایستگی نقره ای</td>
+                                    <td class="td-c fit "><button data-action-type="SilverMerit" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                    <td  class="td-c fit"><button data-action-type="SilverMerit" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                                </tr>
+                                <tr>
+                                    <td>نشان شفافیت طلایی</td>
+                                    <td class="td-c fit "><button data-action-type="GoldenTransparency" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                    <td  class="td-c fit"><button data-action-type="GoldenTransparency" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                                </tr>
+                                <tr>
+                                    <td>نشان شفافیت نقره ای</td>
+                                    <td class="td-c fit "><button data-action-type="SilverTransparency" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                    <td  class="td-c fit"><button data-action-type="SilverTransparency" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                                </tr>
+                                <tr>
+                                    <td>نشان تعهدنامه</td>
+                                    <td class="td-c fit "><button data-action-type="Obligation" class="btn btn-success btn-circle Assignment"><i class="material-icons">grade</i></td>
+                                    <td  class="td-c fit"><button data-action-type="Obligation" class="btn btn-danger btn-circle Delete"><i class="material-icons">clear</i></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

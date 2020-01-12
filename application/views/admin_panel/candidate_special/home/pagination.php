@@ -19,6 +19,7 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
                     <img width="100px" src="<?php echo base_url('uploads/').$candidate['CandidateProfileImage']; ?>" />
                 </a>
             </td>
+            <td class="fit"><?php echo $candidate['CandidateInviteCount']; ?></td>
             <td class="fit">
                 <a href="<?php echo base_url('Admin/Candidate/specialEdit/') . $candidate['RowId']; ?>">
                     <button type="button"

@@ -95,6 +95,27 @@
                     </div>
                 </div>
 
+
+                <div class="row col-xs-12 card">
+                    <div class="alert alert-success">
+                       نشان های اختصاص داده شده
+                    </div>
+                    <div class="card">
+                        <table class="table table-responsive">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <?php foreach ($badges as $item) {
+                                        badgePipe($item['CandidateBadge']);
+                                        echo "  -  ";
+                                     } ?>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <div class="row col-xs-12 card">
                     <div class="alert alert-warning">
                         نشان های مورد نظر را انتخاب کرده و ذخیره را بزنید

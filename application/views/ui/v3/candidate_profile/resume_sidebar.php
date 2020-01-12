@@ -495,7 +495,7 @@
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/finance'); ?>">10</a>
                 </li>
-                <?php} ?>
+                <?php } ?>
                 <li class="text-center">
                     <a href="<?php echo base_url('Profile'); ?>">
                         <i class="fa fa-refresh"></i>

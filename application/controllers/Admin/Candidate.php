@@ -67,22 +67,8 @@ class Candidate extends CI_Controller{
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['exams'] = $this->getCandidateExams($candidateId);
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
-        $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
-        $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
-        $data['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($candidateId);
-        $data['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($candidateId);
-
-        $data['candidateBooks'] = $this->ModelProfile->getCandidateBooksByCandidateId($candidateId);
-        $data['candidateArticles'] = $this->ModelProfile->getCandidateArticlesByCandidateId($candidateId);
-        $data['candidateResearch'] = $this->ModelProfile->getCandidateResearchByCandidateId($candidateId);
-        $data['candidateTranslation'] = $this->ModelProfile->getCandidateTranslationByCandidateId($candidateId);
-        $data['candidateInvention'] = $this->ModelProfile->getCandidateInventionByCandidateId($candidateId);
-        $data['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($candidateId);
-        $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
-        $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
-
-        $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);
         $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
+        $data['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($candidateId , 'Normal');
 
         $data['api'] = $this->config->item('api');
         $this->load->view('admin_panel/static/header', $data);
@@ -383,6 +369,9 @@ class Candidate extends CI_Controller{
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
         $data['states'] = $this->ModelCountry->getStateList();
         $data['candidate'] = $this->ModelCandidate->getCandidateSpecialByCandidateId($rowId);
+        $data['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($data['candidate']['CandidateCode'] , 'Special');
+
+
         $this->load->view('admin_panel/static/header', $data);
         $this->load->view('admin_panel/candidate_special/edit/index');
         $this->load->view('admin_panel/candidate_special/edit/index_css');

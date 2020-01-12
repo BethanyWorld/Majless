@@ -42,6 +42,7 @@
                                     <th class="fit">حوزه انتخاباتی</th>
                                     <th class="fit">اینستاگرام</th>
                                     <th class="fit">تصویر</th>
+                                    <th class="fit">تعدا دعوت</th>
                                     <th class="fit">جزئیات</th>
                                     <th class="fit">حذف</th>
                                 </tr>

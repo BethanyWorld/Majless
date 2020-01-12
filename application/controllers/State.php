@@ -129,7 +129,8 @@ class State extends CI_Controller{
         $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
         $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);
         $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
-
+        $data['promises'] = $this->ModelProfile->getCandidateElectionPromisesByCandidateId($candidateId);
+        $data['finance'] = $this->ModelProfile->getCandidateFinanceByCandidateId($candidateId);
         $data['stateName'] = $stateName;
         $data['stateId'] = $stateId;
         $data['noImg'] = $this->config->item('defaultImage');

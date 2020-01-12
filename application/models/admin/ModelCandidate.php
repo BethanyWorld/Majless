@@ -1216,5 +1216,19 @@ class ModelCandidate extends CI_Model{
         }
         return $arr;
     }
+    public function getCandidateBadgeByCandidateId($id , $type = 'Normal'){
+
+        $this->db->select('*');
+        $this->db->from('candidate_badge');
+        $this->db->where(array(
+            'CandidateType' => $type,
+            'CandidateId' => $id
+        ));
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        return array();
+    }
 }
 ?>
