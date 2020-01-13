@@ -43,12 +43,12 @@
     <link rel="icon" href="<?= $_DIR; ?>assets/images/fav96.png" sizes="96x96" type="image/png">
     <link rel='stylesheet' id='style-css' href='<?= $_DIR; ?>assets/css/style.css?ver=1.0'/>
     <link rel='stylesheet' id='bootstrap-css' href='<?= $_DIR; ?>assets/css/bootstrap.min.css?ver=3.3.7'/>
-    <link rel='stylesheet' id='fontawesome-css' href='<?= $_DIR; ?>assets/css/font-awesome-css.min.css?ver=1.0'/>
-    <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>assets/css/jquery.mmenu.all.css?ver=1.0'/>
-    <link rel='stylesheet' id='fonts-css' href='<?= $_DIR; ?>assets/css/font-style.css?ver=1.1'/>
-    <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>assets/css/options.css?ver=1.1'/>
-    <link rel='stylesheet' id='campaign_style-css' href='<?= $_DIR; ?>assets/css/theme.css?ver=1.1'/>
-    <link rel='stylesheet' id='slick-css' href='<?= $_DIR; ?>assets/css/blog.css?ver=1.0'/>
+    <link rel='stylesheet' id='fontawesome-css' href='<?= $_DIR; ?>assets/css/font-awesome-css.min.css?ver=1.1'/>
+    <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>assets/css/jquery.mmenu.all.css?ver=1.1'/>
+    <link rel='stylesheet' id='fonts-css' href='<?= $_DIR; ?>assets/css/font-style.css?ver=1.2'/>
+    <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>assets/css/options.css?ver=1.2'/>
+    <link rel='stylesheet' id='campaign_style-css' href='<?= $_DIR; ?>assets/css/theme.css?ver=1.2'/>
+    <link rel='stylesheet' id='slick-css' href='<?= $_DIR; ?>assets/css/blog.css?ver=1.1'/>
     <script src='<?= $_DIR; ?>assets/js/jquery-2.2.4.min.js?ver=2.2.4'></script>
     <script src='<?= $_DIR; ?>assets/js/jquery.mmenu.min.all.js?ver=1.0'></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
