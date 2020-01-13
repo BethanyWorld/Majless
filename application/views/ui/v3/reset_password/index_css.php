@@ -10,11 +10,15 @@
          height: 174px !important;
      }
     button.btn{
-        border: 0;
+        float: left;
+        text-align: center;
+        line-height: 45px;
+        font-size: 16px;
+        background-color: #fdb72e;
+        color: #000;
+        padding: 0 25px;
         border-radius: 0;
-        background: #265a88;
-        min-width: 100px;
-        line-height: 30px;
+        font-weight: 900;
     }
     .form-control {
         height: 40px;

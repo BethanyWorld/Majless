@@ -50,7 +50,7 @@
             </div>
             <div class="form-group">
                 <div class="col-xs-12 col-md-6">
-                    <button class="btn-danger btn-submit pull-left" id="submitResetPassword">
+                    <button class="btn btn-submit pull-left" id="submitResetPassword">
                         بازیابی رمز عبور
                     </button>
                 </div>
