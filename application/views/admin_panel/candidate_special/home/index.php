@@ -43,6 +43,7 @@
                                     <th class="fit">اینستاگرام</th>
                                     <th class="fit">تصویر</th>
                                     <th class="fit">تعدا دعوت</th>
+                                    <th class="fit">پوستر</th>
                                     <th class="fit">جزئیات</th>
                                     <th class="fit">حذف</th>
                                 </tr>
