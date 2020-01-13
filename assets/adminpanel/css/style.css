@@ -5716,15 +5716,15 @@ section.content {
 }
 
 /* Modals ====================================== */
-.modal .modal-header {
-    border: none;
-    padding: 25px 25px 5px 25px;
-}
+/*.modal .modal-header {*/
+/*    border: none;*/
+/*    padding: 25px 25px 5px 25px;*/
+/*}*/
 
-.modal .modal-header .modal-title {
-    font-weight: bold;
-    font-size: 16px;
-}
+/*.modal .modal-header .modal-title {*/
+/*    font-weight: bold;*/
+/*    font-size: 16px;*/
+/*}*/
 
 .modal .modal-content {
     -webkit-border-radius: 0;
@@ -5740,9 +5740,9 @@ section.content {
     padding: 15px 25px;
 }
 
-.modal .modal-footer {
-    border: none;
-}
+/*.modal .modal-footer {*/
+/*    border: none;*/
+/*}*/
 
 .modal-col-red {
     background-color: #F44336;

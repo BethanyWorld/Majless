@@ -450,6 +450,9 @@
         </div>
     </div>
 </div>
+
+
+
 <div style="display: inline-block" class="loading-text hidden">
     <p style="text-align: right;font-size: 14px;font-weight: 900;">مناسب برای پست و استوری اینستاگرام</p>
 </div>

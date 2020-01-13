@@ -63,3 +63,118 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
+
+ <?php $_DIR = base_url('assets/ui/v4/'); ?>
+ <div style="height: 1px ;width: 1px;overflow: hidden;position: relative">
+     <div class="hidden-box1" id="hidden-box1">
+         <div class="modal-border">
+             <div class="inner-border-div">
+                 <img src="<?php echo $_DIR; ?>images/Story-bg.png">
+                 <div class="candidate-image-div">
+                     <img src="<?php echo $_DIR; ?>images/Story-man.png" class="inner-candidate-image">
+                     <div style="padding: 15px 0;">
+                         <div class="candidate-text-invite">
+                             <p style="line-height: 60px !important;">
+                                 دعوت می&hairsp;کنیم از
+                             </p>
+                         </div>
+                         <div class="candidate-name">
+                             <h1 class="modalCandidateName"></h1>
+                         </div>
+                         <div class="candidate-name">
+                             <h3>حوزه انتخابیه</h3>
+                             <h3 class="modalCandidateArea"></h3>
+                         </div>
+                         <div class="candidate-text-invite">
+                             <p style="line-height: 60px !important;">
+                                 برای شرکت در
+                             </p>
+                             <p style="line-height: 60px !important;">
+                                 چالش شایستگی و شفافیت جنبش
+                                 <a> #از_ما</a>
+                             </p>
+                         </div>
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+     </div>
+     <div class="hidden-box2" id="hidden-box2">
+         <div class="modal-border">
+             <div class="inner-border-div">
+                 <img src="<?php echo $_DIR; ?>images/post-bg.png">
+                 <div class="candidate-image-div">
+                     <img src="<?php echo $_DIR; ?>images/post-man.png" class="inner-candidate-image">
+                     <div class="">
+                         <div class="candidate-text-invite">
+                             <p>
+                                 دعوت می&hairsp;کنیم از
+                             </p>
+                         </div>
+                         <div class="candidate-name">
+                             <h1 class="modalCandidateName"></h1>
+                         </div>
+                         <div class="candidate-name">
+                             <h3>حوزه انتخابیه</h3>
+                             <h3 class="modalCandidateArea"></h3>
+                         </div>س
+                         <div class="candidate-text-invite">
+                             <p>
+                                 برای شرکت در
+                             </p>
+                             <p>
+                                 چالش شایستگی و شفافیت جنبش
+                                 <a> #از_ما</a>
+                             </p>
+                         </div>
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <!-- Modal -->
+ <div class="modal fade candidate-modal" id="myModal" role="dialog" data-backdrop="false">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <button type="button" class="close pull-left close-icon close-modal" data-dismiss="modal">&times;
+                 </button>
+                 <h4 class="modal-title rtl">
+                     داوطلب مورد نظر و
+                     <a target="_blank" href="https://www.instagram.com/azmaa_net/">
+                         azmaa_net@
+                     </a>
+                     را منشن کنید
+                 </h4>
+             </div>
+             <div class="modal-body">
+                 <div class="show-box" id="show-box"></div>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn pull-left close-btn close-modal" data-dismiss="modal">بستن</button>
+                 <!--                <a type="button" class="btn pull-left receive-btn" id="receiveFile" href="javascript:void(0);">دریافت-->
+                 <!--                    فایل</a>-->
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <div style="display: inline-block" class="loading-text hidden">
+     <p style="text-align: right;font-size: 14px;font-weight: 900;">مناسب برای پست و استوری اینستاگرام</p>
+ </div>
+ <div class="col-xs-12 text-center loading-demo hidden" style="direction: rtl;">
+     لطفا منتظر بمانید...
+ </div>
+
+
+ <script src="<?php echo $_DIR; ?>js/dom-to-image.js"></script>

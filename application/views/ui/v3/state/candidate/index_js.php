@@ -94,6 +94,8 @@
             $('html').removeClass('over-flow-style');
             $("html, body").animate({scrollTop: 0}, "slow");
         });
+
+
         /* Export*/
         $(document).on('click', ".invite-button", function () {
             $('.show-box').hide();
@@ -133,10 +135,7 @@
                 document.body.removeChild(link);
                 $('.show-box').fadeIn();
             });
-
-
             /* Increase Invite Count */
-
             $this = $(this);
             if($(this).attr('data-id')) {
                 $candidateId = $(this).data('id');
@@ -150,10 +149,12 @@
                     }
                 });
             }
-
             /* End Increase Invite Count*/
-
         });
+        /* Export*/
+
+
+
         $('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');
             var provinceId = $(this).data('province-id');

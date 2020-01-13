@@ -1,3 +1,4 @@
+<?php $_DIR = base_url('assets/ui/v4/'); ?>
 <span class="btn btn-info table-row-count"><?php echo $count; ?></span>
 <?php
 if ((isset($data) && !$data) || $data == NULL) { ?>
@@ -22,10 +23,12 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             <td class="fit"><?php echo $candidate['CandidateInviteCount']; ?></td>
             <td class="fit">
                 <button
+                        data-toggle="modal" data-target="#myModal"
                         data-src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                        data-area="<?php echo $candidate['ElectionName']; ?>"
                         data-title="<?php echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName']; ?>"
                         type="button"
-                        class="btn btn-warning btn-circle waves-effect waves-circle waves-float poster-preview">
+                        class="btn btn-warning btn-circle waves-effect waves-circle waves-float poster-preview invite-button">
                     <i class="material-icons">rate_review</i>
                 </button>
             </td>
@@ -50,3 +53,4 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
         </tr>
     <?php }
 } ?>
+
