@@ -117,7 +117,7 @@
         margin: 0 0 0 0.8rem;
         width: 40px;
         text-align: center;
-        color: #fdb72e;
+        color: #777;
     }
 
     ul.RightPanelUl li:after {
@@ -349,10 +349,6 @@
     .Radio-Buttons .radio input[type="radio"]:focus + .radio-label:before {
         outline: none;
         border-color: #fdb72e;
-    }
-
-    .Radio-Buttons {
-        display: none;
     }
 
     .Radio-Buttons .radio {
