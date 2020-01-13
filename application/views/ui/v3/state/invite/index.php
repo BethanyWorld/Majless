@@ -77,7 +77,7 @@
             </div>
             <div class="form-group">
                 <div class="col-xs-12 col-md-6 padding-right-0">
-                    <button class="btn btn-danger btn-submit pull-left" id="inviteCandidate">
+                    <button class="btn btn-submit pull-left" id="inviteCandidate">
                       ثبت نامزد در فهرست چالش
                     </button>
                 </div>

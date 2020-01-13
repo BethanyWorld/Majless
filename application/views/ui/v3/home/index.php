@@ -24,7 +24,7 @@
                 <button class="myBtn active">
                     <i class="fa fa-play"></i>
                 </button>
-                <span class="full-screen-icon">
+                <span class="full-screen-icon hidden">
                         <img src="<?php echo $_DIR ?>images/switch-to-full-screen32.png">
                     </span>
             </div>
@@ -36,7 +36,7 @@
                 <button class="myBtn active">
                     <i class="fa fa-play"></i>
                 </button>
-                <span class="full-screen-icon">
+                <span class="full-screen-icon hidden">
                         <img src="<?php echo $_DIR ?>images/switch-to-full-screen32.png">
                 </span>
             </div>
@@ -304,6 +304,10 @@
                          class="tb-column absolutecenter-stretch col-xs-12  col-sm-12  nopadding tbWow fadeIn">
                         <div class="row col-xs-12">
                             <style>
+                                .slick-slide div.read-more {
+                                    background: #fdb72e;
+                                    color: #000 !important;
+                                }
                                 .slick-slide:hover div.read-more {
                                     background: #fdb72e;
                                     color: #000 !important;
@@ -319,16 +323,21 @@
                                     margin: auto;
                                     left: -55px;
                                     width: 50px;
-                                    background: #fff;
+                                    background: #fdb72e;
                                     color: #000;
                                     border: 1px solid #fdb72e;
                                     padding: 15px 20px;
                                     cursor: pointer;
+                                    font-weight: 900;
                                 }
 
                                 .slick-next-arrow {
                                     right: -55px;
                                     left: auto;
+                                }
+                                .tb-posts-carousel .slick-slide p {
+                                    padding: 30px;
+                                    min-height: 245px;
                                 }
                             </style>
                             <div class="tb-posts-carousel slick-slider">

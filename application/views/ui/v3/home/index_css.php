@@ -96,6 +96,7 @@
         margin: 30px 0;
         color: #000;
         font-weight: 900;
+        float: left;
     }
 
     .slide-title button:hover {
@@ -107,7 +108,7 @@
         color: #fff;
         font-size: 24px;
         line-height: 45px;
-        text-align: center;
+        text-align: right;
         margin-top: 25px;
         word-break: break-word;
     }
@@ -116,7 +117,7 @@
         color: #fff;
         font-size: 16px;
         line-height: 50px;
-        text-align: center;
+        text-align: right;
     }
     .slick-slide a{
         outline: none;

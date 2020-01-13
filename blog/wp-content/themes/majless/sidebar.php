@@ -122,7 +122,7 @@
 
                         ul.tags a {
                             color: #7CA1CC;
-                            border: 1px dashed #0545a4;
+                            border: 1px dashed #d5d5d5;
                             padding: 5px;
                             float: right;
                             font-size: 14px;

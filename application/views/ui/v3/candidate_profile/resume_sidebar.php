@@ -117,7 +117,7 @@
         margin: 0 0 0 0.8rem;
         width: 40px;
         text-align: center;
-        color: #777777;
+        color: #fdb72e;
     }
 
     ul.RightPanelUl li:after {

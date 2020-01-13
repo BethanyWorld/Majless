@@ -117,9 +117,15 @@ $news_comments = get_comments(
                             <div class="row center-block">
                                 <div class="col-xs-12">
                                     <button
-                                            style="border: 0;padding: 15px 20px;border-radius: 0;"
+                                            style="border: 0;padding: 15px 20px;border-radius: 0;
+    background: #fdb72e;
+    color: #fff;
+    padding: 8px 14px;
+    line-height: 10px;
+    position: relative;
+    top: -1px;"
                                             type="submit"
-                                            class="btn btn-danger btn-sm  pull-left">ارسال نظر
+                                            class="btn btn-sm pull-left">ارسال نظر
                                     </button>
                                 </div>
                             </div>

@@ -666,11 +666,6 @@ blockquote {
 canvas {
     max-width: 100%
 }
-@font-face {
-    font-family: fontawesome;
-    src: url("/assets/ui/v4/fonts/fontawesome-webfont.svg");
-}
-
 #toTop {
     background-color: #333;
     border-radius: 4px;

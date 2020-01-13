@@ -1017,6 +1017,7 @@ h2.blog-widget-title {
     background: #fff;
     border-right: 30px solid #f8f8f8;
     padding: 40px 5px;
+    padding-top: 0;
 }
 .blog-detail-title{
     font-size: 18px;
