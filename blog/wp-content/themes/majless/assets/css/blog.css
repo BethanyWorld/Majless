@@ -380,6 +380,9 @@ input[type="submit"] {
     transition: all 0.3s ease 0s;
     border-radius: 0;
 }
+.blog-widget .blog-search-submit:hover{
+    color: #000;
+}
 
 .blog-search-submit {
     background-color: #d6002a;
@@ -694,14 +697,15 @@ h2.blog-widget-title {
     line-height: 38px;
     padding: 0 29px;
     font-size: 18px;
+    font-weight: 900;
     letter-spacing: 0.1em;
 }
 
 .blog-more-link-button a.btn-default:hover {
     text-decoration: none;
-    background-color: #0f342f;
-    border-color: #0f342f;
-    color: #fff;
+    background-color: #fdb72e;
+    border-color: #fdb72e;
+    color: #000;
 }
 
 /*for left panel*/

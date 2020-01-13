@@ -1,4 +1,19 @@
 <style>
+    .blackColor h1{
+        color: #000;
+    }
+    .blackColor h4{
+        color: #000;
+    }
+   .blackColor .btn-border1 {
+       border: 2px solid #000;
+       color: #000;
+       font-weight: 900;
+   }
+    .blackColor .btn-border1:hover{
+        background-color: #000;
+        color: #fdb72e;
+    }
     .padding-10{
         padding: 10px;
     }
@@ -80,6 +95,7 @@
         border: 1px solid rgba(253, 183, 46, 0.3);
         margin: 30px 0;
         color: #000;
+        font-weight: 900;
     }
 
     .slide-title button:hover {

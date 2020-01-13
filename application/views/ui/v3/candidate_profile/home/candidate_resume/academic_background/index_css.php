@@ -372,61 +372,7 @@
         margin-bottom: 15px;
     }
 
-    /*radio buttons*/
-    .Radio-Buttons {
-        display: none;
-    }
 
-    .Radio-Display {
-        display: inline-block;
-    }
-
-    .Radio-Buttons .radio {
-        margin: 0.5rem;
-    }
-
-    .Radio-Buttons .radio input[type="radio"] {
-        position: absolute;
-        opacity: 0;
-    }
-
-    .Radio-Buttons .radio input[type="radio"] + .radio-label:before {
-        content: '';
-        background: #f4f4f4;
-        border-radius: 100%;
-        border: 1px solid #b4b4b4;
-        display: inline-block;
-        width: 1.4em;
-        height: 1.4em;
-        position: relative;
-        top: -0.2em;
-        margin-right: 1em;
-        vertical-align: top;
-        cursor: pointer;
-        text-align: center;
-        transition: all 250ms ease;
-    }
-
-    .Radio-Buttons .radio input[type="radio"]:checked + .radio-label:before {
-        background-color: #3197EE;
-        box-shadow: inset 0 0 0 4px #f4f4f4;
-    }
-
-    .Radio-Buttons .radio input[type="radio"]:focus + .radio-label:before {
-        outline: none;
-        border-color: #3197EE;
-    }
-
-    .Radio-Buttons .radio input[type="radio"]:disabled + .radio-label:before {
-        box-shadow: inset 0 0 0 4px #f4f4f4;
-        border-color: #b4b4b4;
-        background: #b4b4b4;
-    }
-
-    .Radio-Buttons .radio input[type="radio"] + .radio-label:empty:before {
-        margin-right: 0;
-    }
-    /*radio buttons*/
 
     .ul-background-color-hr {
         margin: 0px auto;

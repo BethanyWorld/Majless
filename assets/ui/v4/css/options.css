@@ -72,7 +72,8 @@ a:hover {
 }
 
 .btn-border2 {
-    color: #fff
+    color: #fff;
+    font-weight: 900;
 }
 
 .btn-border2:hover {
@@ -300,7 +301,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
     line-height: 33px;
     font-weight: 400;
     font-style: normal;
-    color: #618b9c;
+    color: #fff;
     font-size: 10px;
     opacity: 1;
     visibility: visible;
@@ -318,12 +319,12 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #promo a {
-    color: #618b9c;
+    color: #fff;
     font-size: 16px
 }
 
 #promo a:hover {
-    color: #fff
+    color: #fdb72e
 }
 
 #footer-promo {
@@ -490,7 +491,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 }
 
 #footer-navigation a {
-    color: #7CA1CC
+    color: #fff
 }
 
 #footer-navigation a:hover {
@@ -508,7 +509,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
     line-height: 28px;
     font-weight: 400;
     font-style: normal;
-    color: #7CA1CC;
+    color: #fff;
     font-size: 12px;
     opacity: 1;
     visibility: visible;

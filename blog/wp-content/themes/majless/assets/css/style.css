@@ -5489,7 +5489,7 @@ input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:ac
 .hp-facts-row1 h4, .hp-facts-row2 h4 {
     font-size: 12px;
     line-height: 18px;
-    color: rgba(255, 255, 255, .4)
+    color: rgba(255, 255, 255, .4);
 }
 
 #hp-upcoming-event {

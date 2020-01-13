@@ -171,15 +171,7 @@
         transition: all 250ms ease;
     }
 
-    .Radio-Buttons .radio input[type="radio"]:checked + .radio-label:before {
-        background-color: #3197EE;
-        box-shadow: inset 0 0 0 4px #f4f4f4;
-    }
 
-    .Radio-Buttons .radio input[type="radio"]:focus + .radio-label:before {
-        outline: none;
-        border-color: #3197EE;
-    }
 
     .Radio-Buttons .radio input[type="radio"]:disabled + .radio-label:before {
         box-shadow: inset 0 0 0 4px #f4f4f4;

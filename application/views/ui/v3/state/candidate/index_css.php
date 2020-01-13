@@ -90,7 +90,7 @@
     }
 
     .check:hover svg {
-        stroke: #4285f4;
+        stroke: #fdb72e;
     }
 
     #IranMap .map svg {
@@ -102,7 +102,7 @@
     }
 
     .inputElectionId:checked + .check svg {
-        stroke: #4285f4;
+        stroke: #fdb72e;
     }
 
     .inputElectionId:checked + .check svg path {
@@ -488,10 +488,16 @@
         padding: 5px 15px;
         background: #fdb72e;
         color: #000;
+        font-weight: 900;
     }
 
-    .invite-button:hover, .invite-button:focus {
-        color: #fff;
+    .invite-button:hover {
+        color: #000;
+        outline: none;
+        background-color: #fdb72e;
+    }
+    .invite-button:focus{
+        color: #000;
         outline: none;
         background-color: #fdb72e;
     }
@@ -956,7 +962,7 @@
     .blog-widget .blog-search-submit {
         background-color: #fdb72e ;
         border: 0;
-        color: #fff;
+        color: #000;
         font-size: 14px;
         height: 100%;
         padding-right: 18px;
@@ -965,6 +971,9 @@
         top: 0;
         transition: all 0.3s ease 0s;
         border-radius: 0;
+    }
+    .blog-widget .blog-search-submit:hover{
+        color: #000;
     }
 
     .blog-search-submit {
@@ -1114,7 +1123,6 @@
     }
 
     .invite {
-
         display: inline-block;
         width: 100%;
         padding: 8px 4px;
@@ -1123,10 +1131,11 @@
         background: #fdb72e;
         color: #000;
         margin-bottom: 10px;
+        font-weight: 900;
     }
 
     .invite:hover{
-        color: #095644;
+        color: #000;
     }
         /*for tag*/
     .badge {

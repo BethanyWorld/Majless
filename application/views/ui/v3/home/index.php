@@ -112,7 +112,7 @@
                             </div>
                             <div class="col-md-12 col-xs-12 text-center padding-0">
                                 <button type="submit"
-                                        style="text-align: center;line-height: 40px;font-size: 16px; background-color: #fdb72e;color: #000;padding: 0 20px;">
+                                        style="font-weight: 900;text-align: center;line-height: 40px;font-size: 16px; background-color: #fdb72e;color: #000;padding: 0 20px;">
                                     ثبت نام
                                 </button>
                             </div>
@@ -198,9 +198,9 @@
                                         <a href="<?php echo base_url('SignUp?type=sponsor'); ?>">
                                             <div class="tb-icon-box-text">
                                                 <div class="fw-page-builder-content">
-                                                    <h3><span style="color: #000;">دغدغه مند شوید</span></h3>
+                                                    <h3><span style="color: #000;font-weight: bold">دغدغه مند شوید</span></h3>
                                                     <p>
-                                                        <span style="color: #095644;">به کمپین ما بپیوندید</span>
+                                                        <span style="color: #000;">به کمپین ما بپیوندید</span>
                                                     </p>
                                                 </div>
                                             </div>
@@ -227,8 +227,8 @@
                                         <div class="tb-icon-box-text">
                                             <a href="<?php echo base_url('Payment'); ?>">
                                                 <div class="fw-page-builder-content">
-                                                    <h3><span style="color: #000;">حامی ما باشید</span></h3>
-                                                    <p><span style="color: #095644;">مشارکت کنید</span>
+                                                    <h3><span style="color: #000;font-weight: bold">حامی ما باشید</span></h3>
+                                                    <p><span style="color: #000;">مشارکت کنید</span>
                                                 </div>
                                             </a>
                                         </div>
@@ -253,9 +253,10 @@
                                         <div class="tb-icon-box-text">
                                             <a href="<?php echo base_url('State'); ?>">
                                                 <div class="fw-page-builder-content">
-                                                    <h3><span style="color: #000;">فهرست نامزد ها را ببینید</span>
+                                                    <h3><span style="color: #000;font-weight: bold">فهرست نامزد ها را ببینید</span>
                                                     </h3>
-                                                    <p><span style="color: #095644;">نامزد های انتخاباتی هر استان</span>
+                                                    <p><span style="
+                                                    color: #000;">نامزد های انتخاباتی هر استان</span>
                                                     </p>
                                                 </div>
                                             </a>
@@ -340,14 +341,7 @@
                                             <?php echo $post['post_title']; ?>
                                         </a>
                                         <div class="tb-post-carousel-thumbnail">
-                                            <div class="post-categories data-color-hover"
-                                                 style="background: #fdb72e; color: #000;"
-                                                 data-a-color="#000">
-                                                <a href="<?php echo $post['guid']; ?>"
-                                                   rel="category tag" tabindex="-1"
-                                                   style="color: rgb(255, 255, 255);">اخبار و رویداد
-                                                </a>
-                                            </div>
+
                                             <div class="post-title" style="color: #ffffff;">
                                                 <h1 style="color: #ffffff;text-align: right;font-size: 16px;height: 45px;"><?php echo $post['post_title']; ?></h1>
                                                 <div class="post-date text-right">
@@ -524,7 +518,7 @@
                             <div style=" background-color:#fdb72e; color: #ffffff; padding: 0px 15px 0px 15px;"
                                  class=" absolutecenter  padding15-xs">
                                 <div class="link-type-no tb-icon-box  textaligncenter tbWow fadeIn ">
-                                    <div class="tb-icon-box-description">
+                                    <div class="tb-icon-box-description blackColor">
                                         <h4>
                                             ما چطور موفق خواهیم بود
                                         </h4>
@@ -562,7 +556,7 @@
                             <div style=" background-color:#fdb72e; color: #ffffff; padding: 0px 15px 0px 15px;"
                                  class=" absolutecenter  padding15-xs">
                                 <div class="link-type-no tb-icon-box  textaligncenter  tbWow fadeIn ">
-                                    <div class="tb-icon-box-description">
+                                    <div class="tb-icon-box-description blackColor">
                                         <h4>
                                             راهبردی جامع برای
                                         </h4>

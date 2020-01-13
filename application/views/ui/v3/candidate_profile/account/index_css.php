@@ -12,6 +12,7 @@
     #changePassword{
         background-color: #fdb72e;
         padding:10px 15px;
+        font-weight: 900;
     }
     #changePassword:focus{
         outline: none;

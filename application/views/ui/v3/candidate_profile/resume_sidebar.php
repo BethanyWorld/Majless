@@ -338,11 +338,71 @@
         padding: 0 25px;
         border-radius: 0;
     }
+    /*radio buttons*/
+    .Radio-Buttons .radio input[type="radio"]:checked + .radio-label:before {
+        background-color: #fdb72e;
+        box-shadow: inset 0 0 0 4px #f4f4f4;
+    }
+    .Radio-Display {
+        display: inline-block;
+    }
+    .Radio-Buttons .radio input[type="radio"]:focus + .radio-label:before {
+        outline: none;
+        border-color: #fdb72e;
+    }
+
+    .Radio-Buttons {
+        display: none;
+    }
+
+    .Radio-Buttons .radio {
+        margin: 0.5rem;
+    }
+
+    .Radio-Buttons .radio input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .Radio-Buttons .radio input[type="radio"] + .radio-label:before {
+        content: '';
+        background: #f4f4f4;
+        border-radius: 100%;
+        border: 1px solid #b4b4b4;
+        display: inline-block;
+        width: 1.4em;
+        height: 1.4em;
+        position: relative;
+        top: -0.2em;
+        margin-right: 1em;
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        transition: all 250ms ease;
+    }
+
+
+    .Radio-Buttons .radio input[type="radio"]:disabled + .radio-label:before {
+        box-shadow: inset 0 0 0 4px #f4f4f4;
+        border-color: #b4b4b4;
+        background: #b4b4b4;
+    }
+
+    .Radio-Buttons .radio input[type="radio"] + .radio-label:empty:before {
+        margin-right: 0;
+    }
+    /*radio buttons*/
+
+
+
+
+
 
     .CommonButtons:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2);
-        background-color: #095644 ;
-        opacity: 0.8;
+        background-color: #095644;
+        color: #fff;
+        opacity: 0.9;
     }
 
     .CommonButtons:focus {
@@ -450,7 +510,7 @@
         line-height: 10px;
     }
     .MobileStep ul li.first a {
-        background: #022D6D;
+        background: #fdb72e ;
         color: #ffffff;
         transition: all 0.5s ease;
     }

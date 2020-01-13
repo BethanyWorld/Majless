@@ -42,7 +42,7 @@
                             <label id="labal1" style=" color:#8c8c8c; padding-top: 10px ; "></label>
                         </div>
                         <div class="col-xs-12">
-                            <button style="margin-top: 25px ; color: #000; cursor: pointer; padding: 0px 25px;background-color: #fdb72e ; border: 1px solid #fdb72e; float: left;line-height: 45px "
+                            <button style="font-weight: 900;margin-top: 25px ; color: #000; cursor: pointer; padding: 0px 25px;background-color: #fdb72e ; border: 1px solid #fdb72e; float: left;line-height: 45px "
                                     id="btn-pay"> پرداخت
                             </button>
                         </div>

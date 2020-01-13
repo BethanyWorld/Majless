@@ -33,11 +33,11 @@
 }
 
 .social-svg-style svg {
-    fill: #618b9c
+    fill: #fff
 }
 
 .social-svg-style svg:hover {
-    fill: #fff
+    fill: #fdb72e
 }
 
 .footer-icon-svg {
@@ -1882,7 +1882,8 @@ ol.comment-list ul {
     text-align: center;
     text-transform: uppercase;
     padding: 15px 0;
-    border-top: 1px solid #E9E9E9
+    border-top: 1px solid #E9E9E9;
+    font-weight: 900;
 }
 
 .tb-posts-carousel .slick-slide:hover .read-more {
