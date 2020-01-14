@@ -70,20 +70,9 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>images/fav152.png" type="image/png" sizes="152x152">
     <link rel="apple-touch-icon-precomposed" href="<?= $_DIR; ?>images/fav120.png" type="image/png" sizes="120x120">
     <link rel="icon" href="<?= $_DIR; ?>images/fav96.png" sizes="96x96" type="image/png">
-    <link rel='stylesheet' id='style-css' href='<?= $_DIR; ?>css/style.azmaa.min.css?ver=1.1'/>
-    <link rel='stylesheet' id='bootstrap-css' href='<?= $_DIR; ?>css/bootstrap.min.css?ver=3.3.7'/>
-    <link rel='stylesheet' id='fontawesome-css' href='<?= $_DIR; ?>css/font-awesome-css.min.css?ver=1.0'/>
-    <link rel='stylesheet' id='bootstrap-theme-css' href='<?= $_DIR; ?>css/bootstrap-theme.min.css?ver=3.3.7'/>
-    <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>css/jquery.mmenu.all.azmaa.min.css?ver=1.1'/>
-    <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/animate.min.css?ver=1.0'/>
-    <link rel='stylesheet' id='light-box' href='<?= $_DIR; ?>css/lightbox.min.css?ver=1.1'/>
-    <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>css/font-style.azmaa.min.css?ver=1.1'/>
-    <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>css/options.azmaa.min.css?ver=1.1'/>
-    <link rel='stylesheet' id='campaign_style-css' href='<?= $_DIR; ?>css/theme.azmaa.min.css?ver=1.1'/>
-    <link rel='stylesheet' id='slick-css' href='<?= $_DIR; ?>css/slick.css?ver=1.1' type='text/css' media='all'/>
-    <link rel="stylesheet" href="<?= $_DIR; ?>css/iziToast.min.css"/>
-    <script src="<?= $_DIR; ?>js/iziToast.min.js"></script>
+    <link rel='stylesheet' id='style-css' href='<?= $_DIR; ?>css/compiled.min.css?ver=1.1'/>
     <script src='<?= $_DIR; ?>js/jquery-2.2.4.min.js?ver=2.2.4'></script>
+    <script src="<?= $_DIR; ?>js/iziToast.min.js"></script>
     <script src='<?= $_DIR; ?>js/jquery.mmenu.min.all.js?ver=1.0'></script>
     <script src='<?= $_DIR; ?>js/jquery.parallax.min.js?ver=1.0'></script>
     <script src="<?php echo $_DIR; ?>js/jquery.mask.min.js"></script>
@@ -94,11 +83,9 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101180356-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
-
         gtag('js', new Date());
         gtag('config', 'UA-101180356-3');
     </script>

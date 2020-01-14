@@ -1,5 +1,5 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
-<div class="page-caption">نامزد انتخاباتی شهر خود را به جنبش از ما دعوت کنید</div>
+<h1 class="page-caption">نامزد انتخاباتی شهر خود را به جنبش از ما دعوت کنید</h1>
 <div class="container container-wrapper">
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div class="col-xs-12 col-md-8 col-md-offset-2 padding-right-0">

@@ -1,7 +1,7 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
-<div class="page-caption">
+<h1 class="page-caption">
     برای دعوت از نامزدها به چالش شایستگی و شفافیت، استان مورد نظر خود را انتخاب کنید
-</div>
+</h1>
 <div class="container container-wrapper">
 
     <div id="IranMap" class="clear">

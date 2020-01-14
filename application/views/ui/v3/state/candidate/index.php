@@ -1,7 +1,7 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
-<div class="page-caption">
+<h1 class="page-caption">
     کاندیدای نمایندگی حوزه انتخابیه خود را به چالش شایستگی و شفافیت جنبش از ما دعوت کنید
-</div>
+</h1>
 <a class="invite visible-sm visible-xs" href="<?php echo base_url('State/invite'); ?>">
     نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
 </a>

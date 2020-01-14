@@ -10,10 +10,11 @@ class State extends CI_Controller{
         $this->load->model('admin/ModelCandidate');
         $this->load->model('ui/ModelProfile');
     }
-    public function index()
-    {
+    public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' استان ها ';
+        $data['title'] = 'ورود به سامانه جنبش از ما';
+        $data['description'] = 'برای دعوت از نامزدها به چالش شایستگی و شفافیت و مشاهده رزومه انها';
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/state/home/index', $data);
         $this->load->view('ui/v3/state/home/index_css');
@@ -30,6 +31,7 @@ class State extends CI_Controller{
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' ' . "فهرست نامزد های انتخاباتی استان " . $stateName;
 
+        $data['description'] = 'برای دعوت از نامزدها به چالش شایستگی و شفافیت و مشاهده رزومه انها';
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
         $data['CSRF'] = $CSRF;
@@ -45,6 +47,7 @@ class State extends CI_Controller{
     public function invite(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' ' . "دعوت نامزد انتخاباتی ";
+        $data['description'] = 'برای دعوت از نامزدها به چالش شایستگی و شفافیت و مشاهده رزومه انها';
         $data['states'] = $this->ModelCountry->getStateList();
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/state/invite/index', $data);
@@ -71,11 +74,8 @@ class State extends CI_Controller{
         $this->load->view('ui/v3/state/page/index_js');
         $this->load->view('ui/v3/static/footer', $data);
     }
-    public function post($stateId, $postId, $postTitle)
-    {
-
+    public function post($stateId, $postId, $postTitle){
         $provinceAgent = $this->ModelAgent->getAgentByAgentStateId($stateId);
-
         $data['data'] = $this->ModelQuery->getStatePostByPostId($postId)[0];
         $data['statePages'] = $this->ModelQuery->getStatePagesByAgentId($provinceAgent['AgentId']);
         $data['statePosts'] = $this->ModelQuery->getStatePostsByAgentId($provinceAgent['AgentId']);
@@ -136,6 +136,7 @@ class State extends CI_Controller{
         $data['states'] = $this->ModelCountry->getStateList();
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' ' . "فهرست نامزد های انتخاباتی استان " . $stateName;
+        $data['description'] = 'برای دعوت از نامزدها به چالش شایستگی و شفافیت و مشاهده رزومه انها';
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/state/candidate_detail/index', $data);
         $this->load->view('ui/v3/state/candidate_detail/index_css');

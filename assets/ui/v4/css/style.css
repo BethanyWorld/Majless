@@ -791,7 +791,8 @@ button.btn-submit:focus{
     font-size: 20px;
     background-color: #0f342f;
     color: #fff;
-    direction: rtl
+    direction: rtl;
+    margin: 0;
 }
 
 .container-wrapper {
