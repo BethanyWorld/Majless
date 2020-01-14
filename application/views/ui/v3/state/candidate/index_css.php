@@ -1,5 +1,14 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
+    .fixposition-scroll{
+        position: fixed;
+        width: 20%;
+        bottom: 0px;
+        z-index: 5;
+    }
+    .bottom-fix{
+        bottom: 55%;
+    }
     /*.candidate-detail-parent-div{*/
     /*        height: 1420px;*/
     /*        overflow: scroll;*/
@@ -375,6 +384,14 @@
     }
 
     @media (max-width: 992px) {
+        .fixposition-scroll {
+            position: relative;
+            width: auto;
+            bottom: 0px;
+        }
+        .bottom-fix{
+            bottom: 0%;
+        }
         .sidebar {
             padding: 0px;
             margin: auto;
@@ -1039,8 +1056,8 @@
 
     .sidenav .closebtn {
         position: absolute;
-        bottom: 15px;
-        left: 15px;
+        bottom: 0px;
+        left: 0px;
         margin-right: 5px;
         background-color: #fdb72e;
         color: #FFF;
@@ -1078,6 +1095,7 @@
         .sidenav .panel-default {
             margin: 0px;
             padding-bottom: 10px;
+            position: relative;
         }
     }
 

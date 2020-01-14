@@ -16,7 +16,6 @@
     </div>
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div id="mySidenav" class="sidenav hidden-md hidden-lg">
-            <a href="javascript:void(0)" class="closebtn">بستن</a>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
@@ -47,6 +46,8 @@
                     <div class="text-center" style="padding-top: 10px">
                         <button class="btn hidden-lg hidden-md filter-button">فیلتر</button>
                     </div>
+
+                    <a href="javascript:void(0)" class="closebtn">بستن</a>
                 </div>
             </div>
         </div>
@@ -169,7 +170,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="panel panel-default hidden-xs hidden-sm">
+        <div class="panel panel-default hidden-xs hidden-sm fix-position bottom-fix">
             <div class="panel-heading">
                 <h3 class="panel-title">
                     جستجوی نامزد انتخاباتی
@@ -327,7 +328,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="panel panel-default hidden-xs hidden-sm">
+        <div class="panel panel-default hidden-xs hidden-sm fix-position">
             <div class="panel-heading">
                 <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
             </div>
@@ -450,9 +451,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div style="display: inline-block" class="loading-text hidden">
     <p style="text-align: right;font-size: 14px;font-weight: 900;">مناسب برای پست و استوری اینستاگرام</p>
 </div>

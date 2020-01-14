@@ -211,14 +211,19 @@
         else {
             $(".candidate-detail-parent-div").addClass('over-flow-scroll')
         }
-        // var btn = $('.open-sidebar');
-        // $(window).scroll(function() {
-        //     if ($(window).scrollTop() > 200) {
-        //         btn.addClass('new-style-button-xs');
-        //     } else {
-        //         btn.removeClass('new-style-button-xs');
-        //     }
-        // });
+
+        var fixposition = $('.fix-position');
+        var bottomFix = $('.bottom-fix');
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 1000) {
+                fixposition.addClass('fixposition-scroll');
+                bottomFix.addClass('bottom-fix');
+            } else {
+                fixposition.removeClass('fixposition-scroll');
+                bottomFix.removeClass('bottom-fix');
+
+            }
+        });
 
         // for nice scroll
         // $(".candidate-detail-parent-div").niceScroll({
