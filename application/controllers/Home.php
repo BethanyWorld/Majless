@@ -60,8 +60,7 @@ class Home extends CI_Controller{
                 );
                 echo json_encode($result);
                 die();
-            }
-            else {
+            } else {
                 chmod($uploadPath . $fileName, 0644);
                 $result = array(
                     'type' => "green",
@@ -72,8 +71,7 @@ class Home extends CI_Controller{
                 echo json_encode($result);
                 die();
             }
-        }
-        else {
+        } else {
             $result = array(
                 'type' => "green",
                 'content' => "بارگذاری با موفقیت انجام شد",
@@ -84,7 +82,8 @@ class Home extends CI_Controller{
             die();
         }
     }
-    public function index(){
+    public function index()
+    {
         $organizationDB = $this->load->database('blogDB', TRUE);
         $uploadDir = base_url('blog/wp-content/uploads');
         $sql = " SELECT
@@ -113,14 +112,47 @@ class Home extends CI_Controller{
         p1.post_date DESC LIMIT 6";
         $posts = $organizationDB->query($sql)->result_array();
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle').' صفحه اصلی';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' صفحه اصلی';
         $data['sidebar_map'] = $this->load->view('ui/v3/about_us/sidebar_map', NULL, TRUE);
         $data['sidebar_pages'] = $this->load->view('ui/v3/about_us/sidebar_pages', NULL, TRUE);
-        $data['posts']  = $posts;
+        $data['posts'] = $posts;
         $this->load->view('ui/v3/static/header', $data);
-        $this->load->view('ui/v3/home/index' , $data);
+        $this->load->view('ui/v3/home/index', $data);
         $this->load->view('ui/v3/home/index_css');
-        $this->load->view('ui/v3/home/index_js' , $data);
+        $this->load->view('ui/v3/home/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
+    }
+    public function sendSMS(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $this->load->library('SoapSMS');
+        ini_set("soap.wsdl_cache_enabled", "0");
+        $url = 'http://www.afe.ir/WebService/V5/BoxService.asmx?wsdl';
+        $method = 'SendMessage';
+        $param = array(
+            'Username' => "sjazb.ir",
+            'Password' => "hfj@12345",
+            'Number' => "30008914",
+            'Mobile' => array($inputs['senderNumber']),
+            'Message' => $inputs['messageBody']." \n جنبش ازما",
+            'Type' => "1"
+        );
+        $request = new SoapSMS();
+        $message = $request->connect($url,$method,$param);
+        if(is_numeric($message)){
+            $arr = array(
+                'type' => "green",
+                'success' => true,
+                'content' => $message
+            );
+            echo json_encode($arr);
+        }
+        else{
+            $arr = array(
+                'type' => "red",
+                'success' => false,
+                'content' => 'ارسال پیام '
+            );
+            echo json_encode($arr);
+        }
     }
 }

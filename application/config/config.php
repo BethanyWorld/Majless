@@ -85,7 +85,8 @@ $config['EnumExamType'] = array(
     'Evaluation' => 'کانون ارزیابی'
 );
 $config['api'] = array(
-    'SMS' => 'http://new.moarefin.ir:8080/api/Messages',
+    'SMS' => $config['base_url'].'Home/sendSMS',
+    'SMS-OLD' => 'http://new.moarefin.ir:8080/api/Messages',
     'PersonalInformationWeb' => 'http://new.moarefin.ir:8080/api/PersonalInformationWeb?',
     'MilitaryWeb' => 'http://new.moarefin.ir:8080/api/MilitaryWeb?',
     'PoliticalRecordWeb' => 'http://new.moarefin.ir:8080/api/PoliticalRecordWeb?',

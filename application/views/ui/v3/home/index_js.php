@@ -1,4 +1,11 @@
 <script type="text/javascript">
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    setTimeout(function(){
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    } , 100);
+
     $(document).ready(function () {
         $continueSlide = true;
         var timer = "";
