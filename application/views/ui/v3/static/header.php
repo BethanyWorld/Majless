@@ -18,13 +18,52 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <meta charset="UTF-8">
     <title><?php echo urldecode($pageTitle); ?></title>
     <base href="<?php echo base_url(); ?>"/>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="شفاف سازی اطلاعات نمایندگان مجلس"/>
+    <meta name="title" content="جنبش از ما ارزیابی دقیق از وضعیت تناسب داوطلبان نمایندگی مجلس با این جایگاه مهم">
+    <meta name="keywords" content="مجلس,انتخابات,انتخابات مجلس,مجلس یازدهم,جنبش از ما,از ما,جنبش از ما">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <!-- Search Engine -->
+    <?php if (isset($description) && !empty($description)) { ?>
+        <meta name="description" content="<?php echo $description; ?>">
+    <?php } else{ ?>
+        <meta name="description" content="معرفی شایسته ترین افراد به مردم به عنوان نامزد انتخابات توسط فرآیند آزمون های سنجش شایستگی و فرآیند عای غربالگری برای انتخاب هر چه صحیح و دقیق تر">
+    <?php }?>
+    <meta name="image" content="http://azmaa.net/assets/ui/v4/images/main-logo.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="جنبش از ما ارزیابی دقیق از وضعیت تناسب داوطلبان نمایندگی مجلس با این جایگاه مهم">
+    <?php if (isset($description) && !empty($description)) { ?>
+        <meta itemprop="description" content="<?php echo $description; ?>">
+    <?php } else{ ?>
+        <meta itemprop="description" content="معرفی شایسته ترین افراد به مردم به عنوان نامزد انتخابات توسط فرآیند آزمون های سنجش شایستگی و فرآیند عای غربالگری برای انتخاب هر چه صحیح و دقیق تر">
+    <?php }?>
+     <meta itemprop="image" content="http://azmaa.net/assets/ui/v4/images/main-logo.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="جنبش از ما ارزیابی دقیق از وضعیت تناسب داوطلبان نمایندگی مجلس با این جایگاه مهم">
+    <?php if (isset($description) && !empty($description)) { ?>
+        <meta name="twitter:description" content="<?php echo $description; ?>">
+    <?php } else{ ?>
+        <meta name="twitter:description" content="معرفی شایسته ترین افراد به مردم به عنوان نامزد انتخابات توسط فرآیند آزمون های سنجش شایستگی و فرآیند عای غربالگری برای انتخاب هر چه صحیح و دقیق تر">
+    <?php }?>
+    <meta name="twitter:player" content="https://as7.cdn.asset.aparat.com/aparat-video/13bb9582b55a568db78a5558382fa47c18039686-480p__68541.mp4">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="جنبش از ما ارزیابی دقیق از وضعیت تناسب داوطلبان نمایندگی مجلس با این جایگاه مهم">
+    <?php if (isset($description) && !empty($description)) { ?>
+        <meta name="og:description" content="<?php echo $description; ?>">
+    <?php } else{ ?>
+        <meta name="og:description" content="معرفی شایسته ترین افراد به مردم به عنوان نامزد انتخابات توسط فرآیند آزمون های سنجش شایستگی و فرآیند عای غربالگری برای انتخاب هر چه صحیح و دقیق تر">
+    <?php }?>
+    <meta name="og:image" content="http://azmaa.net/assets/ui/v4/images/main-logo.png">
+    <meta name="og:url" content="http://azmaa.net">
+    <meta name="og:site_name" content="جنبش از ما">
+    <meta name="og:locale" content="fa_IR">
+    <meta name="og:video" content="https://as7.cdn.asset.aparat.com/aparat-video/13bb9582b55a568db78a5558382fa47c18039686-480p__68541.mp4">
+    <meta name="og:type" content="website">
+
     <link rel="shortcut icon" href="<?= $_DIR; ?>images/fav16.png">
     <link rel="apple-touch-icon" href="<?= $_DIR; ?>images/fav16.png">
     <link rel="icon" href="<?= $_DIR; ?>images/fav32.png" sizes="32x32" type="image/png">
@@ -36,8 +75,8 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <link rel='stylesheet' id='fontawesome-css' href='<?= $_DIR; ?>css/font-awesome-css.min.css?ver=1.0'/>
     <link rel='stylesheet' id='bootstrap-theme-css' href='<?= $_DIR; ?>css/bootstrap-theme.min.css?ver=3.3.7'/>
     <link rel='stylesheet' id='mmenu-css' href='<?= $_DIR; ?>css/jquery.mmenu.all.azmaa.min.css?ver=1.1'/>
-    <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/animate.min.css?ver=1.0' />
-    <link rel='stylesheet' id='light-box' href='<?= $_DIR; ?>css/lightbox.min.css?ver=1.1' />
+    <link rel='stylesheet' id='animate-css-css' href='<?= $_DIR; ?>css/animate.min.css?ver=1.0'/>
+    <link rel='stylesheet' id='light-box' href='<?= $_DIR; ?>css/lightbox.min.css?ver=1.1'/>
     <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>css/font-style.azmaa.min.css?ver=1.1'/>
     <link rel='stylesheet' id='campaign_options-css' href='<?= $_DIR; ?>css/options.azmaa.min.css?ver=1.1'/>
     <link rel='stylesheet' id='campaign_style-css' href='<?= $_DIR; ?>css/theme.azmaa.min.css?ver=1.1'/>
@@ -55,9 +94,11 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101180356-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
         gtag('config', 'UA-101180356-3');
     </script>
@@ -152,13 +193,13 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
         </div>
         <div id="site-branding" class="header-main">
             <div class="container">
-                <h1 class="site-title" id="main-logo">
+                <p class="site-title" id="main-logo">
                     <a id="main-logo-link" href="<?php echo base_url(); ?>" rel="home">
                         <img src="<?= $_DIR; ?>images/main-logo.png"
                              style="position: relative;width: 95px;top: 10px;"
                              alt="جنبش از ما">
                     </a>
-                </h1>
+                </p>
                 <nav id="primary-navigation" class="site-navigation primary-navigation rtl">
                     <div class="menu-main-menu-container">
                         <ul id="menu-main-menu" class="nav-menu">
@@ -169,8 +210,10 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                                 <ul>
                                     <li><a href="<?php echo base_url('blog/?page_id=40'); ?>">معرفی جنبش از ما</a></li>
                                     <li><a href="<?php echo base_url('blog/?page_id=42'); ?>">بیانیه ارزش</a></li>
-                                    <li><a href="<?php echo base_url('blog/?page_id=46'); ?>">فرآیند سنجش نامزدها</a></li>
-                                    <li><a href="<?php echo base_url('blog/?page_id=44'); ?>">آشنایی با آزمون ها</a></li>
+                                    <li><a href="<?php echo base_url('blog/?page_id=46'); ?>">فرآیند سنجش نامزدها</a>
+                                    </li>
+                                    <li><a href="<?php echo base_url('blog/?page_id=44'); ?>">آشنایی با آزمون ها</a>
+                                    </li>
                                     <li><a href="<?php echo base_url('blog/?p=90'); ?>">تعهدنامه داوطلبان</a></li>
                                     <li><a href="<?php echo base_url('blog/?page_id=49'); ?>">سوالات متداول</a></li>
                                 </ul>

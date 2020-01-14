@@ -1,31 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Login extends CI_Controller
-{
+class Login extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
         $this->load->model('ui/ModelQuery');
         $this->load->model('ui/ModelCountry');
     }
-
-    public function index()
-    {
+    public function index(){
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'ورود';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'ورود به سامانه جنبش از ما';
         $data['states'] = $this->ModelCountry->getStateList();
         $data['CSRF'] = $CSRF;
-        $data['title'] = 'ورود';
+        $data['title'] = 'ورود به سامانه جنبش از ما';
+        $data['description'] = 'ورود به سامانه جنبش از ما';
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/login/index', $data);
-        $this->load->view('ui/v3/login/index_css', $data);
+        $this->load->view('ui/v3/login/index_css');
         $this->load->view('ui/v3/login/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
-
     public function doLogin()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -65,6 +61,4 @@ class Login extends CI_Controller
             echo json_encode($arr);
         }
     }
-
-
 }

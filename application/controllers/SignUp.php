@@ -19,15 +19,15 @@ class SignUp extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-
         $data['defaultValue'] = $inputs;
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'ثبت نام';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'ثبت نام در سامانه جنبش از ما';
         $data['states'] = $this->ModelCountry->getStateList();
         $data['CSRF'] = $CSRF;
-        $data['title'] = 'ثبت نام';
+        $data['title'] = 'ثبت نام در سامانه جنبش از ما';
+        $data['description'] = 'ثبت نام در سامانه جنبش از ما';
         $data['signUpType'] = $this->input->get('type');
         $data['api'] = $this->config->item('api');
         $this->load->view('ui/v3/static/header', $data);

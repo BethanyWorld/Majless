@@ -11,9 +11,10 @@ class ResetPassword extends CI_Controller{
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'بازیابی رمز عبور';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'بازیابی رمز عبور جنبش ازما';
         $data['CSRF'] = $CSRF;
         $data['title'] = 'بازیابی رمز عبور';
+        $data['description'] = 'بازیابی رمز عبور جنبش ازما';
         $data['api'] = $this->config->item('api');
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/reset_password/index', $data);
