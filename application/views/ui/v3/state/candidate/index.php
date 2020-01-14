@@ -170,7 +170,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="panel panel-default hidden-xs hidden-sm fix-position bottom-fix">
+        <div class="panel panel-default hidden-xs hidden-sm fix-position">
             <div class="panel-heading">
                 <h3 class="panel-title">
                     جستجوی نامزد انتخاباتی
@@ -328,7 +328,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="panel panel-default hidden-xs hidden-sm fix-position">
+        <div class="panel panel-default hidden-xs hidden-sm fix-position bottom-fix">
             <div class="panel-heading">
                 <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
             </div>

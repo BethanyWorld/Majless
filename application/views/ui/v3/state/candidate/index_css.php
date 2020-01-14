@@ -2,12 +2,11 @@
 <style>
     .fixposition-scroll{
         position: fixed;
-        width: 20%;
-        bottom: 0px;
+        top: 0px;
         z-index: 5;
     }
     .bottom-fix{
-        bottom: 55%;
+        top: 22%;
     }
     /*.candidate-detail-parent-div{*/
     /*        height: 1420px;*/
