@@ -1,7 +1,7 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
-<div class="page-caption">
+<h1 class="page-caption">
     <?php echo $title; ?>
-</div>
+</h1>
 <div class="container container-wrapper">
     <div class="col-xs-12">
 
