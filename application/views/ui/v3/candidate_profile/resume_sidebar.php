@@ -525,9 +525,9 @@
                     <a href="<?php echo base_url('Profile/academicBackground'); ?>">2</a>
                 </li>
                 <?php if($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male'){ ?>
-                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "first"; ?>">
-                    <a href="<?php echo base_url('Profile/militaryStatus'); ?>">3</a>
-                </li>
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/militaryStatus'); ?>">3</a>
+                    </li>
                 <?php } ?>
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/jobHistory'); ?>">4</a>
@@ -548,9 +548,9 @@
                     <a href="<?php echo base_url('Profile/veteran'); ?>">9</a>
                 </li>
                 <?php if($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted'){ ?>
-                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
-                    <a href="<?php echo base_url('Profile/finance'); ?>">10</a>
-                </li>
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/finance'); ?>">10</a>
+                    </li>
                 <?php } ?>
                 <li class="text-center">
                     <a href="<?php echo base_url('Profile'); ?>">
@@ -590,18 +590,18 @@
                     </a>
                 </li>
                 <?php if($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male'){ ?>
-                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "active"; ?>">
-                    <a href="<?php echo base_url('Profile/militaryStatus'); ?>">
-                    <i class="zmdi RightpanelIcon">
-                        <span class="fa fa-flag"></span>
-                    </i>
-                    <div class="RightPanelContent">
-                        <div class="RightPanleTitle"> نظام وظیفه</div>
-                        <div class="RightPanelDescription">
-                            پایان خدمت, معافیت,مشمول
-                        </div>
-                    </div>
-                </li>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "active"; ?>">
+                        <a href="<?php echo base_url('Profile/militaryStatus'); ?>">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-flag"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle"> نظام وظیفه</div>
+                                <div class="RightPanelDescription">
+                                    پایان خدمت, معافیت,مشمول
+                                </div>
+                            </div>
+                    </li>
                 <?php } ?>
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/jobHistory'); ?>">
@@ -618,28 +618,28 @@
                 </li>
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "socialCulturalBackground") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/socialCulturalBackground'); ?>">
-                            <i class="zmdi RightpanelIcon">
-                                <span class="fa fa-bookmark"></span>
-                            </i>
-                            <div class="RightPanelContent">
-                                <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
-                                <div class="RightPanelDescription">
-                                    بسیج , انجمن , سمن
-                                </div>
+                        <i class="zmdi RightpanelIcon">
+                            <span class="fa fa-bookmark"></span>
+                        </i>
+                        <div class="RightPanelContent">
+                            <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
+                            <div class="RightPanelDescription">
+                                بسیج , انجمن , سمن
                             </div>
-                        </a>
+                        </div>
+                    </a>
                 </li>
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "politicBackground") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/politicBackground'); ?>">
-                    <i class="zmdi RightpanelIcon">
-                        <span class="fa fa-handshake-o"></span>
-                    </i>
-                    <div class="RightPanelContent">
-                        <div class="RightPanleTitle"> سوابق سیاسی</div>
-                        <div class="RightPanelDescription">
-                            حزب , ستاد انتخابات , رسانه
+                        <i class="zmdi RightpanelIcon">
+                            <span class="fa fa-handshake-o"></span>
+                        </i>
+                        <div class="RightPanelContent">
+                            <div class="RightPanleTitle"> سوابق سیاسی</div>
+                            <div class="RightPanelDescription">
+                                حزب , ستاد انتخابات , رسانه
+                            </div>
                         </div>
-                    </div>
                 </li>
                 <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "scienceBackground") !== false) echo "active"; ?>">
                     <a href="<?php echo base_url('Profile/scienceBackground'); ?>">
@@ -688,7 +688,7 @@
                         <div class="RightPanelContent">
                             <div class="RightPanleTitle">ایثارگری</div>
                             <div class="RightPanelDescription">
-                               درج سوابق جانباری و ایثارگری
+                                درج سوابق جانباری و ایثارگری
                             </div>
                         </div>
                     </a>
