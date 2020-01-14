@@ -194,9 +194,7 @@ class State extends CI_Controller{
         $data['data'] = $this->ModelCandidate->getCandidateByStateIdAndCityId($stateId, $cityId);
         echo $this->load->view('ui/v3/state/candidate/ajax', $data, TRUE);
     }
-    public function getCandidatesByElectionId()
-    {
-
+    public function getCandidatesByElectionId(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return remove_invisible_characters($v);

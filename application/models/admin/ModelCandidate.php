@@ -386,6 +386,7 @@ class ModelCandidate extends CI_Model{
             $this->db->where_in('CandidateElectionId', $inputs['inputElectionIds']);
         }
         $this->db->where(array('CandidateStatus' => 'CandidateAccepted'));
+        $this->db->where(array('CandidateStateId' => $inputs['inputStateId']));
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();
@@ -405,7 +406,7 @@ class ModelCandidate extends CI_Model{
             $this->db->like('CandidateFullName', $inputs['inputFullName']);
         }
         $this->db->order_by('CandidateFullName', 'ASC');
-        //$this->db->where(array('CandidateStateId' => $inputs['inputStateId']));
+        $this->db->where(array('CandidateStateId' => $inputs['inputStateId']));
 
         $query = $this->db->get();
         if ($query->num_rows() > 0) {

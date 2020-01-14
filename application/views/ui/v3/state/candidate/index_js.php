@@ -137,7 +137,7 @@
             });
             /* Increase Invite Count */
             $this = $(this);
-            if($(this).attr('data-id')) {
+            if ($(this).attr('data-id')) {
                 $candidateId = $(this).data('id');
                 $sendData = {'inputRowId': $candidateId}
                 $.ajax({
@@ -152,7 +152,6 @@
             /* End Increase Invite Count*/
         });
         /* Export*/
-
 
 
         $('#IranMap .map .province path').click(function () {
@@ -204,53 +203,34 @@
             }
         }
 
-        $candidateLengh = $(".candidate-detail-parent-div").children().length;
-        if($candidateLengh <= 9){
-            $(".candidate-detail-parent-div").removeClass('over-flow-scroll')
-        }
-        else {
-            $(".candidate-detail-parent-div").addClass('over-flow-scroll')
-        }
+        $electionContainerTop = $(".lg-election-container").position().top;
 
-        var fixposition = $('.fix-position');
-        var bottomFix = $('.bottom-fix');
-        $(window).scroll(function() {
-            if ($(window).scrollTop() > 1000) {
-                fixposition.addClass('fixposition-scroll');
-                bottomFix.addClass('bottom-fix');
-            } else {
-                fixposition.removeClass('fixposition-scroll');
-                bottomFix.removeClass('bottom-fix');
-
+        $(window).scroll(function () {
+            $candidateLength = $(".candidate-detail-parent-div").children().length;
+            if ($candidateLength > 9) {
+                $top = $(window).scrollTop();
+                if ($top >= $electionContainerTop) {
+                    $(".lg-election-container").css({
+                            'position': 'absolute',
+                            'top': ($top - 200) + 'px',
+                            'width': '100%',
+                            'right': 0
+                    });
+                }
+                else {
+                    $(".lg-election-container").css({
+                            'position': 'static',
+                            'top': '0px'
+                    });
+                }
+            }
+            else {
+                $(".lg-election-container").css({
+                    'position': 'static',
+                    'top': '0px'
+                });
             }
         });
-
-        // for nice scroll
-        // $(".candidate-detail-parent-div").niceScroll({
-        //     cursorcolor:"#022d6d",
-        //     cursorwidth:"5px",
-        //     background:"rgb(249, 249, 249)",
-        //     cursorborder:"1px solid #022d6d",
-        //     cursorborderradius:0
-        // });
-        // for nice scroll
-
-
-        /*$('.candidate-detail-parent-div').on('mousewheel DOMMouseScroll', function(e) {
-            if(typeof e.originalEvent.detail == 'number' && e.originalEvent.detail !== 0) {
-                if(e.originalEvent.detail > 0) {
-                    console.log('Down');
-                } else if(e.originalEvent.detail < 0){
-                    console.log('Up');
-                }
-            } else if (typeof e.originalEvent.wheelDelta == 'number') {
-                if(e.originalEvent.wheelDelta < 0) {
-                    console.log('Down');
-                } else if(e.originalEvent.wheelDelta > 0) {
-                    console.log('Up');
-                }
-            }
-        });*/
 
 
     });

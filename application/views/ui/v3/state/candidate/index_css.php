@@ -1,13 +1,5 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
-    .fixposition-scroll{
-        position: fixed;
-        top: 0px;
-        z-index: 5;
-    }
-    .bottom-fix{
-        top: 22%;
-    }
     /*.candidate-detail-parent-div{*/
     /*        height: 1420px;*/
     /*        overflow: scroll;*/
