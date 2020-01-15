@@ -5,6 +5,11 @@
     /*        overflow: scroll;*/
     /*        overflow-x: hidden;*/
     /*    }*/
+    .CandidateAreaOverFlow{
+        height: 300px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
     #show-box img {
         height: 355px;
         display: inline-block;

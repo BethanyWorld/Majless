@@ -210,6 +210,7 @@
             if ($candidateLength > 9) {
                 $top = $(window).scrollTop();
                 if ($top >= $electionContainerTop) {
+                    $('.desktop-panel').addClass('CandidateAreaOverFlow');
                     $(".lg-election-container").css({
                             'position': 'absolute',
                             'top': ($top - 200) + 'px',
@@ -218,6 +219,7 @@
                     });
                 }
                 else {
+                    $('.desktop-panel').removeClass('CandidateAreaOverFlow');
                     $(".lg-election-container").css({
                             'position': 'static',
                             'top': '0px'
@@ -225,6 +227,7 @@
                 }
             }
             else {
+                $('.desktop-panel').removeClass('CandidateAreaOverFlow');
                 $(".lg-election-container").css({
                     'position': 'static',
                     'top': '0px'
