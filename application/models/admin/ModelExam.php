@@ -214,7 +214,6 @@ class ModelExam extends CI_Model{
         $this->db->from('exam');
         $this->db->join('exam_places', 'exam.ExamPlaceId = exam_places.ExamPlaceId');
         $this->db->where('ExamId', $id);
-        $this->db->where('ExamAgentId', $agentId);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();
