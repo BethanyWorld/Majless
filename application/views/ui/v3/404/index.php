@@ -1,14 +1,8 @@
-<?php
-$_URL = base_url();
-$_DIR = base_url('assets/ui/v2');
-?>
+<?php $_URL = base_url(); $_DIR = base_url('assets/ui/v2');  ?>
 <style>
-
-
     .section{
         padding: 4px 2px;
     }
-
     .section .error{
         font-size: 150px;
         padding-top: 150px;
@@ -25,7 +19,6 @@ $_DIR = base_url('assets/ui/v2');
                 8px 8px 1px #00593E,
                 25px 25px 8px rgba(0,0,0, 0.2);
     }
-
     .page{
         margin: 2rem 0;
         font-size: 20px;
@@ -34,45 +27,34 @@ $_DIR = base_url('assets/ui/v2');
         margin-top:60px;
         text-align: center;
     }
-
     .back-home{
         display: inline-block;
-        background-color: #fdb72e;
+        background: #fdb72e;
         border: 1px solid #222;
-        color: #222;
+        color: #0f342f;
         text-transform: uppercase;
         font-weight: 600;
-        padding: 0.75rem 1rem 0.6rem;
+        padding: 15px 15px;
         transition: all 0.2s linear;
         box-shadow: 0 3px 8px rgba(0,0,0, 0.3);
         margin-top: 60px;
-
     }
     .back-home:hover{
-        background:  #fdb72e;
-        color: #222;
-        border: 1px #41a62a solid;
+        background: #095644;
+        color: #fff;
     }
-
-
-
     .main {
         text-align: center;
         z-index: 5;
     }
-
-
-
     .bubble {
         background: linear-gradient(#095644, #095644);
-        border-radius: 50%;
         box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
         position: absolute;
     }
     .bubble:before, .bubble:after {
         content: '';
         background: linear-gradient(#fdb72e, #fdb72e);
-        border-radius: 50%;
         box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
         position: absolute;
     }
@@ -105,16 +87,13 @@ $_DIR = base_url('assets/ui/v2');
         left: 25vmin;
     }
     .section{
-        text-align: center ;
-        margin-bottom: 20px ;
-        background-color:#fdb72e;
-        border-radius:50% ;
+        text-align: center;
         width: 500px;
         height: 500px;
-        margin-right: 289px;
         box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
-
-
+        max-width: 100%;
+        margin: 0 auto;
+        z-index: 15000000;
     }
 
     @keyframes anim {
@@ -125,36 +104,20 @@ $_DIR = base_url('assets/ui/v2');
             transform: translateY(20px) scaleY(0.9);
         }
     }
-
-
-
-
-
-
 </style>
-
 <div class="section-padding-bottom alice-bg">
     <div class="container container-wrapper">
         <div class="row">
             <div class="col col-xs-12">
-                <div class=" col-xs-12 section-padding-150 ">
-                    <div class="section" style="   ">
+                <div class=" col-xs-12 section-padding-150">
+                    <div class="section">
                         <h1 class="error" >404</h1>
                         <div class="page" >صفحه مورد نظر شما یافت نشد!</div>
                         <a  class="back-home"  href="<?php echo base_url(); ?>">بازگشت به صفحه اصلی</a>
-
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-
-                        <div class="main">
-
-                        </div>
-
+                        <div class="bubble hidden-xs hidden-sm"></div>
+                        <div class="bubble hidden-xs hidden-sm"></div>
+                        <div class="main hidden-xs hidden-sm"></div>
                     </div>
-
-
-
-
                 </div>
             </div>
         </div>
