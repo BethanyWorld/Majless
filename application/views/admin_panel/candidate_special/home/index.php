@@ -38,12 +38,12 @@
                                     <th class="fit">#</th>
                                     <th>نام و نام خانوادگی</th>
                                     <th class="fit">استان</th>
-                                    <th class="fit">کد</th>
                                     <th class="fit">حوزه انتخاباتی</th>
                                     <th class="fit">اینستاگرام</th>
                                     <th class="fit">تصویر</th>
-                                    <th class="fit">تعدا دعوت</th>
-                                    <th class="fit">پوستر</th>
+                                    <th class="fit">وضعیت</th>
+                                    <th class="fit">تغییر صلاحیت</th>
+                                    <th class="fit">دریافت پوستر</th>
                                     <th class="fit">جزئیات</th>
                                     <th class="fit">حذف</th>
                                 </tr>

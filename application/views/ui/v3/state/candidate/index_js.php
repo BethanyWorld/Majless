@@ -29,15 +29,22 @@
             $('.mp-section').css('opacity', '0.5');
             $electionId = $(this).val();
             $electionIds = [];
-            $(".inputElectionId").each(function () {
+            $(".elections .inputElectionId").each(function () {
                 if ($(this).is(":checked")) {
                     $electionIds.push($(this).val());
                 }
             });
+
+            $inputAcceptanceStatus = 1;
+            if($(".inputAcceptanceStatus").is(":checked")){
+                $inputAcceptanceStatus = $(".inputAcceptanceStatus").val();
+            }
+
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
-                'inputElectionIds': $electionIds
+                'inputElectionIds': $electionIds,
+                'inputAcceptanceStatus': $inputAcceptanceStatus
             }
             $.ajax({
                 type: 'post',
@@ -56,6 +63,7 @@
                 }
             });
         });
+
         $srcImage = '';
         $candidateName = '';
         $(".blog-search-submit").click(function (e) {
@@ -94,7 +102,6 @@
             $('html').removeClass('over-flow-style');
             $("html, body").animate({scrollTop: 0}, "slow");
         });
-
 
         /* Export*/
         $(document).on('click', ".invite-button", function () {
@@ -153,7 +160,6 @@
         });
         /* Export*/
 
-
         $('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');
             var provinceId = $(this).data('province-id');
@@ -187,7 +193,6 @@
             $('html').removeClass('over-flow-style');
         });
 
-
         function findBootstrapEnvironment() {
             var envs = ["xs", "sm", "md", "lg"];
             var envValues = ["xs", "sm", "md", "lg"];
@@ -202,9 +207,7 @@
                 }
             }
         }
-
         $electionContainerTop = $(".lg-election-container").position().top;
-
         $(window).scroll(function () {
             $candidateLength = $(".candidate-detail-parent-div").children().length;
             if ($candidateLength > 9) {
@@ -234,7 +237,5 @@
                 });
             }
         });
-
-
     });
 </script>

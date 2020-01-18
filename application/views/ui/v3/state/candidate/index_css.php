@@ -5,10 +5,14 @@
     /*        overflow: scroll;*/
     /*        overflow-x: hidden;*/
     /*    }*/
+
     .CandidateAreaOverFlow{
-        height: 300px;
+        height: 65vh;
         overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-y: auto;
+        position: relative;
+        z-index: 1000000000;
+        background: #fff;
     }
     #show-box img {
         height: 355px;
@@ -478,9 +482,10 @@
         text-align: center;
         overflow: hidden;
         position: relative;
-        border-bottom: 5px solid #fdb72e ;
-        margin-bottom: 25px;
+        border-bottom: 5px solid #fdb72e;
+        margin-bottom: 20px;
         height: 100%;
+        min-height: 400px;
     }
 
     .show-box {
@@ -496,6 +501,10 @@
         position: relative;
         z-index: 2;
     }
+    .mp-brief .pic.deactive {
+        filter: grayscale(200%);
+    }
+
 
     .invite-button {
         padding: 5px 15px;

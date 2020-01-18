@@ -97,11 +97,9 @@
                 <?php } ?>
             </div>
             <div class="row candidate-container candidate-detail-parent-div">
-
                 <?php if (empty($dataSpecial)) { ?>
                     <div class="alert alert-warning">
                         موردی یافت نشد
-
                         <a href="<?php echo base_url('State/invite'); ?>">
                             نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
                         </a>
@@ -112,39 +110,46 @@
                     if ($candidate['CandidateProfileImage'] !== NULL) { ?>
                         <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
                             <div class="mp-brief">
-                                <div class="pic">
-                                    <a download
-                                       href="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>">
+                                <?php if ($candidate['CandidateHasAccepted']) { ?>
+                                    <div class="pic">
                                         <img data-src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
                                              class="lazy candidateImage"/>
-                                    </a>
-                                </div>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="pic deactive">
+                                        <img data-src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                             class="lazy candidateImage"/>
+                                    </div>
+                                <?php } ?>
                                 <!-- for badge-->
-
-<!--                                <div class="badge hidden">-->
-<!--                                    <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
-<!--                                        <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
-<!--                                        <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
-<!--                                </div>-->
-
+                                <!--   <div class="badge hidden">-->
+                                <!--         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+                                <!--         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+                                <!--         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+                                <!--   </div>-->
                                 <!-- for badge-->
-
-                                <div class="">
+                                <div class="row">
                                     <h3 class="candidateName">
                                         <?php echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName']; ?>
                                         <div class="election">
                                             <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
                                         </div>
                                     </h3>
-                                    <button
-                                            data-id="<?php echo $candidate['RowId'] ?>"
-                                            data-title="<?php echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName']; ?>"
-                                            data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
-                                            data-area="<?php echo $candidate['ElectionName']; ?>"
-                                            class="btn invite-button" type="button"
-                                            data-toggle="modal" data-target="#myModal">
-                                        دعوت به جنبش از ما
-                                    </button>
+                                    <?php if ($candidate['CandidateHasAccepted']) { ?>
+                                        <button
+                                                data-id="<?php echo $candidate['RowId'] ?>"
+                                                data-title="<?php echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName']; ?>"
+                                                data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                                data-area="<?php echo $candidate['ElectionName']; ?>"
+                                                class="btn invite-button" type="button"
+                                                data-toggle="modal" data-target="#myModal">
+                                            دعوت به جنبش از ما
+                                        </button>
+                                    <?php } else { ?>
+                                        <button class="btn btn-default" type="button" disabled>
+                                            دعوت به جنبش از ما
+                                        </button>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -351,6 +356,22 @@
                             </label>
                         </li>
                     <?php } ?>
+                </ul>
+                <ul class="list-group" style="padding: 0;">
+                    <li class="list-group-item">
+                        <input
+                                type="checkbox"
+                                id="inputAcceptanceStatus"
+                                class="inputElectionId inputAcceptanceStatus" name="inputElectionId"
+                                value="0"/>
+                        <label for="inputAcceptanceStatus" class="check">
+                            <svg width="20px" height="20px" viewBox="0 0 18 18">
+                                <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                                <polyline points="1 9 7 14 15 4"></polyline>
+                            </svg>
+                            <span>رد صلاحیت</span>
+                        </label>
+                    </li>
                 </ul>
             </div>
         </div>

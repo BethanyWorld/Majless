@@ -5,6 +5,7 @@
     $selectedPage = 1;
     $totalResultCount = 0;
     $hasPagination = false;
+    $currentPage = 1;
     function loadData(selectedPage = $selectedPage){
         toggleLoader();
         $inputCandidateStatus = $("#inputCandidateStatus").val();
@@ -38,6 +39,7 @@
                         onPageClick: function (pageNum, e) {
                             e.preventDefault();
                             loadData(pageNum);
+                            $currentPage = pageNum;
                         }
                     });
                 }
@@ -49,12 +51,6 @@
         $("#searchButton").click(function () {
             loadData(1);
         });
-
-
-
-
-
-
         /* Export*/
         $(document).on('click', ".invite-button", function () {
             $('.show-box').hide();
@@ -95,62 +91,116 @@
                 $('.show-box').fadeIn();
             });
         });
-        /* Export*/
-
-    });
-    $(document).on('click', '.remove-special-candidate', function () {
-        $this = $(this);
-        $title = "<strong class='badge'> " + $this.data('title') + " </strong>";
-        $.confirm({
-            title: '',
-            content: 'آیا از حذف '+ $title +' مطمئن هستید؟',
-            buttons: {
-                specialKey: {
-                    text: 'تایید',
-                    btnClass: 'btn-blue',
-                    action: function () {
-                        toggleLoader();
-                        $sendData = {
-                            'inputRowId': $this.data('id')
-                        }
-                        $.ajax({
-                            type: 'post',
-                            url: base_url + 'Candidate/doDeleteCandidateSpecial',
-                            data: $sendData,
-                            success: function (data) {
-                                toggleLoader();
-                                $result = jQuery.parseJSON(data);
-                                iziToast.show({
-                                    title: $result['content'],
-                                    color: $result['type'],
-                                    zindex: 9060,
-                                    position: 'topLeft'
-                                });
-                                setTimeout(function(){
-                                    if ($result['success']) {
-                                        location.reload();
-                                    }
-                                } , 1000);
-                            },
-                            error: function (jqXHR, textStatus, errorThrown) {
-                                iziToast.show({
-                                    title: 'خطای ارتباط با سرور.دقایقی دیگر تلاش کنید',
-                                    color: 'red',
-                                    zindex: 9060,
-                                    position: 'topLeft'
-                                });
-                                toggleLoader();
+        $(document).on('click', '.remove-special-candidate', function () {
+            $this = $(this);
+            $title = "<strong class='badge'> " + $this.data('title') + " </strong>";
+            $.confirm({
+                title: '',
+                content: 'آیا از حذف '+ $title +' مطمئن هستید؟',
+                buttons: {
+                    specialKey: {
+                        text: 'تایید',
+                        btnClass: 'btn-blue',
+                        action: function () {
+                            toggleLoader();
+                            $sendData = {
+                                'inputRowId': $this.data('id')
                             }
-                        });
-                    }
-                },
-                alphabet: {
-                    text: 'انصراف',
-                    action: function () {
-                        //$.alert('A or B was pressed');
+                            $.ajax({
+                                type: 'post',
+                                url: base_url + 'Candidate/doDeleteCandidateSpecial',
+                                data: $sendData,
+                                success: function (data) {
+                                    toggleLoader();
+                                    $result = jQuery.parseJSON(data);
+                                    iziToast.show({
+                                        title: $result['content'],
+                                        color: $result['type'],
+                                        zindex: 9060,
+                                        position: 'topLeft'
+                                    });
+                                    setTimeout(function(){
+                                        if ($result['success']) {
+                                            location.reload();
+                                        }
+                                    } , 1000);
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    iziToast.show({
+                                        title: 'خطای ارتباط با سرور.دقایقی دیگر تلاش کنید',
+                                        color: 'red',
+                                        zindex: 9060,
+                                        position: 'topLeft'
+                                    });
+                                    toggleLoader();
+                                }
+                            });
+                        }
+                    },
+                    alphabet: {
+                        text: 'انصراف',
+                        action: function () {
+                            //$.alert('A or B was pressed');
+                        }
                     }
                 }
-            }
+            });
         });
-    })
+        $(document).on('click', '.toggle-acceptance', function () {
+            $this = $(this);
+            $title = "<strong class='badge'> " + $this.data('title') + " </strong>";
+            $.confirm({
+                title: '',
+                content: 'آیا از نغییر وضعیت '+ $title +' مطمئن هستید؟',
+                buttons: {
+                    specialKey: {
+                        text: 'تایید',
+                        btnClass: 'btn-blue',
+                        action: function () {
+                            toggleLoader();
+                            $sendData = {
+                                'inputRowId': $this.data('id')
+                            }
+                            $.ajax({
+                                type: 'post',
+                                url: base_url + 'Candidate/doToggleAcceptanceCandidateSpecial',
+                                data: $sendData,
+                                success: function (data) {
+                                    toggleLoader();
+                                    $result = jQuery.parseJSON(data);
+                                    iziToast.show({
+                                        title: $result['content'],
+                                        color: $result['type'],
+                                        zindex: 9060,
+                                        position: 'topLeft'
+                                    });
+                                    setTimeout(function(){
+                                        if ($result['success']) {
+                                            loadData($currentPage);
+                                        }
+                                    } , 1000);
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    iziToast.show({
+                                        title: 'خطای ارتباط با سرور.دقایقی دیگر تلاش کنید',
+                                        color: 'red',
+                                        zindex: 9060,
+                                        position: 'topLeft'
+                                    });
+                                    toggleLoader();
+                                }
+                            });
+                        }
+                    },
+                    alphabet: {
+                        text: 'انصراف',
+                        action: function () {
+                            //$.alert('A or B was pressed');
+                        }
+                    }
+                }
+            });
+        });
+        /* Export*/
+    });
 </script>

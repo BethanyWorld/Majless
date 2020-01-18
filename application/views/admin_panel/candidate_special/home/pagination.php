@@ -10,9 +10,11 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
     foreach ($data as $candidate) { ?>
         <tr>
             <td class="fit"><?php echo $counter++; ?></td>
-            <td><?php echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName']; ?></td>
+            <td>
+                <?php echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName']; ?>
+                (<?php echo $candidate['CandidateInviteCount']; ?>)
+            </td>
             <td class="fit"><?php echo $candidate['StateName']; ?></td>
-            <td class="fit"><?php echo $candidate['CandidateCode']; ?></td>
             <td class="fit"><?php echo $candidate['ElectionName']; ?></td>
             <td class="fit"><?php echo $candidate['CandidateInstaAccount']; ?></td>
             <td class="fit">
@@ -20,7 +22,18 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
                     <img width="100px" src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"/>
                 </a>
             </td>
-            <td class="fit"><?php echo $candidate['CandidateInviteCount']; ?></td>
+            <td class="fit">
+                <?php echo pipeCandidateSpecialAcceptStatus($candidate['CandidateHasAccepted']); ?>
+            </td>
+            <td class="fit">
+                <button
+                        data-id="<?php echo $candidate['RowId']; ?>"
+                        data-title="<?php echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName']; ?>"
+                        type="button"
+                        class="btn btn-success btn-circle waves-effect waves-circle waves-float toggle-acceptance">
+                    <i class="material-icons">timeline</i>
+                </button>
+            </td>
             <td class="fit">
                 <button
                         data-toggle="modal" data-target="#myModal"
