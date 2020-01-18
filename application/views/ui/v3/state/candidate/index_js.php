@@ -34,15 +34,15 @@
                     $electionIds.push($(this).val());
                 }
             });
-
+            $inputFullName = $(".blog-search-submit").prev('label').find(':input').val();
             $inputAcceptanceStatus = 1;
             if($(".inputAcceptanceStatus").is(":checked")){
                 $inputAcceptanceStatus = $(".inputAcceptanceStatus").val();
             }
-
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
+                'inputFullName': $inputFullName,
                 'inputElectionIds': $electionIds,
                 'inputAcceptanceStatus': $inputAcceptanceStatus
             }
@@ -63,17 +63,29 @@
                 }
             });
         });
-
         $srcImage = '';
         $candidateName = '';
         $(".blog-search-submit").click(function (e) {
             e.preventDefault();
             toggleLoader();
             $inputFullName = $(this).prev('label').find(':input').val();
+            $inputAcceptanceStatus = 1;
+            if($(".inputAcceptanceStatus").is(":checked")){
+                $inputAcceptanceStatus = $(".inputAcceptanceStatus").val();
+            }
+            $electionId = $(this).val();
+            $electionIds = [];
+            $(".elections .inputElectionId").each(function () {
+                if ($(this).is(":checked")) {
+                    $electionIds.push($(this).val());
+                }
+            });
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
-                'inputFullName': $inputFullName
+                'inputFullName': $inputFullName,
+                'inputElectionIds': $electionIds,
+                'inputAcceptanceStatus': $inputAcceptanceStatus
             }
             $.ajax({
                 type: 'post',
@@ -102,7 +114,6 @@
             $('html').removeClass('over-flow-style');
             $("html, body").animate({scrollTop: 0}, "slow");
         });
-
         /* Export*/
         $(document).on('click', ".invite-button", function () {
             $('.show-box').hide();
@@ -159,7 +170,6 @@
             /* End Increase Invite Count*/
         });
         /* Export*/
-
         $('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');
             var provinceId = $(this).data('province-id');
@@ -192,7 +202,6 @@
             $('body').removeClass('over-flow-style');
             $('html').removeClass('over-flow-style');
         });
-
         function findBootstrapEnvironment() {
             var envs = ["xs", "sm", "md", "lg"];
             var envValues = ["xs", "sm", "md", "lg"];
