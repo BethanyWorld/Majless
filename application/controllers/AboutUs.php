@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class AboutUs extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
     }
@@ -82,6 +83,8 @@ class AboutUs extends CI_Controller{
         $this->load->view('ui/v3/static/footer', $data);*/
     }
     public function candidatecriteriacompetencies(){
+        redirect(base_url('blog/بیانیه-ارزش/'),'auto',301);
+
         /*$data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'معیار ها و شایستگی ها نامزد انتخاباتی';
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
@@ -91,6 +94,7 @@ class AboutUs extends CI_Controller{
         $this->load->view('ui/v3/static/footer', $data);*/
     }
     public function candidatelegal(){
+        redirect(base_url('blog/?p=63'),'auto',301);
         /*$data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'شایستگی های  نماینده مجلس';
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
