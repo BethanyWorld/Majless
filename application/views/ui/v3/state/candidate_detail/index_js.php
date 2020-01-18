@@ -50,6 +50,15 @@
                 });
             }
         });
+
+
+        $(".RightPanelUl li a").click(function () {
+            theHref = $(this).attr("href");
+            $("html, body").animate({
+                scrollTop: $(theHref).offset().top
+            }, 500);
+            return false;
+        });
     });
 
 
@@ -291,5 +300,6 @@
         });
         updateCountriesReadOnly();
     });
+
 
 </script>

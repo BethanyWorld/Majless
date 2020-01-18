@@ -108,20 +108,26 @@
         margin-bottom: 0px;
     }
     .have-border-bottom{
-        border-bottom: 2px solid #022d6d;
+        border-bottom: 2px solid #fdb72e;
         margin-bottom: 15px;
     }
     .have-border-bottom h4 , h3{
-        color: #022d6d;
+        color: #fff;
         font-weight: bold;
+        padding: 10px;
+        background: #095644;
+        width: 185px;
+        margin-bottom: 0px;
+        text-align: center;
     }
     .padding-top-15{
         padding-top: 15px;
     }
     .alert-info-candidate{
-        background-color: #022d6d;
+        background-color: #095644;
         color: #fff;
         text-align: right;
+        border-radius: 0px;
     }
     .candidate-description{
         float: right;
@@ -148,7 +154,7 @@
         list-style-type: none;
     }
     .resume-ul li span{
-        color: #d10b20;
+        color: #0f342f ;
         padding-left: 5px;
         font-size: 10px;
         float: right;
@@ -196,18 +202,24 @@
         font-size: 13px;
     }
     .submit-form{
-        background-color: #d10b20;
+        background-color: #fdb72e ;
         border: 0;
-        color: #fff;
+        color: #000;
         border-radius: 0;
         padding: 10px 25px;
+        font-weight: 900;
     }
-
+    .submit-form:hover , .submit-form:focus{
+        background-color: #fdb72e ;
+        border: 0;
+        color: #000;
+        outline: none;
+    }
     .panel {
         margin-bottom: 10px;
     }
     .have-border-bottom h3{
-        font-size: 20px !important;
+        font-size: 15px !important;
     }
 
 </style>
@@ -265,5 +277,17 @@
 
     .clear-div{
         clear: both;
+    }
+    .nav-tabs>li>a{
+        color: #095644;
+    }
+    .nav-tabs>li.active>a{
+        color:#fdb72e ;
+    }
+    .panel-default > .panel-heading{
+        background-color:#095644  ;
+    }
+    .panel-body{
+        padding-right: 0px;
     }
 </style>

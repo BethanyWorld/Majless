@@ -4,50 +4,192 @@
     <?php echo urldecode($stateName); ?>
 </h1>
 <div class="container container-wrapper">
-    <div class="row col-xs-12 col-md-3 pull-right sidebar">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <img style="max-width: 100%;" class="thumbnail profile-image"
-                     src="<?php echo $candidate['CandidateProfileImage']; ?>">
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <ul class="right-panel-candidate-detail-ul">
-                    <li>
-                        <div>
-                            حوزه انتخابیه:
-                        </div>
-                        <strong>
-                            <?php echo $candidate['ElectionName']; ?>
-                        </strong>
+    <div class="col-md-3 col-xs-12 pull-right">
+        <div class="col-xs-12 padding-0 visible-xs visible-sm" style="padding: 0px;">
+            <div class="col-xs-12 padding-0 MobileStep" style="padding: 0px;">
+                <ul class="col-xs-12">
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/resume'); ?>">1</a>
                     </li>
-                    <li>
-                        <div>
-                            استان - شهر:
-                        </div>
-                        <strong>
-                            <?php echo $candidate['StateName'] . " " . $candidate['CityName']; ?>
-                        </strong>
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/academicBackground'); ?>">2</a>
                     </li>
-                    <li>
-                        <div>
-                            دین:
-                        </div>
-                        <strong>
-                            <?php echo religionPipe($candidate['CandidateReligion']); ?>
-                        </strong>
+                    <?php if ($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male') { ?>
+                        <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "first"; ?>">
+                            <a href="<?php echo base_url('Profile/militaryStatus'); ?>">3</a>
+                        </li>
+                    <?php } ?>
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/jobHistory'); ?>">4</a>
+                    </li>
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "socialCulturalBackground") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/socialCulturalBackground'); ?>">5</a>
+                    </li>
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "politicBackground") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/politicBackground'); ?>">6</a>
+                    </li>
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "scienceBackground") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/scienceBackground'); ?>">7</a>
+                    </li>
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "skills") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/skills'); ?>">8</a>
+                    </li>
+                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "first"; ?>">
+                        <a href="<?php echo base_url('Profile/veteran'); ?>">9</a>
+                    </li>
+                    <?php if ($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted') { ?>
+                        <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
+                            <a href="<?php echo base_url('Profile/finance'); ?>">10</a>
+                        </li>
+                    <?php } ?>
+                    <li class="text-center">
+                        <a href="<?php echo base_url('Profile'); ?>">
+                            <i class="fa fa-refresh"></i>
+                        </a>
                     </li>
                 </ul>
-                <div class="col-md-12 col-xs-12 padding-left-0 hidden">
-                    <div class="have-border-bottom">
-                        <h4>اخبار و رویدادهای مرتبط</h4>
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="col-md-12 padding-0 visible-lg visible-md">
+            <div class="col-md-12 padding-0 RightPanel">
+                <ul class="col-md-12 padding-0 RightPanelUl">
+                    <li class="col-md-12 padding-0 <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "active"; ?>">
+                        <a href="#personal-information">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-user"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle">اطلاعات فردی</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "active"; ?>">
+                        <a href="#academic-background">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-book"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle"> سوابق تحصیلی</div>
+                            </div>
+                        </a>
+                    </li>
+                    <?php if ($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male') { ?>
+                        <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "active"; ?>">
+                            <a href="#military-records">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-flag"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle"> نظام وظیفه</div>
+                                </div>
+                        </li>
+                    <?php } ?>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "active"; ?>">
+                        <a href="#work-experience">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-cogs"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle"> سوابق شغلی</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "socialCulturalBackground") !== false) echo "active"; ?>">
+                        <a href="#social-cultural-background">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-bookmark"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "politicBackground") !== false) echo "active"; ?>">
+                        <a href="#political-background">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-handshake-o"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle"> سوابق سیاسی</div>
+                            </div>
+                    </li>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "scienceBackground") !== false) echo "active"; ?>">
+                        <a href="#scientific-research-records">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-flask"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle"> سوابق علمی پژوهشی</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "skills") !== false) echo "active"; ?>">
+                        <a href="#skills">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-outdent"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle"> مهارت ها</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "promises") !== false) echo "active"; ?>">
+                        <a href="#election-promises">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-outdent"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle">وعده های انتخاباتی</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "active"; ?>">
+                        <a href="#sacrifice">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-wheelchair"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle">ایثارگری</div>
+                            </div>
+                        </a>
+                    </li>
+                    <?php if ($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted') { ?>
+                        <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "active"; ?>">
+                            <a href="#property-assets">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-money"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">اطلاعات مالی</div>
+                                </div>
+                            </a>
+                        </li>
+                    <?php } ?>
+                    <li class="col-md-12 padding-0">
+                        <a href="<?php echo base_url('Profile'); ?>">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-share-square-o"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle">بازگشت</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-12 padding-0">
+                        <a href="<?php echo base_url('Profile/logOut') ?>">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-share-square-o"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle">خروج از سیستم</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="row col-xs-12 col-md-9 pull-left responsive-style-auto-margin padding-top-15">
+    <div class="row col-xs-12 col-md-9 pull-left responsive-style-auto-margin">
         <div class="row">
             <div class="panel left-candidate-panel-resume padding-0">
                 <div class="alert alert-info-candidate text-center">
@@ -68,54 +210,23 @@
                     </h5>
                 </div>
             </div>
-            <!-- Military Status -->
-            <div class="panel left-candidate-panel-resume padding-0">
+            <!-- personal  resume -->
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="personal-information">
                 <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                     <div class="have-border-bottom">
-                        <h3>سوابق خدمت</h3>
+                        <h3>اطلاعات فردی</h3>
                     </div>
                 </div>
                 <div class="panel-body">
                     <ul class="resume-ul">
                         <li>
                             <span class="fa fa-circle-o"></span>
-                            <?php
-                            foreach ($EnumResumeProfile['CandidateMilitaryStatus'] as $key => $value) {
-                                if ($candidateMilitaryStatus[0]['CandidateMilitaryStatus'] == $key) {
-                                    echo $value;
-                                }
-                            }
-                            ?>
-                            <?php
-                            foreach ($EnumResumeProfile['CandidateExemptTitle'] as $key => $value) {
-                                if ($candidateMilitaryStatus[0]['CandidateExemptTitle'] == $key) {
-                                    echo " علت معافیت " . $value;
-                                }
-                            }
-                            ?>
-                            <?php echo $candidateMilitaryStatus[0]['CandidateExemptDescription']; ?>
-                            <?php
-                            foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                if ($candidateMilitaryStatus[0]['CandidateMilitaryEndMonth'] == $key) {
-                                    echo $value;
-                                }
-                            }
-                            ?>
-                            <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndYear']; ?>
-                            <?php
-                            foreach ($EnumResumeProfile['CandidateMilitaryEndArea'] as $key => $value) {
-                                if ($candidateMilitaryStatus[0]['CandidateMilitaryEndArea'] == $key) {
-                                    echo $value;
-                                }
-                            }
-                            ?>
-                            <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndAreaTitle']; ?>
                         </li>
                     </ul>
                 </div>
             </div>
             <!-- Academic  -->
-            <div class="panel left-candidate-panel-resume padding-0">
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="academic-background">
                 <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                     <div class="have-border-bottom">
                         <h3>سوابق تحصیلی</h3>
@@ -174,8 +285,54 @@
                     </ul>
                 </div>
             </div>
+            <!-- Military Status -->
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="military-records">
+                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                    <div class="have-border-bottom">
+                        <h3>سوابق خدمت</h3>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="resume-ul">
+                        <li>
+                            <span class="fa fa-circle-o"></span>
+                            <?php
+                            foreach ($EnumResumeProfile['CandidateMilitaryStatus'] as $key => $value) {
+                                if ($candidateMilitaryStatus[0]['CandidateMilitaryStatus'] == $key) {
+                                    echo $value;
+                                }
+                            }
+                            ?>
+                            <?php
+                            foreach ($EnumResumeProfile['CandidateExemptTitle'] as $key => $value) {
+                                if ($candidateMilitaryStatus[0]['CandidateExemptTitle'] == $key) {
+                                    echo " علت معافیت " . $value;
+                                }
+                            }
+                            ?>
+                            <?php echo $candidateMilitaryStatus[0]['CandidateExemptDescription']; ?>
+                            <?php
+                            foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                if ($candidateMilitaryStatus[0]['CandidateMilitaryEndMonth'] == $key) {
+                                    echo $value;
+                                }
+                            }
+                            ?>
+                            <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndYear']; ?>
+                            <?php
+                            foreach ($EnumResumeProfile['CandidateMilitaryEndArea'] as $key => $value) {
+                                if ($candidateMilitaryStatus[0]['CandidateMilitaryEndArea'] == $key) {
+                                    echo $value;
+                                }
+                            }
+                            ?>
+                            <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndAreaTitle']; ?>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <!-- Job History -->
-            <div class="panel left-candidate-panel-resume padding-0">
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="work-experience">
                 <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                     <div class="have-border-bottom">
                         <h3>سوابق شغلی</h3>
@@ -214,272 +371,23 @@
                     </ul>
                 </div>
             </div>
-            <!-- Book Publishing History -->
-            <div class="panel left-candidate-panel-resume padding-0">
-                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                    <div class="have-border-bottom">
-                        <h3>تالیف کتاب</h3>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="resume-ul">
-                        <?php foreach ($candidateBooks
 
-                        as $item) { ?>
-                        <li>
-                            <span class="fa fa-circle-o"></span>
-                            عنوان کتاب :
-                            <?php echo $item['CandidateBookTitle']; ?>
-                            ناشر :
-                            <?php echo $item['CandidateBookPublisher']; ?>
-                            تاریخ چاپ:
-                            <?php
-                            foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                if ($item['CandidateBookPublishMonth'] == $key) {
-                                    echo $value;
-                                }
-                            }
-                            ?>
-                            <?php echo $item['CandidateBookPublishYear']; ?>
-                            <?php } ?>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Articles History -->
-            <div class="panel left-candidate-panel-resume padding-0">
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="social-cultural-background">
                 <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                     <div class="have-border-bottom">
-                        <h3> مقاله علمی</h3>
+                        <h3>سوابق فرهنگی اجتماعی</h3>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <ul class="resume-ul">
-                        <?php foreach ($candidateArticles as $item) { ?>
-                            <li>
-                                <span class="fa fa-circle-o"></span>
-                                عنوان مقاله:
-                                <?php echo $item['CandidateArticleTitle']; ?>
-                                سطح مقاله:
-                                <?php
-                                foreach ($EnumResumeProfile['ArticleLevelType'] as $key => $value) {
-                                    if ($item['CandidateArticleLevel'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                                عنوان مجله:
-                                <?php echo $item['CandidateArticleMagazineTitle']; ?>
-                                تاریخ نشر:
-                                <?php echo $item['CandidateArticlePublishYear']; ?>
-                                <?php
-                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                    if ($item['CandidateArticlePublishMonth'] == $key) {
-                                        echo $value;
-                                    }
-                                } ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            </div>
-            <!-- Inventions History -->
-            <div class="panel left-candidate-panel-resume padding-0">
-                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                    <div class="have-border-bottom">
-                        <h3>اختراعات</h3>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="resume-ul">
-                        <?php foreach ($candidateInvention as $item) { ?>
-                            <li>
-                                <span class="fa fa-circle-o"></span>
-                                عنوان اختراع:
-                                <?php echo $item['CandidateInventionTitle']; ?>
-                                حوزه ابداع:
-                                <?php echo $item['CandidateInventionField']; ?>
-                                شماره ثبت:
-                                <?php echo $item['CandidateInventionRegisterNumber']; ?>
-                                شرح اختراع:
-                                <?php echo $item['CandidateInventionDescription']; ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            </div>
-            <!-- Research History -->
-            <div class="panel left-candidate-panel-resume padding-0">
-                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                    <div class="have-border-bottom">
-                        <h3>طرح پژوهشی</h3>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="resume-ul">
-                        <?php foreach ($candidateResearch as $item) { ?>
-                            <li>
-                                <span class="fa fa-circle-o"></span>
-                                عنوان طراح:
-                                <?php echo $item['CandidateResearchTitle']; ?>
-                                مسئولیت:
-                                <?php echo $item['CandidateResearchResponsibility']; ?>
-                                مجری:
-                                <?php echo $item['CandidateResearchWorker']; ?>
-                                کارفرما:
-                                <?php echo $item['CandidateResearchEmployer']; ?>
-                                تاریخ:
-                                <?php
-                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                    if ($item['CandidateResearchMonth'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                                <?php echo $item['CandidateResearchYear']; ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            </div>
-            <!-- Conference History -->
-            <div class="panel left-candidate-panel-resume padding-0">
-                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                    <div class="have-border-bottom">
-                        <h3>همایش علمی</h3>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="resume-ul">
-                        <?php foreach ($candidateConference as $item) { ?>
-                            <li>
-                                <span class="fa fa-circle-o"></span>
-                                عنوان همایش:
-                                <?php echo $item['CandidateConferenceTitle']; ?>
-                                سطح:
-                                <?php
-                                foreach ($EnumResumeProfile['ConferenceLevelType'] as $key => $value) {
-                                    if ($item['CandidateConferenceLevel'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                                نوع پذیرش / ارائه:
-                                <?php
-                                foreach ($EnumResumeProfile['AcceptanceOfferType'] as $key => $value) {
-                                    if ($item['CandidateConferenceAcceptType'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                                تاریخ:
-                                <?php
-                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                    if ($item['CandidateConferenceMonth'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                                <?php echo $item['CandidateConferenceYear']; ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            </div>
-            <!-- Translation History -->
-            <div class="panel left-candidate-panel-resume padding-0">
-                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                    <div class="have-border-bottom">
-                        <h3>ترجمه ها</h3>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="resume-ul">
-                        <?php foreach ($candidateTranslation as $item) { ?>
-                            <li>
-                                <span class="fa fa-circle-o"></span>
-                                عنوان:
-                                <?php echo $item['CandidateTranslationTitle']; ?>
-                                ناشر:
-                                <?php echo $item['CandidateTranslationPublisher']; ?>
-                                نوع:
-                                <?php
-                                foreach ($EnumResumeProfile['TranslateType'] as $key => $value) {
-                                    if ($item['CandidateTranslationType'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                                تاریخ:
-                                <?php
-                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                    if ($item['CandidateTranslationMonth'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                                <?php echo $item['CandidateTranslationYear']; ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            </div>
-            <!-- Skills History -->
-            <div class="panel left-candidate-panel-resume padding-0">
-                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                    <div class="have-border-bottom">
-                        <h3>مهارت ها</h3>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="resume-ul">
-                        <?php foreach ($candidateSkills as $item) { ?>
-                            <li>
-                                <span class="fa fa-circle-o"></span>
-                                <?php echo $item['SkillType']; ?>
-                                سطح:
-                                <?php
-                                foreach ($EnumResumeProfile['SkillLevel'] as $key => $value) {
-                                    if ($item['SkillLevel'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                                نحوه یادگیری:
-                                <?php
-                                foreach ($EnumResumeProfile['SkillLearnType'] as $key => $value) {
-                                    if ($item['SkillLearnType'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            </div>
-            <!-- Promises History -->
-            <div class="panel left-candidate-panel-resume padding-0">
-                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                    <div class="have-border-bottom">
-                        <h3>وعده های انتخاباتی</h3>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="resume-ul">
-                        <?php foreach ($promises as $item) { ?>
-                            <li>
-                                <span class="fa fa-circle-o"></span>
-                                <?php echo $item['CandidateElectionPromise']; ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
+
                 </div>
             </div>
             <!-- Politic History -->
-            <div class="panel left-candidate-panel-resume padding-0">
-                <div class="panel-heading">
-                    سوابق سیاسی
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="political-background">
+                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                    <div class="have-border-bottom">
+                        <h3>سوبق سیاسی</h3>
+                    </div>
                 </div>
                 <div class="panel-body political-info-container table-responsive">
                     <table class="table table-bordered table-condensed table-striped">
@@ -611,10 +519,246 @@
                     </table>
                 </div>
             </div>
+            <!-- Book Publishing History -->
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="scientific-research-records">
+                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                    <div class="have-border-bottom">
+                        <h3>سوابق علمی پژوهشی</h3>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="resume-ul">
+                        <?php foreach ($candidateBooks
+
+                        as $item) { ?>
+                        <li>
+                            <span class="fa fa-circle-o"></span>
+                            عنوان کتاب :
+                            <?php echo $item['CandidateBookTitle']; ?>
+                            ناشر :
+                            <?php echo $item['CandidateBookPublisher']; ?>
+                            تاریخ چاپ:
+                            <?php
+                            foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                if ($item['CandidateBookPublishMonth'] == $key) {
+                                    echo $value;
+                                }
+                            }
+                            ?>
+                            <?php echo $item['CandidateBookPublishYear']; ?>
+                            <?php } ?>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <ul class="resume-ul">
+                        <?php foreach ($candidateArticles as $item) { ?>
+                            <li>
+                                <span class="fa fa-circle-o"></span>
+                                عنوان مقاله:
+                                <?php echo $item['CandidateArticleTitle']; ?>
+                                سطح مقاله:
+                                <?php
+                                foreach ($EnumResumeProfile['ArticleLevelType'] as $key => $value) {
+                                    if ($item['CandidateArticleLevel'] == $key) {
+                                        echo $value;
+                                    }
+                                }
+                                ?>
+                                عنوان مجله:
+                                <?php echo $item['CandidateArticleMagazineTitle']; ?>
+                                تاریخ نشر:
+                                <?php echo $item['CandidateArticlePublishYear']; ?>
+                                <?php
+                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                    if ($item['CandidateArticlePublishMonth'] == $key) {
+                                        echo $value;
+                                    }
+                                } ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <ul class="resume-ul">
+                        <?php foreach ($candidateInvention as $item) { ?>
+                            <li>
+                                <span class="fa fa-circle-o"></span>
+                                عنوان اختراع:
+                                <?php echo $item['CandidateInventionTitle']; ?>
+                                حوزه ابداع:
+                                <?php echo $item['CandidateInventionField']; ?>
+                                شماره ثبت:
+                                <?php echo $item['CandidateInventionRegisterNumber']; ?>
+                                شرح اختراع:
+                                <?php echo $item['CandidateInventionDescription']; ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <ul class="resume-ul">
+                        <?php foreach ($candidateResearch as $item) { ?>
+                            <li>
+                                <span class="fa fa-circle-o"></span>
+                                عنوان طراح:
+                                <?php echo $item['CandidateResearchTitle']; ?>
+                                مسئولیت:
+                                <?php echo $item['CandidateResearchResponsibility']; ?>
+                                مجری:
+                                <?php echo $item['CandidateResearchWorker']; ?>
+                                کارفرما:
+                                <?php echo $item['CandidateResearchEmployer']; ?>
+                                تاریخ:
+                                <?php
+                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                    if ($item['CandidateResearchMonth'] == $key) {
+                                        echo $value;
+                                    }
+                                }
+                                ?>
+                                <?php echo $item['CandidateResearchYear']; ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <ul class="resume-ul">
+                        <?php foreach ($candidateConference as $item) { ?>
+                            <li>
+                                <span class="fa fa-circle-o"></span>
+                                عنوان همایش:
+                                <?php echo $item['CandidateConferenceTitle']; ?>
+                                سطح:
+                                <?php
+                                foreach ($EnumResumeProfile['ConferenceLevelType'] as $key => $value) {
+                                    if ($item['CandidateConferenceLevel'] == $key) {
+                                        echo $value;
+                                    }
+                                }
+                                ?>
+                                نوع پذیرش / ارائه:
+                                <?php
+                                foreach ($EnumResumeProfile['AcceptanceOfferType'] as $key => $value) {
+                                    if ($item['CandidateConferenceAcceptType'] == $key) {
+                                        echo $value;
+                                    }
+                                }
+                                ?>
+                                تاریخ:
+                                <?php
+                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                    if ($item['CandidateConferenceMonth'] == $key) {
+                                        echo $value;
+                                    }
+                                }
+                                ?>
+                                <?php echo $item['CandidateConferenceYear']; ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <ul class="resume-ul">
+                        <?php foreach ($candidateTranslation as $item) { ?>
+                            <li>
+                                <span class="fa fa-circle-o"></span>
+                                عنوان:
+                                <?php echo $item['CandidateTranslationTitle']; ?>
+                                ناشر:
+                                <?php echo $item['CandidateTranslationPublisher']; ?>
+                                نوع:
+                                <?php
+                                foreach ($EnumResumeProfile['TranslateType'] as $key => $value) {
+                                    if ($item['CandidateTranslationType'] == $key) {
+                                        echo $value;
+                                    }
+                                }
+                                ?>
+                                تاریخ:
+                                <?php
+                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                    if ($item['CandidateTranslationMonth'] == $key) {
+                                        echo $value;
+                                    }
+                                }
+                                ?>
+                                <?php echo $item['CandidateTranslationYear']; ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+            <!-- Skills History -->
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="skills">
+                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                    <div class="have-border-bottom">
+                        <h3>مهارت ها</h3>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="resume-ul">
+                        <?php foreach ($candidateSkills as $item) { ?>
+                            <li>
+                                <span class="fa fa-circle-o"></span>
+                                <?php echo $item['SkillType']; ?>
+                                سطح:
+                                <?php
+                                foreach ($EnumResumeProfile['SkillLevel'] as $key => $value) {
+                                    if ($item['SkillLevel'] == $key) {
+                                        echo $value;
+                                    }
+                                }
+                                ?>
+                                نحوه یادگیری:
+                                <?php
+                                foreach ($EnumResumeProfile['SkillLearnType'] as $key => $value) {
+                                    if ($item['SkillLearnType'] == $key) {
+                                        echo $value;
+                                    }
+                                }
+                                ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+            <!-- Promises History -->
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="election-promises">
+                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                    <div class="have-border-bottom">
+                        <h3>وعده های انتخاباتی</h3>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="resume-ul">
+                        <?php foreach ($promises as $item) { ?>
+                            <li>
+                                <span class="fa fa-circle-o"></span>
+                                <?php echo $item['CandidateElectionPromise']; ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="sacrifice">
+                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                    <div class="have-border-bottom">
+                        <h3>ایثارگری</h3>
+                    </div>
+                </div>
+                <div class="panel-body">
+                </div>
+            </div>
+
             <!-- Finance History -->
-            <div class="panel left-candidate-panel-resume padding-0">
-                <div class="panel-heading">
-                   فهرست اموال و دارایی ها
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="property-assets">
+
+                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                    <div class="have-border-bottom">
+                        <h3>فهرست اموال و دارایی ها</h3>
+                    </div>
                 </div>
 
                 <?php function splitPrice($price)
@@ -634,7 +778,7 @@
                 <div class="panel-body political-info-container">
 
                     <div class="panel with-nav-tabs panel-default">
-                        <div class="panel-heading">
+                        <div class="">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab1myself" data-toggle="tab">خود</a></li>
                                 <li><a href="#tab2wife" data-toggle="tab">همسر</a></li>
@@ -654,13 +798,13 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-RealEstate">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['RealEStates'] as $item) {
                                                                             if ($item['ForWho'] == 'Self') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputRealEstateType">
                                                                                             نوع کاربری
@@ -718,7 +862,8 @@
                                                                                                 class="form-control form-control-lg"
                                                                                                 name="inputRealEstateCountryId"
                                                                                                 id="inputRealEstateCountryId">
-                                                                                            <option value="0">-- انتخاب کنید --
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
                                                                                             </option>
                                                                                             <?php foreach ($countries as $row) { ?>
                                                                                                 <option
@@ -736,7 +881,9 @@
                                                                                                 class="form-control form-control-lg state-select"
                                                                                                 name="inputRealEstateStateId"
                                                                                                 id="inputRealEstateStateId">
-                                                                                            <option value="0">-- انتخاب کنید --</option>
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
+                                                                                            </option>
                                                                                             <?php foreach ($states as $state) { ?>
                                                                                                 <option
                                                                                                     <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
@@ -753,7 +900,9 @@
                                                                                         <select class="form-control form-control-lg city-select"
                                                                                                 name="inputRealEstateCityId"
                                                                                                 id="inputRealEstateCityId">
-                                                                                            <option value="0">-- انتخاب کنید --</option>
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
+                                                                                            </option>
                                                                                         </select>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -799,7 +948,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputRealEstateBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -829,7 +979,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputRealEstateBuyTimePrice"
                                                                                                         id="inputRealEstateBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "HZ") {
@@ -838,7 +990,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -848,7 +1001,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -858,7 +1012,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -866,7 +1021,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputRealEstateNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -896,7 +1052,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputRealEstateNowTimePrice"
                                                                                                         id="inputRealEstateNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "HZ") {
@@ -905,7 +1063,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -915,7 +1074,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -925,7 +1085,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -960,13 +1121,13 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Vehicle">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Vehicle'] as $item) {
                                                                             if ($item['ForWho'] == 'Self') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputVehicleType">
                                                                                             نوع وسیله نقلیه<span
@@ -1019,7 +1180,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputVehicleBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -1049,7 +1211,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputVehicleBuyTimePrice"
                                                                                                         id="inputVehicleBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "HZ") {
@@ -1058,7 +1222,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1068,7 +1233,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1078,7 +1244,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -1086,7 +1253,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputVehicleNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -1116,7 +1284,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputVehicleNowTimePrice"
                                                                                                         id="inputVehicleNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "HZ") {
@@ -1125,7 +1295,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1135,7 +1306,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1145,7 +1317,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -1186,20 +1359,21 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Invest">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Invest'] as $item) {
                                                                             if ($item['ForWho'] == 'Self') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                                                         <label for="inputInvestTitle">
                                                                                             نام شرکت / موسسه
                                                                                         </label>
                                                                                         <input
                                                                                             <?php setInputValue($item['InvestTitle']); ?>
-                                                                                                id="inputInvestTitle" type="text"
+                                                                                                id="inputInvestTitle"
+                                                                                                type="text"
                                                                                                 name="inputInvestTitle"
                                                                                                 placeholder="نام شرکت - موسسه - پروژه ">
                                                                                     </div>
@@ -1240,7 +1414,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputInvestBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -1270,7 +1445,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputInvestBuyTimePrice"
                                                                                                         id="inputInvestBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "HZ") {
@@ -1279,7 +1456,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1289,7 +1467,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1299,7 +1478,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -1307,7 +1487,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputInvestNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -1337,7 +1518,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputInvestNowTimePrice"
                                                                                                         id="inputInvestNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "HZ") {
@@ -1346,7 +1529,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1356,7 +1540,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1366,7 +1551,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -1391,13 +1577,13 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-BankAccount">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['BankAccount'] as $item) {
                                                                             if ($item['ForWho'] == 'Self') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                                                         <label for="inputBankAccountTitle">
                                                                                             عنوان بانک یا موسسه
@@ -1443,7 +1629,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputBankAccountPrice"
                                                                                                         id="inputBankAccountPrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['BankAccountPrice'])['unit']) == "HZ") {
@@ -1452,7 +1640,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1462,7 +1651,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1472,7 +1662,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -1484,7 +1675,8 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputBankAccountCountryId"
                                                                                                 id="inputBankAccountCountryId">
-                                                                                            <option value="0">-- انتخاب کنید --
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
                                                                                             </option>
                                                                                             <?php foreach ($countries as $row) { ?>
                                                                                                 <option
@@ -1512,7 +1704,7 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Credit-Debtor">
                                                                         <span class="divider"></span>
                                                                         <?php
@@ -1520,7 +1712,7 @@
                                                                         $creditDebtor['DebotrPrice'] = "0.0 HZ";
                                                                         $creditDebtor['DebotrDescription'] = "";
                                                                         foreach ($finance['CreditDebtor'] as $item) {
-                                                                            if($item['ForWho'] == 'Self'){
+                                                                            if ($item['ForWho'] == 'Self') {
                                                                                 $creditDebtor = $item;
                                                                             }
                                                                         }
@@ -1528,7 +1720,8 @@
                                                                         <div class="col-md-12 col-xs-12 padding-0 form">
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputCreditPrice">
-                                                                                    جمع کل بستانکاری از اشخاص حقیقی یا حقوقی
+                                                                                    جمع کل بستانکاری از اشخاص حقیقی یا
+                                                                                    حقوقی
                                                                                     :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
@@ -1559,7 +1752,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputCreditPrice"
                                                                                                 id="inputCreditPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "HZ") {
@@ -1568,7 +1763,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -1578,7 +1774,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -1588,7 +1785,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -1596,7 +1794,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputDebotrPrice">
-                                                                                    جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
+                                                                                    جمع کل بدهکاری از اشخاص حقیقی یا
+                                                                                    حقوقی :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
                                                                                 <div class="row">
@@ -1626,7 +1825,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputDebotrPrice"
                                                                                                 id="inputDebotrPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "HZ") {
@@ -1635,7 +1836,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -1645,7 +1847,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -1655,7 +1858,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -1680,13 +1884,13 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Goods">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Goods'] as $item) {
                                                                             if ($item['ForWho'] == 'Self') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputGoodsType">
                                                                                             نوع کالا
@@ -1726,14 +1930,16 @@
                                                                                         </label>
                                                                                         <input
                                                                                             <?php setInputValue($item['GoodsCount']); ?>
-                                                                                                type="text" name="inputGoodsCount"
+                                                                                                type="text"
+                                                                                                name="inputGoodsCount"
                                                                                                 id="inputGoodsCount"
                                                                                                 class="form-control"
                                                                                                 placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                     </div>
                                                                                     <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputGoodsBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -1763,7 +1969,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputGoodsBuyTimePrice"
                                                                                                         id="inputGoodsBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "HZ") {
@@ -1772,7 +1980,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1782,7 +1991,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1792,7 +2002,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -1800,7 +2011,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputGoodsNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -1830,7 +2042,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputGoodsNowTimePrice"
                                                                                                         id="inputGoodsNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "HZ") {
@@ -1839,7 +2053,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1849,7 +2064,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -1859,7 +2075,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -1915,15 +2132,16 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Fee">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Fee'] as $item) {
                                                                             if ($item['ForWho'] == 'Self') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                                        <label for="inputFeeType">عنوان :</label>
+                                                                                        <label for="inputFeeType">عنوان
+                                                                                            :</label>
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputFeeType"
                                                                                                 id="inputFeeType">
@@ -1959,14 +2177,16 @@
                                                                                         </label>
                                                                                         <input
                                                                                             <?php setInputValue($item['FeePercent']); ?>
-                                                                                                type="number" name="inputFeePercent"
+                                                                                                type="number"
+                                                                                                name="inputFeePercent"
                                                                                                 id="inputFeePercent"
                                                                                                 class="form-control"
                                                                                                 placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                     </div>
                                                                                     <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputFeeAverageInYear">
-                                                                                            میزان درآمد متوسط سالیانه از مالکیت
+                                                                                            میزان درآمد متوسط سالیانه از
+                                                                                            مالکیت
                                                                                             معنوی :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
@@ -1997,7 +2217,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputFeeAverageInYear"
                                                                                                         id="inputFeeAverageInYear">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['FeeAverageInYear'])['unit']) == "HZ") {
@@ -2006,7 +2228,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -2016,7 +2239,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -2026,7 +2250,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -2051,7 +2276,7 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-AverageMonthIncome">
                                                                         <span class="divider"></span>
                                                                         <div class="col-md-12 col-xs-12 padding-0 form">
@@ -2059,7 +2284,7 @@
                                                                                 <?php
                                                                                 $income['AverageMonthIncome'] = "0.0 HZ";
                                                                                 foreach ($finance['Income'] as $item) {
-                                                                                    if($item['ForWho'] == 'Self'){
+                                                                                    if ($item['ForWho'] == 'Self') {
                                                                                         $income = $item;
                                                                                     }
                                                                                 }
@@ -2095,7 +2320,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputAverageMonthIncome"
                                                                                                 id="inputAverageMonthIncome">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($income['AverageMonthIncome'])['unit']) == "HZ") {
@@ -2104,7 +2331,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2114,7 +2342,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2124,7 +2353,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -2147,7 +2377,7 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Election">
                                                                         <span class="divider"></span>
                                                                         <?php
@@ -2157,7 +2387,7 @@
                                                                         $election['ElectionStaffPrice'] = "0.0 HZ";
                                                                         $election['ElectionAllPrice'] = "0.0 HZ";
                                                                         foreach ($finance['Election'] as $item) {
-                                                                            if($item['ForWho'] == 'Self'){
+                                                                            if ($item['ForWho'] == 'Self') {
                                                                                 $election = $item;
                                                                             }
                                                                         }
@@ -2165,7 +2395,8 @@
                                                                         <div class="col-md-12 col-xs-12 padding-0 form">
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionPlacePrice">
-                                                                                    هزینه دایرکردن محل ستاد انتخابات (اجاره بها ,
+                                                                                    هزینه دایرکردن محل ستاد انتخابات
+                                                                                    (اجاره بها ,
                                                                                     حملو نقل و سایر موارد)
                                                                                     -هزینه کل :
                                                                                     <span class="text-danger"></span>
@@ -2197,7 +2428,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionPlacePrice"
                                                                                                 id="inputElectionPlacePrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "HZ") {
@@ -2206,7 +2439,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2216,7 +2450,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2226,7 +2461,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -2234,7 +2470,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionFlockPrice">
-                                                                                    هزینه برپایی تجمعات عمومی مرتبط با اهداف
+                                                                                    هزینه برپایی تجمعات عمومی مرتبط با
+                                                                                    اهداف
                                                                                     انتخاباتی – هزینه کل :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
@@ -2265,7 +2502,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionFlockPrice"
                                                                                                 id="inputElectionFlockPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "HZ") {
@@ -2274,7 +2513,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2284,7 +2524,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2294,7 +2535,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -2302,7 +2544,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionAdvertisePrice">
-                                                                                    هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
+                                                                                    هزینه تبلیغات مجاز در رسانه ها –
+                                                                                    هزینه کل :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
                                                                                 <div class="row">
@@ -2332,7 +2575,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionAdvertisePrice"
                                                                                                 id="inputElectionAdvertisePrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "HZ") {
@@ -2341,7 +2586,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2351,7 +2597,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2361,7 +2608,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -2369,7 +2617,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionStaffPrice">
-                                                                                    هزینه و حق الزحمه عوامل اجرایی و کارشناسی در
+                                                                                    هزینه و حق الزحمه عوامل اجرایی و
+                                                                                    کارشناسی در
                                                                                     انتخابات – هزینه کل :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
@@ -2400,7 +2649,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionStaffPrice"
                                                                                                 id="inputElectionStaffPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "HZ") {
@@ -2409,7 +2660,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2419,7 +2671,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2429,7 +2682,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -2467,7 +2721,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionAllPrice"
                                                                                                 id="inputElectionAllPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionAllPrice'])['unit']) == "HZ") {
@@ -2476,7 +2732,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2486,7 +2743,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -2496,7 +2754,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -2531,7 +2790,7 @@
                                                                         <?php foreach ($finance['RealEStates'] as $item) {
                                                                             if ($item['ForWho'] == 'Wife') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputRealEstateType">
                                                                                             نوع کاربری
@@ -2589,7 +2848,8 @@
                                                                                                 class="form-control form-control-lg"
                                                                                                 name="inputRealEstateCountryId"
                                                                                                 id="inputRealEstateCountryId">
-                                                                                            <option value="0">-- انتخاب کنید --
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
                                                                                             </option>
                                                                                             <?php foreach ($countries as $row) { ?>
                                                                                                 <option
@@ -2607,7 +2867,9 @@
                                                                                                 class="form-control form-control-lg state-select"
                                                                                                 name="inputRealEstateStateId"
                                                                                                 id="inputRealEstateStateId">
-                                                                                            <option value="0">-- انتخاب کنید --</option>
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
+                                                                                            </option>
                                                                                             <?php foreach ($states as $state) { ?>
                                                                                                 <option
                                                                                                     <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
@@ -2624,7 +2886,9 @@
                                                                                         <select class="form-control form-control-lg city-select"
                                                                                                 name="inputRealEstateCityId"
                                                                                                 id="inputRealEstateCityId">
-                                                                                            <option value="0">-- انتخاب کنید --</option>
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
+                                                                                            </option>
                                                                                         </select>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -2670,7 +2934,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputRealEstateBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -2700,7 +2965,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputRealEstateBuyTimePrice"
                                                                                                         id="inputRealEstateBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "HZ") {
@@ -2709,7 +2976,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -2719,7 +2987,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -2729,7 +2998,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -2737,7 +3007,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputRealEstateNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -2767,7 +3038,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputRealEstateNowTimePrice"
                                                                                                         id="inputRealEstateNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "HZ") {
@@ -2776,7 +3049,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -2786,7 +3060,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -2796,7 +3071,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -2829,13 +3105,13 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Vehicle">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Vehicle'] as $item) {
                                                                             if ($item['ForWho'] == 'Wife') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputVehicleType">
                                                                                             نوع وسیله نقلیه<span
@@ -2888,7 +3164,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputVehicleBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -2918,7 +3195,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputVehicleBuyTimePrice"
                                                                                                         id="inputVehicleBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "HZ") {
@@ -2927,7 +3206,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -2937,7 +3217,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -2947,7 +3228,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -2955,7 +3237,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputVehicleNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -2985,7 +3268,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputVehicleNowTimePrice"
                                                                                                         id="inputVehicleNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "HZ") {
@@ -2994,7 +3279,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3004,7 +3290,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3014,7 +3301,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -3049,24 +3337,27 @@
                                                 <!--Invest -->
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
-                                                        <div class="panel-heading">سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)</div>
+                                                        <div class="panel-heading">سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار،
+                                                            ...)
+                                                        </div>
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Invest">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Invest'] as $item) {
                                                                             if ($item['ForWho'] == 'Wife') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                                                         <label for="inputInvestTitle">
                                                                                             نام شرکت / موسسه
                                                                                         </label>
                                                                                         <input
                                                                                             <?php setInputValue($item['InvestTitle']); ?>
-                                                                                                id="inputInvestTitle" type="text"
+                                                                                                id="inputInvestTitle"
+                                                                                                type="text"
                                                                                                 name="inputInvestTitle"
                                                                                                 placeholder="نام شرکت - موسسه - پروژه ">
                                                                                     </div>
@@ -3107,7 +3398,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputInvestBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -3137,7 +3429,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputInvestBuyTimePrice"
                                                                                                         id="inputInvestBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "HZ") {
@@ -3146,7 +3440,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3156,7 +3451,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3166,7 +3462,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -3174,7 +3471,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputInvestNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -3204,7 +3502,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputInvestNowTimePrice"
                                                                                                         id="inputInvestNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "HZ") {
@@ -3213,7 +3513,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3223,7 +3524,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3233,7 +3535,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -3252,17 +3555,19 @@
                                                 <!--BankAccount -->
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
-                                                        <div class="panel-heading">حساب‌های جاری، پس‌انداز و سرمایه‌گذاری</div>
+                                                        <div class="panel-heading">حساب‌های جاری، پس‌انداز و
+                                                            سرمایه‌گذاری
+                                                        </div>
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-BankAccount">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['BankAccount'] as $item) {
                                                                             if ($item['ForWho'] == 'Wife') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                                                         <label for="inputBankAccountTitle">
                                                                                             عنوان بانک یا موسسه
@@ -3308,7 +3613,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputBankAccountPrice"
                                                                                                         id="inputBankAccountPrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['BankAccountPrice'])['unit']) == "HZ") {
@@ -3317,7 +3624,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3327,7 +3635,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3337,7 +3646,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -3349,7 +3659,8 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputBankAccountCountryId"
                                                                                                 id="inputBankAccountCountryId">
-                                                                                            <option value="0">-- انتخاب کنید --
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
                                                                                             </option>
                                                                                             <?php foreach ($countries as $row) { ?>
                                                                                                 <option
@@ -3377,7 +3688,7 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Credit-Debtor">
                                                                         <span class="divider"></span>
                                                                         <?php
@@ -3385,7 +3696,7 @@
                                                                         $creditDebtor['DebotrPrice'] = "0.0 HZ";
                                                                         $creditDebtor['DebotrDescription'] = "";
                                                                         foreach ($finance['CreditDebtor'] as $item) {
-                                                                            if($item['ForWho'] == 'Wife'){
+                                                                            if ($item['ForWho'] == 'Wife') {
                                                                                 $creditDebtor = $item;
                                                                             }
                                                                         }
@@ -3393,7 +3704,8 @@
                                                                         <div class="col-md-12 col-xs-12 padding-0 form">
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputCreditPrice">
-                                                                                    جمع کل بستانکاری از اشخاص حقیقی یا حقوقی
+                                                                                    جمع کل بستانکاری از اشخاص حقیقی یا
+                                                                                    حقوقی
                                                                                     :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
@@ -3424,7 +3736,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputCreditPrice"
                                                                                                 id="inputCreditPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "HZ") {
@@ -3433,7 +3747,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -3443,7 +3758,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -3453,7 +3769,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -3461,7 +3778,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputDebotrPrice">
-                                                                                    جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
+                                                                                    جمع کل بدهکاری از اشخاص حقیقی یا
+                                                                                    حقوقی :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
                                                                                 <div class="row">
@@ -3491,7 +3809,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputDebotrPrice"
                                                                                                 id="inputDebotrPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "HZ") {
@@ -3500,7 +3820,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -3510,7 +3831,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -3520,7 +3842,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -3539,17 +3862,18 @@
                                                 <!--Goods -->
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
-                                                        <div class="panel-heading">کلیه کالاهای فاقد سند مالکیت رسمی</div>
+                                                        <div class="panel-heading">کلیه کالاهای فاقد سند مالکیت رسمی
+                                                        </div>
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Goods">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Goods'] as $item) {
                                                                             if ($item['ForWho'] == 'Wife') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputGoodsType">
                                                                                             نوع کالا
@@ -3589,14 +3913,16 @@
                                                                                         </label>
                                                                                         <input
                                                                                             <?php setInputValue($item['GoodsCount']); ?>
-                                                                                                type="text" name="inputGoodsCount"
+                                                                                                type="text"
+                                                                                                name="inputGoodsCount"
                                                                                                 id="inputGoodsCount"
                                                                                                 class="form-control"
                                                                                                 placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                     </div>
                                                                                     <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputGoodsBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -3626,7 +3952,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputGoodsBuyTimePrice"
                                                                                                         id="inputGoodsBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "HZ") {
@@ -3635,7 +3963,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3645,7 +3974,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3655,7 +3985,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -3663,7 +3994,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputGoodsNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -3693,7 +4025,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputGoodsNowTimePrice"
                                                                                                         id="inputGoodsNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "HZ") {
@@ -3702,7 +4036,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3712,7 +4047,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3722,7 +4058,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -3776,15 +4113,16 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Fee">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Fee'] as $item) {
                                                                             if ($item['ForWho'] == 'Wife') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                                        <label for="inputFeeType">عنوان :</label>
+                                                                                        <label for="inputFeeType">عنوان
+                                                                                            :</label>
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputFeeType"
                                                                                                 id="inputFeeType">
@@ -3820,14 +4158,16 @@
                                                                                         </label>
                                                                                         <input
                                                                                             <?php setInputValue($item['FeePercent']); ?>
-                                                                                                type="number" name="inputFeePercent"
+                                                                                                type="number"
+                                                                                                name="inputFeePercent"
                                                                                                 id="inputFeePercent"
                                                                                                 class="form-control"
                                                                                                 placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                     </div>
                                                                                     <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputFeeAverageInYear">
-                                                                                            میزان درآمد متوسط سالیانه از مالکیت
+                                                                                            میزان درآمد متوسط سالیانه از
+                                                                                            مالکیت
                                                                                             معنوی :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
@@ -3858,7 +4198,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputFeeAverageInYear"
                                                                                                         id="inputFeeAverageInYear">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['FeeAverageInYear'])['unit']) == "HZ") {
@@ -3867,7 +4209,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3877,7 +4220,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -3887,7 +4231,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -3910,7 +4255,7 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-AverageMonthIncome">
                                                                         <span class="divider"></span>
                                                                         <div class="col-md-12 col-xs-12 padding-0 form">
@@ -3918,7 +4263,7 @@
                                                                                 <?php
                                                                                 $income['AverageMonthIncome'] = "0.0 HZ";
                                                                                 foreach ($finance['Income'] as $item) {
-                                                                                    if($item['ForWho'] == 'Wife'){
+                                                                                    if ($item['ForWho'] == 'Wife') {
                                                                                         $income = $item;
                                                                                     }
                                                                                 }
@@ -3954,7 +4299,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputAverageMonthIncome"
                                                                                                 id="inputAverageMonthIncome">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($income['AverageMonthIncome'])['unit']) == "HZ") {
@@ -3963,7 +4310,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -3973,7 +4321,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -3983,7 +4332,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -4006,7 +4356,7 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Election">
                                                                         <span class="divider"></span>
                                                                         <?php
@@ -4016,7 +4366,7 @@
                                                                         $election['ElectionStaffPrice'] = "0.0 HZ";
                                                                         $election['ElectionAllPrice'] = "0.0 HZ";
                                                                         foreach ($finance['Election'] as $item) {
-                                                                            if($item['ForWho'] == 'Wife'){
+                                                                            if ($item['ForWho'] == 'Wife') {
                                                                                 $election = $item;
                                                                             }
                                                                         }
@@ -4024,7 +4374,8 @@
                                                                         <div class="col-md-12 col-xs-12 padding-0 form">
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionPlacePrice">
-                                                                                    هزینه دایرکردن محل ستاد انتخابات (اجاره بها ,
+                                                                                    هزینه دایرکردن محل ستاد انتخابات
+                                                                                    (اجاره بها ,
                                                                                     حملو نقل و سایر موارد)
                                                                                     -هزینه کل :
                                                                                     <span class="text-danger"></span>
@@ -4056,7 +4407,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionPlacePrice"
                                                                                                 id="inputElectionPlacePrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "HZ") {
@@ -4065,7 +4418,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4075,7 +4429,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4085,7 +4440,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -4093,7 +4449,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionFlockPrice">
-                                                                                    هزینه برپایی تجمعات عمومی مرتبط با اهداف
+                                                                                    هزینه برپایی تجمعات عمومی مرتبط با
+                                                                                    اهداف
                                                                                     انتخاباتی – هزینه کل :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
@@ -4124,7 +4481,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionFlockPrice"
                                                                                                 id="inputElectionFlockPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "HZ") {
@@ -4133,7 +4492,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4143,7 +4503,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4153,7 +4514,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -4161,7 +4523,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionAdvertisePrice">
-                                                                                    هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
+                                                                                    هزینه تبلیغات مجاز در رسانه ها –
+                                                                                    هزینه کل :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
                                                                                 <div class="row">
@@ -4191,7 +4554,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionAdvertisePrice"
                                                                                                 id="inputElectionAdvertisePrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "HZ") {
@@ -4200,7 +4565,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4210,7 +4576,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4220,7 +4587,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -4228,7 +4596,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionStaffPrice">
-                                                                                    هزینه و حق الزحمه عوامل اجرایی و کارشناسی در
+                                                                                    هزینه و حق الزحمه عوامل اجرایی و
+                                                                                    کارشناسی در
                                                                                     انتخابات – هزینه کل :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
@@ -4259,7 +4628,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionStaffPrice"
                                                                                                 id="inputElectionStaffPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "HZ") {
@@ -4268,7 +4639,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4278,7 +4650,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4288,7 +4661,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -4326,7 +4700,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionAllPrice"
                                                                                                 id="inputElectionAllPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionAllPrice'])['unit']) == "HZ") {
@@ -4335,7 +4711,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4345,7 +4722,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -4355,7 +4733,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -4385,13 +4764,13 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-RealEstate">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['RealEStates'] as $item) {
                                                                             if ($item['ForWho'] == 'Child') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputRealEstateType">
                                                                                             نوع کاربری
@@ -4449,7 +4828,8 @@
                                                                                                 class="form-control form-control-lg"
                                                                                                 name="inputRealEstateCountryId"
                                                                                                 id="inputRealEstateCountryId">
-                                                                                            <option value="0">-- انتخاب کنید --
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
                                                                                             </option>
                                                                                             <?php foreach ($countries as $row) { ?>
                                                                                                 <option
@@ -4467,7 +4847,9 @@
                                                                                                 class="form-control form-control-lg state-select"
                                                                                                 name="inputRealEstateStateId"
                                                                                                 id="inputRealEstateStateId">
-                                                                                            <option value="0">-- انتخاب کنید --</option>
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
+                                                                                            </option>
                                                                                             <?php foreach ($states as $state) { ?>
                                                                                                 <option
                                                                                                     <?php setOptionSelected($item['RealEstateStateId'], $state['StateId']); ?>
@@ -4484,7 +4866,9 @@
                                                                                         <select class="form-control form-control-lg city-select"
                                                                                                 name="inputRealEstateCityId"
                                                                                                 id="inputRealEstateCityId">
-                                                                                            <option value="0">-- انتخاب کنید --</option>
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
+                                                                                            </option>
                                                                                         </select>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
@@ -4530,7 +4914,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputRealEstateBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -4560,7 +4945,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputRealEstateBuyTimePrice"
                                                                                                         id="inputRealEstateBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['RealEstateBuyTimePrice'])['unit']) == "HZ") {
@@ -4569,7 +4956,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -4579,7 +4967,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -4589,7 +4978,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -4597,7 +4987,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputRealEstateNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -4627,7 +5018,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputRealEstateNowTimePrice"
                                                                                                         id="inputRealEstateNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['RealEstateNowTimePrice'])['unit']) == "HZ") {
@@ -4636,7 +5029,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -4646,7 +5040,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -4656,7 +5051,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -4689,13 +5085,13 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Vehicle">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Vehicle'] as $item) {
                                                                             if ($item['ForWho'] == 'Child') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputVehicleType">
                                                                                             نوع وسیله نقلیه<span
@@ -4748,7 +5144,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputVehicleBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -4778,7 +5175,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputVehicleBuyTimePrice"
                                                                                                         id="inputVehicleBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['VehicleBuyTimePrice'])['unit']) == "HZ") {
@@ -4787,7 +5186,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -4797,7 +5197,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -4807,7 +5208,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -4815,7 +5217,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputVehicleNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -4845,7 +5248,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputVehicleNowTimePrice"
                                                                                                         id="inputVehicleNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['VehicleNowTimePrice'])['unit']) == "HZ") {
@@ -4854,7 +5259,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -4864,7 +5270,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -4874,7 +5281,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -4909,24 +5317,27 @@
                                                 <!--Invest -->
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
-                                                        <div class="panel-heading">سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)</div>
+                                                        <div class="panel-heading">سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار،
+                                                            ...)
+                                                        </div>
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Invest">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Invest'] as $item) {
                                                                             if ($item['ForWho'] == 'Child') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                                                         <label for="inputInvestTitle">
                                                                                             نام شرکت / موسسه
                                                                                         </label>
                                                                                         <input
                                                                                             <?php setInputValue($item['InvestTitle']); ?>
-                                                                                                id="inputInvestTitle" type="text"
+                                                                                                id="inputInvestTitle"
+                                                                                                type="text"
                                                                                                 name="inputInvestTitle"
                                                                                                 placeholder="نام شرکت - موسسه - پروژه ">
                                                                                     </div>
@@ -4967,7 +5378,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputInvestBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -4997,7 +5409,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputInvestBuyTimePrice"
                                                                                                         id="inputInvestBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['InvestBuyTimePrice'])['unit']) == "HZ") {
@@ -5006,7 +5420,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5016,7 +5431,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5026,7 +5442,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -5034,7 +5451,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputInvestNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -5064,7 +5482,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputInvestNowTimePrice"
                                                                                                         id="inputInvestNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['InvestNowTimePrice'])['unit']) == "HZ") {
@@ -5073,7 +5493,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5083,7 +5504,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5093,7 +5515,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -5112,17 +5535,19 @@
                                                 <!--BankAccount -->
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
-                                                        <div class="panel-heading">حساب‌های جاری، پس‌انداز و سرمایه‌گذاری</div>
+                                                        <div class="panel-heading">حساب‌های جاری، پس‌انداز و
+                                                            سرمایه‌گذاری
+                                                        </div>
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-BankAccount">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['BankAccount'] as $item) {
                                                                             if ($item['ForWho'] == 'Child') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                                                         <label for="inputBankAccountTitle">
                                                                                             عنوان بانک یا موسسه
@@ -5168,7 +5593,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputBankAccountPrice"
                                                                                                         id="inputBankAccountPrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['BankAccountPrice'])['unit']) == "HZ") {
@@ -5177,7 +5604,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5187,7 +5615,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5197,7 +5626,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -5209,7 +5639,8 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputBankAccountCountryId"
                                                                                                 id="inputBankAccountCountryId">
-                                                                                            <option value="0">-- انتخاب کنید --
+                                                                                            <option value="0">-- انتخاب
+                                                                                                کنید --
                                                                                             </option>
                                                                                             <?php foreach ($countries as $row) { ?>
                                                                                                 <option
@@ -5235,7 +5666,7 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Credit-Debtor">
                                                                         <span class="divider"></span>
                                                                         <?php
@@ -5243,7 +5674,7 @@
                                                                         $creditDebtor['DebotrPrice'] = "0.0 HZ";
                                                                         $creditDebtor['DebotrDescription'] = "";
                                                                         foreach ($finance['CreditDebtor'] as $item) {
-                                                                            if($item['ForWho'] == 'Child'){
+                                                                            if ($item['ForWho'] == 'Child') {
                                                                                 $creditDebtor = $item;
                                                                             }
                                                                         }
@@ -5251,7 +5682,8 @@
                                                                         <div class="col-md-12 col-xs-12 padding-0 form">
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputCreditPrice">
-                                                                                    جمع کل بستانکاری از اشخاص حقیقی یا حقوقی
+                                                                                    جمع کل بستانکاری از اشخاص حقیقی یا
+                                                                                    حقوقی
                                                                                     :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
@@ -5282,7 +5714,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputCreditPrice"
                                                                                                 id="inputCreditPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($creditDebtor['CreditPrice'])['unit']) == "HZ") {
@@ -5291,7 +5725,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -5301,7 +5736,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -5311,7 +5747,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -5319,7 +5756,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputDebotrPrice">
-                                                                                    جمع کل بدهکاری از اشخاص حقیقی یا حقوقی :
+                                                                                    جمع کل بدهکاری از اشخاص حقیقی یا
+                                                                                    حقوقی :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
                                                                                 <div class="row">
@@ -5349,7 +5787,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputDebotrPrice"
                                                                                                 id="inputDebotrPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($creditDebtor['DebotrPrice'])['unit']) == "HZ") {
@@ -5358,7 +5798,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -5368,7 +5809,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -5378,7 +5820,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -5397,17 +5840,18 @@
                                                 <!--Goods -->
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
-                                                        <div class="panel-heading">کلیه کالاهای فاقد سند مالکیت رسمی</div>
+                                                        <div class="panel-heading">کلیه کالاهای فاقد سند مالکیت رسمی
+                                                        </div>
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Goods">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Goods'] as $item) {
                                                                             if ($item['ForWho'] == 'Child') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputGoodsType">
                                                                                             نوع کالا
@@ -5447,14 +5891,16 @@
                                                                                         </label>
                                                                                         <input
                                                                                             <?php setInputValue($item['GoodsCount']); ?>
-                                                                                                type="text" name="inputGoodsCount"
+                                                                                                type="text"
+                                                                                                name="inputGoodsCount"
                                                                                                 id="inputGoodsCount"
                                                                                                 class="form-control"
                                                                                                 placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                     </div>
                                                                                     <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputGoodsBuyTimePrice">
-                                                                                            ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                            ارزش حدودی کل سهام در زمان
+                                                                                            شروع مالکیت :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -5484,7 +5930,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputGoodsBuyTimePrice"
                                                                                                         id="inputGoodsBuyTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['GoodsBuyTimePrice'])['unit']) == "HZ") {
@@ -5493,7 +5941,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5503,7 +5952,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5513,7 +5963,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -5521,7 +5972,8 @@
                                                                                     </div>
                                                                                     <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputGoodsNowTimePrice">
-                                                                                            ارزش حدودی کل سهام درحال حاضر :
+                                                                                            ارزش حدودی کل سهام درحال
+                                                                                            حاضر :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
                                                                                         <div class="row">
@@ -5551,7 +6003,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputGoodsNowTimePrice"
                                                                                                         id="inputGoodsNowTimePrice">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['GoodsNowTimePrice'])['unit']) == "HZ") {
@@ -5560,7 +6014,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5570,7 +6025,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5580,7 +6036,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -5634,15 +6091,16 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Fee">
                                                                         <span class="divider"></span>
                                                                         <?php foreach ($finance['Fee'] as $item) {
                                                                             if ($item['ForWho'] == 'Child') { ?>
                                                                                 <div class="col-md-12 col-xs-12 padding-0 form">
-                                                                                    
+
                                                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                                        <label for="inputFeeType">عنوان :</label>
+                                                                                        <label for="inputFeeType">عنوان
+                                                                                            :</label>
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputFeeType"
                                                                                                 id="inputFeeType">
@@ -5678,14 +6136,16 @@
                                                                                         </label>
                                                                                         <input
                                                                                             <?php setInputValue($item['FeePercent']); ?>
-                                                                                                type="number" name="inputFeePercent"
+                                                                                                type="number"
+                                                                                                name="inputFeePercent"
                                                                                                 id="inputFeePercent"
                                                                                                 class="form-control"
                                                                                                 placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                     </div>
                                                                                     <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                         <label for="inputFeeAverageInYear">
-                                                                                            میزان درآمد متوسط سالیانه از مالکیت
+                                                                                            میزان درآمد متوسط سالیانه از
+                                                                                            مالکیت
                                                                                             معنوی :
                                                                                             <span class="text-danger"></span>
                                                                                         </label>
@@ -5716,7 +6176,9 @@
                                                                                                 <select class="form-control form-control-lg"
                                                                                                         name="inputFeeAverageInYear"
                                                                                                         id="inputFeeAverageInYear">
-                                                                                                    <option value="0">انتخاب کنید ---</option>
+                                                                                                    <option value="0">
+                                                                                                        انتخاب کنید ---
+                                                                                                    </option>
                                                                                                     <option
                                                                                                         <?php
                                                                                                         if ((splitPrice($item['FeeAverageInYear'])['unit']) == "HZ") {
@@ -5725,7 +6187,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="HZ"
                                                                                                             data-right-side="SD"
-                                                                                                            value="HZ">هزار تومان
+                                                                                                            value="HZ">
+                                                                                                        هزار تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5735,7 +6198,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="MI"
                                                                                                             data-right-side="HZ"
-                                                                                                            value="MI">میلیون تومان
+                                                                                                            value="MI">
+                                                                                                        میلیون تومان
                                                                                                     </option>
                                                                                                     <option
                                                                                                         <?php
@@ -5745,7 +6209,8 @@
                                                                                                         ?>
                                                                                                             data-left-side="ML"
                                                                                                             data-right-side="MI"
-                                                                                                            value="ML">میلیارد تومان
+                                                                                                            value="ML">
+                                                                                                        میلیارد تومان
                                                                                                     </option>
                                                                                                 </select>
                                                                                             </div>
@@ -5768,7 +6233,7 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-AverageMonthIncome">
                                                                         <span class="divider"></span>
                                                                         <div class="col-md-12 col-xs-12 padding-0 form">
@@ -5776,7 +6241,7 @@
                                                                                 <?php
                                                                                 $income['AverageMonthIncome'] = "0.0 HZ";
                                                                                 foreach ($finance['Income'] as $item) {
-                                                                                    if($item['ForWho'] == 'Child'){
+                                                                                    if ($item['ForWho'] == 'Child') {
                                                                                         $income = $item;
                                                                                     }
                                                                                 }
@@ -5812,7 +6277,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputAverageMonthIncome"
                                                                                                 id="inputAverageMonthIncome">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($income['AverageMonthIncome'])['unit']) == "HZ") {
@@ -5821,7 +6288,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -5831,7 +6299,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -5841,7 +6310,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -5862,7 +6332,7 @@
                                                         <div class="panel-body">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                    
+
                                                                     <form id="form-Election">
                                                                         <span class="divider"></span>
                                                                         <?php
@@ -5872,7 +6342,7 @@
                                                                         $election['ElectionStaffPrice'] = "0.0 HZ";
                                                                         $election['ElectionAllPrice'] = "0.0 HZ";
                                                                         foreach ($finance['Election'] as $item) {
-                                                                            if($item['ForWho'] == 'Child'){
+                                                                            if ($item['ForWho'] == 'Child') {
                                                                                 $election = $item;
                                                                             }
                                                                         }
@@ -5880,7 +6350,8 @@
                                                                         <div class="col-md-12 col-xs-12 padding-0 form">
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionPlacePrice">
-                                                                                    هزینه دایرکردن محل ستاد انتخابات (اجاره بها ,
+                                                                                    هزینه دایرکردن محل ستاد انتخابات
+                                                                                    (اجاره بها ,
                                                                                     حملو نقل و سایر موارد)
                                                                                     -هزینه کل :
                                                                                     <span class="text-danger"></span>
@@ -5912,7 +6383,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionPlacePrice"
                                                                                                 id="inputElectionPlacePrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionPlacePrice'])['unit']) == "HZ") {
@@ -5921,7 +6394,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -5931,7 +6405,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -5941,7 +6416,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -5949,7 +6425,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionFlockPrice">
-                                                                                    هزینه برپایی تجمعات عمومی مرتبط با اهداف
+                                                                                    هزینه برپایی تجمعات عمومی مرتبط با
+                                                                                    اهداف
                                                                                     انتخاباتی – هزینه کل :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
@@ -5980,7 +6457,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionFlockPrice"
                                                                                                 id="inputElectionFlockPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionFlockPrice'])['unit']) == "HZ") {
@@ -5989,7 +6468,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -5999,7 +6479,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -6009,7 +6490,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -6017,7 +6499,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionAdvertisePrice">
-                                                                                    هزینه تبلیغات مجاز در رسانه ها – هزینه کل :
+                                                                                    هزینه تبلیغات مجاز در رسانه ها –
+                                                                                    هزینه کل :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
                                                                                 <div class="row">
@@ -6047,7 +6530,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionAdvertisePrice"
                                                                                                 id="inputElectionAdvertisePrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionAdvertisePrice'])['unit']) == "HZ") {
@@ -6056,7 +6541,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -6066,7 +6552,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -6076,7 +6563,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -6084,7 +6572,8 @@
                                                                             </div>
                                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <label for="inputElectionStaffPrice">
-                                                                                    هزینه و حق الزحمه عوامل اجرایی و کارشناسی در
+                                                                                    هزینه و حق الزحمه عوامل اجرایی و
+                                                                                    کارشناسی در
                                                                                     انتخابات – هزینه کل :
                                                                                     <span class="text-danger"></span>
                                                                                 </label>
@@ -6115,7 +6604,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionStaffPrice"
                                                                                                 id="inputElectionStaffPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionStaffPrice'])['unit']) == "HZ") {
@@ -6124,7 +6615,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -6134,7 +6626,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -6144,7 +6637,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -6182,7 +6676,9 @@
                                                                                         <select class="form-control form-control-lg"
                                                                                                 name="inputElectionAllPrice"
                                                                                                 id="inputElectionAllPrice">
-                                                                                            <option value="0">انتخاب کنید ---</option>
+                                                                                            <option value="0">انتخاب
+                                                                                                کنید ---
+                                                                                            </option>
                                                                                             <option
                                                                                                 <?php
                                                                                                 if ((splitPrice($election['ElectionAllPrice'])['unit']) == "HZ") {
@@ -6191,7 +6687,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="HZ"
                                                                                                     data-right-side="SD"
-                                                                                                    value="HZ">هزار تومان
+                                                                                                    value="HZ">هزار
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -6201,7 +6698,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="MI"
                                                                                                     data-right-side="HZ"
-                                                                                                    value="MI">میلیون تومان
+                                                                                                    value="MI">میلیون
+                                                                                                تومان
                                                                                             </option>
                                                                                             <option
                                                                                                 <?php
@@ -6211,7 +6709,8 @@
                                                                                                 ?>
                                                                                                     data-left-side="ML"
                                                                                                     data-right-side="MI"
-                                                                                                    value="ML">میلیارد تومان
+                                                                                                    value="ML">میلیارد
+                                                                                                تومان
                                                                                             </option>
                                                                                         </select>
                                                                                     </div>
@@ -6236,18 +6735,18 @@
                 </div>
             </div>
             <!-- Report Abuse -->
-            <div class="panel left-candidate-panel-resume padding-0">
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll">
                 <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                     <div class="have-border-bottom">
                         <h3>گزارش تخلف</h3>
-                        <h5>
-                            در صورت مشاهده هر گونه مغایرت لطفا از طریق فرم زیر گزارش دهید
-                        </h5>
                     </div>
+                    <h5>
+                        در صورت مشاهده هر گونه مغایرت لطفا از طریق فرم زیر گزارش دهید
+                    </h5>
                 </div>
                 <div class="panel-body">
                     <input type="hidden" id="inputReportCandidateId" name="inputReportCandidateId"
-                       value="<?php echo $candidate['CandidateId']; ?>"/>
+                           value="<?php echo $candidate['CandidateId']; ?>"/>
                     <input type="hidden" id="inputCSRF" name="inputCSRF" value="<?= $CSRF; ?>"/>
                     <div class="row col-xs-12 col-md-12 pull-right">
                         <div class="form-group col-xs-12 col-md-4 pull-right">
@@ -6283,7 +6782,7 @@
                                 <input type="text"
                                        style="position: relative;top:20px;"
                                        name="inputCaptcha" id="inputCaptcha" class="form-control"
-                                       placeholder="کد امنیتی" >
+                                       placeholder="کد امنیتی">
                             </div>
                         </div>
                         <div class="form-group">
@@ -6297,3 +6796,200 @@
         </div>
     </div>
 </div>
+
+
+<style>
+    .RightPanelContent {
+        padding-top: 0.3em;
+    }
+
+    .RightPanel {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16);
+        min-height: 300px;
+        background-color: #fff;
+    }
+
+    .RightPanel .RightPanelUl {
+        margin: 0px auto;
+    }
+
+    .RightPanel .RightPanelUl li {
+        position: relative;
+        list-style-type: none;
+        padding: 0.7em 1.5em;
+        cursor: auto;
+        justify-content: flex-start;
+        border-radius: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(34, 36, 38, .15);
+        display: flex;
+        flex-wrap: wrap;
+        vertical-align: middle;
+        color: rgba(0, 0, 0, .87);
+        box-shadow: none;
+        transition: background-color .1s ease, opacity .1s ease, color .1s ease, box-shadow .1s ease;
+        cursor: pointer;
+    }
+
+    ul.RightPanelUl li.active {
+        background: #F3F4F5;
+    }
+
+    ul.RightPanelUl li.active:after {
+        background: #F3F4F5;
+    }
+
+    ul.RightPanelUl li a {
+        width: 100%;
+        display: inherit;
+    }
+
+    ul.RightPanelUl li .RightpanelIcon {
+        line-height: initial;
+        font-size: 1.5em;
+        margin: 0 0 0 0.8rem;
+        width: 40px;
+        text-align: center;
+        color: #777;
+    }
+
+    ul.RightPanelUl li:after {
+        background: #F3F4F5;
+        top: 50%;
+        left: -18px;
+        border-width: 1px 0px 0px 1px;
+        position: absolute;
+        z-index: 2;
+        content: '';
+        border: solid;
+        background-color: #FFF;
+        width: 1.14285714em;
+        height: 1.14285714em;
+        border-color: rgba(34, 36, 38, .15);
+        border-width: 0 1px 1px 0;
+        transition: background-color .1s ease, opacity .1s ease, color .1s ease, box-shadow .1s ease;
+        transform: translateY(-50%) translateX(50%) rotate(-45deg);
+    }
+
+    ul.RightPanelUl li:after {
+        top: 50%;
+        left: -19px;
+        border-width: 1px 0px 0px 1px;
+        display: none;
+    }
+
+    ul.RightPanelUl li.active:after {
+        display: block;
+    }
+
+    ul.RightPanelUl li.active .RightpanelIcon {
+        color: #00695c;
+    }
+
+    ul.RightPanelUl li.active .RightPanleTitle {
+        color: #00695c;
+    }
+
+    ul.RightPanelUl li .RightPanleTitle {
+        font-size: 1em;
+        font-weight: 700;
+        color: #777;
+    }
+
+    ul.RightPanelUl li .RightPanleTitle ~ .RightPanelDescription {
+        margin-top: .25em;
+    }
+
+    ul.RightPanelUl li .RightPanelDescription {
+        font-weight: 400;
+        font-size: 0.8em;
+        color: rgba(0, 0, 0, .87);
+    }
+
+    .site {
+        background-color: #edecec;
+    }
+
+    ul.RightPanelUl li.active:hover {
+        cursor: pointer;
+        background: #DCDDDE;
+        color: rgba(0, 0, 0, .87);
+    }
+
+    ul.RightPanelUl li.active:hover::after {
+        cursor: pointer;
+        background: #DCDDDE;
+        color: rgba(0, 0, 0, .87);
+    }
+
+    /*headline*/
+
+    .LeftPanelShadow {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16);
+        min-height: 25vh;
+    }
+
+    .LeftPanelShadow .panel-heading {
+        width: auto;
+        background-image: none !important;
+        margin: 0px auto;
+        text-shadow: none !important;
+    }
+
+
+    .RightFloat input {
+        background: transparent;
+        border: none;
+        box-shadow: none !important;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0px;
+    }
+
+    .MobileStep {
+        margin-bottom: 15px;
+    }
+
+    .MobileStep ul {
+        display: flex;
+        position: relative;
+        list-style-type: none;
+        padding-left: 0px;
+    }
+
+    .MobileStep ul li {
+        width: 20.16%;
+        margin-right: 8px;
+    }
+
+    .MobileStep ul li a {
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        height: 20px;
+        background: #999999;
+        padding: 5px;
+        line-height: 10px;
+        color: #ffffff;
+        border-radius: 3.5px;
+        text-shadow: 1px 0px 8px #333;
+    }
+
+    .MobileStep ul li a .fa-refresh {
+        line-height: 10px;
+    }
+
+    .MobileStep ul li.first a {
+        background: #fdb72e;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+
+    .padding-0 {
+        padding: 0px;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+
+    });
+</script>
