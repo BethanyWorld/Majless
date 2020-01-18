@@ -751,7 +751,6 @@
                 <div class="panel-body">
                 </div>
             </div>
-
             <!-- Finance History -->
             <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="property-assets">
 
@@ -6988,8 +6987,8 @@
         padding: 0px;
     }
 </style>
-<script>
-    $(document).ready(function () {
 
-    });
+<script>
+    $('input').attr('readonly', true);
+    $("select").attr('disabled','disabled');
 </script>

@@ -1,8 +1,7 @@
 <style>
-    .list-group {
-
+    .RightFloat{
+        float: right;
     }
-
     .list-group span.caption {
         display: inline-block;
         color: #000;
