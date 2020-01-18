@@ -6988,7 +6988,3 @@
     }
 </style>
 
-<script>
-    $('input').attr('readonly', true);
-    $("select").attr('disabled','disabled');
-</script>

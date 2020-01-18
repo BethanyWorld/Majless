@@ -1,5 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
+        $('input').attr('readonly', true);
+        $("select").attr('disabled','disabled');
         $personalInfo = "";
         $militaryInfo = "";
         $politicalInfo = "";
