@@ -2,6 +2,9 @@
     .RightFloat{
         float: right;
     }
+    .profile-image{
+        margin: auto;
+    }
     .list-group span.caption {
         display: inline-block;
         color: #000;
