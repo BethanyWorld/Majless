@@ -9,7 +9,7 @@
 
     <div class="col-md-3 col-xs-12 pull-right">
         <div class="panel panel-default">
-            <div class="panel-body">
+            <div class="panel-body padding-0">
                 <img style="max-width: 100%;" class="thumbnail profile-image"
                      src="<?php echo $candidate['CandidateProfileImage']; ?>">
             </div>
