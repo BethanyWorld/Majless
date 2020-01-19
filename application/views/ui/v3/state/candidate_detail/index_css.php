@@ -286,7 +286,4 @@
     .panel-default > .panel-heading{
         background-color:#095644  ;
     }
-    .panel-body{
-        padding-right: 0px;
-    }
 </style>

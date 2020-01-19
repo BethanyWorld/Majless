@@ -2,6 +2,7 @@
     $(document).ready(function () {
         $('input').attr('readonly', true);
         $("select").attr('disabled','disabled');
+        $("textarea").attr('readonly', true);
         $personalInfo = "";
         $militaryInfo = "";
         $politicalInfo = "";
@@ -54,7 +55,7 @@
         });
 
 
-        $(".RightPanelUl li a").click(function () {
+        $(".commonScrollStyle li a").click(function () {
             theHref = $(this).attr("href");
             $("html, body").animate({
                 scrollTop: $(theHref).offset().top

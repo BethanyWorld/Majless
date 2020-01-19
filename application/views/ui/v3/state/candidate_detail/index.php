@@ -4,42 +4,51 @@
     <?php echo urldecode($stateName); ?>
 </h1>
 <div class="container container-wrapper">
+
+
+
     <div class="col-md-3 col-xs-12 pull-right">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <img style="max-width: 100%;" class="thumbnail profile-image"
+                     src="<?php echo $candidate['CandidateProfileImage']; ?>">
+            </div>
+        </div>
         <div class="col-xs-12 padding-0 visible-xs visible-sm" style="padding: 0px;">
             <div class="col-xs-12 padding-0 MobileStep" style="padding: 0px;">
-                <ul class="col-xs-12">
+                <ul class="col-xs-12 commonScrollStyle">
                     <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "first"; ?>">
-                        <a href="<?php echo base_url('Profile/resume'); ?>">1</a>
+                        <a href="#personal-information">1</a>
                     </li>
                     <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "first"; ?>">
-                        <a href="<?php echo base_url('Profile/academicBackground'); ?>">2</a>
+                        <a href="#academic-background">2</a>
                     </li>
                     <?php if ($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male') { ?>
                         <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "first"; ?>">
-                            <a href="<?php echo base_url('Profile/militaryStatus'); ?>">3</a>
+                            <a href="#military-records">3</a>
                         </li>
                     <?php } ?>
                     <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "first"; ?>">
-                        <a href="<?php echo base_url('Profile/jobHistory'); ?>">4</a>
+                        <a href="#work-experience">4</a>
                     </li>
                     <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "socialCulturalBackground") !== false) echo "first"; ?>">
-                        <a href="<?php echo base_url('Profile/socialCulturalBackground'); ?>">5</a>
+                        <a href="#social-cultural-background">5</a>
                     </li>
                     <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "politicBackground") !== false) echo "first"; ?>">
-                        <a href="<?php echo base_url('Profile/politicBackground'); ?>">6</a>
+                        <a href="#political-background">6</a>
                     </li>
                     <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "scienceBackground") !== false) echo "first"; ?>">
-                        <a href="<?php echo base_url('Profile/scienceBackground'); ?>">7</a>
+                        <a href="#scientific-research-records">7</a>
                     </li>
                     <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "skills") !== false) echo "first"; ?>">
-                        <a href="<?php echo base_url('Profile/skills'); ?>">8</a>
+                        <a href="#skills">8</a>
                     </li>
                     <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "first"; ?>">
-                        <a href="<?php echo base_url('Profile/veteran'); ?>">9</a>
+                        <a href="#sacrifice">9</a>
                     </li>
                     <?php if ($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted') { ?>
                         <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
-                            <a href="<?php echo base_url('Profile/finance'); ?>">10</a>
+                            <a href="#property-assets">10</a>
                         </li>
                     <?php } ?>
                     <li class="text-center">
@@ -52,7 +61,7 @@
         </div>
         <div class="col-md-12 padding-0 visible-lg visible-md">
             <div class="col-md-12 padding-0 RightPanel">
-                <ul class="col-md-12 padding-0 RightPanelUl">
+                <ul class="col-md-12 padding-0 commonScrollStyle RightPanelUl">
                     <li class="col-md-12 padding-0 <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "active"; ?>">
                         <a href="#personal-information">
                             <i class="zmdi RightpanelIcon">
