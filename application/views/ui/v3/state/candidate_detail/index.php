@@ -116,22 +116,12 @@
                         </a>
                     </li>
                     <li class="col-md-12 padding-0">
-                        <a href="<?php echo base_url('Profile'); ?>">
+                        <a href="<?php echo base_url('Home'); ?>">
                             <i class="zmdi RightpanelIcon">
                                 <span class="fa fa-share-square-o"></span>
                             </i>
                             <div class="RightPanelContent">
                                 <div class="RightPanleTitle">بازگشت</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="col-md-12 padding-0">
-                        <a href="<?php echo base_url('Profile/logOut') ?>">
-                            <i class="zmdi RightpanelIcon">
-                                <span class="fa fa-share-square-o"></span>
-                            </i>
-                            <div class="RightPanelContent">
-                                <div class="RightPanleTitle">خروج از سیستم</div>
                             </div>
                         </a>
                     </li>
