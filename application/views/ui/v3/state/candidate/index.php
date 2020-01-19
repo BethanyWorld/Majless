@@ -122,11 +122,11 @@
                                     </div>
                                 <?php } ?>
                                 <!-- for badge-->
-                                <!--   <div class="badge hidden">-->
-                                <!--         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
-                                <!--         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
-                                <!--         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
-                                <!--   </div>-->
+<!--                                   <div class="badge">-->
+<!--                                         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+<!--                                         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+<!--                                         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+<!--                                   </div>-->
                                 <!-- for badge-->
                                 <div class="row">
                                     <h3 class="candidateName">

@@ -24,6 +24,15 @@ class AboutUs extends CI_Controller{
         $this->load->view('ui/v3/about_us/intro/index', $data);
         $this->load->view('ui/v3/static/footer', $data);*/
     }
+    public function companions(){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'حامیان و همراهان';
+        $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
+        $data['title'] = "حامیان و همراهان";
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/about_us/companions/index', $data);
+        $this->load->view('ui/v3/static/footer', $data);
+    }
     public function prism(){
         redirect(base_url('blog/?page_id=42'),'auto',301);
         /*$data['noImg'] = $this->config->item('defaultImage');
@@ -105,13 +114,15 @@ class AboutUs extends CI_Controller{
     }
     public function support()
     {
-        /*$data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'حمایت از ما';
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'همراهی با ما';
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
-        $data['title'] = "حمایت از ما";
+        $data['title'] = "همراهی با ما";
+        $data['description'] = 'همراهی با ما';
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/about_us/support/index', $data);
-        $this->load->view('ui/v3/static/footer', $data);*/
+        $this->load->view('ui/v3/about_us/support/index_js');
+        $this->load->view('ui/v3/static/footer', $data);
     }
     public function faq(){
         redirect(base_url('blog/?page_id=49'),'auto',301);

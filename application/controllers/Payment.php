@@ -1,15 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Payment extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
     }
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'همراهی با ما';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'حمایت مالی';
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
-        $data['title'] = "همراهی با ما";
-        $data['description'] = 'همراهی با ما';
+        $data['title'] = "حمایت مالی";
+        $data['description'] = 'حمایت مالی';
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/payment/index', $data);
         $this->load->view('ui/v3/payment/index_css');

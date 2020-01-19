@@ -18,8 +18,9 @@
                 <li><a href="<?php echo base_url('AboutUs/exams') ?>">آشنایی با آزمون ها</a></li>
                 <li><a href="<?php echo base_url('AboutUs/candidatecriteriacompetencies') ?>">شایستگی های نماینده مجلس</a></li>
                 <li><a href="<?php echo base_url('AboutUs/candidate_commitment_letter') ?>">تعهدنامه نامزدها</a></li>
-                <li><a href="<?php echo base_url('AboutUs/support') ?>">حامبان و همراهان</a></li>
-                <li><a href="<?php echo base_url('AboutUs/financial_support') ?>">حمایت مالی از ما</a></li>
+                <li><a href="<?php echo base_url('AboutUs/support') ?>">همراهی با ما</a></li>
+                <li><a href="<?php echo base_url('AboutUs/companions') ?>">حامیان و همراهان</a></li>
+                <li><a href="<?php echo base_url('Payment') ?>">حمایت مالی</a></li>
             </ul>
         </div>
     </div>
