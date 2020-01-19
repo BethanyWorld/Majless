@@ -144,6 +144,31 @@ class State extends CI_Controller{
         $this->load->view('ui/v3/state/candidate_detail/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
+    public function candidateDetailApi($candidateId, $stateId, $stateName){
+        $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+        $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
+        $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
+        $data['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($candidateId);
+        $data['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($candidateId);
+        $data['candidateBooks'] = $this->ModelProfile->getCandidateBooksByCandidateId($candidateId);
+        $data['candidateArticles'] = $this->ModelProfile->getCandidateArticlesByCandidateId($candidateId);
+        $data['candidateResearch'] = $this->ModelProfile->getCandidateResearchByCandidateId($candidateId);
+        $data['candidateTranslation'] = $this->ModelProfile->getCandidateTranslationByCandidateId($candidateId);
+        $data['candidateInvention'] = $this->ModelProfile->getCandidateInventionByCandidateId($candidateId);
+        $data['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($candidateId);
+        $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
+        $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
+        $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);
+        $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
+        $data['promises'] = $this->ModelProfile->getCandidateElectionPromisesByCandidateId($candidateId);
+        $data['finance'] = $this->ModelProfile->getCandidateFinanceByCandidateId($candidateId);
+        $data['stateName'] = $stateName;
+        $data['stateId'] = $stateId;
+        $data['countries'] = $this->ModelCountry->getCountryList();
+        $data['states'] = $this->ModelCountry->getStateList();
+        echo json_encode($data);
+
+    }
     public function submitReportAbuse()
     {
         $inputs = $this->input->post(NULL, TRUE);
