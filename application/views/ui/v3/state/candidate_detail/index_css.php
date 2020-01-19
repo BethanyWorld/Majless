@@ -1,4 +1,7 @@
 <style>
+    .padding-r-0{
+        padding-right: 0px;
+    }
     .RightFloat{
         float: right;
     }

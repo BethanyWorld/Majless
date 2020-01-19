@@ -202,7 +202,7 @@
         <div class="row">
             <div class="panel left-candidate-panel-resume padding-0">
                 <div class="alert alert-info-candidate text-center">
-                    <div class="col-md-4 col-xs-12 candidate-description">
+                    <div class="col-md-12 col-xs-12 candidate-description">
                         <h2>
                             <?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?>
                         </h2>
@@ -793,7 +793,7 @@
                                 <li><a href="#tab3child" data-toggle="tab">فرزند</a></li>
                             </ul>
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body padding-r-0">
                             <div class="tab-content">
                                 <div class="tab-pane fade in active" id="tab1myself">
                                     <div class="LeftPanel">
@@ -803,7 +803,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">املاک و مستغلات</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -1126,7 +1126,7 @@
                                                         <div class="panel-heading">
                                                             وسایل نقلیه
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -1364,7 +1364,7 @@
                                                         <div class="panel-heading">
                                                             سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -1582,7 +1582,7 @@
                                                         <div class="panel-heading">
                                                             حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -1709,7 +1709,7 @@
                                                         <div class="panel-heading">
                                                             دیون و مطالبات
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -1889,7 +1889,7 @@
                                                         <div class="panel-heading">
                                                             کلیه کالاهای فاقد سند مالکیت رسمی
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -2137,7 +2137,7 @@
                                                         <div class="panel-heading">
                                                             حقوق مالکیت معنوی
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -2281,7 +2281,7 @@
                                                         <div class="panel-heading">
                                                             در آمد
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -2382,7 +2382,7 @@
                                                         <div class="panel-heading">
                                                             شفاف سازی هزینه های انتخاباتی
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -2790,7 +2790,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">املاک و مستغلات</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
                                                                     <form id="form-RealEstate">
@@ -3110,7 +3110,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">وسایل نقلیه</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -3348,7 +3348,7 @@
                                                         <div class="panel-heading">سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار،
                                                             ...)
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -3566,7 +3566,7 @@
                                                         <div class="panel-heading">حساب‌های جاری، پس‌انداز و
                                                             سرمایه‌گذاری
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -3693,7 +3693,7 @@
                                                         <div class="panel-heading">
                                                             دیون و مطالبات
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -3872,7 +3872,7 @@
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">کلیه کالاهای فاقد سند مالکیت رسمی
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -4118,7 +4118,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">حقوق مالکیت معنوی</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -4260,7 +4260,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">در آمد</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -4361,7 +4361,7 @@
                                                         <div class="panel-heading">
                                                             شفاف سازی هزینه های انتخاباتی
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -4769,7 +4769,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">املاک و مستغلات</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -5090,7 +5090,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">وسایل نقلیه</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -5328,7 +5328,7 @@
                                                         <div class="panel-heading">سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار،
                                                             ...)
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -5546,7 +5546,7 @@
                                                         <div class="panel-heading">حساب‌های جاری، پس‌انداز و
                                                             سرمایه‌گذاری
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -5671,7 +5671,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">دیون و مطالبات</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -5850,7 +5850,7 @@
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">کلیه کالاهای فاقد سند مالکیت رسمی
                                                         </div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -6096,7 +6096,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">حقوق مالکیت معنوی</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -6238,7 +6238,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">در آمد</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -6337,7 +6337,7 @@
                                                 <div class="col-md-12 col-xs-12">
                                                     <div class="panel panel-default LeftPanelShadow">
                                                         <div class="panel-heading">شفاف سازی هزینه های انتخاباتی</div>
-                                                        <div class="panel-body">
+                                                        <div class="panel-body padding-r-0">
                                                             <div class="row">
                                                                 <div class="col-lg-12 col-md-12 col-xs-12">
 
@@ -6756,7 +6756,7 @@
                     <input type="hidden" id="inputReportCandidateId" name="inputReportCandidateId"
                            value="<?php echo $candidate['CandidateId']; ?>"/>
                     <input type="hidden" id="inputCSRF" name="inputCSRF" value="<?= $CSRF; ?>"/>
-                    <div class="row col-xs-12 col-md-12 pull-right">
+                    <div class="row col-xs-12 col-md-12 pull-right padding-r-0">
                         <div class="form-group col-xs-12 col-md-4 pull-right">
                             <label for="inputReportFullName">نام و نام خانوادگی</label>
                             <input class="form-control" type="text" id="inputReportFullName"
@@ -6771,7 +6771,7 @@
                             <input class="form-control" type="text" id="inputReportPhone" name="inputReportPhone"/>
                         </div>
                     </div>
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 col-md-12 padding-r-0">
                         <div class="form-group">
                             <label for="inputReportContent">پیام</label>
                             <textarea class="form-control" rows="6" id="inputReportContent"
