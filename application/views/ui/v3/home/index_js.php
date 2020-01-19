@@ -6,6 +6,8 @@
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     } , 100);
 
+
+
     $(document).ready(function () {
         $continueSlide = true;
         var timer = "";

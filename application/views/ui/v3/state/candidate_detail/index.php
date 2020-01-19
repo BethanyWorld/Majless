@@ -5,8 +5,6 @@
 </h1>
 <div class="container container-wrapper">
 
-
-
     <div class="col-md-3 col-xs-12 pull-right">
         <div class="panel panel-default">
             <div class="panel-body padding-0">
@@ -14,65 +12,10 @@
                      src="<?php echo $candidate['CandidateProfileImage']; ?>">
             </div>
         </div>
-        <div class="col-xs-12 padding-0 visible-xs visible-sm" style="padding: 0px;">
-            <div class="col-xs-12 padding-0 MobileStep" style="padding: 0px;">
-                <ul class="col-xs-12 commonScrollStyle">
-                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "first"; ?>">
-                        <a href="#personal-information">1</a>
-                    </li>
-                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "first"; ?>">
-                        <a href="#academic-background">2</a>
-                    </li>
-                    <?php if ($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male') { ?>
-                        <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "first"; ?>">
-                            <a href="#military-records">3</a>
-                        </li>
-                    <?php } ?>
-                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "first"; ?>">
-                        <a href="#work-experience">4</a>
-                    </li>
-                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "socialCulturalBackground") !== false) echo "first"; ?>">
-                        <a href="#social-cultural-background">5</a>
-                    </li>
-                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "politicBackground") !== false) echo "first"; ?>">
-                        <a href="#political-background">6</a>
-                    </li>
-                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "scienceBackground") !== false) echo "first"; ?>">
-                        <a href="#scientific-research-records">7</a>
-                    </li>
-                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "skills") !== false) echo "first"; ?>">
-                        <a href="#skills">8</a>
-                    </li>
-                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "first"; ?>">
-                        <a href="#sacrifice">9</a>
-                    </li>
-                    <?php if ($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted') { ?>
-                        <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
-                            <a href="#property-assets">10</a>
-                        </li>
-                    <?php } ?>
-                    <li class="text-center">
-                        <a href="<?php echo base_url('Profile'); ?>">
-                            <i class="fa fa-refresh"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <div class="col-md-12 padding-0 visible-lg visible-md">
             <div class="col-md-12 padding-0 RightPanel">
                 <ul class="col-md-12 padding-0 commonScrollStyle RightPanelUl">
-                    <li class="col-md-12 padding-0 <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "active"; ?>">
-                        <a href="#personal-information">
-                            <i class="zmdi RightpanelIcon">
-                                <span class="fa fa-user"></span>
-                            </i>
-                            <div class="RightPanelContent">
-                                <div class="RightPanleTitle">اطلاعات فردی</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "active"; ?>">
+                    <li class="col-md-12 padding-0">
                         <a href="#academic-background">
                             <i class="zmdi RightpanelIcon">
                                 <span class="fa fa-book"></span>
@@ -82,8 +25,8 @@
                             </div>
                         </a>
                     </li>
-                    <?php if ($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male') { ?>
-                        <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "active"; ?>">
+                    <?php if ($candidate['CandidateGender'] == 'Male') { ?>
+                        <li class="col-md-12 padding-0">
                             <a href="#military-records">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-flag"></span>
@@ -93,7 +36,7 @@
                                 </div>
                         </li>
                     <?php } ?>
-                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "jobHistory") !== false) echo "active"; ?>">
+                    <li class="col-md-12 padding-0">
                         <a href="#work-experience">
                             <i class="zmdi RightpanelIcon">
                                 <span class="fa fa-cogs"></span>
@@ -103,7 +46,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "socialCulturalBackground") !== false) echo "active"; ?>">
+                    <li class="col-md-12 padding-0">
                         <a href="#social-cultural-background">
                             <i class="zmdi RightpanelIcon">
                                 <span class="fa fa-bookmark"></span>
@@ -113,7 +56,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "politicBackground") !== false) echo "active"; ?>">
+                    <li class="col-md-12 padding-0">
                         <a href="#political-background">
                             <i class="zmdi RightpanelIcon">
                                 <span class="fa fa-handshake-o"></span>
@@ -122,7 +65,7 @@
                                 <div class="RightPanleTitle"> سوابق سیاسی</div>
                             </div>
                     </li>
-                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "scienceBackground") !== false) echo "active"; ?>">
+                    <li class="col-md-12 padding-0">
                         <a href="#scientific-research-records">
                             <i class="zmdi RightpanelIcon">
                                 <span class="fa fa-flask"></span>
@@ -132,7 +75,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "skills") !== false) echo "active"; ?>">
+                    <li class="col-md-12 padding-0">
                         <a href="#skills">
                             <i class="zmdi RightpanelIcon">
                                 <span class="fa fa-outdent"></span>
@@ -142,7 +85,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "promises") !== false) echo "active"; ?>">
+                    <li class="col-md-12 padding-0">
                         <a href="#election-promises">
                             <i class="zmdi RightpanelIcon">
                                 <span class="fa fa-outdent"></span>
@@ -152,7 +95,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "active"; ?>">
+                    <li class="col-md-12 padding-0">
                         <a href="#sacrifice">
                             <i class="zmdi RightpanelIcon">
                                 <span class="fa fa-wheelchair"></span>
@@ -162,18 +105,16 @@
                             </div>
                         </a>
                     </li>
-                    <?php if ($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted') { ?>
-                        <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "active"; ?>">
-                            <a href="#property-assets">
-                                <i class="zmdi RightpanelIcon">
-                                    <span class="fa fa-money"></span>
-                                </i>
-                                <div class="RightPanelContent">
-                                    <div class="RightPanleTitle">اطلاعات مالی</div>
-                                </div>
-                            </a>
-                        </li>
-                    <?php } ?>
+                    <li class="col-md-12 padding-0">
+                        <a href="#property-assets">
+                            <i class="zmdi RightpanelIcon">
+                                <span class="fa fa-money"></span>
+                            </i>
+                            <div class="RightPanelContent">
+                                <div class="RightPanleTitle">اطلاعات مالی</div>
+                            </div>
+                        </a>
+                    </li>
                     <li class="col-md-12 padding-0">
                         <a href="<?php echo base_url('Profile'); ?>">
                             <i class="zmdi RightpanelIcon">
@@ -209,29 +150,13 @@
                         <span><?php echo $candidate['CandidateBirthDate']; ?></span>
                     </div>
                     <h5>
-                        <?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?>
                         نامزد انتخاباتی استان
-                        <?php echo $candidate['StateName']; ?>
+                        <strong class="colored"><?php echo $candidate['StateName']; ?></strong>
                         شهر
-                        <?php echo $candidate['CityName']; ?>
+                        <strong class="colored"> <?php echo $candidate['CityName']; ?></strong>
                         حوزه انتخابیه
-                        <?php echo $candidate['ElectionName']; ?>
+                        <strong class="colored"><?php echo $candidate['ElectionName']; ?></strong>
                     </h5>
-                </div>
-            </div>
-            <!-- personal  resume -->
-            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="personal-information">
-                <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                    <div class="have-border-bottom">
-                        <h3>اطلاعات فردی</h3>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="resume-ul">
-                        <li>
-                            <span class="fa fa-circle-o"></span>
-                        </li>
-                    </ul>
                 </div>
             </div>
             <!-- Academic  -->
@@ -246,49 +171,47 @@
                         <?php foreach ($candidateAcademicBackground as $item) { ?>
                             <li>
                                 <span class="fa fa-circle-o"></span>
-                                گروه تحصیلی :
-                                <?php
-                                foreach ($EnumResumeProfile['CandidateDepartment'] as $key => $value) {
-                                    if ($item['CandidateDepartment'] == $key) {
-                                        echo $value;
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['AcademicStudyStatus'] as $key => $value) {
+                                        if ($item['CandidateStudyStatus'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                مقطع :
-                                <?php
-                                foreach ($EnumResumeProfile['CandidateGrade'] as $key => $value) {
-                                    if ($item['CandidateGrade'] == $key) {
-                                        echo $value;
+                                    ?>
+                                    <?php echo $item['CandidateUniversityName']; ?>
+                                    <?php
+                                    foreach ($EnumResumeProfile['CandidateUniversityLevelType'] as $key => $value) {
+                                        if ($item['CandidateUniversityLevelType'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                رشته تحصیلی :
-                                <?php
-                                foreach ($EnumResumeProfile['CandidateSchoolMajor'] as $key => $value) {
-                                    if ($item['CandidateSchoolMajor'] == $key) {
-                                        echo $value;
+                                    ?>
+                                </strong>
+                                گروه تحصیلی
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['CandidateDepartment'] as $key => $value) {
+                                        if ($item['CandidateDepartment'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                <?php echo $item['CandidateMajor']; ?>
-                                وضعیت تحصیل :
-                                <?php
-                                foreach ($EnumResumeProfile['AcademicStudyStatus'] as $key => $value) {
-                                    if ($item['CandidateStudyStatus'] == $key) {
-                                        echo $value;
+                                    ?>
+                                </strong>
+                                مقطع
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['CandidateGrade'] as $key => $value) {
+                                        if ($item['CandidateGrade'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                دانشگاه :
-                                <?php
-                                foreach ($EnumResumeProfile['CandidateUniversityLevelType'] as $key => $value) {
-                                    if ($item['CandidateUniversityLevelType'] == $key) {
-                                        echo $value;
-                                    }
-                                }
-                                ?>
-                                نام دانشگاه :
-                                <?php echo $item['CandidateUniversityName']; ?>
+                                    ?>
+                                </strong>
+                                رشته تحصیلی
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateMajor']; ?>
+                                </strong>
                             </li>
                         <?php } ?>
                     </ul>
@@ -305,37 +228,39 @@
                     <ul class="resume-ul">
                         <li>
                             <span class="fa fa-circle-o"></span>
-                            <?php
-                            foreach ($EnumResumeProfile['CandidateMilitaryStatus'] as $key => $value) {
-                                if ($candidateMilitaryStatus[0]['CandidateMilitaryStatus'] == $key) {
-                                    echo $value;
+                            <strong class="colored bg-white">
+                                <?php
+                                foreach ($EnumResumeProfile['CandidateMilitaryStatus'] as $key => $value) {
+                                    if ($candidateMilitaryStatus[0]['CandidateMilitaryStatus'] == $key) {
+                                        echo $value;
+                                    }
                                 }
-                            }
-                            ?>
-                            <?php
-                            foreach ($EnumResumeProfile['CandidateExemptTitle'] as $key => $value) {
-                                if ($candidateMilitaryStatus[0]['CandidateExemptTitle'] == $key) {
-                                    echo " علت معافیت " . $value;
+                                ?>
+                                <?php
+                                foreach ($EnumResumeProfile['CandidateExemptTitle'] as $key => $value) {
+                                    if ($candidateMilitaryStatus[0]['CandidateExemptTitle'] == $key) {
+                                        echo " علت معافیت " . $value;
+                                    }
                                 }
-                            }
-                            ?>
-                            <?php echo $candidateMilitaryStatus[0]['CandidateExemptDescription']; ?>
-                            <?php
-                            foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                if ($candidateMilitaryStatus[0]['CandidateMilitaryEndMonth'] == $key) {
-                                    echo $value;
+                                ?>
+                                <?php echo $candidateMilitaryStatus[0]['CandidateExemptDescription']; ?>
+                                <?php
+                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                    if ($candidateMilitaryStatus[0]['CandidateMilitaryEndMonth'] == $key) {
+                                        echo $value;
+                                    }
                                 }
-                            }
-                            ?>
-                            <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndYear']; ?>
-                            <?php
-                            foreach ($EnumResumeProfile['CandidateMilitaryEndArea'] as $key => $value) {
-                                if ($candidateMilitaryStatus[0]['CandidateMilitaryEndArea'] == $key) {
-                                    echo $value;
+                                ?>
+                                <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndYear']; ?>
+                                <?php
+                                foreach ($EnumResumeProfile['CandidateMilitaryEndArea'] as $key => $value) {
+                                    if ($candidateMilitaryStatus[0]['CandidateMilitaryEndArea'] == $key) {
+                                        echo $value;
+                                    }
                                 }
-                            }
-                            ?>
-                            <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndAreaTitle']; ?>
+                                ?>
+                                <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndAreaTitle']; ?>
+                            </strong>
                         </li>
                     </ul>
                 </div>
@@ -349,33 +274,40 @@
                 </div>
                 <div class="panel-body">
                     <ul class="resume-ul">
-                        <?php foreach ($candidateJobHistory
-
-                        as $item) { ?>
+                        <?php foreach ($candidateJobHistory as $item) { ?>
                         <li>
                             <span class="fa fa-circle-o"></span>
-                            عنوان شغلی :
-                            <?php echo $item['CandidateJobTitle']; ?>
-                            نام سازمان :
-                            <?php echo $item['CandidateJobCompanyTitle']; ?>
-                            شروع فعالیت:
-                            <?php
-                            foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                if ($item['CandidateStartJobMonth'] == $key) {
-                                    echo $value;
+                            <strong class="colored bg-white">
+                                <?php echo $item['CandidateJobTitle']; ?>
+                            </strong>
+
+                            <strong class="colored bg-white">
+                                <?php echo $item['CandidateJobCompanyTitle']; ?>
+                            </strong>
+                            از
+
+                            <strong class="colored bg-white">
+                                <?php
+                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                    if ($item['CandidateStartJobMonth'] == $key) {
+                                        echo $value;
+                                    }
                                 }
-                            }
-                            ?>
-                            <?php echo $item['CandidateStartJobYear']; ?>
-                            پایان فعالیت:
-                            <?php
-                            foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                if ($item['CandidateEndJobMonth'] == $key) {
-                                    echo $value;
+                                ?>
+                                <?php echo $item['CandidateStartJobYear']; ?>
+                            </strong>
+                            الی
+
+                            <strong class="colored bg-white">
+                                <?php
+                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                    if ($item['CandidateEndJobMonth'] == $key) {
+                                        echo $value;
+                                    }
                                 }
-                            }
-                            ?>
-                            <?php echo $item['CandidateEndJobYear']; ?>
+                                ?>
+                                <?php echo $item['CandidateEndJobYear']; ?>
+                            </strong>
                             <?php } ?>
                     </ul>
                 </div>
@@ -535,164 +467,209 @@
                         <h3>سوابق علمی پژوهشی</h3>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="col-xs-12">
+                    <h4>کتب</h4>
                     <ul class="resume-ul">
-                        <?php foreach ($candidateBooks
-
-                        as $item) { ?>
+                        <?php foreach ($candidateBooks as $item) { ?>
                         <li>
                             <span class="fa fa-circle-o"></span>
-                            عنوان کتاب :
-                            <?php echo $item['CandidateBookTitle']; ?>
-                            ناشر :
-                            <?php echo $item['CandidateBookPublisher']; ?>
-                            تاریخ چاپ:
-                            <?php
-                            foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                if ($item['CandidateBookPublishMonth'] == $key) {
-                                    echo $value;
+                            <strong class="colored bg-white">
+                                <?php echo $item['CandidateBookTitle']; ?>
+                            </strong>
+                            از نشر
+                            <strong class="colored bg-white">
+                                <?php echo $item['CandidateBookPublisher']; ?>
+                            </strong>
+                            در تاریخ
+                            <strong class="colored bg-white">
+                                <?php
+                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                    if ($item['CandidateBookPublishMonth'] == $key) {
+                                        echo $value;
+                                    }
                                 }
-                            }
-                            ?>
-                            <?php echo $item['CandidateBookPublishYear']; ?>
+                                ?>
+                                <?php echo $item['CandidateBookPublishYear']; ?>
+                            </strong>
                             <?php } ?>
                         </li>
                     </ul>
                 </div>
-                <div class="panel-body">
+                <div class="col-xs-12">
+                    <h4>مقالات</h4>
                     <ul class="resume-ul">
                         <?php foreach ($candidateArticles as $item) { ?>
                             <li>
                                 <span class="fa fa-circle-o"></span>
-                                عنوان مقاله:
-                                <?php echo $item['CandidateArticleTitle']; ?>
-                                سطح مقاله:
-                                <?php
-                                foreach ($EnumResumeProfile['ArticleLevelType'] as $key => $value) {
-                                    if ($item['CandidateArticleLevel'] == $key) {
-                                        echo $value;
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateArticleTitle']; ?>
+                                </strong>
+                                در سطح
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['ArticleLevelType'] as $key => $value) {
+                                        if ($item['CandidateArticleLevel'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                عنوان مجله:
-                                <?php echo $item['CandidateArticleMagazineTitle']; ?>
-                                تاریخ نشر:
-                                <?php echo $item['CandidateArticlePublishYear']; ?>
-                                <?php
-                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                    if ($item['CandidateArticlePublishMonth'] == $key) {
-                                        echo $value;
-                                    }
-                                } ?>
+                                    ?>
+                                </strong>
+                                در مجله
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateArticleMagazineTitle']; ?>
+                                </strong>
+                                در تاریخ
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateArticlePublishYear']; ?>
+                                    <?php
+                                    foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                        if ($item['CandidateArticlePublishMonth'] == $key) {
+                                            echo $value;
+                                        }
+                                    } ?>
+                                </strong>
                             </li>
                         <?php } ?>
                     </ul>
                 </div>
-                <div class="panel-body">
+                <div class="col-xs-12">
+                    <h4>اختراعات</h4>
                     <ul class="resume-ul">
                         <?php foreach ($candidateInvention as $item) { ?>
                             <li>
                                 <span class="fa fa-circle-o"></span>
-                                عنوان اختراع:
-                                <?php echo $item['CandidateInventionTitle']; ?>
-                                حوزه ابداع:
-                                <?php echo $item['CandidateInventionField']; ?>
-                                شماره ثبت:
-                                <?php echo $item['CandidateInventionRegisterNumber']; ?>
-                                شرح اختراع:
-                                <?php echo $item['CandidateInventionDescription']; ?>
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateInventionTitle']; ?>
+                                </strong>
+                                حوزه
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateInventionField']; ?>
+                                </strong>
+                                به شماره ثبت
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateInventionRegisterNumber']; ?>
+                                </strong>
+                                <p>
+                                    <?php echo $item['CandidateInventionDescription']; ?>
+                                </p>
                             </li>
                         <?php } ?>
                     </ul>
                 </div>
-                <div class="panel-body">
+                <div class="col-xs-12">
+                    <h4>طراح های پژوهشی</h4>
                     <ul class="resume-ul">
                         <?php foreach ($candidateResearch as $item) { ?>
                             <li>
                                 <span class="fa fa-circle-o"></span>
-                                عنوان طراح:
-                                <?php echo $item['CandidateResearchTitle']; ?>
-                                مسئولیت:
-                                <?php echo $item['CandidateResearchResponsibility']; ?>
-                                مجری:
-                                <?php echo $item['CandidateResearchWorker']; ?>
-                                کارفرما:
-                                <?php echo $item['CandidateResearchEmployer']; ?>
-                                تاریخ:
-                                <?php
-                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                    if ($item['CandidateResearchMonth'] == $key) {
-                                        echo $value;
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateResearchTitle']; ?>
+                                </strong>
+                                مسئولیت
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateResearchResponsibility']; ?>
+                                </strong>
+                                مجری
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateResearchWorker']; ?>
+                                </strong>
+                                کارفرما
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateResearchEmployer']; ?>
+                                </strong>
+                                تاریخ
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                        if ($item['CandidateResearchMonth'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                <?php echo $item['CandidateResearchYear']; ?>
+                                    ?>
+                                    <?php echo $item['CandidateResearchYear']; ?>
+                                </strong>
                             </li>
                         <?php } ?>
                     </ul>
                 </div>
-                <div class="panel-body">
+                <div class="col-xs-12">
+                    <h4>همایش ها</h4>
                     <ul class="resume-ul">
                         <?php foreach ($candidateConference as $item) { ?>
                             <li>
                                 <span class="fa fa-circle-o"></span>
-                                عنوان همایش:
-                                <?php echo $item['CandidateConferenceTitle']; ?>
-                                سطح:
-                                <?php
-                                foreach ($EnumResumeProfile['ConferenceLevelType'] as $key => $value) {
-                                    if ($item['CandidateConferenceLevel'] == $key) {
-                                        echo $value;
+                                <strong class="colored bg-white">
+                                  <?php echo $item['CandidateConferenceTitle']; ?>
+                                </strong>
+                                در سطح
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['ConferenceLevelType'] as $key => $value) {
+                                        if ($item['CandidateConferenceLevel'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                نوع پذیرش / ارائه:
-                                <?php
-                                foreach ($EnumResumeProfile['AcceptanceOfferType'] as $key => $value) {
-                                    if ($item['CandidateConferenceAcceptType'] == $key) {
-                                        echo $value;
+                                    ?>
+                                </strong>
+                                نوع پذیرش / ارائه
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['AcceptanceOfferType'] as $key => $value) {
+                                        if ($item['CandidateConferenceAcceptType'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                تاریخ:
-                                <?php
-                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                    if ($item['CandidateConferenceMonth'] == $key) {
-                                        echo $value;
+                                    ?>
+                                </strong>
+                                تاریخ
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                        if ($item['CandidateConferenceMonth'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                <?php echo $item['CandidateConferenceYear']; ?>
+                                    ?>
+                                    <?php echo $item['CandidateConferenceYear']; ?>
+                                </strong>
                             </li>
                         <?php } ?>
                     </ul>
                 </div>
-                <div class="panel-body">
+                <div class="col-xs-12">
+                    <h4>ترجمه ها</h4>
                     <ul class="resume-ul">
                         <?php foreach ($candidateTranslation as $item) { ?>
                             <li>
                                 <span class="fa fa-circle-o"></span>
-                                عنوان:
-                                <?php echo $item['CandidateTranslationTitle']; ?>
-                                ناشر:
-                                <?php echo $item['CandidateTranslationPublisher']; ?>
-                                نوع:
-                                <?php
-                                foreach ($EnumResumeProfile['TranslateType'] as $key => $value) {
-                                    if ($item['CandidateTranslationType'] == $key) {
-                                        echo $value;
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateTranslationTitle']; ?>
+                                </strong>
+                                نشر
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateTranslationPublisher']; ?>
+                                </strong>
+                                نوع
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['TranslateType'] as $key => $value) {
+                                        if ($item['CandidateTranslationType'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                تاریخ:
-                                <?php
-                                foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                    if ($item['CandidateTranslationMonth'] == $key) {
-                                        echo $value;
+                                    ?>
+                                </strong>
+                                تاریخ
+                                <strong class="colored bg-white">
+                                    <?php
+                                    foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                        if ($item['CandidateTranslationMonth'] == $key) {
+                                            echo $value;
+                                        }
                                     }
-                                }
-                                ?>
-                                <?php echo $item['CandidateTranslationYear']; ?>
+                                    ?>
+                                    <?php echo $item['CandidateTranslationYear']; ?>
+                                </strong>
                             </li>
                         <?php } ?>
                     </ul>
@@ -710,8 +687,11 @@
                         <?php foreach ($candidateSkills as $item) { ?>
                             <li>
                                 <span class="fa fa-circle-o"></span>
-                                <?php echo $item['SkillType']; ?>
-                                سطح:
+                                <strong class="colored bg-white">
+                                    <?php echo $item['SkillType']; ?>
+                                </strong>
+                                سطح
+                                <strong class="colored bg-white">
                                 <?php
                                 foreach ($EnumResumeProfile['SkillLevel'] as $key => $value) {
                                     if ($item['SkillLevel'] == $key) {
@@ -719,7 +699,9 @@
                                     }
                                 }
                                 ?>
-                                نحوه یادگیری:
+                                </strong>
+                                یادگیری بصورت
+                                <strong class="colored bg-white">
                                 <?php
                                 foreach ($EnumResumeProfile['SkillLearnType'] as $key => $value) {
                                     if ($item['SkillLearnType'] == $key) {
@@ -727,6 +709,7 @@
                                     }
                                 }
                                 ?>
+                                </strong>
                             </li>
                         <?php } ?>
                     </ul>
@@ -744,14 +727,16 @@
                         <?php foreach ($promises as $item) { ?>
                             <li>
                                 <span class="fa fa-circle-o"></span>
-                                <?php echo $item['CandidateElectionPromise']; ?>
+                                <strong class="colored bg-white">
+                                    <?php echo $item['CandidateElectionPromise']; ?>
+                                </strong>
                             </li>
                         <?php } ?>
                     </ul>
                 </div>
             </div>
 
-            <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="sacrifice">
+            <div class="panel left-candidate-panel-resume padding-0 single-scroll hidden" id="sacrifice">
                 <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                     <div class="have-border-bottom">
                         <h3>ایثارگری</h3>
@@ -6804,8 +6789,6 @@
         </div>
     </div>
 </div>
-
-
 <style>
     .RightPanelContent {
         padding-top: 0.3em;
@@ -6944,7 +6927,6 @@
         text-shadow: none !important;
     }
 
-
     .RightFloat input {
         background: transparent;
         border: none;
@@ -6996,4 +6978,3 @@
         padding: 0px;
     }
 </style>
-

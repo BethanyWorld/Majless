@@ -6,10 +6,10 @@ class Payment extends CI_Controller{
     }
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'حمایت مالی از جنبش از ما';
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'همراهی با ما';
         $data['sidebar'] = $this->load->view('ui/v3/about_us/sidebar', NULL, TRUE);
-        $data['title'] = "حمایت مالی از جنبش از ما";
-        $data['description'] = 'حمایت مالی از جنبش از ما';
+        $data['title'] = "همراهی با ما";
+        $data['description'] = 'همراهی با ما';
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/payment/index', $data);
         $this->load->view('ui/v3/payment/index_css');

@@ -1,5 +1,8 @@
 <script type="text/javascript">
     $(document).ready(function () {
+
+        $(window).scrollTop(0);
+
         $('input').attr('readonly', true);
         $("select").attr('disabled','disabled');
         $("textarea").attr('readonly', true);

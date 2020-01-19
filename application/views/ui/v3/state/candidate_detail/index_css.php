@@ -5,6 +5,12 @@
     .RightFloat{
         float: right;
     }
+    strong.colored {
+        color: #fdb72e;
+    }
+    strong.colored.bg-white {
+        color: #000000;
+    }
     .profile-image{
         margin: auto;
     }
