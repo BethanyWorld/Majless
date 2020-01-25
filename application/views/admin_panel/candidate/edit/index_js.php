@@ -229,6 +229,29 @@
                 }
             });
         });
+        $("#doChangeCandidatePassword").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            $inputPassword = $.trim($("#inputPassword").val());
+            toggleLoader();
+            $sendData = {
+                'inputCandidateId': $inputCandidateId,
+                'inputPassword': $inputPassword
+            }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doChangeCandidatePassword',
+                data: $sendData,
+                success: function (data) {
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                    toggleLoader();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    notify('مشکلی درخ داده است', 'red');
+                    toggleLoader();
+                }
+            });
+        });
 
     });
 </script>

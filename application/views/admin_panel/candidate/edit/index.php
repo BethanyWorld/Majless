@@ -129,6 +129,11 @@
                                         <a href="#AcceptEvaluationExam" aria-controls="AcceptEvaluationExam"
                                            role="tab" data-toggle="tab">آزمون کانون ارزیابی</a>
                                     </li>
+                                    <li role="presentation">
+                                        <a href="#ChangePassword"
+                                           aria-controls="ChangePassword"
+                                           role="tab" data-toggle="tab">رمز عبور</a>
+                                    </li>
                                 </ul>
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane fade in active" id="info">
@@ -1004,6 +1009,19 @@
                                                     </button>
                                                 </div>
                                             </div>
+                                        </form>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade in" id="ChangePassword">
+                                        <form class="form-horizontal">
+                                            <label>رمز عبور جدید</label>
+                                            <input type="text"
+                                                   id="inputPassword" name="inputPassword" />
+                                            <button
+                                                    id="doChangeCandidatePassword"
+                                                    type="button"
+                                                    class="btn btn-info">
+                                                تغییر رمز عبور
+                                            </button>
                                         </form>
                                     </div>
                                 </div>

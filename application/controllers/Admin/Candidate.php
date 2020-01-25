@@ -1,14 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Candidate extends CI_Controller{
-    public function __construct(){
+
+class Candidate extends CI_Controller
+{
+    public function __construct()
+    {
         parent::__construct();
         $this->load->helper('admin/admin_login');
         $this->load->model('admin/ModelCandidate');
         $this->load->model('ui/ModelCountry');
         $this->load->model('ui/ModelProfile');
     }
-    public function index(){
+
+    public function index()
+    {
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نامزد های انتخاباتی';
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
@@ -20,14 +25,18 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/home/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-    public function doPagination(){
+
+    public function doPagination()
+    {
         $inputs = $this->input->post(NULL, TRUE);
         $data = $this->ModelCandidate->getCandidate($inputs);
         $data['htmlResult'] = $this->load->view('admin_panel/candidate/home/pagination', $data, TRUE);
         unset($data['data']);
         echo json_encode($data);
     }
-    public function edit($candidateId){
+
+    public function edit($candidateId)
+    {
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = 'ویرایش نامزد انتخاباتی';
@@ -59,7 +68,9 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/edit/index_js', $data);
         $this->load->view('admin_panel/static/footer');
     }
-    public function badge($candidateId){
+
+    public function badge($candidateId)
+    {
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
         $data['pageTitle'] = 'ویرایش نامزد انتخاباتی';
@@ -67,7 +78,7 @@ class Candidate extends CI_Controller{
         $data['exams'] = $this->getCandidateExams($candidateId);
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
         $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
-        $data['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($candidateId , 'Normal');
+        $data['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($candidateId, 'Normal');
 
         $data['api'] = $this->config->item('api');
         $this->load->view('admin_panel/static/header', $data);
@@ -76,10 +87,12 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/badge/index_js', $data);
         $this->load->view('admin_panel/static/footer');
     }
-    public function doAssignBadge(){
+
+    public function doAssignBadge()
+    {
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
-            if(!is_array($v)){
+            if (!is_array($v)) {
                 return strip_tags($v);
             }
         }, $inputs);
@@ -92,7 +105,9 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doAssignBadge($inputs);
         echo json_encode($result);
     }
-    public function printResume($candidateId){
+
+    public function printResume($candidateId)
+    {
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
         $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
@@ -113,6 +128,7 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/print_resume/index_css');
         $this->load->view('admin_panel/candidate/print_resume/index_js');
     }
+
     public function doMarkCandidate()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -146,6 +162,7 @@ class Candidate extends CI_Controller{
             echo json_encode($result);
         }
     }
+
     public function doAcceptCandidateFirstExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -161,6 +178,7 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doAcceptCandidateFirstExam($inputs);
         echo json_encode($result);
     }
+
     public function doRejectCandidateFirstExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -176,6 +194,7 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doRejectCandidateFirstExam($inputs);
         echo json_encode($result);
     }
+
     public function doAcceptCandidateSecondExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -191,6 +210,7 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doAcceptCandidateSecondExam($inputs);
         echo json_encode($result);
     }
+
     public function doRejectCandidateSecondExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -206,6 +226,7 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doRejectCandidateSecondExam($inputs);
         echo json_encode($result);
     }
+
     public function doAcceptEvaluationExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -221,6 +242,7 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doAcceptEvaluationExam($inputs);
         echo json_encode($result);
     }
+
     public function doRejectEvaluationExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -236,10 +258,14 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doRejectEvaluationExam($inputs);
         echo json_encode($result);
     }
-    protected function getCandidateStatus($candidateId){
+
+    protected function getCandidateStatus($candidateId)
+    {
         return $this->ModelCandidate->getCandidateByCandidateId($candidateId);
     }
-    protected function getCandidateExams($candidateId){
+
+    protected function getCandidateExams($candidateId)
+    {
         $data['firstExams'] = $this->ModelCandidate->getCandidateFirstStepExamByCandidateId($candidateId);
         $data['secondExams'] = $this->ModelCandidate->getCandidateSecondStepExamByCandidateId($candidateId);
         $data['evalExams'] = $this->ModelCandidate->getCandidateEvaluationExamByCandidateId($candidateId);
@@ -249,6 +275,7 @@ class Candidate extends CI_Controller{
         $data['evalExams'] = array_reverse($data['evalExams']);
         return $data;
     }
+
     public function importScores()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -261,6 +288,7 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/import_scores/index_js', $data);
         $this->load->view('admin_panel/static/footer');
     }
+
     public function prepareImportScores()
     {
         $this->load->helper('plugins/excel/bootstrap_helper');
@@ -312,6 +340,7 @@ class Candidate extends CI_Controller{
         <?php } ?>
         <?php
     }
+
     public function doImportScores()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -319,8 +348,10 @@ class Candidate extends CI_Controller{
         echo json_encode($result);
 
     }
+
     /*Admin Special Candidates*/
-    public function special(){
+    public function special()
+    {
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نامزد های ویژه';
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
@@ -332,7 +363,9 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate_special/home/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-    public function specialAdd(){
+
+    public function specialAdd()
+    {
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نامزد های ویژه';
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
@@ -344,11 +377,12 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate_special/add/index_js');
         $this->load->view('admin_panel/static/footer');
     }
+
     public function doSpecialAdd()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
-            if(!is_array($v)){
+            if (!is_array($v)) {
                 return strip_tags($v);
             }
         }, $inputs);
@@ -358,17 +392,19 @@ class Candidate extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $inputs['inputCandidateCode'] = rand(10000,99999);
+        $inputs['inputCandidateCode'] = rand(10000, 99999);
         $result = $this->ModelCandidate->doSpecialAdd($inputs);
         echo json_encode($result);
     }
-    public function specialEdit($rowId){
+
+    public function specialEdit($rowId)
+    {
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نامزد های ویژه';
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
         $data['states'] = $this->ModelCountry->getStateList();
         $data['candidate'] = $this->ModelCandidate->getCandidateSpecialByCandidateId($rowId);
-        $data['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($data['candidate']['CandidateCode'] , 'Special');
+        $data['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($data['candidate']['CandidateCode'], 'Special');
 
 
         $this->load->view('admin_panel/static/header', $data);
@@ -377,11 +413,12 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate_special/edit/index_js');
         $this->load->view('admin_panel/static/footer');
     }
+
     public function doEditCandidateSpecial()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
-            if(!is_array($v)){
+            if (!is_array($v)) {
                 return strip_tags($v);
             }
         }, $inputs);
@@ -394,19 +431,23 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doEditCandidateSpecial($inputs);
         echo json_encode($result);
     }
-    public function doSpecialPagination(){
+
+    public function doSpecialPagination()
+    {
         $inputs = $this->input->post(NULL, TRUE);
         $data = $this->ModelCandidate->getCandidateSpecial($inputs);
         $data['htmlResult'] = $this->load->view('admin_panel/candidate_special/home/pagination', $data, TRUE);
         unset($data['data']);
         echo json_encode($data);
     }
+
     public function doDeleteCandidateSpecial()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doDeleteCandidateSpecial($inputs);
         echo json_encode($result);
     }
+
     public function doToggleAcceptanceCandidateSpecial()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -414,12 +455,15 @@ class Candidate extends CI_Controller{
         echo json_encode($result);
     }
 
-    public function doIncreaseCandidateSpecialInviteCount(){
+    public function doIncreaseCandidateSpecialInviteCount()
+    {
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doIncreaseCandidateSpecialInviteCount($inputs);
         echo json_encode($result);
     }
-    public function invite(){
+
+    public function invite()
+    {
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'نامزد های انتخاباتی';
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
@@ -431,13 +475,16 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/invite/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-    public function doInvitePagination(){
+
+    public function doInvitePagination()
+    {
         $inputs = $this->input->post(NULL, TRUE);
         $data = $this->ModelCandidate->getInviteCandidate($inputs);
         $data['htmlResult'] = $this->load->view('admin_panel/candidate/invite/pagination', $data, TRUE);
         unset($data['data']);
         echo json_encode($data);
     }
+
     public function inviteDetail($candidateId){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
@@ -470,17 +517,35 @@ class Candidate extends CI_Controller{
         $this->load->view('admin_panel/candidate/edit/index_js', $data);
         $this->load->view('admin_panel/static/footer');
     }
+
     public function doInviteDelete()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doInviteDelete($inputs);
         echo json_encode($result);
     }
+
     public function doInviteAccept(){
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doInviteAccept($inputs);
         echo json_encode($result);
     }
+
+    public function doChangeCandidatePassword(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelCandidate->doChangeCandidatePassword($inputs);
+        echo json_encode($result);
+    }
+
 
     /*End Admin Special Candidates*/
 }
