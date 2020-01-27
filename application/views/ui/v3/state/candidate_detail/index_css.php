@@ -299,3 +299,193 @@
         background-color:#095644  ;
     }
 </style>
+<style>
+    .RightPanelContent {
+        padding-top: 0.3em;
+    }
+
+    .RightPanel {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16);
+        min-height: 300px;
+        background-color: #fff;
+    }
+
+    .RightPanel .RightPanelUl {
+        margin: 0px auto;
+    }
+
+    .RightPanel .RightPanelUl li {
+        position: relative;
+        list-style-type: none;
+        padding: 0.7em 1.5em;
+        cursor: auto;
+        justify-content: flex-start;
+        border-radius: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(34, 36, 38, .15);
+        display: flex;
+        flex-wrap: wrap;
+        vertical-align: middle;
+        color: rgba(0, 0, 0, .87);
+        box-shadow: none;
+        transition: background-color .1s ease, opacity .1s ease, color .1s ease, box-shadow .1s ease;
+        cursor: pointer;
+    }
+
+    ul.RightPanelUl li.active {
+        background: #F3F4F5;
+    }
+
+    ul.RightPanelUl li.active:after {
+        background: #F3F4F5;
+    }
+
+    ul.RightPanelUl li a {
+        width: 100%;
+        display: inherit;
+    }
+
+    ul.RightPanelUl li .RightpanelIcon {
+        line-height: initial;
+        font-size: 1.5em;
+        margin: 0 0 0 0.8rem;
+        width: 40px;
+        text-align: center;
+        color: #777;
+    }
+
+    ul.RightPanelUl li:after {
+        background: #F3F4F5;
+        top: 50%;
+        left: -18px;
+        border-width: 1px 0px 0px 1px;
+        position: absolute;
+        z-index: 2;
+        content: '';
+        border: solid;
+        background-color: #FFF;
+        width: 1.14285714em;
+        height: 1.14285714em;
+        border-color: rgba(34, 36, 38, .15);
+        border-width: 0 1px 1px 0;
+        transition: background-color .1s ease, opacity .1s ease, color .1s ease, box-shadow .1s ease;
+        transform: translateY(-50%) translateX(50%) rotate(-45deg);
+    }
+
+    ul.RightPanelUl li:after {
+        top: 50%;
+        left: -19px;
+        border-width: 1px 0px 0px 1px;
+        display: none;
+    }
+
+    ul.RightPanelUl li.active:after {
+        display: block;
+    }
+
+    ul.RightPanelUl li.active .RightpanelIcon {
+        color: #00695c;
+    }
+
+    ul.RightPanelUl li.active .RightPanleTitle {
+        color: #00695c;
+    }
+
+    ul.RightPanelUl li .RightPanleTitle {
+        font-size: 1em;
+        font-weight: 700;
+        color: #777;
+    }
+
+    ul.RightPanelUl li .RightPanleTitle ~ .RightPanelDescription {
+        margin-top: .25em;
+    }
+
+    ul.RightPanelUl li .RightPanelDescription {
+        font-weight: 400;
+        font-size: 0.8em;
+        color: rgba(0, 0, 0, .87);
+    }
+
+    .site {
+        background-color: #edecec;
+    }
+
+    ul.RightPanelUl li.active:hover {
+        cursor: pointer;
+        background: #DCDDDE;
+        color: rgba(0, 0, 0, .87);
+    }
+
+    ul.RightPanelUl li.active:hover::after {
+        cursor: pointer;
+        background: #DCDDDE;
+        color: rgba(0, 0, 0, .87);
+    }
+
+    /*headline*/
+
+    .LeftPanelShadow {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16);
+        min-height: 25vh;
+    }
+
+    .LeftPanelShadow .panel-heading {
+        width: auto;
+        background-image: none !important;
+        margin: 0px auto;
+        text-shadow: none !important;
+    }
+
+    .RightFloat input {
+        background: transparent;
+        border: none;
+        box-shadow: none !important;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0px;
+        padding-bottom: 0px;
+    }
+
+    .MobileStep {
+        margin-bottom: 15px;
+    }
+
+    .MobileStep ul {
+        display: flex;
+        position: relative;
+        list-style-type: none;
+        padding-left: 0px;
+    }
+
+    .MobileStep ul li {
+        width: 20.16%;
+        margin-right: 8px;
+    }
+
+    .MobileStep ul li a {
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        height: 20px;
+        background: #999999;
+        padding: 5px;
+        line-height: 10px;
+        color: #ffffff;
+        border-radius: 3.5px;
+        text-shadow: 1px 0px 8px #333;
+    }
+
+    .MobileStep ul li a .fa-refresh {
+        line-height: 10px;
+    }
+
+    .MobileStep ul li.first a {
+        background: #fdb72e;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+
+    .padding-0 {
+        padding: 0px;
+    }
+</style>
