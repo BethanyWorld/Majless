@@ -6,6 +6,7 @@ class SignUp extends CI_Controller{
         parent::__construct();
         $this->load->model('ui/ModelCommand');
         $this->load->model('ui/ModelCountry');
+        $this->load->library('SoapSMS');
     }
     public function index()
     {
@@ -173,87 +174,5 @@ class SignUp extends CI_Controller{
             );
             echo json_encode($result);
         }
-    }
-    public function importSMS(){
-        /*$this->load->helper('plugins/excel/bootstrap_helper');
-        $this->load->helper('plugins/excel/PHPExcel/iofactory_helper');
-        $inputFileName = APPPATH.'ImportSP.xlsx';
-        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-        $objPHPExcel = $objReader->load($inputFileName);
-        $sheet = $objPHPExcel->getSheet(0);
-        $highestRow = $sheet->getHighestRow();
-        $highestColumn = $sheet->getHighestColumn();
-        for ($row = 2; $row <= $highestRow; $row++) {
-            $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE)[0];
-            var_dump($rowData);
-            $arr = array(
-                rand(10000,99999),
-                $rowData[1],
-                8,
-                62,
-                NULL,
-                jDateTime::date("Y/m/d H:i:s", false, false)
-            );
-            $this->db->query("INSERT INTO candidate_special (CandidateCode,CandidateFullName,CandidateStateId,CandidateElectionId,CandidateProfileImage,CreateDateTime) VALUES (?,?,?,?,?,?)" , $arr);
-
-            $message = 'فرهیخته گرامی';
-            $message .= " ".$rowData[1]." ".$rowData[2];
-            $message .= PHP_EOL;
-            $message .= 'با سلام';
-            $message .= PHP_EOL;
-            $message .= 'با توجه به ثبت نام شما در سامانه جنبش ازما در صورتیکه به عنوان نامزد انتخاباتی در مراجع رسمی کشور ثبت نام نموده اید برای آگاهی از چگونگی ادامه مراحل آزمون و ارزیابی به پنل خود در سایت جنبش ازما مراجعه فرمایید.';
-            $message .= PHP_EOL;
-            $message .= 'azmaa. net';
-            $data = array(
-                'senderNumber' => $rowData[3],
-                'messageBody' => $message
-            );
-            $ch = curl_init( 'http://new.moarefin.ir:8080/api/Messages' );
-            $payload = json_encode( $data );
-            curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-            curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-            $result = curl_exec($ch);
-            echo "<pre>$result</pre>";
-            curl_close($ch);
-        }*/
-        /*Single Send*/
-        /*$message = 'فرهیخته گرامی';
-        $message .= PHP_EOL;
-        $message .= 'جناب آقای ';
-        $message .= 'دکتر محمدامین زارعی ';
-        $message .= PHP_EOL;
-        $message .= 'با سلام';
-        $message .= PHP_EOL;
-        $message .= 'جنبش ازما می کوشد با ابزاری علمی، شایسته ترین افراد را برای خانه ملت به مردم معرفی نماید.';
-        $message .= PHP_EOL;
-        $message .= 'http://azmaa.net';
-        $message .= PHP_EOL;
-        $message .= 'از شما دعوت می شود ضمن ثبت نام در انتخابات مجلس، با شرکت در فرآیند ارزیابی و سنجش این جنبش، ما را در احیای گفتمان شفافیت و شایسته گزینی یاری نمایید';
-        */
-
-
-
-        /*$message = 'فرهیخته گرامی';
-        $message .= " محمدرضا اسماعیلی ";
-        $message .= PHP_EOL;
-        $message .= 'با سلام';
-        $message .= PHP_EOL;
-        $message .= 'با توجه به ثبت نام شما در سامانه جنبش ازما در صورتیکه به عنوان نامزد انتخاباتی در مراجع رسمی کشور ثبت نام نموده اید برای آگاهی از چگونگی ادامه مراحل آزمون و ارزیابی به پنل خود در سایت جنبش ازما مراجعه فرمایید.';
-        $message .= PHP_EOL;
-        $message .= 'azmaa. net';
-        $data = array(
-            'senderNumber' => '09120572107',
-            'messageBody' => $message
-        );
-        $ch = curl_init( 'http://new.moarefin.ir:8080/api/Messages' );
-        $payload = json_encode( $data );
-        curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
-        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-        $result = curl_exec($ch);
-        echo "<pre>$result</pre>";
-        curl_close($ch);*/
     }
 }

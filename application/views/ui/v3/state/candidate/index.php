@@ -56,46 +56,40 @@
         </div>
 
         <section class="mp-section">
-            <div class="row hidden">
-                <div class="col-xs-12">
-                    <div class="alert alert-warning text-center">
-                        <h6 class="hidden">
-                            اطلاعات بصورت نمونه آورده شده است.به محض تایید شورای نگهبان اطلاعات نامزد های انتخاباتی مجلس
-                            یازدهم در این قسمت قرار خواهد گرفت
-                        </h6>
-                        <h6>
-                            نامزد انتخاباتی خود را به جنبش از ما دعوت کنید
-                        </h6>
-                    </div>
-                </div>
-            </div>
             <div class="row candidate-container0">
                 <?php foreach ($data as $candidate) { ?>
-                    <div class="col-md-4 col-sm-6 mp">
+                    <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
                         <div class="mp-brief">
-                            <div class="menu">
-                                <?php $url = base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . '/' . $stateName); ?>
-                                <ul>
-                                    <li><a href="<?php echo $url; ?>">رزومه</a></li>
-                                    <li><a href="<?php echo $url; ?>">فهرست اموال</a></li>
-                                    <li><a href="<?php echo $url; ?>">وعده های انتخاباتی</a></li>
-                                    <li><a href="<?php echo $url; ?>">هزینه های انتخابات</a></li>
-                                    <li><a href="<?php echo $url; ?>">تعهدنامه</a></li>
-                                    <li><a href="<?php echo $url; ?>">نتایج سنجش</a></li>
-                                    <li><a href="<?php echo $url; ?>">اخبار </a></li>
-                                    <li><a href="<?php echo $url; ?>">گزارش تخلف </a></li>
-                                </ul>
-                            </div>
                             <div class="pic">
-                                <img src="<?php echo $candidate['CandidateProfileImage']; ?>">
+                                <img src="<?php echo $candidate['CandidateProfileImage']; ?>"
+                                     class="candidateImage"/>
                             </div>
-                            <div class="team-content">
-                                <h3 class="title"><?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?></h3>
+                            <div class="badge">
+                                <img src="http://mortensassi.com/create/assets/certificate.svg"/>
+                                <span class="star star--0"></span>
+                                <img src="http://mortensassi.com/create/assets/certificate.svg"/>
+                                <span class="star star--0"></span>
+                                <img src="http://mortensassi.com/create/assets/certificate.svg"/>
+                                <span class="star star--0"></span>
+                            </div>
+                            <div class="row">
+                                <h3 class="candidateName">
+                                    <?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?>
+                                    <div class="election">
+                                        <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
+                                    </div>
+                                </h3>
+                                <a href="<?php echo  base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . '/' . $stateName); ?>">
+                                    <button class="btn invite-link" type="button">
+                                        مشاهده رزومه
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 <?php } ?>
             </div>
+
             <div class="row candidate-container candidate-detail-parent-div">
                 <?php if (empty($dataSpecial)) { ?>
                     <div class="alert alert-warning">
@@ -122,11 +116,11 @@
                                     </div>
                                 <?php } ?>
                                 <!-- for badge-->
-<!--                                   <div class="badge">-->
-<!--                                         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
-<!--                                         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
-<!--                                         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
-<!--                                   </div>-->
+                                <!--                                   <div class="badge">-->
+                                <!--                                         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+                                <!--                                         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+                                <!--                                         <img src="http://mortensassi.com/create/assets/certificate.svg"/><span class="star star--0">-->
+                                <!--                                   </div>-->
                                 <!-- for badge-->
                                 <div class="row">
                                     <h3 class="candidateName">

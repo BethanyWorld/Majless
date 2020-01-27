@@ -84,6 +84,13 @@ $config['EnumExamType'] = array(
     'SecondStep' => 'مرحله دوم',
     'Evaluation' => 'کانون ارزیابی'
 );
+$config['Badges'] = array(
+    'GoldenMerit' => 'نشان شایستگی طلایی',
+    'SilverMerit' => 'نشان شایستگی نقره ای',
+    'GoldenTransparency' => 'نشان شفافیت طلایی',
+    'SilverTransparency' => 'نشان شفافیت نقره ای',
+    'Obligation' => 'نشان تعهدنامه'
+);
 $config['api'] = array(
     'SMS' => $config['base_url'].'Home/sendSMS',
     'SMS-OLD' => 'http://new.moarefin.ir:8080/api/Messages',

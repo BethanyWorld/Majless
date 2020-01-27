@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Candidate extends CI_Controller
-{
+class Candidate extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
@@ -11,7 +9,6 @@ class Candidate extends CI_Controller
         $this->load->model('ui/ModelCountry');
         $this->load->model('ui/ModelProfile');
     }
-
     public function index()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -25,7 +22,6 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate/home/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-
     public function doPagination()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -34,7 +30,6 @@ class Candidate extends CI_Controller
         unset($data['data']);
         echo json_encode($data);
     }
-
     public function edit($candidateId)
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -68,7 +63,6 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate/edit/index_js', $data);
         $this->load->view('admin_panel/static/footer');
     }
-
     public function badge($candidateId)
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -87,7 +81,6 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate/badge/index_js', $data);
         $this->load->view('admin_panel/static/footer');
     }
-
     public function doAssignBadge()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -105,7 +98,6 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doAssignBadge($inputs);
         echo json_encode($result);
     }
-
     public function printResume($candidateId)
     {
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
@@ -128,7 +120,6 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate/print_resume/index_css');
         $this->load->view('admin_panel/candidate/print_resume/index_js');
     }
-
     public function doMarkCandidate()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -162,7 +153,6 @@ class Candidate extends CI_Controller
             echo json_encode($result);
         }
     }
-
     public function doAcceptCandidateFirstExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -178,7 +168,6 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doAcceptCandidateFirstExam($inputs);
         echo json_encode($result);
     }
-
     public function doRejectCandidateFirstExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -194,7 +183,6 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doRejectCandidateFirstExam($inputs);
         echo json_encode($result);
     }
-
     public function doAcceptCandidateSecondExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -210,7 +198,6 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doAcceptCandidateSecondExam($inputs);
         echo json_encode($result);
     }
-
     public function doRejectCandidateSecondExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -226,7 +213,6 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doRejectCandidateSecondExam($inputs);
         echo json_encode($result);
     }
-
     public function doAcceptEvaluationExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -242,7 +228,6 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doAcceptEvaluationExam($inputs);
         echo json_encode($result);
     }
-
     public function doRejectEvaluationExam()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -258,12 +243,10 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doRejectEvaluationExam($inputs);
         echo json_encode($result);
     }
-
     protected function getCandidateStatus($candidateId)
     {
         return $this->ModelCandidate->getCandidateByCandidateId($candidateId);
     }
-
     protected function getCandidateExams($candidateId)
     {
         $data['firstExams'] = $this->ModelCandidate->getCandidateFirstStepExamByCandidateId($candidateId);
@@ -275,7 +258,6 @@ class Candidate extends CI_Controller
         $data['evalExams'] = array_reverse($data['evalExams']);
         return $data;
     }
-
     public function importScores()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -288,7 +270,6 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate/import_scores/index_js', $data);
         $this->load->view('admin_panel/static/footer');
     }
-
     public function prepareImportScores()
     {
         $this->load->helper('plugins/excel/bootstrap_helper');
@@ -340,7 +321,6 @@ class Candidate extends CI_Controller
         <?php } ?>
         <?php
     }
-
     public function doImportScores()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -348,7 +328,6 @@ class Candidate extends CI_Controller
         echo json_encode($result);
 
     }
-
     /*Admin Special Candidates*/
     public function special()
     {
@@ -363,7 +342,6 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate_special/home/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-
     public function specialAdd()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -377,7 +355,6 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate_special/add/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-
     public function doSpecialAdd()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -396,7 +373,6 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doSpecialAdd($inputs);
         echo json_encode($result);
     }
-
     public function specialEdit($rowId)
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -413,7 +389,6 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate_special/edit/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-
     public function doEditCandidateSpecial()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -431,7 +406,6 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doEditCandidateSpecial($inputs);
         echo json_encode($result);
     }
-
     public function doSpecialPagination()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -440,28 +414,24 @@ class Candidate extends CI_Controller
         unset($data['data']);
         echo json_encode($data);
     }
-
     public function doDeleteCandidateSpecial()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doDeleteCandidateSpecial($inputs);
         echo json_encode($result);
     }
-
     public function doToggleAcceptanceCandidateSpecial()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doToggleAcceptanceCandidateSpecial($inputs);
         echo json_encode($result);
     }
-
     public function doIncreaseCandidateSpecialInviteCount()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doIncreaseCandidateSpecialInviteCount($inputs);
         echo json_encode($result);
     }
-
     public function invite()
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -475,7 +445,6 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate/invite/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-
     public function doInvitePagination()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -484,7 +453,6 @@ class Candidate extends CI_Controller
         unset($data['data']);
         echo json_encode($data);
     }
-
     public function inviteDetail($candidateId){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
@@ -517,20 +485,17 @@ class Candidate extends CI_Controller
         $this->load->view('admin_panel/candidate/edit/index_js', $data);
         $this->load->view('admin_panel/static/footer');
     }
-
     public function doInviteDelete()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doInviteDelete($inputs);
         echo json_encode($result);
     }
-
     public function doInviteAccept(){
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doInviteAccept($inputs);
         echo json_encode($result);
     }
-
     public function doChangeCandidatePassword(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
@@ -545,7 +510,22 @@ class Candidate extends CI_Controller
         $result = $this->ModelCandidate->doChangeCandidatePassword($inputs);
         echo json_encode($result);
     }
-
-
     /*End Admin Special Candidates*/
+    public function badgeScores(){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = 'ویرایش نامزد انتخاباتی';
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $data['api'] = $this->config->item('api');
+        $this->load->view('admin_panel/static/header', $data);
+        $this->load->view('admin_panel/candidate/badge_scores/index', $data);
+        $this->load->view('admin_panel/candidate/badge_scores/index_css');
+        $this->load->view('admin_panel/candidate/badge_scores/index_js', $data);
+        $this->load->view('admin_panel/static/footer');
+    }
+    public function updateScoreByBadges(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $result = $this->ModelCandidate->updateScoreByBadges($inputs);
+        echo json_encode($result);
+    }
 }

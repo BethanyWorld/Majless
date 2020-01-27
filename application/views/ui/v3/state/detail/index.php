@@ -56,7 +56,6 @@
                                     </div>
                                 </a>
                             </div>
-
                             <?php } ?>
             <?php } ?>
         </section>

@@ -1271,5 +1271,56 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+    public function updateScoreByBadges(){
+        $this->db->select('CandidateId , CandidateFirstName , CandidateLastName , CandidateScore');
+        $this->db->from('candidate');
+        $candidates = $this->db->get()->result_array();
+        for($i=0;$i<count($candidates);$i++){
+            $this->db->select('*');
+            $this->db->from('candidate_badge');
+            $this->db->where('CandidateId' , $candidates[$i]['CandidateId']);
+            $candidates[$i]['badges'] = $this->db->get()->result_array();
+            $candidates[$i]['badgesScore'] = 0;
+        }
+        for($i=0;$i<count($candidates);$i++){
+            if(isset($candidates[$i]['badges'])){
+                $candidateTotalBadgeScore = 0;
+                for($j=0;$j<count($candidates[$i]['badges']);$j++){
+                    switch($candidates[$i]['badges'][$j]['CandidateBadge']){
+                        case 'GoldenMerit':
+                            $candidateTotalBadgeScore += 2000000;
+                            break;
+                        case 'SilverMerit':
+                            $candidateTotalBadgeScore += 1000000;
+                            break;
+                        case 'GoldenTransparency':
+                            $candidateTotalBadgeScore += 200000;
+                            break;
+                        case 'SilverTransparency':
+                            $candidateTotalBadgeScore += 100000;
+                            break;
+                        case 'Obligation':
+                            $candidateTotalBadgeScore += 10000;
+                            break;
+                    }
+                }
+                $candidates[$i]['badgesScore'] = $candidateTotalBadgeScore;
+                $candidateTotalBadgeScore = 0;
+            }
+        }
+
+        for($i=0;$i<count($candidates);$i++){
+            $UserArray = array( 'CandidateScore' => $candidates[$i]['badgesScore']);
+            $this->db->where('CandidateId', $candidates[$i]['CandidateId']);
+            $this->db->update('candidate', $UserArray);
+        }
+
+        $arr = array(
+            'type' => "green",
+            'content' => "بروزرسانی نمرات با موفقیت انجام شد",
+            'success' => true
+        );
+        return $arr;
+    }
 }
 ?>

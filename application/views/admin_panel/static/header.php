@@ -207,6 +207,10 @@ $CI =& get_instance();
                         <li <?php if (strstr($uri, '/Candidate/index') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Candidate/index'); ?>" class="waves-effect waves-block">فهرست</a>
                         </li>
+                        <li <?php if (strstr($uri, '/Candidate/badgeScores') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Candidate/badgeScores'); ?>"
+                               class="waves-effect waves-block">نمرات نشان ها</a>
+                        </li>
                         <li <?php if (strstr($uri, '/Candidate/importScores') !== false) echo "class='active'"; ?>>
                             <a href="<?php echo base_url('Admin/Candidate/importScores'); ?>"
                                class="waves-effect waves-block">بارگذاری فایل نمره</a>

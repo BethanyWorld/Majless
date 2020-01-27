@@ -524,6 +524,27 @@
         background-color: #fdb72e;
     }
 
+
+
+
+    .invite-link {
+        padding: 5px 15px;
+        background: #fdb72e;
+        color: #000;
+        font-weight: 900;
+    }
+
+    .invite-link:hover {
+        color: #000;
+        outline: none;
+        background-color: #fdb72e;
+    }
+    .invite-link:focus{
+        color: #000;
+        outline: none;
+        background-color: #fdb72e;
+    }
+
     .mp-brief .pic img {
         max-width: 100%;
         width: auto !important;
