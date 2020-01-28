@@ -234,7 +234,7 @@ class State extends CI_Controller{
         }
         $data['electionIds'] = $inputs['inputElectionIds'];
         $inputs['inputElectionIds'] = array_values($inputs['inputElectionIds']);
-        $data['data'] = $this->ModelCandidate->getCandidatesByElectionId($inputs);
+        //$data['data'] = $this->ModelCandidate->getCandidatesByElectionId($inputs);
         $data['dataSpecial'] = $this->ModelCandidate->getCandidatesSpecialByElectionId($inputs);
         echo $this->load->view('ui/v3/state/candidate/ajax', $data, TRUE);
     }

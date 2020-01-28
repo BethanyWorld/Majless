@@ -5,6 +5,46 @@
         });
     });
     $(document).ready(function () {
+        $stateName = "<?php echo $stateName; ?>";
+        $stateId = <?php echo $stateId; ?>;
+        /* Load Candidates */
+        $electionIds = [];
+        $(".elections .inputElectionId").each(function () {
+            if ($(this).is(":checked")) {
+                $electionIds.push($(this).val());
+            }
+        });
+        $inputFullName = $(".blog-search-submit").prev('label').find(':input').val();
+        $inputAcceptanceStatus = 1;
+        if($(".inputAcceptanceStatus").is(":checked")){
+            $inputAcceptanceStatus = $(".inputAcceptanceStatus").val();
+        }
+        $sendData = {
+            'inputStateName': $stateName,
+            'inputStateId': $stateId,
+            'inputFullName': $inputFullName,
+            'inputElectionIds': $electionIds,
+            'inputAcceptanceStatus': $inputAcceptanceStatus
+        }
+        $.ajax({
+            type: 'post',
+            url: base_url + 'State/getCandidatesByElectionId',
+            data: $sendData,
+            success: function (data) {
+                $(".candidate-container").html(data);
+                setTimeout(function () {
+                    $("html, body").animate({scrollTop: 0}, "slow");
+                    $('.mp-section').css('backgroundColor', 'transparent');
+                    $('.mp-section').css('opacity', '1');
+                }, 100);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+            }
+        });
+        /* Load Candidates */
+
+
         if (findBootstrapEnvironment() == 'xs' || findBootstrapEnvironment() == 'sm') {
             $election = $(".elections").html();
             $("#election-place-holder").after($election);
@@ -17,8 +57,6 @@
             $(".mp-section .mp .menu").slideUp();
             $(this).find(".menu").eq(0).slideToggle();
         });
-        $stateName = "<?php echo $stateName; ?>";
-        $stateId = <?php echo $stateId; ?>;
         $("path").each(function () {
             if ($(this).data('province-id') == $stateId) {
                 $(this).addClass('active');
