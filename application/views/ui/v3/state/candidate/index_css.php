@@ -1,19 +1,64 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
-    /*.candidate-detail-parent-div{*/
-    /*        height: 1420px;*/
-    /*        overflow: scroll;*/
-    /*        overflow-x: hidden;*/
-    /*    }*/
+    .padding-0{
+        padding: 0px;
+    }
+    .sign {
+        background-image: url("<?php echo  base_url('assets/ui/v4/'); ?>/images/neshan.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        width: 65px;
+        height: 78px;
+    }
 
-    .CandidateAreaOverFlow{
+    .sign.merit-gold {
+        background-position: 100% 0%;
+
+    }
+
+    .sign.merit-silver {
+        background-position: 100% -75px;
+    }
+
+    .sign.merit-off {
+        background-position: 100% -150px;
+    }
+
+    .sign.responsiveness-gold {
+        background-position: 100% -225px;
+    }
+
+    .sign.responsiveness-silver {
+        background-position: 100% -300px;
+    }
+
+    .sign.responsiveness-off {
+        background-position: 100% -375px;
+    }
+
+
+    .sign.transparency-gold {
+        background-position: 100% 75%;
+    }
+
+    .sign.transparency-silver {
+        background-position: 100% -525px;
+    }
+
+    .sign.transparency-off {
+        background-position: 100% 100%;
+    }
+
+    .CandidateAreaOverFlow {
         height: 65vh;
         overflow-x: hidden;
         overflow-y: auto;
         position: relative;
-        z-index: 1000000000;
+        z-index: 100;
         background: #fff;
     }
+
     #show-box img {
         height: 355px;
         display: inline-block;
@@ -389,9 +434,11 @@
             width: auto;
             bottom: 0px;
         }
-        .bottom-fix{
+
+        .bottom-fix {
             bottom: 0%;
         }
+
         .sidebar {
             padding: 0px;
             margin: auto;
@@ -501,6 +548,7 @@
         position: relative;
         z-index: 2;
     }
+
     .mp-brief .pic.deactive {
         filter: grayscale(200%);
     }
@@ -518,13 +566,12 @@
         outline: none;
         background-color: #fdb72e;
     }
-    .invite-button:focus{
+
+    .invite-button:focus {
         color: #000;
         outline: none;
         background-color: #fdb72e;
     }
-
-
 
 
     .invite-link {
@@ -539,7 +586,8 @@
         outline: none;
         background-color: #fdb72e;
     }
-    .invite-link:focus{
+
+    .invite-link:focus {
         color: #000;
         outline: none;
         background-color: #fdb72e;
@@ -1003,7 +1051,7 @@
     }
 
     .blog-widget .blog-search-submit {
-        background-color: #fdb72e ;
+        background-color: #fdb72e;
         border: 0;
         color: #000;
         font-size: 14px;
@@ -1015,7 +1063,8 @@
         transition: all 0.3s ease 0s;
         border-radius: 0;
     }
-    .blog-widget .blog-search-submit:hover{
+
+    .blog-widget .blog-search-submit:hover {
         color: #000;
     }
 
@@ -1178,10 +1227,11 @@
         font-weight: 900;
     }
 
-    .invite:hover{
+    .invite:hover {
         color: #000;
     }
-        /*for tag*/
+
+    /*for tag*/
     .badge {
         position: relative;
         z-index: 1;

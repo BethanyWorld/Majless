@@ -57,6 +57,23 @@
                     <div class="pic">
                         <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>" class="candidateImage"/>
                     </div>
+
+                    <div class="col-md-12 col-xs-12 padding-0">
+                        <div class="sign merit-gold"></div>
+                        <div class="sign merit-off"></div>
+                        <div class="sign merit-silver"></div>
+                    </div>
+
+
+<!--                    <div class="sign transparency-gold"></div>-->
+<!--                    <div class="sign transparency-off"></div>-->
+<!--                    <div class="sign transparency-silver"></div>-->
+<!---->
+<!--                    <div class="sign responsiveness-gold"></div>-->
+<!--                    <div class="sign responsiveness-off"></div>-->
+<!--                    <div class="sign responsiveness-silver"></div>-->
+
+
                 <?php } else { ?>
                     <div class="pic deactive">
                         <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>" class="candidateImage"/>
