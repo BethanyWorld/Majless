@@ -25,7 +25,7 @@
                                     </span>
                                 </h5>
                                 <h5>
-                                    <a href="<?php echo base_url('Admin/Candidate/printResume/').$candidate['CandidateId']; ?>">
+                                    <a href="<?php echo base_url('Admin/Candidate/printResume/') . $candidate['CandidateId']; ?>">
                                         <span class="office-location">
                                             پرینت رزومه
                                         </span>
@@ -90,12 +90,12 @@
 
                         <h5 style="display: inline-block;width: 100%;padding: 15px 0;"
                             class="col-xs-12 label label-success text-center">آخرین فعالیت ها</h5>
-                       <hr>
+                        <hr>
                         <ul class="list-group" style="padding: 0;display: inline-block;width: 100%;">
-                            <?php foreach ($loginHistory as $item){ ?>
-                            <li class="list-group-item"  style="direction: ltr;">
-                                <?php echo $item['LoginDate']; ?>
-                            </li>
+                            <?php foreach ($loginHistory as $item) { ?>
+                                <li class="list-group-item" style="direction: ltr;">
+                                    <?php echo $item['LoginDate']; ?>
+                                </li>
                             <?php } ?>
                         </ul>
                     </div>
@@ -253,51 +253,51 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr class="temp-edu-record">
-                                                            <td class="fit info-department">
-                                                                <?php
-                                                                foreach ($EnumResumeProfile['CandidateMilitaryStatus'] as $key => $value) {
-                                                                    if($candidateMilitaryStatus[0]['CandidateMilitaryStatus'] == $key){
-                                                                        echo $value;
-                                                                    }
+                                                    <tr class="temp-edu-record">
+                                                        <td class="fit info-department">
+                                                            <?php
+                                                            foreach ($EnumResumeProfile['CandidateMilitaryStatus'] as $key => $value) {
+                                                                if ($candidateMilitaryStatus[0]['CandidateMilitaryStatus'] == $key) {
+                                                                    echo $value;
                                                                 }
-                                                                ?>
-                                                            </td>
-                                                            <td class="fit info-educationalAttainment">
-                                                                <?php
-                                                                foreach ($EnumResumeProfile['CandidateExemptTitle'] as $key => $value) {
-                                                                    if($candidateMilitaryStatus[0]['CandidateExemptTitle'] == $key){
-                                                                        echo $value;
-                                                                    }
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                        <td class="fit info-educationalAttainment">
+                                                            <?php
+                                                            foreach ($EnumResumeProfile['CandidateExemptTitle'] as $key => $value) {
+                                                                if ($candidateMilitaryStatus[0]['CandidateExemptTitle'] == $key) {
+                                                                    echo $value;
                                                                 }
-                                                                ?>
-                                                            </td>
-                                                            <td class="fit info-science">
-                                                                <?php echo $candidateMilitaryStatus[0]['CandidateExemptDescription']; ?>
-                                                            </td>
-                                                            <td class="fit info-studying">
-                                                                <?php
-                                                                    foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                                                        if($candidateMilitaryStatus[0]['CandidateMilitaryEndMonth'] == $key){
-                                                                            echo $value;
-                                                                        }
-                                                                    }
-                                                                ?>
-                                                                <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndYear']; ?>
-                                                            </td>
-                                                            <td class="fit info-universityLevelType">
-                                                                <?php
-                                                                foreach ($EnumResumeProfile['CandidateMilitaryEndArea'] as $key => $value) {
-                                                                    if($candidateMilitaryStatus[0]['CandidateMilitaryEndArea'] == $key){
-                                                                        echo $value;
-                                                                    }
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                        <td class="fit info-science">
+                                                            <?php echo $candidateMilitaryStatus[0]['CandidateExemptDescription']; ?>
+                                                        </td>
+                                                        <td class="fit info-studying">
+                                                            <?php
+                                                            foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
+                                                                if ($candidateMilitaryStatus[0]['CandidateMilitaryEndMonth'] == $key) {
+                                                                    echo $value;
                                                                 }
-                                                                ?>
-                                                            </td>
-                                                            <td class="fit info-universityName">
-                                                                <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndAreaTitle']; ?>
-                                                            </td>
-                                                        </tr>
+                                                            }
+                                                            ?>
+                                                            <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndYear']; ?>
+                                                        </td>
+                                                        <td class="fit info-universityLevelType">
+                                                            <?php
+                                                            foreach ($EnumResumeProfile['CandidateMilitaryEndArea'] as $key => $value) {
+                                                                if ($candidateMilitaryStatus[0]['CandidateMilitaryEndArea'] == $key) {
+                                                                    echo $value;
+                                                                }
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                        <td class="fit info-universityName">
+                                                            <?php echo $candidateMilitaryStatus[0]['CandidateMilitaryEndAreaTitle']; ?>
+                                                        </td>
+                                                    </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -324,7 +324,7 @@
                                                             <td class="fit info-department">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['CandidateDepartment'] as $key => $value) {
-                                                                    if($item['CandidateDepartment'] == $key){
+                                                                    if ($item['CandidateDepartment'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -333,7 +333,7 @@
                                                             <td class="fit info-educationalAttainment">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['CandidateGrade'] as $key => $value) {
-                                                                    if($item['CandidateGrade'] == $key){
+                                                                    if ($item['CandidateGrade'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -341,18 +341,18 @@
                                                             </td>
                                                             <td class="fit info-science">
                                                                 <?php
-                                                                    foreach ($EnumResumeProfile['CandidateSchoolMajor'] as $key => $value) {
-                                                                        if($item['CandidateSchoolMajor'] == $key){
-                                                                            echo $value;
-                                                                        }
+                                                                foreach ($EnumResumeProfile['CandidateSchoolMajor'] as $key => $value) {
+                                                                    if ($item['CandidateSchoolMajor'] == $key) {
+                                                                        echo $value;
                                                                     }
+                                                                }
                                                                 ?>
                                                                 <?php echo $item['CandidateMajor']; ?>
                                                             </td>
                                                             <td class="fit info-studying">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['AcademicStudyStatus'] as $key => $value) {
-                                                                    if($item['CandidateStudyStatus'] == $key){
+                                                                    if ($item['CandidateStudyStatus'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -361,7 +361,7 @@
                                                             <td class="fit info-universityLevelType">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['CandidateUniversityLevelType'] as $key => $value) {
-                                                                    if($item['CandidateUniversityLevelType'] == $key){
+                                                                    if ($item['CandidateUniversityLevelType'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -404,7 +404,7 @@
                                                             <td class="fit info-science">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                                                    if($item['CandidateStartJobMonth'] == $key){
+                                                                    if ($item['CandidateStartJobMonth'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -416,7 +416,7 @@
                                                             <td class="fit info-universityLevelType">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                                                    if($item['CandidateEndJobMonth'] == $key){
+                                                                    if ($item['CandidateEndJobMonth'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -457,7 +457,7 @@
                                                             <td class="fit info-science">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                                                    if($item['CandidateBookPublishMonth'] == $key){
+                                                                    if ($item['CandidateBookPublishMonth'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -496,7 +496,7 @@
                                                             <td class="fit info-educationalAttainment">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['ArticleLevelType'] as $key => $value) {
-                                                                    if($item['CandidateArticleLevel'] == $key){
+                                                                    if ($item['CandidateArticleLevel'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -511,7 +511,7 @@
                                                             <td class="fit info-universityLevelType">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                                                    if($item['CandidateArticlePublishMonth'] == $key){
+                                                                    if ($item['CandidateArticlePublishMonth'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -596,7 +596,7 @@
                                                             <td class="fit info-universityName">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                                                    if($item['CandidateResearchMonth'] == $key){
+                                                                    if ($item['CandidateResearchMonth'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -632,7 +632,7 @@
                                                             <td class="fit info-educationalAttainment">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['ConferenceLevelType'] as $key => $value) {
-                                                                    if($item['CandidateConferenceLevel'] == $key){
+                                                                    if ($item['CandidateConferenceLevel'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -641,7 +641,7 @@
                                                             <td class="fit info-science">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['AcceptanceOfferType'] as $key => $value) {
-                                                                    if($item['CandidateConferenceAcceptType'] == $key){
+                                                                    if ($item['CandidateConferenceAcceptType'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -653,7 +653,7 @@
                                                             <td class="fit info-universityLevelType">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                                                    if($item['CandidateConferenceMonth'] == $key){
+                                                                    if ($item['CandidateConferenceMonth'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -686,7 +686,7 @@
                                                             <td class="fit info-department">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['TranslateType'] as $key => $value) {
-                                                                    if($item['CandidateTranslationType'] == $key){
+                                                                    if ($item['CandidateTranslationType'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -704,7 +704,7 @@
                                                             <td class="fit info-universityLevelType">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) {
-                                                                    if($item['CandidateTranslationMonth'] == $key){
+                                                                    if ($item['CandidateTranslationMonth'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -754,7 +754,7 @@
                                                             <td class="fit info-department">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['CandidatePoliticActivityType'] as $key => $value) {
-                                                                    if($item['CandidateActivityType'] == $key){
+                                                                    if ($item['CandidateActivityType'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -766,7 +766,7 @@
                                                             <td class="fit info-studying">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['CandidatePoliticElectionType'] as $key => $value) {
-                                                                    if($item['CandidateElectionType'] == $key){
+                                                                    if ($item['CandidateElectionType'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -781,7 +781,7 @@
                                                             <td class="fit info-universityName">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['CandidateHeadquarterActivityTitle'] as $key => $value) {
-                                                                    if($item['CandidateHeadquarterActivityTitle'] == $key){
+                                                                    if ($item['CandidateHeadquarterActivityTitle'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -790,7 +790,7 @@
                                                             <td class="fit info-universityName">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['CandidateMediaType'] as $key => $value) {
-                                                                    if($item['CandidateMediaType'] == $key){
+                                                                    if ($item['CandidateMediaType'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -806,7 +806,7 @@
                                                                 <?php echo $item['CandidateMediaActivityType']; ?>
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['CandidateMediaType'] as $key => $value) {
-                                                                    if($item['CandidateMediaType'] == $key){
+                                                                    if ($item['CandidateMediaType'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -861,7 +861,7 @@
                                                             <td class="fit info-educationalAttainment">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['SkillLevel'] as $key => $value) {
-                                                                    if($item['SkillLevel'] == $key){
+                                                                    if ($item['SkillLevel'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -870,7 +870,7 @@
                                                             <td class="fit info-science">
                                                                 <?php
                                                                 foreach ($EnumResumeProfile['SkillLearnType'] as $key => $value) {
-                                                                    if($item['SkillLearnType'] == $key){
+                                                                    if ($item['SkillLearnType'] == $key) {
                                                                         echo $value;
                                                                     }
                                                                 }
@@ -902,9 +902,10 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <?php $i=0; foreach ($paymentHistory as $item) { ?>
+                                                        <?php $i = 0;
+                                                        foreach ($paymentHistory as $item) { ?>
                                                             <tr>
-                                                                <td class="fit text-center"><?php echo $i+=1;; ?></td>
+                                                                <td class="fit text-center"><?php echo $i += 1;; ?></td>
                                                                 <td class="fit text-center"><?php echo PaymentType($item['PaymentType']); ?></td>
                                                                 <td><?php echo number_format($item['PaymentPrice']); ?></td>
                                                                 <td class="fit text-center"><?php echo $item['PaymentReferenceId']; ?></td>
@@ -927,35 +928,182 @@
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade in" id="Grading">
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <label for="inputGrade" class="col-sm-2 control-label">نمره</label>
-                                                <div class="col-sm-10">
-                                                    <strong>
-                                                        آخرین نمره ثبت شده برای این نامزد
-                                                        <?php echo $candidate['CandidateScore']; ?>
-                                                        می باشد
-                                                    </strong>
-                                                    <div class="form-line">
-                                                        <input type="number" class="form-control"
-                                                               value="<?php echo $candidate['CandidateScore']; ?>"
-                                                               id="inputGrade"
-                                                               min="0"
-                                                               max="100"
-                                                               name="inputGrade"/>
+                                        <!-- Score -->
+                                        <style>
+                                            .form-horizontal .control-label {
+                                                text-align: right;
+                                                padding: 14px 4px;
+                                            }
+
+                                            .form-horizontal .btn {
+                                                float: left;
+                                            }
+                                        </style>
+                                        <div class="col-xs-12 col-md-4">
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره
+                                                        کل</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number" class="form-control"
+                                                                   value="<?php echo $candidate['CandidateScore']; ?>"
+                                                                   id="inputGrade" min="0" max="100" name="inputGrade"/>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10">
-                                                    <button
-                                                            id="doGrading"
-                                                            type="button"
-                                                            class="btn btn-danger">ثبت
-                                                    </button>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-2 col-sm-10">
+                                                        <button id="doGrading" data-score="CandidateScore"
+                                                                type="button" class="btn btn-success">ثبت
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
+                                        <!-- Sign Score -->
+                                        <div class="col-xs-12 col-md-4">
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="inputSignGrade" class="col-sm-4 control-label">نمره نشان
+                                                        ها</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number" class="form-control"
+                                                                   value="<?php echo $candidate['CandidateSignScore']; ?>"
+                                                                   id="inputCandidateSignScore"
+                                                                   name="inputCandidateSignScore"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-2 col-sm-10">
+                                                        <button id="doSignGrading" data-score="CandidateSignScore"
+                                                                type="button" class="btn btn-danger">ثبت
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Records Score -->
+                                        <div class="col-xs-12 col-md-4">
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره سوابق</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number" class="form-control"
+                                                                   value="<?php echo $candidate['CandidateRecordsScore']; ?>"
+                                                                   id="inputRecordsGrade"
+                                                                   name="inputRecordsGrade"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-2 col-sm-10">
+                                                        <button id="doRecordsGrading" data-score="CandidateRecordsScore"
+                                                                type="button" class="btn btn-danger">ثبت
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Records Score -->
+                                        <div class="col-xs-12 col-md-6">
+                                            <?php
+                                                $scores = json_decode($candidate['CandidateRolesScore'] , TRUE);
+                                            ?>
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نقش ها</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره قانون گذار</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number"
+                                                                   data-title="Lawmaker"
+                                                                   <?php
+                                                                   foreach ($scores as $score) {
+                                                                       if($score['Key'] == 'Lawmaker'){echo 'value="'.$score['Value'].'"';}
+                                                                   }
+                                                                   ?>
+                                                                   class="form-control"
+                                                                   name="inputRoleScores"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره ارزیاب طرح ها</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number"
+                                                                   data-title="Evaluator"
+                                                                <?php
+                                                                foreach ($scores as $score) {
+                                                                    if($score['Key'] == 'Evaluator'){echo 'value="'.$score['Value'].'"';}
+                                                                }
+                                                                ?>
+                                                                   class="form-control"
+                                                                   name="inputRoleScores"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره اقناع کننده</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number"
+                                                                   data-title="Persuasive"
+                                                                <?php
+                                                                foreach ($scores as $score) {
+                                                                    if($score['Key'] == 'Persuasive'){echo 'value="'.$score['Value'].'"';}
+                                                                }
+                                                                ?>
+                                                                   class="form-control"
+                                                                   name="inputRoleScores"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره رابط</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number"
+                                                                   data-title="Link"
+                                                                <?php
+                                                                foreach ($scores as $score) {
+                                                                    if($score['Key'] == 'Link'){echo 'value="'.$score['Value'].'"';}
+                                                                }
+                                                                ?>
+                                                                   class="form-control"
+                                                                   name="inputRoleScores"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره ناظر</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number"
+                                                                   data-title="Moderator"
+                                                                <?php
+                                                                foreach ($scores as $score) {
+                                                                    if($score['Key'] == 'Moderator'){echo 'value="'.$score['Value'].'"';}
+                                                                }
+                                                                ?>
+                                                                   class="form-control"
+                                                                   name="inputRoleScores"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-2 col-sm-10">
+                                                        <button id="doRolesGrading" type="button" class="btn btn-danger">ثبت</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade in" id="AcceptFirstExam">
                                         <form class="form-horizontal">
@@ -1015,7 +1163,7 @@
                                         <form class="form-horizontal">
                                             <label>رمز عبور جدید</label>
                                             <input type="text"
-                                                   id="inputPassword" name="inputPassword" />
+                                                   id="inputPassword" name="inputPassword"/>
                                             <button
                                                     id="doChangeCandidatePassword"
                                                     type="button"
@@ -1031,4 +1179,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>

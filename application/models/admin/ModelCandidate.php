@@ -11,7 +11,6 @@ class ModelCandidate extends CI_Model{
         $this->db->join('city', 'candidate.CandidateCityId = city.CityId');
         $this->db->join('election_location', 'candidate.CandidateElectionId = election_location.ElectionId');
         $this->db->order_by('CandidateId', 'ASC');
-
         if (!empty($inputs['inputCandidateStatus'])) {
             $this->db->where('CandidateStatus', $inputs['inputCandidateStatus']);
         }
@@ -21,16 +20,12 @@ class ModelCandidate extends CI_Model{
         if (!empty($inputs['inputCandidateState'])) {
             $this->db->where('CandidateStateId', $inputs['inputCandidateState']);
         }
-
         if (!empty($inputs['inputCandidateFullName'])) {
             $this->db->like('CandidateFirstName', $inputs['inputCandidateFullName']);
             $this->db->or_like('CandidateLastName', $inputs['inputCandidateFullName']);
         }
-
-
         $tempDb = clone $this->db;
         $result['count'] = $tempDb->get()->num_rows();
-
         $this->db->limit($end, $start);
         $query = $this->db->get()->result_array();
         if (count($query) > 0) {
@@ -40,6 +35,17 @@ class ModelCandidate extends CI_Model{
             $result['data'] = false;
         }
         return $result;
+    }
+    public function getJsonCandidate($inputs)
+    {
+        $this->db->select('*');
+        $this->db->from('candidate');
+        if (!empty($inputs['inputSearch'])) {
+            $this->db->like('CandidateFirstName', $inputs['inputSearch']);
+            $this->db->or_like('CandidateLastName', $inputs['inputSearch']);
+        }
+        $query = $this->db->get()->result_array();
+        return $query;
     }
     public function getInviteCandidate($inputs)
     {
@@ -548,11 +554,9 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-    public function doMarkCandidate($inputs)
-    {
+    public function doMarkCandidate($inputs){
         $UserArray = array(
-            'CandidateStatus' => $inputs['inputCandidateStatus'],
-            'CandidateScore' => $inputs['inputGrade'],
+            $inputs['inputGradeType'] => $inputs['inputGrade']
         );
         $this->db->trans_start();
         $this->db->where('CandidateId', $inputs['inputCandidateId']);
@@ -1102,6 +1106,31 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+    public function doBindCandidateSpecial($inputs)
+    {
+        $userArray = array(
+            'CandidateRefId' => $inputs['inputRefCandidateId']
+        );
+        $this->db->trans_start();
+        $this->db->where('RowId', $inputs['inputRowId']);
+        $this->db->update('candidate_special' , $userArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "ویرایش نامزد ویژه با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "ویرایش نامزد ویژه با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
     public function doDeleteCandidateSpecial($inputs)
     {
         $this->db->trans_start();
@@ -1310,7 +1339,7 @@ class ModelCandidate extends CI_Model{
         }
 
         for($i=0;$i<count($candidates);$i++){
-            $UserArray = array( 'CandidateScore' => $candidates[$i]['badgesScore']);
+            $UserArray = array( 'CandidateSignScore' => $candidates[$i]['badgesScore']);
             $this->db->where('CandidateId', $candidates[$i]['CandidateId']);
             $this->db->update('candidate', $UserArray);
         }
@@ -1322,5 +1351,9 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
+
+
+
 }
 ?>

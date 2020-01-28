@@ -224,15 +224,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                             <li>
                                 <a href="javascript:void(0)">همراهی با ما</a>
                                 <ul>
-                                    <li>
-                                        <a href="<?php echo base_url('AboutUs/support'); ?>">آموزش همراهی</a>
-                                        <ul>
-                                            <li><a href="<?php echo base_url('AboutUs/support'); ?>">آموزش همراهی</a></li>
-                                            <li><a href="<?php echo base_url('AboutUs/companions'); ?>">حامیان و همراهان</a></li>
-                                            <li><a href="<?php echo base_url('Payment'); ?>">حمایت مالی</a></li>
-                                            <li><a href="<?php echo base_url('ContactUs?type=contact') ?>">تماس با ما</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="<?php echo base_url('AboutUs/support'); ?>">آموزش</a></li>
                                     <li><a href="<?php echo base_url('AboutUs/companions'); ?>">حامیان و همراهان</a></li>
                                     <li><a href="<?php echo base_url('Payment'); ?>">حمایت مالی</a></li>
                                     <li><a href="<?php echo base_url('ContactUs?type=contact') ?>">تماس با ما</a></li>

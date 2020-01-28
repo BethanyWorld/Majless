@@ -7,66 +7,58 @@
         $researchInfo = "";
         $skillInfo = "";
 
-        $("#doGrading").click(function () {
-            $inputCandidateId = $.trim($("#inputCandidateId").val());
-            $inputGrade = $.trim($("#inputGrade").val());
-            /* Validation */
-            console.log($inputGrade);
-            if (!$.isNumeric($inputGrade)) {
-                notify('نمره نامعتبر است', 'red');
-                return false;
-            }
-            if ($inputGrade > 100 || $inputGrade < 1) {
-                notify('نمره نامعتبر است', 'red');
-                return false;
-            }
-            /* End Validation */
+        function doMark($candidateId , $grade , $action){
             toggleLoader();
             $sendData = {
-                'inputCandidateId': $inputCandidateId,
-                'inputGrade': $inputGrade
+                'inputCandidateId': $candidateId,
+                'inputGrade': $grade,
+                'inputGradeType': $action
             }
             $.ajax({
                 type: 'post',
-                url: base_url + 'Candidate/doMarkCandidate',
+                url: base_url + 'Candidate/doMarkSpecialCandidate',
                 data: $sendData,
                 success: function (data) {
                     $result = jQuery.parseJSON(data);
                     notify($result['content'], $result['type']);
                     toggleLoader();
-                    /* Send SMS */
-                    if($result['senderNumber'] != "" && $result['senderNumber'] != null) {
-                        $.ajax({
-                            type: 'POST',
-                            url: '<?php echo $api['SMS']; ?>',
-                            data: {
-                                'senderNumber': $result['senderNumber'],
-                                'messageBody': 'کاربر گرامی  لطفا برای اطلاع از زمان و مکان آزمون اولیه به صفحه شخصی خود به آدرس http://majless11.com/Profile مراجعه کنید'
-                            },
-                            success: function (data) {
-                                $result = jQuery.parseJSON(data);
-                                notify('ارسال پیامک آزمون با موفقیت انجام شد', 'green');
-                                setTimeout(function () {
-                                    location.reload();
-                                }, 2000);
-                            },
-                            error: function (jqXHR, textStatus, errorThrown) {
-                                notify('مشکلی درخ داده است', 'red');
-                            }
-                        });
-                    }
-                    else{
-                        setTimeout(function () {
-                            location.reload();
-                        }, 1000);
-                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     notify('مشکلی درخ داده است', 'red');
                     toggleLoader();
                 }
             });
+        }
+        $("#doGrading").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            $inputGrade = $.trim($("#inputGrade").val());
+            doMark($inputCandidateId , $inputGrade , 'CandidateScore');
         });
+        $("#doSignGrading").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            $inputGrade = $.trim($("#inputCandidateSignScore").val());
+            doMark($inputCandidateId , $inputGrade , 'CandidateSignScore');
+        });
+        $("#doRecordsGrading").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            $inputGrade = $.trim($("#inputRecordsGrade").val());
+            doMark($inputCandidateId , $inputGrade , 'CandidateRecordsScore');
+        });
+        $("#doRolesGrading").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            $gradeArray = [];
+            $("[name='inputRoleScores']").each(function(){
+                $temp = {
+                    'Key': $(this).data('title'),
+                    'Value': $(this).val()
+                }
+                $gradeArray.push($temp);
+            });
+            $inputGrade = JSON.stringify($gradeArray);
+            doMark($inputCandidateId , $inputGrade , 'CandidateRolesScore');
+        });
+
+
         $("#doAcceptFirstExam").click(function () {
             $inputCandidateId = $.trim($("#inputCandidateId").val());
             toggleLoader();

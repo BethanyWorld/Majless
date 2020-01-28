@@ -30,6 +30,11 @@ class Candidate extends CI_Controller{
         unset($data['data']);
         echo json_encode($data);
     }
+    public function getJsonCandidate(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $data = $this->ModelCandidate->getJsonCandidate($inputs);
+        echo json_encode($data);
+    }
     public function edit($candidateId)
     {
         $data['noImg'] = $this->config->item('defaultImage');
@@ -152,6 +157,20 @@ class Candidate extends CI_Controller{
             $result = $this->ModelCandidate->doUpdateMarkCandidate($inputs);
             echo json_encode($result);
         }
+    }
+    public function doMarkSpecialCandidate(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelCandidate->doMarkCandidate($inputs);
+        echo json_encode($result);
     }
     public function doAcceptCandidateFirstExam()
     {
@@ -380,6 +399,7 @@ class Candidate extends CI_Controller{
         $data['enumCandidateStatus'] = $this->config->item('EnumCandidateStatus');
         $data['states'] = $this->ModelCountry->getStateList();
         $data['candidate'] = $this->ModelCandidate->getCandidateSpecialByCandidateId($rowId);
+        $data['candidateReference'] = $this->ModelCandidate->getCandidateByCandidateId($data['candidate']['CandidateRefId']);
         $data['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($data['candidate']['CandidateCode'], 'Special');
 
 
@@ -430,6 +450,12 @@ class Candidate extends CI_Controller{
     {
         $inputs = $this->input->post(NULL, TRUE);
         $result = $this->ModelCandidate->doIncreaseCandidateSpecialInviteCount($inputs);
+        echo json_encode($result);
+    }
+    public function doBindCandidateSpecial()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $result = $this->ModelCandidate->doBindCandidateSpecial($inputs);
         echo json_encode($result);
     }
     public function invite()
@@ -496,7 +522,8 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doInviteAccept($inputs);
         echo json_encode($result);
     }
-    public function doChangeCandidatePassword(){
+    public function doChangeCandidatePassword()
+    {
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return strip_tags($v);

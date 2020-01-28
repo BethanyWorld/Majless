@@ -83,7 +83,56 @@
         });
         $('#inputCandidateStateId').change();
         /* End Update User Info */
-
+        $("#inputSearch").keyup(function () {
+            $sendData = {'inputSearch': $(this).val() }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/getJsonCandidate',
+                data: $sendData,
+                success: function (data) {
+                    $result = jQuery.parseJSON(data);
+                    $('.candidate-placeholder').html('');
+                    for(var i=0;i<$result.length;i++){
+                        item = $result[i];
+                        $row = '<div class="row col-xs-12"><input class="selected-candidate" id="i-' + item['CandidateId'] + '" type="checkbox"  value="' + item['CandidateId'] + '" />';
+                        $row += '<label for="i-' + item['CandidateId'] + '">' + item['CandidateFirstName']+item['CandidateLastName'] + '</label>';
+                        $row += '</div>';
+                        $('.candidate-placeholder').append($row);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    notify('اطلاعات نامزد انتخاباتی تکراری ست', 'red');
+                }
+            });
+        });
+        $("#editBindCandidateSpecial").click(function () {
+            $inputSelected = 0;
+            $inputRowId = $.trim($("#inputRowId").val());
+            $(".selected-candidate").each(function () {
+                if ($(this).is(":checked")) {
+                    $inputSelected = $(this).val();
+                }
+            });
+            toggleLoader();
+            $sendData = {
+                'inputRowId': $inputRowId,
+                'inputRefCandidateId': $inputSelected
+            }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doBindCandidateSpecial',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    notify('اطلاعات نامزد انتخاباتی تکراری ست', 'red');
+                    toggleLoader();
+                }
+            });
+        });
         /*
         * Transparency
         * Obligation
