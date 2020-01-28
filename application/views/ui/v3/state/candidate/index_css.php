@@ -1,5 +1,8 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
+    .rightFloat{
+        float: right;
+    }
     .padding-0{
         padding: 0px;
     }
@@ -916,6 +919,32 @@
 
 
     @media (max-width: 992px) {
+        .sign{
+            width: 50px;
+            height: 55px;
+        }
+        .sign.merit-off {
+            background-position: 100% -115px;
+        }
+        .sign.merit-silver {
+            background-position: 100% -58px;
+        }
+        .sign.responsiveness-gold {
+            background-position: 100% -174px;
+        }
+        .sign.responsiveness-off {
+            background-position: 100% -289px;
+        }
+        .sign.responsiveness-silver {
+            background-position: 100% -232px;
+        }
+        .sign.transparency-silver {
+            background-position: 100% -406px;
+        }
+        .mp-brief{
+            padding-top: 0px;
+            min-height: 260px;
+        }
         /*.inner-border-div{*/
         /*    padding-top: 20px;*/
         /*}*/

@@ -51,7 +51,7 @@
 <?php } else { ?>
 <?php foreach ($dataSpecial as $candidate) {
     if ($candidate['CandidateProfileImage'] !== NULL) { ?>
-        <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+        <div class="hidden-xs hidden-sm col-md-4 col-md-offset-0">
             <div class="mp-brief">
                 <?php if ($candidate['CandidateHasAccepted']) { ?>
                     <div class="pic">
@@ -63,16 +63,6 @@
                         <div class="sign merit-off"></div>
                         <div class="sign merit-silver"></div>
                     </div>
-
-
-<!--                    <div class="sign transparency-gold"></div>-->
-<!--                    <div class="sign transparency-off"></div>-->
-<!--                    <div class="sign transparency-silver"></div>-->
-<!---->
-<!--                    <div class="sign responsiveness-gold"></div>-->
-<!--                    <div class="sign responsiveness-off"></div>-->
-<!--                    <div class="sign responsiveness-silver"></div>-->
-
 
                 <?php } else { ?>
                     <div class="pic deactive">
@@ -103,6 +93,56 @@
                         </button>
                     <?php } ?>
                 </div>
+            </div>
+        </div>
+
+
+        <div class="hidden-md hidden-lg col-xs-12">
+            <div class="mp-brief">
+
+                <div class="col-xs-7">
+                    <h3 class="candidateName">
+                        <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
+                        <div class="election">
+                            <p  style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
+                        </div>
+                    </h3>
+
+                    <div class="col-xs-12 padding-0">
+                        <div class="sign merit-gold"></div>
+                        <div class="sign merit-off"></div>
+                        <div class="sign merit-silver"></div>
+                    </div>
+
+                    <?php if ($candidate['CandidateHasAccepted']) { ?>
+                        <button
+                                data-id="<?php echo $candidate['RowId']?>"
+                                data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
+                                data-image="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>"
+                                data-area="<?php echo $candidate['ElectionName']?>"
+                                class="btn invite-button" type="button"
+                                data-toggle="modal" data-target="#myModal">
+                            دعوت به جنبش از ما
+                        </button>
+                    <?php } else { ?>
+                        <button class="btn btn-default" type="button" disabled>
+                            دعوت به جنبش از ما
+                        </button>
+                    <?php } ?>
+                </div>
+
+                <?php if ($candidate['CandidateHasAccepted']) { ?>
+                    <div class="col-xs-5 rightFloat padding-0">
+                        <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>" class="candidateImage"/>
+                    </div>
+
+                <?php } else { ?>
+                    <div class="pic deactive">
+                        <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>" class="candidateImage"/>
+                    </div>
+                <?php } ?>
+
+
             </div>
         </div>
     <?php } } ?>
