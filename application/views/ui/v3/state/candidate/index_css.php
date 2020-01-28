@@ -923,23 +923,26 @@
             width: 50px;
             height: 55px;
         }
+        .sign.merit-gold {
+            background-position: 100% -4px;
+        }
         .sign.merit-off {
-            background-position: 100% -115px;
+            background-position: 100% -118px;
         }
         .sign.merit-silver {
-            background-position: 100% -58px;
+            background-position: 100% -60px;
         }
         .sign.responsiveness-gold {
-            background-position: 100% -174px;
+            background-position: 100% -176px;
         }
         .sign.responsiveness-off {
-            background-position: 100% -289px;
+            background-position: 100% -291px;
         }
         .sign.responsiveness-silver {
-            background-position: 100% -232px;
+            background-position: 100% -233px;
         }
         .sign.transparency-silver {
-            background-position: 100% -406px;
+            background-position: 100% -407px;
         }
         .mp-brief{
             padding-top: 0px;
