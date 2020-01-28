@@ -1,49 +1,7 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
-<?php if (empty($data)) { ?>
-    <div class="alert alert-warning">
-        موردی یافت نشد
-
-        <a href="<?php echo base_url('State/invite'); ?>">
-            نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
-        </a>
-    </div>
-<?php } else { ?>
-    <?php foreach ($data as $candidate) { ?>
-        <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-            <div class="mp-brief">
-                <div class="pic">
-                    <img src="<?php echo $candidate['CandidateProfileImage']; ?>"
-                         class="candidateImage"/>
-                </div>
-                <div class="badge">
-                    <img src="http://mortensassi.com/create/assets/certificate.svg"/>
-                    <span class="star star--0"></span>
-                    <img src="http://mortensassi.com/create/assets/certificate.svg"/>
-                    <span class="star star--0"></span>
-                    <img src="http://mortensassi.com/create/assets/certificate.svg"/>
-                    <span class="star star--0"></span>
-                </div>
-                <div class="row">
-                    <h3 class="candidateName">
-                        <?php echo $candidate['CandidateFirstName'] . " " . $candidate['CandidateLastName']; ?>
-                        <div class="election">
-                            <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
-                        </div>
-                    </h3>
-                    <a href="<?php echo  base_url('State/candidate_detail/' . $candidate['CandidateId'] . '/' . $stateId . '/' . $stateName); ?>">
-                        <button class="btn invite-link" type="button">
-                            مشاهده رزومه
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    <?php } ?>
-<?php } ?>
 <?php if (empty($dataSpecial)) { ?>
     <div class="alert alert-warning">
         موردی یافت نشد
-
         <a href="<?php echo base_url('State/invite'); ?>">
             نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
         </a>
@@ -57,19 +15,16 @@
                     <div class="pic">
                         <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>" class="candidateImage"/>
                     </div>
-
                     <div class="col-md-12 col-xs-12 padding-0">
                         <div class="sign merit-gold"></div>
                         <div class="sign merit-off"></div>
                         <div class="sign merit-silver"></div>
                     </div>
-
                 <?php } else { ?>
                     <div class="pic deactive">
                         <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>" class="candidateImage"/>
                     </div>
                 <?php } ?>
-
                 <div class="row">
                     <h3 class="candidateName">
                         <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
@@ -95,11 +50,8 @@
                 </div>
             </div>
         </div>
-
-
         <div class="hidden-md hidden-lg col-xs-12">
             <div class="mp-brief">
-
                 <div class="col-xs-7">
                     <h3 class="candidateName">
                         <?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>
@@ -113,7 +65,6 @@
                         <div class="sign merit-off"></div>
                         <div class="sign merit-silver"></div>
                     </div>
-
                     <?php if ($candidate['CandidateHasAccepted']) { ?>
                         <button
                                 data-id="<?php echo $candidate['RowId']?>"
@@ -130,19 +81,15 @@
                         </button>
                     <?php } ?>
                 </div>
-
                 <?php if ($candidate['CandidateHasAccepted']) { ?>
                     <div class="col-xs-5 rightFloat padding-0">
                         <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>" class="candidateImage"/>
                     </div>
-
                 <?php } else { ?>
                     <div class="pic deactive">
                         <img src="<?php echo base_url('uploads/') . $candidate['CandidateProfileImage']; ?>" class="candidateImage"/>
                     </div>
                 <?php } ?>
-
-
             </div>
         </div>
     <?php } } ?>

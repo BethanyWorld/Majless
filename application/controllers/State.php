@@ -236,6 +236,12 @@ class State extends CI_Controller{
         $inputs['inputElectionIds'] = array_values($inputs['inputElectionIds']);
         //$data['data'] = $this->ModelCandidate->getCandidatesByElectionId($inputs);
         $data['dataSpecial'] = $this->ModelCandidate->getCandidatesSpecialByElectionId($inputs);
+
+        $index = 0;
+        foreach ($data['dataSpecial'] as $item) {
+            $data['dataSpecial'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);
+            $index +=1;
+        }
         echo $this->load->view('ui/v3/state/candidate/ajax', $data, TRUE);
     }
     public function doIncreaseCandidateSpecialInviteCount(){

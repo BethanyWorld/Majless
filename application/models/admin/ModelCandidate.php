@@ -1285,9 +1285,7 @@ class ModelCandidate extends CI_Model{
         }
         return $arr;
     }
-    public function getCandidateBadgeByCandidateId($id, $type = 'Normal')
-    {
-
+    public function getCandidateBadgeByCandidateId($id, $type = 'Special'){
         $this->db->select('*');
         $this->db->from('candidate_badge');
         $this->db->where(array(

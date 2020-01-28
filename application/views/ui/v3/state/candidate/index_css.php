@@ -19,36 +19,27 @@
         background-position: 100% 0%;
 
     }
-
     .sign.merit-silver {
         background-position: 100% -75px;
     }
-
     .sign.merit-off {
         background-position: 100% -150px;
     }
-
     .sign.responsiveness-gold {
         background-position: 100% -225px;
     }
-
     .sign.responsiveness-silver {
         background-position: 100% -300px;
     }
-
     .sign.responsiveness-off {
         background-position: 100% -375px;
     }
-
-
     .sign.transparency-gold {
         background-position: 100% 75%;
     }
-
     .sign.transparency-silver {
         background-position: 100% -525px;
     }
-
     .sign.transparency-off {
         background-position: 100% 100%;
     }
