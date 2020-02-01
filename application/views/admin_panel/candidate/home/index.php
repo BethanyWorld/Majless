@@ -57,7 +57,7 @@
                                     <th class="fit">شهر</th>
                                     <th class="fit">حوزه انتخاباتی</th>
                                     <th class="fit">وضعیت</th>
-                                    <th class="fit">تخصیص نشان</th>
+<!--                                    <th class="fit">تخصیص نشان</th>-->
                                     <th class="fit">جزئیات</th>
                                 </tr>
                                 </thead>

@@ -1,3 +1,6 @@
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E="
+      crossorigin="anonymous" />
 <style>
     /*helper*/
     .padding-0{
@@ -97,7 +100,6 @@
     .alerts-container .alert {
         font-size: 16px;
     }
-
 
 
 </style>

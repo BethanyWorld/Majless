@@ -942,8 +942,9 @@
                                         <div class="col-xs-12 col-md-4">
                                             <form class="form-horizontal">
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره
-                                                        کل</label>
+                                                    <label for="inputGrade" class="col-sm-4 control-label">
+                                                        نمره کل آزمون
+                                                    </label>
                                                     <div class="col-sm-8">
                                                         <div class="form-line">
                                                             <input type="number" class="form-control"
@@ -965,8 +966,9 @@
                                         <div class="col-xs-12 col-md-4">
                                             <form class="form-horizontal">
                                                 <div class="form-group">
-                                                    <label for="inputSignGrade" class="col-sm-4 control-label">نمره نشان
-                                                        ها</label>
+                                                    <label for="inputSignGrade" class="col-sm-4 control-label">
+                                                        نمره کل کانون ارزیابی
+                                                    </label>
                                                     <div class="col-sm-8">
                                                         <div class="form-line">
                                                             <input type="number" class="form-control"
@@ -989,7 +991,9 @@
                                         <div class="col-xs-12 col-md-4">
                                             <form class="form-horizontal">
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره سوابق</label>
+                                                    <label for="inputGrade" class="col-sm-4 control-label">
+                                                        برآیند آزمون و کانون
+                                                    </label>
                                                     <div class="col-sm-8">
                                                         <div class="form-line">
                                                             <input type="number" class="form-control"
@@ -1015,58 +1019,10 @@
                                             ?>
                                             <form class="form-horizontal">
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نقش ها</label>
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نقش های اصلی</label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره قانون گذار</label>
-                                                    <div class="col-sm-8">
-                                                        <div class="form-line">
-                                                            <input type="number"
-                                                                   data-title="Lawmaker"
-                                                                   <?php
-                                                                   foreach ($scores as $score) {
-                                                                       if($score['Key'] == 'Lawmaker'){echo 'value="'.$score['Value'].'"';}
-                                                                   }
-                                                                   ?>
-                                                                   class="form-control"
-                                                                   name="inputRoleScores"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره ارزیاب طرح ها</label>
-                                                    <div class="col-sm-8">
-                                                        <div class="form-line">
-                                                            <input type="number"
-                                                                   data-title="Evaluator"
-                                                                <?php
-                                                                foreach ($scores as $score) {
-                                                                    if($score['Key'] == 'Evaluator'){echo 'value="'.$score['Value'].'"';}
-                                                                }
-                                                                ?>
-                                                                   class="form-control"
-                                                                   name="inputRoleScores"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره اقناع کننده</label>
-                                                    <div class="col-sm-8">
-                                                        <div class="form-line">
-                                                            <input type="number"
-                                                                   data-title="Persuasive"
-                                                                <?php
-                                                                foreach ($scores as $score) {
-                                                                    if($score['Key'] == 'Persuasive'){echo 'value="'.$score['Value'].'"';}
-                                                                }
-                                                                ?>
-                                                                   class="form-control"
-                                                                   name="inputRoleScores"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره رابط</label>
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [رابط مردم با نظام]</label>
                                                     <div class="col-sm-8">
                                                         <div class="form-line">
                                                             <input type="number"
@@ -1082,7 +1038,59 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نمره ناظر</label>
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [ارزیاب طرح‌ها و لوایح]</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number"
+                                                                   data-title="Evaluator"
+                                                                <?php
+                                                                foreach ($scores as $score) {
+                                                                    if($score['Key'] == 'Evaluator'){echo 'value="'.$score['Value'].'"';}
+                                                                }
+                                                                ?>
+                                                                   class="form-control"
+                                                                   name="inputRoleScores"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نقش های تکمیلی</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [قانون‌گذار (تحلیل‌گر و ارائه‌دهنده طرح)]</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number"
+                                                                   data-title="Lawmaker"
+                                                                   <?php
+                                                                   foreach ($scores as $score) {
+                                                                       if($score['Key'] == 'Lawmaker'){echo 'value="'.$score['Value'].'"';}
+                                                                   }
+                                                                   ?>
+                                                                   class="form-control"
+                                                                   name="inputRoleScores"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [هماهنگ‌کننده و اقناع‌کننده]</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="form-line">
+                                                            <input type="number"
+                                                                   data-title="Persuasive"
+                                                                <?php
+                                                                foreach ($scores as $score) {
+                                                                    if($score['Key'] == 'Persuasive'){echo 'value="'.$score['Value'].'"';}
+                                                                }
+                                                                ?>
+                                                                   class="form-control"
+                                                                   name="inputRoleScores"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [ناظر (نظارت‌کننده بر عملکرد دستگاه‌ها)]</label>
                                                     <div class="col-sm-8">
                                                         <div class="form-line">
                                                             <input type="number"

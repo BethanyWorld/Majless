@@ -15,32 +15,31 @@
         height: 78px;
     }
 
-    .sign.merit-gold {
+    .sign.GoldenMerit {
         background-position: 100% 0%;
-
     }
-    .sign.merit-silver {
+    .sign.SilverMerit {
         background-position: 100% -75px;
     }
-    .sign.merit-off {
+    .sign.OffMerit {
         background-position: 100% -150px;
     }
-    .sign.responsiveness-gold {
+    .sign.Obligation {
         background-position: 100% -225px;
     }
-    .sign.responsiveness-silver {
+    .sign.SilverObligation {
         background-position: 100% -300px;
     }
-    .sign.responsiveness-off {
+    .sign.OffObligation {
         background-position: 100% -375px;
     }
-    .sign.transparency-gold {
+    .sign.GoldenTransparency {
         background-position: 100% 75%;
     }
-    .sign.transparency-silver {
+    .sign.SilverTransparency {
         background-position: 100% -525px;
     }
-    .sign.transparency-off {
+    .sign.OffTransparency {
         background-position: 100% 100%;
     }
 
