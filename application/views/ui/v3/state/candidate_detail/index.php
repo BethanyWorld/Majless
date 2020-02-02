@@ -650,7 +650,8 @@
                                                                                             name="inputRealEstateCountryId"
                                                                                             id="inputRealEstateCountryId">
                                                                                         <option>
-                                                                                            {{item.RealEstateCountryId | bindCountry}}
+                                                                                            {{item.RealEstateCountryId |
+                                                                                            bindCountry}}
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
@@ -661,7 +662,8 @@
                                                                                             name="inputRealEstateStateId"
                                                                                             id="inputRealEstateStateId">
                                                                                         <option>
-                                                                                            {{item.RealEstateStateId | bindState}}
+                                                                                            {{item.RealEstateStateId |
+                                                                                            bindState}}
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
@@ -673,7 +675,8 @@
                                                                                             name="inputRealEstateCityId"
                                                                                             id="inputRealEstateCityId">
                                                                                         <option>
-
+                                                                                            {{item.RealEstateCityId |
+                                                                                            bindCity}}
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
@@ -5863,6 +5866,7 @@
     };
 
     var countries = [];
+    var cities = [];
     var states = [];
 
     app.filter('bindState', function () {
@@ -5885,6 +5889,18 @@
                 row['CountryId'] = row['CountryId'];
                 if (row['CountryId'] === $inputKeyCountry) {
                     return (row['FaName'])
+                }
+            }
+        }
+    });
+    app.filter('bindCity', function () {
+        return function (input) {
+            $inputKeyCity = input;
+            for (var i = 0; i < cities.length; i++) {
+                var row = cities[i];
+                row['CityId'] = row['CityId'];
+                if (row['CityId'] === $inputKeyCity) {
+                    return (row['CityName'])
                 }
             }
         }
@@ -5936,6 +5952,7 @@
             $scope.finance = response.finance;
             countries = response.countries;
             states = response.states;
+            cities = response.cities;
 
             $scope.finance = $scope.finance;
             var BankAccountPricePlaceHolder = ['BankAccountPrice'];
@@ -5948,34 +5965,45 @@
             var RealEStatesPricePlaceHolder = ['RealEstateBuyTimePrice', 'RealEstateNowTimePrice'];
             var VehiclePricePlaceHolder = ['VehicleBuyTimePrice', 'VehicleNowTimePrice'];
 
-            function someFn(data) {
-                data = $scope.finance;
-                for (var temp in data) {
-                    var innerTemp = $scope.finance[temp];
-                    for (var i = 0; i < innerTemp.length; i++) {
-                        var row = innerTemp[i];
-                        row[BankAccountPricePlaceHolder] = row[BankAccountPricePlaceHolder].split(' ');
-                        row[BankAccountPricePlaceHolder]['NumberValues'] = row[BankAccountPricePlaceHolder][0].split('.');
-                        switch (row[BankAccountPricePlaceHolder][1]) {
+            function translatePrice(key , placeHolder) {
+                var innerTemp = $scope.finance[key];
+                for (var i = 0; i < innerTemp.length; i++) {
+                    var row = innerTemp[i];
+
+                    for(var j=0;j<placeHolder.length;j++){
+                        var tempPlaceHolder = placeHolder[j];
+                        row[tempPlaceHolder] = row[tempPlaceHolder].split(' ');
+                        row[tempPlaceHolder]['NumberValues'] = row[tempPlaceHolder][0].split('.');
+                        switch (row[tempPlaceHolder][1]) {
                             case 'ML':
-                                row[BankAccountPricePlaceHolder]['TranslatedUnit'] = 'میلیارد تومان';
+                                row[tempPlaceHolder]['TranslatedUnit'] = 'میلیارد تومان';
                                 break;
                             case 'MI':
-                                row[BankAccountPricePlaceHolder]['TranslatedUnit'] = 'میلیون تومان';
+                                row[tempPlaceHolder]['TranslatedUnit'] = 'میلیون تومان';
                                 break;
                             case 'HZ':
-                                row[BankAccountPricePlaceHolder]['TranslatedUnit'] = 'هزار تومان';
+                                row[tempPlaceHolder]['TranslatedUnit'] = 'هزار تومان';
                                 break;
                             case 'SD':
-                                row[BankAccountPricePlaceHolder]['TranslatedUnit'] = 'صد تومان';
+                                row[tempPlaceHolder]['TranslatedUnit'] = 'صد تومان';
                                 break;
                         }
                         innerTemp[i] = row;
                     }
                 }
+                /*$scope.finance[key][i] = innerTemp;*/
             }
 
-            someFn();
+            translatePrice('BankAccount' , BankAccountPricePlaceHolder);
+            translatePrice('CreditDebtor' , CreditDebtorPricePlaceHolder);
+            translatePrice('Election' , ElectionPricePlaceHolder);
+            translatePrice('Fee' , FeePricePlaceHolder);
+            translatePrice('Goods' , GoodsPricePlaceHolder);
+            translatePrice('Income' , IncomePricePlaceHolder);
+            translatePrice('Invest' , InvestPricePlaceHolder);
+            translatePrice('RealEStates' , RealEStatesPricePlaceHolder);
+            translatePrice('Vehicle' , VehiclePricePlaceHolder);
+            console.log($scope.finance);
 
         });
     });
