@@ -939,6 +939,28 @@
                                                 float: left;
                                             }
                                         </style>
+                                        <div class="col-xs-12">
+                                            وضعیت فعلی:
+                                            <?php if($candidate['CandidateExamResultStatus'] === 'Accepted'){ ?>
+                                                <label class="label label-success">تایید شده</label>
+                                            <?php } else if($candidate['CandidateExamResultStatus'] === 'Failed'){ ?>
+                                                <label class="label label-danger">رد شده</label>
+                                            <?php } else { ?>
+                                                <label class="label label-default">تعیین نشده</label>
+                                            <?php }  ?>
+                                            <br><br>
+                                            <button
+                                                    data-status="Failed"
+                                                    type="button" class="btn btn-danger change-exam-status">
+                                                رد وضعیت آزمون
+                                            </button>
+                                            <button
+                                                    data-status="Accepted"
+                                                    type="button" class="btn btn-success change-exam-status">
+                                                تایید وضعیت آزمون
+                                            </button>
+                                        </div>
+
                                         <div class="col-xs-12 col-md-4">
                                             <form class="form-horizontal">
                                                 <div class="form-group">
@@ -1013,23 +1035,27 @@
                                             </form>
                                         </div>
                                         <!-- Records Score -->
-                                        <div class="col-xs-12 col-md-6">
+                                        <div class="col-xs-12">
                                             <?php
-                                                $scores = json_decode($candidate['CandidateRolesScore'] , TRUE);
+                                            $scores = json_decode($candidate['CandidateRolesScore'], TRUE);
                                             ?>
                                             <form class="form-horizontal">
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نقش های اصلی</label>
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نقش های
+                                                        اصلی</label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [رابط مردم با نظام]</label>
-                                                    <div class="col-sm-8">
+                                                    <label for="inputGrade" class="col-sm-3 control-label">نماینده در
+                                                        نقش رابط مردم</label>
+                                                    <div class="col-sm-9">
                                                         <div class="form-line">
                                                             <input type="number"
                                                                    data-title="Link"
                                                                 <?php
                                                                 foreach ($scores as $score) {
-                                                                    if($score['Key'] == 'Link'){echo 'value="'.$score['Value'].'"';}
+                                                                    if ($score['Key'] == 'Link') {
+                                                                        echo 'value="' . $score['Value'] . '"';
+                                                                    }
                                                                 }
                                                                 ?>
                                                                    class="form-control"
@@ -1038,14 +1064,17 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [ارزیاب طرح‌ها و لوایح]</label>
-                                                    <div class="col-sm-8">
+                                                    <label for="inputGrade" class="col-sm-3 control-label">نماینده در
+                                                        نقش ارزیاب طرح‌ها</label>
+                                                    <div class="col-sm-9">
                                                         <div class="form-line">
                                                             <input type="number"
                                                                    data-title="Evaluator"
                                                                 <?php
                                                                 foreach ($scores as $score) {
-                                                                    if($score['Key'] == 'Evaluator'){echo 'value="'.$score['Value'].'"';}
+                                                                    if ($score['Key'] == 'Evaluator') {
+                                                                        echo 'value="' . $score['Value'] . '"';
+                                                                    }
                                                                 }
                                                                 ?>
                                                                    class="form-control"
@@ -1055,33 +1084,21 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نقش های تکمیلی</label>
+                                                    <label for="inputGrade" class="col-sm-4 control-label">نقش های
+                                                        تکمیلی</label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [قانون‌گذار (تحلیل‌گر و ارائه‌دهنده طرح)]</label>
-                                                    <div class="col-sm-8">
+                                                    <label for="inputGrade" class="col-sm-3 control-label">نماینده در
+                                                        نقش قانون‌گذار</label>
+                                                    <div class="col-sm-9">
                                                         <div class="form-line">
                                                             <input type="number"
                                                                    data-title="Lawmaker"
-                                                                   <?php
-                                                                   foreach ($scores as $score) {
-                                                                       if($score['Key'] == 'Lawmaker'){echo 'value="'.$score['Value'].'"';}
-                                                                   }
-                                                                   ?>
-                                                                   class="form-control"
-                                                                   name="inputRoleScores"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [هماهنگ‌کننده و اقناع‌کننده]</label>
-                                                    <div class="col-sm-8">
-                                                        <div class="form-line">
-                                                            <input type="number"
-                                                                   data-title="Persuasive"
                                                                 <?php
                                                                 foreach ($scores as $score) {
-                                                                    if($score['Key'] == 'Persuasive'){echo 'value="'.$score['Value'].'"';}
+                                                                    if ($score['Key'] == 'Lawmaker') {
+                                                                        echo 'value="' . $score['Value'] . '"';
+                                                                    }
                                                                 }
                                                                 ?>
                                                                    class="form-control"
@@ -1090,14 +1107,36 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputGrade" class="col-sm-4 control-label">نماینده در نقشِ [ناظر (نظارت‌کننده بر عملکرد دستگاه‌ها)]</label>
-                                                    <div class="col-sm-8">
+                                                    <label for="inputGrade" class="col-sm-3 control-label">نماینده در
+                                                        نقش هماهنگ‌کننده</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="form-line">
+                                                            <input type="number"
+                                                                   data-title="Persuasive"
+                                                                <?php
+                                                                foreach ($scores as $score) {
+                                                                    if ($score['Key'] == 'Persuasive') {
+                                                                        echo 'value="' . $score['Value'] . '"';
+                                                                    }
+                                                                }
+                                                                ?>
+                                                                   class="form-control"
+                                                                   name="inputRoleScores"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputGrade" class="col-sm-3 control-label">نماینده در
+                                                        نقش ناظر</label>
+                                                    <div class="col-sm-9">
                                                         <div class="form-line">
                                                             <input type="number"
                                                                    data-title="Moderator"
                                                                 <?php
                                                                 foreach ($scores as $score) {
-                                                                    if($score['Key'] == 'Moderator'){echo 'value="'.$score['Value'].'"';}
+                                                                    if ($score['Key'] == 'Moderator') {
+                                                                        echo 'value="' . $score['Value'] . '"';
+                                                                    }
                                                                 }
                                                                 ?>
                                                                    class="form-control"
@@ -1107,7 +1146,9 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-2 col-sm-10">
-                                                        <button id="doRolesGrading" type="button" class="btn btn-danger">ثبت</button>
+                                                        <button id="doRolesGrading" type="button"
+                                                                class="btn btn-danger">ثبت
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </form>

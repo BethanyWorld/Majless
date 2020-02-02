@@ -1349,9 +1349,16 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
-
-
-
-
+    public function doChangeCandidateExamResultStatus($inputs){
+        $UserArray = array( 'CandidateExamResultStatus' => $inputs['inputCandidateExamResultStatus']);
+        $this->db->where('CandidateId', $inputs['inputCandidateId']);
+        $this->db->update('candidate', $UserArray);
+        $arr = array(
+            'type' => "green",
+            'content' => "بروزرسانی وضعیت آزمون با موفقیت انجام شد",
+            'success' => true
+        );
+        return $arr;
+    }
 }
 ?>

@@ -122,7 +122,7 @@
                         </a>
                     </div>
                     <!--  STEPS -->
-                    <?php include 'steps/chart/index.php' ?>
+                    <?php //include 'steps/chart/index.php' ?>
                     <!--  End STEPS -->
                     <?php /* نامزد انتخاباتی ثبت نام کرده باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateRegister') { ?>

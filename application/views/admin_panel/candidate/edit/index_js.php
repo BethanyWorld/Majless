@@ -245,5 +245,30 @@
             });
         });
 
+
+        $(".change-exam-status").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            toggleLoader();
+            $sendData = {
+                'inputCandidateId': $inputCandidateId ,
+                'inputCandidateExamResultStatus': $(this).data('status')
+            }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doChangeCandidateExamResultStatus',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    notify('مشکلی درخ داده است', 'red');
+                    toggleLoader();
+                }
+            });
+        });
+
+
     });
 </script>
