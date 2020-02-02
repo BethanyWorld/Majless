@@ -1,5 +1,16 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <style>
+    .upload-file-btn{
+        background-color: #095644 !important;
+        color: #fff !important;
+        padding-top: 8px !important;
+    }
+    .display-in-block {
+        display: inline-block !important;
+    }
+    .margin-b-0{
+        margin-bottom: 0px;
+    }
     .form {
         box-shadow: 0 0 7px 1px #ccc !important;
         padding: 15px 0 !important;
@@ -512,6 +523,12 @@
     }
     .padding-0{
         padding: 0px;
+    }
+
+    @media (max-width: 992px) {
+        .display-in-block {
+            display: block !important;
+        }
     }
 </style>
 <div class="col-md-3 col-xs-12 pull-right">
