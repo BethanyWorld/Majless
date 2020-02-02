@@ -650,8 +650,7 @@
                                                                                             name="inputRealEstateCountryId"
                                                                                             id="inputRealEstateCountryId">
                                                                                         <option>
-                                                                                            {{item.RealEstateCountryId |
-                                                                                            bindCountry}}
+                                                                                            {{item.RealEstateCountryId | bindCountry}}
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
@@ -662,8 +661,7 @@
                                                                                             name="inputRealEstateStateId"
                                                                                             id="inputRealEstateStateId">
                                                                                         <option>
-                                                                                            {{item.RealEstateStateId |
-                                                                                            bindState}}
+                                                                                            {{item.RealEstateStateId | bindState}}
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>

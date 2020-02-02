@@ -1,4 +1,5 @@
 <?php
+
 class ModelCountry extends CI_Model
 {
 
@@ -18,6 +19,17 @@ class ModelCountry extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('state');
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        $arr = array();
+        return $arr;
+    }
+    public function getCityList()
+    {
+        $this->db->select('*');
+        $this->db->from('city');
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();

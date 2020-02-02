@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class State extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
         $this->load->model('ui/ModelQuery');
@@ -165,6 +166,7 @@ class State extends CI_Controller{
         $data['stateId'] = $stateId;
         $data['countries'] = $this->ModelCountry->getCountryList();
         $data['states'] = $this->ModelCountry->getStateList();
+        $data['cities'] = $this->ModelCountry->getCityList();
         echo json_encode($data);
 
     }

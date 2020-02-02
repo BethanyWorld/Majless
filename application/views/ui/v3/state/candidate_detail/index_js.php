@@ -1,6 +1,5 @@
 <script type="text/javascript">
     $(document).ready(function () {
-
         $(window).scrollTop(0);
 
         $personalInfo = "";

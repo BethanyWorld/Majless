@@ -1298,7 +1298,7 @@ class Profile extends CI_Controller{
                 echo json_encode($result);
                 die();
             }
-            $allowedExtensions = array('jpg', 'png', 'gif', 'jpeg');
+            $allowedExtensions = array('jpg', 'png', 'gif', 'jpeg', 'zip' , 'rar');
             $temp = explode(".", $myFile["name"]);
             $extension = strtolower(end($temp));
             if (!in_array($extension, $allowedExtensions)) {
