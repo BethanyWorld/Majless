@@ -48,8 +48,22 @@
                         $isJustSupporterOrElite = false;
                     }
                 }
-                ?>
 
+                $examResultClass = "";
+                $examResultText = "";
+                if ($userInfo['CandidateExamResultStatus'] === 'Accepted') {
+                    $examResultClass = 'label-success';
+                    $examResultText = "تایید صلاحیت";
+                } else if ($userInfo['CandidateExamResultStatus'] === 'Failed') {
+                    $examResultClass = 'label-danger';
+                    $examResultText = "رد صلاحیت";
+                } else {
+                    $examResultClass = 'label-info';
+                    $examResultText = NULL;
+                }
+
+                ?>
+                <!-- If Candidate Is Supporter Or Elite -->
                 <?php if ($isJustSupporterOrElite){ ?>
                     <div class="col-xs-12 padding-0">
                         <div class="col-xs-12 col-md-12 blog-contents-div">
@@ -113,55 +127,64 @@
                             </p>
                         </div>
                     </div>
-                <?php } else{ ?>
+                <?php } else { ?>
                 <div class=" padding-0 col-xs-12 alerts-container">
-                    <div class="col-xs-12 alert alert-success result-container">
-                        جهت مشاهده نتایج تفصیلی کلیک کنید
-                        <a href="#" class="btn btn-danger">
-                            مشاهده نتایج
-                        </a>
-                    </div>
+                    <!-- If Candidate Has Exam Result  -->
+                    <?php if ($examResultText !== NULL) { ?>
+                        <div class="col-xs-12 result-container">
+                            جهت مشاهده نتایج تفصیلی کلیک کنید
+                            <a href="#" class="btn btn-danger">
+                                مشاهده نتایج
+                            </a>
+                        </div>
+                        <br><br>
+                        <hr>
+                        <label class="label <?php echo $examResultClass; ?>">
+                            <?php echo $examResultText; ?>
+                        </label>
+                    <?php } else { ?>
+
                     <!--  STEPS -->
-                    <?php //include 'steps/chart/index.php' ?>
+                    <?php include 'steps/chart/index.php' ?>
                     <!--  End STEPS -->
                     <?php /* نامزد انتخاباتی ثبت نام کرده باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateRegister') { ?>
-                        <?php //include 'steps/register/index.php' ?>
+                        <?php include 'steps/register/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی رزومه را تکمیل کرده باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeCompleted') { ?>
-                        <?php //include 'steps/complete/index.php' ?>
+                        <?php include 'steps/complete/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی حائز شرایط اولیه برای نامزدی انتخابات نباشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeRejected') { ?>
-                        <?php //include 'steps/reject/index.php' ?>
+                        <?php include 'steps/reject/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی شرایط اولیه برای نامزدی انتخابات را داشته باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeAccepted') { ?>
-                        <?php //include 'steps/accept/index.php' ?>
+                        <?php include 'steps/accept/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی شرایط*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateHasNotContinueCondition') { ?>
-                        <?php //include 'steps/has_not_condition/index.php' ?>
+                        <?php include 'steps/has_not_condition/index.php' ?>
                     <?php } ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateHasContinueCondition') { ?>
-                        <?php //include 'steps/has_condition/index.php' ?>
+                        <?php include 'steps/has_condition/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeMarked') { ?>
-                        <?php //include 'steps/marked/index.php' ?>
+                        <?php include 'steps/marked/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateExamFirstStep') { ?>
-                        <?php //include 'steps/first_exam/index.php' ?>
+                        <?php include 'steps/first_exam/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateExamFirstStepReject') { ?>
-                        <?php //include 'steps/first_exam_reject/index.php' ?>
+                        <?php include 'steps/first_exam_reject/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateExamSecondStep') { ?>
-                        <?php //include 'steps/second_exam/index.php' ?>
+                        <?php include 'steps/second_exam/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateExamSecondStepReject') { ?>
@@ -169,20 +192,22 @@
                     <?php } ?>
                     <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateAssessment') { ?>
-                        <?php //include 'steps/assessement/index.php' ?>
+                        <?php include 'steps/assessement/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateAssessmentReject') { ?>
-                        <?php //include 'steps/assessement_reject/index.php' ?>
+                        <?php include 'steps/assessement_reject/index.php' ?>
                     <?php } ?>
                     <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateAccepted') { ?>
-                        <?php //include 'steps/candidate_accepted/index.php' ?>
+                        <?php include 'steps/candidate_accepted/index.php' ?>
                     <?php } ?>
-                    <?php } ?>
+                    <?php } } ?>
                 </div>
             </div>
         </div>
+
+        <?php if ($examResultText !== NULL) { ?>
         <div class="row">
             <table class="table table-condensed table-hover text-center">
                 <thead>
@@ -202,7 +227,7 @@
             </table>
         </div>
         <div class="row">
-            <div class="chart-container" style="position: relative; height:450px; width:100%;margin-bottom: 40px;">
+            <div class="chart-container" style="position: relative; margin-bottom: 40px;">
                 <canvas id="BarChart"></canvas>
             </div>
         </div>
@@ -212,6 +237,7 @@
                 <li><strong style="color:rgb(255, 159, 64);">نقش های تکمیلی</strong></li>
             </ul>
         </div>
+        <?php } ?>
     </div>
 </div>
 
@@ -221,6 +247,7 @@
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
     }
+
     function guid() {
         return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + this.s4() + this.s4();
     }
@@ -239,7 +266,7 @@
             type: 'post',
             data: $sendData,
             success: function (data) {
-                if(data['token_type'] != ''){
+                if (data['token_type'] != '') {
                     var now = new Date();
                     var time = now.getTime();
                     var expireTime = time + 1000 * 36000;
@@ -247,11 +274,12 @@
                     document.cookie = 'clientId=' + JSON.stringify(data) + ';expires=' + now.toUTCString() + ';path=/';
                     $("iframe").attr('src', 'http://oexam.s-hasht.ir/setcookie.html?clientId=' + JSON.stringify(data));
                     $('iframe').on('load', function () {
-                        $(".result-container a").attr('href' , 'http://oexam.s-hasht.ir/RelatedExams').attr('target' , '_blank');
+                        $(".result-container a").attr('href', 'http://oexam.s-hasht.ir/RelatedExams').attr('target', '_blank');
                     });
                 }
             },
-            error: function () {}
+            error: function () {
+            }
         });
     });
 </script>

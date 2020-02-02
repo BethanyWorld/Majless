@@ -88,77 +88,109 @@
             });
         });
 
-        $rolesScore = <?php echo $userInfo['CandidateRolesScore']; ?>;
-
-        $data = [];
-        for ($i = 0; $i < $rolesScore.length; $i++) {
-            $item = $rolesScore[$i];
-            if ($item['Key'] === "Link") {
-                $data.push($item['Value']);
-            }
-        }
-        for ($i = 0; $i < $rolesScore.length; $i++) {
-            $item = $rolesScore[$i];
-            if ($item['Key'] === "Evaluator") {
-                $data.push($item['Value']);
-            }
-        }
-        for ($i = 0; $i < $rolesScore.length; $i++) {
-            $item = $rolesScore[$i];
-            if ($item['Key'] === "Persuasive") {
-                $data.push($item['Value']);
-            }
-        }
-        for ($i = 0; $i < $rolesScore.length; $i++) {
-            $item = $rolesScore[$i];
-            if ($item['Key'] === "Moderator") {
-                $data.push($item['Value']);
-            }
-        }
-        for ($i = 0; $i < $rolesScore.length; $i++) {
-            $item = $rolesScore[$i];
-            if ($item['Key'] === "Lawmaker") {
-                $data.push($item['Value']);
-            }
-        }
-        var ctx = document.getElementById('BarChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: [
-                    'رابط مردم با نظام',
-                    'ارزیاب طرح‌ها و لوایح',
-                    'هماهنگ‌ کننده و اقناع ‌کننده',
-                    'ناظر ',
-                    'قانون‌گذار'
-                ],
-                datasets: [{
-                    label: 'نمرات نقش ها',
-                    data: $data,
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 159, 64, 1)',
-                        'rgba(255, 159, 64, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 206, 86, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{ticks: {fontSize: 12, fontFamily: "'iranYekan'", fontColor: '#000', fontStyle: '500'}}],
-                    xAxes: [{ticks: {fontSize: 12, fontFamily: "'iranYekan'", fontColor: '#000', fontStyle: '500'}}]
+        try {
+            $rolesScore = <?php echo $userInfo['CandidateRolesScore']; ?>;
+            $data = [];
+            for ($i = 0; $i < $rolesScore.length; $i++) {
+                $item = $rolesScore[$i];
+                if ($item['Key'] === "Link") {
+                    $data.push($item['Value']);
                 }
             }
-        });
+            for ($i = 0; $i < $rolesScore.length; $i++) {
+                $item = $rolesScore[$i];
+                if ($item['Key'] === "Evaluator") {
+                    $data.push($item['Value']);
+                }
+            }
+            for ($i = 0; $i < $rolesScore.length; $i++) {
+                $item = $rolesScore[$i];
+                if ($item['Key'] === "Persuasive") {
+                    $data.push($item['Value']);
+                }
+            }
+            for ($i = 0; $i < $rolesScore.length; $i++) {
+                $item = $rolesScore[$i];
+                if ($item['Key'] === "Moderator") {
+                    $data.push($item['Value']);
+                }
+            }
+            for ($i = 0; $i < $rolesScore.length; $i++) {
+                $item = $rolesScore[$i];
+                if ($item['Key'] === "Lawmaker") {
+                    $data.push($item['Value']);
+                }
+            }
+            var ctx = document.getElementById('BarChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'رابط مردم با نظام',
+                        'ارزیاب طرح‌ها و لوایح',
+                        'هماهنگ‌ کننده و اقناع ‌کننده',
+                        'ناظر ',
+                        'قانون‌گذار'
+                    ],
+                    datasets: [{
+                        label: '',
+                        data: $data,
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                fontSize: 12, fontFamily: "'iranYekan'", fontColor: '#000', fontStyle: '500'
+                            },
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)",
+                            }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                fontSize: 12, fontFamily: "'iranYekan'", fontColor: '#000', fontStyle: '500'
+                            },
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)",
+                            }
+                        }]
+                    }
+                }
+            });
+            Chart.pluginService.register({
+                afterDraw: function (chartInstance) {
+                    var ctx = chartInstance.chart.ctx;
+                    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+                    myChart.data.datasets.forEach(function (dataset) {
+                        for (var i = 0; i < dataset.data.length; i++) {
+                            var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model;
+                            ctx.fillText(dataset.data[i], model.x, model.y - 2);
+                        }
+                    });
+                }
+            });
+        }
+        catch (e) {
+            
+        }
 
     });
 </script>
