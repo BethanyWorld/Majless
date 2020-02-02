@@ -115,17 +115,14 @@
                     </div>
                 <?php } else{ ?>
                 <div class=" padding-0 col-xs-12 alerts-container">
-
                     <div class="col-xs-12 alert alert-success result-container">
                         جهت مشاهده نتایج تفصیلی کلیک کنید
                         <a href="#" class="btn btn-danger">
                             مشاهده نتایج
                         </a>
                     </div>
-
-
                     <!--  STEPS -->
-                    <?php //include 'steps/chart/index.php' ?>
+                    <?php include 'steps/chart/index.php' ?>
                     <!--  End STEPS -->
                     <?php /* نامزد انتخاباتی ثبت نام کرده باشد*/ ?>
                     <?php if ($userInfo['CandidateStatus'] == 'CandidateRegister') { ?>
