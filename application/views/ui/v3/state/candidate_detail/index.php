@@ -133,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="row col-xs-12 col-md-9 pull-left responsive-style-auto-margin">
+        <div id="container-wrapper" class="row col-xs-12 col-md-9 pull-left responsive-style-auto-margin">
             <div class="row">
                 <div class="panel left-candidate-panel-resume padding-0">
                     <div class="alert alert-info-candidate text-center">
@@ -3896,8 +3896,6 @@
             countries = response.countries;
             states = response.states;
             cities = response.cities;
-
-            $scope.finance = $scope.finance;
             var BankAccountPricePlaceHolder = ['BankAccountPrice'];
             var CreditDebtorPricePlaceHolder = ['DebotrPrice', 'CreditPrice'];
             var ElectionPricePlaceHolder = ['ElectionPlacePrice', 'ElectionFlockPrice', 'ElectionAdvertisePrice', 'ElectionStaffPrice', 'ElectionAllPrice'];
@@ -3907,7 +3905,6 @@
             var InvestPricePlaceHolder = ['InvestBuyTimePrice', 'InvestNowTimePrice'];
             var RealEStatesPricePlaceHolder = ['RealEstateBuyTimePrice', 'RealEstateNowTimePrice'];
             var VehiclePricePlaceHolder = ['VehicleBuyTimePrice', 'VehicleNowTimePrice'];
-
             function translatePrice(key , placeHolder) {
                 var innerTemp = $scope.finance[key];
                 for (var i = 0; i < innerTemp.length; i++) {
@@ -3936,7 +3933,6 @@
                 }
                 /*$scope.finance[key][i] = innerTemp;*/
             }
-
             translatePrice('BankAccount' , BankAccountPricePlaceHolder);
             translatePrice('CreditDebtor' , CreditDebtorPricePlaceHolder);
             translatePrice('Election' , ElectionPricePlaceHolder);
@@ -3946,8 +3942,10 @@
             translatePrice('Invest' , InvestPricePlaceHolder);
             translatePrice('RealEStates' , RealEStatesPricePlaceHolder);
             translatePrice('Vehicle' , VehiclePricePlaceHolder);
-            console.log($scope.finance);
 
+            setTimeout(function () {
+                $("#container-wrapper :input").prop('disabled', true);
+            } , 2000);
         });
     });
 </script>

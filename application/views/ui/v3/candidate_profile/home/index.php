@@ -50,13 +50,16 @@
                 }
 
                 $examResultClass = "";
+                $examResultTDClass = "";
                 $examResultText = "";
                 if ($userInfo['CandidateExamResultStatus'] === 'Accepted') {
                     $examResultClass = 'label-success';
-                    $examResultText = "تایید صلاحیت";
+                    $examResultTDClass = "bg-success";
+                    $examResultText = "تایید احراز صلاحیت حرفه ای";
                 } else if ($userInfo['CandidateExamResultStatus'] === 'Failed') {
                     $examResultClass = 'label-danger';
-                    $examResultText = "رد صلاحیت";
+                    $examResultTDClass = "bg-danger";
+                    $examResultText = "عدم احراز صلاحیت حرفه ای";
                 } else {
                     $examResultClass = 'label-info';
                     $examResultText = NULL;
@@ -133,17 +136,14 @@
                     <?php if ($examResultText !== NULL) { ?>
                         <div class="col-xs-12 result-container">
                             جهت مشاهده نتایج تفصیلی کلیک کنید
-                            <a href="#" class="btn btn-danger">
-                                مشاهده نتایج
-                            </a>
+                            <button class="btn btn-submit" style="float: none;margin-bottom: 10px;">
+                                <a href="#" style="color: #000;">
+                                    مشاهده نتایج
+                                </a>
+                            </button>
                         </div>
                         <br><br>
-                        <hr>
-                        <label class="label <?php echo $examResultClass; ?>">
-                            <?php echo $examResultText; ?>
-                        </label>
                     <?php } else { ?>
-
                     <!--  STEPS -->
                     <?php include 'steps/chart/index.php' ?>
                     <!--  End STEPS -->
@@ -211,31 +211,56 @@
         <div class="row">
             <table class="table table-condensed table-hover text-center">
                 <thead>
-                <tr>
-                    <th class="text-center">نمره کل آزمون</th>
-                    <th class="text-center">نمره کانون ارزیابی</th>
-                    <th class="text-center">برآیند آزمون و کانون</th>
+                <tr style="background: #0f342f;color: #fff;">
+                    <th class="text-center" style="font-size: 10px;">برآیند آزمون و کانون</th>
+                    <th class="text-center" style="font-size: 10px;">نمره کانون ارزیابی (وزن 0.7)</th>
+                    <th class="text-center" style="font-size: 10px;">نمره کل آزمون (وزن 0.3)</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td class="text-center"><?php echo $userInfo['CandidateScore']; ?></td>
+                    <tr>
+                    <td class="text-center <?php echo $examResultTDClass; ?>"><?php echo $userInfo['CandidateSignScore']; ?></td>
                     <td class="text-center"><?php echo $userInfo['CandidateRecordsScore']; ?></td>
-                    <td class="text-center"><?php echo $userInfo['CandidateSignScore']; ?></td>
+                    <td class="text-center"><?php echo $userInfo['CandidateScore']; ?></td>
                 </tr>
+                    <tr>
+                        <td colspan="3" class="text-right">
+                            <label class="label <?php echo $examResultClass; ?>">
+                                <?php echo $examResultText; ?>
+                            </label>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
         <div class="row">
-            <div class="chart-container" style="position: relative; margin-bottom: 40px;">
+            <div class="chart-container" style="position: relative;margin: 40px 0;">
                 <canvas id="BarChart"></canvas>
             </div>
         </div>
-        <div class="row">
+        <div class="col-xs-12">
+            <p>نقش‌های اصلی</p>
             <ul>
-                <li><strong style="color:rgb(54, 162, 235);">نقش های اصلی</strong></li>
-                <li><strong style="color:rgb(255, 159, 64);">نقش های تکمیلی</strong></li>
+                <li style="color:rgb(54, 162, 235);">
+                    نقش نمایندگی (برقراری ارتباط و تعامل با مردم)  
+                </li>
+                <li style="color:rgb(54, 162, 235);">
+                    نقش ارزیابی (ارزیابی و تصویب طرح‌ها و لوایح) 
+                </li>
             </ul>
+            <p>نقش‌های تکمیلی</p>
+            <ul>
+                <li style="color:rgb(255, 159, 64);">
+                    نقش نظارت (نظارت برعملکرد دستگاه‌ها و سازمان‌های دولتی و عمومی)  
+                </li>
+                <li style="color:rgb(255, 159, 64);">
+                    نقش طراحی (طراحی و تدوین طرح‌ها و دستورالعمل‌ها)  
+                </li>
+                <li style="color:rgb(255, 159, 64);">
+                    نقش هماهنگ‌سازی (تبیین نقاط ضعف و قوت طرح‌ها و لوایح برای دیگر نمایندگان و اقناع آن‌ها) 
+                </li>
+            </ul>
+
         </div>
         <?php } ?>
     </div>

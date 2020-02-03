@@ -81,63 +81,68 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             <?php } ?>
                                         </form>
-
-
-                                        <div  id="unique-form" class="animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
-                                            <span class="remove-form fa fa-times"></span>
-                                            <div class="col-md-4 col-xs-12 form-group RightFloat">
-                                                <label for="inputSkillType">
-                                                    نوع مهارت
-                                                    <span class="text-danger">
-                                                    <b class="text-danger">*</b></span>
-                                                </label>
-                                                <input id="inputSkillType" type="text"
-                                                       name="inputSkillType"
-                                                       placeholder="پر کردن این فیلد الزامی می باشد">
-                                            </div>
-                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="inputSkillLevel">
-                                                    سطح مهارت
-                                                    <span class="text-danger">
-                                                 <b class="text-danger">*</b>
-                                             </span>
-                                                </label>
-                                                <select class="form-control form-control-lg city-select"
-                                                        name="inputSkillLevel"
-                                                        id="inputSkillLevel">
-                                                    <option value="">--انتخاب کنید--
-                                                    </option>
-                                                    <?php foreach ($EnumResumeProfile['SkillLevel'] as $key => $value) { ?>
-                                                        <option value="<?php echo $key; ?>">
-                                                            <?php echo $value; ?>
-                                                        </option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
-                                                <label for="inputSkillLearnType">
-                                                    نحوه فراگیری
-                                                    <span class="text-danger">
-                                                 <b class="text-danger">*</b>
-                                             </span>
-                                                </label>
-                                                <select class="form-control form-control-lg city-select"
-                                                        name="inputSkillLearnType"
-                                                        id="inputSkillLearnType">
-                                                    <option value="">--انتخاب کنید--
-                                                    </option>
-                                                    <?php foreach ($EnumResumeProfile['SkillLearnType'] as $key => $value) { ?>
-                                                        <option value="<?php echo $key; ?>">
-                                                            <?php echo $value; ?>
-                                                        </option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-                                        </div>
-
-
                                     </div>
                                 </div>
+
+                                <div  id="unique-form" class="animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
+                                    <span class="remove-form fa fa-times"></span>
+                                    <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                        <label for="inputSkillType">
+                                            نوع مهارت
+                                            <span class="text-danger">
+                                                    <b class="text-danger">*</b></span>
+                                        </label>
+                                        <input id="inputSkillType" type="text"
+                                               name="inputSkillType"
+                                               placeholder="پر کردن این فیلد الزامی می باشد">
+                                    </div>
+                                    <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                        <label for="inputSkillLevel">
+                                            سطح مهارت
+                                            <span class="text-danger">
+                                                 <b class="text-danger">*</b>
+                                             </span>
+                                        </label>
+                                        <select class="form-control form-control-lg city-select"
+                                                name="inputSkillLevel"
+                                                id="inputSkillLevel">
+                                            <option value="">--انتخاب کنید--
+                                            </option>
+                                            <?php foreach ($EnumResumeProfile['SkillLevel'] as $key => $value) { ?>
+                                                <option value="<?php echo $key; ?>">
+                                                    <?php echo $value; ?>
+                                                </option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                        <label for="inputSkillLearnType">
+                                            نحوه فراگیری
+                                            <span class="text-danger">
+                                                 <b class="text-danger">*</b>
+                                             </span>
+                                        </label>
+                                        <select class="form-control form-control-lg city-select"
+                                                name="inputSkillLearnType"
+                                                id="inputSkillLearnType">
+                                            <option value="">--انتخاب کنید--
+                                            </option>
+                                            <?php foreach ($EnumResumeProfile['SkillLearnType'] as $key => $value) { ?>
+                                                <option value="<?php echo $key; ?>">
+                                                    <?php echo $value; ?>
+                                                </option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <?php
+                                $documentPersianName = 'مهارت';
+                                $documentName = 'Skills';
+                                $documentData['documentName'] = $documentName;
+                                $documentData['documentPersianName'] = $documentPersianName;
+                                $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
+                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document' , $documentData);
+                                ?>
                             </div>
                         </div>
                     </div>

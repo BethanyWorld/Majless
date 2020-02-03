@@ -482,26 +482,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--  upload file-->
-                                <br>
-                                <div class="panel panel-warning">
-                                    <div class="panel-heading">
-                                        <p class="margin-b-0"> بعد از تکمیل سوابق سیاسی تمامی مدارک مرتبط با سوابق سیاسی خود را در قالب یک فایل زیپ اپلود کنید</p>
-                                    </div>
-                                </div>
 
-                                <div class="col-md-12 col-xs-12">
-                                    <form id="fileupload"
-                                          method="POST" enctype="multipart/form-data">
 
-                            <span id="spanUpload" class="btn btn-sm fileinput-button">
-                                    <i class="icon-plus icon-white"></i>
-                                    <input class="display-in-block" id="inpLogo" type="file" name="file"/>
-                                    <input class="display-in-block upload-file-btn" type="submit" value="آپلود فایل"/>
-                                </span>
-                                    </form>
-                                </div>
-                                <!--  upload file-->
+                                <?php
+                                $documentPersianName = 'سوابق سیاسی';
+                                $documentName = 'Political';
+                                $documentData['documentName'] = $documentName;
+                                $documentData['documentPersianName'] = $documentPersianName;
+                                $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
+                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document' , $documentData);
+                                ?>
+
+
                             </div>
                         </div>
                     </div>

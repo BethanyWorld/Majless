@@ -989,7 +989,7 @@
                                             <form class="form-horizontal">
                                                 <div class="form-group">
                                                     <label for="inputSignGrade" class="col-sm-4 control-label">
-                                                        نمره کل کانون ارزیابی
+                                                        برآیند آزمون و کانون
                                                     </label>
                                                     <div class="col-sm-8">
                                                         <div class="form-line">
@@ -1014,7 +1014,7 @@
                                             <form class="form-horizontal">
                                                 <div class="form-group">
                                                     <label for="inputGrade" class="col-sm-4 control-label">
-                                                        برآیند آزمون و کانون
+                                                        نمره کل کانون ارزیابی
                                                     </label>
                                                     <div class="col-sm-8">
                                                         <div class="form-line">

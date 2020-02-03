@@ -857,5 +857,42 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
+
+    public function candidateUpdateDocuments($inputs){
+        foreach ($inputs['inputCandidateDocumentUrl'] as $document) {
+            $UserArray = array(
+                'CandidateId' => $inputs['inputCandidateId'],
+                'CandidateDocumentName' => $inputs['inputCandidateDocumentName'],
+                'CandidateDocumentUrl' => $document
+            );
+            $this->db->insert('candidate_documents', $UserArray);
+        }
+        $arr = array(
+            'type' => "green",
+            'content' => "بارگذاری مدارک با موفقیت انجام شد",
+            'success' => true
+        );
+        return $arr;
+        
+    }
+    public function getCandidateDocuments($id){
+        $data = $this->db->select('*')
+            ->from('candidate_documents')
+            ->where('CandidateId',$id)
+            ->get()->result_array();
+        return $data;
+    }
+    public function removeCandidateDocumentByRowId($inputs){
+        $this->db->delete('candidate_documents', array(
+            'RowId' => $inputs['inputRowId']
+        ));
+        $arr = array(
+            'type' => "green",
+            'content' => "حذف مدارک با موفقیت انجام شد",
+            'success' => true
+        );
+        return $arr;
+    }
+
 }
 ?>

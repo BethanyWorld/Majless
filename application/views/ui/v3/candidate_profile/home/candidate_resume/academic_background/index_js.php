@@ -283,7 +283,6 @@
            }
         });
 
-        /* Add By ME */
         $('[name="inputCandidateGrade"]').change();
         setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
         setTimeout(function(){$('[name="inputCandidateDepartment"]').change();} , 1000);
@@ -329,10 +328,6 @@
         $("#updateProfileAcademicBackground").click( {redirect: false}, updateProfile);
         $("#updateProfileAcademicBackgroundAndRedirect").click( {redirect: true}, updateProfile);
         function updateProfile(param){
-            // if($("#form").serializeArray().length <=0){
-            //     notify('وارد کردن حداقل سابقه تحصیلی الزامی ست', 'yellow');
-            // }
-
                 $sendData = {inputCandidateAcademicBackground: $("#form").serializeArray()}
                 toggleLoader();
                 $.ajax({
@@ -348,9 +343,7 @@
                         }
                     }
                 });
-
         }
 
     });
-
 </script>

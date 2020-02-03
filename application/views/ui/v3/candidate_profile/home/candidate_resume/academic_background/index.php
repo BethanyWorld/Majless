@@ -1,6 +1,4 @@
-<?php
-$_DIR = base_url('assets/ui/v3/');
-?>
+<?php $_DIR = base_url('assets/ui/v3/'); ?>
 <div class="container container-wrapper" style="background: none;">
     <?php echo $resumeSidebar; ?>
     <div class="col-md-9 col-xs-12 pull-right response-padding">
@@ -10,8 +8,7 @@ $_DIR = base_url('assets/ui/v3/');
                     <div class="col-md-12 col-xs-12">
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
-                                سوابق تحصیلی
-                                <span class="add-form fa fa-plus"></span>
+                                سوابق تحصیلی<span class="add-form fa fa-plus"></span>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -252,29 +249,18 @@ $_DIR = base_url('assets/ui/v3/');
                                                 </div>
                                             </div>
                                         </div>
-
-                                    </div>
-                                </div>
-                                <!--  upload file-->
-                                <br>
-                                <div class="panel panel-warning">
-                                    <div class="panel-heading">
-                                        <p class="margin-b-0"> بعد از تکمیل سوابق تحصیلی تمامی مدارک مرتبط با سوابق تحصیلی خود را در قالب یک فایل زیپ اپلود کنید</p>
                                     </div>
                                 </div>
 
-                                <div class="col-md-12 col-xs-12">
-                                    <form id="fileupload"
-                                          method="POST" enctype="multipart/form-data">
+                                <?php
+                                $documentPersianName = 'سوابق تحصیلی';
+                                $documentName = 'AcademicBackground';
+                                $documentData['documentName'] = $documentName;
+                                $documentData['documentPersianName'] = $documentPersianName;
+                                $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
+                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document' , $documentData);
+                                ?>
 
-                            <span id="spanUpload" class="btn btn-sm fileinput-button">
-                                    <i class="icon-plus icon-white"></i>
-                                    <input class="display-in-block" id="inpLogo" type="file" name="file"/>
-                                    <input class="display-in-block upload-file-btn" type="submit" value="آپلود فایل"/>
-                                </span>
-                                    </form>
-                                </div>
-                                <!--  upload file-->
                             </div>
                         </div>
                     </div>
@@ -306,87 +292,3 @@ $_DIR = base_url('assets/ui/v3/');
         </div>
     </div>
 </div>
-
-
-<script>
-    $('#fileupload').submit(function(e) {
-        e.preventDefault();
-        var file_data = $('#inpLogo').prop('files')[0];
-        var form_data = new FormData();
-        form_data.append('file', file_data);
-        $.ajax({
-            url: base_url + "Profile/uploadFile",
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: form_data,
-            type: 'post',
-            success: function (data) {
-                $result = jQuery.parseJSON(data);
-                if($result['success']) {
-                   console.log(data);
-                }
-                else{
-                    toggleLoader();
-                    $result = jQuery.parseJSON(data);
-                    notify($result['content'], $result['type']);
-                }
-            },
-            error: function (data) {
-                toggleLoader();
-                $result = jQuery.parseJSON(data);
-                notify($result['content'], $result['type']);
-            }
-        });
-    });
-    // function fileUpload() {
-
-        // $('#fileupload').fileupload();
-        // $('#fileupload').fileupload('option', {
-        //     maxFileSize: 1024 * 1024,
-        //     autoupload: true
-        // });
-
-        // var uploadFinished = function (e, data) {
-        //     if (data.files[0].size > 2000000) {
-        //         $.notify("Faça o upload de uma imagem de até 2MB", "danger");
-        //         jqXHR.abort();
-        //         return
-        //     }
-        // };
-    //     data = new FormData($('#form'));
-    //     console.log('Submitting');
-    //     $.ajax({
-    //         type: 'post',
-    //         url: base_url + 'Profile/uploadFile',
-    //         data: data,
-    //         success: function (data) {
-    //             toggleLoader();
-    //             console.log()
-    //             $result = JSON.parse(data);
-    //             notify($result['content'], $result['type']);
-    //         }
-    //     });
-    //
-    // }
-
-    // jQuery('form#fileupload').on('submit', function (e) {
-    //     e.preventDefault();
-    //     var file = jQuery('#inpLogo')[0].files[0];
-    //     var form_data = new FormData(jQuery("form#fileupload")[0]);
-    //     form_data.append('file', file);
-    //
-    //     jQuery.ajax({
-    //         url: base_url + 'Profile/uploadFile',
-    //         data: form_data,
-    //         type: 'POST',
-    //         success: function (response) {
-    //             console.log(response);
-    //         },
-    //     });
-    //     return false;
-    // });
-
-
-
-</script>

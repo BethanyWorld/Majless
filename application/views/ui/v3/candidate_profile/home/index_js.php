@@ -105,12 +105,6 @@
             }
             for ($i = 0; $i < $rolesScore.length; $i++) {
                 $item = $rolesScore[$i];
-                if ($item['Key'] === "Persuasive") {
-                    $data.push($item['Value']);
-                }
-            }
-            for ($i = 0; $i < $rolesScore.length; $i++) {
-                $item = $rolesScore[$i];
                 if ($item['Key'] === "Moderator") {
                     $data.push($item['Value']);
                 }
@@ -121,19 +115,25 @@
                     $data.push($item['Value']);
                 }
             }
+            for ($i = 0; $i < $rolesScore.length; $i++) {
+                $item = $rolesScore[$i];
+                if ($item['Key'] === "Persuasive") {
+                    $data.push($item['Value']);
+                }
+            }
             var ctx = document.getElementById('BarChart').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: [
-                        'رابط مردم با نظام',
-                        'ارزیاب طرح‌ها و لوایح',
-                        'هماهنگ‌ کننده و اقناع ‌کننده',
-                        'ناظر ',
-                        'قانون‌گذار'
+                        'نمایندگی',
+                        'ارزیابی',
+                        'نظارت ',
+                        'طراحی',
+                        'هماهنگ‌ سازی'
                     ],
                     datasets: [{
-                        label: '',
+                        label:'',
                         data: $data,
                         backgroundColor: [
                             'rgba(54, 162, 235, 1)',
@@ -153,10 +153,25 @@
                     }]
                 },
                 options: {
+                    legend: {
+                        display: false
+                    },
+                    tooltips: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.yLabel;
+                            }
+                        }
+                    },
                     scales: {
                         yAxes: [{
                             ticks: {
-                                fontSize: 12, fontFamily: "'iranYekan'", fontColor: '#000', fontStyle: '500'
+                                max: 100,
+                                beginAtZero: true,
+                                fontSize: 12,
+                                fontFamily: "'iranYekan'",
+                                fontColor: '#000',
+                                fontStyle: '500'
                             },
                             gridLines: {
                                 color: "rgba(0, 0, 0, 0)",
@@ -164,7 +179,12 @@
                         }],
                         xAxes: [{
                             ticks: {
-                                fontSize: 12, fontFamily: "'iranYekan'", fontColor: '#000', fontStyle: '500'
+                                max: 100,
+                                beginAtZero: true,
+                                fontSize: 12,
+                                fontFamily: "'iranYekan'",
+                                fontColor: '#000',
+                                fontStyle: '500'
                             },
                             gridLines: {
                                 color: "rgba(0, 0, 0, 0)",
@@ -178,7 +198,7 @@
                     var ctx = chartInstance.chart.ctx;
                     ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
                     ctx.textAlign = 'center';
-                    ctx.textBaseline = 'bottom';
+                    ctx.textBaseline = 'top';
                     myChart.data.datasets.forEach(function (dataset) {
                         for (var i = 0; i < dataset.data.length; i++) {
                             var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model;

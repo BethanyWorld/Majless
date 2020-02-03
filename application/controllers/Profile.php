@@ -471,6 +471,8 @@ class Profile extends CI_Controller{
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
         $data['userInfo']['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($data['userInfo']['CandidateId']);
+        $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
+
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index', $data);
@@ -527,6 +529,7 @@ class Profile extends CI_Controller{
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
         $data['userInfo']['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($data['userInfo']['CandidateId']);
+        $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/job_history/index', $data);
@@ -553,6 +556,7 @@ class Profile extends CI_Controller{
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
         $data['userInfo']['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($data['userInfo']['CandidateId']);
+        $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/social_cultural_background/index', $data);
@@ -579,6 +583,7 @@ class Profile extends CI_Controller{
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
         $data['userInfo']['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($data['userInfo']['CandidateId']);
+        $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index', $data);
@@ -612,6 +617,7 @@ class Profile extends CI_Controller{
         $data['userInfo']['candidateTranslation'] = $this->ModelProfile->getCandidateTranslationByCandidateId($data['userInfo']['CandidateId']);
         $data['userInfo']['candidateInvention'] = $this->ModelProfile->getCandidateInventionByCandidateId($data['userInfo']['CandidateId']);
         $data['userInfo']['candidateConference'] = $this->ModelProfile->getCandidateConferenceByCandidateId($data['userInfo']['CandidateId']);
+        $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
 
 
         $this->load->view('ui/v3/static/header', $data);
@@ -680,6 +686,7 @@ class Profile extends CI_Controller{
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
         $data['userInfo']['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($data['userInfo']['CandidateId']);
+        $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
 
 
         $this->load->view('ui/v3/static/header', $data);
@@ -1215,6 +1222,21 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/support/result/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+    public function candidateUpdateDocuments(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $result = $this->ModelProfile->candidateUpdateDocuments($inputs);
+        echo json_encode($result);
+    }
+    public function removeCandidateDocumentByRowId(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $result = $this->ModelProfile->removeCandidateDocumentByRowId($inputs);
+        echo json_encode($result);
+    }
+
     /* End For Resume -------------------------------------------------------------*/
     public function account()
     {
@@ -1344,6 +1366,91 @@ class Profile extends CI_Controller{
             die();
         }
     }
+    public function UploadMultipleFile(){
+        $uploadResultArray = array();
+        $uploadPath = $this->config->item('upload_path');
+        //var_dump($_FILES);
+        if (empty($_FILES["files"])) {
+            $result = array(
+                'type' => "green",
+                'content' => "بارگذاری با موفقیت انجام شد",
+                'fileSrc' => "",
+                'success' => true
+            );
+            echo json_encode($result);
+            die();
+        }
+        if (!empty($_FILES["files"])) {
+            $countFiles = count($_FILES['files']['name']);
+            for($index = 0;$index < $countFiles;$index++) {
+                $myFile = $_FILES["files"]['name'][$index];
+                $name = preg_replace("/[^A-Z0-9._-]/i", "_", $myFile);
+                $i = 0;
+                $parts = pathinfo($name);
+                while (file_exists($uploadPath . $name)) {
+                    $i++;
+                    $name = $parts["filename"] . "_" . $i . "." . $parts["extension"];
+                }
+                $allowedExtensions = array('jpg', 'png', 'gif', 'jpeg', 'zip', 'rar' , 'pdf');
+                $temp = explode(".", $myFile);
+                $extension = strtolower(end($temp));
+                if (!in_array($extension, $allowedExtensions)) {
+                    $result = array(
+                        'type' => "red",
+                        'content' => "فرمت فایل های ارسالی نامعتبر است",
+                        'success' => false
+                    );
+                    echo json_encode($result);
+                    die();
+                }
+                if ($_FILES["files"]['size'][$index] > 10242880) {
+                    $result = array(
+                        'type' => "red",
+                        'content' => "حجم فایل بیشتر از 10 مگابایت است",
+                        'success' => false
+                    );
+                    echo json_encode($result);
+                    die();
+                }
+            }
+        }
+        if (!empty($_FILES["files"])) {
+            $countFiles = count($_FILES['files']['name']);
+            for($index = 0;$index < $countFiles;$index++) {
+                $myFile = $_FILES["files"]['name'][$index];
+                $name = preg_replace("/[^A-Z0-9._-]/i", "_", $myFile);
+                $i = 0;
+                $parts = pathinfo($name);
+                while (file_exists($uploadPath . $name)) {
+                    $i++;
+                    $name = $parts["filename"] . "_" . $i . "." . $parts["extension"];
+                }
+                $fileName = md5(rand(100, 9999) . microtime()) . '_' . $name;
+                $success = move_uploaded_file($_FILES["files"]['tmp_name'][$index], $uploadPath . $fileName);
+                if (!$success) {
+                    $result = array(
+                        'type' => "red",
+                        'content' => "خطایی رخ داده است",
+                        'success' => false
+                    );
+                    echo json_encode($result);
+                    die();
+                } else {
+                    chmod($uploadPath . $fileName, 0644);
+                    array_push($uploadResultArray , base_url('uploads/') . $fileName);
+                }
+            }
+            $result = array(
+                'type' => "green",
+                'content' => "بارگذاری با موفقیت انجام شد",
+                'fileSrc' => json_encode($uploadResultArray),
+                'success' => true
+            );
+            echo json_encode($result);
+            die();
+        }
+    }
+
     public function logOut()
     {
         $this->session->unset_userdata('UserLoginInfo');

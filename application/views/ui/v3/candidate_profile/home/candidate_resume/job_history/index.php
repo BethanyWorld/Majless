@@ -227,26 +227,15 @@ $_DIR = base_url('assets/ui/v3/');
                                         </div>
                                     </div>
                                 </div>
-                                <!--  upload file-->
-                                <br>
-                                <div class="panel panel-warning">
-                                    <div class="panel-heading">
-                                        <p class="margin-b-0"> بعد از تکمیل سوابق شغلی تمامی مدارک مرتبط با سوابق شغلی خود را در قالب یک فایل زیپ اپلود کنید</p>
-                                    </div>
-                                </div>
+                                <?php
+                                $documentPersianName = 'سوابق شغلی';
+                                $documentName = 'JobHistory';
+                                $documentData['documentName'] = $documentName;
+                                $documentData['documentPersianName'] = $documentPersianName;
+                                $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
+                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document' , $documentData);
+                                ?>
 
-                                <div class="col-md-12 col-xs-12">
-                                    <form id="fileupload"
-                                          method="POST" enctype="multipart/form-data">
-
-                            <span id="spanUpload" class="btn btn-sm fileinput-button">
-                                    <i class="icon-plus icon-white"></i>
-                                    <input class="display-in-block" id="inpLogo" type="file" name="file"/>
-                                    <input class="display-in-block upload-file-btn" type="submit" value="آپلود فایل"/>
-                                </span>
-                                    </form>
-                                </div>
-                                <!--  upload file-->
                             </div>
                         </div>
                     </div>
