@@ -1,16 +1,19 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <style>
-    .upload-file-btn{
+    .upload-file-btn {
         background-color: #095644 !important;
         color: #fff !important;
         padding-top: 8px !important;
     }
+
     .display-in-block {
         display: inline-block !important;
     }
-    .margin-b-0{
+
+    .margin-b-0 {
         margin-bottom: 0px;
     }
+
     .form {
         box-shadow: 0 0 7px 1px #ccc !important;
         padding: 15px 0 !important;
@@ -43,7 +46,7 @@
         position: absolute;
         left: 0;
         top: 0;
-        background: #fdb72e ;
+        background: #fdb72e;
         color: #000;
         width: 25px;
         height: 25px;
@@ -53,7 +56,7 @@
     }
 
     .remove-form:hover {
-        background: #fdb72e ;
+        background: #fdb72e;
     }
 
     /*Helper*/
@@ -118,11 +121,13 @@
     ul.RightPanelUl li.active:after {
         background: #F3F4F5;
     }
-    ul.RightPanelUl li a{
+
+    ul.RightPanelUl li a {
         width: 100%;
         display: inherit;
     }
-    ul.RightPanelUl li  .RightpanelIcon {
+
+    ul.RightPanelUl li .RightpanelIcon {
         line-height: initial;
         font-size: 2em;
         margin: 0 0 0 0.8rem;
@@ -270,12 +275,12 @@
     }
 
     .ButtonRedColor {
-        background-color: #fdb72e ;
+        background-color: #fdb72e;
         color: #000;
     }
 
     .ButtonBlueColor {
-        background-color: #095644 ;
+        background-color: #095644;
         color: #fff;
     }
 
@@ -344,19 +349,22 @@
         text-align: center;
         line-height: 45px;
         font-size: 16px;
-        background-color: #095644  ;
+        background-color: #095644;
         color: #fff;
         padding: 0 25px;
         border-radius: 0;
     }
+
     /*radio buttons*/
     .Radio-Buttons .radio input[type="radio"]:checked + .radio-label:before {
         background-color: #fdb72e;
         box-shadow: inset 0 0 0 4px #f4f4f4;
     }
+
     .Radio-Display {
         display: inline-block;
     }
+
     .Radio-Buttons .radio input[type="radio"]:focus + .radio-label:before {
         outline: none;
         border-color: #fdb72e;
@@ -388,7 +396,6 @@
         transition: all 250ms ease;
     }
 
-
     .Radio-Buttons .radio input[type="radio"]:disabled + .radio-label:before {
         box-shadow: inset 0 0 0 4px #f4f4f4;
         border-color: #b4b4b4;
@@ -398,12 +405,8 @@
     .Radio-Buttons .radio input[type="radio"] + .radio-label:empty:before {
         margin-right: 0;
     }
+
     /*radio buttons*/
-
-
-
-
-
 
     .CommonButtons:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2);
@@ -437,6 +440,7 @@
     .RegistrationTypeDiv {
         padding: 15px 0px;
     }
+
     .RegistrationTypeDiv input[type="checkbox"] {
         display: none;
     }
@@ -456,9 +460,11 @@
     .RegistrationTypeDiv input[type="checkbox"] + label:last-child {
         margin-bottom: 0;
     }
-    .RegistrationTypeDiv input[type="checkbox"] + label{
+
+    .RegistrationTypeDiv input[type="checkbox"] + label {
         font-size: 12px;
     }
+
     .RegistrationTypeDiv input[type="checkbox"] + label:before {
         content: '';
         display: block;
@@ -484,6 +490,7 @@
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
     }
+
     /*Checkboxes styles*/
     .MobileStep {
         margin-bottom: 15px;
@@ -513,15 +520,18 @@
         border-radius: 3.5px;
         text-shadow: 1px 0px 8px #333;
     }
-    .MobileStep ul li a .fa-refresh{
+
+    .MobileStep ul li a .fa-refresh {
         line-height: 10px;
     }
+
     .MobileStep ul li.first a {
-        background: #fdb72e ;
+        background: #fdb72e;
         color: #ffffff;
         transition: all 0.5s ease;
     }
-    .padding-0{
+
+    .padding-0 {
         padding: 0px;
     }
 
@@ -533,7 +543,7 @@
 </style>
 <div class="col-md-3 col-xs-12 pull-right">
     <div class="col-xs-12 padding-0 visible-xs visible-sm" style="padding: 0px;">
-        <div class="col-xs-12 padding-0 MobileStep"  style="padding: 0px;">
+        <div class="col-xs-12 padding-0 MobileStep" style="padding: 0px;">
             <ul class="col-xs-12">
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "resume") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/resume'); ?>">1</a>
@@ -541,7 +551,7 @@
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "academicBackground") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/academicBackground'); ?>">2</a>
                 </li>
-                <?php if($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male'){ ?>
+                <?php if ($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male') { ?>
                     <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "first"; ?>">
                         <a href="<?php echo base_url('Profile/militaryStatus'); ?>">3</a>
                     </li>
@@ -564,11 +574,9 @@
                 <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "veteran") !== false) echo "first"; ?>">
                     <a href="<?php echo base_url('Profile/veteran'); ?>">9</a>
                 </li>
-                <?php if($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted'){ ?>
-                    <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
-                        <a href="<?php echo base_url('Profile/finance'); ?>">10</a>
-                    </li>
-                <?php } ?>
+                <li class="text-center <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "first"; ?>">
+                    <a href="<?php echo base_url('Profile/finance'); ?>">10</a>
+                </li>
                 <li class="text-center">
                     <a href="<?php echo base_url('Profile'); ?>">
                         <i class="fa fa-refresh"></i>
@@ -606,7 +614,7 @@
                         </div>
                     </a>
                 </li>
-                <?php if($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male'){ ?>
+                <?php if ($this->session->userdata('UserLoginInfo')['CandidateGender'] == 'Male') { ?>
                     <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "militaryStatus") !== false) echo "active"; ?>">
                         <a href="<?php echo base_url('Profile/militaryStatus'); ?>">
                             <i class="zmdi RightpanelIcon">
@@ -710,21 +718,20 @@
                         </div>
                     </a>
                 </li>
-                <?php if($this->session->userdata('UserLoginInfo')['CandidateStatus'] == 'CandidateAccepted'){ ?>
-                    <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "active"; ?>">
-                        <a href="<?php echo base_url('Profile/finance'); ?>">
-                            <i class="zmdi RightpanelIcon">
-                                <span class="fa fa-money"></span>
-                            </i>
-                            <div class="RightPanelContent">
-                                <div class="RightPanleTitle">اطلاعات مالی</div>
-                                <div class="RightPanelDescription">
-                                    درج خلاصه ای از املاک
-                                </div>
+                <li class="col-md-12 padding-0  <?php if (strpos($_SERVER['REQUEST_URI'], "finance") !== false) echo "active"; ?>">
+                    <a href="<?php echo base_url('Profile/finance'); ?>">
+                        <i class="zmdi RightpanelIcon">
+                            <span class="fa fa-money"></span>
+                        </i>
+                        <div class="RightPanelContent">
+                            <div class="RightPanleTitle">اطلاعات مالی</div>
+                            <div class="RightPanelDescription">
+                                درج خلاصه ای از املاک
                             </div>
-                        </a>
-                    </li>
-                <?php } ?>
+                        </div>
+                    </a>
+                </li>
+
                 <li class="col-md-12 padding-0">
                     <a href="<?php echo base_url('Profile'); ?>">
                         <i class="zmdi RightpanelIcon">

@@ -909,10 +909,6 @@
 
 
     @media (max-width: 992px) {
-        .sign{
-            width: 50px;
-            height: 55px;
-        }
         .sign.merit-gold {
             background-position: 100% -4px;
         }

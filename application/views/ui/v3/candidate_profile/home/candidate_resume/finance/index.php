@@ -2411,7 +2411,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputAverageMonthIncome"
                                                                                     class="form-control"

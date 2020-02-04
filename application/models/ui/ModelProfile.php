@@ -863,7 +863,8 @@ class ModelProfile extends CI_Model{
             $UserArray = array(
                 'CandidateId' => $inputs['inputCandidateId'],
                 'CandidateDocumentName' => $inputs['inputCandidateDocumentName'],
-                'CandidateDocumentUrl' => $document
+                'CandidateDocumentUrl' => $document,
+                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
             $this->db->insert('candidate_documents', $UserArray);
         }

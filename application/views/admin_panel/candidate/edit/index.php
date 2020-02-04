@@ -110,8 +110,8 @@
                                            role="tab" data-toggle="tab">رزومه</a>
                                     </li>
                                     <li role="presentation">
-                                        <a href="#payments" aria-controls="payments"
-                                           role="tab" data-toggle="tab">تراکنش های مالی</a>
+                                        <a href="#documents" aria-controls="documents"
+                                           role="tab" data-toggle="tab">مدارک</a>
                                     </li>
                                     <li role="presentation">
                                         <a href="#Grading" aria-controls="Grading"
@@ -128,6 +128,10 @@
                                     <li role="presentation">
                                         <a href="#AcceptEvaluationExam" aria-controls="AcceptEvaluationExam"
                                            role="tab" data-toggle="tab">آزمون کانون ارزیابی</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#payments" aria-controls="payments"
+                                           role="tab" data-toggle="tab">تراکنش های مالی</a>
                                     </li>
                                     <li role="presentation">
                                         <a href="#ChangePassword"
@@ -882,6 +886,50 @@
                                                 </table>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade in active" id="documents">
+                                        <?php
+                                        if(count($candidateDocuments) <= 0){ ?>
+                                            <br>
+                                            <div class="alert alert-info">
+                                                برای
+                                                <strong>
+                                                    <?php echo $documentPersianName; ?>
+                                                </strong>
+                                                مدرکی بارگذاری نشده است
+                                            </div>
+                                        <?php } else{ ?>
+                                            <br>
+                                            <table class="table table-condensed table-hover table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th class="fit">ردیف</th>
+                                                    <th>نوع</th>
+                                                    <th class="fit">تاریخ بارگذاری</th>
+                                                    <th class="fit">مشاهده</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php $index = 0;
+                                                foreach ($candidateDocuments as $candidateDocument) { $index += 1; ?>
+                                                        <tr>
+                                                            <td class="fit">#<?php echo $index; ?></td>
+                                                            <td>
+                                                                <?php documentTypePipe($candidateDocument['CandidateDocumentName']); ?>
+                                                            </td>
+                                                            <td class="fit" dir="rtl">
+                                                                <?php echo $candidateDocument['CreateDateTime']; ?>
+                                                            </td>
+                                                            <td class="fit">
+                                                                <a href="<?php echo $candidateDocument['CandidateDocumentUrl']; ?>" target="_blank">
+                                                                    <i class="material-icons">folder_open</i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                <?php  } ?>
+                                                </tbody>
+                                            </table>
+                                        <?php }  ?>
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade in" id="payments">
                                         <div class="panel panel-default panel-post">

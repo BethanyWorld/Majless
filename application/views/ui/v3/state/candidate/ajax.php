@@ -102,9 +102,48 @@
                         </h3>
 
                         <div class="col-xs-12 padding-0">
-                            <div class="sign merit-gold"></div>
-                            <div class="sign merit-off"></div>
-                            <div class="sign merit-silver"></div>
+                            <!-- If Badge Found -->
+                            <?php
+                            $classes = array();
+
+                            $hasMerit = false;
+                            foreach ($candidate['badges'] as $badge) {
+                                /****************************************/
+                                if ($badge['CandidateBadge'] == 'GoldenMerit' || $badge['CandidateBadge'] == 'SilverMerit') {
+                                    $hasMerit = true;
+                                    array_push($classes, $badge['CandidateBadge']);
+                                }
+                            }
+                            if (!$hasMerit) {
+                                array_push($classes, 'OffMerit');
+                            }
+
+                            $hasTransparency = false;
+                            foreach ($candidate['badges'] as $badge) {
+                                if ($badge['CandidateBadge'] == 'GoldenTransparency' || $badge['CandidateBadge'] == 'SilverTransparency') {
+                                    $hasTransparency = true;
+                                    array_push($classes, $badge['CandidateBadge']);
+                                }
+                            }
+                            if (!$hasTransparency) {
+                                array_push($classes, 'OffTransparency');
+                            }
+
+                            $hasObligation = false;
+                            foreach ($candidate['badges'] as $badge) {
+                                /****************************************/
+                                if ($badge['CandidateBadge'] == 'Obligation') {
+                                    $hasObligation = true;
+                                    array_push($classes, $badge['CandidateBadge']);
+                                }
+                            }
+                            if (!$hasObligation) {
+                                array_push($classes, 'OffObligation');
+                            }
+                            ?>
+                            <?php foreach ($classes as $badge) { ?>
+                                <div class="sign <?php echo $badge; ?>"></div>
+                            <?php } ?>
                         </div>
                         <?php if ($candidate['CandidateHasAccepted']) { ?>
                             <button
