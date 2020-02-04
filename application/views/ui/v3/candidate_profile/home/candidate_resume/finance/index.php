@@ -727,7 +727,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             class="form-control"
@@ -1579,7 +1579,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputCreditPrice"
                                                                                             class="form-control"
@@ -1646,7 +1646,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputDebotrPrice"
                                                                                             class="form-control"
@@ -1796,7 +1796,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             class="form-control"
@@ -1863,7 +1863,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             class="form-control"
@@ -2209,7 +2209,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputFeeAverageInYear"
                                                                                             class="form-control"
@@ -2525,7 +2525,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionPlacePrice"
                                                                                     class="form-control"
@@ -2593,7 +2593,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionFlockPrice"
                                                                                     class="form-control"
@@ -2660,7 +2660,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     class="form-control"
@@ -2728,7 +2728,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionStaffPrice"
                                                                                     class="form-control"
@@ -2795,7 +2795,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionAllPrice"
                                                                                     class="form-control"
@@ -4420,7 +4420,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputCreditPrice"
                                                                                     class="form-control"
@@ -4487,7 +4487,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputDebotrPrice"
                                                                                     class="form-control"
@@ -4637,7 +4637,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             class="form-control"
@@ -4704,7 +4704,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             class="form-control"
@@ -5050,7 +5050,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputFeeAverageInYear"
                                                                                             class="form-control"
@@ -5252,7 +5252,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputAverageMonthIncome"
                                                                                     class="form-control"
@@ -5366,7 +5366,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionPlacePrice"
                                                                                     class="form-control"
@@ -5434,7 +5434,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionFlockPrice"
                                                                                     class="form-control"
@@ -5501,7 +5501,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     class="form-control"
@@ -5569,7 +5569,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionStaffPrice"
                                                                                     class="form-control"
@@ -5636,7 +5636,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionAllPrice"
                                                                                     class="form-control"
@@ -6409,7 +6409,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['VehicleNowTimePrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputVehicleNowTimePrice"
                                                                                             class="form-control"
@@ -7261,7 +7261,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($creditDebtor['CreditPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputCreditPrice"
                                                                                     class="form-control"
@@ -7328,7 +7328,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($creditDebtor['DebotrPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputDebotrPrice"
                                                                                     class="form-control"
@@ -7478,7 +7478,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['GoodsBuyTimePrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputGoodsBuyTimePrice"
                                                                                             class="form-control"
@@ -7545,7 +7545,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['GoodsNowTimePrice'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputGoodsNowTimePrice"
                                                                                             class="form-control"
@@ -7891,7 +7891,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                                     <input
-                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['right']); ?>
+                                                                                        <?php setInputValue(splitPrice($item['FeeAverageInYear'])['left']); ?>
                                                                                             type="number"
                                                                                             name="inputFeeAverageInYear"
                                                                                             class="form-control"
@@ -8093,7 +8093,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($income['AverageMonthIncome'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputAverageMonthIncome"
                                                                                     class="form-control"
@@ -8207,7 +8207,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionPlacePrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionPlacePrice"
                                                                                     class="form-control"
@@ -8275,7 +8275,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionFlockPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionFlockPrice"
                                                                                     class="form-control"
@@ -8342,7 +8342,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionAdvertisePrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionAdvertisePrice"
                                                                                     class="form-control"
@@ -8410,7 +8410,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionStaffPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionStaffPrice"
                                                                                     class="form-control"
@@ -8477,7 +8477,7 @@
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-4 RightFloat  price-right-side">
                                                                             <input
-                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['right']); ?>
+                                                                                <?php setInputValue(splitPrice($election['ElectionAllPrice'])['left']); ?>
                                                                                     type="number"
                                                                                     name="inputElectionAllPrice"
                                                                                     class="form-control"

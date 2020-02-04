@@ -4,8 +4,6 @@
     نامزد انتخاباتی استان
     <?php echo urldecode($stateName); ?>
 </h1>
-
-
 <div ng-app="myApp" ng-controller="myCtrl">
     <div class="container container-wrapper">
 
@@ -106,26 +104,6 @@
                                 </i>
                                 <div class="RightPanelContent">
                                     <div class="RightPanleTitle">اطلاعات مالی</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="col-md-12 padding-0">
-                            <a href="<?php echo base_url('Profile'); ?>">
-                                <i class="zmdi RightpanelIcon">
-                                    <span class="fa fa-share-square-o"></span>
-                                </i>
-                                <div class="RightPanelContent">
-                                    <div class="RightPanleTitle">بازگشت</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="col-md-12 padding-0">
-                            <a href="<?php echo base_url('Profile/logOut') ?>">
-                                <i class="zmdi RightpanelIcon">
-                                    <span class="fa fa-share-square-o"></span>
-                                </i>
-                                <div class="RightPanelContent">
-                                    <div class="RightPanleTitle">خروج از سیستم</div>
                                 </div>
                             </a>
                         </li>
@@ -3644,8 +3622,6 @@
         </div>
     </div>
 </div>
-
-
 <script>
     var app = angular.module("myApp", []);
     var EnumResumeProfile = {
@@ -3807,11 +3783,9 @@
             ']',
 
     };
-
     var countries = [];
     var cities = [];
     var states = [];
-
     app.filter('bindState', function () {
         return function (input) {
             $inputKeyState = input;

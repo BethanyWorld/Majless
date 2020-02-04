@@ -1,5 +1,4 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
-
 <?php
 $documentPersianName = 'تایید صلاحیت و تعهد نامه';
 $documentName = 'Acceptance';
@@ -66,6 +65,9 @@ $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
                 <input class="display-in-block upload-file-btn" type="submit" value="بارگذاری مدارک"/>
             </span>
             </form>
+            <div class="progress" style="display: none;">
+                <div class="progress-bar progress-bar-striped active pull-right" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
             <?php
             $countOfDocuments = 0;
             foreach ($userInfo['candidateDocuments'] as $candidateDocument) {
@@ -82,8 +84,21 @@ $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
                     </strong>
                     مدرکی بارگذاری نشده است
                 </div>
-            <?php } else{ ?>
+            <?php }
+            else{ ?>
                 <br>
+
+                <?php $countOfDocuments = 0;
+                foreach ($userInfo['candidateDocuments'] as $candidateDocument) {
+                    if ($candidateDocument['CandidateDocumentName'] == $documentName) {
+                        $countOfDocuments +=1;
+                    }
+               } ?>
+                <div class="col-xs-12 alert alert-info">
+                    تعداد
+                    <strong><?php echo $countOfDocuments; ?></strong>
+                    مدرک بارگذاری شده است
+                </div>
                 <table class="table table-condensed table-hover table-bordered">
                     <thead>
                     <tr>
@@ -114,7 +129,8 @@ $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
                                     </button>
                                 </td>
                             </tr>
-                        <?php } } ?>
+                        <?php }
+                    } ?>
                     </tbody>
                 </table>
             <?php }  ?>
