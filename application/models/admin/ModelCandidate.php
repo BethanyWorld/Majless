@@ -409,14 +409,14 @@ class ModelCandidate extends CI_Model{
             $this->db->where_in('CandidateElectionId', $inputs['inputElectionIds']);
         }
 
-
         if (isset($inputs['inputFullName']) && !empty($inputs['inputFullName'])) {
             $this->db->like('CandidateFullName', $inputs['inputFullName']);
         }
+        $this->db->order_by('CandidateTotalScore', 'DESC');
         $this->db->order_by('CandidateFullName', 'ASC');
         $this->db->where(array(
             'CandidateStateId' => $inputs['inputStateId'],
-            'CandidateHasAccepted' => $inputs['inputAcceptanceStatus']
+            'CandidateHasAccepted' => 1
         ));
 
         $query = $this->db->get();
@@ -1299,13 +1299,13 @@ class ModelCandidate extends CI_Model{
         return array();
     }
     public function updateScoreByBadges(){
-        $this->db->select('CandidateId , CandidateFirstName , CandidateLastName , CandidateScore');
-        $this->db->from('candidate');
+        $this->db->select('CandidateCode , CandidateRefId');
+        $this->db->from('candidate_special');
         $candidates = $this->db->get()->result_array();
         for($i=0;$i<count($candidates);$i++){
             $this->db->select('*');
             $this->db->from('candidate_badge');
-            $this->db->where('CandidateId' , $candidates[$i]['CandidateId']);
+            $this->db->where('CandidateId' , $candidates[$i]['CandidateCode']);
             $candidates[$i]['badges'] = $this->db->get()->result_array();
             $candidates[$i]['badgesScore'] = 0;
         }
@@ -1335,13 +1335,11 @@ class ModelCandidate extends CI_Model{
                 $candidateTotalBadgeScore = 0;
             }
         }
-
         for($i=0;$i<count($candidates);$i++){
-            $UserArray = array( 'CandidateSignScore' => $candidates[$i]['badgesScore']);
-            $this->db->where('CandidateId', $candidates[$i]['CandidateId']);
-            $this->db->update('candidate', $UserArray);
+            $UserArray = array( 'CandidateTotalScore' => $candidates[$i]['badgesScore']);
+            $this->db->where('CandidateCode', $candidates[$i]['CandidateCode']);
+            $this->db->update('candidate_special', $UserArray);
         }
-
         $arr = array(
             'type' => "green",
             'content' => "بروزرسانی نمرات با موفقیت انجام شد",
