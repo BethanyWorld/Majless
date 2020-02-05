@@ -1,7 +1,7 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <?php
-$documentPersianName = 'تایید صلاحیت شورای نگهبان';
-$documentName = 'Acceptance';
+$documentPersianName = 'تعهدنامه';
+$documentName = 'Commitment';
 $documentData['documentName'] = $documentName;
 $documentData['documentPersianName'] = $documentPersianName;
 $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];

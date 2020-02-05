@@ -538,6 +538,22 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doChangeCandidatePassword($inputs);
         echo json_encode($result);
     }
+    public function doResumeForView()
+    {
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelCandidate->doResumeForView($inputs);
+        echo json_encode($result);
+    }
+
     public function doChangeCandidateExamResultStatus()
     {
         $inputs = $this->input->post(NULL, TRUE);

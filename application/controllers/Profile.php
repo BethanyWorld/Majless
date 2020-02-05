@@ -1251,6 +1251,21 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/upload_documents/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+    public function uploadCommitmentDocuments(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'صفحه کاربری';
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'صفحه کاربری';
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
+        $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/upload_commitment_documents/index', $data);
+        $this->load->view('ui/v3/candidate_profile/upload_commitment_documents/index_css');
+        $this->load->view('ui/v3/candidate_profile/upload_commitment_documents/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
 
     /* End For Resume -------------------------------------------------------------*/
     public function account()

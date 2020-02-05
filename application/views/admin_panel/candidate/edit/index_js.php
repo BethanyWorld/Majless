@@ -264,7 +264,6 @@
                 }
             });
         });
-
         $("#doCreateWordpressAuthor").click(function () {
             $inputCandidateId = $.trim($("#inputCandidateId").val());
             $inputWordpressUserName = $.trim($("#inputWordpressUserName").val());
@@ -290,6 +289,54 @@
                 }
             });
         });
+
+        $("#acceptResumeForView").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            toggleLoader();
+            $sendData = {
+                'inputCandidateId': $inputCandidateId,
+                'inputResumeForView': 'Accept'
+            }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doResumeForView',
+                data: $sendData,
+                success: function (data) {
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                    toggleLoader();
+                    location.reload();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    notify('مشکلی درخ داده است', 'red');
+                    toggleLoader();
+                }
+            });
+        });
+        $("#rejectResumeForView").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            toggleLoader();
+            $sendData = {
+                'inputCandidateId': $inputCandidateId,
+                'inputResumeForView': 'Reject'
+            }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doResumeForView',
+                data: $sendData,
+                success: function (data) {
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                    toggleLoader();
+                    location.reload();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    notify('مشکلی درخ داده است', 'red');
+                    toggleLoader();
+                }
+            });
+        });
+
 
 
 

@@ -1358,7 +1358,17 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
-
+    public function doResumeForView($inputs){
+        $UserArray = array( 'CandidateResumeForViewStatus' => $inputs['inputResumeForView']);
+        $this->db->where('CandidateId', $inputs['inputCandidateId']);
+        $this->db->update('candidate', $UserArray);
+        $arr = array(
+            'type' => "green",
+            'content' => "بروزرسانی وضعیت آزمون با موفقیت انجام شد",
+            'success' => true
+        );
+        return $arr;
+    }
     public function doCreateWordpressAuthor($inputs){
         $this->db->trans_start();
         $UserArray = array(
@@ -1385,6 +1395,5 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
-
 }
 ?>

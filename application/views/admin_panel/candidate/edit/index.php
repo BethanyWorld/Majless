@@ -150,6 +150,24 @@
                                     <div role="tabpanel" class="tab-pane fade in active" id="info">
                                         <div class="panel panel-default panel-post">
                                             <div class="panel-heading">
+                                                تایید / رد رزومه
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="col-xs-12">
+                                                    <p>
+                                                        لطفا با توجه به اطلاعات و مدارک رزومه را تعیین وضعیت نمائید
+                                                    </p>
+                                                    <p>
+                                                        وضعیت فعلی:
+                                                        <?php resumeForViewPipe($candidate['CandidateResumeForViewStatus']); ?>
+                                                    </p>
+                                                    <button class="btn btn-success" id="acceptResumeForView">تایید رزومه</button>
+                                                    <button class="btn btn-danger" id="rejectResumeForView">رد رزومه</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default panel-post">
+                                            <div class="panel-heading">
                                                 آزمون ها
                                             </div>
                                             <div class="panel-body">
