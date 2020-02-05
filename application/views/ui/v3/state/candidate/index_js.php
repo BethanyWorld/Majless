@@ -15,16 +15,11 @@
             }
         });
         $inputFullName = $(".blog-search-submit").prev('label').find(':input').val();
-        $inputAcceptanceStatus = 1;
-        if($(".inputAcceptanceStatus").is(":checked")){
-            $inputAcceptanceStatus = $(".inputAcceptanceStatus").val();
-        }
         $sendData = {
             'inputStateName': $stateName,
             'inputStateId': $stateId,
             'inputFullName': $inputFullName,
-            'inputElectionIds': $electionIds,
-            'inputAcceptanceStatus': $inputAcceptanceStatus
+            'inputElectionIds': $electionIds
         }
         $.ajax({
             type: 'post',
@@ -73,16 +68,11 @@
                 }
             });
             $inputFullName = $(".blog-search-submit").prev('label').find(':input').val();
-            $inputAcceptanceStatus = 1;
-            if($(".inputAcceptanceStatus").is(":checked")){
-                $inputAcceptanceStatus = $(".inputAcceptanceStatus").val();
-            }
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
                 'inputFullName': $inputFullName,
-                'inputElectionIds': $electionIds,
-                'inputAcceptanceStatus': $inputAcceptanceStatus
+                'inputElectionIds': $electionIds
             }
             $.ajax({
                 type: 'post',
@@ -107,10 +97,6 @@
             e.preventDefault();
             toggleLoader();
             $inputFullName = $(this).prev('label').find(':input').val();
-            $inputAcceptanceStatus = 1;
-            if($(".inputAcceptanceStatus").is(":checked")){
-                $inputAcceptanceStatus = $(".inputAcceptanceStatus").val();
-            }
             $electionId = $(this).val();
             $electionIds = [];
             $(".elections .inputElectionId").each(function () {
@@ -122,8 +108,7 @@
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
                 'inputFullName': $inputFullName,
-                'inputElectionIds': $electionIds,
-                'inputAcceptanceStatus': $inputAcceptanceStatus
+                'inputElectionIds': $electionIds
             }
             $.ajax({
                 type: 'post',
