@@ -1268,12 +1268,8 @@
 
 
 
-
-
-
-
 <style>
-
+    /*for tab panel */
     #bug:target {
         outline: 4px solid #ccc;
     }
@@ -1414,4 +1410,5 @@
         }
 
     }
+    /*for tab panel */
 </style>
