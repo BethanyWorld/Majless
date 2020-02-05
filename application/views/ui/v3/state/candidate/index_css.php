@@ -1274,14 +1274,6 @@
 
 <style>
 
-    dt {
-        font-weight: bold;
-    }
-
-    dl {
-        margin-bottom: 50px;
-    }
-
     #bug:target {
         outline: 4px solid #ccc;
     }
