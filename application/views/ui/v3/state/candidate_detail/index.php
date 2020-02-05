@@ -1834,7 +1834,7 @@
 
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
@@ -1859,7 +1859,7 @@
                                                                                     </div>
 
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
@@ -1959,7 +1959,7 @@
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
@@ -1983,7 +1983,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
@@ -2041,7 +2041,7 @@
                                                                                         name="inputBankAccountTitle"
                                                                                         placeholder="عنوان بانک یا موسسه ">
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountPrice">
                                                                                         مبلغ :
                                                                                         <span class="text-danger"></span>
@@ -2215,7 +2215,7 @@
                                                                                         class="form-control"
                                                                                         placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
@@ -2239,7 +2239,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
@@ -2353,7 +2353,7 @@
                                                                                         class="form-control"
                                                                                         placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
                                                                                         میزان درآمد متوسط
                                                                                         سالیانه از
@@ -2402,7 +2402,7 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Wife'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputAverageMonthIncome">
                                                                                         درآمد متوسط ماهیانه :
                                                                                         <span class="text-danger"></span>
@@ -2968,7 +2968,7 @@
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
@@ -2992,7 +2992,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
@@ -3050,7 +3050,7 @@
                                                                                         name="inputBankAccountTitle"
                                                                                         placeholder="عنوان بانک یا موسسه ">
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountPrice">
                                                                                         مبلغ :
                                                                                         <span class="text-danger"></span>
@@ -3107,7 +3107,7 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho =='Child'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputCreditPrice">
                                                                                         جمع کل بستانکاری از اشخاص حقیقی
                                                                                         یا
@@ -3132,7 +3132,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputDebotrPrice">
                                                                                         جمع کل بدهکاری از اشخاص حقیقی یا
                                                                                         حقوقی :
@@ -3154,8 +3154,10 @@
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <textarea class="EStates-textArea"
-                                                                                              name="inputDebotrDescription">{{item.DebotrDescription}}</textarea>
+                                                                                </div>
+                                                                                <div class="col-md-12 col-xs-12">
+                                                                                      <textarea class="EStates-textArea"
+                                                                                                name="inputDebotrDescription">{{item.DebotrDescription}}</textarea>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -3222,7 +3224,7 @@
                                                                                         class="form-control"
                                                                                         placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
@@ -3246,7 +3248,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
@@ -3360,7 +3362,7 @@
                                                                                         class="form-control"
                                                                                         placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
                                                                                         میزان درآمد متوسط
                                                                                         سالیانه از
@@ -3409,7 +3411,7 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Child'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputAverageMonthIncome">
                                                                                         درآمد متوسط ماهیانه :
                                                                                         <span class="text-danger"></span>
