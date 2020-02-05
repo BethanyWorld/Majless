@@ -6,7 +6,6 @@
         $politicalInfo = "";
         $researchInfo = "";
         $skillInfo = "";
-
         function doMark($candidateId , $grade , $action){
             toggleLoader();
             $sendData = {
@@ -57,7 +56,6 @@
             $inputGrade = JSON.stringify($gradeArray);
             doMark($inputCandidateId , $inputGrade , 'CandidateRolesScore');
         });
-
 
         $("#doAcceptFirstExam").click(function () {
             $inputCandidateId = $.trim($("#inputCandidateId").val());
@@ -244,8 +242,6 @@
                 }
             });
         });
-
-
         $(".change-exam-status").click(function () {
             $inputCandidateId = $.trim($("#inputCandidateId").val());
             toggleLoader();
@@ -268,6 +264,33 @@
                 }
             });
         });
+
+        $("#doCreateWordpressAuthor").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            $inputWordpressUserName = $.trim($("#inputWordpressUserName").val());
+            $inputWordpressPassword = $.trim($("#inputWordpressPassword").val());
+            toggleLoader();
+            $sendData = {
+                'inputCandidateId': $inputCandidateId,
+                'inputWordpressUserName': $inputWordpressUserName,
+                'inputWordpressPassword': $inputWordpressPassword
+            }
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Candidate/doCreateWordpressAuthor',
+                data: $sendData,
+                success: function (data) {
+                    $result = jQuery.parseJSON(data);
+                    notify($result['content'], $result['type']);
+                    toggleLoader();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    notify('مشکلی درخ داده است', 'red');
+                    toggleLoader();
+                }
+            });
+        });
+
 
 
     });

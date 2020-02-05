@@ -2,7 +2,6 @@
     $(document).ready(function () {
 
         $(window).scrollTop(0);
-
         $personalInfo = "";
         $militaryInfo = "";
         $politicalInfo = "";

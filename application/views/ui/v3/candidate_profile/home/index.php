@@ -134,74 +134,75 @@
                 <div class=" padding-0 col-xs-12 alerts-container">
                     <!-- If Candidate Has Exam Result  -->
                     <?php if ($examResultText !== NULL) { ?>
-                        <div class="col-xs-12 result-container">
+                        <div class="col-xs-12 result-container" style="font-weight: 900;">
                             جهت مشاهده نتایج تفصیلی کلیک کنید
-                            <button class="btn btn-submit" style="float: none;margin-bottom: 10px;">
-                                <a href="#" style="color: #000;">
-                                    مشاهده نتایج
+                            <button class="btn btn-submit"
+                                    style="float: none;margin-bottom: 10px;    background-color: #095644;color: #fff;">
+                                <a href="#" style="color: #ffffff;">
+                                    نتایج تفصیلی
                                 </a>
                             </button>
                         </div>
                         <br><br>
                     <?php } else { ?>
-                    <!--  STEPS -->
-                    <?php include 'steps/chart/index.php' ?>
-                    <!--  End STEPS -->
-                    <?php /* نامزد انتخاباتی ثبت نام کرده باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateRegister') { ?>
-                        <?php include 'steps/register/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی رزومه را تکمیل کرده باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeCompleted') { ?>
-                        <?php include 'steps/complete/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی حائز شرایط اولیه برای نامزدی انتخابات نباشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeRejected') { ?>
-                        <?php include 'steps/reject/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی شرایط اولیه برای نامزدی انتخابات را داشته باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeAccepted') { ?>
-                        <?php include 'steps/accept/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی شرایط*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateHasNotContinueCondition') { ?>
-                        <?php include 'steps/has_not_condition/index.php' ?>
-                    <?php } ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateHasContinueCondition') { ?>
-                        <?php include 'steps/has_condition/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeMarked') { ?>
-                        <?php include 'steps/marked/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateExamFirstStep') { ?>
-                        <?php include 'steps/first_exam/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateExamFirstStepReject') { ?>
-                        <?php include 'steps/first_exam_reject/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateExamSecondStep') { ?>
-                        <?php include 'steps/second_exam/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateExamSecondStepReject') { ?>
-                        <?php //include 'steps/second_exam_reject/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateAssessment') { ?>
-                        <?php include 'steps/assessement/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateAssessmentReject') { ?>
-                        <?php include 'steps/assessement_reject/index.php' ?>
-                    <?php } ?>
-                    <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
-                    <?php if ($userInfo['CandidateStatus'] == 'CandidateAccepted') { ?>
-                        <?php include 'steps/candidate_accepted/index.php' ?>
-                    <?php } ?>
+                        <!--  STEPS -->
+                        <?php include 'steps/chart/index.php' ?>
+                        <!--  End STEPS -->
+                        <?php /* نامزد انتخاباتی ثبت نام کرده باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateRegister') { ?>
+                            <?php include 'steps/register/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی رزومه را تکمیل کرده باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeCompleted') { ?>
+                            <?php include 'steps/complete/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی حائز شرایط اولیه برای نامزدی انتخابات نباشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeRejected') { ?>
+                            <?php include 'steps/reject/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی شرایط اولیه برای نامزدی انتخابات را داشته باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeAccepted') { ?>
+                            <?php include 'steps/accept/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی شرایط*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateHasNotContinueCondition') { ?>
+                            <?php include 'steps/has_not_condition/index.php' ?>
+                        <?php } ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateHasContinueCondition') { ?>
+                            <?php include 'steps/has_condition/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateResumeMarked') { ?>
+                            <?php include 'steps/marked/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateExamFirstStep') { ?>
+                            <?php include 'steps/first_exam/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateExamFirstStepReject') { ?>
+                            <?php include 'steps/first_exam_reject/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateExamSecondStep') { ?>
+                            <?php include 'steps/second_exam/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateExamSecondStepReject') { ?>
+                            <?php //include 'steps/second_exam_reject/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateAssessment') { ?>
+                            <?php include 'steps/assessement/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateAssessmentReject') { ?>
+                            <?php include 'steps/assessement_reject/index.php' ?>
+                        <?php } ?>
+                        <?php /* نامزد انتخاباتی نمره رزومه داشته باشد*/ ?>
+                        <?php if ($userInfo['CandidateStatus'] == 'CandidateAccepted') { ?>
+                            <?php include 'steps/candidate_accepted/index.php' ?>
+                        <?php } ?>
                     <?php } } ?>
                 </div>
             </div>

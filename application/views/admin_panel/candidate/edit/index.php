@@ -24,10 +24,17 @@
                                         <?php echo candidateStatus($candidate['CandidateStatus']); ?>
                                     </span>
                                 </h5>
-                                <h5>
+                                <h5 class="hidden">
                                     <a href="<?php echo base_url('Admin/Candidate/printResume/') . $candidate['CandidateId']; ?>">
                                         <span class="office-location">
                                             پرینت رزومه
+                                        </span>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a target="_blank" href="<?php echo base_url('State/candidate_detail/'.$candidate['CandidateId'].'/0/Test'); ?>">
+                                        <span class="office-location">
+                                            مشاهده رزومه
                                         </span>
                                     </a>
                                 </h5>
@@ -887,7 +894,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div role="tabpanel" class="tab-pane fade in active" id="documents">
+                                    <div role="tabpanel" class="tab-pane fade in" id="documents">
                                         <?php
                                         if(count($candidateDocuments) <= 0){ ?>
                                             <br>
@@ -1257,17 +1264,35 @@
                                         </form>
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade in" id="ChangePassword">
-                                        <form class="form-horizontal">
-                                            <label>رمز عبور جدید</label>
-                                            <input type="text"
-                                                   id="inputPassword" name="inputPassword"/>
-                                            <button
-                                                    id="doChangeCandidatePassword"
-                                                    type="button"
-                                                    class="btn btn-info">
-                                                تغییر رمز عبور
-                                            </button>
-                                        </form>
+                                        <div class="col-xs-12">
+                                            <form class="form-horizontal">
+                                                <label>رمز عبور جدید</label>
+                                                <input type="text" id="inputPassword" name="inputPassword"/>
+                                                <button
+                                                        id="doChangeCandidatePassword"
+                                                        type="button"
+                                                        class="btn btn-info">
+                                                    تغییر رمز عبور
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <form class="form-horizontal">
+                                                <h4>حساب کاربری وردپرس</h4>
+                                                <label>نام کاربری</label>
+                                                <input type="text"
+                                                       id="inputWordpressUserName" name="inputWordPressUserName"/>
+                                                <label>رمز عبور</label>
+                                                <input type="text"
+                                                       id="inputWordpressPassword" name="inputWordpressPassword"/>
+                                                <button
+                                                        id="doCreateWordpressAuthor"
+                                                        type="button"
+                                                        class="btn btn-success">
+                                                   ساخت حساب کاربری وردپرس
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

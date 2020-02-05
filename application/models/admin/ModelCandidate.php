@@ -1360,5 +1360,33 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
+    public function doCreateWordpressAuthor($inputs){
+        $this->db->trans_start();
+        $UserArray = array(
+            'CandidateId' => $inputs['inputCandidateId'],
+            'CandidateUserName' => $inputs['inputWordpressUserName'],
+            'CandidatePassword ' => $inputs['inputWordpressPassword'],
+            'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+        );
+        $this->db->insert('candidate_wordpress_accounts', $UserArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "درج حساب کاربری با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "درج حساب کاربری با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+
 }
 ?>

@@ -113,6 +113,9 @@ class State extends CI_Controller{
         $data['CSRF'] = $CSRF;
         $data['noImg'] = $this->config->item('defaultImage');
         $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['candidateId'] = $candidateId;
+        $data['stateId'] = $stateId;
+        $data['stateName'] = $stateName;
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
         $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);

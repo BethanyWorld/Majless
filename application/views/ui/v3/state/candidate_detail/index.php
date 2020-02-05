@@ -3845,7 +3845,7 @@
         }
     });
     app.controller("myCtrl", function ($scope, $http) {
-        $http.get("<?php echo base_url('State/candidateDetailApi/244/3/اردبیل') ?>").then(function (response) {
+        $http.get("<?php echo base_url('State/candidateDetailApi/'.$candidateId.'/'.$stateId.'/'.$stateName) ?>").then(function (response) {
             response = response.data;
             $scope.candidateFirstName = response.candidate.CandidateFirstName;
             $scope.CandidateLastName = response.candidate.CandidateLastName;
