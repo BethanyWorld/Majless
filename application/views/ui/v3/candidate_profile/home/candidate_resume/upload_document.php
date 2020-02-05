@@ -1,5 +1,14 @@
 <input type="hidden" id="inputCandidateDocumentName" value="<?php echo $documentName; ?>"/>
 <br>
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <p class="margin-b-0">
+            ابتدا
+            <?php echo $documentPersianName; ?>
+            را ثبت کرده سپس مدارک را بارگذاری کنید
+        </p>
+    </div>
+</div>
 <div class="panel panel-warning">
     <div class="panel-heading">
         <p class="margin-b-0">
@@ -129,10 +138,10 @@
                                     notify($result['content'], $result['type']);
 
                                     $lastIndex = $(".upload-table tbody tr:last").index()+1;
-                                    $lastIndex += 1;
                                     for ($i = 0; $i < $arrayUploadedFiles.length; $i++) {
+                                        $lastIndex += 1;
                                         $tr = '<tr data-index="' + $lastIndex + '">';
-                                        $tr += '<td class="fit">' + $lastIndex + '</td>';
+                                        $tr += '<td class="fit">#' + $lastIndex + '</td>';
                                         $tr += '<td class="text-center"><a href="' + $arrayUploadedFiles[$i] + '" target="_blank">';
                                         $tr += '<i class="fa fa-folder-open-o"></i></a>';
                                         $tr += '</td>';
@@ -144,7 +153,6 @@
                                         $tr += '</td>';
                                         $tr += "</tr>";
                                         $(".upload-table tbody").append($tr);
-                                        $lastIndex += 1;
                                     }
                                     //update number of uploaded files
                                     $(".number-of-uploads").text($lastIndex);
