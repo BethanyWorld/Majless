@@ -473,7 +473,6 @@ class Profile extends CI_Controller{
         $data['userInfo']['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($data['userInfo']['CandidateId']);
         $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
 
-
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index_css');
@@ -1453,7 +1452,7 @@ class Profile extends CI_Controller{
                     die();
                 } else {
                     chmod($uploadPath . $fileName, 0644);
-                    array_push($uploadResultArray , base_url('uploads/') . $fileName);
+                    array_push($uploadResultArray , base_url('uploads/') . $fileName.'?ud='.jDateTime::date("Y/m/d H:i:s", false, false));
                 }
             }
             $result = array(
