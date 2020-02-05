@@ -94,6 +94,8 @@
 
         });
         $(".add-form").click(function () {
+            $(this).removeClass('waves');
+            $(this).find("#plus-wave").remove();
             $form = $(this).parent().next('div.panel-body').find(".unique-form").eq(0).clone().attr('id', UUID()).removeClass('hidden').removeClass('unique-form');
             $form = $(this).parent().next('div.panel-body').find(".divider").eq(0).after($form);
             setTimeout(function () {

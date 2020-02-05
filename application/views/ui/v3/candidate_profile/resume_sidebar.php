@@ -28,19 +28,93 @@
         position: absolute;
         left: 30px;
         top: 20px;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         background: #095644;
-        border-radius: 100px;
+        border-radius: 50%;
         color: #fff;
-        padding: 18px;
+        padding: 0px;
         cursor: pointer;
         z-index: 1090;
+        text-align: center;
+        line-height: 40px;
     }
 
     .add-form:hover {
         background: #095644;
     }
+
+    /*for add button animation*/
+    .waves {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        -webkit-backface-visibility: hidden;
+    }
+    .waves:before {
+        position: absolute;
+        background: #095644;
+        margin-left: -30px;
+        left: 38px;
+        top: 7px;
+        margin-top: 0px;
+        width: 25px;
+        height: 25px;
+        content: "";
+        display: block;
+        border-radius: 50%;
+        -webkit-backface-visibility: hidden;
+        animation: wave-animate 1s infinite ease-out;
+    }
+    .waves:after {
+        position: absolute;
+        background: #0f342f;
+        margin-left: 0px;
+        margin-top: 0px;
+        width: 30px;
+        top: 5px;
+        left: 5px;
+        height: 30px;
+        content: "";
+        display: block;
+        border-radius: 50%;
+        -webkit-backface-visibility: hidden;
+        opacity: 0;
+        animation: wave-animate 3s 1.5s infinite ease-out;
+    }
+    @keyframes wave-animate {
+        0% {
+            transform: scale(0);
+            opacity: 1;
+            transform-origin: center;
+        }
+        100% {
+            transform: scale(3);
+            opacity: 0;
+            transform-origin: center;
+        }
+    }
+    @keyframes color-loop {
+        0% {
+            background: #2CAB5B;
+        }
+        25% {
+            background: #FABC03;
+        }
+        50% {
+            background: #ED4B40;
+        }
+        75% {
+            background: #4286F3;
+        }
+        100% {
+            background: #2CAB5B;
+        }
+    }
+    /*for add button animation*/
+
 
     .remove-form {
         position: absolute;

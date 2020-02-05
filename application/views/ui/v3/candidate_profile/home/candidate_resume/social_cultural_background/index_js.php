@@ -60,6 +60,8 @@
             }
         });
         $(".add-form").click(function () {
+            $('.add-form').removeClass('waves');
+            $("#plus-wave").remove();
             $form = $("#unique-form").clone().removeClass('hidden').attr('id', UUID());
             $form.find('[data-name]').each(function () {
                 $(this).attr('name', $(this).data('name'))

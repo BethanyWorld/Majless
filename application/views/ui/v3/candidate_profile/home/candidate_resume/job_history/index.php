@@ -13,7 +13,9 @@ $_DIR = base_url('assets/ui/v3/');
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
                                 سوابق شغلی
-                                <span class="add-form fa fa-plus"></span>
+                                <span class="add-form fa fa-plus waves">
+                                     <span class="fa fa-plus" id="plus-wave"></span>
+                                </span>
                             </div>
                             <div class="panel-body">
                                 <div class="row">

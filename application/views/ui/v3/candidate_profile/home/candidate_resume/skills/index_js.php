@@ -1,6 +1,8 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $(".add-form").click(function () {
+            $('.add-form').removeClass('waves');
+            $("#plus-wave").remove();
             $form = $("#unique-form").clone().removeClass('hidden').attr('id', UUID());
             $(".skill-divider").after($form);
         });

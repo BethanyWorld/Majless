@@ -35,7 +35,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 املاک و مستغلات
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -579,7 +581,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 وسایل نقلیه
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -975,7 +979,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -1332,7 +1338,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -1721,7 +1729,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 کلیه کالاهای فاقد سند مالکیت رسمی
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -2135,7 +2145,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 حقوق مالکیت معنوی
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -2876,7 +2888,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 املاک و مستغلات
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -3420,7 +3434,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 وسایل نقلیه
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -3816,7 +3832,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -4173,7 +4191,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -4562,7 +4582,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 کلیه کالاهای فاقد سند مالکیت رسمی
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -4976,7 +4998,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 حقوق مالکیت معنوی
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -5717,7 +5741,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 املاک و مستغلات
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -6261,7 +6287,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 وسایل نقلیه
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -6657,7 +6685,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -7014,7 +7044,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -7403,7 +7435,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 کلیه کالاهای فاقد سند مالکیت رسمی
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -7817,7 +7851,9 @@
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
                                                 حقوق مالکیت معنوی
-                                                <span class="add-form fa fa-plus"></span>
+                                                <span class="add-form fa fa-plus waves">
+                                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                                </span>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">

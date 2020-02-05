@@ -55,11 +55,35 @@
             <span class="open-sidebar new-style-button-xs">جستجو پیشرفته</span>
         </div>
 
-        <section class="mp-section">
-            <div class="row candidate-container candidate-detail-parent-div">
 
+        <div class="tabPanel-widget">
+
+
+            <label for="tab-2" tabindex="0"></label>
+            <input id="tab-2" type="radio" name="tabs" checked="true" aria-hidden="true">
+            <h2> شایستگی</h2>
+            <div>
+                <section class="mp-section">
+                    <div class="row candidate-container candidate-detail-parent-div">
+
+                    </div>
+                </section>
             </div>
-        </section>
+
+
+            <label for="tab-1" tabindex="0"></label>
+            <input id="tab-1" type="radio" name="tabs" aria-hidden="true">
+            <h2>تست</h2>
+            <div>
+                <p>
+                    همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم. شما نیز با انتخاب گزینه
+                    "دعوت به جنش از ما" و انتشار پوسترهای دعوت به چالش در شبکه های اجتماعی نامزد حوزه انتخابیه خود را به
+                    این چالش دعوت کنید.
+                </p>
+            </div>
+        </div>
+
+
     </div>
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
         <a class="invite hidden-sm hidden-xs" href="<?php echo base_url('State/invite'); ?>">
@@ -281,6 +305,7 @@
     </div>
 </div>
 
+
 <div class="hidden-box1" id="hidden-box1">
     <div class="modal-border">
         <div class="inner-border-div">
@@ -385,3 +410,4 @@
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.min.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.plugins.min.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.nicescroll.min.js"></script>
+

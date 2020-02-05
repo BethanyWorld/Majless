@@ -611,9 +611,9 @@
                                                                                         نحوه مالکیت
                                                                                     </label>
                                                                                     <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateOwnershipType"
-                                                                                            id="inputRealEstateOwnershipType">
+                                                                                        class="form-control form-control-lg"
+                                                                                        name="inputRealEstateOwnershipType"
+                                                                                        id="inputRealEstateOwnershipType">
                                                                                         <option>
                                                                                             {{item.RealEstateOwnershipType
                                                                                             | bindEnum}}
@@ -624,9 +624,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                                     <label for="inputRealEstateCountryId">کشور</label>
                                                                                     <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateCountryId"
-                                                                                            id="inputRealEstateCountryId">
+                                                                                        class="form-control form-control-lg"
+                                                                                        name="inputRealEstateCountryId"
+                                                                                        id="inputRealEstateCountryId">
                                                                                         <option>
                                                                                             {{item.RealEstateCountryId |
                                                                                             bindCountry}}
@@ -636,9 +636,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                                                     <label for="inputRealEstateStateId">استان</label>
                                                                                     <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateStateId"
-                                                                                            id="inputRealEstateStateId">
+                                                                                        class="form-control form-control-lg"
+                                                                                        name="inputRealEstateStateId"
+                                                                                        id="inputRealEstateStateId">
                                                                                         <option>
                                                                                             {{item.RealEstateStateId |
                                                                                             bindState}}
@@ -748,12 +748,12 @@
                                                                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateAddress">آدرس</label>
                                                                                     <input
-                                                                                            value="{{item.RealEstateAddress}}"
-                                                                                            id="inputRealEstateAddress"
-                                                                                            type="text"
-                                                                                            name="inputRealEstateAddress"
-                                                                                            class="input-validate validate valid"
-                                                                                            placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                                        value="{{item.RealEstateAddress}}"
+                                                                                        id="inputRealEstateAddress"
+                                                                                        type="text"
+                                                                                        name="inputRealEstateAddress"
+                                                                                        class="input-validate validate valid"
+                                                                                        placeholder="نام خیابان اصلی / محله / منطقه">
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -782,7 +782,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleType">
                                                                                         نوع وسیله نقلیه<span
-                                                                                                class="text-danger"></span>
+                                                                                            class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleType"
@@ -796,7 +796,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
                                                                                         سال شروع مالکیت<span
-                                                                                                class="text-danger"></span>
+                                                                                            class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleOwnershipDate"
@@ -822,7 +822,7 @@
 
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
@@ -847,7 +847,7 @@
                                                                                     </div>
 
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
@@ -876,13 +876,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.VehiclePortion}}"
-                                                                                            type="number"
-                                                                                            name="inputVehiclePortion"
-                                                                                            id="inputVehiclePortion"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                            min="0" max="6"/>
+                                                                                        value="{{item.VehiclePortion}}"
+                                                                                        type="number"
+                                                                                        name="inputVehiclePortion"
+                                                                                        id="inputVehiclePortion"
+                                                                                        class="form-control"
+                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                        min="0" max="6"/>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -912,11 +912,11 @@
                                                                                         نام شرکت / موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.InvestTitle}}"
-                                                                                            id="inputInvestTitle"
-                                                                                            type="text"
-                                                                                            name="inputInvestTitle"
-                                                                                            placeholder="نام شرکت - موسسه - پروژه ">
+                                                                                        value="{{item.InvestTitle}}"
+                                                                                        id="inputInvestTitle"
+                                                                                        type="text"
+                                                                                        name="inputInvestTitle"
+                                                                                        placeholder="نام شرکت - موسسه - پروژه ">
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestDate">
@@ -946,7 +946,7 @@
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
@@ -970,7 +970,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
@@ -1021,13 +1021,13 @@
                                                                                         عنوان بانک یا موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.BankAccountTitle}}"
-                                                                                            id="inputBankAccountTitle"
-                                                                                            type="text"
-                                                                                            name="inputBankAccountTitle"
-                                                                                            placeholder="عنوان بانک یا موسسه ">
+                                                                                        value="{{item.BankAccountTitle}}"
+                                                                                        id="inputBankAccountTitle"
+                                                                                        type="text"
+                                                                                        name="inputBankAccountTitle"
+                                                                                        placeholder="عنوان بانک یا موسسه ">
                                                                                 </div>
-                                                                                <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountPrice">
                                                                                         مبلغ :
                                                                                         <span class="text-danger"></span>
@@ -1083,7 +1083,7 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho =='Self'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputCreditPrice">
                                                                                         جمع کل بستانکاری از اشخاص حقیقی
                                                                                         یا
@@ -1108,7 +1108,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputDebotrPrice">
                                                                                         جمع کل بدهکاری از اشخاص حقیقی یا
                                                                                         حقوقی :
@@ -1130,9 +1130,12 @@
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
+                                                                                </div>
+                                                                                <div class="col-md-12 col-xs-12">
                                                                                     <textarea class="EStates-textArea"
                                                                                               name="inputDebotrDescription">{{item.DebotrDescription}}</textarea>
                                                                                 </div>
+
                                                                             </div>
                                                                             <hr>
                                                                         </form>
@@ -1190,14 +1193,14 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="item.GoodsCount"
-                                                                                            type="text"
-                                                                                            name="inputGoodsCount"
-                                                                                            id="inputGoodsCount"
-                                                                                            class="form-control"
-                                                                                            placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                                        value="item.GoodsCount"
+                                                                                        type="text"
+                                                                                        name="inputGoodsCount"
+                                                                                        id="inputGoodsCount"
+                                                                                        class="form-control"
+                                                                                        placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
@@ -1221,7 +1224,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
@@ -1250,13 +1253,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.GoodsOwnershipPercent}}"
-                                                                                            type="number"
-                                                                                            name="inputGoodsOwnershipPercent"
-                                                                                            id="inputGoodsOwnershipPercent"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                            min="0" max="6"/>
+                                                                                        value="{{item.GoodsOwnershipPercent}}"
+                                                                                        type="number"
+                                                                                        name="inputGoodsOwnershipPercent"
+                                                                                        id="inputGoodsOwnershipPercent"
+                                                                                        class="form-control"
+                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                        min="0" max="6"/>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipType">
@@ -1327,14 +1330,14 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.FeePercent}}"
-                                                                                            type="number"
-                                                                                            name="inputFeePercent"
-                                                                                            id="inputFeePercent"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                        value="{{item.FeePercent}}"
+                                                                                        type="number"
+                                                                                        name="inputFeePercent"
+                                                                                        id="inputFeePercent"
+                                                                                        class="form-control"
+                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                 </div>
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
                                                                                         میزان درآمد متوسط
                                                                                         سالیانه از
@@ -1382,7 +1385,7 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Self'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputAverageMonthIncome">
                                                                                         درآمد متوسط ماهیانه :
                                                                                         <span class="text-danger"></span>
@@ -1569,6 +1572,7 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
+                                                                        <p ng-if="finance.RealEStates.length === 0 ">{{notFound}}</p>
                                                                         <form ng-repeat="item in finance.RealEStates"
                                                                               id="form-RealEstate">
                                                                             <span class="divider"></span>
@@ -1609,9 +1613,9 @@
                                                                                         نحوه مالکیت
                                                                                     </label>
                                                                                     <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateOwnershipType"
-                                                                                            id="inputRealEstateOwnershipType">
+                                                                                        class="form-control form-control-lg"
+                                                                                        name="inputRealEstateOwnershipType"
+                                                                                        id="inputRealEstateOwnershipType">
                                                                                         <option>
                                                                                             {{item.RealEstateOwnershipType
                                                                                             | bindEnum}}
@@ -1622,9 +1626,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                                     <label for="inputRealEstateCountryId">کشور</label>
                                                                                     <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateCountryId"
-                                                                                            id="inputRealEstateCountryId">
+                                                                                        class="form-control form-control-lg"
+                                                                                        name="inputRealEstateCountryId"
+                                                                                        id="inputRealEstateCountryId">
                                                                                         <option>
                                                                                             {{item.RealEstateCountryId |
                                                                                             bindCountry}}
@@ -1634,9 +1638,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                                                     <label for="inputRealEstateStateId">استان</label>
                                                                                     <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateStateId"
-                                                                                            id="inputRealEstateStateId">
+                                                                                        class="form-control form-control-lg"
+                                                                                        name="inputRealEstateStateId"
+                                                                                        id="inputRealEstateStateId">
                                                                                         <option>
                                                                                             {{item.RealEstateStateId |
                                                                                             bindState}}
@@ -1746,12 +1750,12 @@
                                                                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateAddress">آدرس</label>
                                                                                     <input
-                                                                                            value="{{item.RealEstateAddress}}"
-                                                                                            id="inputRealEstateAddress"
-                                                                                            type="text"
-                                                                                            name="inputRealEstateAddress"
-                                                                                            class="input-validate validate valid"
-                                                                                            placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                                        value="{{item.RealEstateAddress}}"
+                                                                                        id="inputRealEstateAddress"
+                                                                                        type="text"
+                                                                                        name="inputRealEstateAddress"
+                                                                                        class="input-validate validate valid"
+                                                                                        placeholder="نام خیابان اصلی / محله / منطقه">
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -1780,7 +1784,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleType">
                                                                                         نوع وسیله نقلیه<span
-                                                                                                class="text-danger"></span>
+                                                                                            class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleType"
@@ -1794,7 +1798,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
                                                                                         سال شروع مالکیت<span
-                                                                                                class="text-danger"></span>
+                                                                                            class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleOwnershipDate"
@@ -1874,13 +1878,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.VehiclePortion}}"
-                                                                                            type="number"
-                                                                                            name="inputVehiclePortion"
-                                                                                            id="inputVehiclePortion"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                            min="0" max="6"/>
+                                                                                        value="{{item.VehiclePortion}}"
+                                                                                        type="number"
+                                                                                        name="inputVehiclePortion"
+                                                                                        id="inputVehiclePortion"
+                                                                                        class="form-control"
+                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                        min="0" max="6"/>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -1910,11 +1914,11 @@
                                                                                         نام شرکت / موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.InvestTitle}}"
-                                                                                            id="inputInvestTitle"
-                                                                                            type="text"
-                                                                                            name="inputInvestTitle"
-                                                                                            placeholder="نام شرکت - موسسه - پروژه ">
+                                                                                        value="{{item.InvestTitle}}"
+                                                                                        id="inputInvestTitle"
+                                                                                        type="text"
+                                                                                        name="inputInvestTitle"
+                                                                                        placeholder="نام شرکت - موسسه - پروژه ">
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestDate">
@@ -2019,11 +2023,11 @@
                                                                                         عنوان بانک یا موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.BankAccountTitle}}"
-                                                                                            id="inputBankAccountTitle"
-                                                                                            type="text"
-                                                                                            name="inputBankAccountTitle"
-                                                                                            placeholder="عنوان بانک یا موسسه ">
+                                                                                        value="{{item.BankAccountTitle}}"
+                                                                                        id="inputBankAccountTitle"
+                                                                                        type="text"
+                                                                                        name="inputBankAccountTitle"
+                                                                                        placeholder="عنوان بانک یا موسسه ">
                                                                                 </div>
                                                                                 <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountPrice">
@@ -2188,12 +2192,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="item.GoodsCount"
-                                                                                            type="text"
-                                                                                            name="inputGoodsCount"
-                                                                                            id="inputGoodsCount"
-                                                                                            class="form-control"
-                                                                                            placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                                        value="item.GoodsCount"
+                                                                                        type="text"
+                                                                                        name="inputGoodsCount"
+                                                                                        id="inputGoodsCount"
+                                                                                        class="form-control"
+                                                                                        placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
@@ -2248,13 +2252,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.GoodsOwnershipPercent}}"
-                                                                                            type="number"
-                                                                                            name="inputGoodsOwnershipPercent"
-                                                                                            id="inputGoodsOwnershipPercent"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                            min="0" max="6"/>
+                                                                                        value="{{item.GoodsOwnershipPercent}}"
+                                                                                        type="number"
+                                                                                        name="inputGoodsOwnershipPercent"
+                                                                                        id="inputGoodsOwnershipPercent"
+                                                                                        class="form-control"
+                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                        min="0" max="6"/>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipType">
@@ -2325,12 +2329,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.FeePercent}}"
-                                                                                            type="number"
-                                                                                            name="inputFeePercent"
-                                                                                            id="inputFeePercent"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                        value="{{item.FeePercent}}"
+                                                                                        type="number"
+                                                                                        name="inputFeePercent"
+                                                                                        id="inputFeePercent"
+                                                                                        class="form-control"
+                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
@@ -2607,9 +2611,9 @@
                                                                                         نحوه مالکیت
                                                                                     </label>
                                                                                     <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateOwnershipType"
-                                                                                            id="inputRealEstateOwnershipType">
+                                                                                        class="form-control form-control-lg"
+                                                                                        name="inputRealEstateOwnershipType"
+                                                                                        id="inputRealEstateOwnershipType">
                                                                                         <option>
                                                                                             {{item.RealEstateOwnershipType
                                                                                             | bindEnum}}
@@ -2620,9 +2624,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                                     <label for="inputRealEstateCountryId">کشور</label>
                                                                                     <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateCountryId"
-                                                                                            id="inputRealEstateCountryId">
+                                                                                        class="form-control form-control-lg"
+                                                                                        name="inputRealEstateCountryId"
+                                                                                        id="inputRealEstateCountryId">
                                                                                         <option>
                                                                                             {{item.RealEstateCountryId |
                                                                                             bindCountry}}
@@ -2632,9 +2636,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                                                     <label for="inputRealEstateStateId">استان</label>
                                                                                     <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateStateId"
-                                                                                            id="inputRealEstateStateId">
+                                                                                        class="form-control form-control-lg"
+                                                                                        name="inputRealEstateStateId"
+                                                                                        id="inputRealEstateStateId">
                                                                                         <option>
                                                                                             {{item.RealEstateStateId |
                                                                                             bindState}}
@@ -2744,12 +2748,12 @@
                                                                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateAddress">آدرس</label>
                                                                                     <input
-                                                                                            value="{{item.RealEstateAddress}}"
-                                                                                            id="inputRealEstateAddress"
-                                                                                            type="text"
-                                                                                            name="inputRealEstateAddress"
-                                                                                            class="input-validate validate valid"
-                                                                                            placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                                        value="{{item.RealEstateAddress}}"
+                                                                                        id="inputRealEstateAddress"
+                                                                                        type="text"
+                                                                                        name="inputRealEstateAddress"
+                                                                                        class="input-validate validate valid"
+                                                                                        placeholder="نام خیابان اصلی / محله / منطقه">
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -2778,7 +2782,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleType">
                                                                                         نوع وسیله نقلیه<span
-                                                                                                class="text-danger"></span>
+                                                                                            class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleType"
@@ -2792,7 +2796,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
                                                                                         سال شروع مالکیت<span
-                                                                                                class="text-danger"></span>
+                                                                                            class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleOwnershipDate"
@@ -2872,13 +2876,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.VehiclePortion}}"
-                                                                                            type="number"
-                                                                                            name="inputVehiclePortion"
-                                                                                            id="inputVehiclePortion"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                            min="0" max="6"/>
+                                                                                        value="{{item.VehiclePortion}}"
+                                                                                        type="number"
+                                                                                        name="inputVehiclePortion"
+                                                                                        id="inputVehiclePortion"
+                                                                                        class="form-control"
+                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                        min="0" max="6"/>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -2908,11 +2912,11 @@
                                                                                         نام شرکت / موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.InvestTitle}}"
-                                                                                            id="inputInvestTitle"
-                                                                                            type="text"
-                                                                                            name="inputInvestTitle"
-                                                                                            placeholder="نام شرکت - موسسه - پروژه ">
+                                                                                        value="{{item.InvestTitle}}"
+                                                                                        id="inputInvestTitle"
+                                                                                        type="text"
+                                                                                        name="inputInvestTitle"
+                                                                                        placeholder="نام شرکت - موسسه - پروژه ">
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestDate">
@@ -3017,11 +3021,11 @@
                                                                                         عنوان بانک یا موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.BankAccountTitle}}"
-                                                                                            id="inputBankAccountTitle"
-                                                                                            type="text"
-                                                                                            name="inputBankAccountTitle"
-                                                                                            placeholder="عنوان بانک یا موسسه ">
+                                                                                        value="{{item.BankAccountTitle}}"
+                                                                                        id="inputBankAccountTitle"
+                                                                                        type="text"
+                                                                                        name="inputBankAccountTitle"
+                                                                                        placeholder="عنوان بانک یا موسسه ">
                                                                                 </div>
                                                                                 <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountPrice">
@@ -3186,12 +3190,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="item.GoodsCount"
-                                                                                            type="text"
-                                                                                            name="inputGoodsCount"
-                                                                                            id="inputGoodsCount"
-                                                                                            class="form-control"
-                                                                                            placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                                        value="item.GoodsCount"
+                                                                                        type="text"
+                                                                                        name="inputGoodsCount"
+                                                                                        id="inputGoodsCount"
+                                                                                        class="form-control"
+                                                                                        placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
@@ -3246,13 +3250,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.GoodsOwnershipPercent}}"
-                                                                                            type="number"
-                                                                                            name="inputGoodsOwnershipPercent"
-                                                                                            id="inputGoodsOwnershipPercent"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                            min="0" max="6"/>
+                                                                                        value="{{item.GoodsOwnershipPercent}}"
+                                                                                        type="number"
+                                                                                        name="inputGoodsOwnershipPercent"
+                                                                                        id="inputGoodsOwnershipPercent"
+                                                                                        class="form-control"
+                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                        min="0" max="6"/>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipType">
@@ -3323,12 +3327,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                            value="{{item.FeePercent}}"
-                                                                                            type="number"
-                                                                                            name="inputFeePercent"
-                                                                                            id="inputFeePercent"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                        value="{{item.FeePercent}}"
+                                                                                        type="number"
+                                                                                        name="inputFeePercent"
+                                                                                        id="inputFeePercent"
+                                                                                        class="form-control"
+                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
@@ -3560,7 +3564,7 @@
                     </div>
                 </div>
                 <!-- Report Abuse -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll report">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>گزارش تخلف</h3>
@@ -3783,6 +3787,7 @@
             ']',
 
     };
+    var finance = [];
     var countries = [];
     var cities = [];
     var states = [];
@@ -3845,7 +3850,8 @@
         }
     });
     app.controller("myCtrl", function ($scope, $http) {
-        $http.get("<?php echo base_url('State/candidateDetailApi/'.$candidateId.'/'.$stateId.'/'.$stateName) ?>").then(function (response) {
+        $scope.notFound = 'اطلاعاتی برای این مورد وارد نشده است' ;
+        $http.get("<?php echo base_url('State/candidateDetailApi/244/3/اردبیل') ?>").then(function (response) {
             response = response.data;
             $scope.candidateFirstName = response.candidate.CandidateFirstName;
             $scope.CandidateLastName = response.candidate.CandidateLastName;
@@ -3868,6 +3874,7 @@
             $scope.promises = response.promises;
             $scope.finance = response.finance;
             countries = response.countries;
+            finance = response.finance;
             states = response.states;
             cities = response.cities;
             var BankAccountPricePlaceHolder = ['BankAccountPrice'];
@@ -3918,8 +3925,12 @@
             translatePrice('Vehicle' , VehiclePricePlaceHolder);
 
             setTimeout(function () {
-                $("#container-wrapper :input").prop('disabled', true);
+                $(".left-candidate-panel-resume :input").prop('disabled', true);
+                $(".report :input").prop('disabled', false);
             } , 2000);
+
+
+            console.log( 'tinaaaaa', finance.RealEStates.length);
         });
     });
 </script>

@@ -14,7 +14,9 @@ $_DIR = base_url('assets/ui/v3/');
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
                                 تالیف کتاب
-                                <span class="add-form fa fa-plus"></span>
+                                <span class="add-form fa fa-plus waves">
+                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                </span>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -172,7 +174,9 @@ $_DIR = base_url('assets/ui/v3/');
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
                                 مقالات علمی
-                                <span class="add-form fa fa-plus"></span>
+                                <span class="add-form fa fa-plus waves">
+                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                </span>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -253,7 +257,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <select class="form-control form-control-lg city-select"
                                                                 name="inputCandidateArticlePublishYear"
                                                                 id="inputCandidateArticlePublishYear"
-                                                        style="font-family: tahoma;">
+                                                                style="font-family: tahoma;">
                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                 <option
                                                                     <?php setOptionSelected($item['CandidateArticlePublishYear'], $i); ?>
@@ -363,7 +367,9 @@ $_DIR = base_url('assets/ui/v3/');
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
                                 طرح پژوهشی
-                                <span class="add-form fa fa-plus"></span>
+                                <span class="add-form fa fa-plus waves">
+                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                </span>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -448,7 +454,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <select class="form-control form-control-lg city-select"
                                                                 name="inputCandidateResearchYear"
                                                                 id="inputCandidateResearchYear"
-                                                        style="font-family: tahoma">
+                                                                style="font-family: tahoma">
                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                 <option
                                                                     <?php setOptionSelected($item['CandidateResearchYear'], $i); ?>
@@ -562,7 +568,9 @@ $_DIR = base_url('assets/ui/v3/');
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
                                 ترجمه
-                                <span class="add-form fa fa-plus"></span>
+                                <span class="add-form fa fa-plus waves">
+                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                </span>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -643,7 +651,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <select class="form-control form-control-lg city-select"
                                                                 name="inputCandidateTranslationYear"
                                                                 id="inputCandidateTranslationYear"
-                                                        style="font-family: tahoma;">
+                                                                style="font-family: tahoma;">
                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                 <option
                                                                     <?php setOptionSelected($item['CandidateTranslationYear'], $i); ?>
@@ -755,7 +763,9 @@ $_DIR = base_url('assets/ui/v3/');
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
                                 اختراع و ابداع
-                                <span class="add-form fa fa-plus"></span>
+                                <span class="add-form fa fa-plus waves">
+                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                </span>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -879,7 +889,9 @@ $_DIR = base_url('assets/ui/v3/');
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
                                 همایش علمی
-                                <span class="add-form fa fa-plus"></span>
+                                <span class="add-form fa fa-plus waves">
+                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                </span>
 
 
                             </div>
@@ -969,7 +981,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <select class="form-control form-control-lg city-select"
                                                                 name="inputCandidateConferenceYear"
                                                                 id="inputCandidateConferenceYear"
-                                                        style="font-family: tahoma;">
+                                                                style="font-family: tahoma;">
                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                 <option
                                                                     <?php setOptionSelected($item['CandidateConferenceYear'], $i); ?>
@@ -1072,14 +1084,13 @@ $_DIR = base_url('assets/ui/v3/');
                             </div>
 
 
-
                             <?php
                             $documentPersianName = 'سوابق علمی پژوهشی';
                             $documentName = 'Science';
                             $documentData['documentName'] = $documentName;
                             $documentData['documentPersianName'] = $documentPersianName;
                             $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
-                            $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document' , $documentData);
+                            $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document', $documentData);
                             ?>
 
 
@@ -1096,7 +1107,8 @@ $_DIR = base_url('assets/ui/v3/');
                             <div class="LeftPaneAction">
                                 <div class="row form-group">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                        <button class="btn btn-block btn-lg CommonButtons waves-effect" id="updateScienceBackgroundAndRedirect">
+                                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
+                                                id="updateScienceBackgroundAndRedirect">
                                             ثبت و ادامه
                                         </button>
                                     </div>

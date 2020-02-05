@@ -8,7 +8,12 @@
                     <div class="col-md-12 col-xs-12">
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
-                                سوابق تحصیلی<span class="add-form fa fa-plus"></span>
+                                سوابق تحصیلی
+
+                                <span class="add-form fa fa-plus waves">
+                                    <span class="fa fa-plus" id="plus-wave"></span>
+                                </span>
+
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -258,7 +263,7 @@
                                 $documentData['documentName'] = $documentName;
                                 $documentData['documentPersianName'] = $documentPersianName;
                                 $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
-                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document' , $documentData);
+                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document', $documentData);
                                 ?>
 
                             </div>

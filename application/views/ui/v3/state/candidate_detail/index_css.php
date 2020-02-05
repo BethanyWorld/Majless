@@ -1,4 +1,7 @@
 <style>
+    .form-control[disabled]{
+        background-color: #fff;
+    }
     .padding-r-0{
         padding-right: 0px;
     }
@@ -243,7 +246,7 @@
     .EStates-textArea {
         resize: none;
         min-height: 135px;
-        margin-top: 40px;
+        margin-top: 10px;
     }
 
     .Price:after {
