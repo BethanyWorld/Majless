@@ -1,5 +1,7 @@
 <?php
-class ModelCandidate extends CI_Model{
+
+class ModelCandidate extends CI_Model
+{
     public function getCandidate($inputs)
     {
         $limit = $inputs['pageIndex'];
@@ -36,6 +38,7 @@ class ModelCandidate extends CI_Model{
         }
         return $result;
     }
+
     public function getJsonCandidate($inputs)
     {
         $this->db->select('*');
@@ -47,6 +50,7 @@ class ModelCandidate extends CI_Model{
         $query = $this->db->get()->result_array();
         return $query;
     }
+
     public function getInviteCandidate($inputs)
     {
         $limit = $inputs['pageIndex'];
@@ -73,6 +77,7 @@ class ModelCandidate extends CI_Model{
         }
         return $result;
     }
+
     public function getCandidateRolesByCandidateId($candidateId)
     {
         $this->db->select('*');
@@ -80,6 +85,7 @@ class ModelCandidate extends CI_Model{
         $this->db->where(array('CandidateId' => $candidateId));
         return $this->db->get()->result_array();
     }
+
     public function getCandidateByCandidateId($candidateId)
     {
         $this->db->select('*');
@@ -105,6 +111,7 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
     public function getCandidateByCandidateNationalCode($CandidateNationalCode)
     {
         /*$this->db->select('*');
@@ -126,6 +133,7 @@ class ModelCandidate extends CI_Model{
         $arr = array();
         return $arr;
     }
+
     public function doImportScores($inputs)
     {
         $this->db->trans_start();
@@ -155,6 +163,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function getResumeStatus($inputs)
     {
         $isComplete = "";
@@ -340,6 +349,7 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
     /* End For Candidate News  */
     public function getCandidateByStateId($stateId)
     {
@@ -356,6 +366,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateByStateIdAndCityId($stateId, $cityId)
     {
         $this->db->select('*');
@@ -370,6 +381,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateByStateName($stateName)
     {
         $this->db->select('*');
@@ -383,6 +395,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidatesByElectionId($inputs)
     {
         $this->db->select('*');
@@ -400,6 +413,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidatesSpecialByElectionId($inputs)
     {
         $this->db->select('*');
@@ -426,6 +440,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateSpecialByStateId($stateId)
     {
         $this->db->select('*');
@@ -439,6 +454,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     /* Candidate Panel */
     public function candidateHasOtherConditionToContinue($inputs)
     {
@@ -498,6 +514,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidateFirstStepExamByCandidateId($id)
     {
         $this->db->select('*');
@@ -517,6 +534,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateSecondStepExamByCandidateId($id)
     {
         $this->db->select('*');
@@ -536,6 +554,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateEvaluationExamByCandidateId($id)
     {
         $this->db->select('*');
@@ -555,7 +574,9 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-    public function doMarkCandidate($inputs){
+
+    public function doMarkCandidate($inputs)
+    {
         $UserArray = array(
             $inputs['inputGradeType'] => $inputs['inputGrade']
         );
@@ -581,6 +602,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doUpdateMarkCandidate($inputs)
     {
         $UserArray = array(
@@ -608,6 +630,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doChangeCandidatePassword($inputs){
         $UserArray = array('CandidatePassword' => md5($inputs['inputPassword']));
         $this->db->trans_start();
@@ -630,6 +653,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function candidateReserveExam($inputs)
     {
         $candidateId = $this->session->userdata('UserLoginInfo')['CandidateId'];
@@ -727,6 +751,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function doAcceptCandidateFirstExam($inputs)
     {
         $candidateInfo = $this->getCandidateByCandidateId($inputs['inputCandidateId']);
@@ -775,6 +800,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doRejectCandidateFirstExam($inputs)
     {
         $UserArray = array(
@@ -802,6 +828,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doAcceptCandidateSecondExam($inputs)
     {
         $userStatusArray = array(
@@ -844,6 +871,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doRejectCandidateSecondExam($inputs)
     {
         $UserArray = array(
@@ -871,6 +899,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doAcceptEvaluationExam($inputs)
     {
         $userStatusArray = array(
@@ -913,6 +942,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     public function doRejectEvaluationExam($inputs)
     {
         $UserArray = array(
@@ -938,6 +968,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function getCandidatePaymentHistoryCandidateId($id)
     {
         $this->db->select('*');
@@ -952,6 +983,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateLoginHistoryCandidateId($id)
     {
         $this->db->select('*');
@@ -967,6 +999,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function getCandidateSpecial($inputs)
     {
         $limit = $inputs['pageIndex'];
@@ -1000,6 +1033,7 @@ class ModelCandidate extends CI_Model{
         }
         return $result;
     }
+
     public function getCandidateSpecialByCandidateId($rowId)
     {
         $this->db->select('*');
@@ -1012,6 +1046,7 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
+
     public function doSpecialAdd($inputs)
     {
         $this->db->trans_start();
@@ -1043,6 +1078,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function doEditCandidateSpecial($inputs)
     {
         $this->db->trans_start();
@@ -1085,6 +1121,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function doIncreaseCandidateSpecialInviteCount($inputs)
     {
         $this->db->trans_start();
@@ -1108,6 +1145,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function doBindCandidateSpecial($inputs)
     {
         $userArray = array(
@@ -1115,7 +1153,7 @@ class ModelCandidate extends CI_Model{
         );
         $this->db->trans_start();
         $this->db->where('RowId', $inputs['inputRowId']);
-        $this->db->update('candidate_special' , $userArray);
+        $this->db->update('candidate_special', $userArray);
         $this->db->trans_complete();
         if ($this->db->trans_status() === FALSE) {
             $arr = array(
@@ -1133,6 +1171,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function doDeleteCandidateSpecial($inputs)
     {
         $this->db->trans_start();
@@ -1156,10 +1195,11 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function doToggleAcceptanceCandidateSpecial($inputs)
     {
         $sql = "UPDATE candidate_special SET CandidateHasAccepted = IF(CandidateHasAccepted=1, 0, 1) WHERE RowId = ?";
-        $this->db->query($sql , array($inputs['inputRowId']));
+        $this->db->query($sql, array($inputs['inputRowId']));
         $arr = array(
             'type' => "green",
             'content' => "تغییر وضعیت با موفقیت انجام شد",
@@ -1167,6 +1207,7 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
     public function doInviteSpecial($inputs)
     {
         $this->db->trans_start();
@@ -1198,6 +1239,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function doInviteDelete($inputs)
     {
         $this->db->trans_start();
@@ -1221,6 +1263,7 @@ class ModelCandidate extends CI_Model{
             return $arr;
         }
     }
+
     public function doInviteAccept($inputs)
     {
         $this->db->select('*');
@@ -1248,6 +1291,7 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
     public function doAssignBadge($inputs)
     {
         $arr = array();
@@ -1287,6 +1331,7 @@ class ModelCandidate extends CI_Model{
         }
         return $arr;
     }
+
     public function getCandidateBadgeByCandidateId($id, $type = 'Special'){
         $this->db->select('*');
         $this->db->from('candidate_badge');
@@ -1300,22 +1345,24 @@ class ModelCandidate extends CI_Model{
         }
         return array();
     }
-    public function updateScoreByBadges(){
+
+    public function updateScoreByBadges()
+    {
         $this->db->select('CandidateCode , CandidateRefId');
         $this->db->from('candidate_special');
         $candidates = $this->db->get()->result_array();
-        for($i=0;$i<count($candidates);$i++){
+        for ($i = 0; $i < count($candidates); $i++) {
             $this->db->select('*');
             $this->db->from('candidate_badge');
-            $this->db->where('CandidateId' , $candidates[$i]['CandidateCode']);
+            $this->db->where('CandidateId', $candidates[$i]['CandidateCode']);
             $candidates[$i]['badges'] = $this->db->get()->result_array();
             $candidates[$i]['badgesScore'] = 0;
         }
-        for($i=0;$i<count($candidates);$i++){
-            if(isset($candidates[$i]['badges'])){
+        for ($i = 0; $i < count($candidates); $i++) {
+            if (isset($candidates[$i]['badges'])) {
                 $candidateTotalBadgeScore = 0;
-                for($j=0;$j<count($candidates[$i]['badges']);$j++){
-                    switch($candidates[$i]['badges'][$j]['CandidateBadge']){
+                for ($j = 0; $j < count($candidates[$i]['badges']); $j++) {
+                    switch ($candidates[$i]['badges'][$j]['CandidateBadge']) {
                         case 'GoldenMerit':
                             $candidateTotalBadgeScore += 2000000;
                             break;
@@ -1337,8 +1384,8 @@ class ModelCandidate extends CI_Model{
                 $candidateTotalBadgeScore = 0;
             }
         }
-        for($i=0;$i<count($candidates);$i++){
-            $UserArray = array( 'CandidateTotalScore' => $candidates[$i]['badgesScore']);
+        for ($i = 0; $i < count($candidates); $i++) {
+            $UserArray = array('CandidateTotalScore' => $candidates[$i]['badgesScore']);
             $this->db->where('CandidateCode', $candidates[$i]['CandidateCode']);
             $this->db->update('candidate_special', $UserArray);
         }
@@ -1349,8 +1396,10 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
-    public function doChangeCandidateExamResultStatus($inputs){
-        $UserArray = array( 'CandidateExamResultStatus' => $inputs['inputCandidateExamResultStatus']);
+
+    public function doChangeCandidateExamResultStatus($inputs)
+    {
+        $UserArray = array('CandidateExamResultStatus' => $inputs['inputCandidateExamResultStatus']);
         $this->db->where('CandidateId', $inputs['inputCandidateId']);
         $this->db->update('candidate', $UserArray);
         $arr = array(
@@ -1360,8 +1409,10 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
-    public function doResumeForView($inputs){
-        $UserArray = array( 'CandidateResumeForViewStatus' => $inputs['inputResumeForView']);
+
+    public function doResumeForView($inputs)
+    {
+        $UserArray = array('CandidateResumeForViewStatus' => $inputs['inputResumeForView']);
         $this->db->where('CandidateId', $inputs['inputCandidateId']);
         $this->db->update('candidate', $UserArray);
         $arr = array(
@@ -1371,31 +1422,110 @@ class ModelCandidate extends CI_Model{
         );
         return $arr;
     }
+
     public function doCreateWordpressAuthor($inputs){
-        $this->db->trans_start();
-        $UserArray = array(
-            'CandidateId' => $inputs['inputCandidateId'],
-            'CandidateUserName' => $inputs['inputWordpressUserName'],
-            'CandidatePassword ' => $inputs['inputWordpressPassword'],
-            'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
-        );
-        $this->db->insert('candidate_wordpress_accounts', $UserArray);
-        $this->db->trans_complete();
-        if ($this->db->trans_status() === FALSE) {
-            $arr = array(
-                'type' => "red",
-                'content' => "درج حساب کاربری با مشکل مواجه شد",
-                'success' => false
+        $organizationDB = $this->load->database('blogDB', TRUE);
+
+
+        $this->db->select('*');
+        $this->db->from('candidate_wordpress_accounts');
+        $this->db->where(array('CandidateId' => $inputs['inputCandidateId']));
+        $this->db->order_by('RowId', 'DESC');
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            $this->db->trans_start();
+            //row Exists
+            $this->db->delete('candidate_wordpress_accounts', array(
+                'CandidateId' => $inputs['inputCandidateId']
+            ));
+            $UserArray = array(
+                'CandidateId' => $inputs['inputCandidateId'],
+                'CandidateUserName' => $inputs['inputWordpressUserName'],
+                'CandidatePassword ' => $inputs['inputWordpressPassword'],
+                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
-            return $arr;
-        } else {
-            $arr = array(
-                'type' => "green",
-                'content' => "درج حساب کاربری با موفقیت انجام شد",
-                'success' => true
+            $this->db->insert('candidate_wordpress_accounts', $UserArray);
+
+            $organizationDB->query("UPDATE `wp_users` SET user_login = ?,user_pass=?  WHERE user_candidate_id= ?", array($inputs['inputWordpressUserName'] , md5($inputs['inputWordpressPassword']) , $inputs['inputCandidateId']));
+
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $arr = array(
+                    'type' => "red",
+                    'content' => "بروزرسانی حساب کاربری با مشکل مواجه شد",
+                    'success' => false
+                );
+                return $arr;
+            }
+            else {
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی حساب کاربری با موفقیت انجام شد",
+                    'success' => true
+                );
+                return $arr;
+            }
+        }
+        else {
+            //Create New User
+            $this->db->trans_start();
+            /***************************************************************************/
+            $UserArray = array(
+                'CandidateId' => $inputs['inputCandidateId'],
+                'CandidateUserName' => $inputs['inputWordpressUserName'],
+                'CandidatePassword ' => $inputs['inputWordpressPassword'],
+                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
-            return $arr;
+            $this->db->insert('candidate_wordpress_accounts', $UserArray);
+            /***************************************************************************/
+
+            $UserArray = array(
+                'user_login' => $inputs['inputWordpressUserName'],
+                'user_pass' => md5($inputs['inputWordpressPassword']),
+                'user_nicename' => $inputs['FullName'],
+                'user_email' => 'info@mail.com',
+                'user_status' => '0',
+                'user_candidate_id' => $inputs['inputCandidateId']
+            );
+            $organizationDB->insert('wp_users', $UserArray);
+            $userID = $organizationDB->query("Select max(`ID`) as IDs FROM `wp_users` ")->result_array()[0]['IDs'];
+            /***************************************************************************/
+            $UserArray = array(
+                'umeta_id' => NULL,
+                'user_id' => $userID,
+                'meta_key' => 'wp_capabilities',
+                'meta_value' => 'a:1:{s:6:"author";b:1;}'
+            );
+            $organizationDB->insert('wp_usermeta', $UserArray);
+            /****************************************************************************/
+            $UserArray = array(
+                'umeta_id' => NULL,
+                'user_id' => $userID,
+                'meta_key' => 'wp_user_level',
+                'meta_value' => 2
+            );
+            $organizationDB->insert('wp_usermeta', $UserArray);
+            /****************************************************************************/
+
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $arr = array(
+                    'type' => "red",
+                    'content' => "بروزرسانی حساب کاربری با مشکل مواجه شد",
+                    'success' => false
+                );
+                return $arr;
+            } else {
+                $arr = array(
+                    'type' => "green",
+                    'content' => "بروزرسانی حساب کاربری با موفقیت انجام شد",
+                    'success' => true
+                );
+                return $arr;
+            }
         }
     }
 }
+
 ?>

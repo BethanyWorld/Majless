@@ -570,8 +570,7 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doChangeCandidateExamResultStatus($inputs);
         echo json_encode($result);
     }
-    public function doCreateWordpressAuthor()
-    {
+    public function doCreateWordpressAuthor(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return strip_tags($v);
@@ -582,6 +581,8 @@ class Candidate extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
+        $candidateInfo = $this->ModelCandidate->getCandidateByCandidateId($inputs['inputCandidateId']);
+        $inputs['FullName'] = $candidateInfo['CandidateFirstName']. " ".$candidateInfo['CandidateLastName'];
         $result = $this->ModelCandidate->doCreateWordpressAuthor($inputs);
         echo json_encode($result);
     }
