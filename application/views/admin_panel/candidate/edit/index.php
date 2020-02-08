@@ -154,15 +154,25 @@
                                             </div>
                                             <div class="panel-body">
                                                 <div class="col-xs-12">
+                                                    <br>
                                                     <p>
-                                                        لطفا با توجه به اطلاعات و مدارک رزومه را تعیین وضعیت نمائید
+                                                        لطفا با توجه به اطلاعات و مدارک رزومه، وضعیت نمایش رزومه را تعیین وضعیت نمائید
                                                     </p>
                                                     <p>
                                                         وضعیت فعلی:
                                                         <?php resumeForViewPipe($candidate['CandidateResumeForViewStatus']); ?>
                                                     </p>
-                                                    <button class="btn btn-success" id="acceptResumeForView">تایید رزومه</button>
-                                                    <button class="btn btn-danger" id="rejectResumeForView">رد رزومه</button>
+                                                    <button class="btn btn-success" id="acceptResumeForView">نمایش رزومه</button>
+                                                    <button class="btn btn-danger" id="rejectResumeForView">عدم نمایش رزومه</button>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <br>
+                                                    <p>
+                                                       نمره رزومه را وارد کنید
+                                                    </p>
+                                                    <label>نمره رزومه</label>
+                                                    <input type="text" id="inputCandidateResumeScore" value="<?php echo $candidate['CandidateResumeScore'] ?>" />
+                                                    <button class="btn btn-success" id="doCandidateResumeScore">ثبت نمره</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1034,7 +1044,7 @@
                                             </button>
                                         </div>
 
-                                        <div class="col-xs-12 col-md-4">
+                                        <div class="col-xs-12">
                                             <form class="form-horizontal">
                                                 <div class="form-group">
                                                     <label for="inputGrade" class="col-sm-4 control-label">
@@ -1058,7 +1068,7 @@
                                             </form>
                                         </div>
                                         <!-- Sign Score -->
-                                        <div class="col-xs-12 col-md-4">
+                                        <div class="col-xs-12">
                                             <form class="form-horizontal">
                                                 <div class="form-group">
                                                     <label for="inputSignGrade" class="col-sm-4 control-label">
@@ -1083,7 +1093,7 @@
                                             </form>
                                         </div>
                                         <!-- Records Score -->
-                                        <div class="col-xs-12 col-md-4">
+                                        <div class="col-xs-12">
                                             <form class="form-horizontal">
                                                 <div class="form-group">
                                                     <label for="inputGrade" class="col-sm-4 control-label">
@@ -1295,13 +1305,16 @@
                                             </form>
                                         </div>
                                         <div class="col-xs-12">
+
                                             <form class="form-horizontal">
                                                 <h4>حساب کاربری وردپرس</h4>
                                                 <label>نام کاربری</label>
                                                 <input type="text"
+                                                       value="<?php echo $candidateWordpress['CandidateUserName']; ?>"
                                                        id="inputWordpressUserName" name="inputWordPressUserName"/>
                                                 <label>رمز عبور</label>
                                                 <input type="text"
+                                                       value="<?php echo $candidateWordpress['CandidatePassword']; ?>"
                                                        id="inputWordpressPassword" name="inputWordpressPassword"/>
                                                 <button
                                                         id="doCreateWordpressAuthor"

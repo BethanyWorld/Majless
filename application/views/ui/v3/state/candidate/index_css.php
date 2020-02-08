@@ -1348,7 +1348,7 @@
     }
 
     .tabPanel-widget > div {
-        background: #f0f0f0;
+        background: #fff;
         padding: 1em;
     }
 

@@ -876,6 +876,12 @@ class ModelProfile extends CI_Model{
         return $arr;
         
     }
+    public function getCandidateWordpressAccount($id){
+        $this->db->select('*');
+        $this->db->from('candidate_wordpress_accounts');
+        $this->db->where('CandidateId',$id);
+        return $this->db->get()->result_array();
+    }
     public function getCandidateDocuments($id){
         $data = $this->db->select('*')
             ->from('candidate_documents')

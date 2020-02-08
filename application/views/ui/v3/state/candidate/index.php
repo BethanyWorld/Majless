@@ -54,32 +54,13 @@
         <div id="main" class="hidden-lg hidden-md">
             <span class="open-sidebar new-style-button-xs">جستجو پیشرفته</span>
         </div>
-
-
         <div class="tabPanel-widget">
-
-
-            <label for="tab-2" tabindex="0"></label>
-            <input id="tab-2" type="radio" name="tabs" checked="true" aria-hidden="true">
-            <h2> شایستگی</h2>
             <div>
                 <section class="mp-section">
                     <div class="row candidate-container candidate-detail-parent-div">
 
                     </div>
                 </section>
-            </div>
-
-
-            <label for="tab-1" tabindex="0"></label>
-            <input id="tab-1" type="radio" name="tabs" aria-hidden="true">
-            <h2>تست</h2>
-            <div>
-                <p>
-                    همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم. شما نیز با انتخاب گزینه
-                    "دعوت به جنش از ما" و انتشار پوسترهای دعوت به چالش در شبکه های اجتماعی نامزد حوزه انتخابیه خود را به
-                    این چالش دعوت کنید.
-                </p>
             </div>
         </div>
 
@@ -283,22 +264,6 @@
                             </label>
                         </li>
                     <?php } ?>
-                </ul>
-                <ul class="list-group" style="padding: 0;">
-                    <li class="list-group-item">
-                        <input
-                                type="checkbox"
-                                id="inputAcceptanceStatus"
-                                class="inputElectionId inputAcceptanceStatus" name="inputElectionId"
-                                value="0"/>
-                        <label for="inputAcceptanceStatus" class="check">
-                            <svg width="20px" height="20px" viewBox="0 0 18 18">
-                                <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
-                                <polyline points="1 9 7 14 15 4"></polyline>
-                            </svg>
-                            <span style="color: #c38c21;">رد صلاحیت شده</span>
-                        </label>
-                    </li>
                 </ul>
             </div>
         </div>

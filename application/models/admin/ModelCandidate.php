@@ -321,6 +321,7 @@ class ModelCandidate extends CI_Model{
 
 
     }
+
     /* For Candidate News */
     public function getCandidateCandidatePostByCandidateId($candidateId)
     {
@@ -959,6 +960,7 @@ class ModelCandidate extends CI_Model{
             array('CandidateId' => $id)
         );
         $this->db->order_by('RowId', 'DESC');
+        $this->db->limit(5);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result_array();

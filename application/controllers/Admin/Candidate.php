@@ -57,6 +57,7 @@ class Candidate extends CI_Controller{
         $data['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($candidateId);
         $data['candidateSkills'] = $this->ModelProfile->getCandidateSkillsByCandidateId($candidateId);
         $data['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($candidateId);
+        $data['candidateWordpress'] = $this->ModelProfile->getCandidateWordpressAccount($candidateId)[0];
 
 
         $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);

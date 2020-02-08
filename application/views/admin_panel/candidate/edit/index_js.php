@@ -43,6 +43,11 @@
             $inputGrade = $.trim($("#inputRecordsGrade").val());
             doMark($inputCandidateId , $inputGrade , 'CandidateRecordsScore');
         });
+        $("#doCandidateResumeScore").click(function () {
+            $inputCandidateId = $.trim($("#inputCandidateId").val());
+            $inputCandidateResumeScore = $.trim($("#inputCandidateResumeScore").val());
+            doMark($inputCandidateId , $inputCandidateResumeScore , 'CandidateResumeScore');
+        });
         $("#doRolesGrading").click(function () {
             $inputCandidateId = $.trim($("#inputCandidateId").val());
             $gradeArray = [];
