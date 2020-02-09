@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class State extends CI_Controller{
-
     public function __construct(){
         parent::__construct();
         $this->load->model('ui/ModelQuery');
@@ -108,6 +107,7 @@ class State extends CI_Controller{
         $this->load->view('ui/v3/static/footer', $data);
     }
     public function candidate_detail($candidateId, $stateId, $stateName){
+        $organizationDB = $this->load->database('blogDB', TRUE);
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
         $data['CSRF'] = $CSRF;
@@ -134,6 +134,14 @@ class State extends CI_Controller{
         $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
         $data['promises'] = $this->ModelProfile->getCandidateElectionPromisesByCandidateId($candidateId);
         $data['finance'] = $this->ModelProfile->getCandidateFinanceByCandidateId($candidateId);
+        $data['candidateWordpress'] = $this->ModelProfile->getCandidateWordpressAccount($candidateId);
+
+        $wordpressUserId = 0;
+        if(count($data['candidateWordpress'] > 0)){
+            $wordpressUserId = $data['candidateWordpress'][0]['CandidateWordpressUserId'];
+        }
+        $result = $organizationDB->query("SELECT SQL_CALC_FOUND_ROWS wp_posts.post_title,wp_posts.ID FROM wp_posts WHERE 1=1 AND wp_posts.post_author IN (?) AND wp_posts.post_type = 'post' AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'acf-disabled') ORDER BY wp_posts.post_date ASC LIMIT 0, 10" , array($wordpressUserId))->result_array();
+        $data['wordpressPosts'] = $result;
         $data['stateName'] = $stateName;
         $data['stateId'] = $stateId;
         $data['countries'] = $this->ModelCountry->getCountryList();

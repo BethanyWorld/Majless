@@ -427,7 +427,7 @@ class ModelCandidate extends CI_Model
         if (isset($inputs['inputFullName']) && !empty($inputs['inputFullName'])) {
             $this->db->like('CandidateFullName', $inputs['inputFullName']);
         }
-        $this->db->order_by('CandidateTotalScore', 'DESC');
+        //$this->db->order_by('CandidateTotalScore', 'DESC');
         $this->db->order_by('CandidateFullName', 'ASC');
         $this->db->where(array(
             'CandidateStateId' => $inputs['inputStateId'],
@@ -1424,8 +1424,8 @@ class ModelCandidate extends CI_Model
     }
 
     public function doCreateWordpressAuthor($inputs){
+        $this->load->helper('string');
         $organizationDB = $this->load->database('blogDB', TRUE);
-
 
         $this->db->select('*');
         $this->db->from('candidate_wordpress_accounts');
@@ -1435,20 +1435,14 @@ class ModelCandidate extends CI_Model
 
         if ($query->num_rows() > 0) {
             $this->db->trans_start();
-            //row Exists
-            $this->db->delete('candidate_wordpress_accounts', array(
-                'CandidateId' => $inputs['inputCandidateId']
-            ));
             $UserArray = array(
-                'CandidateId' => $inputs['inputCandidateId'],
                 'CandidateUserName' => $inputs['inputWordpressUserName'],
-                'CandidatePassword ' => $inputs['inputWordpressPassword'],
+                'CandidatePassword' => $inputs['inputWordpressPassword'],
                 'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
-            $this->db->insert('candidate_wordpress_accounts', $UserArray);
-
+            $this->db->where('CandidateId' , $inputs['inputCandidateId']);
+            $this->db->update('candidate_wordpress_accounts', $UserArray);
             $organizationDB->query("UPDATE `wp_users` SET user_login = ?,user_pass=?  WHERE user_candidate_id= ?", array($inputs['inputWordpressUserName'] , md5($inputs['inputWordpressPassword']) , $inputs['inputCandidateId']));
-
             $this->db->trans_complete();
             if ($this->db->trans_status() === FALSE) {
                 $arr = array(
@@ -1472,19 +1466,10 @@ class ModelCandidate extends CI_Model
             $this->db->trans_start();
             /***************************************************************************/
             $UserArray = array(
-                'CandidateId' => $inputs['inputCandidateId'],
-                'CandidateUserName' => $inputs['inputWordpressUserName'],
-                'CandidatePassword ' => $inputs['inputWordpressPassword'],
-                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
-            );
-            $this->db->insert('candidate_wordpress_accounts', $UserArray);
-            /***************************************************************************/
-
-            $UserArray = array(
                 'user_login' => $inputs['inputWordpressUserName'],
                 'user_pass' => md5($inputs['inputWordpressPassword']),
                 'user_nicename' => $inputs['FullName'],
-                'user_email' => 'info@mail.com',
+                'user_email' => random_string('alpha', 16).'@mail.com',
                 'user_status' => '0',
                 'user_candidate_id' => $inputs['inputCandidateId']
             );
@@ -1507,6 +1492,15 @@ class ModelCandidate extends CI_Model
             );
             $organizationDB->insert('wp_usermeta', $UserArray);
             /****************************************************************************/
+            /***************************************************************************/
+            $UserArray = array(
+                'CandidateId' => $inputs['inputCandidateId'],
+                'CandidateUserName' => $inputs['inputWordpressUserName'],
+                'CandidatePassword ' => $inputs['inputWordpressPassword'],
+                'CandidateWordpressUserId ' => $userID,
+                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+            );
+            $this->db->insert('candidate_wordpress_accounts', $UserArray);
 
             $this->db->trans_complete();
             if ($this->db->trans_status() === FALSE) {

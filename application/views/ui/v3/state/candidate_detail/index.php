@@ -6,7 +6,6 @@
 </h1>
 <div ng-app="myApp" ng-controller="myCtrl">
     <div class="container container-wrapper">
-
         <div class="col-md-3 col-xs-12 pull-right">
             <div class="panel panel-default">
                 <div class="panel-body padding-0">
@@ -109,6 +108,24 @@
                         </li>
                     </ul>
                 </div>
+                <div class="col-md-12 padding-0">
+                    <h4 style="text-align: center; background: #095644;color: #fff;padding: 6px 2px;font-size: 14px;">رویداد های مرتبط</h4>
+                    <?php
+                    foreach ($wordpressPosts as $item) { ?>
+                        <p>
+                            <a style="display: inline-block;width: 100%;color: #095644;font-weight: 900;padding: 5px 8px;line-height: 30px;"
+                               target="_blank" href="<?php echo base_url('blog/?p=' . $item['ID']); ?>">
+                                <?php echo $item['post_title']; ?>
+                            </a>
+                        </p>
+                    <?php } ?><?php
+                    if (count($wordpressPosts) <=0) { ?>
+                        <p>
+                            موردی یافت نشد
+                        </p>
+                    <?php } ?>
+                </div>
+
             </div>
         </div>
         <div id="container-wrapper" class="row col-xs-12 col-md-9 pull-left responsive-style-auto-margin">
@@ -571,7 +588,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.RealEStates.hasSelfItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.RealEStates.hasSelfItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.RealEStates"
                                                                               id="form-RealEstate">
                                                                             <span class="divider"></span>
@@ -612,9 +630,9 @@
                                                                                         نحوه مالکیت
                                                                                     </label>
                                                                                     <select
-                                                                                        class="form-control form-control-lg"
-                                                                                        name="inputRealEstateOwnershipType"
-                                                                                        id="inputRealEstateOwnershipType">
+                                                                                            class="form-control form-control-lg"
+                                                                                            name="inputRealEstateOwnershipType"
+                                                                                            id="inputRealEstateOwnershipType">
                                                                                         <option>
                                                                                             {{item.RealEstateOwnershipType
                                                                                             | bindEnum}}
@@ -625,9 +643,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                                     <label for="inputRealEstateCountryId">کشور</label>
                                                                                     <select
-                                                                                        class="form-control form-control-lg"
-                                                                                        name="inputRealEstateCountryId"
-                                                                                        id="inputRealEstateCountryId">
+                                                                                            class="form-control form-control-lg"
+                                                                                            name="inputRealEstateCountryId"
+                                                                                            id="inputRealEstateCountryId">
                                                                                         <option>
                                                                                             {{item.RealEstateCountryId |
                                                                                             bindCountry}}
@@ -637,9 +655,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                                                     <label for="inputRealEstateStateId">استان</label>
                                                                                     <select
-                                                                                        class="form-control form-control-lg"
-                                                                                        name="inputRealEstateStateId"
-                                                                                        id="inputRealEstateStateId">
+                                                                                            class="form-control form-control-lg"
+                                                                                            name="inputRealEstateStateId"
+                                                                                            id="inputRealEstateStateId">
                                                                                         <option>
                                                                                             {{item.RealEstateStateId |
                                                                                             bindState}}
@@ -749,12 +767,12 @@
                                                                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateAddress">آدرس</label>
                                                                                     <input
-                                                                                        value="{{item.RealEstateAddress}}"
-                                                                                        id="inputRealEstateAddress"
-                                                                                        type="text"
-                                                                                        name="inputRealEstateAddress"
-                                                                                        class="input-validate validate valid"
-                                                                                        placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                                            value="{{item.RealEstateAddress}}"
+                                                                                            id="inputRealEstateAddress"
+                                                                                            type="text"
+                                                                                            name="inputRealEstateAddress"
+                                                                                            class="input-validate validate valid"
+                                                                                            placeholder="نام خیابان اصلی / محله / منطقه">
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -774,7 +792,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Vehicle.hasSelfItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Vehicle.hasSelfItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Vehicle"
                                                                               id="form-Vehicle">
                                                                             <span class="divider"></span>
@@ -784,7 +803,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleType">
                                                                                         نوع وسیله نقلیه<span
-                                                                                            class="text-danger"></span>
+                                                                                                class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleType"
@@ -798,7 +817,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
                                                                                         سال شروع مالکیت<span
-                                                                                            class="text-danger"></span>
+                                                                                                class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleOwnershipDate"
@@ -878,13 +897,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.VehiclePortion}}"
-                                                                                        type="number"
-                                                                                        name="inputVehiclePortion"
-                                                                                        id="inputVehiclePortion"
-                                                                                        class="form-control"
-                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                        min="0" max="6"/>
+                                                                                            value="{{item.VehiclePortion}}"
+                                                                                            type="number"
+                                                                                            name="inputVehiclePortion"
+                                                                                            id="inputVehiclePortion"
+                                                                                            class="form-control"
+                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                            min="0" max="6"/>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -904,7 +923,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Invest.hasSelfItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Invest.hasSelfItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Invest"
                                                                               id="form-Invest">
                                                                             <span class="divider"></span>
@@ -915,11 +935,11 @@
                                                                                         نام شرکت / موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.InvestTitle}}"
-                                                                                        id="inputInvestTitle"
-                                                                                        type="text"
-                                                                                        name="inputInvestTitle"
-                                                                                        placeholder="نام شرکت - موسسه - پروژه ">
+                                                                                            value="{{item.InvestTitle}}"
+                                                                                            id="inputInvestTitle"
+                                                                                            type="text"
+                                                                                            name="inputInvestTitle"
+                                                                                            placeholder="نام شرکت - موسسه - پروژه ">
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestDate">
@@ -1014,7 +1034,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.BankAccount.hasSelfItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.BankAccount.hasSelfItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.BankAccount"
                                                                               id="form-BankAccount">
                                                                             <span class="divider"></span>
@@ -1025,11 +1046,11 @@
                                                                                         عنوان بانک یا موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.BankAccountTitle}}"
-                                                                                        id="inputBankAccountTitle"
-                                                                                        type="text"
-                                                                                        name="inputBankAccountTitle"
-                                                                                        placeholder="عنوان بانک یا موسسه ">
+                                                                                            value="{{item.BankAccountTitle}}"
+                                                                                            id="inputBankAccountTitle"
+                                                                                            type="text"
+                                                                                            name="inputBankAccountTitle"
+                                                                                            placeholder="عنوان بانک یا موسسه ">
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountPrice">
@@ -1082,7 +1103,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.CreditDebtor.hasSelfItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.CreditDebtor.hasSelfItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.CreditDebtor"
                                                                               id="form-Credit-Debtor">
                                                                             <span class="divider"></span>
@@ -1159,7 +1181,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Goods.hasSelfItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Goods.hasSelfItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Goods"
                                                                               id="form-Goods">
                                                                             <span class="divider"></span>
@@ -1199,12 +1222,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="item.GoodsCount"
-                                                                                        type="text"
-                                                                                        name="inputGoodsCount"
-                                                                                        id="inputGoodsCount"
-                                                                                        class="form-control"
-                                                                                        placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                                            value="item.GoodsCount"
+                                                                                            type="text"
+                                                                                            name="inputGoodsCount"
+                                                                                            id="inputGoodsCount"
+                                                                                            class="form-control"
+                                                                                            placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
@@ -1259,13 +1282,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.GoodsOwnershipPercent}}"
-                                                                                        type="number"
-                                                                                        name="inputGoodsOwnershipPercent"
-                                                                                        id="inputGoodsOwnershipPercent"
-                                                                                        class="form-control"
-                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                        min="0" max="6"/>
+                                                                                            value="{{item.GoodsOwnershipPercent}}"
+                                                                                            type="number"
+                                                                                            name="inputGoodsOwnershipPercent"
+                                                                                            id="inputGoodsOwnershipPercent"
+                                                                                            class="form-control"
+                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                            min="0" max="6"/>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipType">
@@ -1299,7 +1322,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Fee.hasSelfItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Fee.hasSelfItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Fee"
                                                                               id="form-Fee">
                                                                             <span class="divider"></span>
@@ -1337,12 +1361,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.FeePercent}}"
-                                                                                        type="number"
-                                                                                        name="inputFeePercent"
-                                                                                        id="inputFeePercent"
-                                                                                        class="form-control"
-                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                            value="{{item.FeePercent}}"
+                                                                                            type="number"
+                                                                                            name="inputFeePercent"
+                                                                                            id="inputFeePercent"
+                                                                                            class="form-control"
+                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                 </div>
                                                                                 <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
@@ -1387,7 +1411,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Income.hasSelfItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Income.hasSelfItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Income"
                                                                               id="form-AverageMonthIncome">
                                                                             <span class="divider"></span>
@@ -1432,7 +1457,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Election.hasSelfItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Election.hasSelfItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Election"
                                                                               id="form-Election">
                                                                             <span class="divider"></span>
@@ -1581,7 +1607,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.RealEStates.hasWifeItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.RealEStates.hasWifeItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.RealEStates"
                                                                               id="form-RealEstate">
                                                                             <span class="divider"></span>
@@ -1622,9 +1649,9 @@
                                                                                         نحوه مالکیت
                                                                                     </label>
                                                                                     <select
-                                                                                        class="form-control form-control-lg"
-                                                                                        name="inputRealEstateOwnershipType"
-                                                                                        id="inputRealEstateOwnershipType">
+                                                                                            class="form-control form-control-lg"
+                                                                                            name="inputRealEstateOwnershipType"
+                                                                                            id="inputRealEstateOwnershipType">
                                                                                         <option>
                                                                                             {{item.RealEstateOwnershipType
                                                                                             | bindEnum}}
@@ -1635,9 +1662,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                                     <label for="inputRealEstateCountryId">کشور</label>
                                                                                     <select
-                                                                                        class="form-control form-control-lg"
-                                                                                        name="inputRealEstateCountryId"
-                                                                                        id="inputRealEstateCountryId">
+                                                                                            class="form-control form-control-lg"
+                                                                                            name="inputRealEstateCountryId"
+                                                                                            id="inputRealEstateCountryId">
                                                                                         <option>
                                                                                             {{item.RealEstateCountryId |
                                                                                             bindCountry}}
@@ -1647,9 +1674,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                                                     <label for="inputRealEstateStateId">استان</label>
                                                                                     <select
-                                                                                        class="form-control form-control-lg"
-                                                                                        name="inputRealEstateStateId"
-                                                                                        id="inputRealEstateStateId">
+                                                                                            class="form-control form-control-lg"
+                                                                                            name="inputRealEstateStateId"
+                                                                                            id="inputRealEstateStateId">
                                                                                         <option>
                                                                                             {{item.RealEstateStateId |
                                                                                             bindState}}
@@ -1759,12 +1786,12 @@
                                                                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateAddress">آدرس</label>
                                                                                     <input
-                                                                                        value="{{item.RealEstateAddress}}"
-                                                                                        id="inputRealEstateAddress"
-                                                                                        type="text"
-                                                                                        name="inputRealEstateAddress"
-                                                                                        class="input-validate validate valid"
-                                                                                        placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                                            value="{{item.RealEstateAddress}}"
+                                                                                            id="inputRealEstateAddress"
+                                                                                            type="text"
+                                                                                            name="inputRealEstateAddress"
+                                                                                            class="input-validate validate valid"
+                                                                                            placeholder="نام خیابان اصلی / محله / منطقه">
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -1784,7 +1811,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Vehicle.hasWifeItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Vehicle.hasWifeItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Vehicle"
                                                                               id="form-Vehicle">
                                                                             <span class="divider"></span>
@@ -1794,7 +1822,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleType">
                                                                                         نوع وسیله نقلیه<span
-                                                                                            class="text-danger"></span>
+                                                                                                class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleType"
@@ -1808,7 +1836,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
                                                                                         سال شروع مالکیت<span
-                                                                                            class="text-danger"></span>
+                                                                                                class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleOwnershipDate"
@@ -1888,13 +1916,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.VehiclePortion}}"
-                                                                                        type="number"
-                                                                                        name="inputVehiclePortion"
-                                                                                        id="inputVehiclePortion"
-                                                                                        class="form-control"
-                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                        min="0" max="6"/>
+                                                                                            value="{{item.VehiclePortion}}"
+                                                                                            type="number"
+                                                                                            name="inputVehiclePortion"
+                                                                                            id="inputVehiclePortion"
+                                                                                            class="form-control"
+                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                            min="0" max="6"/>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -1914,7 +1942,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Invest.hasWifeItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Invest.hasWifeItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Invest"
                                                                               id="form-Invest">
                                                                             <span class="divider"></span>
@@ -1925,11 +1954,11 @@
                                                                                         نام شرکت / موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.InvestTitle}}"
-                                                                                        id="inputInvestTitle"
-                                                                                        type="text"
-                                                                                        name="inputInvestTitle"
-                                                                                        placeholder="نام شرکت - موسسه - پروژه ">
+                                                                                            value="{{item.InvestTitle}}"
+                                                                                            id="inputInvestTitle"
+                                                                                            type="text"
+                                                                                            name="inputInvestTitle"
+                                                                                            placeholder="نام شرکت - موسسه - پروژه ">
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestDate">
@@ -2024,7 +2053,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.BankAccount.hasWifeItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.BankAccount.hasWifeItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.BankAccount"
                                                                               id="form-BankAccount">
                                                                             <span class="divider"></span>
@@ -2035,11 +2065,11 @@
                                                                                         عنوان بانک یا موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.BankAccountTitle}}"
-                                                                                        id="inputBankAccountTitle"
-                                                                                        type="text"
-                                                                                        name="inputBankAccountTitle"
-                                                                                        placeholder="عنوان بانک یا موسسه ">
+                                                                                            value="{{item.BankAccountTitle}}"
+                                                                                            id="inputBankAccountTitle"
+                                                                                            type="text"
+                                                                                            name="inputBankAccountTitle"
+                                                                                            placeholder="عنوان بانک یا موسسه ">
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountPrice">
@@ -2092,7 +2122,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.CreditDebtor.hasWifeItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.CreditDebtor.hasWifeItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.CreditDebtor"
                                                                               id="form-Credit-Debtor">
                                                                             <span class="divider"></span>
@@ -2168,7 +2199,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Goods.hasWifeItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Goods.hasWifeItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Goods"
                                                                               id="form-Goods">
                                                                             <span class="divider"></span>
@@ -2208,12 +2240,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="item.GoodsCount"
-                                                                                        type="text"
-                                                                                        name="inputGoodsCount"
-                                                                                        id="inputGoodsCount"
-                                                                                        class="form-control"
-                                                                                        placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                                            value="item.GoodsCount"
+                                                                                            type="text"
+                                                                                            name="inputGoodsCount"
+                                                                                            id="inputGoodsCount"
+                                                                                            class="form-control"
+                                                                                            placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
@@ -2268,13 +2300,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.GoodsOwnershipPercent}}"
-                                                                                        type="number"
-                                                                                        name="inputGoodsOwnershipPercent"
-                                                                                        id="inputGoodsOwnershipPercent"
-                                                                                        class="form-control"
-                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                        min="0" max="6"/>
+                                                                                            value="{{item.GoodsOwnershipPercent}}"
+                                                                                            type="number"
+                                                                                            name="inputGoodsOwnershipPercent"
+                                                                                            id="inputGoodsOwnershipPercent"
+                                                                                            class="form-control"
+                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                            min="0" max="6"/>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipType">
@@ -2308,7 +2340,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Fee.hasWifeItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Fee.hasWifeItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Fee"
                                                                               id="form-Fee">
                                                                             <span class="divider"></span>
@@ -2346,12 +2379,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.FeePercent}}"
-                                                                                        type="number"
-                                                                                        name="inputFeePercent"
-                                                                                        id="inputFeePercent"
-                                                                                        class="form-control"
-                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                            value="{{item.FeePercent}}"
+                                                                                            type="number"
+                                                                                            name="inputFeePercent"
+                                                                                            id="inputFeePercent"
+                                                                                            class="form-control"
+                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                 </div>
                                                                                 <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
@@ -2396,7 +2429,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Income.hasWifeItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Income.hasWifeItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Income"
                                                                               id="form-AverageMonthIncome">
                                                                             <span class="divider"></span>
@@ -2441,7 +2475,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Election.hasWifeItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Election.hasWifeItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Election"
                                                                               id="form-Election">
                                                                             <span class="divider"></span>
@@ -2590,7 +2625,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.RealEStates.hasChildItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.RealEStates.hasChildItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.RealEStates"
                                                                               id="form-RealEstate">
                                                                             <span class="divider"></span>
@@ -2631,9 +2667,9 @@
                                                                                         نحوه مالکیت
                                                                                     </label>
                                                                                     <select
-                                                                                        class="form-control form-control-lg"
-                                                                                        name="inputRealEstateOwnershipType"
-                                                                                        id="inputRealEstateOwnershipType">
+                                                                                            class="form-control form-control-lg"
+                                                                                            name="inputRealEstateOwnershipType"
+                                                                                            id="inputRealEstateOwnershipType">
                                                                                         <option>
                                                                                             {{item.RealEstateOwnershipType
                                                                                             | bindEnum}}
@@ -2644,9 +2680,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                                     <label for="inputRealEstateCountryId">کشور</label>
                                                                                     <select
-                                                                                        class="form-control form-control-lg"
-                                                                                        name="inputRealEstateCountryId"
-                                                                                        id="inputRealEstateCountryId">
+                                                                                            class="form-control form-control-lg"
+                                                                                            name="inputRealEstateCountryId"
+                                                                                            id="inputRealEstateCountryId">
                                                                                         <option>
                                                                                             {{item.RealEstateCountryId |
                                                                                             bindCountry}}
@@ -2656,9 +2692,9 @@
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                                                     <label for="inputRealEstateStateId">استان</label>
                                                                                     <select
-                                                                                        class="form-control form-control-lg"
-                                                                                        name="inputRealEstateStateId"
-                                                                                        id="inputRealEstateStateId">
+                                                                                            class="form-control form-control-lg"
+                                                                                            name="inputRealEstateStateId"
+                                                                                            id="inputRealEstateStateId">
                                                                                         <option>
                                                                                             {{item.RealEstateStateId |
                                                                                             bindState}}
@@ -2768,12 +2804,12 @@
                                                                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateAddress">آدرس</label>
                                                                                     <input
-                                                                                        value="{{item.RealEstateAddress}}"
-                                                                                        id="inputRealEstateAddress"
-                                                                                        type="text"
-                                                                                        name="inputRealEstateAddress"
-                                                                                        class="input-validate validate valid"
-                                                                                        placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                                            value="{{item.RealEstateAddress}}"
+                                                                                            id="inputRealEstateAddress"
+                                                                                            type="text"
+                                                                                            name="inputRealEstateAddress"
+                                                                                            class="input-validate validate valid"
+                                                                                            placeholder="نام خیابان اصلی / محله / منطقه">
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -2793,7 +2829,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Vehicle.hasChildItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Vehicle.hasChildItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Vehicle"
                                                                               id="form-Vehicle">
                                                                             <span class="divider"></span>
@@ -2803,7 +2840,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleType">
                                                                                         نوع وسیله نقلیه<span
-                                                                                            class="text-danger"></span>
+                                                                                                class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleType"
@@ -2817,7 +2854,7 @@
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
                                                                                         سال شروع مالکیت<span
-                                                                                            class="text-danger"></span>
+                                                                                                class="text-danger"></span>
                                                                                     </label>
                                                                                     <select class="form-control form-control-lg"
                                                                                             name="inputVehicleOwnershipDate"
@@ -2897,13 +2934,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.VehiclePortion}}"
-                                                                                        type="number"
-                                                                                        name="inputVehiclePortion"
-                                                                                        id="inputVehiclePortion"
-                                                                                        class="form-control"
-                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                        min="0" max="6"/>
+                                                                                            value="{{item.VehiclePortion}}"
+                                                                                            type="number"
+                                                                                            name="inputVehiclePortion"
+                                                                                            id="inputVehiclePortion"
+                                                                                            class="form-control"
+                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                            min="0" max="6"/>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -2923,7 +2960,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Invest.hasChildItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Invest.hasChildItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Invest"
                                                                               id="form-Invest">
                                                                             <span class="divider"></span>
@@ -2934,11 +2972,11 @@
                                                                                         نام شرکت / موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.InvestTitle}}"
-                                                                                        id="inputInvestTitle"
-                                                                                        type="text"
-                                                                                        name="inputInvestTitle"
-                                                                                        placeholder="نام شرکت - موسسه - پروژه ">
+                                                                                            value="{{item.InvestTitle}}"
+                                                                                            id="inputInvestTitle"
+                                                                                            type="text"
+                                                                                            name="inputInvestTitle"
+                                                                                            placeholder="نام شرکت - موسسه - پروژه ">
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestDate">
@@ -3033,7 +3071,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.BankAccount.hasChildItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.BankAccount.hasChildItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.BankAccount"
                                                                               id="form-BankAccount">
                                                                             <span class="divider"></span>
@@ -3044,11 +3083,11 @@
                                                                                         عنوان بانک یا موسسه
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.BankAccountTitle}}"
-                                                                                        id="inputBankAccountTitle"
-                                                                                        type="text"
-                                                                                        name="inputBankAccountTitle"
-                                                                                        placeholder="عنوان بانک یا موسسه ">
+                                                                                            value="{{item.BankAccountTitle}}"
+                                                                                            id="inputBankAccountTitle"
+                                                                                            type="text"
+                                                                                            name="inputBankAccountTitle"
+                                                                                            placeholder="عنوان بانک یا موسسه ">
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountPrice">
@@ -3101,7 +3140,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.CreditDebtor.hasChildItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.CreditDebtor.hasChildItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.CreditDebtor"
                                                                               id="form-Credit-Debtor">
                                                                             <span class="divider"></span>
@@ -3177,7 +3217,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Goods.hasChildItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Goods.hasChildItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Goods"
                                                                               id="form-Goods">
                                                                             <span class="divider"></span>
@@ -3217,12 +3258,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="item.GoodsCount"
-                                                                                        type="text"
-                                                                                        name="inputGoodsCount"
-                                                                                        id="inputGoodsCount"
-                                                                                        class="form-control"
-                                                                                        placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                                            value="item.GoodsCount"
+                                                                                            type="text"
+                                                                                            name="inputGoodsCount"
+                                                                                            id="inputGoodsCount"
+                                                                                            class="form-control"
+                                                                                            placeholder="  حجم / وزن / تعداد کالا"/>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
@@ -3277,13 +3318,13 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.GoodsOwnershipPercent}}"
-                                                                                        type="number"
-                                                                                        name="inputGoodsOwnershipPercent"
-                                                                                        id="inputGoodsOwnershipPercent"
-                                                                                        class="form-control"
-                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                        min="0" max="6"/>
+                                                                                            value="{{item.GoodsOwnershipPercent}}"
+                                                                                            type="number"
+                                                                                            name="inputGoodsOwnershipPercent"
+                                                                                            id="inputGoodsOwnershipPercent"
+                                                                                            class="form-control"
+                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
+                                                                                            min="0" max="6"/>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipType">
@@ -3317,7 +3358,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Fee.hasChildItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Fee.hasChildItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Fee"
                                                                               id="form-Fee">
                                                                             <span class="divider"></span>
@@ -3355,12 +3397,12 @@
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <input
-                                                                                        value="{{item.FeePercent}}"
-                                                                                        type="number"
-                                                                                        name="inputFeePercent"
-                                                                                        id="inputFeePercent"
-                                                                                        class="form-control"
-                                                                                        placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                            value="{{item.FeePercent}}"
+                                                                                            type="number"
+                                                                                            name="inputFeePercent"
+                                                                                            id="inputFeePercent"
+                                                                                            class="form-control"
+                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"/>
                                                                                 </div>
                                                                                 <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
@@ -3405,7 +3447,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Income.hasChildItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Income.hasChildItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Income"
                                                                               id="form-AverageMonthIncome">
                                                                             <span class="divider"></span>
@@ -3450,7 +3493,8 @@
                                                             <div class="panel-body padding-r-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Election.hasChildItems === 0 ">{{notFound}}</p>
+                                                                        <p ng-if="finance.Election.hasChildItems === 0 ">
+                                                                            {{notFound}}</p>
                                                                         <form ng-repeat="item in finance.Election"
                                                                               id="form-Election">
                                                                             <span class="divider"></span>
@@ -3880,7 +3924,7 @@
         }
     });
     app.controller("myCtrl", function ($scope, $http) {
-        $scope.notFound = 'اطلاعاتی برای این مورد وارد نشده است' ;
+        $scope.notFound = 'اطلاعاتی برای این مورد وارد نشده است';
         $http.get("<?php echo base_url('State/candidateDetailApi/244/3/اردبیل') ?>").then(function (response) {
             response = response.data;
             $scope.candidateFirstName = response.candidate.CandidateFirstName;
@@ -3911,26 +3955,25 @@
 
             var keys = Object.keys($scope.finance);
             for (var i = 0; i < keys.length; i++) {
-                var row =  $scope.finance[keys[i]];
+                var row = $scope.finance[keys[i]];
                 var hasSelfItems = 0;
                 var hasWifeItems = 0;
                 var hasChildItems = 0;
-                for(var j=0;j<row.length;j++){
-                    if(row[j]['ForWho'] === 'Self'){
-                        hasSelfItems +=1;
+                for (var j = 0; j < row.length; j++) {
+                    if (row[j]['ForWho'] === 'Self') {
+                        hasSelfItems += 1;
                     }
-                    if(row[j]['ForWho'] === 'Wife'){
-                        hasWifeItems +=1;
+                    if (row[j]['ForWho'] === 'Wife') {
+                        hasWifeItems += 1;
                     }
-                    if(row[j]['ForWho'] === 'Child'){
-                        hasChildItems +=1;
+                    if (row[j]['ForWho'] === 'Child') {
+                        hasChildItems += 1;
                     }
                 }
                 $scope.finance[keys[i]]['hasSelfItems'] = hasSelfItems;
                 $scope.finance[keys[i]]['hasWifeItems'] = hasWifeItems;
                 $scope.finance[keys[i]]['hasChildItems'] = hasChildItems;
             }
-
 
 
             var BankAccountPricePlaceHolder = ['BankAccountPrice'];
@@ -3942,11 +3985,12 @@
             var InvestPricePlaceHolder = ['InvestBuyTimePrice', 'InvestNowTimePrice'];
             var RealEStatesPricePlaceHolder = ['RealEstateBuyTimePrice', 'RealEstateNowTimePrice'];
             var VehiclePricePlaceHolder = ['VehicleBuyTimePrice', 'VehicleNowTimePrice'];
-            function translatePrice(key , placeHolder) {
+
+            function translatePrice(key, placeHolder) {
                 var innerTemp = $scope.finance[key];
                 for (var i = 0; i < innerTemp.length; i++) {
                     var row = innerTemp[i];
-                    for(var j=0;j<placeHolder.length;j++){
+                    for (var j = 0; j < placeHolder.length; j++) {
                         var tempPlaceHolder = placeHolder[j];
                         row[tempPlaceHolder] = row[tempPlaceHolder].split(' ');
                         row[tempPlaceHolder]['NumberValues'] = row[tempPlaceHolder][0].split('.');
@@ -3968,20 +4012,21 @@
                     }
                 }
             }
-            translatePrice('BankAccount' , BankAccountPricePlaceHolder);
-            translatePrice('CreditDebtor' , CreditDebtorPricePlaceHolder);
-            translatePrice('Election' , ElectionPricePlaceHolder);
-            translatePrice('Fee' , FeePricePlaceHolder);
-            translatePrice('Goods' , GoodsPricePlaceHolder);
-            translatePrice('Income' , IncomePricePlaceHolder);
-            translatePrice('Invest' , InvestPricePlaceHolder);
-            translatePrice('RealEStates' , RealEStatesPricePlaceHolder);
-            translatePrice('Vehicle' , VehiclePricePlaceHolder);
+
+            translatePrice('BankAccount', BankAccountPricePlaceHolder);
+            translatePrice('CreditDebtor', CreditDebtorPricePlaceHolder);
+            translatePrice('Election', ElectionPricePlaceHolder);
+            translatePrice('Fee', FeePricePlaceHolder);
+            translatePrice('Goods', GoodsPricePlaceHolder);
+            translatePrice('Income', IncomePricePlaceHolder);
+            translatePrice('Invest', InvestPricePlaceHolder);
+            translatePrice('RealEStates', RealEStatesPricePlaceHolder);
+            translatePrice('Vehicle', VehiclePricePlaceHolder);
 
             setTimeout(function () {
                 $(".left-candidate-panel-resume :input").prop('disabled', true);
                 $(".report :input").prop('disabled', false);
-            } , 2000);
+            }, 2000);
         });
     });
 </script>
