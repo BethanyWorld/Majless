@@ -2,11 +2,11 @@
 <h1 class="page-caption">
     کاندیدای نمایندگی حوزه انتخابیه خود را به چالش شایستگی و شفافیت جنبش از ما دعوت کنید
 </h1>
-<a class="invite visible-sm visible-xs" href="<?php echo base_url('State/invite'); ?>">
+<a class="invite hidden-lg hidden-md hidden" href="<?php echo base_url('State/invite'); ?>">
     نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
 </a>
 <div class="container container-wrapper">
-    <div class="panel panel-default hidden-lg hidden-md">
+    <div class="panel panel-default hidden-lg hidden-md hidden">
         <div class="panel-body"
              style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
             همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم.
@@ -57,7 +57,7 @@
         <div class="tabPanel-widget">
             <div>
                 <section class="mp-section">
-                    <div class="row candidate-container candidate-detail-parent-div">
+                    <div class="row candidate-container-1 candidate-detail-parent-div">
 
                     </div>
                 </section>
@@ -67,14 +67,14 @@
 
     </div>
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
-        <a class="invite hidden-sm hidden-xs" href="<?php echo base_url('State/invite'); ?>">
+        <a class="invite hidden-sm hidden-xs hidden" href="<?php echo base_url('State/invite'); ?>">
             نامزد انتخاباتی خود را پیدا نکردید؟
             <span>
                 او را دعوت کنید
             </span>
         </a>
         <div class="clearfix"></div>
-        <div class="panel panel-default margin-t-response hidden-xs hidden-sm">
+        <div class="panel panel-default margin-t-response hidden-xs hidden-sm hidden">
             <div class="panel-body"
                  style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
                 همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم.
