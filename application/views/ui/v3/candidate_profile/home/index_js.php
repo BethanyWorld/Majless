@@ -119,7 +119,7 @@
             });
         });
         try {
-            $rolesScore = "<?php echo $userInfo['CandidateRolesScore']; ?>";
+            $rolesScore = '<?php echo $userInfo['CandidateRolesScore']; ?>';
             $data = [];
             for ($i = 0; $i < $rolesScore.length; $i++) {
                 $item = $rolesScore[$i];
