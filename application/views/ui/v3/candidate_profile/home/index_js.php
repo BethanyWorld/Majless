@@ -1,11 +1,42 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
-        integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM="
-        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
 <script type="text/javascript">
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    }
+    function guid() {
+        return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + this.s4() + this.s4();
+    }
+    $(document).ready(function () {
+        $inputUserName = "<?php echo $userInfo['CandidateNationalCode']; ?>";
+        $inputPassword = "<?php echo $userInfo['CandidateNationalCode']; ?>";
+        $sendData = {
+            'userName': $inputUserName,
+            'password': $inputPassword,
+            'grant_type': 'password',
+            'client_id': guid()
+        }
+        $.ajax({
+            url: 'http://188.253.3.141:8080/Auth/token',
+            type: 'post',
+            data: $sendData,
+            success: function (data) {
+                if (data['token_type'] !== '') {
+                    var now = new Date();
+                    var time = now.getTime();
+                    var expireTime = time + 1000 * 36000;
+                    now.setTime(expireTime);
+                    document.cookie = 'clientId=' + JSON.stringify(data) + ';expires=' + now.toUTCString() + ';path=/';
+                    $("iframe").attr('src', 'http://oexam.s-hasht.ir/setcookie.html?clientId=' + JSON.stringify(data));
+                    $("iframe").on('load', function () {
+                        $(".result-container a").attr('href', 'http://oexam.s-hasht.ir/RelatedExams').attr('target', '_blank');
+                    });
+                }
+            },
+            error: function () {}
+        });
+    });
     $(document).ready(function () {
         $nationalCode = "<?php echo $userInfo['CandidateNationalCode']; ?>";
-        $personalInfoApi = "<?php echo $this->config->item('api')['PersonalInformationWeb']; ?>nationalCode=" + $nationalCode;
-        $legalConditionsApi = "<?php echo $this->config->item('api')['LegalConditionsWeb']; ?>nationalCodeList=" + $nationalCode;
         $currentCandidateStatus = "<?php echo $userInfo['CandidateStatus']; ?>";
         $candidateStatus = "";
         $.ajax({
@@ -87,9 +118,8 @@
                 }
             });
         });
-
         try {
-            $rolesScore = <?php echo $userInfo['CandidateRolesScore']; ?>;
+            $rolesScore = "<?php echo $userInfo['CandidateRolesScore']; ?>";
             $data = [];
             for ($i = 0; $i < $rolesScore.length; $i++) {
                 $item = $rolesScore[$i];
@@ -208,9 +238,6 @@
                 }
             });
         }
-        catch (e) {
-            
-        }
-
+        catch (e) {}
     });
 </script>

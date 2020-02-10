@@ -16,6 +16,9 @@
     .filter.active{
         background: #fdb72e;
     }
+    .Transparency-Obligation {
+         filter: grayscale(1);
+     }
 
     .rightFloat{
         float: right;

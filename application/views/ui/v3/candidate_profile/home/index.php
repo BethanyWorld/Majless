@@ -37,7 +37,6 @@
             </div>
         </div>
     </div>
-
     <div class="col-xs-12 col-md-9 pull-right">
         <div class="row">
             <div class=" padding-0 col-xs-12">
@@ -266,46 +265,4 @@
         <?php } ?>
     </div>
 </div>
-
-
 <iframe style="display:none;"></iframe>
-<script>
-    function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-    }
-
-    function guid() {
-        return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + this.s4() + this.s4();
-    }
-
-    $(document).ready(function () {
-        $inputUserName = "<?php echo $userInfo['CandidateNationalCode']; ?>";
-        $inputPassword = "<?php echo $userInfo['CandidateNationalCode']; ?>";
-        $sendData = {
-            'userName': $inputUserName,
-            'password': $inputPassword,
-            'grant_type': 'password',
-            'client_id': guid()
-        }
-        $.ajax({
-            url: 'http://188.253.3.141:8080/Auth/token',
-            type: 'post',
-            data: $sendData,
-            success: function (data) {
-                if (data['token_type'] != '') {
-                    var now = new Date();
-                    var time = now.getTime();
-                    var expireTime = time + 1000 * 36000;
-                    now.setTime(expireTime);
-                    document.cookie = 'clientId=' + JSON.stringify(data) + ';expires=' + now.toUTCString() + ';path=/';
-                    $("iframe").attr('src', 'http://oexam.s-hasht.ir/setcookie.html?clientId=' + JSON.stringify(data));
-                    $('iframe').on('load', function () {
-                        $(".result-container a").attr('href', 'http://oexam.s-hasht.ir/RelatedExams').attr('target', '_blank');
-                    });
-                }
-            },
-            error: function () {
-            }
-        });
-    });
-</script>
