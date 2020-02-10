@@ -414,8 +414,7 @@ class ModelCandidate extends CI_Model
         return array();
     }
 
-    public function getCandidatesSpecialByElectionId($inputs)
-    {
+    public function getCandidatesSpecialByElectionId($inputs){
         $this->db->select('*');
         $this->db->from('candidate_special');
         $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
@@ -427,7 +426,7 @@ class ModelCandidate extends CI_Model
         if (isset($inputs['inputFullName']) && !empty($inputs['inputFullName'])) {
             $this->db->like('CandidateFullName', $inputs['inputFullName']);
         }
-        //$this->db->order_by('CandidateTotalScore', 'DESC');
+        $this->db->order_by('CandidateTotalScore', 'DESC');
         $this->db->order_by('CandidateFullName', 'ASC');
         $this->db->where(array(
             'CandidateStateId' => $inputs['inputStateId'],

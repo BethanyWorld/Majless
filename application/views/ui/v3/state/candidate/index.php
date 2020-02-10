@@ -1,41 +1,7 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
-<h1 class="page-caption">
-    کاندیدای نمایندگی حوزه انتخابیه خود را به چالش شایستگی و شفافیت جنبش از ما دعوت کنید
-</h1>
-<a class="invite hidden-lg hidden-md hidden" href="<?php echo base_url('State/invite'); ?>">
-    نامزد انتخاباتی خود را پیدا نکردید؟ او را دعوت کنید
-</a>
 <div class="container container-wrapper">
-    <div class="panel panel-default hidden-lg hidden-md hidden">
-        <div class="panel-body"
-             style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
-            همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم.
-            شما نیز با انتخاب گزینه "دعوت به جنش از ما"
-            و انتشار پوسترهای دعوت به چالش در شبکه های اجتماعی نامزد حوزه انتخابیه خود را به این چالش دعوت کنید.
-        </div>
-    </div>
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div id="mySidenav" class="sidenav hidden-md hidden-lg">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        جستجوی نامزد انتخاباتی
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    <div class="blog-widget-search blog-widget">
-                        <form role="search" class="search-form">
-                            <label>
-                                <span class="blog-text-search">جستجو</span>
-                                <input type="search" class="blog-search-field" name="inputFullName" id="inputFullName"
-                                       placeholder="جستجو ...">
-                            </label>
-                            <input type="submit" class="blog-search-submit" value="جستجو">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">جستجو بر اساس حوزه انتخابیه</h3>
@@ -57,7 +23,11 @@
         <div class="tabPanel-widget">
             <div>
                 <section class="mp-section">
-                    <div class="row candidate-container-1 candidate-detail-parent-div">
+                    <div class="col-xs-12 text-center">
+                        <span data-filter="Merit" class="filter">شایستگان</span>
+                        <span data-filter="Transparency-Obligation" class="filter">شفافیت و پاسخگویی</span>
+                    </div>
+                    <div class="row candidate-container candidate-detail-parent-div">
 
                     </div>
                 </section>
@@ -67,41 +37,6 @@
 
     </div>
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
-        <a class="invite hidden-sm hidden-xs hidden" href="<?php echo base_url('State/invite'); ?>">
-            نامزد انتخاباتی خود را پیدا نکردید؟
-            <span>
-                او را دعوت کنید
-            </span>
-        </a>
-        <div class="clearfix"></div>
-        <div class="panel panel-default margin-t-response hidden-xs hidden-sm hidden">
-            <div class="panel-body"
-                 style="direction: rtl;text-align: justify;font-size: 13px;line-height: 30px;color: black;">
-                همه داوطلبان نمایندگی مجلس را به شرکت در چالش شایستگی و شفافیت دعوت میکنیم.
-                شما نیز با انتخاب گزینه "دعوت به جنش از ما"
-                و انتشار پوسترهای دعوت به چالش در شبکه های اجتماعی نامزد حوزه انتخابیه خود را به این چالش دعوت کنید.
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="panel panel-default hidden-xs hidden-sm">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    جستجوی نامزد انتخاباتی
-                </h3>
-            </div>
-            <div class="panel-body">
-                <div class="blog-widget-search blog-widget">
-                    <form role="search" class="search-form">
-                        <label>
-                            <span class="blog-text-search">جستجو</span>
-                            <input type="search" class="blog-search-field" name="inputFullName" id="inputFullName"
-                                   placeholder="جستجو ...">
-                        </label>
-                        <input type="submit" class="blog-search-submit" value="جستجو">
-                    </form>
-                </div>
-            </div>
-        </div>
         <div class="clearfix"></div>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -270,108 +205,6 @@
     </div>
 </div>
 
-
-<div class="hidden-box1" id="hidden-box1">
-    <div class="modal-border">
-        <div class="inner-border-div">
-            <img src="<?php echo $_DIR; ?>images/Story-bg.png">
-            <div class="candidate-image-div">
-                <img src="<?php echo $_DIR; ?>images/Story-man.png" class="inner-candidate-image">
-                <div style="padding: 15px 0;">
-                    <div class="candidate-text-invite">
-                        <p style="line-height: 60px !important;">
-                            دعوت می&hairsp;کنیم از
-                        </p>
-                    </div>
-                    <div class="candidate-name">
-                        <h1 class="modalCandidateName"></h1>
-                    </div>
-                    <div class="candidate-name">
-                        <h3>حوزه انتخابیه</h3>
-                        <h3 class="modalCandidateArea"></h3>
-                    </div>
-                    <div class="candidate-text-invite">
-                        <p style="line-height: 60px !important;">
-                            برای شرکت در
-                        </p>
-                        <p style="line-height: 60px !important;">
-                            چالش شایستگی و شفافیت جنبش
-                            <a> #از_ما</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<div class="hidden-box2" id="hidden-box2">
-    <div class="modal-border">
-        <div class="inner-border-div">
-            <img src="<?php echo $_DIR; ?>images/post-bg.png">
-            <div class="candidate-image-div">
-                <img src="<?php echo $_DIR; ?>images/post-man.png" class="inner-candidate-image">
-                <div class="">
-                    <div class="candidate-text-invite">
-                        <p>
-                            دعوت می&hairsp;کنیم از
-                        </p>
-                    </div>
-                    <div class="candidate-name">
-                        <h1 class="modalCandidateName"></h1>
-                    </div>
-                    <div class="candidate-name">
-                        <h3>حوزه انتخابیه</h3>
-                        <h3 class="modalCandidateArea"></h3>
-                    </div>
-                    <div class="candidate-text-invite">
-                        <p>
-                            برای شرکت در
-                        </p>
-                        <p>
-                            چالش شایستگی و شفافیت جنبش
-                            <a> #از_ما</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade candidate-modal" id="myModal" role="dialog" data-backdrop="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close pull-left close-icon close-modal" data-dismiss="modal">&times;
-                </button>
-                <h4 class="modal-title rtl">
-                    داوطلب مورد نظر و
-                    <a target="_blank" href="https://www.instagram.com/azmaa_net/">
-                        azmaa_net@
-                    </a>
-                    را منشن کنید
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div class="show-box" id="show-box"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn pull-left close-btn close-modal" data-dismiss="modal">بستن</button>
-                <!--                <a type="button" class="btn pull-left receive-btn" id="receiveFile" href="javascript:void(0);">دریافت-->
-                <!--                    فایل</a>-->
-            </div>
-        </div>
-    </div>
-</div>
-<div style="display: inline-block" class="loading-text hidden">
-    <p style="text-align: right;font-size: 14px;font-weight: 900;">مناسب برای پست و استوری اینستاگرام</p>
-</div>
-<div class="col-xs-12 text-center loading-demo hidden" style="direction: rtl;">
-    لطفا منتظر بمانید...
-</div>
-<script src="<?php echo $_DIR; ?>js/dom-to-image.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.min.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.lazy.plugins.min.js"></script>
 <script src="<?php echo $_DIR; ?>js/jquery.nicescroll.min.js"></script>

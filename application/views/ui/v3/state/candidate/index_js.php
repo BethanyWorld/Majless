@@ -7,71 +7,21 @@
     $(document).ready(function () {
         $stateName = "<?php echo $stateName; ?>";
         $stateId = <?php echo $stateId; ?>;
-        /* Load Candidates */
-        $electionIds = [];
-        $(".elections .inputElectionId").each(function () {
-            if ($(this).is(":checked")) {
-                $electionIds.push($(this).val());
-            }
-        });
-        $inputFullName = $(".blog-search-submit").prev('label').find(':input').val();
-        $sendData = {
-            'inputStateName': $stateName,
-            'inputStateId': $stateId,
-            'inputFullName': $inputFullName,
-            'inputElectionIds': $electionIds
-        }
-        $.ajax({
-            type: 'post',
-            url: base_url + 'State/getCandidatesByElectionId',
-            data: $sendData,
-            success: function (data) {
-                $(".candidate-container").html(data);
-                setTimeout(function () {
-                    $("html, body").animate({scrollTop: 0}, "slow");
-                    $('.mp-section').css('backgroundColor', 'transparent');
-                    $('.mp-section').css('opacity', '1');
-                }, 100);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
 
-            }
-        });
-        /* Load Candidates */
-
-
-        if (findBootstrapEnvironment() == 'xs' || findBootstrapEnvironment() == 'sm') {
-            $election = $(".elections").html();
-            $("#election-place-holder").after($election);
-            // $(".elections").eq(1).remove();
-            $(".desktop-panel .elections").find(':checkbox').each(function () {
-                $(this).attr('id', Math.round(10000000));
-            });
-        }
-        $(document).on('click', '.mp-section .mp', function () {
-            $(".mp-section .mp .menu").slideUp();
-            $(this).find(".menu").eq(0).slideToggle();
-        });
-        $("path").each(function () {
-            if ($(this).data('province-id') == $stateId) {
-                $(this).addClass('active');
-            }
-        });
-        $(".inputElectionId").click(function () {
+        function loadData(){
+            /* Load Candidates */
+            $(".filter").removeClass('active');
             $('.mp-section').css('backgroundColor', '#fff');
             $('.mp-section').css('opacity', '0.5');
-            $electionId = $(this).val();
             $electionIds = [];
-            $(".elections .inputElectionId").each(function () {
+            $(".inputElectionId").each(function () {
                 if ($(this).is(":checked")) {
                     $electionIds.push($(this).val());
                 }
             });
-            $inputFullName = $(".blog-search-submit").prev('label').find(':input').val();
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
-                'inputFullName': $inputFullName,
                 'inputElectionIds': $electionIds
             }
             $.ajax({
@@ -90,45 +40,29 @@
 
                 }
             });
+            /* Load Candidates */
+        }
+        loadData();
+
+        if (findBootstrapEnvironment() == 'xs' || findBootstrapEnvironment() == 'sm') {
+            $election = $(".elections").html();
+            $("#election-place-holder").after($election);
+            // $(".elections").eq(1).remove();
+            $(".desktop-panel .elections").find(':checkbox').each(function () {
+                $(this).attr('id', Math.round(10000000));
+            });
+        }
+        $("path").each(function () {
+            if ($(this).data('province-id') == $stateId) {
+                $(this).addClass('active');
+            }
+        });
+
+        $(".inputElectionId").click(function () {
+            loadData();
         });
         $srcImage = '';
         $candidateName = '';
-        $(".blog-search-submit").click(function (e) {
-            e.preventDefault();
-            toggleLoader();
-            $inputFullName = $(this).prev('label').find(':input').val();
-            $electionId = $(this).val();
-            $electionIds = [];
-            $(".elections .inputElectionId").each(function () {
-                if ($(this).is(":checked")) {
-                    $electionIds.push($(this).val());
-                }
-            });
-            $sendData = {
-                'inputStateName': $stateName,
-                'inputStateId': $stateId,
-                'inputFullName': $inputFullName,
-                'inputElectionIds': $electionIds
-            }
-            $.ajax({
-                type: 'post',
-                url: base_url + 'State/getCandidatesByElectionId',
-                data: $sendData,
-                success: function (data) {
-                    $(".candidate-container").html(data);
-                    $('#mySidenav').css('width', '0px');
-                    document.getElementById("mySidenav").style.paddingRight = "0";
-                    document.getElementById("mySidenav").style.paddingLeft = "0";
-                    $('body').removeClass('over-flow-style');
-                    $('html').removeClass('over-flow-style');
-                    $("html, body").animate({scrollTop: 0}, "slow");
-                    toggleLoader();
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    toggleLoader();
-                }
-            });
-        });
         $(".filter-button").click(function () {
             $('#mySidenav').css('width', '0px');
             document.getElementById("mySidenav").style.paddingRight = "0";
@@ -136,63 +70,8 @@
             $('body').removeClass('over-flow-style');
             $('html').removeClass('over-flow-style');
             $("html, body").animate({scrollTop: 0}, "slow");
+            loadData();
         });
-        /* Export*/
-        $(document).on('click', ".invite-button", function () {
-            $('.show-box').hide();
-            $("#show-box").html('');
-            $("#show-box").append($(".loading-text").clone().removeClass('hidden'));
-            $(".modal-body").append($(".loading-demo").clone().removeClass('hidden'));
-            $srcImage = $(this).data('image');
-            $candidateName = $(this).data('title');
-            $candidateArea = $(this).data('area');
-            $('.inner-candidate-image').attr('src', $srcImage);
-            $('.modalCandidateName').text($candidateName);
-            $('.modalCandidateArea').text($candidateArea);
-            domtoimage.toJpeg(document.getElementById('hidden-box1'), {quality: 1}).then(function (dataUrl) {
-
-                $(".modal-body").find(".loading-demo").remove();
-                var img = new Image();
-                img.src = dataUrl;
-                document.body.appendChild(img);
-                $("#show-box div:first").append(img);
-                var link = document.createElement('a');
-                link.href = dataUrl;
-                link.download = Math.floor(Math.random() * 10000) + 'Story.jpg';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            });
-            domtoimage.toJpeg(document.getElementById('hidden-box2'), {quality: 1}).then(function (dataUrl) {
-                var img = new Image();
-                img.src = dataUrl;
-                document.body.appendChild(img);
-                $("#show-box div:last").append(img);
-                var link = document.createElement('a');
-                link.href = dataUrl;
-                link.download = Math.floor(Math.random() * 10000) + 'Post.jpg';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                $('.show-box').fadeIn();
-            });
-            /* Increase Invite Count */
-            $this = $(this);
-            if ($(this).attr('data-id')) {
-                $candidateId = $(this).data('id');
-                $sendData = {'inputRowId': $candidateId}
-                $.ajax({
-                    type: 'post',
-                    url: base_url + 'State/doIncreaseCandidateSpecialInviteCount',
-                    data: $sendData,
-                    success: function (data) {
-                        $this.removeAttr('data-id');
-                    }
-                });
-            }
-            /* End Increase Invite Count*/
-        });
-        /* Export*/
         $('#IranMap .map .province path').click(function () {
             var province = $(this).attr('class');
             var provinceId = $(this).data('province-id');
@@ -269,5 +148,15 @@
                 });
             }
         });
+
+
+        $(".filter").click(function(){
+            $(".filter").removeClass('active');
+            $(this).addClass('active');
+            $filterClass = $(this).data('filter');
+            $(".candidate-info-box").hide();
+            $(".candidate-info-box."+$filterClass).fadeIn();
+        });
+
     });
 </script>
