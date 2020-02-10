@@ -1,6 +1,7 @@
 
 <div class="col-md-12 col-xs-12 blog-detail-div">
-    <?php if(have_posts()){ while (have_posts()){ the_post();
+    <?php if(have_posts()){
+        while (have_posts()){ the_post();
         $title = get_the_title();
         $excerpt = get_the_excerpt();
         $author_id = get_the_author_meta('ID');
@@ -8,6 +9,7 @@
         $thumbnail = _image($url, array(350, 200));
         $permalink = get_permalink(get_the_ID());
         $date = _jDate(get_the_date('Y-m-d' , get_the_ID()));
+        if($author_id == 1){
         ?>
         <div class="col-md-12 col-xs-12 blog-post">
             <div class="col-md-12 col-xs-12 blog-outer">
@@ -22,9 +24,6 @@
                     <div class="col-md-6 col-xs-12">
                         <div class="col-md-12 col-xs-12 blog-post-content">
                             <div class="blog-combine">
-<!--                                <a href="--><?//= $permalink; ?><!--" target="_blank" class="blog-cat-link">-->
-<!--                                    --><?php //echo get_the_category(get_the_ID())[0]->name; ?>
-<!--                                </a>-->
                                 <h2 style="font-size: 16px;font-weight: 900;text-align: right;">
                                     <a href="<?= $permalink; ?>" target="_blank"><?= $title; ?></a>
                                 </h2>
@@ -44,7 +43,7 @@
                 </div>
             </div>
         </div>
-    <?php } } else{ ?>
+    <?php } } } else{ ?>
         <div class="col-xs-12 alert alert-danger text-center">
             موردی یافت نشد
         </div>

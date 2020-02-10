@@ -14,7 +14,12 @@
                 <h2 class="blog-widget-title"> آخرین پست ها </h2>
                 <div class="blog-display-style">
                     <?php
-                    $args = array('posts_per_page' => 5, 'orderby' => 'date', 'order' => 'DESC', 'post_status' => 'publish');
+                    $args = array(
+                        'posts_per_page' => 5,
+                        'author'=>1,
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                        'post_status' => 'publish');
                     $posts = get_posts($args);
                     foreach ($posts as $post) {
                         $title = $post->post_title;
@@ -28,7 +33,7 @@
                                     </a>
                                 </h4>
                                 <span class="popular-date-div">
-                                    <?=_jDate($post->post_date); ?>
+                                    <?= _jDate($post->post_date); ?>
                                 </span>
                             </div>
                         </div>
@@ -43,6 +48,7 @@
                     <?php
                     $popularpost = new WP_Query(array(
                             'posts_per_page' => 4,
+                            'author'=>1,
                             'meta_key' => 'wpb_post_views_count',
                             'orderby' => 'meta_value_num',
                             'order' => 'DESC')
@@ -56,7 +62,7 @@
                                     </a>
                                 </h4>
                                 <span class="popular-date-div">
-                                    <?=_jDate(get_the_date('y-m-d')); ?>
+                                    <?= _jDate(get_the_date('y-m-d')); ?>
                                 </span>
                             </div>
                         </div>
@@ -71,6 +77,7 @@
                     <?php
                     $args = array(
                         'posts_per_page' => 5,
+                        'author'=>1,
                         'order' => 'DESC',
                         'orderby' => 'rand',
                         'post_status' => 'publish');

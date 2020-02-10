@@ -51,6 +51,30 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+    public function wpNews(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'صفحه کاربری';
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'صفحه کاربری';
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
+        if($data['userInfo']['CandidateProfileImage'] != NULL && $data['userInfo']['CandidateProfileImage'] != ''){
+            $data['noImg'] = $data['userInfo']['CandidateProfileImage'];
+        }
+        else{
+            $data['noImg'] = $this->config->item('defaultImage');
+        }
+        $data['candidateWordpress'] = $this->ModelProfile->getCandidateWordpressAccount($loginInfo['CandidateId']);
+
+
+
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/wp_news/index', $data);
+        $this->load->view('ui/v3/candidate_profile/wp_news/index_css');
+        $this->load->view('ui/v3/candidate_profile/wp_news/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
     public function getResumeStatus()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -1235,7 +1259,6 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->removeCandidateDocumentByRowId($inputs);
         echo json_encode($result);
     }
-
     public function uploadDocuments(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'صفحه کاربری';
@@ -1266,7 +1289,6 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/upload_commitment_documents/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-
     /* End For Resume -------------------------------------------------------------*/
     public function account()
     {
@@ -1480,7 +1502,6 @@ class Profile extends CI_Controller{
             die();
         }
     }
-
     public function logOut()
     {
         $this->session->unset_userdata('UserLoginInfo');
