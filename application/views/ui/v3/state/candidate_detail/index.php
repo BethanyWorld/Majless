@@ -595,7 +595,7 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Self'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateType">
                                                                                         نوع کاربری
                                                                                         <span class="text-danger"></span>
@@ -611,7 +611,7 @@
 
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipDate">
                                                                                         سال شروع مالکیت
                                                                                         <span class="text-danger"></span>
@@ -625,7 +625,7 @@
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipType">
                                                                                         نحوه مالکیت
                                                                                     </label>
@@ -640,7 +640,7 @@
 
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat countries">
+                                                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat countries">
                                                                                     <label for="inputRealEstateCountryId">کشور</label>
                                                                                     <select
                                                                                             class="form-control form-control-lg"
@@ -652,7 +652,7 @@
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                                                     <label for="inputRealEstateStateId">استان</label>
                                                                                     <select
                                                                                             class="form-control form-control-lg"
@@ -664,7 +664,7 @@
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                                                     <label for="inputRealEstateCityId">
                                                                                         شهر
                                                                                     </label>
@@ -677,7 +677,7 @@
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstatePortion">
                                                                                         سهم از ملک(1 تا 6 دانگ)
                                                                                         <span class="text-danger"></span>
@@ -690,7 +690,7 @@
                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
                                                                                            min="1" max="6"/>
                                                                                 </div>
-                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateExtent">
                                                                                         متراژ حدودی ملک
                                                                                         <span class="text-danger"></span>
@@ -717,7 +717,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
