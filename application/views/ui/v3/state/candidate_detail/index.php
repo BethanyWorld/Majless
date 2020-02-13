@@ -1,5 +1,7 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
+
 <script src="<?php echo $_DIR; ?>js/angular.1.6.9.min.js"></script>
+
 <h1 class="page-caption">
     نامزد انتخاباتی استان
     <?php echo urldecode($stateName); ?>
@@ -109,7 +111,8 @@
                     </ul>
                 </div>
                 <div class="col-md-12 padding-0">
-                    <h4 style="text-align: center; background: #095644;color: #fff;padding: 6px 2px;font-size: 14px;">رویداد های مرتبط</h4>
+                    <h4 style="text-align: center; background: #095644;color: #fff;padding: 6px 2px;font-size: 14px;">
+                        رویداد های مرتبط</h4>
                     <?php
                     foreach ($wordpressPosts as $item) { ?>
                         <p>
@@ -119,7 +122,7 @@
                             </a>
                         </p>
                     <?php } ?><?php
-                    if (count($wordpressPosts) <=0) { ?>
+                    if (count($wordpressPosts) <= 0) { ?>
                         <p>
                             موردی یافت نشد
                         </p>
@@ -151,6 +154,35 @@
                         </h5>
                     </div>
                 </div>
+                <div class="panel left-candidate-panel-resume padding-0">
+                    <div class="col-xs-12">
+                        <table class="table table-condensed table-hover text-center">
+                            <thead>
+                            <tr class="text-center">
+                                <th class="text-center" style="font-size: 10px;text-align: center !important;">برآیند
+                                    آزمون و کانون
+                                </th>
+                                <th class="text-center" style="font-size: 10px;text-align: center !important;">نمره
+                                    کانون ارزیابی (وزن 0.7)
+                                </th>
+                                <th class="text-center" style="font-size: 10px;text-align: center !important;">نمره کل
+                                    آزمون (وزن 0.3)
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><?php echo $candidate['CandidateSignScore']; ?></td>
+                                <td class="text-center"><?php echo $candidate['CandidateRecordsScore']; ?></td>
+                                <td class="text-center"><?php echo $candidate['CandidateScore']; ?></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="chart-container" style="position: relative;margin: 40px 0;">
+                        <canvas id="BarChart"></canvas>
+                    </div>
+                </div>
                 <!-- Academic  -->
                 <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="academic-background">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
@@ -176,8 +208,9 @@
                                     {{item.CandidateGrade | bindEnum}}
                                 </strong>
                                 رشته تحصیلی
-                                <strong class="colored bg-white">
-                                    {{item.CandidateMajor}}
+                                <strong id="{{item.CandidateMajor}}-{{item.CandidateDepartment}}" data-major="{{item.CandidateMajor}}" data-depart="{{item.CandidateDepartment}}"
+                                        class="colored bg-white major">
+
                                 </strong>
                             </li>
                         </ul>
@@ -3703,6 +3736,7 @@
 </div>
 <script>
     var app = angular.module("myApp", []);
+
     var EnumResumeProfile = {
         "Gender": '[{ "Male":"آقا" },{ "Female":"خانم"}]',
         "MaritalStatus": '[{ "Married":"متاهل" },{ "Single":"مجرد" }]',
@@ -3926,7 +3960,7 @@
     });
     app.controller("myCtrl", function ($scope, $http) {
         $scope.notFound = 'اطلاعاتی برای این مورد وارد نشده است';
-        $http.get("<?php echo base_url('State/candidateDetailApi/244/3/اردبیل') ?>").then(function (response) {
+        $http.get("<?php echo base_url('State/candidateDetailApi/' . $candidate['CandidateId'] . '/3/اردبیل') ?>").then(function (response) {
             response = response.data;
             $scope.candidateFirstName = response.candidate.CandidateFirstName;
             $scope.CandidateLastName = response.candidate.CandidateLastName;
@@ -3976,7 +4010,6 @@
                 $scope.finance[keys[i]]['hasChildItems'] = hasChildItems;
             }
 
-
             var BankAccountPricePlaceHolder = ['BankAccountPrice'];
             var CreditDebtorPricePlaceHolder = ['DebotrPrice', 'CreditPrice'];
             var ElectionPricePlaceHolder = ['ElectionPlacePrice', 'ElectionFlockPrice', 'ElectionAdvertisePrice', 'ElectionStaffPrice', 'ElectionAllPrice'];
@@ -4024,10 +4057,196 @@
             translatePrice('RealEStates', RealEStatesPricePlaceHolder);
             translatePrice('Vehicle', VehiclePricePlaceHolder);
 
+
+
+
+
+
             setTimeout(function () {
                 $(".left-candidate-panel-resume :input").prop('disabled', true);
                 $(".report :input").prop('disabled', false);
+
+                $VeterinaryMedicineDepartment = JSON.parse(
+                    ' [' +
+                    '{ "name": "بهداشت و بیماری آبزیان" , "value" : "1" } ,' +
+                    '{ "name": "بهداشت و مواد غذایی" , "value" : "2"  } ,' +
+                    '{ "name": "پاتوبیولوژی" , "value" : "3"  }   ,' +
+                    '{ "name": "دامپزشکی" , "value" : "4"  }  ,' +
+                    '{ "name": "علوم پایه دامپزشکی" , "value" : "5"  }   ,' +
+                    '{ "name": "علوم درمانگاهی" , "value" : "6"  }   ,' +
+                    '{ "name": "میکروبیولوژی" , "value" : "7"  }   ,' +
+                    '{ "name": "سایر" , "value" : "8"  }   ' +
+                    ']'
+                );
+                $foreignlanguages = JSON.parse(
+                    ' [' +
+                    '{ "name": "زبان عربی" , "value" : "1" } ,' +
+                    '{ "name": "زبان های خارجی" , "value" : "2"  } ,' +
+                    '{ "name": "سایر" , "value" : "3"  }   ' +
+                    ']'
+                );
+                $HumanitiesDepartment = JSON.parse(
+                    ' [' +
+                    '{ "name": "الهیات و معارف اسلامی" , "value" : "1" } ,' +
+                    '{ "name": "تاریخ" , "value" : "2"  } ,' +
+                    '{ "name": "تربیت بدنی و علوم ورزشی" , "value" : "3"  }   ,' +
+                    '{ "name": "حسابداری" , "value" : "4"  }  ,' +
+                    '{ "name": "حقوق" , "value" : "5"  }   ,' +
+                    '{ "name": "روانشناسی" , "value" : "6"  }   ,' +
+                    '{ "name": "زبان شناسی" , "value" : "7"  }   ,' +
+                    '{ "name": "زبان شناسی" , "value" : "8"  }   ,' +
+                    '{ "name": "زبان و ادبیات فارسی" , "value" : "9"  }   ,' +
+                    '{ "name": "علوم اجتماعی" , "value" : "10"  }   ,' +
+                    '{ "name": "علوم اقتصادی" , "value" : "11"  }   ,' +
+                    '{ "name": "عاوم تربیتی" , "value" : "12"  }   ,' +
+                    '{ "name": "عاوم جغرافیایی" , "value" : "13"  }   ,' +
+                    '{ "name": "عاوم دریایی" , "value" : "14"  }   ,' +
+                    '{ "name": "عاوم سیاسی و روابط بین الملل" , "value" : "15"  }   ,' +
+                    '{ "name": "فلسفه" , "value" : "16"  }   ,' +
+                    '{ "name": "کتابداری و اطلاع رسانی" , "value" : "17"  }   ,' +
+                    '{ "name": "مدیریت" , "value" : "18"  }   ,' +
+                    '{ "name": "نظامی انتظامی" , "value" : "19"  }   ,' +
+                    '{ "name": "سایر" , "value" : "20"  }   ' +
+                    ']'
+                );
+                $ScienceDepartment = JSON.parse(
+                    ' [' +
+                    '{ "name": "آمار" , "value" : "1" } ,' +
+                    '{ "name": "ریاضی" , "value" : "2"  } ,' +
+                    '{ "name": "زمین شناسی" , "value" : "3"  }   ,' +
+                    '{ "name": "زیست شناسی" , "value" : "4"  }  ,' +
+                    '{ "name": "ژئوفیزیک و هواشناسی" , "value" : "5"  }   ,' +
+                    '{ "name": "شیمی" , "value" : "6"  }   ,' +
+                    '{ "name": "علوم دریایی و اقیانوسی" , "value" : "7"  }   ,' +
+                    '{ "name": "علوم کامپیوتر" , "value" : "8"  }   ,' +
+                    '{ "name": "فیزیک" , "value" : "9"  }   ,' +
+                    '{ "name": "محاسبات نرم" , "value" : "10"  }   ,' +
+                    '{ "name": "سایر" , "value" : "11"  }   ' +
+                    ']'
+                );
+                $TechnicalEngineeringDepartment = JSON.parse(
+                    ' [' +
+                    '{ "name": "مهندسی انرژی" , "value" : "1" } ,' +
+                    '{ "name": "مهدنسی ایمنی و بازرسی فنی" , "value" : "2"  } ,' +
+                    '{ "name": "مهندسی برق" , "value" : "3"  }   ,' +
+                    '{ "name": "مهندسی پزشکی" , "value" : "4"  }  ,' +
+                    '{ "name": "مهندسی پلیمر" , "value" : "5"  }   ,' +
+                    '{ "name": "مهندسی دریا" , "value" : "6"  }   ,' +
+                    '{ "name": "مهندسی رشته ای" , "value" : "7"  }   ,' +
+                    '{ "name": "مهندسی شیمی" , "value" : "8"  }   ,' +
+                    '{ "name": "مهندسی صنایع" , "value" : "9"  }   ,' +
+                    '{ "name": "مهندسی عمران" , "value" : "10"  }   ,' +
+                    '{ "name": "مهندسی فناوری اطلاعات (IT)" , "value" : "11"  }   ,' +
+                    '{ "name": "مهندسی کامپیوتر" , "value" : "12"  }   ,' +
+                    '{ "name": "مهندسی محیط زیست" , "value" : "13"  }   ,' +
+                    '{ "name": "مهندسی معدن" , "value" : "14"  }   ,' +
+                    '{ "name": "مهندسی مکانیک" , "value" : "15"  }   ,' +
+                    '{ "name": "مهدنسی مواد" , "value" : "16"  }   ,' +
+                    '{ "name": "مهندسی نانوفناوری" , "value" : "17"  }   ,' +
+                    '{ "name": "مهدنسی نساجی" , "value" : "18"  }   ,' +
+                    '{ "name": "مهدنسی نفت" , "value" : "19"  }   ,' +
+                    '{ "name": "مهدنسی هسته ای" , "value" : "20"  }   ,' +
+                    '{ "name": "مهدنسی هوافضا" , "value" : "21"  }   ,' +
+                    '{ "name": "سایر" , "value" : "22"  }   ' +
+                    ']'
+                );
+                $ArtDepartment = JSON.parse(
+                    ' [' +
+                    '{ "name": "پژوهش هنری" , "value" : "1" } ,' +
+                    '{ "name": "صنایع دستی" , "value" : "2"  } ,' +
+                    '{ "name": "فرش" , "value" : "3"  }   ,' +
+                    '{ "name": "مرمت" , "value" : "4"  }  ,' +
+                    '{ "name": "معماری" , "value" : "5"  }   ,' +
+                    '{ "name": "موزه" , "value" : "6"  }   ,' +
+                    '{ "name": "موسیقی" , "value" : "7"  }   ,' +
+                    '{ "name": "هنرهای تجسمی" , "value" : "8"  }   ,' +
+                    '{ "name": "هنرهای کاربردی" , "value" : "9"  }   ,' +
+                    '{ "name": "هنرهای نمایشی و سینمایی" , "value" : "10"  }   ,' +
+                    '{ "name": "سایر" , "value" : "11"  }   ' +
+                    ']'
+                );
+                $medicalDepartment = JSON.parse(
+                    ' [' +
+                    '{ "name": "پرستاری" , "value" : "1" } ,' +
+                    '{ "name": "پزشکی" , "value" : "2"  } ,' +
+                    '{ "name": "پیراپزشکی" , "value" : "3"  }   ,' +
+                    '{ "name": "توانبخشی" , "value" : "4"  }  ,' +
+                    '{ "name": "داروسازی" , "value" : "5"  }   ,' +
+                    '{ "name": "دندانپزشکی" , "value" : "6"  }   ,' +
+                    '{ "name": "سلامت,بهداشت و تغذیه" , "value" : "7"  }   ,' +
+                    '{ "name": "فناوری های نوین پزشکی" , "value" : "8"  }   ,' +
+                    '{ "name": "مامایی" , "value" : "9"  }   ,' +
+                    '{ "name": "مدیزیت و اطلاع رسانی پزشکی" , "value" : "10"  }   ,' +
+                    '{ "name": "سایر" , "value" : "11"  }   ' +
+                    ']'
+                );
+                $AgricultureNaturalResourcesDepartment = JSON.parse(
+                    ' [' +
+                    '{ "name": "آب" , "value" : "1" } ,' +
+                    '{ "name": "اقتصاد کشاورزی و مدیریت کشاورزی" , "value" : "2"  } ,' +
+                    '{ "name": "بیوتکنولوژی کشاورزی" , "value" : "3"  }   ,' +
+                    '{ "name": "ترویج و آموزش کشاورزی" , "value" : "4"  }  ,' +
+                    '{ "name": "جنگلداری" , "value" : "5"  }   ,' +
+                    '{ "name": "چوب" , "value" : "6"  }   ,' +
+                    '{ "name": "دامپروری" , "value" : "7"  }   ,' +
+                    '{ "name": "زراعت و اصلاح نباتات" , "value" : "8"  }   ,' +
+                    '{ "name": "شیلات" , "value" : "9"  }   ,' +
+                    '{ "name": "علوم باغبانی" , "value" : "10"  }   ,' +
+                    '{ "name": "علوم خاک" , "value" : "11"  }   ,' +
+                    '{ "name": "گیاه پزشکی" , "value" : "12"  }   ,' +
+                    '{ "name": "ماشین های کشاورزی" , "value" : "13"  }   ,' +
+                    '{ "name": "محیط زیست" , "value" : "14"  }   ,' +
+                    '{ "name": "مدیریت بیابان و مرتع و آبخیزداری" , "value" : "15"  }   ,' +
+                    '{ "name": "مواد غذایی" , "value" : "15"  }   ,' +
+                    '{ "name": "سایر" , "value" : "11"  }   ' +
+                    ']'
+                );
+                $(".major").each(function () {
+                    $depart = $(this).data('depart');
+                    $major = $(this).data('major');
+                    $majorIndex = $(this).attr('id');
+                    $inputCandidateDepartment = $depart;
+                    if ($inputCandidateDepartment === "VeterinaryMedicineDepartment") {
+                        fillMajorDropDown($majorIndex, $major, $VeterinaryMedicineDepartment);
+                    }
+                    if ($inputCandidateDepartment === "ForeignLanguagesDepartment") {
+                        fillMajorDropDown($majorIndex, $major, $foreignlanguages);
+                    }
+                    if ($inputCandidateDepartment === "HumanitiesDepartment") {
+                        fillMajorDropDown($majorIndex, $major, $HumanitiesDepartment);
+                    }
+                    if ($inputCandidateDepartment === "ScienceDepartment") {
+                        fillMajorDropDown($majorIndex, $major, $ScienceDepartment);
+                    }
+                    if ($inputCandidateDepartment === "TechnicalEngineeringDepartment") {
+                        fillMajorDropDown($majorIndex, $major, $TechnicalEngineeringDepartment);
+                    }
+                    if ($inputCandidateDepartment === "ArtDepartment") {
+                        fillMajorDropDown($majorIndex, $major, $ArtDepartment);
+                    }
+                    if ($inputCandidateDepartment === "MedicalDepartment") {
+                        fillMajorDropDown($majorIndex, $major, $medicalDepartment);
+                    }
+                    if ($inputCandidateDepartment === "AgricultureNaturalResourcesDepartment") {
+                        fillMajorDropDown($majorIndex, $major, $AgricultureNaturalResourcesDepartment);
+                    }
+
+                });
+                function fillMajorDropDown($id, $selectedMajor, data) {
+                    for ($i = 0; $i < data.length; $i++) {
+                        if ($selectedMajor == data[$i]['value']) {
+                            $("#"+$majorIndex).text(data[$i]['name']);
+                        }
+                    }
+                }
+
+
+
             }, 2000);
         });
     });
+
+
+
+
 </script>

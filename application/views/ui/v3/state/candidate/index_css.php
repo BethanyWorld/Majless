@@ -16,9 +16,29 @@
     .filter.active{
         background: #fdb72e;
     }
-    .Transparency-Obligation {
+
+    .wanted{
+        font-size: 16px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 35px;
+        margin: auto;
+        padding: 25px 10px;
+        line-height: 30px;
+        border-radius: 1000%;
+        width: 110px;
+        background: rgba(255, 0, 0, 0.68);
+        color: #fff;
+        z-index: 10000;
+        transform: rotate(25deg);
+    }
+    .grayscale{
+        filter: grayscale(1);
+    }
+    /*.Transparency-Obligation {
          filter: grayscale(1);
-     }
+     }*/
 
     .rightFloat{
         float: right;

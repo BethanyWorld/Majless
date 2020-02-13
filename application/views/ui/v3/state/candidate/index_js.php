@@ -7,7 +7,6 @@
     $(document).ready(function () {
         $stateName = "<?php echo $stateName; ?>";
         $stateId = <?php echo $stateId; ?>;
-
         function loadData(){
             /* Load Candidates */
             $(".filter").removeClass('active');
@@ -43,7 +42,6 @@
             /* Load Candidates */
         }
         loadData();
-
         if (findBootstrapEnvironment() == 'xs' || findBootstrapEnvironment() == 'sm') {
             $election = $(".elections").html();
             $("#election-place-holder").after($election);
@@ -148,8 +146,6 @@
                 });
             }
         });
-
-
         $(".filter").click(function(){
             $(".filter").removeClass('active');
             $(this).addClass('active');

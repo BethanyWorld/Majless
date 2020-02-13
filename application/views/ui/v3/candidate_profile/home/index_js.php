@@ -120,6 +120,7 @@
         });
         try {
             $rolesScore = '<?php echo $userInfo['CandidateRolesScore']; ?>';
+            $rolesScore = JSON.parse($rolesScore);
             $data = [];
             for ($i = 0; $i < $rolesScore.length; $i++) {
                 $item = $rolesScore[$i];

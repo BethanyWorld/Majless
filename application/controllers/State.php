@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class State extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
         $this->load->model('ui/ModelQuery');
@@ -118,7 +119,8 @@ class State extends CI_Controller{
         $data['stateName'] = $stateName;
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
-        $data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
+
+        /*$data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
         $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
         $data['candidateJobHistory'] = $this->ModelProfile->getCandidateJobHistoryByCandidateId($candidateId);
         $data['candidateSocialCulturalBackground'] = $this->ModelProfile->getCandidateSocialCulturalBackgroundByCandidateId($candidateId);
@@ -133,7 +135,7 @@ class State extends CI_Controller{
         $data['paymentHistory'] = $this->ModelCandidate->getCandidatePaymentHistoryCandidateId($candidateId);
         $data['loginHistory'] = $this->ModelCandidate->getCandidateLoginHistoryCandidateId($candidateId);
         $data['promises'] = $this->ModelProfile->getCandidateElectionPromisesByCandidateId($candidateId);
-        $data['finance'] = $this->ModelProfile->getCandidateFinanceByCandidateId($candidateId);
+        $data['finance'] = $this->ModelProfile->getCandidateFinanceByCandidateId($candidateId);*/
         $data['candidateWordpress'] = $this->ModelProfile->getCandidateWordpressAccount($candidateId);
 
         $wordpressUserId = 0;
@@ -249,6 +251,7 @@ class State extends CI_Controller{
         $inputs['inputElectionIds'] = array_values($inputs['inputElectionIds']);
         //$data['data'] = $this->ModelCandidate->getCandidatesByElectionId($inputs);
         $data['dataSpecial'] = $this->ModelCandidate->getCandidatesSpecialByElectionId($inputs);
+        $data['dataSpecialNoRef'] = $this->ModelCandidate->getCandidatesSpecialWithOutRefIdByElectionId($inputs);
 
         $index = 0;
         foreach ($data['dataSpecial'] as $item) {

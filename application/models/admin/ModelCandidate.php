@@ -415,22 +415,38 @@ class ModelCandidate extends CI_Model
     }
 
     public function getCandidatesSpecialByElectionId($inputs){
-        $this->db->select('*');
+        $this->db->select('* , candidate_special.CandidateProfileImage as CPI');
+        $this->db->from('candidate_special');
+        $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
+        $this->db->join('candidate', 'candidate.CandidateId = candidate_special.CandidateRefId');
+
+        if (isset($inputs['inputElectionIds']) && !empty($inputs['inputElectionIds'])) {
+            $this->db->where_in('candidate_special.CandidateElectionId', $inputs['inputElectionIds']);
+        }
+
+        $this->db->order_by('CandidateSignScore', 'DESC');
+        $this->db->where(array(
+            'candidate.CandidateStateId' => $inputs['inputStateId'],
+            'CandidateHasAccepted' => 1
+        ));
+
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        return array();
+    }
+    public function getCandidatesSpecialWithOutRefIdByElectionId($inputs){
+        $this->db->select('* , candidate_special.CandidateProfileImage as CPI');
         $this->db->from('candidate_special');
         $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
 
         if (isset($inputs['inputElectionIds']) && !empty($inputs['inputElectionIds'])) {
-            $this->db->where_in('CandidateElectionId', $inputs['inputElectionIds']);
+            $this->db->where_in('candidate_special.CandidateElectionId', $inputs['inputElectionIds']);
         }
-
-        if (isset($inputs['inputFullName']) && !empty($inputs['inputFullName'])) {
-            $this->db->like('CandidateFullName', $inputs['inputFullName']);
-        }
-        $this->db->order_by('CandidateTotalScore', 'DESC');
-        $this->db->order_by('CandidateFullName', 'ASC');
         $this->db->where(array(
             'CandidateStateId' => $inputs['inputStateId'],
-            'CandidateHasAccepted' => 1
+            'CandidateHasAccepted' => 0
         ));
 
         $query = $this->db->get();

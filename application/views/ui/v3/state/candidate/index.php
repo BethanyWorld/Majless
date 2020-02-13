@@ -23,8 +23,8 @@
         <div class="tabPanel-widget">
             <div>
                 <section class="mp-section">
-                    <div class="col-xs-12 text-center">
-                        <span data-filter="Merit" class="filter">شایستگان</span>
+                    <div class="col-xs-12 text-center hidden">
+                        <span data-filter="Merit" class="filter">شایستگی</span>
                         <span data-filter="Transparency-Obligation" class="filter">شفافیت و پاسخگویی</span>
                     </div>
                     <div class="row candidate-container candidate-detail-parent-div">
@@ -33,8 +33,6 @@
                 </section>
             </div>
         </div>
-
-
     </div>
     <div class="row col-xs-12 col-md-4 pull-right sidebar">
         <div class="clearfix"></div>
