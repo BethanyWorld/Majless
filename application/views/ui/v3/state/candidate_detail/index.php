@@ -154,6 +154,7 @@
                         </h5>
                     </div>
                 </div>
+
                 <div class="panel left-candidate-panel-resume padding-0">
                     <div class="col-xs-12">
                         <table class="table table-condensed table-hover text-center">
@@ -197,11 +198,10 @@
                                 <strong class="colored bg-white">
                                     {{item.CandidateStudyStatus | bindEnum}}
                                     {{item.CandidateGrade | bindEnum}}
-                                    {{CandidateUniversityName}}
-                                    <strong id="{{item.CandidateMajor}}-{{item.CandidateDepartment}}"
-                                            data-major="{{item.CandidateMajor}}"
-                                            data-depart="{{item.CandidateDepartment}}"
-                                            class="colored bg-white major"></strong>
+                                    {{item.CandidateUniversityName}}
+                                    <strong class="colored bg-white major">
+                                        {{item.NewMajor | bindEnumMajor}}
+                                    </strong>
                                 </strong>
                             </li>
                         </ul>
@@ -628,7 +628,8 @@
                                                                                             id="inputRealEstateType">
 
                                                                                         <option>
-                                                                                            {{item.RealEstateType | bindEnum}}
+                                                                                            {{item.RealEstateType |
+                                                                                            bindEnum}}
                                                                                         </option>
 
                                                                                     </select>
@@ -752,10 +753,13 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.RealEstateBuyTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.RealEstateBuyTimePrice.NumberValues[1]}}
-
+                                                                                                    <i>
+                                                                                                        {{item.RealEstateBuyTimePrice.NumberValues[1]}}
+                                                                                                    </i>
+                                                                                                    ,
+                                                                                                    <i>
+                                                                                                        {{item.RealEstateBuyTimePrice.NumberValues[0]}}
+                                                                                                    </i>
                                                                                                     {{item.RealEstateBuyTimePrice.TranslatedUnit}}
 
                                                                                                 </option>
@@ -775,10 +779,13 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.RealEstateNowTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.RealEstateNowTimePrice.NumberValues[1]}}
-
+                                                                                                    <i>
+                                                                                                        {{item.RealEstateNowTimePrice.NumberValues[1]}}
+                                                                                                    </i>
+                                                                                                    ,
+                                                                                                    <i>
+                                                                                                        {{item.RealEstateNowTimePrice.NumberValues[0]}}
+                                                                                                    </i>
                                                                                                     {{item.RealEstateNowTimePrice.TranslatedUnit}}
 
                                                                                                 </option>
@@ -892,10 +899,13 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.VehicleBuyTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.VehicleBuyTimePrice.NumberValues[1]}}
-
+                                                                                                    <i>
+                                                                                                        {{item.VehicleBuyTimePrice.NumberValues[1]}}
+                                                                                                    </i>
+                                                                                                    ,
+                                                                                                    <i>
+                                                                                                        {{item.VehicleBuyTimePrice.NumberValues[0]}}
+                                                                                                    </i>
                                                                                                     {{item.VehicleBuyTimePrice.TranslatedUnit}}
 
                                                                                                 </option>
@@ -916,9 +926,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.VehicleNowTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.VehicleNowTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.VehicleNowTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.VehicleNowTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.VehicleNowTimePrice.TranslatedUnit}}
 
@@ -1004,10 +1014,13 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.InvestBuyTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.InvestBuyTimePrice.NumberValues[1]}}
-
+                                                                                                    <i>
+                                                                                                        {{item.InvestBuyTimePrice.NumberValues[1]}}
+                                                                                                    </i>
+                                                                                                    ,
+                                                                                                    <i>
+                                                                                                        {{item.InvestBuyTimePrice.NumberValues[0]}}
+                                                                                                    </i>
                                                                                                     {{item.InvestBuyTimePrice.TranslatedUnit}}
 
                                                                                                 </option>
@@ -1027,9 +1040,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.InvestNowTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.InvestNowTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.InvestNowTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.InvestNowTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.InvestNowTimePrice.TranslatedUnit}}
 
@@ -1085,10 +1098,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.BankAccountPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.BankAccountPrice.NumberValues[1]}}
-
+                                                                                                    <i>{{item.BankAccountPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.BankAccountPrice.NumberValues[0]}}</i>
                                                                                                     {{item.BankAccountPrice.TranslatedUnit}}
 
                                                                                                 </option>
@@ -1146,9 +1158,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.DebotrPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.DebotrPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.DebotrPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.DebotrPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.DebotrPrice.TranslatedUnit}}
 
@@ -1169,9 +1181,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.CreditPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.CreditPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.CreditPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.CreditPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.CreditPrice.TranslatedUnit}}
 
@@ -1278,9 +1290,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.GoodsBuyTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.GoodsBuyTimePrice.NumberValues[1]}}
+                                                                                                    <i> {{item.GoodsBuyTimePrice.NumberValues[1]}}</i>
+                                                                                                     ,
+                                                                                                    <i>{{item.GoodsBuyTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.GoodsBuyTimePrice.TranslatedUnit}}
 
@@ -1301,9 +1313,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.GoodsNowTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.GoodsNowTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.GoodsNowTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.GoodsNowTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.GoodsNowTimePrice.TranslatedUnit}}
 
@@ -1405,9 +1417,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.FeeAverageInYear.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.FeeAverageInYear.NumberValues[1]}}
+                                                                                                    <i> {{item.FeeAverageInYear.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i> {{item.FeeAverageInYear.NumberValues[0]}}</i>
 
                                                                                                     {{item.FeeAverageInYear.TranslatedUnit}}
 
@@ -1452,9 +1464,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.AverageMonthIncome.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.AverageMonthIncome.NumberValues[1]}}
+                                                                                                    <i>{{item.AverageMonthIncome.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i> {{item.AverageMonthIncome.NumberValues[0]}}</i>
 
                                                                                                     {{item.AverageMonthIncome.TranslatedUnit}}
 
@@ -1501,9 +1513,13 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.ElectionPlacePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionPlacePrice.NumberValues[1]}}
+                                                                                                    <i>
+                                                                                                        {{item.ElectionPlacePrice.NumberValues[1]}}
+                                                                                                    </i>
+                                                                                                    ,
+                                                                                                    <i>
+                                                                                                        {{item.ElectionPlacePrice.NumberValues[0]}}
+                                                                                                    </i>
 
                                                                                                     {{item.ElectionPlacePrice.TranslatedUnit}}
 
@@ -1526,9 +1542,13 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.ElectionFlockPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionFlockPrice.NumberValues[1]}}
+                                                                                                    <i>
+                                                                                                        {{item.ElectionFlockPrice.NumberValues[1]}}
+                                                                                                    </i>
+                                                                                                    ,
+                                                                                                    <i>
+                                                                                                        {{item.ElectionFlockPrice.NumberValues[0]}}
+                                                                                                    </i>
 
                                                                                                     {{item.ElectionFlockPrice.TranslatedUnit}}
 
@@ -1549,9 +1569,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.ElectionAdvertisePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionAdvertisePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.ElectionAdvertisePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.ElectionAdvertisePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.ElectionAdvertisePrice.TranslatedUnit}}
 
@@ -1573,9 +1593,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.ElectionStaffPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionStaffPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.ElectionStaffPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.ElectionStaffPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.ElectionStaffPrice.TranslatedUnit}}
 
@@ -1595,9 +1615,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.ElectionAllPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionAllPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.ElectionAllPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.ElectionAllPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.ElectionAllPrice.TranslatedUnit}}
 
@@ -1772,9 +1792,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.RealEstateBuyTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.RealEstateBuyTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.RealEstateBuyTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i> {{item.RealEstateBuyTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.RealEstateBuyTimePrice.TranslatedUnit}}
 
@@ -1795,9 +1815,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.RealEstateNowTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.RealEstateNowTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.RealEstateNowTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i> {{item.RealEstateNowTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.RealEstateNowTimePrice.TranslatedUnit}}
 
@@ -1898,9 +1918,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.VehicleBuyTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.VehicleBuyTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.VehicleBuyTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.VehicleBuyTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.VehicleBuyTimePrice.TranslatedUnit}}
 
@@ -1922,9 +1942,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.VehicleNowTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.VehicleNowTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.VehicleNowTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.VehicleNowTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.VehicleNowTimePrice.TranslatedUnit}}
 
@@ -2024,9 +2044,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.InvestBuyTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.InvestBuyTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.InvestBuyTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.InvestBuyTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.InvestBuyTimePrice.TranslatedUnit}}
 
@@ -2047,9 +2067,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.InvestNowTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.InvestNowTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.InvestNowTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.InvestNowTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.InvestNowTimePrice.TranslatedUnit}}
 
@@ -2105,9 +2125,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.BankAccountPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.BankAccountPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.BankAccountPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.BankAccountPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.BankAccountPrice.TranslatedUnit}}
 
@@ -2166,9 +2186,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.DebotrPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.DebotrPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.DebotrPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.DebotrPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.DebotrPrice.TranslatedUnit}}
 
@@ -2189,9 +2209,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.CreditPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.CreditPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.CreditPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.CreditPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.CreditPrice.TranslatedUnit}}
 
@@ -2283,9 +2303,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.GoodsBuyTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.GoodsBuyTimePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.GoodsBuyTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.GoodsBuyTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.GoodsBuyTimePrice.TranslatedUnit}}
 
@@ -2306,9 +2326,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.GoodsNowTimePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.GoodsNowTimePrice.NumberValues[1]}}
+                                                                                                    <i> {{item.GoodsNowTimePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.GoodsNowTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.GoodsNowTimePrice.TranslatedUnit}}
 
@@ -2423,9 +2443,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.FeeAverageInYear.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.FeeAverageInYear.NumberValues[1]}}
+                                                                                                    <i>{{item.FeeAverageInYear.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.FeeAverageInYear.NumberValues[0]}}</i>
 
                                                                                                     {{item.FeeAverageInYear.TranslatedUnit}}
 
@@ -2470,9 +2490,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.AverageMonthIncome.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.AverageMonthIncome.NumberValues[1]}}
+                                                                                                    <i>{{item.AverageMonthIncome.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.AverageMonthIncome.NumberValues[0]}}</i>
 
                                                                                                     {{item.AverageMonthIncome.TranslatedUnit}}
 
@@ -2519,9 +2539,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.ElectionPlacePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionPlacePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.ElectionPlacePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.ElectionPlacePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.ElectionPlacePrice.TranslatedUnit}}
 
@@ -2544,9 +2564,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.ElectionFlockPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionFlockPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.ElectionFlockPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.ElectionFlockPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.ElectionFlockPrice.TranslatedUnit}}
 
@@ -2567,9 +2587,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.ElectionAdvertisePrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionAdvertisePrice.NumberValues[1]}}
+                                                                                                    <i>{{item.ElectionAdvertisePrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.ElectionAdvertisePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.ElectionAdvertisePrice.TranslatedUnit}}
 
@@ -2591,9 +2611,9 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    {{item.ElectionStaffPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionStaffPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.ElectionStaffPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i> {{item.ElectionStaffPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.ElectionStaffPrice.TranslatedUnit}}
 
@@ -2613,9 +2633,9 @@
                                                                                                     name="inputRealEstateBuyTimePrice"
                                                                                                     id="inputRealEstateBuyTimePrice">
                                                                                                 <option>
-                                                                                                    {{item.ElectionAllPrice.NumberValues[0]}}
-                                                                                                    .
-                                                                                                    {{item.ElectionAllPrice.NumberValues[1]}}
+                                                                                                    <i>{{item.ElectionAllPrice.NumberValues[1]}}</i>
+                                                                                                    ,
+                                                                                                    <i>{{item.ElectionAllPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.ElectionAllPrice.TranslatedUnit}}
 
@@ -2750,7 +2770,7 @@
                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
                                                                                            min="1" max="6"/>
                                                                                 </div>
-                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateExtent">
                                                                                         متراژ حدودی ملک
                                                                                         <span class="text-danger"></span>
@@ -3725,7 +3745,6 @@
 </div>
 <script>
     var app = angular.module("myApp", []);
-
     var EnumResumeProfile = {
         "Gender": '[{ "Male":"آقا" },{ "Female":"خانم"}]',
         "MaritalStatus": '[{ "Married":"متاهل" },{ "Single":"مجرد" }]',
@@ -3885,6 +3904,137 @@
             ']',
 
     };
+    var EnumAcademicBackground = {
+        "VeterinaryMedicineDepartment":
+            '[' +
+            '{ "name": "بهداشت و بیماری آبزیان" , "value" : "1"} ,' +
+            '{ "name": "بهداشت و مواد غذایی" , "value" : "2"} ,' +
+            '{ "name": "پاتوبیولوژی" , "value" : "3"}   ,' +
+            '{ "name": "دامپزشکی" , "value" : "4"}  ,' +
+            '{ "name": "علوم پایه دامپزشکی" , "value" : "5"}   ,' +
+            '{ "name": "علوم درمانگاهی" , "value" : "6"}   ,' +
+            '{ "name": "میکروبیولوژی" , "value" : "7"}   ,' +
+            '{ "name": "سایر" , "value" : "8"}   ' +
+            ']',
+        "foreignlanguages":
+            '[' +
+            '{ "name": "زبان عربی" , "value" : "1"} ,' +
+            '{ "name": "زبان های خارجی" , "value" : "2"} ,' +
+            '{ "name": "سایر" , "value" : "3" }   ' +
+            ']',
+        "HumanitiesDepartment":
+            '[' +
+            '{ "name": "الهیات و معارف اسلامی" , "value" : "1"} ,' +
+            '{ "name": "تاریخ" , "value" : "2"} ,' +
+            '{ "name": "تربیت بدنی و علوم ورزشی" , "value" : "3"}   ,' +
+            '{ "name": "حسابداری" , "value" : "4"}  ,' +
+            '{ "name": "حقوق" , "value" : "5"}   ,' +
+            '{ "name": "روانشناسی" , "value" : "6"}   ,' +
+            '{ "name": "زبان شناسی" , "value" : "7"}   ,' +
+            '{ "name": "زبان شناسی" , "value" : "8"}   ,' +
+            '{ "name": "زبان و ادبیات فارسی" , "value" : "9"}   ,' +
+            '{ "name": "علوم اجتماعی" , "value" : "10"}   ,' +
+            '{ "name": "علوم اقتصادی" , "value" : "11"}   ,' +
+            '{ "name": "علوم تربیتی" , "value" : "12"}   ,' +
+            '{ "name": "علوم جغرافیایی" , "value" : "13"}   ,' +
+            '{ "name": "علوم دریایی" , "value" : "14"}   ,' +
+            '{ "name": "علوم سیاسی و روابط بین الملل" , "value" : "15"}   ,' +
+            '{ "name": "فلسفه" , "value" : "16"}   ,' +
+            '{ "name": "کتابداری و اطلاع رسانی" , "value" : "17"}   ,' +
+            '{ "name": "مدیریت" , "value" : "18"}   ,' +
+            '{ "name": "نظامی انتظامی" , "value" : "19"}   ,' +
+            '{ "name": "سایر" , "value" : "20"}   ' +
+            ']',
+        "ScienceDepartment":
+            '[' +
+            '{ "name": "آمار" , "value" : "1"} ,' +
+            '{ "name": "ریاضی" , "value" : "2" } ,' +
+            '{ "name": "زمین شناسی" , "value" : "3"}   ,' +
+            '{ "name": "زیست شناسی" , "value" : "4" }  ,' +
+            '{ "name": "ژئوفیزیک و هواشناسی"  , "value" : "5"}   ,' +
+            '{ "name": "شیمی" , "value" : "6"}   ,' +
+            '{ "name": "علوم دریایی و اقیانوسی" , "value" : "7"}   ,' +
+            '{ "name": "علوم کامپیوتر" , "value" : "8"}   ,' +
+            '{ "name": "فیزیک" , "value" : "9"}   ,' +
+            '{ "name": "محاسبات نرم" , "value" : "10"}   ,' +
+            '{ "name": "سایر" , "value" : "11"}   ' +
+            ']',
+        "TechnicalEngineeringDepartment":
+            '[' +
+            '{ "name": "مهندسی انرژی" , "value" : "1"} ,' +
+            '{ "name": "مهدنسی ایمنی و بازرسی فنی" , "value" : "2" } ,' +
+            '{ "name": "مهندسی برق" , "value" : "3"}   ,' +
+            '{ "name": "مهندسی پزشکی" , "value" : "4" }  ,' +
+            '{ "name": "مهندسی پلیمر"  , "value" : "5"}   ,' +
+            '{ "name": "مهندسی دریا" , "value" : "6"}   ,' +
+            '{ "name": "مهندسی رشته ای" , "value" : "7"}   ,' +
+            '{ "name": "مهندسی شیمی" , "value" : "8"}   ,' +
+            '{ "name": "مهندسی صنایع" , "value" : "9"}   ,' +
+            '{ "name": "مهندسی عمران" , "value" : "10"}   ,' +
+            '{ "name": "مهندسی فناوری اطلاعات" , "value" : "11"}   ,' +
+            '{ "name": "مهندسی کامپیوتر" , "value" : "12"}   ,' +
+            '{ "name": "مهندسی محیط زیست" , "value" : "13"}   ,' +
+            '{ "name": "مهندسی معدن" , "value" : "14"}   ,' +
+            '{ "name": "مهندسی مکانیک" , "value" : "15"}   ,' +
+            '{ "name": "مهدنسی مواد" , "value" : "16"}   ,' +
+            '{ "name": "مهندسی نانوفناوری" , "value" : "17"}   ,' +
+            '{ "name": "مهدنسی نساجی" , "value" : "18"}   ,' +
+            '{ "name": "مهدنسی نفت" , "value" : "19"}   ,' +
+            '{ "name": "مهدنسی هسته ای" , "value" : "20"}   ,' +
+            '{ "name": "مهدنسی هوافضا" , "value" : "21"}   ,' +
+            '{ "name": "سایر" , "value" : "22"}   ' +
+            ']',
+        "ArtDepartment":
+            '[' +
+            '{ "name": "پژوهش هنری" , "value" : "1"} ,' +
+            '{ "name": "صنایع دستی" , "value" : "2" } ,' +
+            '{ "name": "فرش" , "value" : "3"}   ,' +
+            '{ "name": "مرمت" , "value" : "4" }  ,' +
+            '{ "name": "معماری"  , "value" : "5"}   ,' +
+            '{ "name": "موزه" , "value" : "6"}   ,' +
+            '{ "name": "موسیقی" , "value" : "7"}   ,' +
+            '{ "name": "هنرهای تجسمی" , "value" : "8"}   ,' +
+            '{ "name": "هنرهای کاربردی" , "value" : "9"}   ,' +
+            '{ "name": "هنرهای نمایشی و سینمایی" , "value" : "10"}   ,' +
+            '{ "name": "سایر" , "value" : "11"}   ' +
+            ']',
+        "medicalDepartment":
+            '[' +
+            '{ "name": "پرستاری" , "value" : "1"} ,' +
+            '{ "name": "پزشکی" , "value" : "2" } ,' +
+            '{ "name": "پیراپزشکی" , "value" : "3"}   ,' +
+            '{ "name": "توانبخشی" , "value" : "4" }  ,' +
+            '{ "name": "داروسازی"  , "value" : "5"}   ,' +
+            '{ "name": "دندانپزشکی" , "value" : "6"}   ,' +
+            '{ "name": "سلامت,بهداشت و تغذیه" , "value" : "7"}   ,' +
+            '{ "name": "فناوری های نوین پزشکی" , "value" : "8"}   ,' +
+            '{ "name": "مامایی" , "value" : "9"}   ,' +
+            '{ "name": "مدیریت و اطلاع رسانی پزشکی" , "value" : "10"}   ,' +
+            '{ "name": "سایر" , "value" : "11"}   ' +
+            ']',
+
+        "AgricultureNaturalResourcesDepartment":
+            '[' +
+            '{ "name": "آب" , "value" : "1"} ,' +
+            '{ "name": "اقتصاد کشاورزی و مدیریت کشاورزی" , "value" : "2" } ,' +
+            '{ "name": "بیوتکنولوژی کشاورزی" , "value" : "3"}   ,' +
+            '{ "name": "ترویج و آموزش کشاورزی" , "value" : "4" }  ,' +
+            '{ "name": "جنگلداری"  , "value" : "5"}   ,' +
+            '{ "name": "چوب" , "value" : "6"}   ,' +
+            '{ "name": "دامپروری" , "value" : "7"}   ,' +
+            '{ "name": "زراعت و اصلاح نباتات" , "value" : "8"}   ,' +
+            '{ "name": "شیلات" , "value" : "9"}   ,' +
+            '{ "name": "علوم باغبانی" , "value" : "10"}   ,' +
+            '{ "name": "علوم خاک" , "value" : "11"}   ,' +
+            '{ "name": "گیاه پزشکی" , "value" : "12"}   ,' +
+            '{ "name": "ماشین های کشاورزی" , "value" : "13"}   ,' +
+            '{ "name": "محیط زیست" , "value" : "14"}   ,' +
+            '{ "name": "مدیریت بیابان و مرتع و آبخیزداری" , "value" : "15"}   ,' +
+            '{ "name": "مواد غذایی" , "value" : "16"}   ,' +
+            '{ "name": "سایر" , "value" : "17"}   ' +
+            ']',
+    };
+
     var finance = [];
     var countries = [];
     var cities = [];
@@ -3935,6 +4085,7 @@
                 $currentArrayKeys = JSON.parse($keyItems);
                 for (var j = 0; j < $currentArrayKeys.length; j++) {
                     $itemKeys = Object.keys($currentArrayKeys[j]);
+                    // console.log('$itemKeys'  , $itemKeys);
                     if ($itemKeys[0] === $inputKey) {
                         for (var k = 0; k < $currentArrayKeys.length; k++) {
                             if ($currentArrayKeys[k][$itemKeys[0]] != undefined) {
@@ -3943,6 +4094,21 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    });
+    app.filter('bindEnumMajor', function () {
+        return function (input) {
+            $inputKey = input;
+            $depatment = $inputKey.split(',')[0];
+            $major = $inputKey.split(',')[1];
+            $keys = EnumAcademicBackground[$depatment];
+            $keys = JSON.parse($keys);
+            for (var i = 0; i < $keys.length; i++) {
+                $keyItems = $keys[i];
+                if ($keyItems['value'] == $major) {
+                    return $keyItems['name'];
                 }
             }
         }
@@ -3960,7 +4126,6 @@
             $scope.CityName = response.candidate.CityName;
             $scope.ElectionName = response.candidate.ElectionName;
             $scope.candidateAcademicBackground = response.candidateAcademicBackground;
-            console.log($scope.candidateAcademicBackground);
             $scope.candidateMilitaryStatus = response.candidateMilitaryStatus;
             $scope.politicBackground = response.politicBackground;
             $scope.candidateBooks = response.candidateBooks;
@@ -3977,6 +4142,9 @@
             states = response.states;
             cities = response.cities;
 
+            for (var i = 0; i < $scope.candidateAcademicBackground.length; i++) {
+                $scope.candidateAcademicBackground[i]['NewMajor'] = $scope.candidateAcademicBackground[i]['CandidateDepartment'] + "," + $scope.candidateAcademicBackground[i]['CandidateMajor'];
+            }
 
             var keys = Object.keys($scope.finance);
             for (var i = 0; i < keys.length; i++) {
@@ -4047,186 +4215,8 @@
             translatePrice('RealEStates', RealEStatesPricePlaceHolder);
             translatePrice('Vehicle', VehiclePricePlaceHolder);
 
-            $VeterinaryMedicineDepartment = JSON.parse(
-                ' [' +
-                '{ "name": "بهداشت و بیماری آبزیان" , "value" : "1" } ,' +
-                '{ "name": "بهداشت و مواد غذایی" , "value" : "2"  } ,' +
-                '{ "name": "پاتوبیولوژی" , "value" : "3"  }   ,' +
-                '{ "name": "دامپزشکی" , "value" : "4"  }  ,' +
-                '{ "name": "علوم پایه دامپزشکی" , "value" : "5"  }   ,' +
-                '{ "name": "علوم درمانگاهی" , "value" : "6"  }   ,' +
-                '{ "name": "میکروبیولوژی" , "value" : "7"  }   ,' +
-                '{ "name": "سایر" , "value" : "8"  }   ' +
-                ']'
-            );
-            $foreignlanguages = JSON.parse(
-                ' [' +
-                '{ "name": "زبان عربی" , "value" : "1" } ,' +
-                '{ "name": "زبان های خارجی" , "value" : "2"  } ,' +
-                '{ "name": "سایر" , "value" : "3"  }   ' +
-                ']'
-            );
-            $HumanitiesDepartment = JSON.parse(
-                ' [' +
-                '{ "name": "الهیات و معارف اسلامی" , "value" : "1" } ,' +
-                '{ "name": "تاریخ" , "value" : "2"  } ,' +
-                '{ "name": "تربیت بدنی و علوم ورزشی" , "value" : "3"  }   ,' +
-                '{ "name": "حسابداری" , "value" : "4"  }  ,' +
-                '{ "name": "حقوق" , "value" : "5"  }   ,' +
-                '{ "name": "روانشناسی" , "value" : "6"  }   ,' +
-                '{ "name": "زبان شناسی" , "value" : "7"  }   ,' +
-                '{ "name": "زبان شناسی" , "value" : "8"  }   ,' +
-                '{ "name": "زبان و ادبیات فارسی" , "value" : "9"  }   ,' +
-                '{ "name": "علوم اجتماعی" , "value" : "10"  }   ,' +
-                '{ "name": "علوم اقتصادی" , "value" : "11"  }   ,' +
-                '{ "name": "عاوم تربیتی" , "value" : "12"  }   ,' +
-                '{ "name": "عاوم جغرافیایی" , "value" : "13"  }   ,' +
-                '{ "name": "عاوم دریایی" , "value" : "14"  }   ,' +
-                '{ "name": "عاوم سیاسی و روابط بین الملل" , "value" : "15"  }   ,' +
-                '{ "name": "فلسفه" , "value" : "16"  }   ,' +
-                '{ "name": "کتابداری و اطلاع رسانی" , "value" : "17"  }   ,' +
-                '{ "name": "مدیریت" , "value" : "18"  }   ,' +
-                '{ "name": "نظامی انتظامی" , "value" : "19"  }   ,' +
-                '{ "name": "سایر" , "value" : "20"  }   ' +
-                ']'
-            );
-            $ScienceDepartment = JSON.parse(
-                ' [' +
-                '{ "name": "آمار" , "value" : "1" } ,' +
-                '{ "name": "ریاضی" , "value" : "2"  } ,' +
-                '{ "name": "زمین شناسی" , "value" : "3"  }   ,' +
-                '{ "name": "زیست شناسی" , "value" : "4"  }  ,' +
-                '{ "name": "ژئوفیزیک و هواشناسی" , "value" : "5"  }   ,' +
-                '{ "name": "شیمی" , "value" : "6"  }   ,' +
-                '{ "name": "علوم دریایی و اقیانوسی" , "value" : "7"  }   ,' +
-                '{ "name": "علوم کامپیوتر" , "value" : "8"  }   ,' +
-                '{ "name": "فیزیک" , "value" : "9"  }   ,' +
-                '{ "name": "محاسبات نرم" , "value" : "10"  }   ,' +
-                '{ "name": "سایر" , "value" : "11"  }   ' +
-                ']'
-            );
-            $TechnicalEngineeringDepartment = JSON.parse(
-                ' [' +
-                '{ "name": "مهندسی انرژی" , "value" : "1" } ,' +
-                '{ "name": "مهدنسی ایمنی و بازرسی فنی" , "value" : "2"  } ,' +
-                '{ "name": "مهندسی برق" , "value" : "3"  }   ,' +
-                '{ "name": "مهندسی پزشکی" , "value" : "4"  }  ,' +
-                '{ "name": "مهندسی پلیمر" , "value" : "5"  }   ,' +
-                '{ "name": "مهندسی دریا" , "value" : "6"  }   ,' +
-                '{ "name": "مهندسی رشته ای" , "value" : "7"  }   ,' +
-                '{ "name": "مهندسی شیمی" , "value" : "8"  }   ,' +
-                '{ "name": "مهندسی صنایع" , "value" : "9"  }   ,' +
-                '{ "name": "مهندسی عمران" , "value" : "10"  }   ,' +
-                '{ "name": "مهندسی فناوری اطلاعات (IT)" , "value" : "11"  }   ,' +
-                '{ "name": "مهندسی کامپیوتر" , "value" : "12"  }   ,' +
-                '{ "name": "مهندسی محیط زیست" , "value" : "13"  }   ,' +
-                '{ "name": "مهندسی معدن" , "value" : "14"  }   ,' +
-                '{ "name": "مهندسی مکانیک" , "value" : "15"  }   ,' +
-                '{ "name": "مهدنسی مواد" , "value" : "16"  }   ,' +
-                '{ "name": "مهندسی نانوفناوری" , "value" : "17"  }   ,' +
-                '{ "name": "مهدنسی نساجی" , "value" : "18"  }   ,' +
-                '{ "name": "مهدنسی نفت" , "value" : "19"  }   ,' +
-                '{ "name": "مهدنسی هسته ای" , "value" : "20"  }   ,' +
-                '{ "name": "مهدنسی هوافضا" , "value" : "21"  }   ,' +
-                '{ "name": "سایر" , "value" : "22"  }   ' +
-                ']'
-            );
-            $ArtDepartment = JSON.parse(
-                ' [' +
-                '{ "name": "پژوهش هنری" , "value" : "1" } ,' +
-                '{ "name": "صنایع دستی" , "value" : "2"  } ,' +
-                '{ "name": "فرش" , "value" : "3"  }   ,' +
-                '{ "name": "مرمت" , "value" : "4"  }  ,' +
-                '{ "name": "معماری" , "value" : "5"  }   ,' +
-                '{ "name": "موزه" , "value" : "6"  }   ,' +
-                '{ "name": "موسیقی" , "value" : "7"  }   ,' +
-                '{ "name": "هنرهای تجسمی" , "value" : "8"  }   ,' +
-                '{ "name": "هنرهای کاربردی" , "value" : "9"  }   ,' +
-                '{ "name": "هنرهای نمایشی و سینمایی" , "value" : "10"  }   ,' +
-                '{ "name": "سایر" , "value" : "11"  }   ' +
-                ']'
-            );
-            $medicalDepartment = JSON.parse(
-                ' [' +
-                '{ "name": "پرستاری" , "value" : "1" } ,' +
-                '{ "name": "پزشکی" , "value" : "2"  } ,' +
-                '{ "name": "پیراپزشکی" , "value" : "3"  }   ,' +
-                '{ "name": "توانبخشی" , "value" : "4"  }  ,' +
-                '{ "name": "داروسازی" , "value" : "5"  }   ,' +
-                '{ "name": "دندانپزشکی" , "value" : "6"  }   ,' +
-                '{ "name": "سلامت,بهداشت و تغذیه" , "value" : "7"  }   ,' +
-                '{ "name": "فناوری های نوین پزشکی" , "value" : "8"  }   ,' +
-                '{ "name": "مامایی" , "value" : "9"  }   ,' +
-                '{ "name": "مدیزیت و اطلاع رسانی پزشکی" , "value" : "10"  }   ,' +
-                '{ "name": "سایر" , "value" : "11"  }   ' +
-                ']'
-            );
-            $AgricultureNaturalResourcesDepartment = JSON.parse(
-                ' [' +
-                '{ "name": "آب" , "value" : "1" } ,' +
-                '{ "name": "اقتصاد کشاورزی و مدیریت کشاورزی" , "value" : "2"  } ,' +
-                '{ "name": "بیوتکنولوژی کشاورزی" , "value" : "3"  }   ,' +
-                '{ "name": "ترویج و آموزش کشاورزی" , "value" : "4"  }  ,' +
-                '{ "name": "جنگلداری" , "value" : "5"  }   ,' +
-                '{ "name": "چوب" , "value" : "6"  }   ,' +
-                '{ "name": "دامپروری" , "value" : "7"  }   ,' +
-                '{ "name": "زراعت و اصلاح نباتات" , "value" : "8"  }   ,' +
-                '{ "name": "شیلات" , "value" : "9"  }   ,' +
-                '{ "name": "علوم باغبانی" , "value" : "10"  }   ,' +
-                '{ "name": "علوم خاک" , "value" : "11"  }   ,' +
-                '{ "name": "گیاه پزشکی" , "value" : "12"  }   ,' +
-                '{ "name": "ماشین های کشاورزی" , "value" : "13"  }   ,' +
-                '{ "name": "محیط زیست" , "value" : "14"  }   ,' +
-                '{ "name": "مدیریت بیابان و مرتع و آبخیزداری" , "value" : "15"  }   ,' +
-                '{ "name": "مواد غذایی" , "value" : "15"  }   ,' +
-                '{ "name": "سایر" , "value" : "11"  }   ' +
-                ']'
-            );
-
             $(".left-candidate-panel-resume :input").prop('disabled', true);
             $(".report :input").prop('disabled', false);
-
-            function fillMajorDropDown($id, $selectedMajor, data) {
-                for ($i = 0; $i < data.length; $i++) {
-                    if ($selectedMajor == data[$i]['value']) {
-                        $("#" + $majorIndex).text(data[$i]['name']);
-                    }
-                }
-            }
-            setTimeout(function(){
-                for(var i=0;i < $(".major").length;i++) {
-                    $this = $(".major").eq(i);
-                    $depart = $this.data('depart');
-                    $major = $this.data('major');
-                    $majorIndex = $this.attr('id');
-                    $inputCandidateDepartment = $depart;
-                    if ($inputCandidateDepartment == "VeterinaryMedicineDepartment") {
-                        fillMajorDropDown($majorIndex, $major, $VeterinaryMedicineDepartment);
-                    }
-                    if ($inputCandidateDepartment == "ForeignLanguagesDepartment") {
-                        fillMajorDropDown($majorIndex, $major, $foreignlanguages);
-                    }
-                    if ($inputCandidateDepartment == "HumanitiesDepartment") {
-                        fillMajorDropDown($majorIndex, $major, $HumanitiesDepartment);
-                    }
-                    if ($inputCandidateDepartment == "ScienceDepartment") {
-                        fillMajorDropDown($majorIndex, $major, $ScienceDepartment);
-                    }
-                    if ($inputCandidateDepartment == "TechnicalEngineeringDepartment") {
-                        fillMajorDropDown($majorIndex, $major, $TechnicalEngineeringDepartment);
-                    }
-                    if ($inputCandidateDepartment == "ArtDepartment") {
-                        fillMajorDropDown($majorIndex, $major, $ArtDepartment);
-                    }
-                    if ($inputCandidateDepartment == "MedicalDepartment") {
-                        fillMajorDropDown($majorIndex, $major, $medicalDepartment);
-                    }
-                    if ($inputCandidateDepartment == "AgricultureNaturalResourcesDepartment") {
-                        fillMajorDropDown($majorIndex, $major, $AgricultureNaturalResourcesDepartment);
-                    }
-                }
-            } , 2000);
-
 
         });
     });

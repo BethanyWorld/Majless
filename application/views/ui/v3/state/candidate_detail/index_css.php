@@ -447,6 +447,7 @@
         border-bottom: 1px solid #ccc;
         border-radius: 0px;
         padding-bottom: 0px;
+        width: 100%;
     }
 
     .MobileStep {
