@@ -23,6 +23,7 @@
                     $inputCandidateStateId = $.trim($("#inputCandidateStateId").val());
                     $inputCandidateElectionId = $.trim($("#inputCandidateElectionId").val());
                     $inputCandidateInstaAccount = $.trim($("#inputCandidateInstaAccount").val());
+                    $inputOperationStatus = $("input[name='CandidateOperationStatus']:checked").val();
                     /* End Validation */
                     toggleLoader();
                     $sendData = {
@@ -32,7 +33,8 @@
                         'inputCandidateProfileImage': $inputCandidateImage,
                         'inputCandidateStateId': $inputCandidateStateId,
                         'inputCandidateElectionId': $inputCandidateElectionId,
-                        'inputCandidateInstaAccount': $inputCandidateInstaAccount
+                        'inputCandidateInstaAccount': $inputCandidateInstaAccount,
+                        'inputOperationStatus': $inputOperationStatus
                     }
                     $.ajax({
                         type: 'post',

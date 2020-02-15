@@ -41,11 +41,9 @@
             if (!$hasObligation) {
                 array_push($classes, 'OffObligation');
             }
-
-            if($hasMerit && $hasTransparency && $hasObligation){
+            if ($hasMerit && $hasTransparency && $hasObligation) {
                 $filterClass = "Merit";
             }
-
             ?>
             <div class="col-md-4 col-md-offset-0 col-xs-12 candidate-info-box <?php echo $filterClass; ?>">
                 <div class="mp-brief">
@@ -56,7 +54,7 @@
                     }
                     ?>
                     <div class="pic <?php echo $deActiveClass; ?>">
-                        <img src="<?php echo base_url('uploads/').$candidate['CPI']; ?>" class="candidateImage"/>
+                        <img src="<?php echo base_url('uploads/') . $candidate['CPI']; ?>" class="candidateImage"/>
                     </div>
                     <div class="col-md-12 col-xs-12 padding-0">
                         <?php foreach ($classes as $badge) { ?>
@@ -65,6 +63,11 @@
                     </div>
 
                     <div class="col-xs-12">
+                        <?php if ($candidate['CandidateOperationStatus'] == 'Flowed') { ?>
+                            <span class="wanted flowed">
+                            عدم اتمام فرآیند
+                            </span>
+                        <?php } ?>
                         <h3 class="candidateName">
                             <?php /*echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName'];*/ ?>
                             <?php echo $candidate['CandidateFullName']; ?>
@@ -73,14 +76,16 @@
                             </div>
                         </h3>
                         <?php if ($candidate['CandidateHasAccepted']) { ?>
-                            <a target="_blank" href="<?php echo base_url('State/candidate_detail/'.$candidate['CandidateRefId'].'/'.$stateId.'/'.$stateName); ?>">
+                            <a target="_blank"
+                               href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateRefId'] . '/' . $stateId . '/' . $stateName); ?>">
                                 <button class="btn invite-button" type="button">
                                     مشاهده پروفایل
                                 </button>
                             </a>
-                        <?php } else { ?>
+                        <?php } ?>
+                        <?php if (!$candidate['CandidateHasAccepted']) { ?>
                             <button class="btn btn-default" type="button">
-                               عدم شرکت در چالش شفافیت
+                                عدم شرکت در چالش شفافیت
                             </button>
                         <?php } ?>
                     </div>
@@ -89,7 +94,6 @@
         <?php }
     }
 }
-
     foreach ($dataSpecialNoRef as $candidate) {
         if ($candidate['CandidateProfileImage'] !== NULL) { ?>
             <div class="col-md-4 col-md-offset-0 col-xs-12 candidate-info-box">
@@ -127,12 +131,12 @@
                     if (!$hasObligation) {
                         array_push($classes, 'OffObligation');
                     }
-                    if($hasMerit && $hasTransparency && $hasObligation){
+                    if ($hasMerit && $hasTransparency && $hasObligation) {
                         $filterClass = "Merit";
                     }
                     ?>
                     <div class="pic deactive">
-                        <img src="<?php echo base_url('uploads/').$candidate['CPI']; ?>" class="candidateImage"/>
+                        <img src="<?php echo base_url('uploads/') . $candidate['CPI']; ?>" class="candidateImage"/>
                     </div>
                     <div class="col-md-12 col-xs-12 padding-0">
                         <?php foreach ($classes as $badge) { ?>
@@ -140,16 +144,16 @@
                         <?php } ?>
                     </div>
                     <div class="col-xs-12">
-                        <span class="wanted">
-                            عدم شرکت در چالش
-                        </span>
+                            <span class="wanted">
+                                عدم شرکت در چالش
+                            </span>
                         <h3 class="candidateName">
                             <?php echo $candidate['CandidateFullName']; ?>
                             <div class="election">
                                 <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
                             </div>
                         </h3>
-                        <a  href="javascript:void(0);">
+                        <a href="javascript:void(0);">
                             <button class="btn invite-button grayscale" type="button">
                                 عدم شرکت در چالش
                             </button>
@@ -159,7 +163,4 @@
             </div>
         <?php }
     }
-
-
-
- ?>
+?>

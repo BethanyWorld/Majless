@@ -33,6 +33,22 @@
         z-index: 10000;
         transform: rotate(25deg);
     }
+    .wanted.flowed{
+        font-size: 12px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: -10px;
+        margin: auto;
+        padding: 8px 6px;
+        line-height: 10px;
+        border-radius: 0;
+        width: 150px;
+        background: rgb(9, 86, 68);
+        color: #fff;
+        z-index: 10000;
+        transform: rotate(0deg);
+    }
     .grayscale{
         filter: grayscale(1);
     }

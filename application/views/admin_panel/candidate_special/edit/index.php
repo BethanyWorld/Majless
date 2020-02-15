@@ -14,7 +14,8 @@
                                     <a href="#signs" aria-controls="signs" role="tab" data-toggle="tab">نشان ها</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#bind-candidate" aria-controls="bind-candidate" role="tab" data-toggle="tab">انتساب به نامزد</a>
+                                    <a href="#bind-candidate" aria-controls="bind-candidate" role="tab"
+                                       data-toggle="tab">انتساب به نامزد</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -108,6 +109,38 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-xs-12 col-sm-4 col-md-2">
+                                                    <label>وضعیت اتمام فرآیند</label>
+                                                    <div class="form-group">
+                                                        <div class="form-line">
+                                                            <div class="row col-xs-12">
+                                                                <input
+                                                                        <?php if($candidate['CandidateOperationStatus']=='Ended') echo "checked"; ?>
+                                                                        class="selected-candidate"
+                                                                        name="CandidateOperationStatus"
+                                                                        id="CandidateOperationStatusEnded"
+                                                                        type="radio"
+                                                                        value="Ended"/>
+                                                                <label for="CandidateOperationStatusEnded">
+                                                                  تمام شده
+                                                                </label>
+                                                            </div>
+                                                            <div class="row col-xs-12">
+                                                                <input
+                                                                    <?php if($candidate['CandidateOperationStatus']!='Ended') echo "checked"; ?>
+                                                                        class="selected-candidate"
+                                                                        name="CandidateOperationStatus"
+                                                                        type="radio"
+                                                                        id="CandidateOperationStatusFlowed"
+                                                                        value="Flowed"/>
+                                                                <label for="CandidateOperationStatusFlowed">
+                                                                    ناتمام
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-xs-12">
                                                     <button type="button" id="editCandidateSpecial"
                                                             class="btn btn-primary waves-effect">
@@ -127,11 +160,11 @@
                                                 </div>
                                                 <div class="card">
                                                     <ul>
-                                                    <?php foreach ($badges as $item) { ?>
-                                                        <li>
-                                                            <?php badgePipe($item['CandidateBadge']); ?>
-                                                        </li>
-                                                    <?php } ?>
+                                                        <?php foreach ($badges as $item) { ?>
+                                                            <li>
+                                                                <?php badgePipe($item['CandidateBadge']); ?>
+                                                            </li>
+                                                        <?php } ?>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -229,7 +262,7 @@
                                             <div class="col-xs-12">
                                                 <div class="col-xs-12">
                                                     <span>نامزد انتساب داده شده</span>:
-                                                    <span><?php echo $candidateReference['CandidateFirstName']." ".$candidateReference['CandidateLastName']; ?></span>
+                                                    <span><?php echo $candidateReference['CandidateFirstName'] . " " . $candidateReference['CandidateLastName']; ?></span>
 
                                                     <div class="form-group">
                                                         <label for="inputCandidatePreName">جستجوی نامزد</label>

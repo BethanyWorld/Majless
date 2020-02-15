@@ -1105,6 +1105,7 @@ class ModelCandidate extends CI_Model
                 'CandidateElectionId' => $inputs['inputCandidateElectionId'],
                 'CandidateProfileImage' => $inputs['inputCandidateProfileImage'],
                 'CandidateInstaAccount' => $inputs['inputCandidateInstaAccount'],
+                'CandidateOperationStatus' => $inputs['inputOperationStatus'],
                 'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
         } else {
@@ -1114,6 +1115,7 @@ class ModelCandidate extends CI_Model
                 'CandidateStateId' => $inputs['inputCandidateStateId'],
                 'CandidateElectionId' => $inputs['inputCandidateElectionId'],
                 'CandidateInstaAccount' => $inputs['inputCandidateInstaAccount'],
+                'CandidateOperationStatus' => $inputs['inputOperationStatus'],
                 'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
         }

@@ -1267,6 +1267,8 @@ class Profile extends CI_Controller{
         $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
         $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
         $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
+        $data['documentName'] = $_GET['Action'];
+        $data['documentPersianName'] = $_GET['TR'];
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/upload_documents/index', $data);
