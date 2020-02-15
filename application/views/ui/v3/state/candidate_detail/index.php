@@ -198,10 +198,11 @@
                                 <strong class="colored bg-white">
                                     {{item.CandidateStudyStatus | bindEnum}}
                                     {{item.CandidateGrade | bindEnum}}
-                                    {{item.CandidateUniversityName}}
                                     <strong class="colored bg-white major">
                                         {{item.NewMajor | bindEnumMajor}}
                                     </strong>
+                                    {{item.CandidateUniversityName}}
+
                                 </strong>
                             </li>
                         </ul>
