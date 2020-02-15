@@ -274,7 +274,27 @@
                         </div>
                     </div>
                     <div class="panel-body">
+                        <ul class="resume-ul">
+                            <li ng-repeat="item in candidateSocialCulturalBackground">
+                                <span class="fa fa-circle-o"></span>
+                                <strong class="colored bg-white">
+                                    {{item.CandidateActivityFieldType | bindEnumSocialCulture }}
+                                    {{item.CandidateActivityFieldOtherTypeTitle }}
+                                    {{item.CandidateOrganizationName }}
+                                    {{item.CandidateMemberShipType | bindEnumSocialCulture}}
+                                    {{item.CandidateMemberShipDescription  }}
+                                    {{item.CandidateBasijType  | bindEnumSocialCulture}}
+                                    {{item.CandidateBasijTypeOtherTitle  }}
+                                    {{item.CandidateMobilMembershipType  | bindEnumSocialCulture}}
+                                    {{item.CandidateBasijAreaTitle  }}
+                                    {{item.CandidateActivityStartMonth | bindEnumSocialCulture}}
+                                    {{item.CandidateActivityStartYear  }}
+                                    {{item.CandidateActivityEndMonth  | bindEnumSocialCulture}}
+                                    {{item.CandidateActivityEndYear  }}
 
+                                </strong>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <!-- Politic History -->
@@ -4035,6 +4055,58 @@
             '{ "name": "سایر" , "value" : "17"}   ' +
             ']',
     };
+    var EnumSocialCulture = {
+        "CandidateActivityFieldType":
+            '[' +
+            '{ "Charity": "انجمن خیریه"} ,' +
+            '{ "Mobilization": "بسیج" } ,' +
+            '{ "University": "دانشگاه" }   ,' +
+            '{ "Semen": "سمن" }  ,' +
+            '{ "Councils": "شورایاری" }   ,' +
+            '{ "CulturalCenter": "فرهنگسرا" }   ,' +
+            '{ "JihadistActivities": "فعالیت های جهادی"}   ,' +
+            '{ "Schools": "مدارس"}   ,' +
+            '{ "TheMosque": "مسجد"}   ,' +
+            '{ "RedCrescent": "هلال احمر"}   ,' +
+            '{ "ReligiousCommittees": "هئیت های مذهبی"}   ,' +
+            '{ "Others": "سایر" }   ' +
+            ']',
+        "ShamsiMonths":
+            '[' +
+            '{ "Farvardin": "فروردین"} ,' +
+            '{ "Ordibehsht": "اردیبهشت" } ,' +
+            '{ "Khordad": "خرداد" }   ,' +
+            '{ "Tir": "تیر" }  ,' +
+            '{ "Mordad": "مرداد" }   ,' +
+            '{ "Shahrivar": "شهریور" }   ,' +
+            '{ "Mehr": "مهر"}   ,' +
+            '{ "Aban": "آبان"}   ,' +
+            '{ "Azar": "آذر"}   ,' +
+            '{ "Dey": "دی"}   ,' +
+            '{ "Bahman": "بهمن"}   ,' +
+            '{ "Esfand": "اسفند" }   ' +
+            ']',
+        "CandidateMemberShipType":
+            '[' +
+            '{ "Official": "رسمی"} ,' +
+            '{ "Voluntary": "داوطلبانه" }   ' +
+            ']',
+        "'CandidateBasijType' ":
+            '[' +
+            '{ "Urban": "شهری"} ,' +
+            '{ "schools": "مدارس" } ,' +
+            '{ "University": "دانشگاه" }   ,' +
+            '{ "Others": "سایر" }   ' +
+            ']',
+        "CandidateMobilMembershipType":
+            '[' +
+            '{ "Normal": "عادی"} ,' +
+            '{ "Active": "فعال" } ,' +
+            '{ "Kadr": "کادر" }   ,' +
+            '{ "Others": "سایر" }   ' +
+            ']',
+
+    };
 
     var finance = [];
     var countries = [];
@@ -4114,6 +4186,28 @@
             }
         }
     });
+
+    app.filter('bindEnumSocialCulture', function () {
+        return function (input) {
+            $inputKey = input;
+            $keys = Object.keys(EnumSocialCulture);
+            for (var i = 0; i < $keys.length; i++) {
+                $currentKey = $keys[i];
+                $keyItems = EnumSocialCulture[$currentKey];
+                $currentArrayKeys = JSON.parse($keyItems);
+                for (var j = 0; j < $currentArrayKeys.length; j++) {
+                    $itemKeys = Object.keys($currentArrayKeys[j]);
+                    if ($itemKeys[0] === $inputKey) {
+                        for (var k = 0; k < $currentArrayKeys.length; k++) {
+                            if ($currentArrayKeys[k][$itemKeys[0]] != undefined) {
+                                return $currentArrayKeys[k][$itemKeys[0]];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
     app.controller("myCtrl", function ($scope, $http) {
         $scope.notFound = 'اطلاعاتی برای این مورد وارد نشده است';
         $http.get("<?php echo base_url('State/candidateDetailApi/' . $candidate['CandidateId'] . '/3/اردبیل') ?>").then(function (response) {
@@ -4127,6 +4221,7 @@
             $scope.CityName = response.candidate.CityName;
             $scope.ElectionName = response.candidate.ElectionName;
             $scope.candidateAcademicBackground = response.candidateAcademicBackground;
+            $scope.candidateSocialCulturalBackground = response.candidateSocialCulturalBackground;
             $scope.candidateMilitaryStatus = response.candidateMilitaryStatus;
             $scope.politicBackground = response.politicBackground;
             $scope.candidateBooks = response.candidateBooks;
