@@ -19,8 +19,8 @@
                 </div>
                 <div class="panel-body">
                     <ul>
-                        <li><a href="<?php echo base_url('SignUp?type=candidate') ?>">نامزد انتخاباتی</a></li>
-<!--                        <li><a href="--><?php //echo base_url('SignUp?type=elite') ?><!--">بانک نخبگان</a></li>-->
+<!--                        <li><a href="--><?php //echo base_url('SignUp?type=candidate') ?><!--">نامزد انتخاباتی</a></li>-->
+                        <li><a href="<?php echo base_url('SignUp?type=elite') ?>">بانک نخبگان</a></li>
                         <li><a href="<?php echo base_url('SignUp?type=sponsor') ?>">حامی</a></li>
                     </ul>
                 </div>
@@ -112,20 +112,20 @@
                 </div>
                 <div class="col-xs-12 padding-0">
                     <div class="form-group">
-                        <label class="label-sign-up-type" for="inputSignUpTypeCandidate">نامزد انتخاباتی</label>
-                        <input
-                            <?php if ($signUpType == 'candidate') echo "checked"; ?>
-                                type="checkbox"
-                                id="inputSignUpTypeCandidate"
-                                name="inputSignUpTypeCandidate"
-                                class="sign-up-type" value="1"/>
-                        <label class="label-sign-up-type hidden" for="inputSignUpTypeEliote">بانک نخبگان</label>
+<!--                        <label class="label-sign-up-type" for="inputSignUpTypeCandidate">نامزد انتخاباتی</label>-->
+<!--                        <input-->
+<!--                            --><?php //if ($signUpType == 'candidate') echo "checked"; ?>
+<!--                                type="checkbox"-->
+<!--                                id="inputSignUpTypeCandidate"-->
+<!--                                name="inputSignUpTypeCandidate"-->
+<!--                                class="sign-up-type" value="1"/>-->
+                        <label class="label-sign-up-type" for="inputSignUpTypeEliote">بانک نخبگان</label>
                         <input
                             <?php if ($signUpType == 'elite') echo "checked"; ?>
                                 type="checkbox"
                                 id="inputSignUpTypeEliote"
                                 name="inputSignUpTypeEliote"
-                                class="sign-up-type hidden" value="2" />
+                                class="sign-up-type" value="2" />
                         <label class="label-sign-up-type" for="inputSignUpTypeSponsor">حامی</label>
                         <input
                             <?php if ($signUpType == 'sponsor') echo "checked"; ?>

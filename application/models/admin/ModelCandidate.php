@@ -423,12 +423,12 @@ class ModelCandidate extends CI_Model
         if (isset($inputs['inputElectionIds']) && !empty($inputs['inputElectionIds'])) {
             $this->db->where_in('candidate_special.CandidateElectionId', $inputs['inputElectionIds']);
         }
-
-        $this->db->order_by('CandidateSignScore', 'DESC');
         $this->db->where(array(
             'candidate.CandidateStateId' => $inputs['inputStateId'],
             'CandidateHasAccepted' => 1
         ));
+
+        $this->db->order_by('CandidateSignScore DESC' , 'CandidateTotalScore DESC');
 
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
@@ -448,6 +448,7 @@ class ModelCandidate extends CI_Model
             'CandidateStateId' => $inputs['inputStateId'],
             'CandidateHasAccepted' => 0
         ));
+        $this->db->order_by('CandidateTotalScore DESC');
 
         $query = $this->db->get();
         if ($query->num_rows() > 0) {

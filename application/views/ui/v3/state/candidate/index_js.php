@@ -55,7 +55,6 @@
                 $(this).addClass('active');
             }
         });
-
         $(".inputElectionId").click(function () {
             loadData();
         });
@@ -153,6 +152,5 @@
             $(".candidate-info-box").hide();
             $(".candidate-info-box."+$filterClass).fadeIn();
         });
-
     });
 </script>
