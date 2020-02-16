@@ -418,11 +418,12 @@
 
     .candidate-name {
         text-align: center;
-        color: #0B5E4A;
+        color: #ffffff;
+        margin-top: 40px;
     }
 
     .candidate-name h1, .candidate-name h3 {
-        color: #0B5E4A;
+        color: #ffffff;
     }
 
     .candidate-name h1 {
@@ -436,7 +437,7 @@
 
     #hidden-box2 .candidate-name h1 {
         font-weight: bold;
-        font-size: 46px;
+        font-size: 26px;
         padding-top: 0px;
         margin-top: 0px;
         margin-bottom: 0px;
@@ -446,7 +447,7 @@
 
     #hidden-box1 .candidate-name h1 {
         font-weight: 900;
-        font-size: 32px;
+        font-size: 24px;
         padding-top: 0px;
         margin-top: 0px;
         margin-bottom: 0px;
@@ -455,29 +456,29 @@
     }
 
     .candidate-text-invite {
-        color: #0B5E4A;
+        color: #ffffff;
         text-align: center;
         font-size: 20px;
         font-weight: 500;
     }
 
     #hidden-box1 .candidate-text-invite {
-        color: #0B5E4A;
+        color: #ffffff;
         text-align: center;
-        font-size: 27px;
+        font-size: 20px;
         font-weight: 500;
     }
 
     #hidden-box2 .candidate-text-invite {
-        color: #0B5E4A;
+        color: #ffffff;
         text-align: center;
-        font-size: 35px;
+        font-size: 20px;
         font-weight: 500;
     }
 
     .candidate-text-invite p {
         margin: 0px;
-        line-height: normal;
+        line-height: 55px;
     }
 
     .candidate-text-invite a {
@@ -496,6 +497,7 @@
 
     #hidden-box1 .inner-border-div {
         height: 100%;
+        direction: rtl;
     }
 
     #hidden-box2 .tttt {
@@ -517,6 +519,7 @@
 
     #hidden-box2 .inner-border-div {
         height: 100%;
+        direction: rtl;
     }
 
     .mp-brief:hover .pic img {

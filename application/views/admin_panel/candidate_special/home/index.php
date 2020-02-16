@@ -74,15 +74,10 @@
      <div class="hidden-box1" id="hidden-box1">
          <div class="modal-border">
              <div class="inner-border-div">
-                 <img src="<?php echo $_DIR; ?>images/Story-bg.png">
+                 <img src="<?php echo $_DIR; ?>images/story-part-bg.png">
                  <div class="candidate-image-div">
                      <img src="<?php echo $_DIR; ?>images/Story-man.png" class="inner-candidate-image">
-                     <div style="padding: 15px 0;">
-                         <div class="candidate-text-invite">
-                             <p style="line-height: 60px !important;">
-                                 دعوت می&hairsp;کنیم از
-                             </p>
-                         </div>
+                     <div style="padding: 15px 80px;">
                          <div class="candidate-name">
                              <h1 class="modalCandidateName"></h1>
                          </div>
@@ -91,12 +86,13 @@
                              <h3 class="modalCandidateArea"></h3>
                          </div>
                          <div class="candidate-text-invite">
-                             <p style="line-height: 60px !important;">
-                                 برای شرکت در
+                             <p>
+                                 در چالش شایستگی و شفافیت جنبش #از_ما شرکت کرده اند.
                              </p>
-                             <p style="line-height: 60px !important;">
-                                 چالش شایستگی و شفافیت جنبش
-                                 <a> #از_ما</a>
+                             <p>
+                                 برای دیدن نتایج سایت
+                                 www.azmaa.net
+                                 را ببینید.
                              </p>
                          </div>
                      </div>
@@ -108,29 +104,25 @@
      <div class="hidden-box2" id="hidden-box2">
          <div class="modal-border">
              <div class="inner-border-div">
-                 <img src="<?php echo $_DIR; ?>images/post-bg.png">
+                 <img src="<?php echo $_DIR; ?>images/post-part-bg.png">
                  <div class="candidate-image-div">
                      <img src="<?php echo $_DIR; ?>images/post-man.png" class="inner-candidate-image">
                      <div class="">
-                         <div class="candidate-text-invite">
-                             <p>
-                                 دعوت می&hairsp;کنیم از
-                             </p>
-                         </div>
                          <div class="candidate-name">
                              <h1 class="modalCandidateName"></h1>
                          </div>
                          <div class="candidate-name">
                              <h3>حوزه انتخابیه</h3>
                              <h3 class="modalCandidateArea"></h3>
-                         </div>س
+                         </div>
                          <div class="candidate-text-invite">
                              <p>
-                                 برای شرکت در
+                                 در چالش شایستگی و شفافیت جنبش #از_ما شرکت کرده اند.
                              </p>
                              <p>
-                                 چالش شایستگی و شفافیت جنبش
-                                 <a> #از_ما</a>
+                                 برای دیدن نتایج سایت
+                                 www.azmaa.net
+                                 را ببینید.
                              </p>
                          </div>
                      </div>
