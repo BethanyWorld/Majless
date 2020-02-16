@@ -50,25 +50,6 @@
                             </a>
                         </li>
                         <li class="col-md-12 padding-0">
-                            <a href="#social-cultural-background">
-                                <i class="zmdi RightpanelIcon">
-                                    <span class="fa fa-bookmark"></span>
-                                </i>
-                                <div class="RightPanelContent">
-                                    <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="col-md-12 padding-0">
-                            <a href="#political-background">
-                                <i class="zmdi RightpanelIcon">
-                                    <span class="fa fa-handshake-o"></span>
-                                </i>
-                                <div class="RightPanelContent">
-                                    <div class="RightPanleTitle"> سوابق سیاسی</div>
-                                </div>
-                        </li>
-                        <li class="col-md-12 padding-0">
                             <a href="#scientific-research-records">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-flask"></span>
@@ -95,6 +76,25 @@
                                 </i>
                                 <div class="RightPanelContent">
                                     <div class="RightPanleTitle">وعده های انتخاباتی</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-md-12 padding-0">
+                            <a href="#political-background">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-handshake-o"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle"> سوابق سیاسی</div>
+                                </div>
+                        </li>
+                        <li class="col-md-12 padding-0">
+                            <a href="#social-cultural-background">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-bookmark"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
                                 </div>
                             </a>
                         </li>
@@ -264,130 +264,6 @@
                                 </strong>
                             </li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="social-cultural-background">
-                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                        <div class="have-border-bottom">
-                            <h3>سوابق فرهنگی اجتماعی</h3>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="resume-ul">
-                            <li ng-repeat="item in candidateSocialCulturalBackground">
-                                <span class="fa fa-circle-o"></span>
-                                <strong class="colored bg-white">
-                                    {{item.CandidateActivityFieldType | bindEnumSocialCulture }}
-                                    {{item.CandidateActivityFieldOtherTypeTitle }}
-                                    {{item.CandidateOrganizationName }}
-                                    {{item.CandidateMemberShipType | bindEnumSocialCulture}}
-                                    {{item.CandidateMemberShipDescription  }}
-                                    {{item.CandidateBasijType  | bindEnumSocialCulture}}
-                                    {{item.CandidateBasijTypeOtherTitle  }}
-                                    {{item.CandidateMobilMembershipType  | bindEnumSocialCulture}}
-                                    {{item.CandidateBasijAreaTitle  }}
-                                    {{item.CandidateActivityStartMonth | bindEnumSocialCulture}}
-                                    {{item.CandidateActivityStartYear  }}
-                                    {{item.CandidateActivityEndMonth  | bindEnumSocialCulture}}
-                                    {{item.CandidateActivityEndYear  }}
-
-                                </strong>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Politic History -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="political-background">
-                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                        <div class="have-border-bottom">
-                            <h3>سوابق سیاسی</h3>
-                        </div>
-                    </div>
-                    <div class="panel-body political-info-container table-responsive">
-                        <table class="table table-bordered table-condensed table-striped">
-                            <thead>
-                            <tr>
-                                <th class="fit info-politicalType">قالب</th>
-                                <th class="fit info-otherPoliticalType">سایر قالب</th>
-                                <th class="fit info-mediaName">رسانه</th>
-                                <th class="fit info-activityType">نوع فعالیت</th>
-                                <th class="fit info-beginMonth">ماه شروع فعالیت</th>
-                                <th class="fit info-beginYear">سال شروع فعالیت</th>
-                                <th class="fit info-endMonth">ماه پایان فعالیت</th>
-                                <th class="fit info-endYear">سال پایان فعالیت</th>
-                                <th class="fit info-yearCooperation">سال همکاری</th>
-                                <th class="fit info-responsibility">مسئولیت</th>
-                                <th class="fit info-membershipType">نوع عضویت</th>
-                                <th class="fit info-electionType">نوع انتخابات</th>
-                                <th class="fit info-electionPeriodType">دوره انتخابات</th>
-                                <th class="fit info-parliamentPeriodType">دوره انتخابات</th>
-                                <th class="fit info-expertsParliamentPeriodType">دوره انتخابات</th>
-                                <th class="fit info-cityCouncilPeriodType">دوره انتخابات</th>
-                                <th class="fit info-supervisoryBoardType">مجلس</th>
-                                <th class="fit info-mediaFormat">نوع رسانه</th>
-                                <th class="fit info-otherMediaFormat">سایر عنوان رسانه</th>
-                                <th class="fit info-candidateName">نام نامزد/لیست</th>
-                                <th class="fit info-description">توضیحات</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="item in politicBackground " class="temp-edu-record">
-                                <td class="fit info-department">
-                                    {{item.CandidateActivityType | bindEnum}}
-                                </td>
-                                <td class="fit info-science">
-                                    {{item.CandidateActivityTypeOtherOrganizationTitle}}
-                                </td>
-                                <td class="fit info-studying">
-                                    {{item.CandidateElectionType | bindEnum}}
-                                </td>
-                                <td class="fit info-universityLevelType">
-                                    {{item.CandidateElectionPeriod}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateElectionListName}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateHeadquarterActivityTitle}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateMediaType}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateMediaTypeTitle}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateMediaTitle}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateMediaActivityType}}
-                                    {{item.CandidateMediaType}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateResponsibility}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateMemberShip}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateMediaStartMonth | bindEnum}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateMediaStartYear}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateMediaEndMonth | bindEnum }}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateMediaEndYear}}
-                                </td>
-                                <td class="fit info-universityName">
-                                    {{item.CandidateActivityDescription}}
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
                 <!-- Book Publishing History -->
@@ -586,6 +462,478 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Politic History -->
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="political-background">
+                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                        <div class="have-border-bottom">
+                            <h3>سوابق سیاسی</h3>
+                        </div>
+                    </div>
+                    <div class="panel-body political-info-container table-responsive">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-xs-12 padding-0">
+                                <form ng-repeat="item in politicBackground">
+                                    <span class="divider"></span>
+                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                            <label for="">
+                                               قالب فعالیت
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <select class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+
+                                                <option>
+                                                    {{item.CandidateActivityType | bindEnum }}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Others' ">
+                                            <label for="">
+                                                نام مجموعه
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <select class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+
+                                                <option>
+                                                    {{item.CandidateActivityTypeOtherOrganizationTitle }}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                            <label for="">
+                                               مسئولیت
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <select class="form-control form-control-lg"
+                                                    name=""
+                                                    id=""
+                                                    style="font-family: tahoma;">
+                                                <option>
+                                                    {{item.CandidateResponsibility }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Media' || item.CandidateActivityType === 'Others' ">
+                                            <label for="">
+                                                آغاز همکاری
+                                            </label>
+                                            <select
+                                                    class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateMediaStartMonth | bindEnum}}
+                                                    ,
+                                                    {{item.CandidateMediaStartYear}}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Media' || item.CandidateActivityType === 'Others' ">
+                                            <label for="">پایان همکاری</label>
+                                            <select
+                                                    class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateMediaEndMonth | bindEnum}}
+                                                    ,
+                                                    {{item.CandidateMediaEndYear}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Others' || item.CandidateActivityType === 'Group' ">
+                                            <label for="">
+                                                عضویت
+                                            </label>
+                                            <select
+                                                    class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateMemberShip | bindEnum}}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'CandidatesCampaign' || item.CandidateActivityType === 'SupervisoryBoard' ">
+                                            <label for="">انتخابات</label>
+                                            <select
+                                                    class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateElectionType  | bindEnum}}
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'CandidatesCampaign' || item.CandidateActivityType === 'SupervisoryBoard' ">
+                                            <label for="">
+                                               دوره انتخابات
+                                            </label>
+                                            <select class="form-control form-control-lg city-select"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateElectionPeriod}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'CandidatesCampaign' ">
+                                            <label for="">
+                                                نام نامزد / لیست
+                                            </label>
+                                            <select class="form-control form-control-lg city-select"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateElectionListName }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'SupervisoryBoard' ">
+                                            <label for="">
+                                                عنوان همکاری
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <input type="text"
+                                                   value="{{item.CandidateHeadquarterActivityTitle | bindEnum}}"
+                                                   name=""
+                                                   id=""
+                                                   class="form-control">
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Media' ">
+                                            <label for="">
+                                                قالب رسانه
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <input type="text"
+                                                   value="{{item.CandidateMediaType | bindEnum}}"
+                                                   name=""
+                                                   id=""
+                                                   class="form-control">
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Media' ">
+                                            <label for="">
+                                                نام رسانه
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <input type="text"
+                                                   value="{{item.CandidateMediaTitle}}"
+                                                   name=""
+                                                   id=""
+                                                   class="form-control">
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Media' && item.CandidateMediaType === 'Others' ">
+                                            <label for="">
+                                               عنوان قالب رسانه
+                                            </label>
+                                            <select class="form-control form-control-lg city-select"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateMediaTypeTitle}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Media' ">
+                                            <label for="">
+                                                 نوع فعالیت
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <input type="text"
+                                                   value="{{item.CandidateMediaActivityType}}"
+                                                   name=""
+                                                   id=""
+                                                   class="form-control">
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12 form-group RightFloat">
+                                            <label for="">توضیحات</label>
+                                            <input
+                                                    value="{{item.CandidateActivityDescription}}"
+                                                    id=""
+                                                    type="text"
+                                                    name=""
+                                                    class="input-validate validate valid">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </form>
+                            </div>
+                        </div>
+<!--                        <table class="table table-bordered table-condensed table-striped">-->
+<!--                            <thead>-->
+<!--                            <tr>-->
+<!--                                <th class="fit info-politicalType">قالب</th>-->
+<!--                                <th class="fit info-otherPoliticalType">سایر قالب</th>-->
+<!--                                <th class="fit info-mediaName">رسانه</th>-->
+<!--                                <th class="fit info-activityType">نوع فعالیت</th>-->
+<!--                                <th class="fit info-beginMonth">ماه شروع فعالیت</th>-->
+<!--                                <th class="fit info-beginYear">سال شروع فعالیت</th>-->
+<!--                                <th class="fit info-endMonth">ماه پایان فعالیت</th>-->
+<!--                                <th class="fit info-endYear">سال پایان فعالیت</th>-->
+<!--                                <th class="fit info-yearCooperation">سال همکاری</th>-->
+<!--                                <th class="fit info-responsibility">مسئولیت</th>-->
+<!--                                <th class="fit info-membershipType">نوع عضویت</th>-->
+<!--                                <th class="fit info-electionType">نوع انتخابات</th>-->
+<!--                                <th class="fit info-electionPeriodType">دوره انتخابات</th>-->
+<!--                                <th class="fit info-parliamentPeriodType">دوره انتخابات</th>-->
+<!--                                <th class="fit info-expertsParliamentPeriodType">دوره انتخابات</th>-->
+<!--                                <th class="fit info-cityCouncilPeriodType">دوره انتخابات</th>-->
+<!--                                <th class="fit info-supervisoryBoardType">مجلس</th>-->
+<!--                                <th class="fit info-mediaFormat">نوع رسانه</th>-->
+<!--                                <th class="fit info-otherMediaFormat">سایر عنوان رسانه</th>-->
+<!--                                <th class="fit info-candidateName">نام نامزد/لیست</th>-->
+<!--                                <th class="fit info-description">توضیحات</th>-->
+<!--                            </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody>-->
+<!--                            <tr ng-repeat="item in politicBackground " class="temp-edu-record">-->
+<!--                                <td class="fit info-department">-->
+<!--                                    {{item.CandidateActivityType | bindEnum}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-science">-->
+<!--                                    {{item.CandidateActivityTypeOtherOrganizationTitle}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-studying">-->
+<!--                                    {{item.CandidateElectionType | bindEnum}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityLevelType">-->
+<!--                                    {{item.CandidateElectionPeriod}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateElectionListName}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateHeadquarterActivityTitle}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateMediaType}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateMediaTypeTitle}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateMediaTitle}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateMediaActivityType}}-->
+<!--                                    {{item.CandidateMediaType}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateResponsibility}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateMemberShip}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateMediaStartMonth | bindEnum}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateMediaStartYear}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateMediaEndMonth | bindEnum }}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateMediaEndYear}}-->
+<!--                                </td>-->
+<!--                                <td class="fit info-universityName">-->
+<!--                                    {{item.CandidateActivityDescription}}-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+                    </div>
+                </div>
+                <!-- social-cultural-background -->
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="social-cultural-background">
+                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                        <div class="have-border-bottom">
+                            <h3>سوابق فرهنگی اجتماعی</h3>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-xs-12 padding-0">
+                                <form ng-repeat="item in candidateSocialCulturalBackground">
+                                    <span class="divider"></span>
+                                    <div class="col-md-12 col-xs-12 padding-0 form">
+                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
+                                            <label for="">
+                                               زمینه فعالیت
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <select class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+
+                                                <option>
+                                                    {{item.CandidateActivityFieldType | bindEnum }}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType === 'Others'">
+                                            <label for="">
+                                                عنوان
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <select class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+
+                                                <option>
+                                                    {{item.CandidateActivityFieldOtherTypeTitle }}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
+                                            <label for="">
+                                               نام مجموعه
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <select class="form-control form-control-lg"
+                                                    name=""
+                                                    id=""
+                                                    style="font-family: tahoma;">
+                                                <option>
+                                                    {{item.CandidateOrganizationName }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                            <label for="">
+                                                نوع عضویت
+                                            </label>
+                                            <select
+                                                    class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateMobilMembershipType | bindEnum}}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
+                                            <label for="">
+                                                نوع عضویت
+                                            </label>
+                                            <select
+                                                    class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateMemberShipType | bindEnum}}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat">
+                                            <label for="">آغاز همکاری</label>
+                                            <select
+                                                    class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateActivityStartMonth | bindEnum}}
+                                                    ,
+                                                    {{item.CandidateActivityStartYear}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat">
+                                            <label for="">پایان همکاری</label>
+                                            <select
+                                                    class="form-control form-control-lg"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateActivityEndMonth  | bindEnum}}
+                                                    {{item.CandidateActivityEndYear }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
+                                        ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                            <label for="">
+                                                نام حوزه
+                                            </label>
+                                            <select class="form-control form-control-lg city-select"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateBasijAreaTitle}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                            <label for="">
+                                                نوع بسیج
+                                            </label>
+                                            <select class="form-control form-control-lg city-select"
+                                                    name=""
+                                                    id="">
+                                                <option>
+                                                    {{item.CandidateBasijType  | bindEnum}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateBasijType === 'Others'">
+                                            <label for="">
+                                              سایر
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <input type="text"
+                                                   value="{{item.CandidateBasijTypeOtherTitle}}"
+                                                   name=""
+                                                   id=""
+                                                   class="form-control">
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
+                                            <label for="">توضیحات</label>
+                                            <input
+                                                    value="{{item.CandidateMemberShipDescription}}"
+                                                    id=""
+                                                    type="text"
+                                                    name=""
+                                                    class="input-validate validate valid">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Finance History -->
                 <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="property-assets">
 
@@ -610,7 +958,6 @@
                         return $data;
                     } ?>
                     <div class="panel-body political-info-container">
-
                         <div class="panel with-nav-tabs panel-default">
                             <div class="">
                                 <ul class="nav nav-tabs">
@@ -619,7 +966,7 @@
                                     <li><a href="#tab3child" data-toggle="tab">فرزند</a></li>
                                 </ul>
                             </div>
-                            <div class="panel-body padding-r-0">
+                            <div class="panel-body padding-r-0 padding-l-0">
                                 <div class="tab-content">
                                     <div class="tab-pane fade in active" id="tab1myself">
                                         <div class="LeftPanel">
@@ -627,9 +974,9 @@
                                                 <div class="row">
                                                     <!--RealEStates -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">املاک و مستغلات</div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.RealEStates.hasSelfItems === 0 ">
@@ -835,11 +1182,11 @@
                                                     <!--End RealEStates -->
                                                     <!--Vehicle -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 وسایل نقلیه
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Vehicle.hasSelfItems === 0 ">
@@ -969,11 +1316,11 @@
                                                     <!--End Vehicle -->
                                                     <!--Invest -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Invest.hasSelfItems === 0 ">
@@ -1083,11 +1430,11 @@
                                                     <!--End Invest -->
                                                     <!--BankAccount -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.BankAccount.hasSelfItems === 0 ">
@@ -1151,11 +1498,11 @@
                                                     <!--End BankAccount -->
                                                     <!-- Debtor -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 دیون و مطالبات
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.CreditDebtor.hasSelfItems === 0 ">
@@ -1229,11 +1576,11 @@
                                                     <!--End Debtor -->
                                                     <!--Goods -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 کلیه کالاهای فاقد سند مالکیت رسمی
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Goods.hasSelfItems === 0 ">
@@ -1371,11 +1718,11 @@
                                                     <!--End Goods -->
                                                     <!--Fee -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حقوق مالکیت معنوی
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Fee.hasSelfItems === 0 ">
@@ -1460,11 +1807,11 @@
                                                     <!--End Fee -->
                                                     <!--AverageMonthIncome -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 در آمد
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Income.hasSelfItems === 0 ">
@@ -1506,11 +1853,11 @@
                                                     <!--End AverageMonthIncome -->
                                                     <!-- ElectionPlacePrice -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 شفاف سازی هزینه های انتخاباتی
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Election.hasSelfItems === 0 ">
@@ -1666,9 +2013,9 @@
                                                 <div class="row">
                                                     <!--RealEStates -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">املاک و مستغلات</div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.RealEStates.hasWifeItems === 0 ">
@@ -1868,11 +2215,11 @@
                                                     <!--End RealEStates -->
                                                     <!--Vehicle -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 وسایل نقلیه
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Vehicle.hasWifeItems === 0 ">
@@ -1999,11 +2346,11 @@
                                                     <!--End Vehicle -->
                                                     <!--Invest -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Invest.hasWifeItems === 0 ">
@@ -2110,11 +2457,11 @@
                                                     <!--End Invest -->
                                                     <!--BankAccount -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.BankAccount.hasWifeItems === 0 ">
@@ -2179,11 +2526,11 @@
                                                     <!--End BankAccount -->
                                                     <!-- Debtor -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 دیون و مطالبات
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.CreditDebtor.hasWifeItems === 0 ">
@@ -2256,11 +2603,11 @@
                                                     <!--End Debtor -->
                                                     <!--Goods -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 کلیه کالاهای فاقد سند مالکیت رسمی
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Goods.hasWifeItems === 0 ">
@@ -2397,11 +2744,11 @@
                                                     <!--End Goods -->
                                                     <!--Fee -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حقوق مالکیت معنوی
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Fee.hasWifeItems === 0 ">
@@ -2486,11 +2833,11 @@
                                                     <!--End Fee -->
                                                     <!--AverageMonthIncome -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 در آمد
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Income.hasWifeItems === 0 ">
@@ -2532,11 +2879,11 @@
                                                     <!--End AverageMonthIncome -->
                                                     <!-- ElectionPlacePrice -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 شفاف سازی هزینه های انتخاباتی
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Election.hasWifeItems === 0 ">
@@ -2684,9 +3031,9 @@
                                                 <div class="row">
                                                     <!--RealEStates -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">املاک و مستغلات</div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.RealEStates.hasChildItems === 0 ">
@@ -2886,11 +3233,11 @@
                                                     <!--End RealEStates -->
                                                     <!--Vehicle -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 وسایل نقلیه
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Vehicle.hasChildItems === 0 ">
@@ -3017,11 +3364,11 @@
                                                     <!--End Vehicle -->
                                                     <!--Invest -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Invest.hasChildItems === 0 ">
@@ -3128,11 +3475,11 @@
                                                     <!--End Invest -->
                                                     <!--BankAccount -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.BankAccount.hasChildItems === 0 ">
@@ -3197,11 +3544,11 @@
                                                     <!--End BankAccount -->
                                                     <!-- Debtor -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 دیون و مطالبات
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.CreditDebtor.hasChildItems === 0 ">
@@ -3274,11 +3621,11 @@
                                                     <!--End Debtor -->
                                                     <!--Goods -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 کلیه کالاهای فاقد سند مالکیت رسمی
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Goods.hasChildItems === 0 ">
@@ -3415,11 +3762,11 @@
                                                     <!--End Goods -->
                                                     <!--Fee -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حقوق مالکیت معنوی
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Fee.hasChildItems === 0 ">
@@ -3504,11 +3851,11 @@
                                                     <!--End Fee -->
                                                     <!--AverageMonthIncome -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 در آمد
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Income.hasChildItems === 0 ">
@@ -3550,11 +3897,11 @@
                                                     <!--End AverageMonthIncome -->
                                                     <!-- ElectionPlacePrice -->
                                                     <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default LeftPanelShadow">
+                                                        <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 شفاف سازی هزینه های انتخاباتی
                                                             </div>
-                                                            <div class="panel-body padding-r-0">
+                                                            <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <p ng-if="finance.Election.hasChildItems === 0 ">
@@ -3922,8 +4269,53 @@
             '{ "Book": "کتاب"} ,' +
             '{ "Invention": "اختراع / اکتشاف" } ,' +
             '{ "Art": "اثر هنری" }   ' +
+            ']',"CandidateActivityFieldType":
+            '[' +
+            '{ "Charity": "انجمن خیریه"} ,' +
+            '{ "Mobilization": "بسیج" } ,' +
+            '{ "University": "دانشگاه" }   ,' +
+            '{ "Semen": "سمن" }  ,' +
+            '{ "Councils": "شورایاری" }   ,' +
+            '{ "CulturalCenter": "فرهنگسرا" }   ,' +
+            '{ "JihadistActivities": "فعالیت های جهادی"}   ,' +
+            '{ "Schools": "مدارس"}   ,' +
+            '{ "TheMosque": "مسجد"}   ,' +
+            '{ "RedCrescent": "هلال احمر"}   ,' +
+            '{ "ReligiousCommittees": "هئیت های مذهبی"}   ,' +
+            '{ "Others": "سایر" }   ' +
             ']',
-
+        "CandidateMemberShipType":
+            '[' +
+            '{ "Official": "رسمی"} ,' +
+            '{ "Voluntary": "داوطلبانه" }   ' +
+            ']',
+        "'CandidateBasijType' ":
+            '[' +
+            '{ "Urban": "شهری"} ,' +
+            '{ "schools": "مدارس" } ,' +
+            '{ "University": "دانشگاه" }   ,' +
+            '{ "Others": "سایر" }   ' +
+            ']',
+        "CandidateHeadquarterActivityTitle":
+            '[' +
+            '{ "SupervisoryBoard": "نطارت شورای نگهبان"} ,' +
+            '{ "ExecutiveCommittee": "هیئت اجرایی وزارت کشور" }   ' +
+            ']',
+        "'CandidateMediaType' ":
+            '[' +
+            '{ "Voice": "صدا و سیما"} ,' +
+            '{ "Journals": "سایت خبری" } ,' +
+            '{ "NewSite": "شبکه اجتماعی" }   ,' +
+            '{ "SocialNetwork": "نگهبان" }   ,' +
+            '{ "Others": "سایر" }   ' +
+            ']',
+        "CandidateMobilMembershipType":
+            '[' +
+            '{ "Normal": "عادی"} ,' +
+            '{ "Active": "فعال" } ,' +
+            '{ "Kadr": "کادر" }   ,' +
+            '{ "Others": "سایر" }   ' +
+            ']'
     };
     var EnumAcademicBackground = {
         "VeterinaryMedicineDepartment":
@@ -4055,59 +4447,6 @@
             '{ "name": "سایر" , "value" : "17"}   ' +
             ']',
     };
-    var EnumSocialCulture = {
-        "CandidateActivityFieldType":
-            '[' +
-            '{ "Charity": "انجمن خیریه"} ,' +
-            '{ "Mobilization": "بسیج" } ,' +
-            '{ "University": "دانشگاه" }   ,' +
-            '{ "Semen": "سمن" }  ,' +
-            '{ "Councils": "شورایاری" }   ,' +
-            '{ "CulturalCenter": "فرهنگسرا" }   ,' +
-            '{ "JihadistActivities": "فعالیت های جهادی"}   ,' +
-            '{ "Schools": "مدارس"}   ,' +
-            '{ "TheMosque": "مسجد"}   ,' +
-            '{ "RedCrescent": "هلال احمر"}   ,' +
-            '{ "ReligiousCommittees": "هئیت های مذهبی"}   ,' +
-            '{ "Others": "سایر" }   ' +
-            ']',
-        "ShamsiMonths":
-            '[' +
-            '{ "Farvardin": "فروردین"} ,' +
-            '{ "Ordibehsht": "اردیبهشت" } ,' +
-            '{ "Khordad": "خرداد" }   ,' +
-            '{ "Tir": "تیر" }  ,' +
-            '{ "Mordad": "مرداد" }   ,' +
-            '{ "Shahrivar": "شهریور" }   ,' +
-            '{ "Mehr": "مهر"}   ,' +
-            '{ "Aban": "آبان"}   ,' +
-            '{ "Azar": "آذر"}   ,' +
-            '{ "Dey": "دی"}   ,' +
-            '{ "Bahman": "بهمن"}   ,' +
-            '{ "Esfand": "اسفند" }   ' +
-            ']',
-        "CandidateMemberShipType":
-            '[' +
-            '{ "Official": "رسمی"} ,' +
-            '{ "Voluntary": "داوطلبانه" }   ' +
-            ']',
-        "'CandidateBasijType' ":
-            '[' +
-            '{ "Urban": "شهری"} ,' +
-            '{ "schools": "مدارس" } ,' +
-            '{ "University": "دانشگاه" }   ,' +
-            '{ "Others": "سایر" }   ' +
-            ']',
-        "CandidateMobilMembershipType":
-            '[' +
-            '{ "Normal": "عادی"} ,' +
-            '{ "Active": "فعال" } ,' +
-            '{ "Kadr": "کادر" }   ,' +
-            '{ "Others": "سایر" }   ' +
-            ']',
-
-    };
-
     var finance = [];
     var countries = [];
     var cities = [];
@@ -4186,28 +4525,6 @@
             }
         }
     });
-
-    app.filter('bindEnumSocialCulture', function () {
-        return function (input) {
-            $inputKey = input;
-            $keys = Object.keys(EnumSocialCulture);
-            for (var i = 0; i < $keys.length; i++) {
-                $currentKey = $keys[i];
-                $keyItems = EnumSocialCulture[$currentKey];
-                $currentArrayKeys = JSON.parse($keyItems);
-                for (var j = 0; j < $currentArrayKeys.length; j++) {
-                    $itemKeys = Object.keys($currentArrayKeys[j]);
-                    if ($itemKeys[0] === $inputKey) {
-                        for (var k = 0; k < $currentArrayKeys.length; k++) {
-                            if ($currentArrayKeys[k][$itemKeys[0]] != undefined) {
-                                return $currentArrayKeys[k][$itemKeys[0]];
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    });
     app.controller("myCtrl", function ($scope, $http) {
         $scope.notFound = 'اطلاعاتی برای این مورد وارد نشده است';
         $http.get("<?php echo base_url('State/candidateDetailApi/' . $candidate['CandidateId'] . '/3/اردبیل') ?>").then(function (response) {
@@ -4222,6 +4539,7 @@
             $scope.ElectionName = response.candidate.ElectionName;
             $scope.candidateAcademicBackground = response.candidateAcademicBackground;
             $scope.candidateSocialCulturalBackground = response.candidateSocialCulturalBackground;
+            $scope.politicBackground = response.politicBackground;
             $scope.candidateMilitaryStatus = response.candidateMilitaryStatus;
             $scope.politicBackground = response.politicBackground;
             $scope.candidateBooks = response.candidateBooks;
@@ -4311,8 +4629,12 @@
             translatePrice('RealEStates', RealEStatesPricePlaceHolder);
             translatePrice('Vehicle', VehiclePricePlaceHolder);
 
-            $(".left-candidate-panel-resume :input").prop('disabled', true);
-            $(".report :input").prop('disabled', false);
+
+
+            setTimeout(function(){
+                $(".left-candidate-panel-resume :input").prop('disabled', true);
+                $(".report :input").prop('disabled', false);
+            } , 500);
 
         });
     });

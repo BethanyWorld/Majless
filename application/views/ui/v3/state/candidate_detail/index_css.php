@@ -1,4 +1,14 @@
 <style>
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 2px dashed #095644;
+        background-color: transparent;
+    }
+    .padding-l-0{
+        padding-left: 0px;
+    }
     .form-control[disabled]{
         background-color: #fff;
     }
