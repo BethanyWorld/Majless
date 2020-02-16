@@ -181,7 +181,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
         <div id="site-branding" class="header-main">
             <div class="container">
                 <p class="site-title" id="main-logo">
-                    <a id="main-logo-link" href="<?php echo base_url(); ?>" rel="home">
+                    <a id="main-logo-link" href="<?php echo base_url('Home'); ?>" rel="home">
                         <img src="<?= $_DIR; ?>images/main-logo.png"
                              style="position: relative;width: 95px;top: 10px;"
                              alt="جنبش از ما">
@@ -190,7 +190,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                 <nav id="primary-navigation" class="site-navigation primary-navigation rtl">
                     <div class="menu-main-menu-container">
                         <ul id="menu-main-menu" class="nav-menu">
-                            <li class="current-menu-item"><a href="<?php echo base_url() ?>">صفحه اصلی</a></li>
+                            <li class="current-menu-item"><a href="<?php echo base_url('Home'); ?>">صفحه اصلی</a></li>
                             <li><a href="<?php echo base_url('State') ?>">فهرست نامزدها</a></li>
                             <li>
                                 <a href="<?php echo base_url('blog/?page_id=40'); ?>">آشنایی با جنبش از ما</a>
@@ -232,12 +232,7 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                             </li>
                             <?php if (!$userIsLogged) { ?>
                                 <li>
-                                    <a href="<?php echo base_url('SignUp?type=candidate') ?>">ثبت نام</a>
-                                    <ul>
-                                        <li><a href="<?php echo base_url('SignUp?type=candidate') ?>">نامزد
-                                                انتخاباتی</a></li>
-                                        <li><a href="<?php echo base_url('SignUp?type=sponsor') ?>">حامی</a></li>
-                                    </ul>
+                                    <a href="<?php echo base_url('SignUp?type=sponsor') ?>">ثبت نام</a>
                                 </li>
                                 <li><a style="
                                  text-align: center;

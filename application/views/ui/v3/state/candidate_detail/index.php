@@ -173,15 +173,78 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td class="text-center"><?php echo $candidate['CandidateSignScore']; ?></td>
-                                <td class="text-center"><?php echo $candidate['CandidateRecordsScore']; ?></td>
-                                <td class="text-center"><?php echo $candidate['CandidateScore']; ?></td>
+                                <td class="text-center">
+                                    <?php
+                                    if($candidate['CandidateSignScore'] == 0){
+                                        echo "عدم اتمام فرآیند";
+                                    }
+                                    else{
+                                        echo $candidate['CandidateSignScore'];
+                                    }
+                                    ?>
+                                </td>
+                                <td class="text-center">
+                                    <?php
+                                    if($candidate['CandidateRecordsScore'] == 0){
+                                        echo "عدم اتمام فرآیند";
+                                    }
+                                    else{
+                                        echo $candidate['CandidateRecordsScore'];
+                                    }
+                                    ?> 
+                                </td>
+                                <td class="text-center">
+                                    <?php
+                                    if($candidate['CandidateScore'] == 0){
+                                        echo "عدم اتمام فرآیند";
+                                    }
+                                    else{
+                                        echo $candidate['CandidateScore'];
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="chart-container" style="position: relative;margin: 40px 0;">
                         <canvas id="BarChart"></canvas>
+                    </div>
+                    <div class="panel left-candidate-panel-resume padding-0 single-scroll">
+                        <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                            <div class="have-border-bottom">
+                                <h3>مدارک و مستندات</h3>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-condensed table-hover table-bordered">
+                                <thead>
+                                <tr>
+                                    <th class="fit">ردیف</th>
+                                    <th>نوع</th>
+                                    <th class="fit">مشاهده</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php $index = 0;
+                                foreach ($candidateDocuments as $candidateDocument) {
+                                    if($candidateDocument['CandidateDocumentName'] == 'Resume'){
+                                        $index += 1; ?>
+                                        <tr>
+                                            <td class="fit">#<?php echo $index; ?></td>
+                                            <td>
+                                                <?php documentTypePipe($candidateDocument['CandidateDocumentName']); ?>
+                                            </td>
+                                            <td class="fit">
+                                                <a href="<?php echo $candidateDocument['CandidateDocumentUrl']; ?>" target="_blank">
+                                                    <i class="fa fa-folder-open-o"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php  } } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <!-- Academic  -->

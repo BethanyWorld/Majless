@@ -119,6 +119,8 @@ class State extends CI_Controller{
         $data['stateName'] = $stateName;
         $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
         $data['candidate'] = $this->ModelCandidate->getCandidateByCandidateId($candidateId);
+        $data['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($candidateId);
+
 
         /*$data['candidateMilitaryStatus'] = $this->ModelProfile->getCandidateMilitaryStatusByCandidateId($candidateId);
         $data['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($candidateId);
