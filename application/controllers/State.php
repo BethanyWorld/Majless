@@ -31,13 +31,10 @@ class State extends CI_Controller{
         $data['elections'] = $this->ModelCountry->getElectionsByStateId($stateId);
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' ' . "فهرست نامزد های انتخاباتی استان " . $stateName;
-
         $data['description'] = 'برای دعوت از نامزدها به چالش شایستگی و شفافیت و مشاهده رزومه انها';
         $CSRF = random_string('alnum', 32);
         $this->session->set_userdata('CSRF', $CSRF);
         $data['CSRF'] = $CSRF;
-
-        $data['dataSpecial'] = $this->ModelCandidate->getCandidateSpecialByStateId($stateId);
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/state/candidate/index', $data);
@@ -258,6 +255,11 @@ class State extends CI_Controller{
         $index = 0;
         foreach ($data['dataSpecial'] as $item) {
             $data['dataSpecial'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);
+            $index +=1;
+        }
+        $index = 0;
+        foreach ($data['dataSpecialNoRef'] as $item) {
+            $data['dataSpecialNoRef'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);
             $index +=1;
         }
         echo $this->load->view('ui/v3/state/candidate/ajax', $data, TRUE);
