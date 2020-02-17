@@ -546,7 +546,6 @@
                                             <select class="form-control form-control-lg"
                                                     name=""
                                                     id="">
-
                                                 <option>
                                                     {{item.CandidateActivityType | bindEnum }}
                                                 </option>
@@ -4579,13 +4578,16 @@
             $depatment = $inputKey.split(',')[0];
             $major = $inputKey.split(',')[1];
             $keys = EnumAcademicBackground[$depatment];
-            $keys = JSON.parse($keys);
-            for (var i = 0; i < $keys.length; i++) {
-                $keyItems = $keys[i];
-                if ($keyItems['value'] == $major) {
-                    return $keyItems['name'];
+            if($keys != null || $keys != undefined ) {
+                 $keys = JSON.parse($keys);
+                for (var i = 0; i < $keys.length; i++) {
+                    $keyItems = $keys[i];
+                    if ($keyItems['value'] == $major) {
+                        return $keyItems['name'];
+                    }
                 }
             }
+
         }
     });
     app.controller("myCtrl", function ($scope, $http) {
