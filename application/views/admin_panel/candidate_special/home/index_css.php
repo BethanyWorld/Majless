@@ -468,12 +468,16 @@
         font-size: 20px;
         font-weight: 500;
     }
+    #hidden-box1 .candidate-text-invite p:last-child {
+        font-size: 18px;
+    }
 
     #hidden-box2 .candidate-text-invite {
         color: #ffffff;
         text-align: center;
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 500;
+        padding-top: 26px;
     }
 
     .candidate-text-invite p {

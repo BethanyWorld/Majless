@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Profile extends CI_Controller{
+
     public function __construct()
     {
         parent::__construct();
@@ -1365,16 +1366,16 @@ class Profile extends CI_Controller{
                 $i++;
                 $name = $parts["filename"] . "_" . $i . "." . $parts["extension"];
             }
-            if ($myFile['size'] > 10242880) {
+            if ($myFile['size'] > 100242880) {
                 $result = array(
                     'type' => "red",
-                    'content' => "حجم فایل بیشتر از 10 مگابایت است",
+                    'content' => "حجم فایل بیشتر از 100 مگابایت است",
                     'success' => false
                 );
                 echo json_encode($result);
                 die();
             }
-            $allowedExtensions = array('jpg', 'png', 'gif', 'jpeg', 'zip' , 'rar');
+            $allowedExtensions = array('jpg', 'png', 'gif', 'jpeg', 'zip' , 'rar' , 'mp4','avi','webm','wvm','3gp','ogg');
             $temp = explode(".", $myFile["name"]);
             $extension = strtolower(end($temp));
             if (!in_array($extension, $allowedExtensions)) {
@@ -1445,7 +1446,7 @@ class Profile extends CI_Controller{
                     $i++;
                     $name = $parts["filename"] . "_" . $i . "." . $parts["extension"];
                 }
-                $allowedExtensions = array('jpg', 'png', 'gif', 'jpeg', 'zip', 'rar' , 'pdf');
+                $allowedExtensions = array('jpg', 'png', 'gif', 'jpeg', 'zip' , 'rar' , 'mp4','avi','webm','wvm','3gp','ogg');
                 $temp = explode(".", $myFile);
                 $extension = strtolower(end($temp));
                 if (!in_array($extension, $allowedExtensions)) {
@@ -1457,10 +1458,10 @@ class Profile extends CI_Controller{
                     echo json_encode($result);
                     die();
                 }
-                if ($_FILES["files"]['size'][$index] > 10242880) {
+                if ($_FILES["files"]['size'][$index] > 100242880) {
                     $result = array(
                         'type' => "red",
-                        'content' => "حجم فایل بیشتر از 10 مگابایت است",
+                        'content' => "حجم فایل بیشتر از 100 مگابایت است",
                         'success' => false
                     );
                     echo json_encode($result);
