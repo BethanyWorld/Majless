@@ -11,35 +11,42 @@
             <?php
             $filterClass = "Transparency-Obligation";
             $classes = array();
+            $links = array();
             $hasMerit = false;
             foreach ($candidate['badges'] as $badge) {
                 if ($badge['CandidateBadge'] == 'GoldenMerit' || $badge['CandidateBadge'] == 'SilverMerit') {
                     $hasMerit = true;
                     array_push($classes, $badge['CandidateBadge']);
+                    array_push($links, $badge['CandidateBadgeAddress']);
                 }
             }
             if (!$hasMerit) {
                 array_push($classes, 'OffMerit');
+                array_push($links, "javascript:void(0);");
             }
             $hasTransparency = false;
             foreach ($candidate['badges'] as $badge) {
                 if ($badge['CandidateBadge'] == 'GoldenTransparency' || $badge['CandidateBadge'] == 'SilverTransparency') {
                     $hasTransparency = true;
                     array_push($classes, $badge['CandidateBadge']);
+                    array_push($links, $badge['CandidateBadgeAddress']);
                 }
             }
             if (!$hasTransparency) {
                 array_push($classes, 'OffTransparency');
+                array_push($links, "javascript:void(0);");
             }
             $hasObligation = false;
             foreach ($candidate['badges'] as $badge) {
                 if ($badge['CandidateBadge'] == 'Obligation') {
                     $hasObligation = true;
                     array_push($classes, $badge['CandidateBadge']);
+                    array_push($links, $badge['CandidateBadgeAddress']);
                 }
             }
             if (!$hasObligation) {
                 array_push($classes, 'OffObligation');
+                array_push($links, "javascript:void(0);");
             }
             if ($hasMerit && $hasTransparency && $hasObligation) {
                 $filterClass = "Merit";
@@ -52,16 +59,21 @@
                     if ($candidate['CandidateHasAccepted']) {
                         $deActiveClass = "";
                     }
+                    $deActiveResumeClass = "";
+                    if ($candidate['CandidateResumeForViewStatus'] == 'Reject') {
+                        $deActiveResumeClass = "deactive";
+                    }
                     ?>
-                    <div class="pic <?php echo $deActiveClass; ?>">
+                    <div class="pic <?php echo $deActiveClass." ".$deActiveResumeClass; ?>">
                         <img src="<?php echo base_url('uploads/') . $candidate['CPI']; ?>" class="candidateImage"/>
                     </div>
                     <div class="col-md-12 col-xs-12 padding-0">
-                        <?php foreach ($classes as $badge) { ?>
-                            <div class="sign <?php echo $badge; ?>"></div>
-                        <?php } ?>
+                        <?php $index = 0; foreach ($classes as $badge) { ?>
+                            <a href="<?php echo $links[$index]; ?>">
+                                <div class="sign <?php echo $badge; ?>"></div>
+                            </a>
+                        <?php $index +=1; } ?>
                     </div>
-
                     <div class="col-xs-12">
                         <?php if ($candidate['CandidateOperationStatus'] == 'Flowed') { ?>
                             <span class="wanted flowed">
@@ -101,35 +113,42 @@
                     <?php
                     $filterClass = "Transparency-Obligation";
                     $classes = array();
+                    $links = array();
                     $hasMerit = false;
                     foreach ($candidate['badges'] as $badge) {
                         if ($badge['CandidateBadge'] == 'GoldenMerit' || $badge['CandidateBadge'] == 'SilverMerit') {
                             $hasMerit = true;
                             array_push($classes, $badge['CandidateBadge']);
+                            array_push($links, $badge['CandidateBadgeAddress']);
                         }
                     }
                     if (!$hasMerit) {
                         array_push($classes, 'OffMerit');
+                        array_push($links, "javascript:void(0);");
                     }
                     $hasTransparency = false;
                     foreach ($candidate['badges'] as $badge) {
                         if ($badge['CandidateBadge'] == 'GoldenTransparency' || $badge['CandidateBadge'] == 'SilverTransparency') {
                             $hasTransparency = true;
                             array_push($classes, $badge['CandidateBadge']);
+                            array_push($links, $badge['CandidateBadgeAddress']);
                         }
                     }
                     if (!$hasTransparency) {
                         array_push($classes, 'OffTransparency');
+                        array_push($links, "javascript:void(0);");
                     }
                     $hasObligation = false;
                     foreach ($candidate['badges'] as $badge) {
                         if ($badge['CandidateBadge'] == 'Obligation') {
                             $hasObligation = true;
                             array_push($classes, $badge['CandidateBadge']);
+                            array_push($links, $badge['CandidateBadgeAddress']);
                         }
                     }
                     if (!$hasObligation) {
                         array_push($classes, 'OffObligation');
+                        array_push($links, "javascript:void(0);");
                     }
                     if ($hasMerit && $hasTransparency && $hasObligation) {
                         $filterClass = "Merit";
@@ -139,9 +158,11 @@
                         <img src="<?php echo base_url('uploads/') . $candidate['CPI']; ?>" class="candidateImage"/>
                     </div>
                     <div class="col-md-12 col-xs-12 padding-0">
-                        <?php foreach ($classes as $badge) { ?>
-                            <div class="sign <?php echo $badge; ?>"></div>
-                        <?php } ?>
+                        <?php $index = 0; foreach ($classes as $badge) { ?>
+                            <a href="<?php echo $links[$index]; ?>">
+                                <div class="sign <?php echo $badge; ?>"></div>
+                            </a>
+                            <?php $index +=1; } ?>
                     </div>
                     <div class="col-xs-12">
                             <span class="wanted">

@@ -1322,10 +1322,14 @@ class ModelCandidate extends CI_Model
                     'CandidateType' => $inputs['inputCandidateType'],
                     'CandidateBadge' => $inputs['inputCandidateBadge']
                 ));
+                if($inputs['inputCandidateBadgeAddress'] == ""){
+                    $inputs['inputCandidateBadgeAddress'] = "javascript:void(0);";
+                }
                 $UserArray = array(
                     'CandidateId' => $candidateId,
                     'CandidateType' => $inputs['inputCandidateType'],
-                    'CandidateBadge' => $inputs['inputCandidateBadge']
+                    'CandidateBadge' => $inputs['inputCandidateBadge'],
+                    'CandidateBadgeAddress' => $inputs['inputCandidateBadgeAddress']
                 );
                 $this->db->insert('candidate_badge', $UserArray);
                 $arr = array(

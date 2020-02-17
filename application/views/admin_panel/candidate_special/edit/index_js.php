@@ -147,7 +147,8 @@
                 'inputCandidateId':$inputCandidateCode,
                 'inputCandidateBadge': $(this).data('action-type'),
                 'inputCandidateType': 'Special',
-                'inputAction': 'Assign'
+                'inputAction': 'Assign',
+                'inputCandidateBadgeAddress': $("#"+$(this).data('action-type')).val(),
             }
             $.ajax({
                 type: 'post',

@@ -1486,6 +1486,7 @@ class Profile extends CI_Controller{
                     $result = array(
                         'type' => "red",
                         'content' => "خطایی رخ داده است",
+                        'fileSrc' => "",
                         'success' => false
                     );
                     echo json_encode($result);

@@ -1,4 +1,20 @@
 <style>
+    .color-animation {
+        animation: colorchange 1s;
+        -webkit-animation: colorchange 1s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes colorchange {
+        0%   {background: #fdb72e;}
+        50% {background: #fd892d;}
+        100%   {background: #fdb72e;}
+    }
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+        0%   {background: #fdb72e;}
+        50% {background: #fd892d;}
+        100%   {background: #fdb72e;}
+    }
     hr {
         margin-top: 20px;
         margin-bottom: 20px;

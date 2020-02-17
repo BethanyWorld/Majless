@@ -156,59 +156,67 @@
                 </div>
 
                 <div class="panel left-candidate-panel-resume padding-0">
-                    <div class="col-xs-12">
-                        <table class="table table-condensed table-hover text-center">
-                            <thead>
-                            <tr class="text-center">
-                                <th class="text-center" style="font-size: 10px;text-align: center !important;">برآیند
-                                    آزمون و کانون
-                                </th>
-                                <th class="text-center" style="font-size: 10px;text-align: center !important;">نمره
-                                    کانون ارزیابی (وزن 0.7)
-                                </th>
-                                <th class="text-center" style="font-size: 10px;text-align: center !important;">نمره کل
-                                    آزمون (وزن 0.3)
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="text-center">
-                                    <?php
-                                    if($candidate['CandidateSignScore'] == 0){
-                                        echo "عدم اتمام فرآیند";
-                                    }
-                                    else{
-                                        echo $candidate['CandidateSignScore'];
-                                    }
-                                    ?>
-                                </td>
-                                <td class="text-center">
-                                    <?php
-                                    if($candidate['CandidateRecordsScore'] == 0){
-                                        echo "عدم اتمام فرآیند";
-                                    }
-                                    else{
-                                        echo $candidate['CandidateRecordsScore'];
-                                    }
-                                    ?> 
-                                </td>
-                                <td class="text-center">
-                                    <?php
-                                    if($candidate['CandidateScore'] == 0){
-                                        echo "عدم اتمام فرآیند";
-                                    }
-                                    else{
-                                        echo $candidate['CandidateScore'];
-                                    }
-                                    ?>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="chart-container" style="position: relative;margin: 40px 0;">
-                        <canvas id="BarChart"></canvas>
+                    <?php
+                        $isHidden = "";
+                        if ($candidate['CandidateResumeForViewStatus'] == 'Reject') {
+                            $isHidden = "hidden";
+                        }
+                    ?>
+                    <div class="<?php echo $isHidden; ?>">
+                        <div class="col-xs-12">
+                            <table class="table table-condensed table-hover text-center">
+                                <thead>
+                                <tr class="text-center">
+                                    <th class="text-center" style="font-size: 10px;text-align: center !important;">برآیند
+                                        آزمون و کانون
+                                    </th>
+                                    <th class="text-center" style="font-size: 10px;text-align: center !important;">نمره
+                                        کانون ارزیابی (وزن 0.7)
+                                    </th>
+                                    <th class="text-center" style="font-size: 10px;text-align: center !important;">نمره کل
+                                        آزمون (وزن 0.3)
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center">
+                                        <?php
+                                        if($candidate['CandidateSignScore'] == 0){
+                                            echo "عدم اتمام فرآیند";
+                                        }
+                                        else{
+                                            echo $candidate['CandidateSignScore'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td class="text-center">
+                                        <?php
+                                        if($candidate['CandidateRecordsScore'] == 0){
+                                            echo "عدم اتمام فرآیند";
+                                        }
+                                        else{
+                                            echo $candidate['CandidateRecordsScore'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td class="text-center">
+                                        <?php
+                                        if($candidate['CandidateScore'] == 0){
+                                            echo "عدم اتمام فرآیند";
+                                        }
+                                        else{
+                                            echo $candidate['CandidateScore'];
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="chart-container" style="position: relative;margin: 40px 0;">
+                            <canvas id="BarChart"></canvas>
+                        </div>
                     </div>
                     <div class="panel left-candidate-panel-resume padding-0 single-scroll">
                         <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
@@ -220,9 +228,7 @@
                             <table class="table table-condensed table-hover table-bordered">
                                 <thead>
                                 <tr>
-                                    <th class="fit">ردیف</th>
-                                    <th>نوع</th>
-                                    <th class="fit">مشاهده</th>
+                                    <th class="fit"> مشاهده نسخه کامل سوابق تحصیلی و شغلی</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -231,13 +237,12 @@
                                     if($candidateDocument['CandidateDocumentName'] == 'Resume'){
                                         $index += 1; ?>
                                         <tr>
-                                            <td class="fit">#<?php echo $index; ?></td>
-                                            <td>
-                                                <?php documentTypePipe($candidateDocument['CandidateDocumentName']); ?>
-                                            </td>
                                             <td class="fit">
-                                                <a href="<?php echo $candidateDocument['CandidateDocumentUrl']; ?>" target="_blank">
-                                                    <i class="fa fa-folder-open-o"></i>
+                                                <a class="color-animation" style="display: inline-block;width: 150px;background: #fdb72e;color: #000;padding: 12px 5px;font-weight: 900;"
+                                                   href="<?php echo $candidateDocument['CandidateDocumentUrl']; ?>"
+                                                   target="_blank">
+                                                    دریافت فایل
+                                                    <i class="fa fa-download"></i>
                                                 </a>
                                             </td>
                                         </tr>
