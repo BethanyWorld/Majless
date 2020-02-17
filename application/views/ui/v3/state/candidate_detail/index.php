@@ -728,7 +728,7 @@
                                                    id=""
                                                    class="form-control">
                                         </div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12 form-group RightFloat">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
                                             <label for="">توضیحات</label>
                                             <input
                                                     value="{{item.CandidateActivityDescription}}"
@@ -979,7 +979,7 @@
                                                    id=""
                                                    class="form-control">
                                         </div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12 form-group RightFloat"
+                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
                                             <label for="">توضیحات</label>
                                             <input
@@ -1223,7 +1223,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-8 col-sm-12 col-xs-12 form-group RightFloat">
+                                                                                <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateAddress">آدرس</label>
                                                                                     <input
                                                                                             value="{{item.RealEstateAddress}}"
