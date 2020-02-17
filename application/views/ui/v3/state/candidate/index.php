@@ -1,4 +1,5 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
+<input type="hidden" value="<?php echo $CSRF ?>" id="inputCSRF" />
 <div class="container container-wrapper">
     <div class="row col-xs-12 col-md-8 pull-left responsive-style-auto-margin">
         <div id="mySidenav" class="sidenav hidden-md hidden-lg">

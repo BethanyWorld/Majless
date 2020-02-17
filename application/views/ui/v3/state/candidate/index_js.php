@@ -7,7 +7,7 @@
     $(document).ready(function () {
         $stateName = "<?php echo $stateName; ?>";
         $stateId = <?php echo $stateId; ?>;
-        function loadData(){
+        function loadData() {
             /* Load Candidates */
             $(".filter").removeClass('active');
             $('.mp-section').css('backgroundColor', '#fff');
@@ -21,7 +21,8 @@
             $sendData = {
                 'inputStateName': $stateName,
                 'inputStateId': $stateId,
-                'inputElectionIds': $electionIds
+                'inputElectionIds': $electionIds,
+                'inputCSRF': $("#inputCSRF").val()
             }
             $.ajax({
                 type: 'post',
@@ -33,6 +34,8 @@
                         $("html, body").animate({scrollTop: 0}, "slow");
                         $('.mp-section').css('backgroundColor', 'transparent');
                         $('.mp-section').css('opacity', '1');
+                        $(".unaccepted-candidates").eq(0).parent().parent().before('<div style="height: 1px;border: 20px solid #a9a9a9;margin: 40px 0;" class="row col-xs-12 seperator"></div>');
+                        $(".resume-deactived").eq(0).parent().parent().before('<div style="height: 1px;border: 20px solid #a9a9a9;margin: 40px 0;" class="row col-xs-12 seperator"></div>');
                     }, 100);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -123,21 +126,19 @@
                 if ($top >= $electionContainerTop) {
                     $('.desktop-panel').addClass('CandidateAreaOverFlow');
                     $(".lg-election-container").css({
-                            'position': 'absolute',
-                            'top': ($top - 200) + 'px',
-                            'width': '100%',
-                            'right': 0
+                        'position': 'absolute',
+                        'top': ($top - 200) + 'px',
+                        'width': '100%',
+                        'right': 0
                     });
-                }
-                else {
+                } else {
                     $('.desktop-panel').removeClass('CandidateAreaOverFlow');
                     $(".lg-election-container").css({
-                            'position': 'static',
-                            'top': '0px'
+                        'position': 'static',
+                        'top': '0px'
                     });
                 }
-            }
-            else {
+            } else {
                 $('.desktop-panel').removeClass('CandidateAreaOverFlow');
                 $(".lg-election-container").css({
                     'position': 'static',
@@ -145,12 +146,12 @@
                 });
             }
         });
-        $(".filter").click(function(){
+        $(".filter").click(function () {
             $(".filter").removeClass('active');
             $(this).addClass('active');
             $filterClass = $(this).data('filter');
             $(".candidate-info-box").hide();
-            $(".candidate-info-box."+$filterClass).fadeIn();
+            $(".candidate-info-box." + $filterClass).fadeIn();
         });
     });
 </script>

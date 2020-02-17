@@ -241,28 +241,37 @@ class State extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $data['stateName'] = $inputs['inputStateName'];
-        $data['stateId'] = $inputs['inputStateId'];
-        if (!isset($inputs['inputElectionIds'])) {
-            $inputs['inputElectionIds'] = array();
-        }
-        $data['electionIds'] = $inputs['inputElectionIds'];
-        $inputs['inputElectionIds'] = array_values($inputs['inputElectionIds']);
-        //$data['data'] = $this->ModelCandidate->getCandidatesByElectionId($inputs);
-        $data['dataSpecial'] = $this->ModelCandidate->getCandidatesSpecialByElectionId($inputs);
-        $data['dataSpecialNoRef'] = $this->ModelCandidate->getCandidatesSpecialWithOutRefIdByElectionId($inputs);
 
-        $index = 0;
-        foreach ($data['dataSpecial'] as $item) {
-            $data['dataSpecial'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);
-            $index +=1;
+
+        if ($inputs['inputCSRF'] == $this->session->userdata['CSRF']) {
+            $data['stateName'] = $inputs['inputStateName'];
+            $data['stateId'] = $inputs['inputStateId'];
+            if (!isset($inputs['inputElectionIds'])) {
+                $inputs['inputElectionIds'] = array();
+            }
+            $data['electionIds'] = $inputs['inputElectionIds'];
+            $inputs['inputElectionIds'] = array_values($inputs['inputElectionIds']);
+            //$data['data'] = $this->ModelCandidate->getCandidatesByElectionId($inputs);
+            $data['dataSpecial'] = $this->ModelCandidate->getCandidatesSpecialByElectionId($inputs);
+            $data['dataSpecialNoRef'] = $this->ModelCandidate->getCandidatesSpecialWithOutRefIdByElectionId($inputs);
+            $index = 0;
+            foreach ($data['dataSpecial'] as $item) {
+                $data['dataSpecial'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);
+                $index +=1;
+            }
+            $index = 0;
+            foreach ($data['dataSpecialNoRef'] as $item) {
+                $data['dataSpecialNoRef'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);
+                $index +=1;
+            }
+            echo $this->load->view('ui/v3/state/candidate/ajax', $data, TRUE);
+        } else {
+            echo "CSRF Token Is Different";
         }
-        $index = 0;
-        foreach ($data['dataSpecialNoRef'] as $item) {
-            $data['dataSpecialNoRef'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);
-            $index +=1;
-        }
-        echo $this->load->view('ui/v3/state/candidate/ajax', $data, TRUE);
+
+
+
+
     }
     public function doIncreaseCandidateSpecialInviteCount(){
         $inputs = $this->input->post(NULL, TRUE);

@@ -1,9 +1,8 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <h1 class="page-caption">
-     <?php echo urldecode($stateName); ?>
+    <?php echo urldecode($stateName); ?>
 </h1>
 <div class="container container-wrapper">
-
     <div class="row col-xs-12 col-md-3 pull-right sidebar">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -43,20 +42,21 @@
         <section class="state-news">
             <?php if (!empty($statePosts)) { ?>
                 <?php foreach ($statePosts as $statePost) { ?>
-                            <div class="row item">
-                                <a href="<?php echo base_url('State/post/' . $stateId . '/' . $statePost['PostId'] . '/' . seoUrl($statePost['PostTitle'])); ?>">
-                                    <div class="row col-md-3 col-xs-12 pull-right">
-                                        <div class="pic" style="background: url('<?php echo image_url($statePost['PostImage']); ?>');"></div>
-                                    </div>
-                                    <div class="col-md-9 col-xs-12">
-                                        <div class="content"><?php echo $statePost['PostTitle']; ?></div>
-                                        <i class="fa fa-calendar"></i>
-                                        &nbsp;
-                                        <?php echo formatDate($statePost['CreateDateTime']); ?>
-                                    </div>
-                                </a>
+                    <div class="row item">
+                        <a href="<?php echo base_url('State/post/' . $stateId . '/' . $statePost['PostId'] . '/' . seoUrl($statePost['PostTitle'])); ?>">
+                            <div class="row col-md-3 col-xs-12 pull-right">
+                                <div class="pic"
+                                     style="background: url('<?php echo image_url($statePost['PostImage']); ?>');"></div>
                             </div>
-                            <?php } ?>
+                            <div class="col-md-9 col-xs-12">
+                                <div class="content"><?php echo $statePost['PostTitle']; ?></div>
+                                <i class="fa fa-calendar"></i>
+                                &nbsp;
+                                <?php echo formatDate($statePost['CreateDateTime']); ?>
+                            </div>
+                        </a>
+                    </div>
+                <?php } ?>
             <?php } ?>
         </section>
     </div>

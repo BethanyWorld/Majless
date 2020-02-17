@@ -1,10 +1,7 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
-
 <script src="<?php echo $_DIR; ?>js/angular.1.6.9.min.js"></script>
-
 <h1 class="page-caption">
-    نامزد انتخاباتی استان
-    <?php echo urldecode($stateName); ?>
+    نامزد انتخاباتی استان<?php echo urldecode($stateName); ?>
 </h1>
 <div ng-app="myApp" ng-controller="myCtrl">
     <div class="container container-wrapper">
@@ -154,7 +151,6 @@
                         </h5>
                     </div>
                 </div>
-
                 <div class="panel left-candidate-panel-resume padding-0">
                     <?php
                         $isHidden = "";
@@ -218,6 +214,14 @@
                             <canvas id="BarChart"></canvas>
                         </div>
                     </div>
+
+                    <?php
+                    $hasDocument  = false;
+                    foreach ($candidateDocuments as $candidateDocument) {
+                        if ($candidateDocument['CandidateDocumentName'] == 'Resume')
+                            $hasDocument = true;
+                    }?>
+                    <?php if($hasDocument){ ?>
                     <div class="panel left-candidate-panel-resume padding-0 single-scroll">
                         <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                             <div class="have-border-bottom">
@@ -227,7 +231,7 @@
                         <div class="panel-body">
                             <table class="table table-condensed table-hover table-bordered">
                                 <thead>
-                                <tr>
+                                <tr style="color: red;background: #fff;font-weight: 900;">
                                     <th class="fit"> مشاهده نسخه کامل سوابق تحصیلی و شغلی</th>
                                 </tr>
                                 </thead>
@@ -251,6 +255,7 @@
                             </table>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
                 <!-- Academic  -->
                 <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="academic-background">
@@ -4708,6 +4713,4 @@
 
         });
     });
-
-
 </script>

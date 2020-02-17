@@ -61,7 +61,7 @@
                     }
                     $deActiveResumeClass = "";
                     if ($candidate['CandidateResumeForViewStatus'] == 'Reject') {
-                        $deActiveResumeClass = "deactive";
+                        $deActiveResumeClass = "deactive resume-deactived";
                     }
                     ?>
                     <div class="pic <?php echo $deActiveClass." ".$deActiveResumeClass; ?>">
@@ -154,7 +154,7 @@
                         $filterClass = "Merit";
                     }
                     ?>
-                    <div class="pic deactive">
+                    <div class="pic deactive unaccepted-candidates">
                         <img src="<?php echo base_url('uploads/') . $candidate['CPI']; ?>" class="candidateImage"/>
                     </div>
                     <div class="col-md-12 col-xs-12 padding-0">
