@@ -163,6 +163,8 @@
                                                         <?php foreach ($badges as $item) { ?>
                                                             <li>
                                                                 <?php badgePipe($item['CandidateBadge']); ?>
+                                                                -
+                                                                <?php echo $item['CandidateBadgeAddress']; ?>
                                                             </li>
                                                         <?php } ?>
                                                     </ul>
@@ -177,6 +179,7 @@
                                                         <thead>
                                                         <tr>
                                                             <th>نوع نشان</th>
+                                                            <th class="td-c fit">لینک</th>
                                                             <th class="td-c fit">تخصیص</th>
                                                             <th class="td-c fit">حذف</th>
                                                         </tr>
@@ -185,6 +188,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td>نشان شایستگی طلایی</td>
+                                                            <td><input type="text" id="GoldenMerit" /></td>
                                                             <td class="td-c fit">
                                                                 <button data-action-type="GoldenMerit"
                                                                         class="btn btn-success btn-circle Assignment">
@@ -192,12 +196,13 @@
                                                             </td>
                                                             <td class="td-c fit">
                                                                 <button data-action-type="GoldenMerit"
-                                                                        class="btn btn-danger btn-circle Delete"><i
-                                                                            class="material-icons">clear</i>
+                                                                        class="btn btn-danger btn-circle Delete">
+                                                                    <i class="material-icons">clear</i>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>نشان شایستگی نقره ای</td>
+                                                            <td><input type="text" id="SilverMerit" /></td>
                                                             <td class="td-c fit ">
                                                                 <button data-action-type="SilverMerit"
                                                                         class="btn btn-success btn-circle Assignment">
@@ -211,6 +216,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>نشان شفافیت طلایی</td>
+                                                            <td><input type="text" id="GoldenTransparency" /></td>
                                                             <td class="td-c fit ">
                                                                 <button data-action-type="GoldenTransparency"
                                                                         class="btn btn-success btn-circle Assignment">
@@ -224,6 +230,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>نشان شفافیت نقره ای</td>
+                                                            <td><input type="text" id="SilverTransparency" /></td>
                                                             <td class="td-c fit ">
                                                                 <button data-action-type="SilverTransparency"
                                                                         class="btn btn-success btn-circle Assignment">
@@ -237,6 +244,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>نشان تعهدنامه</td>
+                                                            <td><input type="text" id="Obligation" /></td>
                                                             <td class="td-c fit ">
                                                                 <button data-action-type="Obligation"
                                                                         class="btn btn-success btn-circle Assignment">
