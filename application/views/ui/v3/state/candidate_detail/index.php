@@ -628,7 +628,7 @@
 <!--                                                   id=""-->
 <!--                                                   class="form-control">-->
                                         </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'SupervisoryBoard' ">
                                             <label for="">
                                                 عنوان همکاری:
