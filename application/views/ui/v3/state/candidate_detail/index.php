@@ -1,7 +1,8 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <script src="<?php echo $_DIR; ?>js/angular.1.6.9.min.js"></script>
 <h1 class="page-caption">
-    نامزد انتخاباتی استان<?php echo urldecode($stateName); ?>
+    نامزد انتخاباتی استان
+    <?php echo urldecode($stateName); ?>
 </h1>
 <div ng-app="myApp" ng-controller="myCtrl">
     <div class="container container-wrapper">
@@ -105,6 +106,16 @@
                                 </div>
                             </a>
                         </li>
+                        <li class="col-md-12 padding-0">
+                            <a href="<?php echo base_url('State/detail/'.$stateId.'/'.$stateName) ?>">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-arrow-left"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">بازگشت</div>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-12 padding-0">
@@ -137,7 +148,7 @@
                                 {{ candidateFirstName }}
                                 {{CandidateLastName }}
                             </h2>
-                            <span>
+                         <span>
                                 {{CandidateBirthDate }}
                             </span>
                         </div>
@@ -347,7 +358,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <h4>کتب</h4>
+                        <li>کتب</li>
                         <ul class="resume-ul">
 
                             <li ng-repeat="item in candidateBooks">
@@ -369,7 +380,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <h4>مقالات</h4>
+                        <li>مقالات</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateArticles">
                                 <span class="fa fa-circle-o"></span>
@@ -393,7 +404,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <h4>اختراعات</h4>
+                        <li>اختراعات</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateInvention">
                                 <span class="fa fa-circle-o"></span>
@@ -415,7 +426,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <h4>طراح های پژوهشی</h4>
+                        <li>طراح های پژوهشی</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateResearch">
                                 <span class="fa fa-circle-o"></span>
@@ -443,7 +454,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <h4>همایش ها</h4>
+                        <li>همایش ها</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateConference">
                                 <span class="fa fa-circle-o"></span>
@@ -467,7 +478,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <h4>ترجمه ها</h4>
+                        <li>ترجمه ها</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateTranslation">
                                 <span class="fa fa-circle-o"></span>
@@ -527,7 +538,7 @@
                     <div class="panel-body">
                         <ul class="resume-ul">
                             <li ng-repeat="item in promises">
-                                <span class="fa fa-circle-o"></span>
+
                                 <strong class="colored bg-white">
                                     {{item.CandidateElectionPromise}}
                                 </strong>
@@ -548,204 +559,152 @@
                                 <form ng-repeat="item in politicBackground">
                                     <span class="divider"></span>
                                     <div class="col-md-12 col-xs-12 padding-0 form">
-                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                             <label for="">
-                                               قالب فعالیت
+                                               قالب فعالیت:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <select class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateActivityType | bindEnum }}
-                                                </option>
+                                           <span class="span-h">{{item.CandidateActivityType | bindEnum }}</span>
 
-                                            </select>
+
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Others' ">
                                             <label for="">
-                                                نام مجموعه
+                                                نام مجموعه:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <select class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-
-                                                <option>
-                                                    {{item.CandidateActivityTypeOtherOrganizationTitle }}
-                                                </option>
-
-                                            </select>
+                                           <span class="span-h" > {{item.CandidateActivityTypeOtherOrganizationTitle }}</span>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                             <label for="">
-                                               مسئولیت
+                                               مسئولیت:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <select class="form-control form-control-lg"
-                                                    name=""
-                                                    id=""
-                                                    style="font-family: tahoma;">
-                                                <option>
-                                                    {{item.CandidateResponsibility }}
-                                                </option>
-                                            </select>
+                                          <span class="span-h"> {{item.CandidateResponsibility }}</span>
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' || item.CandidateActivityType === 'Others' ">
                                             <label for="">
-                                                آغاز همکاری
+                                                آغاز همکاری:
                                             </label>
-                                            <select
-                                                    class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateMediaStartMonth | bindEnum}}
+                                            <span class="span-h">  {{item.CandidateMediaStartMonth | bindEnum}}
                                                     ,
-                                                    {{item.CandidateMediaStartYear}}
-                                                </option>
-
-                                            </select>
+                                                    {{item.CandidateMediaStartYear}}</span>
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' || item.CandidateActivityType === 'Others' ">
-                                            <label for="">پایان همکاری</label>
-                                            <select
-                                                    class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateMediaEndMonth | bindEnum}}
+                                            <label for="">پایان همکاری:</label>
+                                            <span class="span-h"> {{item.CandidateMediaEndMonth | bindEnum}}
                                                     ,
-                                                    {{item.CandidateMediaEndYear}}
-                                                </option>
-                                            </select>
+                                                    {{item.CandidateMediaEndYear}}</span>
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Others' || item.CandidateActivityType === 'Group' ">
                                             <label for="">
-                                                عضویت
+                                                :عضویت
                                             </label>
-                                            <select
-                                                    class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateMemberShip | bindEnum}}
-                                                </option>
-
-                                            </select>
+                                           <span class="span-h"> {{item.CandidateMemberShip | bindEnum}}</span>
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'CandidatesCampaign' || item.CandidateActivityType === 'SupervisoryBoard' ">
-                                            <label for="">انتخابات</label>
-                                            <select
-                                                    class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateElectionType  | bindEnum}}
-                                                </option>
-                                            </select>
+                                            <label for="">انتخابات:</label>
+                                            <span class="span-h">{{item.CandidateElectionType  | bindEnum}}</span>
+
                                         </div>
 
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'CandidatesCampaign' || item.CandidateActivityType === 'SupervisoryBoard' ">
                                             <label for="">
-                                               دوره انتخابات
+                                               دوره انتخابات:
                                             </label>
-                                            <select class="form-control form-control-lg city-select"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateElectionPeriod}}
-                                                </option>
-                                            </select>
+                                            <span class="span-h">{{item.CandidateElectionPeriod}}</span>
+
+<!--                                            <input type="text"-->
+<!--                                                   value=""-->
+<!--                                                   name=""-->
+<!--                                                   id=""-->
+<!--                                                   class="form-control">-->
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'CandidatesCampaign' ">
                                             <label for="">
-                                                نام نامزد / لیست
+                                                نام نامزد / لیست:
                                             </label>
-                                            <select class="form-control form-control-lg city-select"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateElectionListName }}
-                                                </option>
-                                            </select>
+                                            <span class="span-h">{{item.CandidateElectionListName }}</span>
+
+<!--                                            <input type="text"-->
+<!--                                                   value=""-->
+<!--                                                   name=""-->
+<!--                                                   id=""-->
+<!--                                                   class="form-control">-->
                                         </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'SupervisoryBoard' ">
                                             <label for="">
-                                                عنوان همکاری
+                                                عنوان همکاری:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <input type="text"
-                                                   value="{{item.CandidateHeadquarterActivityTitle | bindEnum}}"
-                                                   name=""
-                                                   id=""
-                                                   class="form-control">
+                                            <span class="span-h">{{item.CandidateHeadquarterActivityTitle | bindEnum}}</span>
+<!--                                            <input type="text"-->
+<!--                                                   value=""-->
+<!--                                                   name=""-->
+<!--                                                   id=""-->
+<!--                                                   class="form-control">-->
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' ">
                                             <label for="">
-                                                قالب رسانه
+                                                قالب رسانه:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <input type="text"
-                                                   value="{{item.CandidateMediaType | bindEnum}}"
-                                                   name=""
-                                                   id=""
-                                                   class="form-control">
+                                            <span class="span-h">{{item.CandidateMediaType | bindEnum}}</span>
+<!--                                            <input type="text"-->
+<!--                                                   value=""-->
+<!--                                                   name=""-->
+<!--                                                   id=""-->
+<!--                                                   class="form-control">-->
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' ">
                                             <label for="">
-                                                نام رسانه
+                                                نام رسانه:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <input type="text"
-                                                   value="{{item.CandidateMediaTitle}}"
-                                                   name=""
-                                                   id=""
-                                                   class="form-control">
+                                            <span class="span-h">{{item.CandidateMediaTitle}}</span>
+<!--                                            <input type="text"-->
+<!--                                                   value=""-->
+<!--                                                   name=""-->
+<!--                                                   id=""-->
+<!--                                                   class="form-control">-->
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' && item.CandidateMediaType === 'Others' ">
                                             <label for="">
-                                               عنوان قالب رسانه
+                                               عنوان قالب رسانه:
                                             </label>
-                                            <select class="form-control form-control-lg city-select"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateMediaTypeTitle}}
-                                                </option>
-                                            </select>
+                                            <span class="span-h">{{item.CandidateMediaTypeTitle}}</span>
+<!--                                            <select class="form-control form-control-lg city-select"-->
+<!--                                                    name=""-->
+<!--                                                    id="">-->
+<!--                                                <option>-->
+<!--                                                    -->
+<!--                                                </option>-->
+<!--                                            </select>-->
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' ">
                                             <label for="">
-                                                 نوع فعالیت
+                                                 نوع فعالیت:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <input type="text"
-                                                   value="{{item.CandidateMediaActivityType}}"
-                                                   name=""
-                                                   id=""
-                                                   class="form-control">
+                                            <span class="span-h">{{item.CandidateMediaActivityType}}</span>
+
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
-                                            <label for="">توضیحات</label>
-                                            <input
-                                                    value="{{item.CandidateActivityDescription}}"
-                                                    id=""
-                                                    type="text"
-                                                    name=""
-                                                    class="input-validate validate valid">
+                                            <label for="">توضیحات:</label>
+                                            <span class="span-h">{{item.CandidateActivityDescription}}</span>
+<!--
                                         </div>
                                     </div>
                                     <hr>
@@ -850,154 +809,103 @@
                                 <form ng-repeat="item in candidateSocialCulturalBackground">
                                     <span class="divider"></span>
                                     <div class="col-md-12 col-xs-12 padding-0 form">
-                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                             <label for="">
-                                               زمینه فعالیت
+                                               زمینه فعالیت:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <select class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
+                                            <span> {{item.CandidateActivityFieldType | bindEnum }}</span>
 
-                                                <option>
-                                                    {{item.CandidateActivityFieldType | bindEnum }}
-                                                </option>
-
-                                            </select>
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType === 'Others'">
                                             <label for="">
-                                                عنوان
+                                                عنوان:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <select class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
+                                            <span>   {{item.CandidateActivityFieldOtherTypeTitle }}</span>
 
-                                                <option>
-                                                    {{item.CandidateActivityFieldOtherTypeTitle }}
-                                                </option>
-
-                                            </select>
                                         </div>
-                                        <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
                                             <label for="">
-                                               نام مجموعه
+                                               نام مجموعه:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <select class="form-control form-control-lg"
-                                                    name=""
-                                                    id=""
-                                                    style="font-family: tahoma;">
-                                                <option>
-                                                    {{item.CandidateOrganizationName }}
-                                                </option>
-                                            </select>
+                                            <span>{{item.CandidateOrganizationName }}</span>
+
                                         </div>
-                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType === 'Mobilization'">
                                             <label for="">
-                                                نوع عضویت
+                                                نوع عضویت:
                                             </label>
-                                            <select
-                                                    class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateMobilMembershipType | bindEnum}}
-                                                </option>
+                                            <span>{{item.CandidateMobilMembershipType | bindEnum}}</span>
 
-                                            </select>
                                         </div>
-                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
                                             <label for="">
-                                                نوع عضویت
+                                                نوع عضویت:
                                             </label>
-                                            <select
-                                                    class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateMemberShipType | bindEnum}}
-                                                </option>
+                                            <span> {{item.CandidateMemberShipType | bindEnum}}</span>
 
-                                            </select>
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat">
-                                            <label for="">آغاز همکاری</label>
-                                            <select
-                                                    class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateActivityStartMonth | bindEnum}}
+                                            <label for=""> آغاز همکاری:</label>
+                                            <span> {{item.CandidateActivityStartMonth | bindEnum}}
                                                     ,
-                                                    {{item.CandidateActivityStartYear}}
-                                                </option>
-                                            </select>
+                                                    {{item.CandidateActivityStartYear}}</span>
+
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat">
-                                            <label for="">پایان همکاری</label>
-                                            <select
-                                                    class="form-control form-control-lg"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateActivityEndMonth  | bindEnum}}
+                                            <label for="">پایان همکاری:</label>
+                                            <span>
+                                                 {{item.CandidateActivityEndMonth  | bindEnum}}
                                                     {{item.CandidateActivityEndYear }}
-                                                </option>
-                                            </select>
+                                            </span>
+
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                         ng-if="item.CandidateActivityFieldType === 'Mobilization'">
                                             <label for="">
-                                                نام حوزه
+                                                نام حوزه:
                                             </label>
-                                            <select class="form-control form-control-lg city-select"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateBasijAreaTitle}}
-                                                </option>
-                                            </select>
+                                            <span>  {{item.CandidateBasijAreaTitle}}</span>
+
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType === 'Mobilization'">
                                             <label for="">
-                                                نوع بسیج
+                                                نوع بسیج:
                                             </label>
-                                            <select class="form-control form-control-lg city-select"
-                                                    name=""
-                                                    id="">
-                                                <option>
-                                                    {{item.CandidateBasijType  | bindEnum}}
-                                                </option>
-                                            </select>
+                                            <span>{{item.CandidateBasijType  | bindEnum}}</span>
+
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateBasijType === 'Others'">
                                             <label for="">
-                                              سایر
+                                              سایر:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <input type="text"
-                                                   value="{{item.CandidateBasijTypeOtherTitle}}"
-                                                   name=""
-                                                   id=""
-                                                   class="form-control">
+                                            <span>{{item.CandidateBasijTypeOtherTitle}}</span>
+<!--                                            <input type="text"-->
+<!--                                                   value=""-->
+<!--                                                   name=""-->
+<!--                                                   id=""-->
+<!--                                                   class="form-control">-->
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
-                                            <label for="">توضیحات</label>
-                                            <input
-                                                    value="{{item.CandidateMemberShipDescription}}"
-                                                    id=""
-                                                    type="text"
-                                                    name=""
-                                                    class="input-validate validate valid">
+                                            <label for="">توضیحات:</label>
+                                            <span>{{item.CandidateMemberShipDescription}}</span>
+
+<!--                                            <input-->
+<!--                                                    value=""-->
+<!--                                                    id=""-->
+<!--                                                    type="text"-->
+<!--                                                    name=""-->
+<!--                                                    class="input-validate validate valid">-->
                                         </div>
                                     </div>
                                     <hr>
@@ -1068,8 +976,7 @@
                                                                                             id="inputRealEstateType">
 
                                                                                         <option>
-                                                                                            {{item.RealEstateType |
-                                                                                            bindEnum}}
+                                                                                            {{item.RealEstateType | bindEnum}}
                                                                                         </option>
 
                                                                                     </select>
@@ -4179,6 +4086,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>

@@ -23,6 +23,7 @@
                     $inputCandidateStateId = $.trim($("#inputCandidateStateId").val());
                     $inputCandidateElectionId = $.trim($("#inputCandidateElectionId").val());
                     $inputCandidateInstaAccount = $.trim($("#inputCandidateInstaAccount").val());
+                    $inputCandidateElectionCode = $.trim($("#inputCandidateElectionCode").val());
                     $inputOperationStatus = $("input[name='CandidateOperationStatus']:checked").val();
                     /* End Validation */
                     toggleLoader();
@@ -34,7 +35,8 @@
                         'inputCandidateStateId': $inputCandidateStateId,
                         'inputCandidateElectionId': $inputCandidateElectionId,
                         'inputCandidateInstaAccount': $inputCandidateInstaAccount,
-                        'inputOperationStatus': $inputOperationStatus
+                        'inputOperationStatus': $inputOperationStatus,
+                        'inputCandidateElectionCode': $inputCandidateElectionCode
                     }
                     $.ajax({
                         type: 'post',
