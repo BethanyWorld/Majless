@@ -415,7 +415,7 @@ class ModelCandidate extends CI_Model
     }
 
     public function getCandidatesSpecialByElectionId($inputs){
-        $this->db->select('* , candidate_special.CandidateProfileImage as CPI');
+        $this->db->select('CandidateCode,ElectionName,CandidateStatus,CandidatePreName,CandidateFullName,CandidateHasAccepted,CandidateResumeForViewStatus,CandidateOperationStatus,CandidateRefId,CandidateId,candidate.CandidateStateId,candidate_special.CandidateElectionId, candidate_special.CandidateProfileImage as CPI');
         $this->db->from('candidate_special');
         $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
         $this->db->join('candidate', 'candidate.CandidateId = candidate_special.CandidateRefId');
