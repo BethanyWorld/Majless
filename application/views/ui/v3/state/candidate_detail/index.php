@@ -1,7 +1,8 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <script src="<?php echo $_DIR; ?>js/angular.1.6.9.min.js"></script>
 <h1 class="page-caption">
-    نامزد انتخاباتی استان<?php echo urldecode($stateName); ?>
+    نامزد انتخاباتی استان
+    <?php echo urldecode($stateName); ?>
 </h1>
 <div ng-app="myApp" ng-controller="myCtrl">
     <div class="container container-wrapper">
@@ -102,6 +103,16 @@
                                 </i>
                                 <div class="RightPanelContent">
                                     <div class="RightPanleTitle">اطلاعات مالی</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-md-12 padding-0">
+                            <a href="<?php echo base_url('State/detail/'.$stateId.'/'.$stateName) ?>">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-arrow-left"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">بازگشت</div>
                                 </div>
                             </a>
                         </li>
@@ -4075,6 +4086,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>
