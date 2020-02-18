@@ -72,12 +72,15 @@ foreach ($dataSpecial as $candidate) { ?>
             <div class="col-xs-12">
                 <?php if ($candidate['CandidateOperationStatus'] == 'Flowed') { ?>
                     <span class="wanted flowed">
-                            عدم اتمام فرآیند
-                            </span>
+                        عدم اتمام فرآیند
+                    </span>
                 <?php } ?>
                 <h3 class="candidateName">
-                    <?php /*echo $candidate['CandidatePreName'] . " " . $candidate['CandidateFullName'];*/ ?>
                     <?php echo $candidate['CandidateFullName']; ?>
+                    <p>
+                        <?php if($candidate['CandidateElectionCode'] !== NULL) echo "کد انتخاباتی ".$candidate['CandidateElectionCode']; ?>
+                        <?php if($candidate['CandidateElectionCode']== NULL) echo "&nbsp;"; ?>
+                    </p>
                     <div class="election">
                         <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
                     </div>
