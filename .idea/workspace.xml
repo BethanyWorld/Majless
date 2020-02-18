@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="127eba2d-7415-495a-85e7-2bfd297d5681" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/finance/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/finance/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/upload_document.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/upload_document.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/upload_documents/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/upload_documents/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/upload_documents/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/upload_documents/index_js.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index_css.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index_css.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,35 +33,37 @@
     <session id="-1303681588">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="1" />
           <entry key="js" value="2" />
-          <entry key="php" value="24" />
+          <entry key="php" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="24" />
+          <entry key="PHP" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="1305" />
+          <entry key="php" value="1718" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="1305" />
+          <entry key="PHP" value="1718" />
         </counts>
       </usages-collector>
     </session>
@@ -120,12 +119,35 @@
     <favorites_list name="1TeachMe" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/finance/index.php">
+        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="201" column="86" lean-forward="true" selection-start-line="201" selection-start-column="86" selection-end-line="201" selection-end-column="86" />
+            <state relative-caret-position="371">
+              <caret line="532" column="41" lean-forward="true" selection-start-line="532" selection-start-column="41" selection-end-line="532" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#5#0#PHP" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#8;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#9;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#splitPrice#0;n#!!top" />
+                <element signature="n#script#1;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index_css.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="385" column="17" selection-start-line="385" selection-start-column="8" selection-end-line="385" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -154,6 +176,15 @@
       <find>درآمد متوسط ما</find>
       <find>شفاف سازی هزینه های انتخاباتی</find>
       <find>price-right-side</find>
+      <find>.have-border-bottom</find>
+      <find>سوابق تحصیلی</find>
+      <find>.resume-ul</find>
+      <find>h4</find>
+      <find>سوابق علمی پژوهشی</find>
+      <find>فعالیت</find>
+      <find>ng-binding</find>
+      <find>input</find>
+      <find>font-size</find>
     </findStrings>
     <replaceStrings>
       <replace>?&gt;</replace>
@@ -166,7 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/admin_panel/reset_password/index_js.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/reset_password/index.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/reset_password/index_css.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/login/index_css.php" />
@@ -212,11 +242,12 @@
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/sidebar.php" />
         <option value="$PROJECT_DIR$/application/models/ui/ModelProfile.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/edit/index.php" />
-        <option value="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/upload_documents/index.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/upload_documents/index_js.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/upload_document.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/finance/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index_css.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" />
       </list>
     </option>
   </component>
@@ -246,11 +277,9 @@
       <path value="C:/php/pear" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1374" />
-    <option name="y" value="-102" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="800" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectId" id="1V4AaHwzvzyAORLY1Vc3AmLovqR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -261,7 +290,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -269,10 +297,56 @@
               <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
               <item name="Majless" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Majless" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Majless" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Majless" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Majless" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="v3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Majless" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="v3" type="462c0819:PsiDirectoryNode" />
+              <item name="state" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Majless" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="v3" type="462c0819:PsiDirectoryNode" />
+              <item name="state" type="462c0819:PsiDirectoryNode" />
+              <item name="candidate_detail" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -283,7 +357,7 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="eu.ydp.idea.ts.spec.generator.settings.spec.template" value="import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';&#10;&#10;describe('$ClassName$', () =&gt; {&#10;  let $ObjName$:$ClassName$;&#10;&#10;  beforeEach(() =&gt; {&#10;    $ObjName$ = new $ClassName$();&#10;  });&#10;&#10;  describe('', () =&gt; {&#10;    it('', () =&gt; {&#10;      // given&#10;&#10;      // when&#10;&#10;      // then&#10;    });&#10;  });&#10;});&#10;" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Samim/wp-content/themes/samimTheme" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -672,6 +746,8 @@
       <workItem from="1580617214917" duration="22053000" />
       <workItem from="1580716622105" duration="14035000" />
       <workItem from="1580795497780" duration="16001000" />
+      <workItem from="1581942454942" duration="1381000" />
+      <workItem from="1582002207701" duration="9857000" />
     </task>
     <task id="LOCAL-00001" summary="commit from phpstorm">
       <created>1571642032929</created>
@@ -701,7 +777,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151638000" />
+    <option name="totallyTimeSpent" value="162876000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -713,9 +789,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1374" y="-102" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4948276" visible="true" weight="0.3470948" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4948276" weight="0.2377892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" show_stripe_button="false" sideWeight="0.50517243" side_tool="true" weight="0.23929663" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -736,21 +813,21 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15874036" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4948276" visible="true" weight="0.2377892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" show_stripe_button="false" sideWeight="0.50517243" side_tool="true" weight="0.23929663" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32931036" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32884097" />
+      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32931036" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" weight="0.32931036" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49923548" weight="0.32931036" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50076455" side_tool="true" weight="0.3275862" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -808,9 +885,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/ui/v4/images/neshan.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -1041,17 +1115,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/upload_documents/steps/chart/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/upload_documents/steps/chart/index.php" />
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/academic_background/index_css.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10704" />
@@ -1064,220 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59">
           <caret line="462" column="40" selection-start-line="462" selection-start-column="40" selection-end-line="462" selection-end-column="40" />
-          <folding>
-            <element signature="n#__construct#0;n#Profile#0;n#!!top" />
-            <element signature="n#index#0;n#Profile#0;n#!!top" />
-            <element signature="e#916#1196#0#PHP" />
-            <element signature="e#1115#1196#0#PHP" />
-            <element signature="e#1407#1551#0#PHP" />
-            <element signature="e#1767#1915#0#PHP" />
-            <element signature="e#2131#2279#0#PHP" />
-            <element signature="n#getResumeStatus#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateHasOtherConditionToContinue#0;n#Profile#0;n#!!top" />
-            <element signature="e#3292#3555#0#PHP" />
-            <element signature="e#3333#3479#0#PHP" />
-            <element signature="e#3564#4058#0#PHP" />
-            <element signature="e#3837#3982#0#PHP" />
-            <element signature="e#4077#4157#0#PHP" />
-            <element signature="e#4087#4147#1#PHP" />
-            <element signature="e#4177#4274#0#PHP" />
-            <element signature="e#4187#4264#1#PHP" />
-            <element signature="e#4294#4377#0#PHP" />
-            <element signature="e#4304#4367#1#PHP" />
-            <element signature="n#examList#0;n#Profile#0;n#!!top" />
-            <element signature="n#getFirstStepExamList#0;n#Profile#0;n#!!top" />
-            <element signature="n#examListSecond#0;n#Profile#0;n#!!top" />
-            <element signature="n#getSecondStepExamList#0;n#Profile#0;n#!!top" />
-            <element signature="n#evaluationExam#0;n#Profile#0;n#!!top" />
-            <element signature="n#getEvaluationExamList#0;n#Profile#0;n#!!top" />
-            <element signature="n#startExamPayment#0;n#Profile#0;n#!!top" />
-            <element signature="e#8847#8927#0#PHP" />
-            <element signature="e#8857#8917#1#PHP" />
-            <element signature="e#8947#9044#0#PHP" />
-            <element signature="e#8957#9034#1#PHP" />
-            <element signature="e#9064#9147#0#PHP" />
-            <element signature="e#9074#9137#1#PHP" />
-            <element signature="e#9549#9850#0#PHP" />
-            <element signature="e#9581#9849#0#PHP" />
-            <element signature="e#9595#9838#1#PHP" />
-            <element signature="e#9860#11228#0#PHP" />
-            <element signature="e#10104#10635#0#PHP" />
-            <element signature="e#10719#10931#0#PHP" />
-            <element signature="e#10979#11228#0#PHP" />
-            <element signature="e#11005#11181#0#PHP" />
-            <element signature="n#endExamPayment#0;n#Profile#0;n#!!top" />
-            <element signature="e#11611#12704#0#PHP" />
-            <element signature="e#11815#12042#0#PHP" />
-            <element signature="e#11852#12041#0#PHP" />
-            <element signature="e#11870#12026#1#PHP" />
-            <element signature="e#12056#12669#0#PHP" />
-            <element signature="e#12360#12545#0#PHP" />
-            <element signature="e#12688#12704#0#PHP" />
-            <element signature="e#12713#12781#0#PHP" />
-            <element signature="n#candidateReserveExam#0;n#Profile#0;n#!!top" />
-            <element signature="e#13756#14697#0#PHP" />
-            <element signature="e#13926#14071#0#PHP" />
-            <element signature="e#14156#14697#0#PHP" />
-            <element signature="e#14239#14327#0#PHP" />
-            <element signature="e#14249#14317#1#PHP" />
-            <element signature="e#14351#14456#0#PHP" />
-            <element signature="e#14361#14446#1#PHP" />
-            <element signature="e#14480#14571#0#PHP" />
-            <element signature="e#14490#14561#1#PHP" />
-            <element signature="n#doRegisterExam#0;n#Profile#0;n#!!top" />
-            <element signature="e#14935#15015#0#PHP" />
-            <element signature="e#14945#15005#1#PHP" />
-            <element signature="e#15035#15132#0#PHP" />
-            <element signature="e#15045#15122#1#PHP" />
-            <element signature="e#15152#15235#0#PHP" />
-            <element signature="e#15162#15225#1#PHP" />
-            <element signature="e#15306#17127#0#PHP" />
-            <element signature="e#15972#16319#0#PHP" />
-            <element signature="e#16004#16318#0#PHP" />
-            <element signature="e#16022#16303#1#PHP" />
-            <element signature="e#16333#17028#0#PHP" />
-            <element signature="e#16483#16690#0#PHP" />
-            <element signature="e#16746#17028#0#PHP" />
-            <element signature="e#16776#16973#0#PHP" />
-            <element signature="e#17072#17127#0#PHP" />
-            <element signature="n#resume#0;n#Profile#0;n#!!top" />
-            <element signature="e#17959#18227#0#PHP" />
-            <element signature="e#18159#18227#0#PHP" />
-            <element signature="n#candidateUpdatePersonalInfo#0;n#Profile#0;n#!!top" />
-            <element signature="e#23056#23307#0#PHP" />
-            <element signature="e#23121#23241#0#PHP" />
-            <element signature="e#23704#23784#0#PHP" />
-            <element signature="e#23714#23774#1#PHP" />
-            <element signature="e#23804#23901#0#PHP" />
-            <element signature="e#23814#23891#1#PHP" />
-            <element signature="e#23921#24004#0#PHP" />
-            <element signature="e#23931#23994#1#PHP" />
-            <element signature="n#academicBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateAcademicBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#militaryStatus#0;n#Profile#0;n#!!top" />
-            <element signature="e#26094#26206#0#PHP" />
-            <element signature="n#candidateUpdateMilitaryStatus#0;n#Profile#0;n#!!top" />
-            <element signature="n#jobHistory#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateJobHistory#0;n#Profile#0;n#!!top" />
-            <element signature="n#socialCulturalBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateSocialCulturalBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#politicBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdatePoliticBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#scienceBackground#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateBooks#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateArticles#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateResearch#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateTranslation#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateInvention#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateConference#0;n#Profile#0;n#!!top" />
-            <element signature="n#skills#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateSkills#0;n#Profile#0;n#!!top" />
-            <element signature="e#38571#38886#0#PHP" />
-            <element signature="n#veteran#0;n#Profile#0;n#!!top" />
-            <element signature="e#39773#40039#0#PHP" />
-            <element signature="e#40221#40931#0#PHP" />
-            <element signature="e#40328#40921#0#PHP" />
-            <element signature="e#40392#40475#0#PHP" />
-            <element signature="e#40492#40575#0#PHP" />
-            <element signature="e#40592#40683#0#PHP" />
-            <element signature="e#40700#40789#0#PHP" />
-            <element signature="e#40806#40907#0#PHP" />
-            <element signature="n#candidateUpdateVeteran#0;n#Profile#0;n#!!top" />
-            <element signature="n#finance#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdateFinance#0;n#Profile#0;n#!!top" />
-            <element signature="e#43238#60596#0#PHP" />
-            <element signature="e#43279#45781#0#PHP" />
-            <element signature="e#43481#43651#0#PHP" />
-            <element signature="e#43511#43650#0#PHP" />
-            <element signature="e#43669#43883#0#PHP" />
-            <element signature="e#43900#45405#0#PHP" />
-            <element signature="e#43978#45289#0#PHP" />
-            <element signature="e#45429#45595#0#PHP" />
-            <element signature="e#45794#47775#0#PHP" />
-            <element signature="e#45989#46158#0#PHP" />
-            <element signature="e#46019#46157#0#PHP" />
-            <element signature="e#46176#46390#0#PHP" />
-            <element signature="e#46407#47399#0#PHP" />
-            <element signature="e#46485#47283#0#PHP" />
-            <element signature="e#47423#47589#0#PHP" />
-            <element signature="e#47788#49675#0#PHP" />
-            <element signature="e#47981#48150#0#PHP" />
-            <element signature="e#48011#48149#0#PHP" />
-            <element signature="e#48168#48382#0#PHP" />
-            <element signature="e#48399#49299#0#PHP" />
-            <element signature="e#48477#49184#0#PHP" />
-            <element signature="e#49323#49489#0#PHP" />
-            <element signature="e#49688#51352#0#PHP" />
-            <element signature="e#49892#50061#0#PHP" />
-            <element signature="e#49922#50060#0#PHP" />
-            <element signature="e#50079#50293#0#PHP" />
-            <element signature="e#50310#50976#0#PHP" />
-            <element signature="e#50388#50861#0#PHP" />
-            <element signature="e#51000#51166#0#PHP" />
-            <element signature="e#51365#53100#0#PHP" />
-            <element signature="e#51572#51741#0#PHP" />
-            <element signature="e#51602#51740#0#PHP" />
-            <element signature="e#51759#51973#0#PHP" />
-            <element signature="e#51990#52724#0#PHP" />
-            <element signature="e#52068#52609#0#PHP" />
-            <element signature="e#52748#52914#0#PHP" />
-            <element signature="e#53113#55173#0#PHP" />
-            <element signature="e#53304#53473#0#PHP" />
-            <element signature="e#53334#53472#0#PHP" />
-            <element signature="e#53491#53705#0#PHP" />
-            <element signature="e#53722#54797#0#PHP" />
-            <element signature="e#53800#54681#0#PHP" />
-            <element signature="e#54821#54987#0#PHP" />
-            <element signature="e#55186#56900#0#PHP" />
-            <element signature="e#55373#55542#0#PHP" />
-            <element signature="e#55403#55541#0#PHP" />
-            <element signature="e#55560#55774#0#PHP" />
-            <element signature="e#55791#56524#0#PHP" />
-            <element signature="e#55869#56409#0#PHP" />
-            <element signature="e#56548#56714#0#PHP" />
-            <element signature="e#56913#58416#0#PHP" />
-            <element signature="e#57118#57287#0#PHP" />
-            <element signature="e#57148#57286#0#PHP" />
-            <element signature="e#57305#57519#0#PHP" />
-            <element signature="e#57536#58040#0#PHP" />
-            <element signature="e#57614#57925#0#PHP" />
-            <element signature="e#58064#58230#0#PHP" />
-            <element signature="e#58429#60586#0#PHP" />
-            <element signature="e#58626#58795#0#PHP" />
-            <element signature="e#58656#58794#0#PHP" />
-            <element signature="e#58813#59027#0#PHP" />
-            <element signature="e#59044#60210#0#PHP" />
-            <element signature="e#59122#60094#0#PHP" />
-            <element signature="e#60234#60400#0#PHP" />
-            <element signature="n#promises#0;n#Profile#0;n#!!top" />
-            <element signature="n#candidateUpdatePromises#0;n#Profile#0;n#!!top" />
-            <element signature="n#support#0;n#Profile#0;n#!!top" />
-            <element signature="n#startPayment#0;n#Profile#0;n#!!top" />
-            <element signature="e#63554#63662#0#PHP" />
-            <element signature="e#64005#64298#0#PHP" />
-            <element signature="e#64037#64297#0#PHP" />
-            <element signature="e#64051#64286#1#PHP" />
-            <element signature="e#64308#64584#0#PHP" />
-            <element signature="e#64444#64584#0#PHP" />
-            <element signature="n#endPayment#0;n#Profile#0;n#!!top" />
-            <element signature="e#64894#66098#0#PHP" />
-            <element signature="e#65098#65325#0#PHP" />
-            <element signature="e#65135#65324#0#PHP" />
-            <element signature="e#65153#65309#1#PHP" />
-            <element signature="e#65339#66063#0#PHP" />
-            <element signature="e#65475#65961#0#PHP" />
-            <element signature="e#66082#66098#0#PHP" />
-            <element signature="e#66107#66175#0#PHP" />
-            <element signature="n#candidateUpdateDocuments#0;n#Profile#0;n#!!top" />
-            <element signature="n#removeCandidateDocumentByRowId#0;n#Profile#0;n#!!top" />
-            <element signature="n#uploadDocuments#0;n#Profile#0;n#!!top" />
-            <element signature="n#account#0;n#Profile#0;n#!!top" />
-            <element signature="n#doChangePassword#0;n#Profile#0;n#!!top" />
-            <element signature="n#paymentHistory#0;n#Profile#0;n#!!top" />
-            <element signature="n#uploadFile#0;n#Profile#0;n#!!top" />
-            <element signature="n#UploadMultipleFile#0;n#Profile#0;n#!!top" />
-            <element signature="n#logOut#0;n#Profile#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1292,128 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="333" column="25" selection-start-line="333" selection-start-column="9" selection-end-line="333" selection-end-column="25" />
-          <folding>
-            <element signature="n#seoUrl#0;n#!!top" />
-            <element signature="n#setInputValue#0;n#!!top" />
-            <element signature="n#setOptionSelected#0;n#!!top" />
-            <element signature="n#setRadioSelected#0;n#!!top" />
-            <element signature="n#isCheckBoxChecked#0;n#!!top" />
-            <element signature="n#image_url#0;n#!!top" />
-            <element signature="n#formatDate#0;n#!!top" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#contactFormSubject#0;n#!!top" />
-            <element signature="e#656#909#0#PHP" />
-            <element signature="e#684#757#0#PHP" />
-            <element signature="e#766#835#0#PHP" />
-            <element signature="e#844#903#0#PHP" />
-            <element signature="n#contactFormVisited#0;n#!!top" />
-            <element signature="e#956#1199#0#PHP" />
-            <element signature="e#984#1084#0#PHP" />
-            <element signature="e#1093#1193#0#PHP" />
-            <element signature="n#contentStatus#0;n#!!top" />
-            <element signature="e#1240#1594#0#PHP" />
-            <element signature="e#1267#1371#0#PHP" />
-            <element signature="e#1380#1481#0#PHP" />
-            <element signature="e#1490#1588#0#PHP" />
-            <element signature="n#candidateRoles#0;n#!!top" />
-            <element signature="e#1654#2027#0#PHP" />
-            <element signature="e#1680#1797#0#PHP" />
-            <element signature="e#1806#1908#0#PHP" />
-            <element signature="e#1917#2021#0#PHP" />
-            <element signature="n#candidateRolesForChart#0;n#!!top" />
-            <element signature="e#2075#2319#0#PHP" />
-            <element signature="e#2101#2175#0#PHP" />
-            <element signature="e#2184#2243#0#PHP" />
-            <element signature="e#2252#2313#0#PHP" />
-            <element signature="n#candidateStatus#0;n#!!top" />
-            <element signature="e#2361#4771#0#PHP" />
-            <element signature="e#2388#2540#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#2549#2706#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#2715#2871#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#2880#3029#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#3038#3212#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#3221#3390#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#3399#3559#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#3568#3727#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#3736#3914#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#3923#4083#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#4092#4271#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#4280#4404#0#PHP" />
-            <element signature="e#4413#4576#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="e#4585#4764#0#PHP" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#candidateExamStatus#0;n#!!top" />
-            <element signature="e#4818#5302#0#PHP" />
-            <element signature="e#4845#4950#0#PHP" />
-            <element signature="e#4959#5066#0#PHP" />
-            <element signature="e#5075#5181#0#PHP" />
-            <element signature="e#5190#5296#0#PHP" />
-            <element signature="n#paymentStatus#0;n#!!top" />
-            <element signature="e#5343#5600#0#PHP" />
-            <element signature="e#5370#5478#0#PHP" />
-            <element signature="e#5487#5594#0#PHP" />
-            <element signature="n#PaymentType#0;n#!!top" />
-            <element signature="e#5638#5896#0#PHP" />
-            <element signature="e#5665#5774#0#PHP" />
-            <element signature="e#5783#5890#0#PHP" />
-            <element signature="n#generateCandidateStatus#0;n#!!top" />
-            <element signature="e#5947#12418#0#PHP" />
-            <element signature="e#5974#6678#0#PHP" />
-            <element signature="e#6687#7403#0#PHP" />
-            <element signature="e#7452#8181#0#PHP" />
-            <element signature="e#8190#8921#0#PHP" />
-            <element signature="e#8930#9658#0#PHP" />
-            <element signature="e#9667#10325#0#PHP" />
-            <element signature="e#10334#10998#0#PHP" />
-            <element signature="e#11007#11672#0#PHP" />
-            <element signature="e#11681#12412#0#PHP" />
-            <element signature="n#examType#0;n#!!top" />
-            <element signature="e#12452#12840#0#PHP" />
-            <element signature="e#12477#12588#0#PHP" />
-            <element signature="e#12597#12709#0#PHP" />
-            <element signature="e#12718#12834#0#PHP" />
-            <element signature="n#genderPipe#0;n#!!top" />
-            <element signature="e#12876#13115#0#PHP" />
-            <element signature="e#12901#12999#0#PHP" />
-            <element signature="e#13008#13109#0#PHP" />
-            <element signature="n#maritalStatusPipe#0;n#!!top" />
-            <element signature="e#13158#13402#0#PHP" />
-            <element signature="e#13183#13284#0#PHP" />
-            <element signature="e#13293#13396#0#PHP" />
-            <element signature="n#religionPipe#0;n#!!top" />
-            <element signature="e#13439#14257#0#PHP" />
-            <element signature="e#13464#13570#0#PHP" />
-            <element signature="e#13579#13689#0#PHP" />
-            <element signature="e#13698#13807#0#PHP" />
-            <element signature="e#13816#13920#0#PHP" />
-            <element signature="e#13929#14029#0#PHP" />
-            <element signature="e#14038#14142#0#PHP" />
-            <element signature="e#14151#14251#0#PHP" />
-            <element signature="n#pipeCandidateSpecialAcceptStatus#0;n#!!top" />
-            <element signature="e#14316#14559#0#PHP" />
-            <element signature="e#14343#14442#0#PHP" />
-            <element signature="e#14451#14553#0#PHP" />
-            <element signature="n#FaToEn#0;n#!!top" />
-            <element signature="n#badgePipe#0;n#!!top" />
-            <element signature="e#14859#15427#0#PHP" />
-            <element signature="e#14884#14982#0#PHP" />
-            <element signature="e#14991#15091#0#PHP" />
-            <element signature="e#15100#15205#0#PHP" />
-            <element signature="e#15214#15320#0#PHP" />
-            <element signature="e#15329#15421#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1421,154 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="n#__construct#0;n#Candidate#0;n#!!top" />
-            <element signature="n#index#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doPagination#0;n#Candidate#0;n#!!top" />
-            <element signature="n#getJsonCandidate#0;n#Candidate#0;n#!!top" />
-            <element signature="n#badge#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doAssignBadge#0;n#Candidate#0;n#!!top" />
-            <element signature="e#5129#5260#0#PHP" />
-            <element signature="e#5139#5250#1#PHP" />
-            <element signature="e#5167#5240#0#PHP" />
-            <element signature="e#5280#5377#0#PHP" />
-            <element signature="e#5290#5367#1#PHP" />
-            <element signature="e#5397#5480#0#PHP" />
-            <element signature="e#5407#5470#1#PHP" />
-            <element signature="n#printResume#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doMarkCandidate#0;n#Candidate#0;n#!!top" />
-            <element signature="e#7661#8827#0#PHP" />
-            <element signature="e#7813#7901#0#PHP" />
-            <element signature="e#7823#7891#1#PHP" />
-            <element signature="e#7925#8030#0#PHP" />
-            <element signature="e#7935#8020#1#PHP" />
-            <element signature="e#8054#8145#0#PHP" />
-            <element signature="e#8064#8135#1#PHP" />
-            <element signature="e#8339#8827#0#PHP" />
-            <element signature="e#8368#8456#0#PHP" />
-            <element signature="e#8378#8446#1#PHP" />
-            <element signature="e#8480#8585#0#PHP" />
-            <element signature="e#8490#8575#1#PHP" />
-            <element signature="e#8609#8700#0#PHP" />
-            <element signature="e#8619#8690#1#PHP" />
-            <element signature="n#doMarkSpecialCandidate#0;n#Candidate#0;n#!!top" />
-            <element signature="e#8948#9028#0#PHP" />
-            <element signature="e#8958#9018#1#PHP" />
-            <element signature="e#9048#9145#0#PHP" />
-            <element signature="e#9058#9135#1#PHP" />
-            <element signature="e#9165#9248#0#PHP" />
-            <element signature="e#9175#9238#1#PHP" />
-            <element signature="n#doAcceptCandidateFirstExam#0;n#Candidate#0;n#!!top" />
-            <element signature="e#9481#9561#0#PHP" />
-            <element signature="e#9491#9551#1#PHP" />
-            <element signature="e#9581#9678#0#PHP" />
-            <element signature="e#9591#9668#1#PHP" />
-            <element signature="e#9698#9781#0#PHP" />
-            <element signature="e#9708#9771#1#PHP" />
-            <element signature="n#doRejectCandidateFirstExam#0;n#Candidate#0;n#!!top" />
-            <element signature="e#10025#10105#0#PHP" />
-            <element signature="e#10035#10095#1#PHP" />
-            <element signature="e#10125#10222#0#PHP" />
-            <element signature="e#10135#10212#1#PHP" />
-            <element signature="e#10242#10325#0#PHP" />
-            <element signature="e#10252#10315#1#PHP" />
-            <element signature="n#doAcceptCandidateSecondExam#0;n#Candidate#0;n#!!top" />
-            <element signature="e#10570#10650#0#PHP" />
-            <element signature="e#10580#10640#1#PHP" />
-            <element signature="e#10670#10767#0#PHP" />
-            <element signature="e#10680#10757#1#PHP" />
-            <element signature="e#10787#10870#0#PHP" />
-            <element signature="e#10797#10860#1#PHP" />
-            <element signature="n#doRejectCandidateSecondExam#0;n#Candidate#0;n#!!top" />
-            <element signature="e#11116#11196#0#PHP" />
-            <element signature="e#11126#11186#1#PHP" />
-            <element signature="e#11216#11313#0#PHP" />
-            <element signature="e#11226#11303#1#PHP" />
-            <element signature="e#11333#11416#0#PHP" />
-            <element signature="e#11343#11406#1#PHP" />
-            <element signature="n#doAcceptEvaluationExam#0;n#Candidate#0;n#!!top" />
-            <element signature="e#11657#11737#0#PHP" />
-            <element signature="e#11667#11727#1#PHP" />
-            <element signature="e#11757#11854#0#PHP" />
-            <element signature="e#11767#11844#1#PHP" />
-            <element signature="e#11874#11957#0#PHP" />
-            <element signature="e#11884#11947#1#PHP" />
-            <element signature="n#doRejectEvaluationExam#0;n#Candidate#0;n#!!top" />
-            <element signature="e#12193#12273#0#PHP" />
-            <element signature="e#12203#12263#1#PHP" />
-            <element signature="e#12293#12390#0#PHP" />
-            <element signature="e#12303#12380#1#PHP" />
-            <element signature="e#12410#12493#0#PHP" />
-            <element signature="e#12420#12483#1#PHP" />
-            <element signature="n#getCandidateStatus#0;n#Candidate#0;n#!!top" />
-            <element signature="n#getCandidateExams#0;n#Candidate#0;n#!!top" />
-            <element signature="n#importScores#0;n#Candidate#0;n#!!top" />
-            <element signature="n#prepareImportScores#0;n#Candidate#0;n#!!top" />
-            <element signature="e#14338#14813#0#PHP" />
-            <element signature="e#14565#14813#0#PHP" />
-            <element signature="e#14600#14802#0#PHP" />
-            <element signature="e#14643#14788#0#PHP" />
-            <element signature="e#14998#15358#0#PHP" />
-            <element signature="e#15387#16531#0#PHP" />
-            <element signature="e#15442#16512#0#PHP" />
-            <element signature="e#15506#16043#0#HTML" />
-            <element signature="e#15559#15564#0#PHP" />
-            <element signature="e#15637#15642#0#PHP" />
-            <element signature="e#15721#15726#0#PHP" />
-            <element signature="e#15774#15779#0#PHP" />
-            <element signature="e#15893#15898#0#PHP" />
-            <element signature="e#15980#15985#0#PHP" />
-            <element signature="e#16064#16512#0#PHP" />
-            <element signature="e#16090#16492#0#HTML" />
-            <element signature="e#16152#16157#0#PHP" />
-            <element signature="e#16317#16322#0#PHP" />
-            <element signature="n#doImportScores#0;n#Candidate#0;n#!!top" />
-            <element signature="n#special#0;n#Candidate#0;n#!!top" />
-            <element signature="n#specialAdd#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doSpecialAdd#0;n#Candidate#0;n#!!top" />
-            <element signature="e#18172#18303#0#PHP" />
-            <element signature="e#18182#18293#1#PHP" />
-            <element signature="e#18210#18283#0#PHP" />
-            <element signature="e#18323#18420#0#PHP" />
-            <element signature="e#18333#18410#1#PHP" />
-            <element signature="e#18440#18523#0#PHP" />
-            <element signature="e#18450#18513#1#PHP" />
-            <element signature="n#specialEdit#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doEditCandidateSpecial#0;n#Candidate#0;n#!!top" />
-            <element signature="e#19806#19937#0#PHP" />
-            <element signature="e#19816#19927#1#PHP" />
-            <element signature="e#19844#19917#0#PHP" />
-            <element signature="e#19957#20054#0#PHP" />
-            <element signature="e#19967#20044#1#PHP" />
-            <element signature="e#20074#20157#0#PHP" />
-            <element signature="e#20084#20147#1#PHP" />
-            <element signature="n#doSpecialPagination#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doDeleteCandidateSpecial#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doToggleAcceptanceCandidateSpecial#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doIncreaseCandidateSpecialInviteCount#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doBindCandidateSpecial#0;n#Candidate#0;n#!!top" />
-            <element signature="n#invite#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doInvitePagination#0;n#Candidate#0;n#!!top" />
-            <element signature="n#inviteDetail#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doInviteDelete#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doInviteAccept#0;n#Candidate#0;n#!!top" />
-            <element signature="n#doChangeCandidatePassword#0;n#Candidate#0;n#!!top" />
-            <element signature="e#25462#25542#0#PHP" />
-            <element signature="e#25472#25532#1#PHP" />
-            <element signature="e#25562#25659#0#PHP" />
-            <element signature="e#25572#25649#1#PHP" />
-            <element signature="e#25679#25762#0#PHP" />
-            <element signature="e#25689#25752#1#PHP" />
-            <element signature="n#doChangeCandidateExamResultStatus#0;n#Candidate#0;n#!!top" />
-            <element signature="e#26012#26092#0#PHP" />
-            <element signature="e#26022#26082#1#PHP" />
-            <element signature="e#26112#26209#0#PHP" />
-            <element signature="e#26122#26199#1#PHP" />
-            <element signature="e#26229#26312#0#PHP" />
-            <element signature="e#26239#26302#1#PHP" />
-            <element signature="n#badgeScores#0;n#Candidate#0;n#!!top" />
-            <element signature="n#updateScoreByBadges#0;n#Candidate#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1576,9 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1586,215 +1166,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
           <caret line="866" column="31" selection-start-line="866" selection-start-column="31" selection-end-line="866" selection-end-column="31" />
-          <folding>
-            <element signature="n#candidateUpdatePersonalInfo#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#128#2421#0#PHP" />
-            <element signature="e#2588#2699#0#PHP" />
-            <element signature="e#2625#2698#0#PHP" />
-            <element signature="e#2710#2986#0#PHP" />
-            <element signature="e#2793#2908#0#PHP" />
-            <element signature="e#3032#4079#0#PHP" />
-            <element signature="e#3094#3249#0#PHP" />
-            <element signature="e#3563#3663#0#PHP" />
-            <element signature="e#3580#3662#1#PHP" />
-            <element signature="n#getCandidateAcademicBackgroundByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#4190#4268#0#PHP" />
-            <element signature="e#4190#4312#0#PHP" />
-            <element signature="n#candidateUpdateAcademicBackground#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#4539#4612#0#PHP" />
-            <element signature="e#4623#5769#0#PHP" />
-            <element signature="e#4693#5759#0#PHP" />
-            <element signature="e#4795#5635#0#PHP" />
-            <element signature="e#5815#6299#0#PHP" />
-            <element signature="e#5877#6037#0#PHP" />
-            <element signature="e#6074#6299#0#PHP" />
-            <element signature="e#6100#6263#0#PHP" />
-            <element signature="n#getCandidateMilitaryStatusByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#6404#6471#0#PHP" />
-            <element signature="e#6404#6515#0#PHP" />
-            <element signature="n#candidateUpdateMilitaryStatus#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#6687#6801#0#PHP" />
-            <element signature="e#6727#6800#0#PHP" />
-            <element signature="e#6811#7885#0#PHP" />
-            <element signature="e#6871#7875#0#PHP" />
-            <element signature="e#6963#7766#0#PHP" />
-            <element signature="e#7931#8423#0#PHP" />
-            <element signature="e#7993#8157#0#PHP" />
-            <element signature="e#8194#8423#0#PHP" />
-            <element signature="e#8220#8387#0#PHP" />
-            <element signature="n#getCandidateJobHistoryByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#8524#8594#0#PHP" />
-            <element signature="e#8524#8638#0#PHP" />
-            <element signature="n#candidateUpdateJobHistory#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#8806#8923#0#PHP" />
-            <element signature="e#8849#8922#0#PHP" />
-            <element signature="e#8933#9904#0#PHP" />
-            <element signature="e#8995#9894#0#PHP" />
-            <element signature="e#9089#9778#0#PHP" />
-            <element signature="e#9950#10430#0#PHP" />
-            <element signature="e#10012#10170#0#PHP" />
-            <element signature="e#10207#10430#0#PHP" />
-            <element signature="e#10233#10394#0#PHP" />
-            <element signature="n#getCandidateSocialCulturalBackgroundByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#10545#10617#0#PHP" />
-            <element signature="e#10545#10661#0#PHP" />
-            <element signature="n#candidateUpdateSocialCulturalBackground#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#10843#10962#0#PHP" />
-            <element signature="e#10888#10961#0#PHP" />
-            <element signature="e#12846#13346#0#PHP" />
-            <element signature="e#12908#13076#0#PHP" />
-            <element signature="e#13113#13346#0#PHP" />
-            <element signature="e#13139#13310#0#PHP" />
-            <element signature="n#getCandidateBooksByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#13442#13506#0#PHP" />
-            <element signature="e#13442#13550#0#PHP" />
-            <element signature="n#candidateUpdateBooks#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#13713#13824#0#PHP" />
-            <element signature="e#13750#13823#0#PHP" />
-            <element signature="e#13834#14574#0#PHP" />
-            <element signature="e#13891#14564#0#PHP" />
-            <element signature="e#13980#14454#0#PHP" />
-            <element signature="e#14620#15088#0#PHP" />
-            <element signature="e#14682#14834#0#PHP" />
-            <element signature="e#14871#15088#0#PHP" />
-            <element signature="e#14897#15052#0#PHP" />
-            <element signature="n#getCandidateResearchByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#15187#15254#0#PHP" />
-            <element signature="e#15187#15298#0#PHP" />
-            <element signature="n#candidateUpdateResearch#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#15464#15578#0#PHP" />
-            <element signature="e#15504#15577#0#PHP" />
-            <element signature="e#15588#16561#0#PHP" />
-            <element signature="e#15648#16551#0#PHP" />
-            <element signature="e#15740#16438#0#PHP" />
-            <element signature="e#16607#17088#0#PHP" />
-            <element signature="e#16669#16828#0#PHP" />
-            <element signature="e#16865#17088#0#PHP" />
-            <element signature="e#16891#17052#0#PHP" />
-            <element signature="n#getCandidateArticlesByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#17187#17254#0#PHP" />
-            <element signature="e#17187#17298#0#PHP" />
-            <element signature="n#candidateUpdateArticles#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#17464#17578#0#PHP" />
-            <element signature="e#17504#17577#0#PHP" />
-            <element signature="e#17588#18464#0#PHP" />
-            <element signature="e#17648#18454#0#PHP" />
-            <element signature="e#17740#18341#0#PHP" />
-            <element signature="e#18510#18988#0#PHP" />
-            <element signature="e#18572#18729#0#PHP" />
-            <element signature="e#18766#18988#0#PHP" />
-            <element signature="e#18792#18952#0#PHP" />
-            <element signature="n#getCandidateTranslationByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#19090#19160#0#PHP" />
-            <element signature="e#19090#19204#0#PHP" />
-            <element signature="n#candidateUpdateTranslation#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#19373#19490#0#PHP" />
-            <element signature="e#19416#19489#0#PHP" />
-            <element signature="e#19500#20402#0#PHP" />
-            <element signature="e#19563#20392#0#PHP" />
-            <element signature="e#19658#20276#0#PHP" />
-            <element signature="e#20448#20924#0#PHP" />
-            <element signature="e#20510#20666#0#PHP" />
-            <element signature="e#20703#20924#0#PHP" />
-            <element signature="e#20729#20888#0#PHP" />
-            <element signature="n#getCandidateInventionByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#21024#21092#0#PHP" />
-            <element signature="e#21024#21136#0#PHP" />
-            <element signature="n#candidateUpdateInvention#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#21303#21418#0#PHP" />
-            <element signature="e#21344#21417#0#PHP" />
-            <element signature="e#21428#22214#0#PHP" />
-            <element signature="e#21489#22204#0#PHP" />
-            <element signature="e#21582#22090#0#PHP" />
-            <element signature="e#22260#22732#0#PHP" />
-            <element signature="e#22322#22476#0#PHP" />
-            <element signature="e#22513#22732#0#PHP" />
-            <element signature="e#22539#22696#0#PHP" />
-            <element signature="n#getCandidateConferenceByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#22833#22902#0#PHP" />
-            <element signature="e#22833#22946#0#PHP" />
-            <element signature="n#candidateUpdateConference#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#23114#23230#0#PHP" />
-            <element signature="e#23156#23229#0#PHP" />
-            <element signature="e#23240#24130#0#PHP" />
-            <element signature="e#23302#24120#0#PHP" />
-            <element signature="e#23396#24005#0#PHP" />
-            <element signature="e#24176#24664#0#PHP" />
-            <element signature="e#24238#24400#0#PHP" />
-            <element signature="e#24437#24664#0#PHP" />
-            <element signature="e#24463#24628#0#PHP" />
-            <element signature="n#getCandidateUpdatePoliticBackgroundByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#24778#24851#0#PHP" />
-            <element signature="e#24778#24895#0#PHP" />
-            <element signature="n#candidateUpdatePoliticBackground#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#25070#25190#0#PHP" />
-            <element signature="e#25116#25189#0#PHP" />
-            <element signature="e#25200#27479#0#PHP" />
-            <element signature="e#25269#27469#0#PHP" />
-            <element signature="e#25370#27353#0#PHP" />
-            <element signature="e#27525#28007#0#PHP" />
-            <element signature="e#27587#27746#0#PHP" />
-            <element signature="e#27783#28007#0#PHP" />
-            <element signature="e#27809#27971#0#PHP" />
-            <element signature="n#getCandidateSkillsByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#28104#28169#0#PHP" />
-            <element signature="e#28104#28213#0#PHP" />
-            <element signature="n#candidateUpdateSkills#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#28377#28489#0#PHP" />
-            <element signature="e#28415#28488#0#PHP" />
-            <element signature="e#28647#28993#0#PHP" />
-            <element signature="e#29160#29636#0#PHP" />
-            <element signature="e#29222#29378#0#PHP" />
-            <element signature="e#29415#29636#0#PHP" />
-            <element signature="e#29441#29600#0#PHP" />
-            <element signature="n#getCandidateVeteranByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#29734#29800#0#PHP" />
-            <element signature="e#29734#29844#0#PHP" />
-            <element signature="n#candidateUpdateVeteran#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#30009#30122#0#PHP" />
-            <element signature="e#30048#30121#0#PHP" />
-            <element signature="e#30132#31032#0#PHP" />
-            <element signature="e#30198#30331#0#PHP" />
-            <element signature="e#30281#30331#0#PHP" />
-            <element signature="e#30357#30957#0#PHP" />
-            <element signature="e#31078#31566#0#PHP" />
-            <element signature="e#31140#31302#0#PHP" />
-            <element signature="e#31339#31566#0#PHP" />
-            <element signature="e#31365#31530#0#PHP" />
-            <element signature="n#candidateUpdatePromises#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#31669#31791#0#PHP" />
-            <element signature="e#31717#31790#0#PHP" />
-            <element signature="e#31801#32266#0#PHP" />
-            <element signature="e#31859#32256#0#PHP" />
-            <element signature="e#31949#32135#0#PHP" />
-            <element signature="e#32312#32808#0#PHP" />
-            <element signature="e#32374#32540#0#PHP" />
-            <element signature="e#32577#32808#0#PHP" />
-            <element signature="e#32603#32772#0#PHP" />
-            <element signature="n#getCandidateElectionPromisesByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#32915#32990#0#PHP" />
-            <element signature="e#32915#33034#0#PHP" />
-            <element signature="n#getCandidateFinanceByCandidateId#0;n#ModelProfile#0;n#!!top" />
-            <element signature="n#doChangePassword#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#34541#34705#0#PHP" />
-            <element signature="e#34558#34704#1#PHP" />
-            <element signature="e#34715#35846#0#PHP" />
-            <element signature="e#34780#34872#0#PHP" />
-            <element signature="e#35095#35627#0#PHP" />
-            <element signature="e#35161#35333#0#PHP" />
-            <element signature="e#35378#35627#0#PHP" />
-            <element signature="e#35408#35583#0#PHP" />
-            <element signature="e#35638#35846#0#PHP" />
-            <element signature="e#35664#35810#0#PHP" />
-            <element signature="n#insertPayment#0;n#ModelProfile#0;n#!!top" />
-            <element signature="n#getExamPaymentByPaymentToken#0;n#ModelProfile#0;n#!!top" />
-            <element signature="n#updateSuccessPayment#0;n#ModelProfile#0;n#!!top" />
-            <element signature="e#36256#36396#0#PHP" />
-            <element signature="e#37615#38091#0#PHP" />
-            <element signature="e#37677#37833#0#PHP" />
-            <element signature="n#getCandidateDocuments#0;n#ModelProfile#0;n#!!top" />
-            <element signature="n#removeCandidateDocumentByRowId#0;n#ModelProfile#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1802,21 +1173,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="918" column="65" lean-forward="true" selection-start-line="918" selection-start-column="65" selection-end-line="921" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2808">
-          <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
-          <folding>
-            <element signature="e#346727#353301#0#HTML" />
-            <element signature="e#353411#353773#0#HTML" />
-            <element signature="e#353818#354193#0#HTML" />
-            <element signature="e#354235#354591#0#HTML" />
-            <element signature="e#354633#355635#0#HTML" />
-            <element signature="e#355692#360284#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1831,11 +1187,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="1" column="35" lean-forward="true" selection-start-line="1" selection-start-column="35" selection-end-line="80" selection-end-column="11" />
-          <folding>
-            <element signature="e#117#3946#0#HTML" />
-            <element signature="e#399#514#0#HTML" />
-            <element signature="e#3997#4653#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1843,18 +1194,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="88" column="6" lean-forward="true" selection-start-line="88" selection-start-column="6" selection-end-line="88" selection-end-column="6" />
-          <folding>
-            <element signature="e#3744#7589#0#HTML" />
-            <element signature="e#4063#4178#0#HTML" />
-            <element signature="e#7640#8296#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/finance/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="201" column="86" lean-forward="true" selection-start-line="201" selection-start-column="86" selection-end-line="201" selection-end-column="86" />
+        <state relative-caret-position="333">
+          <caret line="209" column="51" selection-start-line="209" selection-start-column="51" selection-end-line="209" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index_css.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="385" column="17" selection-start-line="385" selection-start-column="8" selection-end-line="385" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="532" column="41" lean-forward="true" selection-start-line="532" selection-start-column="41" selection-end-line="532" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#5#0#PHP" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#8;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#9;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#splitPrice#0;n#!!top" />
+            <element signature="n#script#1;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

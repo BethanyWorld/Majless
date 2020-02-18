@@ -36,9 +36,11 @@
     }
     strong.colored {
         color: #fdb72e;
+
     }
     strong.colored.bg-white {
         color: #000000;
+
     }
     .profile-image{
         margin: auto;
@@ -148,17 +150,19 @@
         margin-bottom: 0px;
     }
     .have-border-bottom{
-        border-bottom: 2px solid #fdb72e;
+        border-bottom: 2px solid #095644;
         margin-bottom: 15px;
     }
     .have-border-bottom h4 , h3{
         color: #fff;
         font-weight: bold;
-        padding: 10px;
+        padding:0;
         background: #095644;
         width: 185px;
         margin-bottom: 0px;
+        margin-top: -10px;
         text-align: center;
+        border-radius: 5px 5px 0 0;
     }
     .padding-top-15{
         padding-top: 15px;
@@ -192,6 +196,9 @@
     }
     .resume-ul{
         list-style-type: none;
+        text-align: inherit;
+        font-size: 14px;
+
     }
     .resume-ul li span{
         color: #0f342f ;
@@ -517,5 +524,8 @@
 
     .padding-0 {
         padding: 0px;
+    }
+    .span-h{
+        font-size: 13px;
     }
 </style>
