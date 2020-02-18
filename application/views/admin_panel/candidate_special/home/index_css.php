@@ -552,11 +552,12 @@
 
     #hidden-box1 .inner-candidate-image {
         background: url(<?php echo $_DIR; ?>/images/story-frame.png);
-        padding: 25px 33px 33px 28px;
+        padding: 22px 22px 23px 20px;
         background-size: contain;
         background-repeat: no-repeat;
-        width: 240px !important;
+        width: 175px !important;
         background-position: center;
+        margin-bottom: 70px;
 
     }
 
