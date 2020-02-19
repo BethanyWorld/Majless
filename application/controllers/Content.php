@@ -9,7 +9,8 @@ class Content extends CI_Controller
         $this->load->model('admin/ModelContent');
     }
     public function index(){
-        $data['noImg'] = $this->config->item('defaultImage');
+        redirect(base_url(),'auto',301);
+        /*$data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'محتوا';
         $inputs['pageIndex'] = 1;
         $data['data'] = $this->ModelContent->getAcceptedContent($inputs);
@@ -18,9 +19,9 @@ class Content extends CI_Controller
         $this->load->view('ui/v3/content/home/index', $data);
         $this->load->view('ui/v3/content/home/index_css');
         $this->load->view('ui/v3/content/home/index_js');
-        $this->load->view('ui/v3/static/footer');
+        $this->load->view('ui/v3/static/footer');*/
     }
-    public function doPagination()
+   /* public function doPagination()
     {
         $inputs = $this->input->post(NULL, TRUE);
         $data = $this->ModelContent->getAcceptedContent($inputs);
@@ -195,6 +196,6 @@ class Content extends CI_Controller
             );
             echo json_encode($arr);
         }
-    }
+    }*/
 
 }
