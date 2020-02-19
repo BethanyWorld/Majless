@@ -4,6 +4,9 @@
         -webkit-animation: colorchange 1s;
         animation-iteration-count: infinite;
     }
+    .padding-left-0{
+        padding-left: 0px;
+    }
     @keyframes colorchange {
         0%   {background: #fdb72e;}
         50% {background: #fd892d;}

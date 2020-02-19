@@ -107,7 +107,7 @@
                             </a>
                         </li>
                         <li class="col-md-12 padding-0">
-                            <a href="<?php echo base_url('State/detail/'.$stateId.'/'.$stateName) ?>">
+                            <a href="<?php echo base_url('State/detail/' . $stateId . '/' . $stateName) ?>">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-arrow-left"></span>
                                 </i>
@@ -148,7 +148,7 @@
                                 {{ candidateFirstName }}
                                 {{CandidateLastName }}
                             </h2>
-                         <span>
+                            <span>
                                 {{CandidateBirthDate }}
                             </span>
                         </div>
@@ -162,25 +162,28 @@
                         </h5>
                     </div>
                 </div>
+
                 <div class="panel left-candidate-panel-resume padding-0">
                     <?php
-                        $isHidden = "";
-                        if ($candidate['CandidateResumeForViewStatus'] == 'Reject') {
-                            $isHidden = "hidden";
-                        }
+                    $isHidden = "";
+                    if ($candidate['CandidateResumeForViewStatus'] == 'Reject') {
+                        $isHidden = "hidden";
+                    }
                     ?>
                     <div class="<?php echo $isHidden; ?>">
                         <div class="col-xs-12">
                             <table class="table table-condensed table-hover text-center">
                                 <thead>
                                 <tr class="text-center">
-                                    <th class="text-center" style="font-size: 10px;text-align: center !important;">برآیند
+                                    <th class="text-center" style="font-size: 10px;text-align: center !important;">
+                                        برآیند
                                         آزمون و کانون
                                     </th>
                                     <th class="text-center" style="font-size: 10px;text-align: center !important;">نمره
                                         کانون ارزیابی (وزن 0.7)
                                     </th>
-                                    <th class="text-center" style="font-size: 10px;text-align: center !important;">نمره کل
+                                    <th class="text-center" style="font-size: 10px;text-align: center !important;">نمره
+                                        کل
                                         آزمون (وزن 0.3)
                                     </th>
                                 </tr>
@@ -189,30 +192,27 @@
                                 <tr>
                                     <td class="text-center">
                                         <?php
-                                        if($candidate['CandidateSignScore'] == 0){
+                                        if ($candidate['CandidateSignScore'] == 0) {
                                             echo "عدم اتمام فرآیند";
-                                        }
-                                        else{
+                                        } else {
                                             echo $candidate['CandidateSignScore'];
                                         }
                                         ?>
                                     </td>
                                     <td class="text-center">
                                         <?php
-                                        if($candidate['CandidateRecordsScore'] == 0){
+                                        if ($candidate['CandidateRecordsScore'] == 0) {
                                             echo "عدم اتمام فرآیند";
-                                        }
-                                        else{
+                                        } else {
                                             echo $candidate['CandidateRecordsScore'];
                                         }
                                         ?>
                                     </td>
                                     <td class="text-center">
                                         <?php
-                                        if($candidate['CandidateScore'] == 0){
+                                        if ($candidate['CandidateScore'] == 0) {
                                             echo "عدم اتمام فرآیند";
-                                        }
-                                        else{
+                                        } else {
                                             echo $candidate['CandidateScore'];
                                         }
                                         ?>
@@ -227,45 +227,47 @@
                     </div>
 
                     <?php
-                    $hasDocument  = false;
+                    $hasDocument = false;
                     foreach ($candidateDocuments as $candidateDocument) {
                         if ($candidateDocument['CandidateDocumentName'] == 'Resume')
                             $hasDocument = true;
-                    }?>
-                    <?php if($hasDocument){ ?>
-                    <div class="panel left-candidate-panel-resume padding-0 single-scroll">
-                        <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                            <div class="have-border-bottom">
-                                <h3>مدارک و مستندات</h3>
+                    } ?>
+                    <?php if ($hasDocument) { ?>
+                        <div class="panel left-candidate-panel-resume padding-0 single-scroll">
+                            <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                                <div class="have-border-bottom">
+                                    <h3>مدارک و مستندات</h3>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-condensed table-hover table-bordered">
+                                    <thead>
+                                    <tr style="color: red;background: #fff;font-weight: 900;">
+                                        <th class="fit"> مشاهده نسخه کامل سوابق تحصیلی و شغلی</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php $index = 0;
+                                    foreach ($candidateDocuments as $candidateDocument) {
+                                        if ($candidateDocument['CandidateDocumentName'] == 'Resume') {
+                                            $index += 1; ?>
+                                            <tr>
+                                                <td class="fit">
+                                                    <a class="color-animation"
+                                                       style="display: inline-block;width: 150px;background: #fdb72e;color: #000;padding: 12px 5px;font-weight: 900;"
+                                                       href="<?php echo $candidateDocument['CandidateDocumentUrl']; ?>"
+                                                       target="_blank">
+                                                        دریافت فایل
+                                                        <i class="fa fa-download"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php }
+                                    } ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <div class="panel-body">
-                            <table class="table table-condensed table-hover table-bordered">
-                                <thead>
-                                <tr style="color: red;background: #fff;font-weight: 900;">
-                                    <th class="fit"> مشاهده نسخه کامل سوابق تحصیلی و شغلی</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php $index = 0;
-                                foreach ($candidateDocuments as $candidateDocument) {
-                                    if($candidateDocument['CandidateDocumentName'] == 'Resume'){
-                                        $index += 1; ?>
-                                        <tr>
-                                            <td class="fit">
-                                                <a class="color-animation" style="display: inline-block;width: 150px;background: #fdb72e;color: #000;padding: 12px 5px;font-weight: 900;"
-                                                   href="<?php echo $candidateDocument['CandidateDocumentUrl']; ?>"
-                                                   target="_blank">
-                                                    دریافت فایل
-                                                    <i class="fa fa-download"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php  } } ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                     <?php } ?>
                 </div>
                 <!-- Academic  -->
@@ -559,29 +561,15 @@
                                 <form ng-repeat="item in politicBackground">
                                     <span class="divider"></span>
                                     <div class="col-md-12 col-xs-12 padding-0 form">
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+
+                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                             <label for="">
-                                               قالب فعالیت:
+                                                قالب فعالیت:
                                                 <span class="text-danger"></span>
                                             </label>
-                                           <span class="span-h">{{item.CandidateActivityType | bindEnum }}</span>
+                                            <span class="span-h">{{item.CandidateActivityType | bindEnum }}</span>
 
 
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityType === 'Others' ">
-                                            <label for="">
-                                                نام مجموعه:
-                                                <span class="text-danger"></span>
-                                            </label>
-                                           <span class="span-h" > {{item.CandidateActivityTypeOtherOrganizationTitle }}</span>
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                            <label for="">
-                                               مسئولیت:
-                                                <span class="text-danger"></span>
-                                            </label>
-                                          <span class="span-h"> {{item.CandidateResponsibility }}</span>
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' || item.CandidateActivityType === 'Others' ">
@@ -604,7 +592,7 @@
                                             <label for="">
                                                 :عضویت
                                             </label>
-                                           <span class="span-h"> {{item.CandidateMemberShip | bindEnum}}</span>
+                                            <span class="span-h"> {{item.CandidateMemberShip | bindEnum}}</span>
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'CandidatesCampaign' || item.CandidateActivityType === 'SupervisoryBoard' ">
@@ -616,15 +604,15 @@
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'CandidatesCampaign' || item.CandidateActivityType === 'SupervisoryBoard' ">
                                             <label for="">
-                                               دوره انتخابات:
+                                                دوره انتخابات:
                                             </label>
                                             <span class="span-h">{{item.CandidateElectionPeriod}}</span>
 
-<!--                                            <input type="text"-->
-<!--                                                   value=""-->
-<!--                                                   name=""-->
-<!--                                                   id=""-->
-<!--                                                   class="form-control">-->
+                                            <!--                                            <input type="text"-->
+                                            <!--                                                   value=""-->
+                                            <!--                                                   name=""-->
+                                            <!--                                                   id=""-->
+                                            <!--                                                   class="form-control">-->
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'CandidatesCampaign' ">
@@ -633,11 +621,11 @@
                                             </label>
                                             <span class="span-h">{{item.CandidateElectionListName }}</span>
 
-<!--                                            <input type="text"-->
-<!--                                                   value=""-->
-<!--                                                   name=""-->
-<!--                                                   id=""-->
-<!--                                                   class="form-control">-->
+                                            <!--                                            <input type="text"-->
+                                            <!--                                                   value=""-->
+                                            <!--                                                   name=""-->
+                                            <!--                                                   id=""-->
+                                            <!--                                                   class="form-control">-->
                                         </div>
                                         <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'SupervisoryBoard' ">
@@ -646,11 +634,11 @@
                                                 <span class="text-danger"></span>
                                             </label>
                                             <span class="span-h">{{item.CandidateHeadquarterActivityTitle | bindEnum}}</span>
-<!--                                            <input type="text"-->
-<!--                                                   value=""-->
-<!--                                                   name=""-->
-<!--                                                   id=""-->
-<!--                                                   class="form-control">-->
+                                            <!--                                            <input type="text"-->
+                                            <!--                                                   value=""-->
+                                            <!--                                                   name=""-->
+                                            <!--                                                   id=""-->
+                                            <!--                                                   class="form-control">-->
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' ">
@@ -659,141 +647,157 @@
                                                 <span class="text-danger"></span>
                                             </label>
                                             <span class="span-h">{{item.CandidateMediaType | bindEnum}}</span>
-<!--                                            <input type="text"-->
-<!--                                                   value=""-->
-<!--                                                   name=""-->
-<!--                                                   id=""-->
-<!--                                                   class="form-control">-->
+                                            <!--                                            <input type="text"-->
+                                            <!--                                                   value=""-->
+                                            <!--                                                   name=""-->
+                                            <!--                                                   id=""-->
+                                            <!--                                                   class="form-control">-->
                                         </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Others' ">
+                                            <label for="">
+                                                نام مجموعه:
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <span class="span-h"> {{item.CandidateActivityTypeOtherOrganizationTitle }}</span>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
+                                            <label for="">
+                                                مسئولیت:
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <span class="span-h"> {{item.CandidateResponsibility }}</span>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' ">
                                             <label for="">
                                                 نام رسانه:
                                                 <span class="text-danger"></span>
                                             </label>
                                             <span class="span-h">{{item.CandidateMediaTitle}}</span>
-<!--                                            <input type="text"-->
-<!--                                                   value=""-->
-<!--                                                   name=""-->
-<!--                                                   id=""-->
-<!--                                                   class="form-control">-->
                                         </div>
-                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityType === 'Media' && item.CandidateMediaType === 'Others' ">
-                                            <label for="">
-                                               عنوان قالب رسانه:
-                                            </label>
-                                            <span class="span-h">{{item.CandidateMediaTypeTitle}}</span>
-<!--                                            <select class="form-control form-control-lg city-select"-->
-<!--                                                    name=""-->
-<!--                                                    id="">-->
-<!--                                                <option>-->
-<!--                                                    -->
-<!--                                                </option>-->
-<!--                                            </select>-->
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityType === 'Media' ">
                                             <label for="">
-                                                 نوع فعالیت:
+                                                نوع فعالیت:
                                                 <span class="text-danger"></span>
                                             </label>
                                             <span class="span-h">{{item.CandidateMediaActivityType}}</span>
 
                                         </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityType === 'Media' && item.CandidateMediaType === 'Others' ">
+                                            <label for="">
+                                                عنوان قالب رسانه:
+                                            </label>
+                                            <span class="span-h">{{item.CandidateMediaTypeTitle}}</span>
+                                            <!--                                            <select class="form-control form-control-lg city-select"-->
+                                            <!--                                                    name=""-->
+                                            <!--                                                    id="">-->
+                                            <!--                                                <option>-->
+                                            <!--                                                    -->
+                                            <!--                                                </option>-->
+                                            <!--                                            </select>-->
+                                        </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
                                             <label for="">توضیحات:</label>
                                             <span class="span-h">{{item.CandidateActivityDescription}}</span>
-<!--
+                                            <!--
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                            <!--                        <table class="table table-bordered table-condensed table-striped">-->
+                                            <!--                            <thead>-->
+                                            <!--                            <tr>-->
+                                            <!--                                <th class="fit info-politicalType">قالب</th>-->
+                                            <!--                                <th class="fit info-otherPoliticalType">سایر قالب</th>-->
+                                            <!--                                <th class="fit info-mediaName">رسانه</th>-->
+                                            <!--                                <th class="fit info-activityType">نوع فعالیت</th>-->
+                                            <!--                                <th class="fit info-beginMonth">ماه شروع فعالیت</th>-->
+                                            <!--                                <th class="fit info-beginYear">سال شروع فعالیت</th>-->
+                                            <!--                                <th class="fit info-endMonth">ماه پایان فعالیت</th>-->
+                                            <!--                                <th class="fit info-endYear">سال پایان فعالیت</th>-->
+                                            <!--                                <th class="fit info-yearCooperation">سال همکاری</th>-->
+                                            <!--                                <th class="fit info-responsibility">مسئولیت</th>-->
+                                            <!--                                <th class="fit info-membershipType">نوع عضویت</th>-->
+                                            <!--                                <th class="fit info-electionType">نوع انتخابات</th>-->
+                                            <!--                                <th class="fit info-electionPeriodType">دوره انتخابات</th>-->
+                                            <!--                                <th class="fit info-parliamentPeriodType">دوره انتخابات</th>-->
+                                            <!--                                <th class="fit info-expertsParliamentPeriodType">دوره انتخابات</th>-->
+                                            <!--                                <th class="fit info-cityCouncilPeriodType">دوره انتخابات</th>-->
+                                            <!--                                <th class="fit info-supervisoryBoardType">مجلس</th>-->
+                                            <!--                                <th class="fit info-mediaFormat">نوع رسانه</th>-->
+                                            <!--                                <th class="fit info-otherMediaFormat">سایر عنوان رسانه</th>-->
+                                            <!--                                <th class="fit info-candidateName">نام نامزد/لیست</th>-->
+                                            <!--                                <th class="fit info-description">توضیحات</th>-->
+                                            <!--                            </tr>-->
+                                            <!--                            </thead>-->
+                                            <!--                            <tbody>-->
+                                            <!--                            <tr ng-repeat="item in politicBackground " class="temp-edu-record">-->
+                                            <!--                                <td class="fit info-department">-->
+                                            <!--                                    {{item.CandidateActivityType | bindEnum}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-science">-->
+                                            <!--                                    {{item.CandidateActivityTypeOtherOrganizationTitle}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-studying">-->
+                                            <!--                                    {{item.CandidateElectionType | bindEnum}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityLevelType">-->
+                                            <!--                                    {{item.CandidateElectionPeriod}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateElectionListName}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateHeadquarterActivityTitle}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateMediaType}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateMediaTypeTitle}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateMediaTitle}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateMediaActivityType}}-->
+                                            <!--                                    {{item.CandidateMediaType}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateResponsibility}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateMemberShip}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateMediaStartMonth | bindEnum}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateMediaStartYear}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateMediaEndMonth | bindEnum }}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateMediaEndYear}}-->
+                                            <!--                                </td>-->
+                                            <!--                                <td class="fit info-universityName">-->
+                                            <!--                                    {{item.CandidateActivityDescription}}-->
+                                            <!--                                </td>-->
+                                            <!--                            </tr>-->
+                                            <!--                            </tbody>-->
+                                            <!--                        </table>-->
                                         </div>
                                     </div>
                                     <hr>
                                 </form>
                             </div>
                         </div>
-<!--                        <table class="table table-bordered table-condensed table-striped">-->
-<!--                            <thead>-->
-<!--                            <tr>-->
-<!--                                <th class="fit info-politicalType">قالب</th>-->
-<!--                                <th class="fit info-otherPoliticalType">سایر قالب</th>-->
-<!--                                <th class="fit info-mediaName">رسانه</th>-->
-<!--                                <th class="fit info-activityType">نوع فعالیت</th>-->
-<!--                                <th class="fit info-beginMonth">ماه شروع فعالیت</th>-->
-<!--                                <th class="fit info-beginYear">سال شروع فعالیت</th>-->
-<!--                                <th class="fit info-endMonth">ماه پایان فعالیت</th>-->
-<!--                                <th class="fit info-endYear">سال پایان فعالیت</th>-->
-<!--                                <th class="fit info-yearCooperation">سال همکاری</th>-->
-<!--                                <th class="fit info-responsibility">مسئولیت</th>-->
-<!--                                <th class="fit info-membershipType">نوع عضویت</th>-->
-<!--                                <th class="fit info-electionType">نوع انتخابات</th>-->
-<!--                                <th class="fit info-electionPeriodType">دوره انتخابات</th>-->
-<!--                                <th class="fit info-parliamentPeriodType">دوره انتخابات</th>-->
-<!--                                <th class="fit info-expertsParliamentPeriodType">دوره انتخابات</th>-->
-<!--                                <th class="fit info-cityCouncilPeriodType">دوره انتخابات</th>-->
-<!--                                <th class="fit info-supervisoryBoardType">مجلس</th>-->
-<!--                                <th class="fit info-mediaFormat">نوع رسانه</th>-->
-<!--                                <th class="fit info-otherMediaFormat">سایر عنوان رسانه</th>-->
-<!--                                <th class="fit info-candidateName">نام نامزد/لیست</th>-->
-<!--                                <th class="fit info-description">توضیحات</th>-->
-<!--                            </tr>-->
-<!--                            </thead>-->
-<!--                            <tbody>-->
-<!--                            <tr ng-repeat="item in politicBackground " class="temp-edu-record">-->
-<!--                                <td class="fit info-department">-->
-<!--                                    {{item.CandidateActivityType | bindEnum}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-science">-->
-<!--                                    {{item.CandidateActivityTypeOtherOrganizationTitle}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-studying">-->
-<!--                                    {{item.CandidateElectionType | bindEnum}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityLevelType">-->
-<!--                                    {{item.CandidateElectionPeriod}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateElectionListName}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateHeadquarterActivityTitle}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateMediaType}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateMediaTypeTitle}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateMediaTitle}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateMediaActivityType}}-->
-<!--                                    {{item.CandidateMediaType}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateResponsibility}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateMemberShip}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateMediaStartMonth | bindEnum}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateMediaStartYear}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateMediaEndMonth | bindEnum }}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateMediaEndYear}}-->
-<!--                                </td>-->
-<!--                                <td class="fit info-universityName">-->
-<!--                                    {{item.CandidateActivityDescription}}-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            </tbody>-->
-<!--                        </table>-->
                     </div>
                 </div>
                 <!-- social-cultural-background -->
@@ -809,38 +813,28 @@
                                 <form ng-repeat="item in candidateSocialCulturalBackground">
                                     <span class="divider"></span>
                                     <div class="col-md-12 col-xs-12 padding-0 form">
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
                                             <label for="">
-                                               زمینه فعالیت:
+                                                زمینه فعالیت:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <span> {{item.CandidateActivityFieldType | bindEnum }}</span>
+                                            <span class="span-h"> {{item.CandidateActivityFieldType | bindEnum }}</span>
 
                                         </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType === 'Others'">
-                                            <label for="">
-                                                عنوان:
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span>   {{item.CandidateActivityFieldOtherTypeTitle }}</span>
-
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
-                                            <label for="">
-                                               نام مجموعه:
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span>{{item.CandidateOrganizationName }}</span>
-
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType === 'Mobilization'">
                                             <label for="">
                                                 نوع عضویت:
                                             </label>
-                                            <span>{{item.CandidateMobilMembershipType | bindEnum}}</span>
+                                            <span class="span-h">{{item.CandidateMobilMembershipType | bindEnum}}</span>
+
+                                        </div>
+                                        <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                            <label for="">
+                                                نوع بسیج:
+                                            </label>
+                                            <span class="span-h">{{item.CandidateBasijType  | bindEnum}}</span>
 
                                         </div>
                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
@@ -848,64 +842,74 @@
                                             <label for="">
                                                 نوع عضویت:
                                             </label>
-                                            <span> {{item.CandidateMemberShipType | bindEnum}}</span>
+                                            <span class="span-h"> {{item.CandidateMemberShipType | bindEnum}}</span>
 
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat">
                                             <label for=""> آغاز همکاری:</label>
-                                            <span> {{item.CandidateActivityStartMonth | bindEnum}}
+                                            <span class="span-h"> {{item.CandidateActivityStartMonth | bindEnum}}
                                                     ,
                                                     {{item.CandidateActivityStartYear}}</span>
 
                                         </div>
                                         <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat">
                                             <label for="">پایان همکاری:</label>
-                                            <span>
+                                            <span class="span-h">
                                                  {{item.CandidateActivityEndMonth  | bindEnum}}
                                                     {{item.CandidateActivityEndYear }}
                                             </span>
 
                                         </div>
-                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
-                                        ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType === 'Mobilization'">
                                             <label for="">
                                                 نام حوزه:
                                             </label>
-                                            <span>  {{item.CandidateBasijAreaTitle}}</span>
+                                            <span class="span-h">  {{item.CandidateBasijAreaTitle}}</span>
 
                                         </div>
-                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType === 'Mobilization'">
-                                            <label for="">
-                                                نوع بسیج:
-                                            </label>
-                                            <span>{{item.CandidateBasijType  | bindEnum}}</span>
-
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
+                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
                                              ng-if="item.CandidateBasijType === 'Others'">
                                             <label for="">
-                                              سایر:
+                                                سایر:
                                                 <span class="text-danger"></span>
                                             </label>
-                                            <span>{{item.CandidateBasijTypeOtherTitle}}</span>
-<!--                                            <input type="text"-->
-<!--                                                   value=""-->
-<!--                                                   name=""-->
-<!--                                                   id=""-->
-<!--                                                   class="form-control">-->
+                                            <span class="span-h">{{item.CandidateBasijTypeOtherTitle}}</span>
+                                            <!--                                            <input type="text"-->
+                                            <!--                                                   value=""-->
+                                            <!--                                                   name=""-->
+                                            <!--                                                   id=""-->
+                                            <!--                                                   class="form-control">-->
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType === 'Others'">
+                                            <label for="">
+                                                عنوان:
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <span class="span-h"> {{item.CandidateActivityFieldOtherTypeTitle }}</span>
+
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
+                                             ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
+                                            <label for="">
+                                                نام مجموعه:
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <span class="span-h">{{item.CandidateOrganizationName }}</span>
+
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
                                             <label for="">توضیحات:</label>
-                                            <span>{{item.CandidateMemberShipDescription}}</span>
+                                            <span class="span-h">{{item.CandidateMemberShipDescription}}</span>
 
-<!--                                            <input-->
-<!--                                                    value=""-->
-<!--                                                    id=""-->
-<!--                                                    type="text"-->
-<!--                                                    name=""-->
-<!--                                                    class="input-validate validate valid">-->
+                                            <!--                                            <input-->
+                                            <!--                                                    value=""-->
+                                            <!--                                                    id=""-->
+                                            <!--                                                    type="text"-->
+                                            <!--                                                    name=""-->
+                                            <!--                                                    class="input-validate validate valid">-->
                                         </div>
                                     </div>
                                     <hr>
@@ -916,13 +920,11 @@
                 </div>
                 <!-- Finance History -->
                 <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="property-assets">
-
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>فهرست اموال و دارایی ها</h3>
                         </div>
                     </div>
-
                     <?php function splitPrice($price)
                     {
                         $price = explode(".", $price);
@@ -966,189 +968,83 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Self'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateType">
-                                                                                        نوع کاربری
+                                                                                        نوع کاربری :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputRealEstateType"
-                                                                                            id="inputRealEstateType">
-
-                                                                                        <option>
-                                                                                            {{item.RealEstateType | bindEnum}}
-                                                                                        </option>
-
-                                                                                    </select>
+                                                                                    <span class="span-h">{{item.RealEstateType | bindEnum}}</span>
                                                                                 </div>
-                                                                                <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipDate">
-                                                                                        سال شروع مالکیت
+                                                                                        سال شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputRealEstateOwnershipDate"
-                                                                                            id="inputRealEstateOwnershipDate"
-                                                                                            style="font-family: tahoma;">
-                                                                                        <option>
-                                                                                            {{item.RealEstateOwnershipDate}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h">{{item.RealEstateOwnershipDate}}</span>
                                                                                 </div>
-                                                                                <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipType">
-                                                                                        نحوه مالکیت
+                                                                                        نحوه مالکیت :
                                                                                     </label>
-                                                                                    <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateOwnershipType"
-                                                                                            id="inputRealEstateOwnershipType">
-                                                                                        <option>
-                                                                                            {{item.RealEstateOwnershipType
-                                                                                            | bindEnum}}
-                                                                                        </option>
-
-                                                                                    </select>
+                                                                                    <span class="span-h"> {{item.RealEstateOwnershipType | bindEnum}}</span>
                                                                                 </div>
                                                                                 <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat countries">
-                                                                                    <label for="inputRealEstateCountryId">کشور</label>
-                                                                                    <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateCountryId"
-                                                                                            id="inputRealEstateCountryId">
-                                                                                        <option>
-                                                                                            {{item.RealEstateCountryId |
-                                                                                            bindCountry}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <label for="inputRealEstateCountryId">کشور
+                                                                                        :</label>
+                                                                                    <span class="span-h">  {{item.RealEstateCountryId | bindCountry}}</span>
                                                                                 </div>
                                                                                 <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                                    <label for="inputRealEstateStateId">استان</label>
-                                                                                    <select
-                                                                                            class="form-control form-control-lg"
-                                                                                            name="inputRealEstateStateId"
-                                                                                            id="inputRealEstateStateId">
-                                                                                        <option>
-                                                                                            {{item.RealEstateStateId |
-                                                                                            bindState}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <label for="inputRealEstateStateId">استان
+                                                                                        :</label>
+                                                                                    <span class="span-h">  {{item.RealEstateStateId | bindState}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
                                                                                     <label for="inputRealEstateCityId">
-                                                                                        شهر
+                                                                                        شهر :
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg city-select"
-                                                                                            name="inputRealEstateCityId"
-                                                                                            id="inputRealEstateCityId">
-                                                                                        <option>
-                                                                                            {{item.RealEstateCityId |
-                                                                                            bindCity}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h">   {{item.RealEstateCityId | bindCity}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstatePortion">
-                                                                                        سهم از ملک(1 تا 6 دانگ)
+                                                                                        سهم از ملک(1 تا 6 دانگ) :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <input type="number"
-                                                                                           value="{{item.RealEstatePortion}}"
-                                                                                           name="inputRealEstatePortion"
-                                                                                           id="inputRealEstatePortion"
-                                                                                           class="form-control"
-                                                                                           placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                           min="1" max="6"/>
+                                                                                    <span class="span-h">  {{item.RealEstatePortion}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateExtent">
-                                                                                        متراژ حدودی ملک
+                                                                                        متراژ حدودی ملک :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-6 col-xs-12 RightFloat">
-                                                                                            <input type="number"
-                                                                                                   value="{{item.RealEstateExtent}}"
-                                                                                                   name="inputRealEstateExtent"
-                                                                                                   id="inputRealEstateExtent"
-                                                                                                   class="form-control"
-                                                                                                   placeholder=""
-                                                                                                   min="0"/>
-                                                                                        </div>
-                                                                                        <div class="col-md-6 col-xs-12 RightFloat">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateExtentUnit"
-                                                                                                    id="inputRealEstateExtentUnit">
-                                                                                                <option>
-                                                                                                    {{item.RealEstateExtentUnit
-                                                                                                    | bindEnum}}
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h">  {{item.RealEstateExtent}} ,   {{item.RealEstateExtentUnit | bindEnum}} </span>
                                                                                 </div>
-                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>
-                                                                                                        {{item.RealEstateBuyTimePrice.NumberValues[1]}}
-                                                                                                    </i>
-                                                                                                    ,
-                                                                                                    <i>
-                                                                                                        {{item.RealEstateBuyTimePrice.NumberValues[0]}}
-                                                                                                    </i>
-                                                                                                    {{item.RealEstateBuyTimePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h">   {{item.RealEstateBuyTimePrice.NumberValues[1]}} ,
+                                                                                        {{item.RealEstateBuyTimePrice.NumberValues[0]}}
+                                                                                         {{item.RealEstateBuyTimePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
-                                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>
-                                                                                                        {{item.RealEstateNowTimePrice.NumberValues[1]}}
-                                                                                                    </i>
-                                                                                                    ,
-                                                                                                    <i>
-                                                                                                        {{item.RealEstateNowTimePrice.NumberValues[0]}}
-                                                                                                    </i>
-                                                                                                    {{item.RealEstateNowTimePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h">  {{item.RealEstateNowTimePrice.NumberValues[1]}} ,
+                                                                                         {{item.RealEstateNowTimePrice.NumberValues[0]}}
+                                                                                         {{item.RealEstateNowTimePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat">
-                                                                                    <label for="inputRealEstateAddress">آدرس</label>
-                                                                                    <input
-                                                                                            value="{{item.RealEstateAddress}}"
-                                                                                            id="inputRealEstateAddress"
-                                                                                            type="text"
-                                                                                            name="inputRealEstateAddress"
-                                                                                            class="input-validate validate valid"
-                                                                                            placeholder="نام خیابان اصلی / محله / منطقه">
+                                                                                    <label for="inputRealEstateAddress">آدرس
+                                                                                        :</label>
+                                                                                    <span class="span-h">  {{item.RealEstateAddress}} </span>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -1175,114 +1071,56 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Self'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleType">
-                                                                                        نوع وسیله نقلیه<span
+                                                                                        نوع وسیله نقلیه :<span
                                                                                                 class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputVehicleType"
-                                                                                            id="inputVehicleType">
-                                                                                        <option>
-                                                                                            {{item.VehicleType |
-                                                                                            bindEnum}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h"> {{item.VehicleType | bindEnum}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
-                                                                                        سال شروع مالکیت<span
+                                                                                        سال شروع مالکیت :<span
                                                                                                 class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputVehicleOwnershipDate"
-                                                                                            id="inputVehicleOwnershipDate"
-                                                                                            style="font-family: tahoma;">
-                                                                                        <option>
-                                                                                            {{item.VehicleOwnershipDate}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h"> {{item.VehicleOwnershipDate}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipType">
-                                                                                        نحوه مالکیت
+                                                                                        نحوه مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputVehicleOwnershipType"
-                                                                                            id="inputVehicleOwnershipType">
-                                                                                        <option>
-                                                                                            {{item.VehicleOwnershipType
-                                                                                            | bindEnum}}
-                                                                                        </option>
-
-                                                                                    </select>
+                                                                                    <span class="span-h"> {{item.VehicleOwnershipType | bindEnum}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehiclePortion">
-                                                                                        سهم از ملک(1 تا 6 دانگ)
+                                                                                        سهم از ملک(1 تا 6 دانگ) :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <input
-                                                                                            value="{{item.VehiclePortion}}"
-                                                                                            type="number"
-                                                                                            name="inputVehiclePortion"
-                                                                                            id="inputVehiclePortion"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                            min="0" max="6"/>
+                                                                                    <span class="span-h"> {{item.VehiclePortion}} </span>
                                                                                 </div>
-                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>
-                                                                                                        {{item.VehicleBuyTimePrice.NumberValues[1]}}
-                                                                                                    </i>
-                                                                                                    ,
-                                                                                                    <i>
-                                                                                                        {{item.VehicleBuyTimePrice.NumberValues[0]}}
-                                                                                                    </i>
-                                                                                                    {{item.VehicleBuyTimePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
-
+                                                                                    <span class="span-h"> {{item.VehicleBuyTimePrice.NumberValues[1]}} ,
+                                                                                        {{item.VehicleBuyTimePrice.NumberValues[0]}}
+                                                                                        {{item.VehicleBuyTimePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
-                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>{{item.VehicleNowTimePrice.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i>{{item.VehicleNowTimePrice.NumberValues[0]}}</i>
-
-                                                                                                    {{item.VehicleNowTimePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.VehicleNowTimePrice.NumberValues[1]}} ,
+                                                                                        {{item.VehicleNowTimePrice.NumberValues[0]}}
+                                                                                        {{item.VehicleNowTimePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -1309,94 +1147,48 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Self'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 form-group RightFloat">
                                                                                     <label for="inputInvestTitle">
-                                                                                        نام شرکت / موسسه
+                                                                                        نام شرکت / موسسه :
                                                                                     </label>
-                                                                                    <input
-                                                                                            value="{{item.InvestTitle}}"
-                                                                                            id="inputInvestTitle"
-                                                                                            type="text"
-                                                                                            name="inputInvestTitle"
-                                                                                            placeholder="نام شرکت - موسسه - پروژه ">
+                                                                                    <span class="span-h"> {{item.InvestTitle}} </span>
                                                                                 </div>
-                                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestDate">
-                                                                                        سال شروع مالکیت
+                                                                                        سال شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputInvestDate"
-                                                                                            id="inputInvestDate"
-                                                                                            style="font-family: tahoma;">
-                                                                                        <option>
-                                                                                            {{item.InvestDate}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h"> {{item.InvestDate}} </span>
                                                                                 </div>
-                                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestOwnershipType">
-                                                                                        نحوه مالکیت
+                                                                                        نحوه مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputInvestOwnershipType"
-                                                                                            id="inputInvestOwnershipType">
-                                                                                        <option>
-                                                                                            {{item.InvestOwnershipType |
-                                                                                            bindEnum}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h"> {{item.InvestOwnershipType | bindEnum}} </span>
                                                                                 </div>
-                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>
-                                                                                                        {{item.InvestBuyTimePrice.NumberValues[1]}}
-                                                                                                    </i>
-                                                                                                    ,
-                                                                                                    <i>
-                                                                                                        {{item.InvestBuyTimePrice.NumberValues[0]}}
-                                                                                                    </i>
-                                                                                                    {{item.InvestBuyTimePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.InvestBuyTimePrice.NumberValues[1]}} ,
+                                                                                        {{item.InvestBuyTimePrice.NumberValues[0]}}
+                                                                                        {{item.InvestBuyTimePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
-                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>{{item.InvestNowTimePrice.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i>{{item.InvestNowTimePrice.NumberValues[0]}}</i>
-
-                                                                                                    {{item.InvestNowTimePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.InvestNowTimePrice.NumberValues[1]}} ,
+                                                                                        {{item.InvestNowTimePrice.NumberValues[0]}}
+                                                                                        {{item.InvestNowTimePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -1425,46 +1217,23 @@
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
                                                                                 <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountTitle">
-                                                                                        عنوان بانک یا موسسه
+                                                                                        عنوان بانک یا موسسه :
                                                                                     </label>
-                                                                                    <input
-                                                                                            value="{{item.BankAccountTitle}}"
-                                                                                            id="inputBankAccountTitle"
-                                                                                            type="text"
-                                                                                            name="inputBankAccountTitle"
-                                                                                            placeholder="عنوان بانک یا موسسه ">
+                                                                                    <span class="span-h"> {{item.BankAccountTitle}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputBankAccountPrice">
                                                                                         مبلغ :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>{{item.BankAccountPrice.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i>{{item.BankAccountPrice.NumberValues[0]}}</i>
-                                                                                                    {{item.BankAccountPrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.BankAccountPrice.NumberValues[1]}} ,
+                                                                                        {{item.BankAccountPrice.NumberValues[0]}}
+                                                                                        {{item.BankAccountPrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat">
-                                                                                    <label for="inputBankAccountCountryId">کشور</label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputBankAccountCountryId"
-                                                                                            id="inputBankAccountCountryId">
-                                                                                        <option>
-                                                                                            {{item.BankAccountCountryId
-                                                                                            | bindCountry}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <label for="inputBankAccountCountryId">کشور :</label>
+                                                                                    <span class="span-h"> {{item.BankAccountCountryId | bindCountry}}</span>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -1491,7 +1260,7 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho =='Self'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat padding-left-0">
                                                                                     <label for="inputCreditPrice">
                                                                                         جمع کل بستانکاری از اشخاص حقیقی
                                                                                         یا
@@ -1499,22 +1268,10 @@
                                                                                         :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>{{item.DebotrPrice.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i>{{item.DebotrPrice.NumberValues[0]}}</i>
-
-                                                                                                    {{item.DebotrPrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.DebotrPrice.NumberValues[1]}} ,
+                                                                                        {{item.DebotrPrice.NumberValues[0]}}
+                                                                                        {{item.DebotrPrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputDebotrPrice">
@@ -1522,26 +1279,16 @@
                                                                                         حقوقی :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>{{item.CreditPrice.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i>{{item.CreditPrice.NumberValues[0]}}</i>
-
-                                                                                                    {{item.CreditPrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.CreditPrice.NumberValues[1]}} ,
+                                                                                        {{item.CreditPrice.NumberValues[0]}}
+                                                                                        {{item.CreditPrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-xs-12">
-                                                                                    <textarea class="EStates-textArea"
-                                                                                              name="inputDebotrDescription">{{item.DebotrDescription}}</textarea>
+                                                                                    <label for="inputDebotrPrice">
+                                                                                        توضیحات :
+                                                                                    </label>
+                                                                                     <span class="span-h"> {{item.DebotrDescription}}</span>
                                                                                 </div>
 
                                                                             </div>
@@ -1571,119 +1318,60 @@
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsType">
-                                                                                        نوع کالا
+                                                                                        نوع کالا :
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputGoodsType"
-                                                                                            id="inputGoodsType">
-                                                                                        <option>
-                                                                                            {{item.GoodsType |
-                                                                                            bindEnum}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h"> {{item.GoodsType | bindEnum}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsOwnershipStartDate">
-                                                                                        سال شروع مالکیت
+                                                                                        سال شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputGoodsOwnershipStartDate"
-                                                                                            id="inputGoodsOwnershipStartDate"
-                                                                                            style="font-family: tahoma;">
-                                                                                        <option
-                                                                                        >
-                                                                                            {{item.GoodsOwnershipStartDate}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h"> {{item.GoodsOwnershipStartDate}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsCount">
-                                                                                        حجم / وزن / تعداد کالا
+                                                                                        حجم / وزن / تعداد کالا :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <input
-                                                                                            value="item.GoodsCount"
-                                                                                            type="text"
-                                                                                            name="inputGoodsCount"
-                                                                                            id="inputGoodsCount"
-                                                                                            class="form-control"
-                                                                                            placeholder="  حجم / وزن / تعداد کالا"/>
+                                                                                    <span class="span-h"> {{item.GoodsCount}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateOwnershipType">
-                                                                                        نحوه مالکیت
+                                                                                        نحوه مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputRealEstateOwnershipType"
-                                                                                            id="inputRealEstateOwnershipType">
-                                                                                        <option>
-                                                                                            {{item.RealEstateOwnershipType
-                                                                                            | bindEnum}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h"> {{item.RealEstateOwnershipType | bindEnum}} </span>
                                                                                 </div>
-                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
                                                                                         ارزش حدودی کل سهام در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name=""
-                                                                                                    id="">
-                                                                                                <option>
-                                                                                                    <i> {{item.GoodsBuyTimePrice.NumberValues[1]}}</i>
-                                                                                                     ,
-                                                                                                    <i>{{item.GoodsBuyTimePrice.NumberValues[0]}}</i>
-
-                                                                                                    {{item.GoodsBuyTimePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.GoodsBuyTimePrice.NumberValues[1]}} ,
+                                                                                         {{item.GoodsBuyTimePrice.NumberValues[0]}}
+                                                                                         {{item.GoodsBuyTimePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
-                                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsNowTimePrice">
                                                                                         ارزش حدودی کل سهام درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name=""
-                                                                                                    id="">
-                                                                                                <option>
-                                                                                                    <i>{{item.GoodsNowTimePrice.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i>{{item.GoodsNowTimePrice.NumberValues[0]}}</i>
-
-                                                                                                    {{item.GoodsNowTimePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.GoodsNowTimePrice.NumberValues[1]}} ,
+                                                                                         {{item.GoodsNowTimePrice.NumberValues[0]}}
+                                                                                         {{item.GoodsNowTimePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsOwnershipPercent">
                                                                                         درصد سهم از مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <input
-                                                                                            value="{{item.GoodsOwnershipPercent}}"
-                                                                                            type="number"
-                                                                                            name="inputGoodsOwnershipPercent"
-                                                                                            id="inputGoodsOwnershipPercent"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"
-                                                                                            min="0" max="6"/>
+                                                                                    <span class="span-h"> {{item.GoodsOwnershipPercent}} </span>
                                                                                 </div>
 
                                                                             </div>
@@ -1711,30 +1399,18 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Self'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                                    <label for="inputFeeType">عنوان
-                                                                                        :</label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputFeeType"
-                                                                                            id="inputFeeType">
-                                                                                        <option>
-                                                                                            {{item.FeeType |bindEnum}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                    <label for="inputFeeType">
+                                                                                        عنوان :
+                                                                                    </label>
+                                                                                    <span class="span-h"> {{item.FeeType |bindEnum}} </span>
                                                                                 </div>
-                                                                                <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeOwnershipStartDate">
-                                                                                        سال شروع مالکیت
+                                                                                        سال شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <select class="form-control form-control-lg"
-                                                                                            name="inputFeeOwnershipStartDate"
-                                                                                            id="inputFeeOwnershipStartDate"
-                                                                                            style="font-family: tahoma;">
-                                                                                        <option>
-                                                                                            {{item.FeeOwnershipStartDate}}
-                                                                                        </option>
-                                                                                    </select>
+                                                                                    <span class="span-h">  {{item.FeeOwnershipStartDate}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeePercent">
@@ -1742,15 +1418,9 @@
                                                                                         معنوی:
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <input
-                                                                                            value="{{item.FeePercent}}"
-                                                                                            type="number"
-                                                                                            name="inputFeePercent"
-                                                                                            id="inputFeePercent"
-                                                                                            class="form-control"
-                                                                                            placeholder="سهم از ملک 1 تا 6 دانگ"/>
+                                                                                    <span class="span-h">  {{item.FeePercent}} </span>
                                                                                 </div>
-                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
                                                                                         میزان درآمد متوسط
                                                                                         سالیانه از
@@ -1758,22 +1428,10 @@
                                                                                         معنوی :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name=""
-                                                                                                    id="">
-                                                                                                <option>
-                                                                                                    <i> {{item.FeeAverageInYear.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i> {{item.FeeAverageInYear.NumberValues[0]}}</i>
-
-                                                                                                    {{item.FeeAverageInYear.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h">  {{item.FeeAverageInYear.NumberValues[1]}} ,
+                                                                                        {{item.FeeAverageInYear.NumberValues[0]}}
+                                                                                        {{item.FeeAverageInYear.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                             <hr>
@@ -1800,27 +1458,15 @@
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Self'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
-                                                                                <div class="col-md-5 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                                <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputAverageMonthIncome">
                                                                                         درآمد متوسط ماهیانه :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>{{item.AverageMonthIncome.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i> {{item.AverageMonthIncome.NumberValues[0]}}</i>
-
-                                                                                                    {{item.AverageMonthIncome.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.AverageMonthIncome.NumberValues[1]}} ,
+                                                                                        {{item.AverageMonthIncome.NumberValues[0]}}
+                                                                                        {{item.AverageMonthIncome.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                         </form>
@@ -1854,26 +1500,10 @@
                                                                                         -هزینه کل :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name=""
-                                                                                                    id="">
-                                                                                                <option>
-                                                                                                    <i>
-                                                                                                        {{item.ElectionPlacePrice.NumberValues[1]}}
-                                                                                                    </i>
-                                                                                                    ,
-                                                                                                    <i>
-                                                                                                        {{item.ElectionPlacePrice.NumberValues[0]}}
-                                                                                                    </i>
-
-                                                                                                    {{item.ElectionPlacePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.ElectionPlacePrice.NumberValues[1]}} ,
+                                                                                        {{item.ElectionPlacePrice.NumberValues[0]}}
+                                                                                        {{item.ElectionPlacePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputElectionFlockPrice">
@@ -1883,26 +1513,10 @@
                                                                                         انتخاباتی – هزینه کل :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name=""
-                                                                                                    id="">
-                                                                                                <option>
-                                                                                                    <i>
-                                                                                                        {{item.ElectionFlockPrice.NumberValues[1]}}
-                                                                                                    </i>
-                                                                                                    ,
-                                                                                                    <i>
-                                                                                                        {{item.ElectionFlockPrice.NumberValues[0]}}
-                                                                                                    </i>
-
-                                                                                                    {{item.ElectionFlockPrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.ElectionFlockPrice.NumberValues[1]}} ,
+                                                                                        {{item.ElectionFlockPrice.NumberValues[0]}}
+                                                                                        {{item.ElectionFlockPrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputElectionAdvertisePrice">
@@ -1910,22 +1524,10 @@
                                                                                         هزینه کل :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name=""
-                                                                                                    id="">
-                                                                                                <option>
-                                                                                                    <i>{{item.ElectionAdvertisePrice.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i>{{item.ElectionAdvertisePrice.NumberValues[0]}}</i>
-
-                                                                                                    {{item.ElectionAdvertisePrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.ElectionAdvertisePrice.NumberValues[1]}} ,
+                                                                                        {{item.ElectionAdvertisePrice.NumberValues[0]}}
+                                                                                        {{item.ElectionAdvertisePrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputElectionStaffPrice">
@@ -1934,44 +1536,20 @@
                                                                                         انتخابات – هزینه کل :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name=""
-                                                                                                    id="">
-                                                                                                <option>
-                                                                                                    <i>{{item.ElectionStaffPrice.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i>{{item.ElectionStaffPrice.NumberValues[0]}}</i>
-
-                                                                                                    {{item.ElectionStaffPrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.ElectionStaffPrice.NumberValues[1]}} ,
+                                                                                        {{item.ElectionStaffPrice.NumberValues[0]}}
+                                                                                        {{item.ElectionStaffPrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputElectionAllPrice">
                                                                                         جمع کل هزینه های انتخاباتی :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12 col-sm-6 col-xs-6 form-group RightFloat price-unit">
-                                                                                            <select class="form-control form-control-lg"
-                                                                                                    name="inputRealEstateBuyTimePrice"
-                                                                                                    id="inputRealEstateBuyTimePrice">
-                                                                                                <option>
-                                                                                                    <i>{{item.ElectionAllPrice.NumberValues[1]}}</i>
-                                                                                                    ,
-                                                                                                    <i>{{item.ElectionAllPrice.NumberValues[0]}}</i>
-
-                                                                                                    {{item.ElectionAllPrice.TranslatedUnit}}
-
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    <span class="span-h"> {{item.ElectionAllPrice.NumberValues[1]}} ,
+                                                                                        {{item.ElectionAllPrice.NumberValues[0]}}
+                                                                                        {{item.ElectionAllPrice.TranslatedUnit}}
+                                                                                    </span>
                                                                                 </div>
 
                                                                             </div>
@@ -2141,7 +1719,8 @@
                                                                                                 <option>
                                                                                                     <i>{{item.RealEstateBuyTimePrice.NumberValues[1]}}</i>
                                                                                                     ,
-                                                                                                    <i> {{item.RealEstateBuyTimePrice.NumberValues[0]}}</i>
+                                                                                                    <i>
+                                                                                                        {{item.RealEstateBuyTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.RealEstateBuyTimePrice.TranslatedUnit}}
 
@@ -2164,7 +1743,8 @@
                                                                                                 <option>
                                                                                                     <i>{{item.RealEstateNowTimePrice.NumberValues[1]}}</i>
                                                                                                     ,
-                                                                                                    <i> {{item.RealEstateNowTimePrice.NumberValues[0]}}</i>
+                                                                                                    <i>
+                                                                                                        {{item.RealEstateNowTimePrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.RealEstateNowTimePrice.TranslatedUnit}}
 
@@ -2673,7 +2253,8 @@
                                                                                                     name=""
                                                                                                     id="">
                                                                                                 <option>
-                                                                                                    <i> {{item.GoodsNowTimePrice.NumberValues[1]}}</i>
+                                                                                                    <i>
+                                                                                                        {{item.GoodsNowTimePrice.NumberValues[1]}}</i>
                                                                                                     ,
                                                                                                     <i>{{item.GoodsNowTimePrice.NumberValues[0]}}</i>
 
@@ -2960,7 +2541,8 @@
                                                                                                 <option>
                                                                                                     <i>{{item.ElectionStaffPrice.NumberValues[1]}}</i>
                                                                                                     ,
-                                                                                                    <i> {{item.ElectionStaffPrice.NumberValues[0]}}</i>
+                                                                                                    <i>
+                                                                                                        {{item.ElectionStaffPrice.NumberValues[0]}}</i>
 
                                                                                                     {{item.ElectionStaffPrice.TranslatedUnit}}
 
@@ -4086,10 +3668,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+
             </div>
         </div>
     </div>
@@ -4252,7 +3831,7 @@
             '{ "Book": "کتاب"} ,' +
             '{ "Invention": "اختراع / اکتشاف" } ,' +
             '{ "Art": "اثر هنری" }   ' +
-            ']',"CandidateActivityFieldType":
+            ']', "CandidateActivityFieldType":
             '[' +
             '{ "Charity": "انجمن خیریه"} ,' +
             '{ "Mobilization": "بسیج" } ,' +
@@ -4499,8 +4078,8 @@
             $depatment = $inputKey.split(',')[0];
             $major = $inputKey.split(',')[1];
             $keys = EnumAcademicBackground[$depatment];
-            if($keys != null || $keys != undefined ) {
-                 $keys = JSON.parse($keys);
+            if ($keys != null || $keys != undefined) {
+                $keys = JSON.parse($keys);
                 for (var i = 0; i < $keys.length; i++) {
                     $keyItems = $keys[i];
                     if ($keyItems['value'] == $major) {
@@ -4616,11 +4195,10 @@
             translatePrice('Vehicle', VehiclePricePlaceHolder);
 
 
-
-            setTimeout(function(){
+            setTimeout(function () {
                 $(".left-candidate-panel-resume :input").prop('disabled', true);
                 $(".report :input").prop('disabled', false);
-            } , 500);
+            }, 500);
 
         });
     });
