@@ -955,14 +955,14 @@
                                             <div class="LeftPanelcontent">
                                                 <div class="row">
                                                     <!--RealEStates -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.RealEStates.hasSelfItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">املاک و مستغلات</div>
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.RealEStates.hasSelfItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.RealEStates.hasSelfItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.RealEStates"
                                                                               id="form-RealEstate">
                                                                             <span class="divider"></span>
@@ -1056,7 +1056,7 @@
                                                     </div>
                                                     <!--End RealEStates -->
                                                     <!--Vehicle -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Vehicle.hasSelfItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 وسایل نقلیه
@@ -1064,8 +1064,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Vehicle.hasSelfItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Vehicle.hasSelfItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Vehicle"
                                                                               id="form-Vehicle">
                                                                             <span class="divider"></span>
@@ -1132,7 +1132,7 @@
                                                     </div>
                                                     <!--End Vehicle -->
                                                     <!--Invest -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Invest.hasSelfItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
@@ -1140,8 +1140,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Invest.hasSelfItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Invest.hasSelfItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Invest"
                                                                               id="form-Invest">
                                                                             <span class="divider"></span>
@@ -1200,7 +1200,7 @@
                                                     </div>
                                                     <!--End Invest -->
                                                     <!--BankAccount -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.BankAccount.hasSelfItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
@@ -1208,8 +1208,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.BankAccount.hasSelfItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.BankAccount.hasSelfItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.BankAccount"
                                                                               id="form-BankAccount">
                                                                             <span class="divider"></span>
@@ -1245,7 +1245,7 @@
                                                     </div>
                                                     <!--End BankAccount -->
                                                     <!-- Debtor -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.CreditDebtor.hasSelfItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 دیون و مطالبات
@@ -1253,8 +1253,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.CreditDebtor.hasSelfItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.CreditDebtor.hasSelfItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.CreditDebtor"
                                                                               id="form-Credit-Debtor">
                                                                             <span class="divider"></span>
@@ -1300,7 +1300,7 @@
                                                     </div>
                                                     <!--End Debtor -->
                                                     <!--Goods -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Goods.hasSelfItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 کلیه کالاهای فاقد سند مالکیت رسمی
@@ -1308,8 +1308,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Goods.hasSelfItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Goods.hasSelfItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Goods"
                                                                               id="form-Goods">
                                                                             <span class="divider"></span>
@@ -1382,7 +1382,7 @@
                                                     </div>
                                                     <!--End Goods -->
                                                     <!--Fee -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Fee.hasSelfItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حقوق مالکیت معنوی
@@ -1390,8 +1390,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Fee.hasSelfItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Fee.hasSelfItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Fee"
                                                                               id="form-Fee">
                                                                             <span class="divider"></span>
@@ -1441,7 +1441,7 @@
                                                     </div>
                                                     <!--End Fee -->
                                                     <!--AverageMonthIncome -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Income.hasSelfItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 در آمد
@@ -1449,8 +1449,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Income.hasSelfItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Income.hasSelfItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Income"
                                                                               id="form-AverageMonthIncome">
                                                                             <span class="divider"></span>
@@ -1475,7 +1475,7 @@
                                                     </div>
                                                     <!--End AverageMonthIncome -->
                                                     <!-- ElectionPlacePrice -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Election.hasSelfItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 شفاف سازی هزینه های انتخاباتی
@@ -1483,8 +1483,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Election.hasSelfItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Election.hasSelfItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Election"
                                                                               id="form-Election">
                                                                             <span class="divider"></span>
@@ -1557,6 +1557,49 @@
                                                         </div>
                                                     </div>
                                                     <!--End ElectionPlacePrice -->
+
+                                                    <div class="col-md-12 col-xs-12">
+                                                        <div class="panel panel-default ">
+                                                            <div class="panel-heading">
+                                                                موارد وارد نشده
+                                                            </div>
+                                                            <div class="panel-body padding-r-0 padding-l-0">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-xs-12">
+                                                                        <ul class="resume-ul">
+                                                                            <li ng-if="finance.RealEStates.hasSelfItems === 0">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                املاک و مستغلات وارد نشده است</li>
+                                                                            <li ng-if="finance.Vehicle.hasSelfItems === 0">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                وسیله نقلیه وارد نشده است</li>
+                                                                            <li ng-if="finance.Invest.hasSelfItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                سرمایه گذاری ها(سهام , اوراق) وارد نشده است</li>
+                                                                            <li ng-if="finance.BankAccount.hasSelfItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                حساب های جاری , پس اندز ها وارد نشده است</li>
+                                                                            <li ng-if="finance.CreditDebtor.hasSelfItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                دیون مطالبات وارد نشده است</li>
+                                                                            <li ng-if="finance.Goods.hasSelfItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                کلیه کالاهای فاقد سند مالکیت وارد نشده است</li>
+                                                                            <li ng-if="finance.Fee.hasSelfItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                حقوق مالکیت معنوی وارد نشده است</li>
+                                                                            <li ng-if="finance.Income.hasSelfItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                درآمد وارد نشده است</li>
+                                                                            <li ng-if="finance.Election.hasSelfItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                شفاف سازی هزینه های انتخاباتی وارد نشده است</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1566,14 +1609,14 @@
                                             <div class="LeftPanelcontent">
                                                 <div class="row">
                                                     <!--RealEStates -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.RealEStates.hasWifeItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">املاک و مستغلات</div>
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.RealEStates.hasWifeItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.RealEStates.hasWifeItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.RealEStates"
                                                                               id="form-RealEstate">
                                                                             <span class="divider"></span>
@@ -1667,7 +1710,7 @@
                                                     </div>
                                                     <!--End RealEStates -->
                                                     <!--Vehicle -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12"  ng-if="finance.Vehicle.hasWifeItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 وسایل نقلیه
@@ -1675,8 +1718,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Vehicle.hasWifeItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Vehicle.hasWifeItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Vehicle"
                                                                               id="form-Vehicle">
                                                                             <span class="divider"></span>
@@ -1743,7 +1786,7 @@
                                                     </div>
                                                     <!--End Vehicle -->
                                                     <!--Invest -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Invest.hasWifeItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
@@ -1751,8 +1794,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Invest.hasWifeItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Invest.hasWifeItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Invest"
                                                                               id="form-Invest">
                                                                             <span class="divider"></span>
@@ -1811,7 +1854,7 @@
                                                     </div>
                                                     <!--End Invest -->
                                                     <!--BankAccount -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.BankAccount.hasWifeItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
@@ -1819,8 +1862,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.BankAccount.hasWifeItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.BankAccount.hasWifeItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.BankAccount"
                                                                               id="form-BankAccount">
                                                                             <span class="divider"></span>
@@ -1856,16 +1899,16 @@
                                                     </div>
                                                     <!--End BankAccount -->
                                                     <!-- Debtor -->
-                                                    <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default ">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.CreditDebtor.hasWifeItems !== 0 ">
+                                                        <div class="panel panel-default">
                                                             <div class="panel-heading">
                                                                 دیون و مطالبات
                                                             </div>
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.CreditDebtor.hasWifeItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.CreditDebtor.hasWifeItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.CreditDebtor"
                                                                               id="form-Credit-Debtor">
                                                                             <span class="divider"></span>
@@ -1911,7 +1954,7 @@
                                                     </div>
                                                     <!--End Debtor -->
                                                     <!--Goods -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Goods.hasWifeItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 کلیه کالاهای فاقد سند مالکیت رسمی
@@ -1919,8 +1962,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Goods.hasWifeItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Goods.hasWifeItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Goods"
                                                                               id="form-Goods">
                                                                             <span class="divider"></span>
@@ -1993,7 +2036,7 @@
                                                     </div>
                                                     <!--End Goods -->
                                                     <!--Fee -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Fee.hasWifeItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حقوق مالکیت معنوی
@@ -2001,8 +2044,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Fee.hasWifeItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Fee.hasWifeItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Fee"
                                                                               id="form-Fee">
                                                                             <span class="divider"></span>
@@ -2052,7 +2095,7 @@
                                                     </div>
                                                     <!--End Fee -->
                                                     <!--AverageMonthIncome -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Income.hasWifeItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 در آمد
@@ -2060,8 +2103,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Income.hasWifeItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Income.hasWifeItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Income"
                                                                               id="form-AverageMonthIncome">
                                                                             <span class="divider"></span>
@@ -2086,7 +2129,7 @@
                                                     </div>
                                                     <!--End AverageMonthIncome -->
                                                     <!-- ElectionPlacePrice -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Election.hasWifeItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 شفاف سازی هزینه های انتخاباتی
@@ -2094,8 +2137,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Election.hasWifeItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Election.hasWifeItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Election"
                                                                               id="form-Election">
                                                                             <span class="divider"></span>
@@ -2168,6 +2211,49 @@
                                                         </div>
                                                     </div>
                                                     <!--End ElectionPlacePrice -->
+
+                                                    <div class="col-md-12 col-xs-12">
+                                                        <div class="panel panel-default ">
+                                                            <div class="panel-heading">
+                                                                 موارد وارد نشده
+                                                            </div>
+                                                            <div class="panel-body padding-r-0 padding-l-0">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-xs-12">
+                                                                        <ul class="resume-ul">
+                                                                            <li ng-if="finance.RealEStates.hasWifeItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                املاک و مستغلات وارد نشده است</li>
+                                                                            <li ng-if="finance.Vehicle.hasWifeItems === 0">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                وسیله نقلیه وارد نشده است</li>
+                                                                            <li ng-if="finance.Invest.hasWifeItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                سرمایه گذاری ها(سهام , اوراق) وارد نشده است</li>
+                                                                            <li ng-if="finance.BankAccount.hasWifeItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                حساب های جاری , پس اندز ها وارد نشده است</li>
+                                                                            <li ng-if="finance.CreditDebtor.hasWifeItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                دیون مطالبات وارد نشده است</li>
+                                                                            <li ng-if="finance.Goods.hasWifeItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                کلیه کالاهای فاقد سند مالکیت وارد نشده است</li>
+                                                                            <li ng-if="finance.Fee.hasWifeItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                حقوق مالکیت معنوی وارد نشده است</li>
+                                                                            <li ng-if="finance.Income.hasWifeItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                درآمد وارد نشده است</li>
+                                                                            <li ng-if="finance.Election.hasWifeItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                شفاف سازی هزینه های انتخاباتی وارد نشده است</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2177,14 +2263,14 @@
                                             <div class="LeftPanelcontent">
                                                 <div class="row">
                                                     <!--RealEStates -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.RealEStates.hasChildItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">املاک و مستغلات</div>
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.RealEStates.hasChildItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.RealEStates.hasChildItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.RealEStates"
                                                                               id="form-RealEstate">
                                                                             <span class="divider"></span>
@@ -2278,7 +2364,7 @@
                                                     </div>
                                                     <!--End RealEStates -->
                                                     <!--Vehicle -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Vehicle.hasChildItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 وسایل نقلیه
@@ -2286,7 +2372,7 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Vehicle.hasChildItems === 0 ">{{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Vehicle.hasChildItems === 0 ">{{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Vehicle"
                                                                               id="form-Vehicle">
                                                                             <span class="divider"></span>
@@ -2353,7 +2439,7 @@
                                                     </div>
                                                     <!--End Vehicle -->
                                                     <!--Invest -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Invest.hasChildItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 سرمایه‌گذاری‌ها (سهام‌، اوراق بهادار، ...)
@@ -2361,8 +2447,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Invest.hasChildItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Invest.hasChildItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Invest"
                                                                               id="form-Invest">
                                                                             <span class="divider"></span>
@@ -2421,7 +2507,7 @@
                                                     </div>
                                                     <!--End Invest -->
                                                     <!--BankAccount -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.BankAccount.hasChildItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حساب‌های جاری، پس‌انداز و سرمایه‌گذاری
@@ -2429,8 +2515,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.BankAccount.hasChildItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.BankAccount.hasChildItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.BankAccount"
                                                                               id="form-BankAccount">
                                                                             <span class="divider"></span>
@@ -2466,7 +2552,7 @@
                                                     </div>
                                                     <!--End BankAccount -->
                                                     <!-- Debtor -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.CreditDebtor.hasChildItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 دیون و مطالبات
@@ -2474,8 +2560,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.CreditDebtor.hasChildItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.CreditDebtor.hasChildItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.CreditDebtor"
                                                                               id="form-Credit-Debtor">
                                                                             <span class="divider"></span>
@@ -2521,7 +2607,7 @@
                                                     </div>
                                                     <!--End Debtor -->
                                                     <!--Goods -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Goods.hasChildItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 کلیه کالاهای فاقد سند مالکیت رسمی
@@ -2529,8 +2615,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Goods.hasChildItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Goods.hasChildItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Goods"
                                                                               id="form-Goods">
                                                                             <span class="divider"></span>
@@ -2603,7 +2689,7 @@
                                                     </div>
                                                     <!--End Goods -->
                                                     <!--Fee -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Fee.hasChildItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 حقوق مالکیت معنوی
@@ -2611,8 +2697,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Fee.hasChildItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Fee.hasChildItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Fee"
                                                                               id="form-Fee">
                                                                             <span class="divider"></span>
@@ -2662,7 +2748,7 @@
                                                     </div>
                                                     <!--End Fee -->
                                                     <!--AverageMonthIncome -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Income.hasChildItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 در آمد
@@ -2670,8 +2756,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Income.hasChildItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Income.hasChildItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Income"
                                                                               id="form-AverageMonthIncome">
                                                                             <span class="divider"></span>
@@ -2696,7 +2782,7 @@
                                                     </div>
                                                     <!--End AverageMonthIncome -->
                                                     <!-- ElectionPlacePrice -->
-                                                    <div class="col-md-12 col-xs-12">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Election.hasChildItems !== 0 ">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 شفاف سازی هزینه های انتخاباتی
@@ -2704,8 +2790,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <p ng-if="finance.Election.hasChildItems === 0 ">
-                                                                            {{notFound}}</p>
+<!--                                                                        <p ng-if="finance.Election.hasChildItems === 0 ">-->
+<!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.Election"
                                                                               id="form-Election">
                                                                             <span class="divider"></span>
@@ -2779,6 +2865,49 @@
                                                         </div>
                                                     </div>
                                                     <!--End ElectionPlacePrice -->
+
+                                                    <div class="col-md-12 col-xs-12">
+                                                        <div class="panel panel-default ">
+                                                            <div class="panel-heading">
+                                                                موارد وارد نشده
+                                                            </div>
+                                                            <div class="panel-body padding-r-0 padding-l-0">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-xs-12">
+                                                                        <ul class="resume-ul">
+                                                                            <li ng-if="finance.RealEStates.hasChildItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                املاک و مستغلات وارد نشده است</li>
+                                                                            <li ng-if="finance.Vehicle.hasChildItems === 0">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                وسیله نقلیه وارد نشده است</li>
+                                                                            <li ng-if="finance.Invest.hasChildItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                سرمایه گذاری ها(سهام , اوراق) وارد نشده است</li>
+                                                                            <li ng-if="finance.BankAccount.hasChildItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                حساب های جاری , پس اندز ها وارد نشده است</li>
+                                                                            <li ng-if="finance.CreditDebtor.hasChildItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                دیون مطالبات وارد نشده است</li>
+                                                                            <li ng-if="finance.Goods.hasChildItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                کلیه کالاهای فاقد سند مالکیت وارد نشده است</li>
+                                                                            <li ng-if="finance.Fee.hasChildItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                حقوق مالکیت معنوی وارد نشده است</li>
+                                                                            <li ng-if="finance.Income.hasChildItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                درآمد وارد نشده است</li>
+                                                                            <li ng-if="finance.Election.hasChildItems === 0 ">
+                                                                                <span class="fa fa-circle-o"></span>
+                                                                                شفاف سازی هزینه های انتخاباتی وارد نشده است</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -3307,7 +3436,6 @@
             var keys = Object.keys($scope.finance);
             for (var i = 0; i < keys.length; i++) {
                 var row = $scope.finance[keys[i]];
-                console.log("Rowwww" , row);
                 var hasSelfItems = 0;
                 var hasWifeItems = 0;
                 var hasChildItems = 0;

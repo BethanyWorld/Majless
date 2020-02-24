@@ -1,4 +1,7 @@
 <style>
+    .tab-content {
+        padding: 0px 0px;
+    }
     .color-animation {
         animation: colorchange 1s;
         -webkit-animation: colorchange 1s;
