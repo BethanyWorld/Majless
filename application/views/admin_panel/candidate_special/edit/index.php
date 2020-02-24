@@ -151,6 +151,37 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-xs-12 col-sm-4 col-md-2">
+                                                    <label>وضعیت انتخاب</label>
+                                                    <div class="form-group">
+                                                        <div class="form-line">
+                                                            <div class="row col-xs-12">
+                                                                <input
+                                                                    <?php if($candidate['CandidateSelectionStatus']=='Selected') echo "checked"; ?>
+                                                                        class="selected-candidate"
+                                                                        name="CandidateSelectionStatus"
+                                                                        id="CandidateSelectionStatusSelected"
+                                                                        type="radio"
+                                                                        value="Selected"/>
+                                                                <label for="CandidateSelectionStatusSelected">
+                                                                    منتخب
+                                                                </label>
+                                                            </div>
+                                                            <div class="row col-xs-12">
+                                                                <input
+                                                                    <?php if($candidate['CandidateSelectionStatus']!='Selected') echo "checked"; ?>
+                                                                        class="selected-candidate"
+                                                                        name="CandidateSelectionStatus"
+                                                                        type="radio"
+                                                                        id="CandidateSelectionStatusUnSelected"
+                                                                        value="UnSelected"/>
+                                                                <label for="CandidateSelectionStatusUnSelected">
+                                                                    غیرمنتخب
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                 <div class="col-xs-12">
                                                     <button type="button" id="editCandidateSpecial"
@@ -263,6 +294,50 @@
                                                             </td>
                                                             <td class="td-c fit">
                                                                 <button data-action-type="Obligation"
+                                                                        class="btn btn-danger btn-circle Delete"><i
+                                                                            class="material-icons">clear</i>
+                                                            </td>
+                                                        </tr>
+
+
+                                                        <tr>
+                                                            <td class="success">شفافیت اموال</td>
+                                                            <td><input type="text" id="Finance" /></td>
+                                                            <td class="td-c fit ">
+                                                                <button data-action-type="Finance"
+                                                                        class="btn btn-success btn-circle Assignment">
+                                                                    <i class="material-icons">grade</i>
+                                                            </td>
+                                                            <td class="td-c fit">
+                                                                <button data-action-type="Finance"
+                                                                        class="btn btn-danger btn-circle Delete"><i
+                                                                            class="material-icons">clear</i>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="success">امضای تعهد نامه</td>
+                                                            <td><input type="text" id="CommitmentSign" /></td>
+                                                            <td class="td-c fit ">
+                                                                <button data-action-type="CommitmentSign"
+                                                                        class="btn btn-success btn-circle Assignment">
+                                                                    <i class="material-icons">grade</i>
+                                                            </td>
+                                                            <td class="td-c fit">
+                                                                <button data-action-type="CommitmentSign"
+                                                                        class="btn btn-danger btn-circle Delete"><i
+                                                                            class="material-icons">clear</i>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="success">شفافیت هزینه انتخاباتی</td>
+                                                            <td><input type="text" id="ElectionFinance" /></td>
+                                                            <td class="td-c fit ">
+                                                                <button data-action-type="ElectionFinance"
+                                                                        class="btn btn-success btn-circle Assignment">
+                                                                    <i class="material-icons">grade</i>
+                                                            </td>
+                                                            <td class="td-c fit">
+                                                                <button data-action-type="ElectionFinance"
                                                                         class="btn btn-danger btn-circle Delete"><i
                                                                             class="material-icons">clear</i>
                                                             </td>

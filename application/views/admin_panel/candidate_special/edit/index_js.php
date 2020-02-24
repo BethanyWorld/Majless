@@ -25,6 +25,7 @@
                     $inputCandidateInstaAccount = $.trim($("#inputCandidateInstaAccount").val());
                     $inputCandidateElectionCode = $.trim($("#inputCandidateElectionCode").val());
                     $inputOperationStatus = $("input[name='CandidateOperationStatus']:checked").val();
+                    $inputCandidateSelectionStatus = $("input[name='CandidateSelectionStatus']:checked").val();
                     /* End Validation */
                     toggleLoader();
                     $sendData = {
@@ -36,6 +37,7 @@
                         'inputCandidateElectionId': $inputCandidateElectionId,
                         'inputCandidateInstaAccount': $inputCandidateInstaAccount,
                         'inputOperationStatus': $inputOperationStatus,
+                        'inputCandidateSelectionStatus': $inputCandidateSelectionStatus,
                         'inputCandidateElectionCode': $inputCandidateElectionCode
                     }
                     $.ajax({
