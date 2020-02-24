@@ -1475,7 +1475,7 @@
                                                     </div>
                                                     <!--End AverageMonthIncome -->
                                                     <!-- ElectionPlacePrice -->
-                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Election.hasSelfItems !== 0 ">
+                                                    <div class="col-md-12 col-xs-12" ng-if="finance.Election.hasSelfItems !== 0">
                                                         <div class="panel panel-default ">
                                                             <div class="panel-heading">
                                                                 شفاف سازی هزینه های انتخاباتی
