@@ -271,7 +271,8 @@
                     <?php } ?>
                 </div>
                 <!-- Academic  -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="academic-background">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="academic-background"
+                     ng-if="candidateAcademicBackground.length !== 0 ">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>سوابق تحصیلی</h3>
@@ -295,7 +296,8 @@
                     </div>
                 </div>
                 <!-- Military Status -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="military-records">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="military-records"
+                     ng-if="candidateMilitaryStatus.length !== 0 ">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>سوابق خدمت</h3>
@@ -321,7 +323,8 @@
                     </div>
                 </div>
                 <!-- Job History -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="work-experience">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="work-experience"
+                     ng-if="candidateJobHistory.length !== 0 ">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>سوابق شغلی</h3>
@@ -353,7 +356,8 @@
                     </div>
                 </div>
                 <!-- Book Publishing History -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="scientific-research-records">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="scientific-research-records"
+                     ng-if="candidateBooks.length !== 0 ">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>سوابق علمی پژوهشی</h3>
@@ -505,7 +509,8 @@
                     </div>
                 </div>
                 <!-- Skills History -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="skills">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="skills"
+                     ng-if="candidateSkills.length !== 0 ">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>مهارت ها</h3>
@@ -531,7 +536,8 @@
                     </div>
                 </div>
                 <!-- Promises History -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="election-promises">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="election-promises"
+                     ng-if="promises.length !== 0 ">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>وعده های انتخاباتی</h3>
@@ -549,7 +555,8 @@
                     </div>
                 </div>
                 <!-- Politic History -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="political-background">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="political-background"
+                     ng-if="politicBackground.length !== 0 ">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>سوابق سیاسی</h3>
@@ -801,7 +808,8 @@
                     </div>
                 </div>
                 <!-- social-cultural-background -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="social-cultural-background">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="social-cultural-background"
+                     ng-if="candidateSocialCulturalBackground.length !== 0 ">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>سوابق فرهنگی اجتماعی</h3>
@@ -919,7 +927,8 @@
                     </div>
                 </div>
                 <!-- Finance History -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="property-assets">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="property-assets"
+                     ng-if="finance.length !== 0 ">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>فهرست اموال و دارایی ها</h3>
@@ -1557,49 +1566,6 @@
                                                         </div>
                                                     </div>
                                                     <!--End ElectionPlacePrice -->
-
-                                                    <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default ">
-                                                            <div class="panel-heading">
-                                                                موارد وارد نشده
-                                                            </div>
-                                                            <div class="panel-body padding-r-0 padding-l-0">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <ul class="resume-ul">
-                                                                            <li ng-if="finance.RealEStates.hasSelfItems === 0">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                املاک و مستغلات وارد نشده است</li>
-                                                                            <li ng-if="finance.Vehicle.hasSelfItems === 0">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                وسیله نقلیه وارد نشده است</li>
-                                                                            <li ng-if="finance.Invest.hasSelfItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                سرمایه گذاری ها(سهام , اوراق) وارد نشده است</li>
-                                                                            <li ng-if="finance.BankAccount.hasSelfItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                حساب های جاری , پس اندز ها وارد نشده است</li>
-                                                                            <li ng-if="finance.CreditDebtor.hasSelfItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                دیون مطالبات وارد نشده است</li>
-                                                                            <li ng-if="finance.Goods.hasSelfItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                کلیه کالاهای فاقد سند مالکیت وارد نشده است</li>
-                                                                            <li ng-if="finance.Fee.hasSelfItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                حقوق مالکیت معنوی وارد نشده است</li>
-                                                                            <li ng-if="finance.Income.hasSelfItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                درآمد وارد نشده است</li>
-                                                                            <li ng-if="finance.Election.hasSelfItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                شفاف سازی هزینه های انتخاباتی وارد نشده است</li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2212,48 +2178,6 @@
                                                     </div>
                                                     <!--End ElectionPlacePrice -->
 
-                                                    <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default ">
-                                                            <div class="panel-heading">
-                                                                 موارد وارد نشده
-                                                            </div>
-                                                            <div class="panel-body padding-r-0 padding-l-0">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <ul class="resume-ul">
-                                                                            <li ng-if="finance.RealEStates.hasWifeItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                املاک و مستغلات وارد نشده است</li>
-                                                                            <li ng-if="finance.Vehicle.hasWifeItems === 0">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                وسیله نقلیه وارد نشده است</li>
-                                                                            <li ng-if="finance.Invest.hasWifeItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                سرمایه گذاری ها(سهام , اوراق) وارد نشده است</li>
-                                                                            <li ng-if="finance.BankAccount.hasWifeItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                حساب های جاری , پس اندز ها وارد نشده است</li>
-                                                                            <li ng-if="finance.CreditDebtor.hasWifeItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                دیون مطالبات وارد نشده است</li>
-                                                                            <li ng-if="finance.Goods.hasWifeItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                کلیه کالاهای فاقد سند مالکیت وارد نشده است</li>
-                                                                            <li ng-if="finance.Fee.hasWifeItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                حقوق مالکیت معنوی وارد نشده است</li>
-                                                                            <li ng-if="finance.Income.hasWifeItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                درآمد وارد نشده است</li>
-                                                                            <li ng-if="finance.Election.hasWifeItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                شفاف سازی هزینه های انتخاباتی وارد نشده است</li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2865,49 +2789,6 @@
                                                         </div>
                                                     </div>
                                                     <!--End ElectionPlacePrice -->
-
-                                                    <div class="col-md-12 col-xs-12">
-                                                        <div class="panel panel-default ">
-                                                            <div class="panel-heading">
-                                                                موارد وارد نشده
-                                                            </div>
-                                                            <div class="panel-body padding-r-0 padding-l-0">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12 col-md-12 col-xs-12">
-                                                                        <ul class="resume-ul">
-                                                                            <li ng-if="finance.RealEStates.hasChildItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                املاک و مستغلات وارد نشده است</li>
-                                                                            <li ng-if="finance.Vehicle.hasChildItems === 0">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                وسیله نقلیه وارد نشده است</li>
-                                                                            <li ng-if="finance.Invest.hasChildItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                سرمایه گذاری ها(سهام , اوراق) وارد نشده است</li>
-                                                                            <li ng-if="finance.BankAccount.hasChildItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                حساب های جاری , پس اندز ها وارد نشده است</li>
-                                                                            <li ng-if="finance.CreditDebtor.hasChildItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                دیون مطالبات وارد نشده است</li>
-                                                                            <li ng-if="finance.Goods.hasChildItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                کلیه کالاهای فاقد سند مالکیت وارد نشده است</li>
-                                                                            <li ng-if="finance.Fee.hasChildItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                حقوق مالکیت معنوی وارد نشده است</li>
-                                                                            <li ng-if="finance.Income.hasChildItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                درآمد وارد نشده است</li>
-                                                                            <li ng-if="finance.Election.hasChildItems === 0 ">
-                                                                                <span class="fa fa-circle-o"></span>
-                                                                                شفاف سازی هزینه های انتخاباتی وارد نشده است</li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2918,6 +2799,122 @@
                     </div>
                 </div>
                 <!-- Report Abuse -->
+
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll">
+                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
+                        <div class="have-border-bottom">
+                            <h3>موارد وارد نشده</h3>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="resume-ul">
+                            <li ng-if="candidateAcademicBackground.length === 0 ">
+                                <span class="fa fa-circle-o"></span>
+                                <i>سوابق تحصیلی وارد نشده است</i>
+                            </li>
+                            <li ng-if="candidateMilitaryStatus.length === 0 ">
+                                <span class="fa fa-circle-o"></span>
+                                <i>سوابق خدمت وارد نشده است</i>
+                            </li>
+                            <li ng-if="candidateJobHistory.length === 0 ">
+                                <span class="fa fa-circle-o"></span>
+                                <i>سوابق شغلی وارد نشده است</i>
+                            </li>
+                            <li ng-if="candidateBooks.length === 0 ">
+                                <span class="fa fa-circle-o"></span>
+                                <i>سوابق علمی پژوهشی وارد نشده است</i>
+                            </li>
+                            <li ng-if="candidateSkills.length === 0 ">
+                                <span class="fa fa-circle-o"></span>
+                                <i>مهارت ها وارد نشده است</i>
+                            </li>
+                            <li ng-if="promises.length === 0 ">
+                                <span class="fa fa-circle-o"></span>
+                                <i>وعده های انتخاباتی وارد نشده است</i>
+                            </li>
+                            <li ng-if="politicBackground.length === 0 ">
+                                <span class="fa fa-circle-o"></span>
+                                <i>سوابق سیاسی وارد نشده است</i>
+                            </li>
+                            <li ng-if="candidateSocialCulturalBackground.length === 0 ">
+                                <span class="fa fa-circle-o"></span>
+                                <i>سوابق فرهنگی اجتماعی وارد نشده است</i>
+                            </li>
+                            <li ng-if="finance.length === 0 ">
+                                <span class="fa fa-circle-o"></span>
+                                <i>فهرست اموال و دارایی ها وارد نشده است</i>
+                            </li>
+
+                            <li ng-if="finance.RealEStates.hasChildItems === 0 || finance.RealEStates.hasWifeItems === 0 || finance.RealEStates.hasSelfItems === 0">
+                                <span class="fa fa-circle-o"></span>
+                                <i ng-if="finance.RealEStates.hasChildItems === 0">املاک و مستغلات  فرزند وارد نشده است</i> ,
+                                <i ng-if="finance.RealEStates.hasWifeItems === 0">املاک و مستغلات  همسر وارد نشده است</i> ,
+                                <i ng-if="finance.RealEStates.hasSelfItems === 0">املاک و مستغلات  خود وارد نشده است</i>
+                            </li>
+
+                            <li ng-if="finance.Vehicle.hasChildItems === 0 || finance.Vehicle.hasWifeItems === 0 || finance.Vehicle.hasSelfItems === 0">
+                                <span class="fa fa-circle-o"></span>
+                                <i ng-if="finance.Vehicle.hasChildItems === 0">وسیله نقلیه  فرزند وارد نشده است</i> ,
+                                <i ng-if="finance.Vehicle.hasWifeItems === 0">وسیله نقلیه  همسر وارد نشده است</i> ,
+                                <i ng-if="finance.Vehicle.hasSelfItems === 0">وسیله نقلیه  خود وارد نشده است</i>
+                            </li>
+
+                            <li ng-if="finance.Invest.hasChildItems === 0 || finance.Invest.hasWifeItems === 0 || finance.Invest.hasSelfItems === 0">
+                                <span class="fa fa-circle-o"></span>
+                                <i ng-if="finance.Invest.hasChildItems === 0">سرمایه گذاری ها  فرزند وارد نشده است</i> ,
+                                <i ng-if="finance.Invest.hasWifeItems === 0">سرمایه گذاری ها  همسر وارد نشده است</i> ,
+                                <i ng-if="finance.Invest.hasSelfItems === 0">سرمایه گذاری ها  خود وارد نشده است</i>
+                            </li>
+
+                            <li ng-if="finance.BankAccount.hasChildItems === 0 || finance.BankAccount.hasWifeItems === 0 || finance.BankAccount.hasSelfItems === 0">
+                                <span class="fa fa-circle-o"></span>
+                                <i ng-if="finance.BankAccount.hasChildItems === 0">حساب های جاری فرزند وارد نشده است</i> ,
+                                <i ng-if="finance.BankAccount.hasWifeItems === 0">حساب های جاری همسر وارد نشده است</i> ,
+                                <i ng-if="finance.BankAccount.hasSelfItems === 0">حساب های جاری خود وارد نشده است</i>
+                            </li>
+
+
+                            <li ng-if="finance.CreditDebtor.hasChildItems === 0 || finance.CreditDebtor.hasWifeItems === 0 || finance.CreditDebtor.hasSelfItems === 0">
+                                <span class="fa fa-circle-o"></span>
+                                <i ng-if="finance.CreditDebtor.hasChildItems === 0">دیون مطالبات فرزند وارد نشده است</i> ,
+                                <i ng-if="finance.CreditDebtor.hasWifeItems === 0">دیون مطالبات همسر وارد نشده است</i> ,
+                                <i ng-if="finance.CreditDebtor.hasSelfItems === 0">دیون مطالبات خود وارد نشده است</i>
+                            </li>
+
+
+                            <li ng-if="finance.Goods.hasChildItems === 0 || finance.Goods.hasWifeItems === 0 || finance.Goods.hasSelfItems === 0">
+                                <span class="fa fa-circle-o"></span>
+                                <i ng-if="finance.Goods.hasChildItems === 0">کلیه کالاها  فرزند وارد نشده است</i> ,
+                                <i ng-if="finance.Goods.hasWifeItems === 0">کلیه کالاها  همسر وارد نشده است</i> ,
+                                <i ng-if="finance.Goods.hasSelfItems === 0">کلیه کالاها  خود وارد نشده است</i>
+                            </li>
+
+
+                            <li ng-if="finance.Fee.hasChildItems === 0 || finance.Fee.hasWifeItems === 0 || finance.Fee.hasSelfItems === 0">
+                                <span class="fa fa-circle-o"></span>
+                                <i ng-if="finance.Fee.hasChildItems === 0">حقوق مالکیت معنوی  فرزند وارد نشده است</i> ,
+                                <i ng-if="finance.Fee.hasWifeItems === 0">حقوق مالکیت معنوی  همسر وارد نشده است</i> ,
+                                <i ng-if="finance.Fee.hasSelfItems === 0">حقوق مالکیت معنوی  خود وارد نشده است</i>
+                            </li>
+
+                            <li ng-if="finance.Income.hasChildItems === 0 || finance.Income.hasWifeItems === 0 || finance.Income.hasSelfItems === 0">
+                                <span class="fa fa-circle-o"></span>
+                                <i ng-if="finance.Income.hasChildItems === 0">درآمد  فرزند وارد نشده است</i> ,
+                                <i ng-if="finance.Income.hasWifeItems === 0">درآمد  همسر وارد نشده است</i> ,
+                                <i ng-if="finance.Income.hasSelfItems === 0">درآمد  خود وارد نشده است</i>
+                            </li>
+
+                            <li ng-if="finance.Election.hasChildItems === 0 || finance.Election.hasWifeItems === 0 || finance.Election.hasSelfItems === 0">
+                                <span class="fa fa-circle-o"></span>
+                                <i ng-if="finance.Election.hasChildItems === 0">شفاف سازی هزینه های انتخاباتی فرزند وارد نشده است</i> ,
+                                <i ng-if="finance.Election.hasWifeItems === 0">شفاف سازی هزینه های انتخاباتی همسر وارد نشده است</i> ,
+                                <i ng-if="finance.Election.hasSelfItems === 0">شفاف سازی هزینه های انتخاباتی خود وارد نشده است</i>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
                 <div class="panel left-candidate-panel-resume padding-0 single-scroll report">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">

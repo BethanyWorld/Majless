@@ -2,6 +2,9 @@
     .tab-content {
         padding: 0px 0px;
     }
+    i{
+        font-style: normal;
+    }
     .color-animation {
         animation: colorchange 1s;
         -webkit-animation: colorchange 1s;
