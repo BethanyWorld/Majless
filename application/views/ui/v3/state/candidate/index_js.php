@@ -162,11 +162,12 @@
             $srcImage = $(this).data('image');
             $candidateName = $(this).data('title');
             $candidateArea = $(this).data('area');
+            $inviteSentence = $(this).data('invite-sentence');
             $('.inner-candidate-image').attr('src', $srcImage);
             $('.modalCandidateName').text($candidateName);
             $('.modalCandidateArea').text($candidateArea);
+            $(".invite-sentence").text($inviteSentence);
             domtoimage.toJpeg(document.getElementById('hidden-box1'), {quality: 1}).then(function (dataUrl) {
-
                 $(".modal-body").find(".loading-demo").remove();
                 var img = new Image();
                 img.src = dataUrl;

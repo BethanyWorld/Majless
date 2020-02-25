@@ -1,6 +1,7 @@
 <?php
 foreach ($dataSpecial as $candidate) {
     $badgeCount = 0;
+    $badgeInviteCount = 0;
     $filterClass = "Transparency-Obligation";
     $classes = array();
     $links = array();
@@ -49,6 +50,58 @@ foreach ($dataSpecial as $candidate) {
     if ($hasMerit && $hasTransparency && $hasObligation) {
         $filterClass = "Merit";
     }
+
+    $inviteSection = array();
+    $inviteSectionSentence = "برای ";
+    $index = 0;
+
+    $hasBadge = false;
+    foreach ($candidate['badges'] as $badge) {
+        if ($badge['CandidateBadge'] == 'Finance') {
+            $hasBadge = true;
+            $badgeInviteCount +=1;
+        }
+    }
+    if(!$hasBadge){
+        if($index != 0){
+            $inviteSectionSentence .= " و ";
+        }
+        $inviteSectionSentence .= "شفافیت اموال"." ";
+        $index =1;
+    }
+
+    $hasBadge = false;
+    foreach ($candidate['badges'] as $badge) {
+        if ($badge['CandidateBadge'] == 'CommitmentSign') {
+            $hasBadge = true;
+            $badgeInviteCount +=1;
+        }
+    }
+    if(!$hasBadge){
+        if($index != 0){
+            $inviteSectionSentence .= " و ";
+            $index =1;
+        }
+        $inviteSectionSentence .= "امضای تعهدنامه"." ";
+        $index =1;
+    }
+
+    $hasBadge = false;
+    foreach ($candidate['badges'] as $badge) {
+        if ($badge['CandidateBadge'] == 'ElectionFinance') {
+            $hasBadge = true;
+            $badgeInviteCount +=1;
+        }
+    }
+    if(!$hasBadge){
+        if($index != 0){
+            $inviteSectionSentence .= " و ";
+            $index =1;
+        }
+        $inviteSectionSentence .= "هزینه‌های انتخابات"." ";
+        $index =1;
+    }
+
     ?>
     <div class="row col-md-4 col-md-offset-0 col-xs-12 candidate-info-box <?php echo $filterClass; ?>  <?php echo $candidate['CandidateSelectionStatus']; ?>">
         <div class="mp-brief">
@@ -71,29 +124,48 @@ foreach ($dataSpecial as $candidate) {
                         <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
                     </div>
                 </h3>
-                <?php if ($badgeCount !== 0) { ?>
+                <?php if ($badgeCount == 3) { ?>
+                    <p style="margin: 0;">&nbsp;</p>
+                    <a target="_blank"
+                       href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateRefId'] . '/' . $stateId . '/' . $stateName); ?>">
+                        <button
+                                data-id="<?php echo $candidate['RowId']; ?>"
+                                data-invite-sentence="<?php echo $inviteSectionSentence; ?>"
+                                data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
+                                data-image="<?php echo base_url('uploads/') . $candidate['CPI']; ?>"
+                                data-area="<?php echo $candidate['ElectionName']; ?>"
+                                class="btn invite-button" type="button"
+                                data-toggle="modal" data-target="#myModal">
+                            مشاهده پروفایل
+                        </button>
+                    </a>
+                <?php } ?>
+                <?php if ($badgeCount < 3 && $badgeCount > 0) { ?>
                     <a target="_blank"
                        class="wanted-new"
                        href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateRefId'] . '/' . $stateId . '/' . $stateName); ?>">
                             مشاهده پروفایل
                     </a>
                     <button
-                            data-id="<?php echo $candidate['RowId']?>"
+                            data-id="<?php echo $candidate['RowId']; ?>"
+                            data-invite-sentence="<?php echo $inviteSectionSentence; ?>"
                             data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
                             data-image="<?php echo base_url('uploads/') . $candidate['CPI']; ?>"
-                            data-area="<?php echo $candidate['ElectionName']?>"
+                            data-area="<?php echo $candidate['ElectionName']; ?>"
                             class="btn invite-button" type="button"
                             data-toggle="modal" data-target="#myModal">
                         دعوت به چالش
                     </button>
                 <?php } ?>
-                <?php if ($badgeCount == 0) { ?>
-                    <span class="wanted-new">عدم شرکت در چالش</span>
+                <?php if ($badgeCount === 0) { ?>
+                    <span class="wanted">عدم شرکت در چالش</span>
+                    <p style="margin: 0;">&nbsp;</p>
                     <button
-                            data-id="<?php echo $candidate['RowId']?>"
+                            data-id="<?php echo $candidate['RowId']; ?>"
+                            data-invite-sentence="<?php echo $inviteSectionSentence; ?>"
                             data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
                             data-image="<?php echo base_url('uploads/') . $candidate['CPI']; ?>"
-                            data-area="<?php echo $candidate['ElectionName']?>"
+                            data-area="<?php echo $candidate['ElectionName']; ?>"
                             class="btn invite-button" type="button"
                             data-toggle="modal" data-target="#myModal">
                         دعوت به چالش

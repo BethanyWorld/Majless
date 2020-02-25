@@ -22,14 +22,13 @@
             <span class="open-sidebar new-style-button-xs">جستجو پیشرفته</span>
         </div>
         <div class="tabPanel-widget">
-            <div>
+            <div class="row col-xs-12" style="padding: 0;">
                 <section class="mp-section">
                     <div class="col-xs-12 text-center hidden">
                         <span data-filter="Merit" class="filter">شایستگی</span>
                         <span data-filter="Transparency-Obligation" class="filter">شفافیت و پاسخگویی</span>
                     </div>
                     <div class="row candidate-container candidate-detail-parent-div">
-
                     </div>
                 </section>
             </div>
@@ -222,16 +221,19 @@
                         <h1 class="modalCandidateName"></h1>
                     </div>
                     <div class="candidate-name">
-                        <h3>حوزه انتخابیه</h3>
+                        <h3>منتخب مردم در حوزه انتخابیه</h3>
                         <h3 class="modalCandidateArea"></h3>
                     </div>
                     <div class="candidate-text-invite">
-                        <p style="line-height: 60px !important;">
-                            برای شرکت در
+                        <p class="invite-sentence" style="line-height: 40px !important;font-size: 22px;font-weight: 900;margin: 1px 0;padding: 0 60px;">
+                            برای شفافیت اموال
+                            و
+                            هزینه‌های انتخابات
+                            و
+                            امضای تعهدنامه پاسخگویی
                         </p>
                         <p style="line-height: 60px !important;">
-                            چالش شایستگی و شفافیت جنبش
-                            <a> #از_ما</a>
+                            در سایت جنبش #از_ما
                         </p>
                     </div>
                 </div>
@@ -248,24 +250,25 @@
                 <img src="<?php echo $_DIR; ?>images/post-man.png" class="inner-candidate-image">
                 <div class="">
                     <div class="candidate-text-invite">
-                        <p>
-                            دعوت می&hairsp;کنیم از
-                        </p>
+                        <p>دعوت می&hairsp;کنیم از</p>
                     </div>
                     <div class="candidate-name">
                         <h1 class="modalCandidateName"></h1>
                     </div>
                     <div class="candidate-name">
-                        <h3>حوزه انتخابیه</h3>
+                        <h3>منتخب مردم در حوزه انتخابیه</h3>
                         <h3 class="modalCandidateArea"></h3>
                     </div>
                     <div class="candidate-text-invite">
-                        <p>
-                            برای شرکت در
+                        <p class="invite-sentence" style="font-size: 26px;font-weight: 900;margin: 12px 0;">
+                            برای شفافیت اموال
+                            و
+                             هزینه‌های انتخابات
+                            و
+                             امضای تعهدنامه پاسخگویی
                         </p>
                         <p>
-                            چالش شایستگی و شفافیت جنبش
-                            <a> #از_ما</a>
+                            در سایت جنبش #از_ما
                         </p>
                     </div>
                 </div>

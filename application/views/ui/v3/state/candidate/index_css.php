@@ -22,13 +22,13 @@
         position: absolute;
         right: 0;
         left: 0;
-        top: 35px;
+        top: -105px;
         margin: auto;
         padding: 25px 10px;
         line-height: 30px;
         border-radius: 1000%;
         width: 110px;
-        background: rgba(255, 0, 0, 0.68);
+        background: rgba(255, 0, 0, 0.45);
         color: #fff;
         z-index: 10000;
         transform: rotate(25deg);
@@ -76,6 +76,8 @@
         text-align: center;
         font-weight: 900;
         color: #fff;
+        margin-top: 1px;
+        border-radius: 4px;
     }
     .grayscale{
         filter: grayscale(1);
