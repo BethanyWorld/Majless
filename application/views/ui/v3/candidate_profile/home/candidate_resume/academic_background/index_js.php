@@ -135,6 +135,25 @@
             '{ "name": "سایر" , "value" : "11"  }   ' +
             ']'
         );
+
+
+        $(document).on('change' , '[name= "inputCandidateUniversityName"]' , function () {
+            $parentId = $(this).parents('div.list-group-item').attr('id');
+            $parentDom = "#" + $parentId + "";
+            $inputCandidateUniversityName = $(this).val();
+
+
+            if($inputCandidateUniversityName === "Othres") {
+                $('.CandidateUniversityOtherName').show();
+                $('.CandidateUniversityOtherName').removeClass('hidden');
+            }
+            else{
+                $('.CandidateUniversityOtherName').hide();
+                $('.CandidateUniversityOtherName').addClass('hidden');
+            }
+        });
+
+
         $(document).on('change', '[name="inputCandidateGrade"]', function () {
 
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
@@ -142,6 +161,8 @@
             $inputCandidateGrade = $(this).val();
             $inputCandidateUniversityLevelType = $($parentDom + "[name='inputCandidateUniversityLevelType']").eq(0).val();
 
+            $('.CandidateUniversityOtherName').hide();
+            $('.CandidateUniversityOtherName').addClass('hidden');
             /* Added By ME */
             $(':input',$parentDom).not(':button, :submit, :reset, :hidden, :checkbox, :radio , select[name="inputCandidateGrade"]').val('').prop('checked', false).prop('selected', false);
 
@@ -215,10 +236,15 @@
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
                 $($parentDom + '.CandidateLevelType').css('pointerEvents' , 'none');
+                $('input[value="Student"]').next('label').text('طلبه');
+                $($parentDom + '.Change-UniversityName').html('نام مدرسه / موسسه');
             }
             else{
                 $($parentDom + '[name="inputCandidateUniversityLevelType"]').removeAttr('readonly');
                 $($parentDom + '.CandidateLevelType').css('pointerEvents' , 'auto');
+                $('input[value="Student"]').next('label').text('دانشجو');
+                $($parentDom + '.Change-UniversityName').html('نام دانشگاه');
+
             }
         });
         $(document).on('change', '[name="inputCandidateUniversityLevelType"]', function () {
@@ -327,9 +353,20 @@
             $(this).parent().remove();
         });
 
+        // for date 98
+        $inputCandidateActivityStartYear = $('#inputCandidateStartAcademinBackgroundYear').find('option').filter('[selected]').length;
+        $inputCandidateActivityEndYear = $('#inputCandidateEndAcademinBackgroundYear').find('option').filter('[selected]').length;
+        if ($inputCandidateActivityStartYear === 0) {
+            $('#inputCandidateStartAcademinBackgroundYear').find('option:last-child').attr('selected' , 'selected');
+            $('#inputCandidateEndAcademinBackgroundYear').find('option:last-child').attr('selected' , 'selected');
+        }
+        // for date 98
+
+
+
         $("#updateProfileAcademicBackground").click( {redirect: false}, updateProfile);
         $("#updateProfileAcademicBackgroundAndRedirect").click( {redirect: true}, updateProfile);
-        function updateProfile(param){
+        function updateProfile(param) {
                 $sendData = {inputCandidateAcademicBackground: $("#form").serializeArray()}
                 toggleLoader();
                 $.ajax({
@@ -348,4 +385,6 @@
         }
 
     });
+
+
 </script>
