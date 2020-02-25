@@ -153,23 +153,36 @@
                                                 </div>
                                                 <div class="col-xs-12 col-sm-4 col-md-2">
                                                     <label>وضعیت انتخاب</label>
+
                                                     <div class="form-group">
                                                         <div class="form-line">
                                                             <div class="row col-xs-12">
                                                                 <input
-                                                                    <?php if($candidate['CandidateSelectionStatus']=='Selected') echo "checked"; ?>
+                                                                    <?php if($candidate['CandidateSelectionStatus']=='SelectedFirstLop') echo "checked"; ?>
                                                                         class="selected-candidate"
                                                                         name="CandidateSelectionStatus"
-                                                                        id="CandidateSelectionStatusSelected"
+                                                                        id="CandidateSelectionStatusSelectedFirstLop"
                                                                         type="radio"
-                                                                        value="Selected"/>
-                                                                <label for="CandidateSelectionStatusSelected">
-                                                                    منتخب
+                                                                        value="SelectedFirstLop"/>
+                                                                <label for="CandidateSelectionStatusSelectedFirstLop">
+                                                                    منتخب دور اول
                                                                 </label>
                                                             </div>
                                                             <div class="row col-xs-12">
                                                                 <input
-                                                                    <?php if($candidate['CandidateSelectionStatus']!='Selected') echo "checked"; ?>
+                                                                    <?php if($candidate['CandidateSelectionStatus']=='SelectedSecondLop') echo "checked"; ?>
+                                                                        class="selected-candidate"
+                                                                        name="CandidateSelectionStatus"
+                                                                        id="CandidateSelectionStatusSelectedSecondLop"
+                                                                        type="radio"
+                                                                        value="SelectedSecondLop"/>
+                                                                <label for="CandidateSelectionStatusSelectedSecondLop">
+                                                                    منتخب دور دوم
+                                                                </label>
+                                                            </div>
+                                                            <div class="row col-xs-12">
+                                                                <input
+                                                                    <?php if($candidate['CandidateSelectionStatus']=='UnSelected') echo "checked"; ?>
                                                                         class="selected-candidate"
                                                                         name="CandidateSelectionStatus"
                                                                         type="radio"

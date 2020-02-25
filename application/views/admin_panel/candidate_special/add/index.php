@@ -122,11 +122,22 @@
                                             <input
                                                     class="selected-candidate"
                                                     name="CandidateSelectionStatus"
-                                                    id="CandidateSelectionStatusSelected"
+                                                    id="CandidateSelectionStatusSelectedFirstLop"
                                                     type="radio"
-                                                    value="Selected"/>
-                                            <label for="CandidateSelectionStatusSelected">
-                                                منتخب
+                                                    value="SelectedFirstLop"/>
+                                            <label for="CandidateSelectionStatusSelectedFirstLop">
+                                                منتخب دور اول
+                                            </label>
+                                        </div>
+                                        <div class="row col-xs-12">
+                                            <input
+                                                    class="selected-candidate"
+                                                    name="CandidateSelectionStatus"
+                                                    id="CandidateSelectionStatusSelectedSecondLop"
+                                                    type="radio"
+                                                    value="SelectedSecondLop"/>
+                                            <label for="CandidateSelectionStatusSelectedSecondLop">
+                                                منتخب دور دوم
                                             </label>
                                         </div>
                                         <div class="row col-xs-12">
