@@ -391,7 +391,8 @@ class ModelCandidate extends CI_Model{
         if (isset($inputs['inputElectionIds']) && !empty($inputs['inputElectionIds'])) {
             $this->db->where_in('CandidateElectionId', $inputs['inputElectionIds']);
         }
-        $this->db->where(array('CandidateStatus' => 'CandidateAccepted'));
+        //$this->db->where(array('CandidateStatus' => 'CandidateAccepted'));
+        $this->db->where(array('CandidateSelectionStatus' => 'CandidateSelectionStatus'));
         $this->db->where(array('CandidateStateId' => $inputs['inputStateId']));
         $query = $this->db->get();
         if ($query->num_rows() > 0) {

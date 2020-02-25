@@ -168,6 +168,7 @@ $config['EnumResumeProfile'] = array(
         'Kardani' => 'کاردانی',
         'Karshenasi' => 'کارشناسی',
         'KarshenasiArshad' => 'کارشناسی ارشد',
+        'KarshenasiArshadPeyvasteh' => 'کارشناسی ارشد پیوسته',
         'DoctoryHerfei' => 'دکترای حرفه ای',
         'DoctoryTakhasosi' => 'دکترای تخصصی',
         'FogDoctory' => 'فوق دکتری',
