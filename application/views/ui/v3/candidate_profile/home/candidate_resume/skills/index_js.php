@@ -83,5 +83,21 @@
             });
 
         });
+
+
+        $(document).on('change' , '[name= "inputSkillType"]' , function () {
+            $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
+            $parentDom = "#" + $parentId + " ";
+            $inputSkillType = $(this).val();
+
+           if($inputSkillType === "Others") {
+                $($parentDom + '.kindOfSkills').show();
+                $($parentDom + '.kindOfSkills').removeClass('hidden');
+           }
+           else{
+               $($parentDom + '.kindOfSkills').hide();
+               $($parentDom + '.kindOfSkills').addClass('hidden');
+           }
+        });
     });
 </script>

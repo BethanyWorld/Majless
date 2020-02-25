@@ -20,7 +20,6 @@ $_DIR = base_url('assets/ui/v3/');
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-xs-12">
-
                                         <div class="tabs">
                                             <div class="tab-button-outer">
                                                 <ul id="tab-button">
@@ -28,14 +27,28 @@ $_DIR = base_url('assets/ui/v3/');
                                                     <li><a href="#tab02">بارگذاری مدارک</a></li>
                                                 </ul>
                                             </div>
-
                                             <div id="tab01" class="tab-contents">
                                                 <form id="form">
                                                     <span class="skill-divider"></span>
                                                     <?php foreach ($userInfo['candidateSkills'] as $item) { ?>
-                                                        <div class="col-md-12 col-xs-12 padding-0 form">
+                                                        <div id="<?php echo md5(rand(1000, 9999)); ?>"
+                                                                class="col-md-12 col-xs-12 padding-0 form list-group-item">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-4 col-xs-12 form-group RightFloat">
+                                                                <label for="inputSkillType">
+                                                                    نوع مهارت
+                                                                    <span class="text-danger">
+                                                    <b class="text-danger">*</b></span>
+                                                                </label>
+                                                                <select class="form-control form-control-lg city-select"
+                                                                        name="inputSkillType"
+                                                                        id="inputSkillType">
+                                                                    <option value="">--انتخاب کنید--</option>
+                                                                    <option value="Speech">سخنوری</option>
+                                                                    <option value="Others">سایر</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-4 col-xs-12 form-group RightFloat hidden kindOfSkills">
                                                                 <label for="inputSkillType">
                                                                     نوع مهارت
                                                                     <span class="text-danger">
@@ -91,7 +104,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         </div>
                                                     <?php } ?>
                                                 </form>
-                                                <div  id="unique-form" class="animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
+                                                <div  id="unique-form" class=" list-group-item animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                     <span class="remove-form fa fa-times"></span>
                                                     <div class="col-md-4 col-xs-12 form-group RightFloat">
                                                         <label for="inputSkillType">
@@ -99,8 +112,23 @@ $_DIR = base_url('assets/ui/v3/');
                                                             <span class="text-danger">
                                                     <b class="text-danger">*</b></span>
                                                         </label>
+                                                        <select class="form-control form-control-lg city-select"
+                                                                name="inputSkillType"
+                                                                id="inputSkillType">
+                                                            <option value="">--انتخاب کنید--</option>
+                                                            <option value="Speech">سخنوری</option>
+                                                            <option value="Others">سایر</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-12 form-group RightFloat hidden kindOfSkills">
+                                                        <label for="inputSkillType">
+                                                            نوع مهارت
+                                                            <span class="text-danger">
+                                                    <b class="text-danger">*</b></span>
+                                                        </label>
                                                         <input id="inputSkillType" type="text"
                                                                name="inputSkillType"
+                                                            <?php setInputValue($item['SkillType']); ?>
                                                                placeholder="پر کردن این فیلد الزامی می باشد">
                                                     </div>
                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
@@ -154,10 +182,6 @@ $_DIR = base_url('assets/ui/v3/');
                                                 ?>
                                             </div>
                                         </div>
-
-
-
-
                                     </div>
                                 </div>
                             </div>

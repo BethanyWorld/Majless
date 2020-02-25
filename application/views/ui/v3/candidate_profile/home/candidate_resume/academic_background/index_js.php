@@ -139,17 +139,17 @@
 
         $(document).on('change' , '[name= "inputCandidateUniversityName"]' , function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
-            $parentDom = "#" + $parentId + "";
+            $parentDom = "#" + $parentId + " ";
             $inputCandidateUniversityName = $(this).val();
 
 
             if($inputCandidateUniversityName === "Othres") {
-                $('.CandidateUniversityOtherName').show();
-                $('.CandidateUniversityOtherName').removeClass('hidden');
+                $($parentDom + '.CandidateUniversityOtherName').show();
+                $($parentDom + '.CandidateUniversityOtherName').removeClass('hidden');
             }
             else{
-                $('.CandidateUniversityOtherName').hide();
-                $('.CandidateUniversityOtherName').addClass('hidden');
+                $($parentDom + '.CandidateUniversityOtherName').hide();
+                $($parentDom + '.CandidateUniversityOtherName').addClass('hidden');
             }
         });
 
@@ -161,8 +161,6 @@
             $inputCandidateGrade = $(this).val();
             $inputCandidateUniversityLevelType = $($parentDom + "[name='inputCandidateUniversityLevelType']").eq(0).val();
 
-            $('.CandidateUniversityOtherName').hide();
-            $('.CandidateUniversityOtherName').addClass('hidden');
             /* Added By ME */
             $(':input',$parentDom).not(':button, :submit, :reset, :hidden, :checkbox, :radio , select[name="inputCandidateGrade"]').val('').prop('checked', false).prop('selected', false);
 

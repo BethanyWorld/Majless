@@ -382,7 +382,6 @@
 
     .ul-background-color-hr {
         margin: 0px auto;
-        padding: 20px;
         box-shadow: none;
     }
 
