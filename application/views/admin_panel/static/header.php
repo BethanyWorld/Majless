@@ -300,6 +300,28 @@ $CI =& get_instance();
                         <span>پروفایل</span>
                     </a>
                 </li>
+                <li <?php echo $CI->uri->segment(2) == 'Utilities' ? 'class="active"' : '' ?> >
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">bookmark</i>
+                        <span>بانک اطلاعات</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li <?php if (strstr($uri, '/Utilities/university') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Utilities/university'); ?>" class="waves-effect waves-block">فهرست دانشگاه ها</a>
+                        </li>
+                        <li <?php if (strstr($uri, '/Utilities/addUniversity') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Utilities/addUniversity'); ?>"
+                               class="waves-effect waves-block">افزودن دانشگاه</a>
+                        </li>
+                        <li <?php if (strstr($uri, '/Utilities/skills') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Utilities/skills'); ?>" class="waves-effect waves-block">فهرست مهارت ها</a>
+                        </li>
+                        <li <?php if (strstr($uri, '/Utilities/addSkill') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Utilities/addSkill'); ?>"
+                               class="waves-effect waves-block">افزودن مهارت</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- #Menu -->

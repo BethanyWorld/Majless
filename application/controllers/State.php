@@ -252,7 +252,7 @@ class State extends CI_Controller{
             $inputs['inputElectionIds'] = array_values($inputs['inputElectionIds']);
             //$data['data'] = $this->ModelCandidate->getCandidatesByElectionId($inputs);
             $data['dataSpecial'] = $this->ModelCandidate->getCandidatesSpecialByElectionId($inputs);
-            $data['dataSpecialNoRef'] = $this->ModelCandidate->getCandidatesSpecialWithOutRefIdByElectionId($inputs);
+            //$data['dataSpecialNoRef'] = $this->ModelCandidate->getCandidatesSpecialWithOutRefIdByElectionId($inputs);
             $index = 0;
             foreach ($data['dataSpecial'] as $item) {
                 $data['dataSpecial'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);

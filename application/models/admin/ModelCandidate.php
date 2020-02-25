@@ -391,8 +391,7 @@ class ModelCandidate extends CI_Model{
         if (isset($inputs['inputElectionIds']) && !empty($inputs['inputElectionIds'])) {
             $this->db->where_in('CandidateElectionId', $inputs['inputElectionIds']);
         }
-        //$this->db->where(array('CandidateStatus' => 'CandidateAccepted'));
-        $this->db->where(array('CandidateSelectionStatus' => 'CandidateSelectionStatus'));
+        $this->db->where(array('CandidateStatus' => 'CandidateAccepted'));
         $this->db->where(array('CandidateStateId' => $inputs['inputStateId']));
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
@@ -401,7 +400,7 @@ class ModelCandidate extends CI_Model{
         return array();
     }
     public function getCandidatesSpecialByElectionId($inputs){
-        $this->db->select('CandidateCode,ElectionName,CandidateStatus,CandidatePreName,CandidateFullName,CandidateHasAccepted,CandidateResumeForViewStatus,CandidateOperationStatus,CandidateRefId,CandidateId,candidate.CandidateStateId,candidate_special.CandidateElectionId,CandidateElectionCode, candidate_special.CandidateProfileImage as CPI');
+        $this->db->select('CandidateCode,ElectionName,CandidateStatus,CandidatePreName,CandidateFullName,CandidateHasAccepted,CandidateResumeForViewStatus,CandidateOperationStatus,CandidateRefId,CandidateId,candidate.CandidateStateId,candidate_special.CandidateElectionId,CandidateElectionCode,CandidateSelectionStatus, candidate_special.CandidateProfileImage as CPI');
         $this->db->from('candidate_special');
         $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
         $this->db->join('candidate', 'candidate.CandidateId = candidate_special.CandidateRefId');
@@ -409,12 +408,15 @@ class ModelCandidate extends CI_Model{
         if (isset($inputs['inputElectionIds']) && !empty($inputs['inputElectionIds'])) {
             $this->db->where_in('candidate_special.CandidateElectionId', $inputs['inputElectionIds']);
         }
-        $this->db->where(array(
+        /*$this->db->where(array(
             'candidate.CandidateStateId' => $inputs['inputStateId'],
             'CandidateHasAccepted' => 1
-        ));
+        ));*/
+        $this->db->where('candidate.CandidateStateId ='. $inputs['inputStateId'].' AND (CandidateSelectionStatus= "SelectedFirstLop" OR CandidateSelectionStatus= "SelectedSecondLop")');
 
-        $this->db->order_by('CandidateSignScore DESC' , 'CandidateTotalScore DESC');
+
+        //$this->db->order_by('CandidateSignScore DESC' , 'CandidateTotalScore DESC');
+        $this->db->order_by('CandidateSelectionStatus ASC');
 
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
