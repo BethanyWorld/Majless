@@ -70,21 +70,7 @@ foreach ($dataSpecial as $candidate) {
         $index =1;
     }
 
-    $hasBadge = false;
-    foreach ($candidate['badges'] as $badge) {
-        if ($badge['CandidateBadge'] == 'CommitmentSign') {
-            $hasBadge = true;
-            $badgeInviteCount +=1;
-        }
-    }
-    if(!$hasBadge){
-        if($index != 0){
-            $inviteSectionSentence .= " و ";
-            $index =1;
-        }
-        $inviteSectionSentence .= "امضای تعهدنامه"." ";
-        $index =1;
-    }
+
 
     $hasBadge = false;
     foreach ($candidate['badges'] as $badge) {
@@ -99,6 +85,22 @@ foreach ($dataSpecial as $candidate) {
             $index =1;
         }
         $inviteSectionSentence .= "هزینه‌های انتخابات"." ";
+        $index =1;
+    }
+
+    $hasBadge = false;
+    foreach ($candidate['badges'] as $badge) {
+        if ($badge['CandidateBadge'] == 'CommitmentSign') {
+            $hasBadge = true;
+            $badgeInviteCount +=1;
+        }
+    }
+    if(!$hasBadge){
+        if($index != 0){
+            $inviteSectionSentence .= " و ";
+            $index =1;
+        }
+        $inviteSectionSentence .= "امضای تعهدنامه"." ";
         $index =1;
     }
 
