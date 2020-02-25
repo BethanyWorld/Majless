@@ -33,6 +33,26 @@
         z-index: 10000;
         transform: rotate(25deg);
     }
+    .wanted-new{
+        font-size: 12px;
+        position: relative;
+        right: 0;
+        left: 0;
+        top: -6px;
+        margin: auto;
+        padding: 2px 8px;
+        line-height: 4px;
+        border-radius: 2px;
+        width: 135px;
+        background: rgba(255, 0, 0, 0.68);
+        color: #fff;
+        z-index: 10000;
+        transform: rotate(0deg);
+    }
+    a.wanted-new{
+        background: #ffa000;
+        color: #000;
+    }
     .wanted.flowed{
         font-size: 12px;
         position: absolute;
@@ -48,6 +68,14 @@
         color: #fff;
         z-index: 10000;
         transform: rotate(0deg);
+    }
+    .seperator{
+        background: #0f342f;
+        margin: 40px 0;
+        padding: 10px 4px;
+        text-align: center;
+        font-weight: 900;
+        color: #fff;
     }
     .grayscale{
         filter: grayscale(1);

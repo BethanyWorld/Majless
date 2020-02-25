@@ -1,7 +1,6 @@
-<?php $_DIR = base_url('assets/ui/v3/'); ?>
 <?php
-foreach ($dataSpecial as $candidate) { ?>
-    <?php
+foreach ($dataSpecial as $candidate) {
+    $badgeCount = 0;
     $filterClass = "Transparency-Obligation";
     $classes = array();
     $links = array();
@@ -11,6 +10,8 @@ foreach ($dataSpecial as $candidate) { ?>
             $hasMerit = true;
             array_push($classes, $badge['CandidateBadge']);
             array_push($links, $badge['CandidateBadgeAddress']);
+            $badgeCount+=1;
+            break;
         }
     }
     if (!$hasMerit) {
@@ -23,6 +24,8 @@ foreach ($dataSpecial as $candidate) { ?>
             $hasTransparency = true;
             array_push($classes, $badge['CandidateBadge']);
             array_push($links, $badge['CandidateBadgeAddress']);
+            $badgeCount+=1;
+            break;
         }
     }
     if (!$hasTransparency) {
@@ -35,6 +38,8 @@ foreach ($dataSpecial as $candidate) { ?>
             $hasObligation = true;
             array_push($classes, $badge['CandidateBadge']);
             array_push($links, $badge['CandidateBadgeAddress']);
+            $badgeCount+=1;
+            break;
         }
     }
     if (!$hasObligation) {
@@ -45,18 +50,8 @@ foreach ($dataSpecial as $candidate) { ?>
         $filterClass = "Merit";
     }
     ?>
-    <div class="col-md-4 col-md-offset-0 col-xs-12 candidate-info-box <?php echo $filterClass; ?>">
+    <div class="row col-md-4 col-md-offset-0 col-xs-12 candidate-info-box <?php echo $filterClass; ?>  <?php echo $candidate['CandidateSelectionStatus']; ?>">
         <div class="mp-brief">
-            <?php
-            $deActiveClass = "deactive";
-            if ($candidate['CandidateHasAccepted']) {
-                $deActiveClass = "";
-            }
-            $deActiveResumeClass = "";
-            if ($candidate['CandidateResumeForViewStatus'] == 'Reject') {
-                $deActiveResumeClass = "deactive resume-deactived";
-            }
-            ?>
             <div class="pic <?php echo $deActiveClass . " " . $deActiveResumeClass; ?>">
                 <img src="<?php echo base_url('uploads/') . $candidate['CPI']; ?>" class="candidateImage"/>
             </div>
@@ -70,112 +65,40 @@ foreach ($dataSpecial as $candidate) { ?>
                 } ?>
             </div>
             <div class="col-xs-12">
-                <?php if ($candidate['CandidateOperationStatus'] == 'Flowed') { ?>
-                    <span class="wanted flowed">
-                        عدم اتمام فرآیند
-                    </span>
-                <?php } ?>
                 <h3 class="candidateName">
                     <?php echo $candidate['CandidateFullName']; ?>
-                    <p>
-                        <?php if($candidate['CandidateElectionCode'] !== NULL) echo "کد انتخاباتی ".$candidate['CandidateElectionCode']; ?>
-                        <?php if($candidate['CandidateElectionCode']== NULL) echo "&nbsp;"; ?>
-                    </p>
                     <div class="election">
                         <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
                     </div>
                 </h3>
-                <?php if ($candidate['CandidateHasAccepted']) { ?>
+                <?php if ($badgeCount !== 0) { ?>
                     <a target="_blank"
+                       class="wanted-new"
                        href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateRefId'] . '/' . $stateId . '/' . $stateName); ?>">
-                        <button class="btn invite-button" type="button">
                             مشاهده پروفایل
-                        </button>
                     </a>
-                <?php } ?>
-                <?php if (!$candidate['CandidateHasAccepted']) { ?>
-                    <button class="btn btn-default" type="button">
-                        عدم شرکت در چالش شفافیت
+                    <button
+                            data-id="<?php echo $candidate['RowId']?>"
+                            data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
+                            data-image="<?php echo base_url('uploads/') . $candidate['CPI']; ?>"
+                            data-area="<?php echo $candidate['ElectionName']?>"
+                            class="btn invite-button" type="button"
+                            data-toggle="modal" data-target="#myModal">
+                        دعوت به چالش
                     </button>
                 <?php } ?>
-            </div>
-        </div>
-    </div>
-<?php } ?>
-<?php foreach ($dataSpecialNoRef as $candidate) { ?>
-    <div class="col-md-4 col-md-offset-0 col-xs-12 candidate-info-box">
-        <div class="mp-brief">
-            <?php
-            $filterClass = "Transparency-Obligation";
-            $classes = array();
-            $links = array();
-            $hasMerit = false;
-            foreach ($candidate['badges'] as $badge) {
-                if ($badge['CandidateBadge'] == 'GoldenMerit' || $badge['CandidateBadge'] == 'SilverMerit') {
-                    $hasMerit = true;
-                    array_push($classes, $badge['CandidateBadge']);
-                    array_push($links, $badge['CandidateBadgeAddress']);
-                }
-            }
-            if (!$hasMerit) {
-                array_push($classes, 'OffMerit');
-                array_push($links, "javascript:void(0);");
-            }
-            $hasTransparency = false;
-            foreach ($candidate['badges'] as $badge) {
-                if ($badge['CandidateBadge'] == 'GoldenTransparency' || $badge['CandidateBadge'] == 'SilverTransparency') {
-                    $hasTransparency = true;
-                    array_push($classes, $badge['CandidateBadge']);
-                    array_push($links, $badge['CandidateBadgeAddress']);
-                }
-            }
-            if (!$hasTransparency) {
-                array_push($classes, 'OffTransparency');
-                array_push($links, "javascript:void(0);");
-            }
-            $hasObligation = false;
-            foreach ($candidate['badges'] as $badge) {
-                if ($badge['CandidateBadge'] == 'Obligation') {
-                    $hasObligation = true;
-                    array_push($classes, $badge['CandidateBadge']);
-                    array_push($links, $badge['CandidateBadgeAddress']);
-                }
-            }
-            if (!$hasObligation) {
-                array_push($classes, 'OffObligation');
-                array_push($links, "javascript:void(0);");
-            }
-            if ($hasMerit && $hasTransparency && $hasObligation) {
-                $filterClass = "Merit";
-            }
-            ?>
-            <div class="pic deactive unaccepted-candidates">
-                <img src="<?php echo base_url('uploads/') . $candidate['CPI']; ?>" class="candidateImage"/>
-            </div>
-            <div class="col-md-12 col-xs-12 padding-0">
-                <?php $index = 0;
-                foreach ($classes as $badge) { ?>
-                    <a href="<?php echo $links[$index]; ?>">
-                        <div class="sign <?php echo $badge; ?>"></div>
-                    </a>
-                    <?php $index += 1;
-                } ?>
-            </div>
-            <div class="col-xs-12">
-                            <span class="wanted">
-                                عدم شرکت در چالش
-                            </span>
-                <h3 class="candidateName">
-                    <?php echo $candidate['CandidateFullName']; ?>
-                    <div class="election">
-                        <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
-                    </div>
-                </h3>
-                <a href="javascript:void(0);">
-                    <button class="btn invite-button grayscale" type="button">
-                        عدم شرکت در چالش
+                <?php if ($badgeCount == 0) { ?>
+                    <span class="wanted-new">عدم شرکت در چالش</span>
+                    <button
+                            data-id="<?php echo $candidate['RowId']?>"
+                            data-title="<?php echo $candidate['CandidatePreName']." ".$candidate['CandidateFullName']; ?>"
+                            data-image="<?php echo base_url('uploads/') . $candidate['CPI']; ?>"
+                            data-area="<?php echo $candidate['ElectionName']?>"
+                            class="btn invite-button" type="button"
+                            data-toggle="modal" data-target="#myModal">
+                        دعوت به چالش
                     </button>
-                </a>
+                <?php } ?>
             </div>
         </div>
     </div>
