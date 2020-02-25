@@ -35,7 +35,7 @@
         background: #fff;
     }
     .tab-contents {
-        padding: .5em 0em 1em;
+        padding: 1.5em 1em 1em;
         border: 1px solid #ddd;
     }
     .tab-button-outer {

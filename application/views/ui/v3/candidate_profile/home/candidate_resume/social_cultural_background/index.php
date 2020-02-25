@@ -19,7 +19,6 @@ $_DIR = base_url('assets/ui/v3/');
                                 <div class="row">
                                     <div class="col-md-12 col-xs-12">
 
-                                        <br/><br/>
                                         <div class="tabs">
                                             <div class="tab-button-outer">
                                                 <ul id="tab-button">
