@@ -35,6 +35,7 @@
                                             <div id="tab01" class="tab-contents">
                                                 <div class="list-group ul-background-color-hr">
                                                     <form id="form">
+                                                        
                                                         <span class="skill-divider"></span>
                                                         <?php foreach ($userInfo['candidateAcademicBackground'] as $item) { ?>
                                                             <div id="<?php echo md5(rand(1000, 9999)); ?>"
