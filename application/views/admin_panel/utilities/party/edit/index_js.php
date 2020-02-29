@@ -1,19 +1,17 @@
 <script type="text/javascript">
     $(document).ready(function () {
         /* Update User Info */
-        $("#editUniversity").click(function () {
-            $inputSkillId = $.trim($("#inputSkillId").val());
-            $inputSkillTitle = $.trim($("#inputSkillTitle").val());
-            $SkillActivationStatus = $("input[name='SkillActivationStatus']:checked").val();
+        $("#editParty").click(function () {
+            $inputPartyId = $.trim($("#inputPartyId").val());
+            $inputPartyTitle = $.trim($("#inputPartyTitle").val());
             toggleLoader();
             $sendData = {
-                'inputSkillId': $inputSkillId,
-                'inputSkillTitle': $inputSkillTitle,
-                'IsActive': $SkillActivationStatus
+                'inputPartyId': $inputPartyId,
+                'inputPartyTitle': $inputPartyTitle
             }
             $.ajax({
                 type: 'post',
-                url: base_url + 'Utilities/doEditSkill',
+                url: base_url + 'Utilities/doEditParty',
                 data: $sendData,
                 success: function (data) {
                     toggleLoader();

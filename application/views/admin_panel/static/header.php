@@ -320,6 +320,13 @@ $CI =& get_instance();
                             <a href="<?php echo base_url('Admin/Utilities/addSkill'); ?>"
                                class="waves-effect waves-block">افزودن مهارت</a>
                         </li>
+                        <li <?php if (strstr($uri, '/Utilities/party') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Utilities/party'); ?>" class="waves-effect waves-block">فهرست حزب ها</a>
+                        </li>
+                        <li <?php if (strstr($uri, '/Utilities/addParty') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Utilities/addParty'); ?>"
+                               class="waves-effect waves-block">افزودن حزب</a>
+                        </li>
                     </ul>
                 </li>
             </ul>

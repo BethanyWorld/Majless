@@ -7,16 +7,21 @@
                     <div class="body">
                         <div  class="col-xs-12">
                             <div class="col-xs-12 col-sm-6 col-md-3">
-                                <label for="inputSkillTitle">نام مهارت</label>
+                                <label for="inputUniversityTitle">عنوان مهارت</label>
                                 <div class="form-group">
+                                    <input type="hidden"
+                                           value="<?php echo $data['PartyId']; ?>"
+                                           id="inputPartyId" name="inputPartyId"/>
                                     <div class="form-line">
                                         <input type="text" class="form-control"
-                                               id="inputSkillTitle" name="inputSkillTitle"/>
+                                               value="<?php echo $data['PartyTitle']; ?>"
+                                               maxlength="80" minlength="3"
+                                               id="inputPartyTitle" name="inputPartyTitle"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12">
-                                <button type="button" id="addSkill" class="btn btn-primary waves-effect">ذخیره</button>
+                                <button type="button" id="editParty" class="btn btn-primary waves-effect">ذخیره</button>
                             </div>
                         </div>
                     </div>

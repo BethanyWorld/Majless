@@ -7,16 +7,16 @@
                     <div class="body">
                         <div  class="col-xs-12">
                             <div class="col-xs-12 col-sm-6 col-md-3">
-                                <label for="inputUniversityTitle">نام دانشگاه</label>
+                                <label for="inputUniversityTitle">عنوان مهارت</label>
                                 <div class="form-group">
                                     <input type="hidden"
-                                           value="<?php echo $data['UniversityId']; ?>"
-                                           id="inputUniversityId" name="inputUniversityId"/>
+                                           value="<?php echo $data['SkillId']; ?>"
+                                           id="inputSkillId" name="inputSkillId"/>
                                     <div class="form-line">
                                         <input type="text" class="form-control"
-                                               value="<?php echo $data['UniversityTitle']; ?>"
+                                               value="<?php echo $data['SkillTitle']; ?>"
                                                maxlength="80" minlength="3"
-                                               id="inputUniversityTitle" name="inputUniversityTitle"/>
+                                               id="inputSkillTitle" name="inputSkillTitle"/>
                                     </div>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                                             <input
                                                     <?php if($data['IsActive']) echo "checked"; ?>
                                                     class="selected-candidate"
-                                                    name="UniversityActivationStatus"
+                                                    name="SkillActivationStatus"
                                                     id="UniversityIsActive"
                                                     type="radio"
                                                     value="1"/>
@@ -40,7 +40,7 @@
                                             <input
                                                 <?php if(!$data['IsActive']) echo "checked"; ?>
                                                     class="selected-candidate"
-                                                    name="UniversityActivationStatus"
+                                                    name="SkillActivationStatus"
                                                     id="UniversityIsNotActive"
                                                     type="radio"
                                                     value="0"/>

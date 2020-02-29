@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Profile extends CI_Controller{
-
     public function __construct()
     {
         parent::__construct();
@@ -10,6 +9,7 @@ class Profile extends CI_Controller{
         $this->load->model('admin/ModelCandidate');
         $this->load->model('ui/ModelProfile');
         $this->load->model('agent/ModelExam');
+        $this->load->model('admin/ModelUtilities');
     }
     public function index()
     {
@@ -485,8 +485,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdatePersonalInfo($inputs);
         echo json_encode($result);
     }
-    public function academicBackground()
-    {
+    public function academicBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');
@@ -497,6 +496,7 @@ class Profile extends CI_Controller{
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
         $data['userInfo']['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($data['userInfo']['CandidateId']);
         $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
+        $data['universities'] = $this->ModelUtilities->getAllUniversity();
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index', $data);
@@ -596,8 +596,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelProfile->candidateUpdateSocialCulturalBackground($inputs);
         echo json_encode($result);
     }
-    public function politicBackground()
-    {
+    public function politicBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $data['title'] = 'رزومه';
         $data['noImg'] = $this->config->item('defaultImage');

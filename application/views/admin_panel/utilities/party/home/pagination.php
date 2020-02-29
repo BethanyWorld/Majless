@@ -9,9 +9,9 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
     foreach ($data as $university) { ?>
         <tr>
             <td class="fit"><?php echo $counter++; ?></td>
-            <td><?php echo $university['SkillTitle']; ?></td>
+            <td><?php echo $university['PartyTitle']; ?></td>
             <td class="fit">
-                <a href="<?php echo base_url('Admin/Utilities/editSkill/') . $university['SkillId']; ?>">
+                <a href="<?php echo base_url('Admin/Utilities/editParty/') . $university['PartyId']; ?>">
                     <button type="button"
                             class="btn btn-warning btn-circle waves-effect waves-circle waves-float">
                         <i class="material-icons">rate_review</i>
@@ -20,8 +20,8 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             </td>
             <td class="fit">
                 <a class="remove-agent"
-                   data-id="<?php echo $university['SkillId']; ?>"
-                   data-title="<?php echo $university['SkillTitle']; ?>">
+                   data-id="<?php echo $university['PartyId']; ?>"
+                   data-title="<?php echo $university['PartyTitle']; ?>">
                     <button type="button"
                             class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
                         <i class="material-icons">close</i>

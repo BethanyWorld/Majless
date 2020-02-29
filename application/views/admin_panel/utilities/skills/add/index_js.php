@@ -2,16 +2,16 @@
     $(document).ready(function () {
 
         /* Update User Info */
-        $("#addUniversity").click(function () {
-            $inputUniversityTitle = $.trim($("#inputUniversityTitle").val());
+        $("#addSkill").click(function () {
+            $inputSkillTitle = $.trim($("#inputSkillTitle").val());
             toggleLoader();
             $sendData = {
-                'inputUniversityTitle': $inputUniversityTitle,
+                'inputSkillTitle': $inputSkillTitle,
                 'IsActive': 1
             }
             $.ajax({
                 type: 'post',
-                url: base_url + 'Utilities/doAddUniversity',
+                url: base_url + 'Utilities/doAddSkill',
                 data: $sendData,
                 success: function (data) {
                     toggleLoader();

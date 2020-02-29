@@ -10,12 +10,12 @@
     function loadData(selectedPage = $selectedPage){
         toggleLoader();
         $sendData = {
-            'inputSkillTitle': $("#inputSkillsTitle").val(),
+            'inputPartyTitle': $("#inputPartyTitle").val(),
             'pageIndex': selectedPage
         }
         $.ajax({
             type: 'post',
-            url: base_url + 'Utilities/doSkillPagination',
+            url: base_url + 'Utilities/doPartyPagination',
             data: $sendData,
             success: function (data) {
                 hideLoader();
@@ -64,11 +64,11 @@
                     action: function () {
                         toggleLoader();
                         $sendData = {
-                            'inputSkillId': $this.data('id')
+                            'inputPartyId': $this.data('id')
                         }
                         $.ajax({
                             type: 'post',
-                            url: base_url + 'Utilities/doDeleteSkill',
+                            url: base_url + 'Utilities/doDeleteParty',
                             data: $sendData,
                             success: function (data) {
                                 toggleLoader();

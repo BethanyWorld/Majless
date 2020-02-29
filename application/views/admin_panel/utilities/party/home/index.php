@@ -7,8 +7,8 @@
                     <div class="row col-xs-12 card info-box">
                         <div class="body">
                             <div class="col-xs-12">
-                                <label for="inputAgentState">عنوان مهارت:</label>
-                                <input type="text" id="inputSkillsTitle" />
+                                <label for="inputAgentState">عنوان حزب:</label>
+                                <input type="text" id="inputPartyTitle" />
                                 <button type="button"
                                         id="searchButton"
                                         class="btn btn-info btn-circle waves-effect waves-circle waves-float pull-left btn-search">
@@ -26,7 +26,7 @@
                                 <thead>
                                 <tr>
                                     <th class="fit">#</th>
-                                    <th>عنوان دانشگاه</th>
+                                    <th>عنوان حزب</th>
                                     <th class="fit">ویرایش</th>
                                     <th class="fit">حذف</th>
                                 </tr>
