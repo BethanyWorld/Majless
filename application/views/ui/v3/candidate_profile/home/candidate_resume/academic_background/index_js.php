@@ -135,14 +135,10 @@
             '{ "name": "سایر" , "value" : "11"  }   ' +
             ']'
         );
-
-
         $(document).on('change' , '[name= "inputCandidateUniversityName"]' , function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateUniversityName = $(this).val();
-
-
             if($inputCandidateUniversityName === "Others") {
                 $($parentDom + '.CandidateUniversityOtherName').show();
                 $($parentDom + '.CandidateUniversityOtherName').removeClass('hidden');
@@ -152,22 +148,16 @@
                 $($parentDom + '.CandidateUniversityOtherName').addClass('hidden');
             }
         });
-
-
         $(document).on('change', '[name="inputCandidateGrade"]', function () {
-
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateGrade = $(this).val();
             $inputCandidateUniversityLevelType = $($parentDom + "[name='inputCandidateUniversityLevelType']").eq(0).val();
             $inputCandidateUniversityName = $($parentDom + "[name='inputCandidateUniversityName']").eq(0).val();
-
             $($parentDom + '.CandidateUniversityOtherName').hide();
             $($parentDom + '.CandidateUniversityOtherName').addClass('hidden');
-
             /* Added By ME */
             $(':input',$parentDom).not(':button, :submit, :reset, :hidden, :checkbox, :radio , select[name="inputCandidateGrade"]').val('').prop('checked', false).prop('selected', false);
-
             if($inputCandidateGrade !== "" && $inputCandidateGrade !== "ZirDiplom" && $inputCandidateGrade !== "Diplom") {
                 $($parentDom + '.CandidateLevelType').css('display' , 'block');
                 $($parentDom + '.CandidateUniversityName').css('display' , 'block');
@@ -182,22 +172,18 @@
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
                 $($parentDom + '.Radio-Buttons').css('display' , 'none');
             }
-
             if($inputCandidateGrade !== "" && $inputCandidateGrade !== "ZirDiplom" && $inputCandidateGrade !== "Diplom" && $inputCandidateGrade !== "Kardani" && $inputCandidateGrade !== "Karshenasi") {
                 $($parentDom + '.GradeNotify').css('display' , 'none');
             }
             else{
                 $($parentDom + '.GradeNotify').css('display' , 'block');
             }
-
             if($inputCandidateGrade === "Hozeh1" || $inputCandidateGrade === "Hozeh2") {
-
                 $($parentDom + '.GradeNotify').css('display' , 'block');
             }
             else{
                 $($parentDom + '.GradeNotify').removeAttr('display' , 'none');
             }
-
             if($inputCandidateUniversityLevelType === "SeminaryLevelType") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
@@ -206,20 +192,16 @@
                 $($parentDom + '.CandidateDepartment').css('display' , 'block');
                 $($parentDom + '.CandidateMajor').css('display' , 'block');
             }
-
             if($inputCandidateGrade === "" || $inputCandidateGrade === "ZirDiplom" || $inputCandidateGrade === "Diplom") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
-
                 $($parentDom + '.CandidateUniversityOtherName').hide();
                 $($parentDom + '.CandidateUniversityOtherName').addClass('hidden');
             }
             else{
                 $($parentDom + '.CandidateDepartment').css('display' , 'block');
                 $($parentDom + '.CandidateMajor').css('display' , 'block');
-
             }
-
             if($inputCandidateGrade === "Diplom") {
                 $($parentDom + '.CandidateLevelType').css('display' , 'none');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'block');
@@ -228,14 +210,12 @@
                 $($parentDom + '.CandidateLevelType').css('display' , 'block');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'none');
             }
-
             if($inputCandidateGrade == 'ZirDiplom' ) {
                 $($parentDom + '.CandidateLevelType').css('display' , 'none');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'none');
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
             }
-
             if($inputCandidateGrade === "Hozeh1" || $inputCandidateGrade === "Hozeh2" || $inputCandidateGrade === "Hozeh3" || $inputCandidateGrade === "Hozeh4") {
                 $($parentDom + '[name="inputCandidateUniversityLevelType"]').attr('readonly' , 'readonly').val('SeminaryLevelType');
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
@@ -319,12 +299,10 @@
                $($parentDom + '.CandidateMajor').css('display' , 'none');
            }
         });
-
         $('[name="inputCandidateGrade"]').change();
         setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
         setTimeout(function(){$('[name="inputCandidateDepartment"]').change();} , 1000);
         setTimeout(function(){$('[name="inputCandidateSchoolMajor"]').change();} , 1500);
-
         function fillMajorDropDown($id , data) {
             $selectedMajor = $($id + "[name='inputCandidateDepartment']").data('selected-major');
             $($id + "[name='inputCandidateMajor']").html('');
@@ -363,7 +341,6 @@
         $(document).on('click','.remove-form',function(){
             $(this).parent().remove();
         });
-
         // for date 98
         $inputCandidateActivityStartYear = $('#inputCandidateStartAcademinBackgroundYear').find('option').filter('[selected]').length;
         $inputCandidateActivityEndYear = $('#inputCandidateEndAcademinBackgroundYear').find('option').filter('[selected]').length;
@@ -372,9 +349,6 @@
             $('#inputCandidateEndAcademinBackgroundYear').find('option:last-child').attr('selected' , 'selected');
         }
         // for date 98
-
-
-
         $("#updateProfileAcademicBackground").click( {redirect: false}, updateProfile);
         $("#updateProfileAcademicBackgroundAndRedirect").click( {redirect: true}, updateProfile);
         function updateProfile(param) {
@@ -394,8 +368,5 @@
                     }
                 });
         }
-
     });
-
-
 </script>

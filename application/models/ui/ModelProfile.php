@@ -1,5 +1,4 @@
 <?php
-
 class ModelProfile extends CI_Model{
     public function candidateUpdatePersonalInfo($inputs)
     {
@@ -90,8 +89,9 @@ class ModelProfile extends CI_Model{
                 ->get()
                 ->result_array();
     }
-    public function candidateUpdateAcademicBackground($inputs)
-    {
+    public function candidateUpdateAcademicBackground($inputs){
+        /*var_dump($inputs['inputCandidateAcademicBackground']);
+        die();*/
         $this->db->trans_start();
         $this->db->delete('candidate_academic_background', array(
             'CandidateId' => $inputs['inputCandidateId']
@@ -104,12 +104,18 @@ class ModelProfile extends CI_Model{
                     'CandidateUniversityLevelType' => $inputs['inputCandidateAcademicBackground'][$i + 1]['value'],
                     'CandidateSchoolMajor' => $inputs['inputCandidateAcademicBackground'][$i + 2]['value'],
                     'CandidateUniversityName' => $inputs['inputCandidateAcademicBackground'][$i + 3]['value'],
+                    'CandidateSchoolName' => $inputs['inputCandidateAcademicBackground'][$i + 4]['value'],
+                    'CandidateUniversityOtherName' => $inputs['inputCandidateAcademicBackground'][$i + 5]['value'],
                     'CandidateDepartment' => $inputs['inputCandidateAcademicBackground'][$i + 4]['value'],
-                    'CandidateMajor' => $inputs['inputCandidateAcademicBackground'][$i + 5]['value'],
-                    'CandidateStudyStatus' => $inputs['inputCandidateAcademicBackground'][$i + 6]['value'],
+                    'CandidateMajor' => $inputs['inputCandidateAcademicBackground'][$i + 7]['value'],
+                    'CandidateStartAcademicBackgroundMonth' => $inputs['inputCandidateAcademicBackground'][$i + 8]['value'],
+                    'CandidateStartAcademicBackgroundYear' => $inputs['inputCandidateAcademicBackground'][$i + 9]['value'],
+                    'CandidateEndAcademicBackgroundMonth' => $inputs['inputCandidateAcademicBackground'][$i + 10]['value'],
+                    'CandidateEndAcademicBackgroundYear' => $inputs['inputCandidateAcademicBackground'][$i + 11]['value'],
+                    'CandidateStudyStatus' => $inputs['inputCandidateAcademicBackground'][$i + 12]['value']
                 );
                 $this->db->insert('candidate_academic_background', $UserArray);
-                $i = $i + 7;
+                $i = $i + 12;
             }
         }
         $this->db->trans_complete();

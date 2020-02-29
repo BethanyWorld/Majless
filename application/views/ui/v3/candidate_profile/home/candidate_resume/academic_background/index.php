@@ -1,8 +1,6 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <div class="container container-wrapper" style="background: none;">
     <?php echo $resumeSidebar; ?>
-
-
     <div class="col-md-9 col-xs-12 pull-right response-padding">
         <div class="LeftPanel">
             <div class="LeftPanelcontent">
@@ -11,7 +9,6 @@
                         <div class="panel panel-default LeftPanelShadow">
                             <div class="panel-heading">
                                 سوابق تحصیلی
-
                                 <span class="add-form fa fa-plus waves">
                                     <span class="fa fa-plus" id="plus-wave"></span>
                                 </span>
@@ -19,8 +16,6 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12 col-xs-12 padding-0">
-
-
                                         <div class="tabs">
                                             <div class="tab-button-outer">
                                                 <ul id="tab-button">
@@ -28,26 +23,21 @@
                                                     <li><a href="#tab02">بارگذاری مدارک</a></li>
                                                 </ul>
                                             </div>
-
                                             <div id="tab01" class="tab-contents">
                                                 <div class="list-group ul-background-color-hr">
                                                     <form id="form">
-
                                                         <span class="skill-divider"></span>
                                                         <?php foreach ($userInfo['candidateAcademicBackground'] as $item) { ?>
-                                                            <div id="<?php echo md5(rand(1000, 9999)); ?>"
-                                                                 class="list-group-item extra-padding-top-25 odd-background-color-div">
+                                                            <div id="<?php echo md5(rand(1000, 9999)); ?>" class="list-group-item extra-padding-top-25 odd-background-color-div">
                                                                 <span class="remove-form fa fa-times"></span>
                                                                 <div class="list-group-Grade col-md-12 col-xs-12 padding-0">
                                                                     <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
-                                                                        <label for="inputCandidateGrade">مقطع<span
-                                                                                    class="text-danger"><b
-                                                                                        class="text-danger">*</b></span></label>
-                                                                        <select class="form-control form-control-lg"
-                                                                                name="inputCandidateGrade">
-                                                                            <option value="" selected="">-- انتخاب کنید
-                                                                                --
-                                                                            </option>
+                                                                        <label for="inputCandidateGrade">
+                                                                            مقطع
+                                                                            <span class="text-danger"><b class="text-danger">*</b></span>
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg" name="inputCandidateGrade">
+                                                                            <option value="" selected="">-- انتخاب کنید --</option>
                                                                             <?php foreach ($EnumResumeProfile['CandidateGrade'] as $key => $value) { ?>
                                                                                 <option <?php setOptionSelected($item['CandidateGrade'], $key); ?>
                                                                                         value="<?php echo $key ?>">
@@ -62,15 +52,12 @@
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-12 col-xs-12 RightFloat CandidateLevelType">
-                                                                        <label for="inputCandidateUniversityLevelType">نوع
-                                                                            مرکز
-                                                                            آموزشی<span class="text-danger"><b
-                                                                                        class="text-danger">*</b></span></label>
-                                                                        <select class="form-control form-control-lg"
-                                                                                name="inputCandidateUniversityLevelType">
-                                                                            <option value="" selected="">-- انتخاب کنید
-                                                                                --
-                                                                            </option>
+                                                                        <label for="inputCandidateUniversityLevelType">
+                                                                            نوع مرکز آموزشی
+                                                                            <span class="text-danger"><b class="text-danger">*</b></span>
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg" name="inputCandidateUniversityLevelType">
+                                                                            <option value="" selected="">-- انتخاب کنید --</option>
                                                                             <?php foreach ($EnumResumeProfile['CandidateUniversityLevelType'] as $key => $value) { ?>
                                                                                 <option
                                                                                     <?php setOptionSelected($item['CandidateUniversityLevelType'], $key); ?>
@@ -85,11 +72,8 @@
                                                                             تحصیلی<span
                                                                                     class="text-danger"><b
                                                                                         class="text-danger">*</b></span></label>
-                                                                        <select class="form-control form-control-lg"
-                                                                                name="inputCandidateSchoolMajor">
-                                                                            <option value="" selected="">-- انتخاب کنید
-                                                                                --
-                                                                            </option>
+                                                                        <select class="form-control form-control-lg" name="inputCandidateSchoolMajor">
+                                                                            <option value="" selected="">-- انتخاب کنید --</option>
                                                                             <?php foreach ($EnumResumeProfile['CandidateSchoolMajor'] as $key => $value) { ?>
                                                                                 <option
                                                                                     <?php setOptionSelected($item['CandidateSchoolMajor'], $key); ?>
@@ -100,15 +84,13 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="col-md-4 col-xs-12 form-group RightFloat CandidateUniversityName">
-                                                                        <label class="active"
-                                                                               for="inputCandidateUniversityName">
-                                                                            <span class="Change-UniversityName"> نام دانشگاه</span><span
-                                                                                    class="text-danger">
-                                                                <b class="text-danger">*</b>
-                                                            </span>
+                                                                        <label class="active" for="inputCandidateUniversityName">
+                                                                            <span class="Change-UniversityName">
+                                                                                نام دانشگاه
+                                                                            </span>
+                                                                            <span class="text-danger"><b class="text-danger">*</b></span>
                                                                         </label>
-
-                                                                        <select class="form-control form-control-lg" data-name="inputCandidateUniversityName">
+                                                                        <select class="form-control form-control-lg" name="inputCandidateUniversityName">
                                                                             <option value="" selected="">--انتخاب کنید</option>
                                                                             <?php foreach ($universities as $item) { ?>
                                                                                 <option value="<?php echo $item['UniversityId'] ?>">
@@ -118,41 +100,34 @@
                                                                             <option value="Others">سایر</option>
                                                                         </select>
                                                                     </div>
-
-                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat hidden CandidateUniversityOtherNameHozeh hidden">
-                                                                        <label class="active"
-                                                                               for="inputCandidateUniversityName">
+                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat hidden CandidateUniversityOtherNameHozeh">
+                                                                        <label class="active" for="inputCandidateSchoolName">
                                                                             نام مدرسه / موسسه
                                                                         </label>
                                                                         <input type="text"
-                                                                               data-name="inputCandidateUniversityName"
+                                                                               name="inputCandidateSchoolName"
                                                                                class="input-validate validate valid"
                                                                                placeholder="پر کردن این فیلد الزامی می باشد">
                                                                     </div>
-
-
                                                                 </div>
-
-
                                                                 <div class="list-group-Grade list-Edu col-md-12 col-xs-12 padding-0">
                                                                     <div class="col-md-4 col-xs-12 form-group RightFloat hidden CandidateUniversityOtherName">
-                                                                        <label class="active"
-                                                                               for="inputCandidateUniversityName">
-                                                                            <span class="Change-UniversityName"> نام دانشگاه</span><span
-                                                                                    class="text-danger">
-                                                                <b class="text-danger">*</b>
-                                                            </span>
+                                                                        <label class="active" for="inputCandidateUniversityOtherName">
+                                                                            <span class="Change-UniversityName">
+                                                                                نام دانشگاه
+                                                                            </span>
+                                                                            <span class="text-danger"><b class="text-danger">*</b></span>
                                                                         </label>
                                                                         <input type="text"
-                                                                               data-name=""
+                                                                               name="inputCandidateUniversityOtherName"
                                                                                class="input-validate validate valid"
                                                                                placeholder="پر کردن این فیلد الزامی می باشد">
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-12 col-xs-12 RightFloat CandidateDepartment">
-                                                                        <label for="inputCandidateDepartment">گروه
-                                                                            تحصیلی<span
-                                                                                    class="text-danger"><b
-                                                                                        class="text-danger">*</b></span></label>
+                                                                        <label for="inputCandidateDepartment">
+                                                                            گروه تحصیلی
+                                                                            <span class="text-danger"><b class="text-danger">*</b></span>
+                                                                        </label>
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputCandidateDepartment"
                                                                                 data-selected-major="<?php echo $item['CandidateMajor']; ?>">
@@ -180,20 +155,17 @@
                                                                             </option>
                                                                         </select>
                                                                     </div>
-
                                                                 </div>
-
-
                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                    <label for="inputCandidateStartAcademinBackgroundMonth">
+                                                                    <label for="inputCandidateStartAcademicBackgroundMonth">
                                                                         ماه آغاز همکاری
                                                                     </label>
                                                                     <select class="form-control form-control-lg city-select"
-                                                                            name="inputCandidateStartAcademinBackgroundMonth"
-                                                                            id="inputCandidateStartAcademinBackgroundMonth">
+                                                                            name="inputCandidateStartAcademicBackgroundMonth"
+                                                                            id="inputCandidateStartAcademicBackgroundMonth">
                                                                         <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
                                                                             <option
-                                                                                <?php setOptionSelected($item['CandidateStartAcademinBackgroundMonth'], $key); ?>
+                                                                                <?php setOptionSelected($item['CandidateStartAcademicBackgroundMonth'], $key); ?>
                                                                                     value="<?php echo $key; ?>">
                                                                                 <?php echo $value; ?>
                                                                             </option>
@@ -205,12 +177,12 @@
                                                                         سال آغاز همکاری
                                                                     </label>
                                                                     <select class="form-control form-control-lg city-select"
-                                                                            name="inputCandidateStartAcademinBackgroundYear"
-                                                                            id="inputCandidateStartAcademinBackgroundYear"
+                                                                            name="inputCandidateStartAcademicBackgroundYear"
+                                                                            id="inputCandidateStartAcademicBackgroundYear"
                                                                             style="font-family: tahoma;">
                                                                         <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                             <option
-                                                                                <?php setOptionSelected($item['CandidateStartJobYear'], $i); ?>
+                                                                                <?php setOptionSelected($item['CandidateStartAcademicBackgroundYear'], $i); ?>
                                                                                     value="<?php echo $i; ?>">
                                                                                 <?php echo $i; ?>
                                                                             </option>
@@ -218,15 +190,15 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                    <label for="inputCandidateEndAcademinBackgroundMonth">
+                                                                    <label for="inputCandidateEndAcademicBackgroundMonth">
                                                                         ماه پایان همکاری
                                                                     </label>
                                                                     <select class="form-control form-control-lg city-select"
-                                                                            name="inputCandidateEndAcademinBackgroundMonth"
-                                                                            id="inputCandidateEndAcademinBackgroundMonth">
+                                                                            name="inputCandidateEndAcademicBackgroundMonth"
+                                                                            id="inputCandidateEndAcademicBackgroundMonth">
                                                                         <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
                                                                             <option
-                                                                                <?php setOptionSelected($item['CandidateEndJobMonth'], $key); ?>
+                                                                                <?php setOptionSelected($item['CandidateEndAcademicBackgroundMonth'], $key); ?>
                                                                                     value="<?php echo $key; ?>">
                                                                                 <?php echo $value; ?>
                                                                             </option>
@@ -238,20 +210,18 @@
                                                                         سال پایان همکاری
                                                                     </label>
                                                                     <select class="form-control form-control-lg city-select"
-                                                                            name="inputCandidateEndAcademinBackgroundYear"
-                                                                            id="inputCandidateEndAcademinBackgroundYear"
+                                                                            name="inputCandidateEndAcademicBackgroundYear"
+                                                                            id="inputCandidateEndAcademicBackgroundYear"
                                                                             style="font-family: tahoma;">
                                                                         <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                             <option
-                                                                                <?php setOptionSelected($item['CandidateEndJobYear'], $i); ?>
+                                                                                <?php setOptionSelected($item['CandidateEndAcademicBackgroundYear'], $i); ?>
                                                                                     value="<?php echo $i; ?>">
                                                                                 <?php echo $i; ?>
                                                                             </option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
-
-
                                                                 <div class="clearfix"></div>
                                                                 <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                                     <?php $name = md5(rand());
@@ -281,18 +251,16 @@
                                                             </div>
                                                         <?php } ?>
                                                     </form>
-                                                    <div id="unique-form"
-                                                         class="hidden list-group-item animated flipInX extra-padding-top-25 odd-background-color-div">
+                                                    <div id="unique-form" class="hidden list-group-item animated flipInX extra-padding-top-25 odd-background-color-div">
                                                         <span class="remove-form fa fa-times"></span>
                                                         <div class="list-group-Grade col-md-12 col-xs-12 padding-0">
                                                             <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
-                                                                <label for="inputCandidateGrade">مقطع<span
-                                                                            class="text-danger"><b
-                                                                                class="text-danger">*</b></span>
+                                                                <label for="inputCandidateGrade">
+                                                                    مقطع
+                                                                    <span class="text-danger"><b class="text-danger">*</b></span>
                                                                 </label>
-                                                                <select class="form-control form-control-lg"
-                                                                        data-name="inputCandidateGrade">
-                                                                    <option value="" selected="">--انتخاب کنید</option>
+                                                                <select class="form-control form-control-lg" name="inputCandidateGrade">
+                                                                    <option value="" selected="">-- انتخاب کنید --</option>
                                                                     <?php foreach ($EnumResumeProfile['CandidateGrade'] as $key => $value) { ?>
                                                                         <option value="<?php echo $key ?>">
                                                                             <?php echo $value ?>
@@ -300,19 +268,18 @@
                                                                     <?php } ?>
                                                                 </select>
                                                                 <label class="GradeNotify">
-                                                                    حداقل مقطع تحصیلی مورد نیاز برای نامزدی انتخابات ,
-                                                                    کارشناسی
-                                                                    ارشد یا
-                                                                    معادل آن می باشد
+                                                                    حداقل مقطع تحصیلی مورد نیاز برای نامزدی
+                                                                    انتخابات ,
+                                                                    کارشناسی ارشد یا معادل آن می باشد
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 RightFloat CandidateLevelType">
-                                                                <label for="inputCandidateUniversityLevelType">نوع مرکز
-                                                                    آموزشی<span class="text-danger"><b
-                                                                                class="text-danger">*</b></span></label>
-                                                                <select class="form-control form-control-lg"
-                                                                        data-name="inputCandidateUniversityLevelType">
-                                                                    <option value="" selected="">--انتخاب کنید</option>
+                                                                <label for="inputCandidateUniversityLevelType">
+                                                                    نوع مرکز آموزشی
+                                                                    <span class="text-danger"><b class="text-danger">*</b></span>
+                                                                </label>
+                                                                <select class="form-control form-control-lg" name="inputCandidateUniversityLevelType">
+                                                                    <option value="" selected="">-- انتخاب کنید --</option>
                                                                     <?php foreach ($EnumResumeProfile['CandidateUniversityLevelType'] as $key => $value) { ?>
                                                                         <option value="<?php echo $key ?>">
                                                                             <?php echo $value ?>
@@ -321,13 +288,12 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 RightFloat CandidateeduMajor">
-                                                                <label for="inputCandidateSchoolMajor">رشته تحصیلی<span
+                                                                <label for="inputCandidateSchoolMajor">رشته
+                                                                    تحصیلی<span
                                                                             class="text-danger"><b
-                                                                                class="text-danger">*</b></span>
-                                                                </label>
-                                                                <select class="form-control form-control-lg"
-                                                                        data-name="inputCandidateSchoolMajor">
-                                                                    <option value="" selected="">--انتخاب کنید</option>
+                                                                                class="text-danger">*</b></span></label>
+                                                                <select class="form-control form-control-lg" name="inputCandidateSchoolMajor">
+                                                                    <option value="" selected="">-- انتخاب کنید --</option>
                                                                     <?php foreach ($EnumResumeProfile['CandidateSchoolMajor'] as $key => $value) { ?>
                                                                         <option value="<?php echo $key ?>">
                                                                             <?php echo $value ?>
@@ -336,13 +302,13 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-xs-12 form-group RightFloat CandidateUniversityName">
-                                                                <label class="active"
-                                                                       for="inputCandidateUniversityName">
-                                                                    <span class="Change-UniversityName"> نام دانشگاه</span><span class="text-danger">
-                                                                    <b class="text-danger">*</b></span>
+                                                                <label class="active" for="inputCandidateUniversityName">
+                                                                            <span class="Change-UniversityName">
+                                                                                نام دانشگاه
+                                                                            </span>
+                                                                    <span class="text-danger"><b class="text-danger">*</b></span>
                                                                 </label>
-
-                                                                <select class="form-control form-control-lg" data-name="inputCandidateUniversityName">
+                                                                <select class="form-control form-control-lg" name="inputCandidateUniversityName">
                                                                     <option value="" selected="">--انتخاب کنید</option>
                                                                     <?php foreach ($universities as $item) { ?>
                                                                         <option value="<?php echo $item['UniversityId'] ?>">
@@ -352,45 +318,40 @@
                                                                     <option value="Others">سایر</option>
                                                                 </select>
                                                             </div>
-
-
-                                                            <div class="col-md-4 col-xs-12 form-group RightFloat hidden CandidateUniversityOtherNameHozeh hidden">
-                                                                <label class="active"
-                                                                       for="inputCandidateUniversityName">
+                                                            <div class="col-md-4 col-xs-12 form-group RightFloat hidden CandidateUniversityOtherNameHozeh">
+                                                                <label class="active" for="inputCandidateSchoolName">
                                                                     نام مدرسه / موسسه
                                                                 </label>
                                                                 <input type="text"
-                                                                       data-name="inputCandidateUniversityName"
+                                                                       name="inputCandidateSchoolName"
                                                                        class="input-validate validate valid"
                                                                        placeholder="پر کردن این فیلد الزامی می باشد">
                                                             </div>
-
                                                         </div>
-
                                                         <div class="list-group-Grade list-Edu col-md-12 col-xs-12 padding-0">
-
                                                             <div class="col-md-4 col-xs-12 form-group RightFloat hidden CandidateUniversityOtherName">
-                                                                <label class="active"
-                                                                       for="inputCandidateUniversityName">
-                                                                    <span class="Change-UniversityName"> نام دانشگاه</span><span
-                                                                            class="text-danger">
-                                                                <b class="text-danger">*</b>
-                                                            </span>
+                                                                <label class="active" for="inputCandidateUniversityOtherName">
+                                                                            <span class="Change-UniversityName">
+                                                                                نام دانشگاه
+                                                                            </span>
+                                                                    <span class="text-danger"><b class="text-danger">*</b></span>
                                                                 </label>
                                                                 <input type="text"
-                                                                       data-name=""
+                                                                       name="inputCandidateUniversityOtherName"
                                                                        class="input-validate validate valid"
                                                                        placeholder="پر کردن این فیلد الزامی می باشد">
                                                             </div>
-
-
                                                             <div class="col-md-4 col-sm-12 col-xs-12 RightFloat CandidateDepartment">
-                                                                <label for="inputCandidateDepartment">گروه تحصیلی<span
-                                                                            class="text-danger"><b
-                                                                                class="text-danger">*</b></span></label>
+                                                                <label for="inputCandidateDepartment">
+                                                                    گروه تحصیلی
+                                                                    <span class="text-danger"><b class="text-danger">*</b></span>
+                                                                </label>
                                                                 <select class="form-control form-control-lg"
-                                                                        data-name="inputCandidateDepartment">
-                                                                    <option value="" selected="">--انتخاب کنید</option>
+                                                                        name="inputCandidateDepartment"
+                                                                        data-selected-major="<?php echo $item['CandidateMajor']; ?>">
+                                                                    <option value="" selected="">-- انتخاب کنید
+                                                                        --
+                                                                    </option>
                                                                     <?php foreach ($EnumResumeProfile['CandidateDepartment'] as $key => $value) { ?>
                                                                         <option value="<?php echo $key ?>">
                                                                             <?php echo $value ?>
@@ -399,26 +360,24 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 col-sm-12 col-xs-12 RightFloat CandidateMajor">
-                                                                <label for="inputCandidateMajor">عنوان رشته تحصیلی<span
-                                                                            class="text-danger"><b
-                                                                                class="text-danger">*</b></span></label>
-                                                                <select class="form-control form-control-lg" data-
-                                                                        name="inputCandidateMajor">
-                                                                    <option selected value="">-- انتخاب کنید --</option>
+                                                                <label for="inputCandidateMajor">
+                                                                    عنوان رشته تحصیلی
+                                                                    <span class="text-danger"><b class="text-danger">*</b></span>
+                                                                </label>
+                                                                <select class="form-control form-control-lg" name="inputCandidateMajor">
+                                                                    <option value="" selected="">-- انتخاب کنید --</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                            <label for="inputCandidateStartAcademinBackgroundMonth">
+                                                            <label for="inputCandidateStartAcademicBackgroundMonth">
                                                                 ماه آغاز همکاری
                                                             </label>
                                                             <select class="form-control form-control-lg city-select"
-                                                                    name="inputCandidateStartAcademinBackgroundMonth"
-                                                                    id="inputCandidateStartAcademinBackgroundMonth">
+                                                                    name="inputCandidateStartAcademicBackgroundMonth"
+                                                                    id="inputCandidateStartAcademicBackgroundMonth">
                                                                 <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                    <option
-                                                                        <?php setOptionSelected($item['CandidateStartAcademinBackgroundMonth'], $key); ?>
-                                                                            value="<?php echo $key; ?>">
+                                                                    <option value="<?php echo $key; ?>">
                                                                         <?php echo $value; ?>
                                                                     </option>
                                                                 <?php } ?>
@@ -429,29 +388,25 @@
                                                                 سال آغاز همکاری
                                                             </label>
                                                             <select class="form-control form-control-lg city-select"
-                                                                    name="inputCandidateStartAcademinBackgroundYear"
-                                                                    id="inputCandidateStartAcademinBackgroundYear"
+                                                                    name="inputCandidateStartAcademicBackgroundYear"
+                                                                    id="inputCandidateStartAcademicBackgroundYear"
                                                                     style="font-family: tahoma;">
                                                                 <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                    <option
-                                                                        <?php setOptionSelected($item['CandidateStartJobYear'], $i); ?>
-                                                                            value="<?php echo $i; ?>">
+                                                                    <option value="<?php echo $i; ?>">
                                                                         <?php echo $i; ?>
                                                                     </option>
                                                                 <?php } ?>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                            <label for="inputCandidateEndAcademinBackgroundMonth">
+                                                            <label for="inputCandidateEndAcademicBackgroundMonth">
                                                                 ماه پایان همکاری
                                                             </label>
                                                             <select class="form-control form-control-lg city-select"
-                                                                    name="inputCandidateEndAcademinBackgroundMonth"
-                                                                    id="inputCandidateEndAcademinBackgroundMonth">
+                                                                    name="inputCandidateEndAcademicBackgroundMonth"
+                                                                    id="inputCandidateEndAcademicBackgroundMonth">
                                                                 <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                    <option
-                                                                        <?php setOptionSelected($item['CandidateEndJobMonth'], $key); ?>
-                                                                            value="<?php echo $key; ?>">
+                                                                    <option value="<?php echo $key; ?>">
                                                                         <?php echo $value; ?>
                                                                     </option>
                                                                 <?php } ?>
@@ -460,18 +415,13 @@
                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                             <label for="inputCandidateEndAcademinBackgroundYear">
                                                                 سال پایان همکاری
-                                                                <span class="text-danger">
-                                                 <b class="text-danger">*</b>
-                                             </span>
                                                             </label>
                                                             <select class="form-control form-control-lg city-select"
-                                                                    name="inputCandidateEndAcademinBackgroundYear"
-                                                                    id="inputCandidateEndAcademinBackgroundYear"
+                                                                    name="inputCandidateEndAcademicBackgroundYear"
+                                                                    id="inputCandidateEndAcademicBackgroundYear"
                                                                     style="font-family: tahoma;">
                                                                 <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                    <option
-                                                                        <?php setOptionSelected($item['CandidateEndJobYear'], $i); ?>
-                                                                            value="<?php echo $i; ?>">
+                                                                    <option value="<?php echo $i; ?>">
                                                                         <?php echo $i; ?>
                                                                     </option>
                                                                 <?php } ?>
@@ -479,13 +429,18 @@
                                                         </div>
                                                         <div class="clearfix"></div>
                                                         <div class="col-md-12 col-xs-12 Radio-Buttons">
-                                                            <?php foreach ($EnumResumeProfile['AcademicStudyStatus'] as $key => $value) { ?>
+                                                            <?php
+                                                            $name = md5(rand());
+                                                            $index = 0;
+                                                            foreach ($EnumResumeProfile['AcademicStudyStatus'] as $key => $value) {
+                                                                $id = md5(rand()); ?>
                                                                 <div class="radio Radio-Display">
-                                                                    <input name="radio" type="radio"
-                                                                           class="academicBackground-studentLevel"
+                                                                    <input id="radio-<?php echo $id ?>"
+                                                                           name="radio-<?php echo $name ?>"
+                                                                           type="radio"
                                                                            value="<?php echo $key ?>">
-                                                                    <label for="radio-1"
-                                                                           class="radio-label Academic-StudentName">
+                                                                    <label for="radio-<?php echo $id ?>"
+                                                                           class="radio-label">
                                                                         <?php echo $value ?>
                                                                     </label>
                                                                 </div>
@@ -505,11 +460,8 @@
                                                 ?>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
