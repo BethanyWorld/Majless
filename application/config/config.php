@@ -265,8 +265,7 @@ $config['EnumResumeProfile'] = array(
         'Group' => 'حزب',
         'CandidatesCampaign' => 'ستاد های انتخاباتی نامزدها',
         'SupervisoryBoard' => ' نظارت و اجرایی ستاد انتخابات',
-        'Media' => 'رسانه',
-        'Others' => 'سایر'
+        'Media' => 'رسانه'
     ),
     'CandidatePoliticElectionType' => array(
         'President' => 'ریاست جمهوری',

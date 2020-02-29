@@ -25,7 +25,6 @@
                                                     <li><a href="#tab02">بارگذاری مدارک</a></li>
                                                 </ul>
                                             </div>
-
                                             <div id="tab01" class="tab-contents">
                                                 <div class="list-group-item ul-background-color-hr">
                                                     <form id="form">
@@ -38,11 +37,13 @@
                                                                     <!--for Format-->
                                                                     <div class="col-md-12 col-xs-12 margin-b-25">
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
-                                                                            <label for="inputCandidateActivityType">قالب فعالیت
+                                                                            <label for="inputCandidateActivityType">قالب
+                                                                                فعالیت
                                                                                 :</label>
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputCandidateActivityType">
-                                                                                <option value="" selected>--انتخاب کنید--
+                                                                                <option value="" selected>--انتخاب
+                                                                                    کنید--
                                                                                 </option>
                                                                                 <?php foreach ($EnumResumeProfile['CandidatePoliticActivityType'] as $key => $value) { ?>
                                                                                     <option
@@ -64,11 +65,11 @@
                                                                         </div>
                                                                     </div>
                                                                     <!--for Format-->
-
                                                                     <!--for election-->
                                                                     <div class="col-md-12 col-xs-12 RightFloat margin-b-25 ElectionType">
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
-                                                                            <label for="inputCandidateElectionType"> انتخابات
+                                                                            <label for="inputCandidateElectionType">
+                                                                                انتخابات
                                                                                 :</label>
                                                                             <select class="form-control form-control-lg"
                                                                                     data-selected-major="<?php echo $item['CandidateElectionPeriod']; ?>"
@@ -84,11 +85,13 @@
                                                                         </div>
 
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 RightFloat ElectionPeriod">
-                                                                            <label for="inputCandidateElectionPeriod"> دوره
+                                                                            <label for="inputCandidateElectionPeriod">
+                                                                                دوره
                                                                                 انتخابات :</label>
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputCandidateElectionPeriod">
-                                                                                <option value="" selected>--انتخاب کنید--
+                                                                                <option value="" selected>--انتخاب
+                                                                                    کنید--
                                                                                 </option>
                                                                             </select>
                                                                         </div>
@@ -102,7 +105,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <!--for election-->
-
                                                                     <!--for Cooperation-->
                                                                     <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style Partnership-title">
                                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
@@ -110,7 +112,8 @@
                                                                                 همکاری :</label>
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputCandidateHeadquarterActivityTitle">
-                                                                                <option value="" selected>--انتخاب کنید--
+                                                                                <option value="" selected>--انتخاب
+                                                                                    کنید--
                                                                                 </option>
                                                                                 <?php foreach ($EnumResumeProfile['CandidateHeadquarterActivityTitle'] as $key => $value) { ?>
                                                                                     <option <?php setOptionSelected($item['CandidateHeadquarterActivityTitle'], $key); ?>
@@ -122,15 +125,16 @@
                                                                         </div>
                                                                     </div>
                                                                     <!--for Cooperation-->
-
                                                                     <!--for Media-->
                                                                     <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style Media">
                                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                            <label for="inputCandidateMediaType">قالب رسانه
+                                                                            <label for="inputCandidateMediaType">قالب
+                                                                                رسانه
                                                                                 :</label>
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputCandidateMediaType">
-                                                                                <option value="" selected>--انتخاب کنید--
+                                                                                <option value="" selected>--انتخاب
+                                                                                    کنید--
                                                                                 </option>
                                                                                 <?php foreach ($EnumResumeProfile['CandidateMediaType'] as $key => $value) { ?>
                                                                                     <option <?php setOptionSelected($item['CandidateMediaType'], $key); ?>
@@ -141,7 +145,8 @@
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-6 col-sm-12 col-xs-12 input-style RightFloat media-template-title">
-                                                                            <label for="inputCandidateMediaTypeTitle">عنوان قالب
+                                                                            <label for="inputCandidateMediaTypeTitle">عنوان
+                                                                                قالب
                                                                                 رسانه</label>
                                                                             <input name="inputCandidateMediaTypeTitle"
                                                                                    type="text"
@@ -153,7 +158,8 @@
                                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
                                                                             <label for="inputCandidateMediaTitle"> نام
                                                                                 رسانه:</label>
-                                                                            <input name="inputCandidateMediaTitle" type="text"
+                                                                            <input name="inputCandidateMediaTitle"
+                                                                                   type="text"
                                                                                 <?php setInputValue($item['CandidateMediaTitle']); ?>
                                                                                    required>
                                                                         </div>
@@ -167,15 +173,35 @@
                                                                         </div>
                                                                     </div>
                                                                     <!--for Media-->
-
                                                                     <!--for Responsibility-->
                                                                     <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style">
                                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
                                                                             <label for="inputCandidateResponsibility">مسئولیت</label>
-                                                                            <input name="inputCandidateResponsibility"
-                                                                                   type="text"
-                                                                                <?php setInputValue($item['CandidateResponsibility']); ?>
-                                                                                   required>
+                                                                            <select class="form-control form-control-lg"
+                                                                                    name="inputCandidateResponsibility">
+                                                                                <option value="select" selected>--انتخاب
+                                                                                    کنید--
+                                                                                </option>
+                                                                                <option value="normalMember">عضو عادی
+                                                                                </option>
+                                                                                <option value="activeMember">عضو فعال
+                                                                                </option>
+                                                                                <option value="centralCouncilMember">عضو
+                                                                                    شورای مرکزی
+                                                                                </option>
+                                                                                <option value="speaker">سخنگو</option>
+                                                                                <option value="secretary">دبیر</option>
+                                                                                <option value="secretaryGeneral">دبیر
+                                                                                    کل
+                                                                                </option>
+                                                                                <option value="provincialSecretary">دبیر
+                                                                                    استانی
+                                                                                </option>
+                                                                            </select>
+                                                                            <!--                                                                            <input name="inputCandidateResponsibility"-->
+                                                                            <!--                                                                                   type="text"-->
+                                                                            <!--                                                                                --><?php //setInputValue($item['CandidateResponsibility']); ?>
+                                                                            <!--                                                                                   required>-->
                                                                         </div>
 
                                                                         <div class="col-md-6 col-sm-12 col-xs-12 MemberShip">
@@ -183,7 +209,8 @@
                                                                                 :</label>
                                                                             <select class="form-control form-control-lg"
                                                                                     name="inputCandidateMemberShip">
-                                                                                <option value="" selected>--انتخاب کنید--
+                                                                                <option value="" selected>--انتخاب
+                                                                                    کنید--
                                                                                 </option>
                                                                                 <?php foreach ($EnumResumeProfile['CandidateMemberShipType'] as $key => $value) { ?>
                                                                                     <option <?php setOptionSelected($item['CandidateMemberShip'], $key); ?>
@@ -195,7 +222,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <!--for Responsibility-->
-
                                                                     <!--for Media-->
                                                                     <div class="col-md-12 col-xs-12 Media-Date">
                                                                         <div class="col-md-6 col-xs-12 RightFloat">
@@ -263,7 +289,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <!--for Media-->
-
                                                                     <!--for Description-->
                                                                     <div class="col-md-12 col-xs-12 RightFloat margin-b-25 input-style">
                                                                         <div class="col-md-12 col-sm-12 col-xs-12 RightFloat">
@@ -289,7 +314,8 @@
                                                                         :</label>
                                                                     <select class="form-control form-control-lg"
                                                                             data-name="inputCandidateActivityType">
-                                                                        <option value="" selected>--انتخاب کنید--</option>
+                                                                        <option value="" selected>--انتخاب کنید--
+                                                                        </option>
                                                                         <?php foreach ($EnumResumeProfile['CandidatePoliticActivityType'] as $key => $value) { ?>
                                                                             <option value="<?php echo $key; ?>">
                                                                                 <?php echo $value; ?>
@@ -311,10 +337,12 @@
                                                             <!--for election-->
                                                             <div class="col-md-12 col-xs-12 RightFloat margin-b-25 ElectionType">
                                                                 <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateElectionType"> انتخابات :</label>
+                                                                    <label for="inputCandidateElectionType"> انتخابات
+                                                                        :</label>
                                                                     <select class="form-control form-control-lg"
                                                                             data-name="inputCandidateElectionType">
-                                                                        <option value="" selected>--انتخاب کنید--</option>
+                                                                        <option value="" selected>--انتخاب کنید--
+                                                                        </option>
                                                                         <?php foreach ($EnumResumeProfile['CandidatePoliticElectionType'] as $key => $value) { ?>
                                                                             <option value="<?php echo $key; ?>">
                                                                                 <?php echo $value; ?>
@@ -324,11 +352,13 @@
                                                                 </div>
 
                                                                 <div class="col-md-4 col-sm-12 col-xs-12 RightFloat ElectionPeriod">
-                                                                    <label for="inputCandidateElectionPeriod"> دوره انتخابات
+                                                                    <label for="inputCandidateElectionPeriod"> دوره
+                                                                        انتخابات
                                                                         :</label>
                                                                     <select class="form-control form-control-lg"
                                                                             data-name="inputCandidateElectionPeriod">
-                                                                        <option value="" selected>--انتخاب کنید--</option>
+                                                                        <option value="" selected>--انتخاب کنید--
+                                                                        </option>
                                                                     </select>
                                                                 </div>
 
@@ -348,7 +378,8 @@
                                                                         همکاری :</label>
                                                                     <select class="form-control form-control-lg"
                                                                             data-name="inputCandidateHeadquarterActivityTitle">
-                                                                        <option value="" selected>--انتخاب کنید--</option>
+                                                                        <option value="" selected>--انتخاب کنید--
+                                                                        </option>
                                                                         <?php foreach ($EnumResumeProfile['CandidateHeadquarterActivityTitle'] as $key => $value) { ?>
                                                                             <option value="<?php echo $key; ?>">
                                                                                 <?php echo $value; ?>
@@ -362,10 +393,12 @@
                                                             <!--for Media-->
                                                             <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style Media">
                                                                 <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateMediaType">قالب رسانه :</label>
+                                                                    <label for="inputCandidateMediaType">قالب رسانه
+                                                                        :</label>
                                                                     <select class="form-control form-control-lg"
                                                                             data-name="inputCandidateMediaType">
-                                                                        <option value="" selected>--انتخاب کنید--</option>
+                                                                        <option value="" selected>--انتخاب کنید--
+                                                                        </option>
                                                                         <?php foreach ($EnumResumeProfile['CandidateMediaType'] as $key => $value) { ?>
                                                                             <option value="<?php echo $key; ?>">
                                                                                 <?php echo $value; ?>
@@ -376,18 +409,22 @@
                                                                 <div class="col-md-6 col-sm-12 col-xs-12 input-style RightFloat media-template-title">
                                                                     <label for="inputCandidateMediaTypeTitle">عنوان قالب
                                                                         رسانه</label>
-                                                                    <input data-name="inputCandidateMediaTypeTitle" type="text"
+                                                                    <input data-name="inputCandidateMediaTypeTitle"
+                                                                           type="text"
                                                                            required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 RightFloat margin-b-25 input-style MediaName">
                                                                 <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateMediaTitle"> نام رسانه:</label>
-                                                                    <input data-name="inputCandidateMediaTitle" type="text"
+                                                                    <label for="inputCandidateMediaTitle"> نام
+                                                                        رسانه:</label>
+                                                                    <input data-name="inputCandidateMediaTitle"
+                                                                           type="text"
                                                                            required>
                                                                 </div>
                                                                 <div class="col-md-6 col-sm-12 col-xs-12 RightFloat Media-Activity input-style">
-                                                                    <label for="inputCandidateMediaActivityType">نوع فعالیت
+                                                                    <label for="inputCandidateMediaActivityType">نوع
+                                                                        فعالیت
                                                                         :</label>
                                                                     <input data-name="inputCandidateMediaActivityType"
                                                                            type="text" required>
@@ -397,17 +434,36 @@
 
                                                             <!--for Responsibility-->
                                                             <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style">
-                                                                <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
+                                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
                                                                     <label for="inputCandidateResponsibility">مسئولیت</label>
-                                                                    <input data-name="inputCandidateResponsibility" type="text"
-                                                                           required>
+                                                                    <select class="form-control form-control-lg"
+                                                                            name="inputCandidateResponsibility">
+                                                                        <option value="select" selected>--انتخاب
+                                                                            کنید--
+                                                                        </option>
+                                                                        <option value="normalMember">عضو عادی</option>
+                                                                        <option value="activeMember">عضو فعال</option>
+                                                                        <option value="centralCouncilMember">عضو شورای
+                                                                            مرکزی
+                                                                        </option>
+                                                                        <option value="speaker">سخنگو</option>
+                                                                        <option value="secretary">دبیر</option>
+                                                                        <option value="secretaryGeneral">دبیر کل
+                                                                        </option>
+                                                                        <option value="provincialSecretary">دبیر
+                                                                            استانی
+                                                                        </option>
+                                                                    </select>
+                                                                    <!--                                                                    <input data-name="inputCandidateResponsibility" type="text"-->
+                                                                    <!--                                                                           required>-->
                                                                 </div>
-
-                                                                <div class="col-md-6 col-sm-12 col-xs-12 MemberShip">
-                                                                    <label for="inputCandidateMemberShip">عضویت :</label>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12 RightFloat MemberShip">
+                                                                    <label for="inputCandidateMemberShip">عضویت
+                                                                        :</label>
                                                                     <select class="form-control form-control-lg"
                                                                             data-name="inputCandidateMemberShip">
-                                                                        <option value="" selected>--انتخاب کنید--</option>
+                                                                        <option value="" selected>--انتخاب کنید--
+                                                                        </option>
                                                                         <?php foreach ($EnumResumeProfile['CandidateMemberShipType'] as $key => $value) { ?>
                                                                             <option value="<?php echo $key; ?>">
                                                                                 <?php echo $value; ?>
@@ -415,13 +471,113 @@
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
+                                                                <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat has-required-field GroupDiv hidden">
+                                                                    <label for="inputCandidateResponsibility">
+                                                                        حزب
+                                                                    </label>
+                                                                    <select class="form-control form-control-lg state-select"
+                                                                            name="inputCandidateConstituencyStateId"
+                                                                            id="inputCandidateConstituencyStateId">
+                                                                            <option value="" selected> -- انتخاب کنید --</option>
+                                                                            <option value="">حزب شماره 1</option>
+                                                                            <option value="">حزب شماره 2</option>
+                                                                            <option value="">حزب شماره 3</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat has-required-field states hidden">
+                                                                    <label for="inputCandidateResponsibility">
+                                                                        استان
+                                                                    </label>
+                                                                    <select class="form-control form-control-lg state-select"
+                                                                            name="inputCandidateConstituencyStateId"
+                                                                            id="inputCandidateConstituencyStateId">
+                                                                        <?php foreach ($states as $state) { ?>
+                                                                            <option value="<?php echo $state['StateId']; ?>"
+                                                                                <?php setOptionSelected($userInfo['CandidateConstituencyStateId'], $state['StateId']); ?>>
+                                                                                <?php echo $state['StateName']; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="Dates hidden">
+                                                                    <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <label for="inputCandidateStartAcademinBackgroundMonth">
+                                                                            ماه آغاز همکاری
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg city-select"
+                                                                                name="inputCandidateStartAcademinBackgroundMonth"
+                                                                                id="inputCandidateStartAcademinBackgroundMonth">
+                                                                            <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                                <option
+                                                                                    <?php setOptionSelected($item['CandidateStartAcademinBackgroundMonth'], $key); ?>
+                                                                                        value="<?php echo $key; ?>">
+                                                                                    <?php echo $value; ?>
+                                                                                </option>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <label for="inputCandidateStartAcademinBackgroundYear">
+                                                                            سال آغاز همکاری
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg city-select"
+                                                                                name="inputCandidateStartAcademinBackgroundYear"
+                                                                                id="inputCandidateStartAcademinBackgroundYear"
+                                                                                style="font-family: tahoma;">
+                                                                            <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                <option
+                                                                                    <?php setOptionSelected($item['CandidateStartJobYear'], $i); ?>
+                                                                                        value="<?php echo $i; ?>">
+                                                                                    <?php echo $i; ?>
+                                                                                </option>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <label for="inputCandidateEndAcademinBackgroundMonth">
+                                                                            ماه پایان همکاری
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg city-select"
+                                                                                name="inputCandidateEndAcademinBackgroundMonth"
+                                                                                id="inputCandidateEndAcademinBackgroundMonth">
+                                                                            <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                                <option
+                                                                                    <?php setOptionSelected($item['CandidateEndJobMonth'], $key); ?>
+                                                                                        value="<?php echo $key; ?>">
+                                                                                    <?php echo $value; ?>
+                                                                                </option>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <label for="inputCandidateEndAcademinBackgroundYear">
+                                                                            سال پایان همکاری
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg city-select"
+                                                                                name="inputCandidateEndAcademinBackgroundYear"
+                                                                                id="inputCandidateEndAcademinBackgroundYear"
+                                                                                style="font-family: tahoma;">
+                                                                            <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                <option
+                                                                                    <?php setOptionSelected($item['CandidateEndJobYear'], $i); ?>
+                                                                                        value="<?php echo $i; ?>">
+                                                                                    <?php echo $i; ?>
+                                                                                </option>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
                                                             </div>
+
                                                             <!--for Responsibility-->
 
                                                             <!--for Media-->
                                                             <div class="col-md-12 col-xs-12 Media-Date">
                                                                 <div class="col-md-6 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateStartJobMonth">آغاز همکاری</label>
+                                                                    <label for="inputCandidateStartJobMonth">آغاز
+                                                                        همکاری</label>
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <select class="form-control form-control-lg city-select"
@@ -500,15 +656,13 @@
                                                 $documentData['documentName'] = $documentName;
                                                 $documentData['documentPersianName'] = $documentPersianName;
                                                 $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
-                                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document' , $documentData);
+                                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document', $documentData);
                                                 ?>
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

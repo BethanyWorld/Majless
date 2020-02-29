@@ -65,6 +65,12 @@
                 $($parentDom + '.Media-Date').css('display', 'none');
                 $($parentDom + '.Media-Activity').css('display', 'none');
                 $($parentDom + '.CollectionName').css('display', 'none');
+                $($parentDom + '.GroupDiv').removeClass('hidden');
+                $($parentDom + '.GroupDiv').show();
+
+                $($parentDom + '.Dates').removeClass('hidden');
+                $($parentDom + '.Dates').show();
+
 
             }
             if ($inputCandidateActivityType === "CandidatesCampaign") {
@@ -80,6 +86,12 @@
                 $($parentDom + '.Media-Date').css('display', 'none');
                 $($parentDom + '.Media-Activity').css('display', 'none');
                 $($parentDom + '.CollectionName').css('display', 'none');
+
+                $($parentDom + '.GroupDiv').addClass('hidden');
+                $($parentDom + '.GroupDiv').hide();
+
+                $($parentDom + '.Dates').addClass('hidden');
+                $($parentDom + '.Dates').hide();
             }
             if ($inputCandidateActivityType === "SupervisoryBoard") {
                 $($parentDom + '.Partnership-title').css('display', 'block');
@@ -92,6 +104,12 @@
                 $($parentDom + '.Media-Date').css('display', 'none');
                 $($parentDom + '.Media-Activity').css('display', 'none');
                 $($parentDom + '.CollectionName').css('display', 'none');
+
+                $($parentDom + '.GroupDiv').addClass('hidden');
+                $($parentDom + '.GroupDiv').hide();
+
+                $($parentDom + '.Dates').addClass('hidden');
+                $($parentDom + '.Dates').hide();
             }
 
             if ($inputCandidateActivityType === "Media") {
@@ -105,6 +123,12 @@
                 $($parentDom + '.MemberShip').css('display', 'none');
                 $($parentDom + '.CandidateName').css('display', 'none');
                 $($parentDom + '.CollectionName').css('display', 'none');
+
+                $($parentDom + '.GroupDiv').addClass('hidden');
+                $($parentDom + '.GroupDiv').hide();
+
+                $($parentDom + '.Dates').addClass('hidden');
+                $($parentDom + '.Dates').hide();
             }
 
             if ($inputCandidateActivityType === "Others") {
@@ -116,6 +140,12 @@
                 $($parentDom + '.Media').css('display', 'none');
                 $($parentDom + '.MediaName').css('display', 'none');
                 $($parentDom + '.Media-Activity').css('display', 'none');
+
+                $($parentDom + '.GroupDiv').addClass('hidden');
+                $($parentDom + '.GroupDiv').hide();
+
+                $($parentDom + '.Dates').addClass('hidden');
+                $($parentDom + '.Dates').hide();
             }
         });
         $(document).on('change', '[name="inputCandidateMediaType"]', function () {
@@ -218,6 +248,41 @@
                 });
 
         }
+
+        $(document).on('change' , '[name="inputCandidateResponsibility"]' , function() {
+            $parentId = $(this).parents('div.list-group-item').attr('id');
+            $parentDom = "#" + $parentId + " ";
+            $inputCandidateResponsibility = $(this).val();
+            if($inputCandidateResponsibility === 'provincialSecretary'){
+                $($parentDom + '.states').removeClass('hidden');
+                $($parentDom + '.states').show();
+            }
+            else {
+                $($parentDom + '.states').addClass('hidden');
+                $($parentDom + '.states').hide();
+            }
+        });
+
+
+
+
+        $(document).on('change', '.state-select', function () {
+            toggleLoader();
+            $inputCandidateStateId = $(this).val();
+            $this = $(this);
+            $.ajax({
+                type: 'post',
+                url: base_url + 'State/getCityByStateId/' + $inputCandidateStateId,
+                success: function (data) {
+                    toggleLoader();
+                    $result = JSON.parse(data);
+                },
+                error: function (data) {
+                    toggleLoader();
+                    notify('درخواست با خطا مواجه شد', 'red');
+                }
+            });
+        });
 
     });
 </script>

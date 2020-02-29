@@ -142,7 +142,90 @@
                                                                             </option>
                                                                         </select>
                                                                     </div>
+
                                                                 </div>
+
+
+                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputCandidateStartAcademinBackgroundMonth">
+                                                                        ماه آغاز همکاری
+                                                                        <span class="text-danger">
+                                                 <b class="text-danger">*</b>
+                                             </span>
+                                                                    </label>
+                                                                    <select class="form-control form-control-lg city-select"
+                                                                            name="inputCandidateStartAcademinBackgroundMonth"
+                                                                            id="inputCandidateStartAcademinBackgroundMonth">
+                                                                        <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                            <option
+                                                                                <?php setOptionSelected($item['CandidateStartAcademinBackgroundMonth'], $key); ?>
+                                                                                    value="<?php echo $key; ?>">
+                                                                                <?php echo $value; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputCandidateStartAcademinBackgroundYear">
+                                                                        سال آغاز همکاری
+                                                                        <span class="text-danger">
+                                                 <b class="text-danger">*</b>
+                                             </span>
+                                                                    </label>
+                                                                    <select class="form-control form-control-lg city-select"
+                                                                            name="inputCandidateStartAcademinBackgroundYear"
+                                                                            id="inputCandidateStartAcademinBackgroundYear"
+                                                                            style="font-family: tahoma;">
+                                                                        <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                            <option
+                                                                                <?php setOptionSelected($item['CandidateStartJobYear'], $i); ?>
+                                                                                    value="<?php echo $i; ?>">
+                                                                                <?php echo $i; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputCandidateEndAcademinBackgroundMonth">
+                                                                        ماه پایان همکاری
+                                                                        <span class="text-danger">
+                                                 <b class="text-danger">*</b>
+                                             </span>
+                                                                    </label>
+                                                                    <select class="form-control form-control-lg city-select"
+                                                                            name="inputCandidateEndAcademinBackgroundMonth"
+                                                                            id="inputCandidateEndAcademinBackgroundMonth">
+                                                                        <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                            <option
+                                                                                <?php setOptionSelected($item['CandidateEndJobMonth'], $key); ?>
+                                                                                    value="<?php echo $key; ?>">
+                                                                                <?php echo $value; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                    <label for="inputCandidateEndAcademinBackgroundYear">
+                                                                        سال پایان همکاری
+                                                                        <span class="text-danger">
+                                                 <b class="text-danger">*</b>
+                                             </span>
+                                                                    </label>
+                                                                    <select class="form-control form-control-lg city-select"
+                                                                            name="inputCandidateEndAcademinBackgroundYear"
+                                                                            id="inputCandidateEndAcademinBackgroundYear"
+                                                                            style="font-family: tahoma;">
+                                                                        <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                            <option
+                                                                                <?php setOptionSelected($item['CandidateEndJobYear'], $i); ?>
+                                                                                    value="<?php echo $i; ?>">
+                                                                                <?php echo $i; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </div>
+
+
                                                                 <div class="clearfix"></div>
                                                                 <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                                     <?php $name = md5(rand());
