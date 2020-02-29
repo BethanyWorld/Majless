@@ -143,7 +143,7 @@
             $inputCandidateUniversityName = $(this).val();
 
 
-            if($inputCandidateUniversityName === "Othres") {
+            if($inputCandidateUniversityName === "Others") {
                 $($parentDom + '.CandidateUniversityOtherName').show();
                 $($parentDom + '.CandidateUniversityOtherName').removeClass('hidden');
             }
