@@ -160,6 +160,10 @@
             $parentDom = "#" + $parentId + " ";
             $inputCandidateGrade = $(this).val();
             $inputCandidateUniversityLevelType = $($parentDom + "[name='inputCandidateUniversityLevelType']").eq(0).val();
+            $inputCandidateUniversityName = $($parentDom + "[name='inputCandidateUniversityName']").eq(0).val();
+
+            $($parentDom + '.CandidateUniversityOtherName').hide();
+            $($parentDom + '.CandidateUniversityOtherName').addClass('hidden');
 
             /* Added By ME */
             $(':input',$parentDom).not(':button, :submit, :reset, :hidden, :checkbox, :radio , select[name="inputCandidateGrade"]').val('').prop('checked', false).prop('selected', false);
@@ -206,6 +210,9 @@
             if($inputCandidateGrade === "" || $inputCandidateGrade === "ZirDiplom" || $inputCandidateGrade === "Diplom") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
+
+                $($parentDom + '.CandidateUniversityOtherName').hide();
+                $($parentDom + '.CandidateUniversityOtherName').addClass('hidden');
             }
             else{
                 $($parentDom + '.CandidateDepartment').css('display' , 'block');
@@ -235,13 +242,19 @@
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
                 $($parentDom + '.CandidateLevelType').css('pointerEvents' , 'none');
                 $('input[value="Student"]').next('label').text('طلبه');
-                $($parentDom + '.Change-UniversityName').html('نام مدرسه / موسسه');
+                // $($parentDom + '.Change-UniversityName').html('نام مدرسه / موسسه');
+                $($parentDom + '.CandidateUniversityOtherNameHozeh').removeClass('hidden');
+                $($parentDom + '.CandidateUniversityOtherNameHozeh').show();
+                $($parentDom + '.CandidateUniversityName').hide();
+
             }
             else{
                 $($parentDom + '[name="inputCandidateUniversityLevelType"]').removeAttr('readonly');
                 $($parentDom + '.CandidateLevelType').css('pointerEvents' , 'auto');
                 $('input[value="Student"]').next('label').text('دانشجو');
                 $($parentDom + '.Change-UniversityName').html('نام دانشگاه');
+                $($parentDom + '.CandidateUniversityOtherNameHozeh').hide();
+                $($parentDom + '.CandidateUniversityOtherNameHozeh').addClass('hidden');
 
             }
         });

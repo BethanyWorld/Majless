@@ -263,9 +263,10 @@ $config['EnumResumeProfile'] = array(
     /* Politic Enums */
     'CandidatePoliticActivityType' => array(
         'Group' => 'حزب',
-        'CandidatesCampaign' => 'ستاد های انتخاباتی نامزدها',
-        'SupervisoryBoard' => ' نظارت و اجرایی ستاد انتخابات',
-        'Media' => 'رسانه'
+        'CandidatesCampaign' => 'ستاد های انتخاباتی نامزدها'
+//        'SupervisoryBoard' => ' نظارت و اجرایی ستاد انتخابات',
+//        'Media' => 'رسانه',
+//        'Others' => 'سایر'
     ),
     'CandidatePoliticElectionType' => array(
         'President' => 'ریاست جمهوری',
