@@ -7,37 +7,32 @@ class Utilities extends CI_Controller{
         $this->load->helper('pipes/pipe');
         $this->load->model('admin/ModelUtilities');
     }
-    public function index(){
+    public function university(){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'آزمون ها';
-        $data['states'] = $this->ModelCountry->getStateList();
+        $data['pageTitle'] = '';
         $this->load->view('admin_panel/static/header', $data);
-        $this->load->view('admin_panel/exams/home/index', $data);
-        $this->load->view('admin_panel/exams/home/index_css');
-        $this->load->view('admin_panel/exams/home/index_js');
+        $this->load->view('admin_panel/utilities/university/home/index', $data);
+        $this->load->view('admin_panel/utilities/university/home/index_css');
+        $this->load->view('admin_panel/utilities/university/home/index_js');
         $this->load->view('admin_panel/static/footer');
     }
     public function doPagination(){
         $inputs = $this->input->post(NULL, TRUE);
-        $data = $this->ModelExam->getAllExams($inputs);
-        $data['htmlResult'] = $this->load->view('admin_panel/exams/home/pagination', $data, TRUE);
+        $data = $this->ModelUtilities->getUniversity($inputs);
+        $data['htmlResult'] = $this->load->view('admin_panel/utilities/university/home/pagination', $data, TRUE);
         unset($data['data']);
         echo json_encode($data);
     }
-
-    public function add(){
+    public function addUniversity(){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'افزودن آزمون';
-        $agentId = 0;
-        $data['examType'] = $this->config->item('EnumExamType');
-        $data['examPlaces'] = $this->ModelExam->getAllExamPlaces($agentId);
+        $data['pageTitle'] = 'افزودن دانشگاه';
         $this->load->view('admin_panel/static/header', $data);
-        $this->load->view('admin_panel/exams/add/index', $data);
-        $this->load->view('admin_panel/exams/add/index_css');
-        $this->load->view('admin_panel/exams/add/index_js');
+        $this->load->view('admin_panel/utilities/university/add/index', $data);
+        $this->load->view('admin_panel/utilities/university/add/index_css');
+        $this->load->view('admin_panel/utilities/university/add/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-    public function doAdd(){
+    public function doAddUniversity(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             if(!is_array($v)){
@@ -50,25 +45,20 @@ class Utilities extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $result = $this->ModelExam->doAddExam($inputs);
+        $result = $this->ModelUtilities->doAddUniversity($inputs);
         echo json_encode($result);
     }
-    public function edit($id)
-    {
+    public function editUniversity($id){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'ویرایش آزمون';
-        $data['data'] = $this->ModelExam->getExamByExamId($id)[0];
-        $agentId = $this->session->userdata('AgentLoginInfo')[0]['AgentId'];
-        $data['examType'] = $this->config->item('EnumExamType');
-        $data['examPlaces'] = $this->ModelExam->getAllExamPlaces($agentId);
-
+        $data['pageTitle'] = 'ویرایش دانشگاه';
+        $data['data'] = $this->ModelUtilities->getUniversityById($id)[0];
         $this->load->view('admin_panel/static/header', $data);
-        $this->load->view('admin_panel/exams/edit/index', $data);
-        $this->load->view('admin_panel/exams/edit/index_css');
-        $this->load->view('admin_panel/exams/edit/index_js');
+        $this->load->view('admin_panel/utilities/university/edit/index', $data);
+        $this->load->view('admin_panel/utilities/university/edit/index_css');
+        $this->load->view('admin_panel/utilities/university/edit/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-    public function doEdit(){
+    public function doEditUniversity(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return strip_tags($v);
@@ -79,31 +69,47 @@ class Utilities extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $result = $this->ModelExam->doEditExam($inputs);
+        $result = $this->ModelUtilities->doEditUniversity($inputs);
         echo json_encode($result);
     }
-    public function doDelete()
-    {
+    public function doDeleteUniversity(){
         $inputs = $this->input->post(NULL, TRUE);
-        $result = $this->ModelExam->doDeleteExam($inputs);
+        $result = $this->ModelUtilities->doDeleteUniversity($inputs);
         echo json_encode($result);
     }
 
-    public function requests($examId){
+
+    public function skills(){
         $data['noImg'] = $this->config->item('defaultImage');
-        $data['pageTitle'] = 'متقاضیان آزمون';
-        $data['examData'] = $this->ModelExam->getExamByExamId($examId)[0];
-        $data['candidates'] = $this->ModelExam->getExamRequestByExamId($examId);
+        $data['pageTitle'] = '';
         $this->load->view('admin_panel/static/header', $data);
-        $this->load->view('admin_panel/exams/requests/index', $data);
-        $this->load->view('admin_panel/exams/requests/index_css');
-        $this->load->view('admin_panel/exams/requests/index_js');
+        $this->load->view('admin_panel/utilities/university/home/index', $data);
+        $this->load->view('admin_panel/utilities/university/home/index_css');
+        $this->load->view('admin_panel/utilities/university/home/index_js');
         $this->load->view('admin_panel/static/footer');
     }
-    public function doAcceptCandidateEvaluationExam(){
+    public function doSkillPagination(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $data = $this->ModelUtilities->getUniversity($inputs);
+        $data['htmlResult'] = $this->load->view('admin_panel/utilities/university/home/pagination', $data, TRUE);
+        unset($data['data']);
+        echo json_encode($data);
+    }
+    public function addSkill(){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = 'افزودن دانشگاه';
+        $this->load->view('admin_panel/static/header', $data);
+        $this->load->view('admin_panel/utilities/university/add/index', $data);
+        $this->load->view('admin_panel/utilities/university/add/index_css');
+        $this->load->view('admin_panel/utilities/university/add/index_js');
+        $this->load->view('admin_panel/static/footer');
+    }
+    public function doAddSkill(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
-            return strip_tags($v);
+            if(!is_array($v)){
+                return strip_tags($v);
+            }
         }, $inputs);
         $inputs = array_map(function ($v) {
             return remove_invisible_characters($v);
@@ -111,10 +117,20 @@ class Utilities extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $result = $this->ModelExam->doAcceptCandidateEvaluationExam($inputs);
+        $result = $this->ModelUtilities->doAddSkill($inputs);
         echo json_encode($result);
     }
-    public function doRejectCandidateEvaluationExam(){
+    public function editSkill($id){
+        $data['noImg'] = $this->config->item('defaultImage');
+        $data['pageTitle'] = 'ویرایش دانشگاه';
+        $data['data'] = $this->ModelUtilities->getUniversityById($id)[0];
+        $this->load->view('admin_panel/static/header', $data);
+        $this->load->view('admin_panel/utilities/university/edit/index', $data);
+        $this->load->view('admin_panel/utilities/university/edit/index_css');
+        $this->load->view('admin_panel/utilities/university/edit/index_js');
+        $this->load->view('admin_panel/static/footer');
+    }
+    public function doEditSkill(){
         $inputs = $this->input->post(NULL, TRUE);
         $inputs = array_map(function ($v) {
             return strip_tags($v);
@@ -125,7 +141,12 @@ class Utilities extends CI_Controller{
         $inputs = array_map(function ($v) {
             return makeSafeInput($v);
         }, $inputs);
-        $result = $this->ModelExam->doRejectCandidateEvaluationExam($inputs);
+        $result = $this->ModelUtilities->doEditSkill($inputs);
+        echo json_encode($result);
+    }
+    public function doDeleteSkill(){
+        $inputs = $this->input->post(NULL, TRUE);
+        $result = $this->ModelUtilities->doDeleteSkill($inputs);
         echo json_encode($result);
     }
 

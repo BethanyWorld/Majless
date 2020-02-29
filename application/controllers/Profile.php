@@ -608,6 +608,7 @@ class Profile extends CI_Controller{
         $data['resumeSidebar'] = $this->load->view('ui/v3/candidate_profile/resume_sidebar', NULL, TRUE);
         $data['userInfo']['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($data['userInfo']['CandidateId']);
         $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
+        $data['states'] = $this->ModelCountry->getStateList();
 
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index', $data);

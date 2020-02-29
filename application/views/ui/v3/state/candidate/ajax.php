@@ -100,7 +100,7 @@ foreach ($dataSpecial as $candidate) {
             $inviteSectionSentence .= " و ";
             $index =1;
         }
-        $inviteSectionSentence .= "امضای تعهدنامه"." ";
+        $inviteSectionSentence .= "امضای تعهدنامه پاسخگویی"." ";
         $index =1;
     }
 
