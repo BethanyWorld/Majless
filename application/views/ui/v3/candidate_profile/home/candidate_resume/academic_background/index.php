@@ -108,12 +108,13 @@
                                                             </span>
                                                                         </label>
 
-                                                                        <select class="form-control form-control-lg"
-                                                                                data-name="inputCandidateUniversityName">
-                                                                            <option value="" selected="">--انتخاب کنید
-                                                                            </option>
-                                                                            <option value="Pardis">پردیس</option>
-                                                                            <option value="Azad">دانشگاه آزاد</option>
+                                                                        <select class="form-control form-control-lg" data-name="inputCandidateUniversityName">
+                                                                            <option value="" selected="">--انتخاب کنید</option>
+                                                                            <?php foreach ($universities as $item) { ?>
+                                                                                <option value="<?php echo $item['UniversityId'] ?>">
+                                                                                    <?php echo $item['UniversityTitle'] ?>
+                                                                                </option>
+                                                                            <?php } ?>
                                                                             <option value="Others">سایر</option>
                                                                         </select>
                                                                     </div>
