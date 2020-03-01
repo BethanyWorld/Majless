@@ -248,7 +248,7 @@
             $inputCandidateUniversityLevelType = $(this).val();
             $inputCandidateGrade = $($parentDom + "[name='inputCandidateGrade']").val();
 
-            if($inputCandidateUniversityLevelType !== "SeminaryLevelType") {
+            if ($inputCandidateUniversityLevelType !== "SeminaryLevelType") {
                 $($parentDom + '.CandidateUniversityName').show();
                 $($parentDom + '.CandidateUniversityOtherName').show();
                 $($parentDom + '.CandidateUniversityOtherNameHozeh').hide();
@@ -258,7 +258,6 @@
                 $($parentDom + '.CandidateUniversityOtherName').hide();
                 $($parentDom + '.CandidateUniversityOtherNameHozeh').show();
                 $($parentDom + '.CandidateUniversityOtherNameHozeh').removeClass('hidden');
-
             }
             if($inputCandidateUniversityLevelType === "SeminaryLevelType") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
@@ -318,7 +317,7 @@
            }
         });
         $('[name="inputCandidateGrade"]').change();
-        setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
+        // setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
         setTimeout(function(){$('[name="inputCandidateDepartment"]').change();} , 1000);
         setTimeout(function(){$('[name="inputCandidateSchoolMajor"]').change();} , 1500);
         function fillMajorDropDown($id , data) {
