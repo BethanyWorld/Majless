@@ -207,7 +207,7 @@
                 $($parentDom + '.CandidateeduMajor').css('display' , 'block');
             }
             else{
-                $($parentDom + '.CandidateLevelType').css('display' , 'block');
+                // $($parentDom + '.CandidateLevelType').css('display' , 'block');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'none');
             }
             if($inputCandidateGrade == 'ZirDiplom' ) {
@@ -215,6 +215,7 @@
                 $($parentDom + '.CandidateeduMajor').css('display' , 'none');
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
+                $($parentDom + '.dates').css('display' , 'none');
             }
             if($inputCandidateGrade === "Hozeh1" || $inputCandidateGrade === "Hozeh2" || $inputCandidateGrade === "Hozeh3" || $inputCandidateGrade === "Hozeh4") {
                 $($parentDom + '[name="inputCandidateUniversityLevelType"]').attr('readonly' , 'readonly').val('SeminaryLevelType');
@@ -334,6 +335,16 @@
             });
             $(".skill-divider").after($form);
             $(".skill-divider").next("div.list-group-item").find('input[type="radio"]').eq(0).prop("checked", true);
+
+
+            // for date 98
+            $inputCandidateActivityStartYear = $('#inputCandidateStartAcademicBackgroundYear').find('option').filter('[selected]').length;
+            $inputCandidateActivityEndYear = $('#inputCandidateEndAcademicBackgroundYear').find('option').filter('[selected]').length;
+            if ($inputCandidateActivityStartYear === 0) {
+                $('#inputCandidateStartAcademicBackgroundYear').find('option:last-child').attr('selected' , 'selected');
+                $('#inputCandidateEndAcademicBackgroundYear').find('option:last-child').attr('selected' , 'selected');
+            }
+            // for date 98
         });
         if($("#form").find('div.list-group-item').length == 0 ){
             $(".add-form").click();
@@ -341,14 +352,7 @@
         $(document).on('click','.remove-form',function(){
             $(this).parent().remove();
         });
-        // for date 98
-        $inputCandidateActivityStartYear = $('#inputCandidateStartAcademinBackgroundYear').find('option').filter('[selected]').length;
-        $inputCandidateActivityEndYear = $('#inputCandidateEndAcademinBackgroundYear').find('option').filter('[selected]').length;
-        if ($inputCandidateActivityStartYear === 0) {
-            $('#inputCandidateStartAcademinBackgroundYear').find('option:last-child').attr('selected' , 'selected');
-            $('#inputCandidateEndAcademinBackgroundYear').find('option:last-child').attr('selected' , 'selected');
-        }
-        // for date 98
+
         $("#updateProfileAcademicBackground").click( {redirect: false}, updateProfile);
         $("#updateProfileAcademicBackgroundAndRedirect").click( {redirect: true}, updateProfile);
         function updateProfile(param) {

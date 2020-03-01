@@ -156,72 +156,75 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                    <label for="inputCandidateStartAcademicBackgroundMonth">
-                                                                        ماه شروع تحصیلی
-                                                                    </label>
-                                                                    <select class="form-control form-control-lg city-select"
-                                                                            name="inputCandidateStartAcademicBackgroundMonth"
-                                                                            id="inputCandidateStartAcademicBackgroundMonth">
-                                                                        <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                            <option
-                                                                                <?php setOptionSelected($item['CandidateStartAcademicBackgroundMonth'], $key); ?>
-                                                                                    value="<?php echo $key; ?>">
-                                                                                <?php echo $value; ?>
-                                                                            </option>
-                                                                        <?php } ?>
-                                                                    </select>
+                                                                <div class="dates">
+                                                                    <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <label for="inputCandidateStartAcademicBackgroundMonth">
+                                                                            ماه شروع تحصیلی
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg city-select"
+                                                                                name="inputCandidateStartAcademicBackgroundMonth"
+                                                                                id="inputCandidateStartAcademicBackgroundMonth">
+                                                                            <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                                <option
+                                                                                    <?php setOptionSelected($item['CandidateStartAcademicBackgroundMonth'], $key); ?>
+                                                                                        value="<?php echo $key; ?>">
+                                                                                    <?php echo $value; ?>
+                                                                                </option>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <label for="inputCandidateStartAcademicBackgroundYear">
+                                                                            سال شروع تحصیل
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg city-select"
+                                                                                name="inputCandidateStartAcademicBackgroundYear"
+                                                                                id="inputCandidateStartAcademicBackgroundYear"
+                                                                                style="font-family: tahoma;">
+                                                                            <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                <option
+                                                                                    <?php setOptionSelected($item['CandidateStartAcademicBackgroundYear'], $i); ?>
+                                                                                        value="<?php echo $i; ?>">
+                                                                                    <?php echo $i; ?>
+                                                                                </option>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <label for="inputCandidateEndAcademicBackgroundMonth">
+                                                                            ماه پایان تحصیل
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg city-select"
+                                                                                name="inputCandidateEndAcademicBackgroundMonth"
+                                                                                id="inputCandidateEndAcademicBackgroundMonth">
+                                                                            <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                                <option
+                                                                                    <?php setOptionSelected($item['CandidateEndAcademicBackgroundMonth'], $key); ?>
+                                                                                        value="<?php echo $key; ?>">
+                                                                                    <?php echo $value; ?>
+                                                                                </option>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <label for="inputCandidateEndAcademicBackgroundYear">
+                                                                            سال پایان تحصیل
+                                                                        </label>
+                                                                        <select class="form-control form-control-lg city-select"
+                                                                                name="inputCandidateEndAcademicBackgroundYear"
+                                                                                id="inputCandidateEndAcademicBackgroundYear"
+                                                                                style="font-family: tahoma;">
+                                                                            <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                                <option
+                                                                                    <?php setOptionSelected($item['CandidateEndAcademicBackgroundYear'], $i); ?>
+                                                                                        value="<?php echo $i; ?>">
+                                                                                    <?php echo $i; ?>
+                                                                                </option>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                    <label for="inputCandidateStartAcademinBackgroundYear">
-                                                                        سال شروع تحصیل
-                                                                    </label>
-                                                                    <select class="form-control form-control-lg city-select"
-                                                                            name="inputCandidateStartAcademicBackgroundYear"
-                                                                            id="inputCandidateStartAcademicBackgroundYear"
-                                                                            style="font-family: tahoma;">
-                                                                        <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                            <option
-                                                                                <?php setOptionSelected($item['CandidateStartAcademicBackgroundYear'], $i); ?>
-                                                                                    value="<?php echo $i; ?>">
-                                                                                <?php echo $i; ?>
-                                                                            </option>
-                                                                        <?php } ?>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                    <label for="inputCandidateEndAcademicBackgroundMonth">
-                                                                        ماه پایان تحصیل
-                                                                    </label>
-                                                                    <select class="form-control form-control-lg city-select"
-                                                                            name="inputCandidateEndAcademicBackgroundMonth"
-                                                                            id="inputCandidateEndAcademicBackgroundMonth">
-                                                                        <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                            <option
-                                                                                <?php setOptionSelected($item['CandidateEndAcademicBackgroundMonth'], $key); ?>
-                                                                                    value="<?php echo $key; ?>">
-                                                                                <?php echo $value; ?>
-                                                                            </option>
-                                                                        <?php } ?>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                    <label for="inputCandidateEndAcademinBackgroundYear">
-                                                                        سال پایان تحصیل
-                                                                    </label>
-                                                                    <select class="form-control form-control-lg city-select"
-                                                                            name="inputCandidateEndAcademicBackgroundYear"
-                                                                            id="inputCandidateEndAcademicBackgroundYear"
-                                                                            style="font-family: tahoma;">
-                                                                        <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                            <option
-                                                                                <?php setOptionSelected($item['CandidateEndAcademicBackgroundYear'], $i); ?>
-                                                                                    value="<?php echo $i; ?>">
-                                                                                <?php echo $i; ?>
-                                                                            </option>
-                                                                        <?php } ?>
-                                                                    </select>
-                                                                </div>
+
                                                                 <div class="clearfix"></div>
                                                                 <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                                     <?php $name = md5(rand());
@@ -369,64 +372,67 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                            <label for="inputCandidateStartAcademicBackgroundMonth">
-                                                                ماه شروع تحصیل
-                                                            </label>
-                                                            <select class="form-control form-control-lg city-select"
-                                                                    name="inputCandidateStartAcademicBackgroundMonth"
-                                                                    id="inputCandidateStartAcademicBackgroundMonth">
-                                                                <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                    <option value="<?php echo $key; ?>">
-                                                                        <?php echo $value; ?>
-                                                                    </option>
-                                                                <?php } ?>
-                                                            </select>
+                                                        <div class="dates">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                <label for="inputCandidateStartAcademicBackgroundMonth">
+                                                                    ماه شروع تحصیل
+                                                                </label>
+                                                                <select class="form-control form-control-lg city-select"
+                                                                        name="inputCandidateStartAcademicBackgroundMonth"
+                                                                        id="inputCandidateStartAcademicBackgroundMonth">
+                                                                    <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                        <option value="<?php echo $key; ?>">
+                                                                            <?php echo $value; ?>
+                                                                        </option>
+                                                                    <?php } ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                <label for="inputCandidateStartAcademinBackgroundYear">
+                                                                    سال پایان تحصیل
+                                                                </label>
+                                                                <select class="form-control form-control-lg city-select"
+                                                                        name="inputCandidateStartAcademicBackgroundYear"
+                                                                        id="inputCandidateStartAcademicBackgroundYear"
+                                                                        style="font-family: tahoma;">
+                                                                    <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                        <option value="<?php echo $i; ?>">
+                                                                            <?php echo $i; ?>
+                                                                        </option>
+                                                                    <?php } ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                <label for="inputCandidateEndAcademicBackgroundMonth">
+                                                                    ماه پایان تحصیل
+                                                                </label>
+                                                                <select class="form-control form-control-lg city-select"
+                                                                        name="inputCandidateEndAcademicBackgroundMonth"
+                                                                        id="inputCandidateEndAcademicBackgroundMonth">
+                                                                    <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
+                                                                        <option value="<?php echo $key; ?>">
+                                                                            <?php echo $value; ?>
+                                                                        </option>
+                                                                    <?php } ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                <label for="inputCandidateEndAcademinBackgroundYear">
+                                                                    سال پایان تحصیل
+                                                                </label>
+                                                                <select class="form-control form-control-lg city-select"
+                                                                        name="inputCandidateEndAcademicBackgroundYear"
+                                                                        id="inputCandidateEndAcademicBackgroundYear"
+                                                                        style="font-family: tahoma;">
+                                                                    <?php for ($i = 1300; $i <= 1398; $i++) { ?>
+                                                                        <option value="<?php echo $i; ?>">
+                                                                            <?php echo $i; ?>
+                                                                        </option>
+                                                                    <?php } ?>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                            <label for="inputCandidateStartAcademinBackgroundYear">
-                                                                سال پایان تحصیل
-                                                            </label>
-                                                            <select class="form-control form-control-lg city-select"
-                                                                    name="inputCandidateStartAcademicBackgroundYear"
-                                                                    id="inputCandidateStartAcademicBackgroundYear"
-                                                                    style="font-family: tahoma;">
-                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                    <option value="<?php echo $i; ?>">
-                                                                        <?php echo $i; ?>
-                                                                    </option>
-                                                                <?php } ?>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                            <label for="inputCandidateEndAcademicBackgroundMonth">
-                                                                ماه پایان تحصیل
-                                                            </label>
-                                                            <select class="form-control form-control-lg city-select"
-                                                                    name="inputCandidateEndAcademicBackgroundMonth"
-                                                                    id="inputCandidateEndAcademicBackgroundMonth">
-                                                                <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
-                                                                    <option value="<?php echo $key; ?>">
-                                                                        <?php echo $value; ?>
-                                                                    </option>
-                                                                <?php } ?>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                            <label for="inputCandidateEndAcademinBackgroundYear">
-                                                                سال پایان تحصیل
-                                                            </label>
-                                                            <select class="form-control form-control-lg city-select"
-                                                                    name="inputCandidateEndAcademicBackgroundYear"
-                                                                    id="inputCandidateEndAcademicBackgroundYear"
-                                                                    style="font-family: tahoma;">
-                                                                <?php for ($i = 1300; $i <= 1398; $i++) { ?>
-                                                                    <option value="<?php echo $i; ?>">
-                                                                        <?php echo $i; ?>
-                                                                    </option>
-                                                                <?php } ?>
-                                                            </select>
-                                                        </div>
+
                                                         <div class="clearfix"></div>
                                                         <div class="col-md-12 col-xs-12 Radio-Buttons">
                                                             <?php
