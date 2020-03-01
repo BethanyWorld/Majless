@@ -158,7 +158,7 @@
                                                                 </div>
                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                     <label for="inputCandidateStartAcademicBackgroundMonth">
-                                                                        ماه آغاز همکاری
+                                                                        ماه شروع تحصیلی
                                                                     </label>
                                                                     <select class="form-control form-control-lg city-select"
                                                                             name="inputCandidateStartAcademicBackgroundMonth"
@@ -174,7 +174,7 @@
                                                                 </div>
                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                     <label for="inputCandidateStartAcademinBackgroundYear">
-                                                                        سال آغاز همکاری
+                                                                        سال شروع تحصیل
                                                                     </label>
                                                                     <select class="form-control form-control-lg city-select"
                                                                             name="inputCandidateStartAcademicBackgroundYear"
@@ -191,7 +191,7 @@
                                                                 </div>
                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                     <label for="inputCandidateEndAcademicBackgroundMonth">
-                                                                        ماه پایان همکاری
+                                                                        ماه پایان تحصیل
                                                                     </label>
                                                                     <select class="form-control form-control-lg city-select"
                                                                             name="inputCandidateEndAcademicBackgroundMonth"
@@ -207,7 +207,7 @@
                                                                 </div>
                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                     <label for="inputCandidateEndAcademinBackgroundYear">
-                                                                        سال پایان همکاری
+                                                                        سال پایان تحصیل
                                                                     </label>
                                                                     <select class="form-control form-control-lg city-select"
                                                                             name="inputCandidateEndAcademicBackgroundYear"
@@ -371,7 +371,7 @@
                                                         </div>
                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                             <label for="inputCandidateStartAcademicBackgroundMonth">
-                                                                ماه آغاز همکاری
+                                                                ماه شروع تحصیل
                                                             </label>
                                                             <select class="form-control form-control-lg city-select"
                                                                     name="inputCandidateStartAcademicBackgroundMonth"
@@ -385,7 +385,7 @@
                                                         </div>
                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                             <label for="inputCandidateStartAcademinBackgroundYear">
-                                                                سال آغاز همکاری
+                                                                سال پایان تحصیل
                                                             </label>
                                                             <select class="form-control form-control-lg city-select"
                                                                     name="inputCandidateStartAcademicBackgroundYear"
@@ -400,7 +400,7 @@
                                                         </div>
                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                             <label for="inputCandidateEndAcademicBackgroundMonth">
-                                                                ماه پایان همکاری
+                                                                ماه پایان تحصیل
                                                             </label>
                                                             <select class="form-control form-control-lg city-select"
                                                                     name="inputCandidateEndAcademicBackgroundMonth"
@@ -414,7 +414,7 @@
                                                         </div>
                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                             <label for="inputCandidateEndAcademinBackgroundYear">
-                                                                سال پایان همکاری
+                                                                سال پایان تحصیل
                                                             </label>
                                                             <select class="form-control form-control-lg city-select"
                                                                     name="inputCandidateEndAcademicBackgroundYear"
