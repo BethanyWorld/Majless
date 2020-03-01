@@ -217,6 +217,9 @@
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
                 $($parentDom + '.dates').css('display' , 'none');
             }
+            else {
+                $($parentDom + '.dates').css('display' , 'block');
+            }
             if($inputCandidateGrade === "Hozeh1" || $inputCandidateGrade === "Hozeh2" || $inputCandidateGrade === "Hozeh3" || $inputCandidateGrade === "Hozeh4") {
                 $($parentDom + '[name="inputCandidateUniversityLevelType"]').attr('readonly' , 'readonly').val('SeminaryLevelType');
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
@@ -243,6 +246,20 @@
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateUniversityLevelType = $(this).val();
+            $inputCandidateGrade = $($parentDom + "[name='inputCandidateGrade']").val();
+
+            if($inputCandidateUniversityLevelType !== "SeminaryLevelType") {
+                $($parentDom + '.CandidateUniversityName').show();
+                $($parentDom + '.CandidateUniversityOtherName').show();
+                $($parentDom + '.CandidateUniversityOtherNameHozeh').hide();
+            }
+            else {
+                $($parentDom + '.CandidateUniversityName').hide();
+                $($parentDom + '.CandidateUniversityOtherName').hide();
+                $($parentDom + '.CandidateUniversityOtherNameHozeh').show();
+                $($parentDom + '.CandidateUniversityOtherNameHozeh').removeClass('hidden');
+
+            }
             if($inputCandidateUniversityLevelType === "SeminaryLevelType") {
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
