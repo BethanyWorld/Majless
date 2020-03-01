@@ -726,14 +726,7 @@ class Profile extends CI_Controller{
         else{
             $searchTerm = "";
         }
-        $items = array();
-        foreach ($this->ModelUtilities->getSkillBySearchTerm($searchTerm) as $row) {
-           array_push($items , array('id' =>$row['SkillId'], 'text'=> $row['SkillTitle']));
-        }
-        $result = array(
-            "results" =>$items
-        );
-        echo json_encode($items);
+        echo json_encode($this->ModelUtilities->getSkillBySearchTerm($searchTerm));
     }
     public function candidateUpdateSkills()
     {

@@ -162,15 +162,15 @@ $_DIR = base_url('assets/ui/v3/');
                                                                placeholder="پر کردن این فیلد الزامی می باشد">
                                                     </div>
                                                     <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                        <label for="inputCandidateStartJobMonth">
+                                                        <label for="inputCandidateStartAcademicBackgroundMonth">
                                                             ماه آغاز همکاری
                                                             <span class="text-danger">
                                                  <b class="text-danger">*</b>
                                              </span>
                                                         </label>
                                                         <select class="form-control form-control-lg city-select"
-                                                                name="inputCandidateStartJobMonth"
-                                                                id="inputCandidateStartJobMonth">
+                                                                name="inputCandidateStartAcademicBackgroundMonth"
+                                                                id="inputCandidateStartAcademicBackgroundMonth">
                                                             <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
                                                                 <option value="<?php echo $key; ?>">
                                                                     <?php echo $value; ?>
@@ -179,15 +179,15 @@ $_DIR = base_url('assets/ui/v3/');
                                                         </select>
                                                     </div>
                                                     <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                        <label for="inputCandidateStartJobYear">
+                                                        <label for="inputCandidateStartAcademicBackgroundYear">
                                                             سال آغاز همکاری
                                                             <span class="text-danger">
                                                  <b class="text-danger">*</b>
                                              </span>
                                                         </label>
                                                         <select class="form-control form-control-lg city-select"
-                                                                name="inputCandidateStartJobYear"
-                                                                id="inputCandidateStartJobYear"
+                                                                name="inputCandidateStartAcademicBackgroundYear"
+                                                                id="inputCandidateStartAcademicBackgroundYear"
                                                                 style="font-family: tahoma;">
                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                 <option
@@ -199,15 +199,15 @@ $_DIR = base_url('assets/ui/v3/');
                                                         </select>
                                                     </div>
                                                     <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                        <label for="inputCandidateEndJobMonth">
+                                                        <label for="inputCandidateEndAcademicBackgroundMonth">
                                                             ماه پایان همکاری
                                                             <span class="text-danger">
                                                  <b class="text-danger">*</b>
                                              </span>
                                                         </label>
                                                         <select class="form-control form-control-lg city-select"
-                                                                name="inputCandidateEndJobMonth"
-                                                                id="inputCandidateEndJobMonth">
+                                                                name="inputCandidateEndAcademicBackgroundMonth"
+                                                                id="inputCandidateEndAcademicBackgroundMonth">
                                                             <?php foreach ($EnumResumeProfile['ShamsiMonths'] as $key => $value) { ?>
                                                                 <option value="<?php echo $key; ?>">
                                                                     <?php echo $value; ?>
@@ -216,15 +216,15 @@ $_DIR = base_url('assets/ui/v3/');
                                                         </select>
                                                     </div>
                                                     <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                        <label for="inputCandidateEndJobYear">
+                                                        <label for="inputCandidateEndAcademicBackgroundYear">
                                                             سال پایان همکاری
                                                             <span class="text-danger">
                                                  <b class="text-danger">*</b>
                                              </span>
                                                         </label>
                                                         <select class="form-control form-control-lg city-select"
-                                                                name="inputCandidateEndJobYear"
-                                                                id="inputCandidateEndJobYear" style="font-family: tahoma">
+                                                                name="inputCandidateEndAcademicBackgroundYear"
+                                                                id="inputCandidateEndAcademicBackgroundYear" style="font-family: tahoma">
                                                             <?php for ($i = 1300; $i <= 1398; $i++) { ?>
                                                                 <option
                                                                     <?php if ($i == 1398) echo "selected"; ?>

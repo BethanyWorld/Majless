@@ -6,8 +6,6 @@
             $form = $("#unique-form").clone().removeClass('hidden').attr('id', UUID());
             $(".skill-divider").after($form);
         });
-
-
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });

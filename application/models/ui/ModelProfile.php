@@ -106,7 +106,7 @@ class ModelProfile extends CI_Model{
                     'CandidateUniversityName' => $inputs['inputCandidateAcademicBackground'][$i + 3]['value'],
                     'CandidateSchoolName' => $inputs['inputCandidateAcademicBackground'][$i + 4]['value'],
                     'CandidateUniversityOtherName' => $inputs['inputCandidateAcademicBackground'][$i + 5]['value'],
-                    'CandidateDepartment' => $inputs['inputCandidateAcademicBackground'][$i + 4]['value'],
+                    'CandidateDepartment' => $inputs['inputCandidateAcademicBackground'][$i + 6]['value'],
                     'CandidateMajor' => $inputs['inputCandidateAcademicBackground'][$i + 7]['value'],
                     'CandidateStartAcademicBackgroundMonth' => $inputs['inputCandidateAcademicBackground'][$i + 8]['value'],
                     'CandidateStartAcademicBackgroundYear' => $inputs['inputCandidateAcademicBackground'][$i + 9]['value'],
@@ -115,7 +115,7 @@ class ModelProfile extends CI_Model{
                     'CandidateStudyStatus' => $inputs['inputCandidateAcademicBackground'][$i + 12]['value']
                 );
                 $this->db->insert('candidate_academic_background', $UserArray);
-                $i = $i + 12;
+                $i = $i + 13;
             }
         }
         $this->db->trans_complete();

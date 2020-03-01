@@ -157,7 +157,10 @@
             $($parentDom + '.CandidateUniversityOtherName').hide();
             $($parentDom + '.CandidateUniversityOtherName').addClass('hidden');
             /* Added By ME */
-            $(':input',$parentDom).not(':button, :submit, :reset, :hidden, :checkbox, :radio , select[name="inputCandidateGrade"]').val('').prop('checked', false).prop('selected', false);
+            $(':input',$parentDom).not(':button, :submit, :reset, :hidden, :checkbox, :radio , select[name="inputCandidateGrade"], select[name="inputCandidateStartAcademicBackgroundMonth"], select[name="inputCandidateStartAcademicBackgroundYear"], select[name="inputCandidateEndAcademicBackgroundMonth"], select[name="inputCandidateEndAcademicBackgroundYear"]').val('').prop('checked', false).prop('selected', false);
+            /*$(".dates select").each(function(){
+                $(this).val($(this).find("option:first").val());
+            });*/
             if($inputCandidateGrade !== "" && $inputCandidateGrade !== "ZirDiplom" && $inputCandidateGrade !== "Diplom") {
                 $($parentDom + '.CandidateLevelType').css('display' , 'block');
                 $($parentDom + '.CandidateUniversityName').css('display' , 'block');
@@ -210,7 +213,7 @@
                 // $($parentDom + '.CandidateLevelType').css('display' , 'block');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'none');
             }
-            if($inputCandidateGrade == 'ZirDiplom' ) {
+            if($inputCandidateGrade === 'ZirDiplom' ) {
                 $($parentDom + '.CandidateLevelType').css('display' , 'none');
                 $($parentDom + '.CandidateeduMajor').css('display' , 'none');
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
@@ -317,6 +320,8 @@
            }
         });
         $('[name="inputCandidateGrade"]').change();
+        $('[name="inputCandidateUniversityName"]').change();
+        $('[name="inputCandidateUniversityLevelType"]').change();
         // setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
         setTimeout(function(){$('[name="inputCandidateDepartment"]').change();} , 1000);
         setTimeout(function(){$('[name="inputCandidateSchoolMajor"]').change();} , 1500);
@@ -351,16 +356,9 @@
             });
             $(".skill-divider").after($form);
             $(".skill-divider").next("div.list-group-item").find('input[type="radio"]').eq(0).prop("checked", true);
-
-
-            // for date 98
-            $inputCandidateActivityStartYear = $('#inputCandidateStartAcademicBackgroundYear').find('option').filter('[selected]').length;
-            $inputCandidateActivityEndYear = $('#inputCandidateEndAcademicBackgroundYear').find('option').filter('[selected]').length;
-            if ($inputCandidateActivityStartYear === 0) {
-                $('#inputCandidateStartAcademicBackgroundYear').find('option:last-child').attr('selected' , 'selected');
-                $('#inputCandidateEndAcademicBackgroundYear').find('option:last-child').attr('selected' , 'selected');
-            }
-            // for date 98
+            $form.find(".dates select").each(function(){
+                $(this).val($(this).find("option:first").val());
+            });
         });
         if($("#form").find('div.list-group-item').length == 0 ){
             $(".add-form").click();
