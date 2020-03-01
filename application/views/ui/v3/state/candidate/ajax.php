@@ -70,8 +70,6 @@ foreach ($dataSpecial as $candidate) {
         $index =1;
     }
 
-
-
     $hasBadge = false;
     foreach ($candidate['badges'] as $badge) {
         if ($badge['CandidateBadge'] == 'ElectionFinance') {
@@ -100,14 +98,14 @@ foreach ($dataSpecial as $candidate) {
             $inviteSectionSentence .= " و ";
             $index =1;
         }
-        $inviteSectionSentence .= "امضای تعهدنامه پاسخگویی"." ";
+        $inviteSectionSentence .= "امضای تعهدنامه"." ";
         $index =1;
     }
 
     ?>
-    <div class="row col-md-4 col-md-offset-0 col-xs-12 candidate-info-box <?php echo $filterClass; ?>  <?php echo $candidate['CandidateSelectionStatus']; ?>">
+    <div class="row col-md-4 col-md-offset-0 col-xs-12 candidate-info-box <?php echo $filterClass; ?> <?php echo $candidate['CandidateSelectionStatus']; ?>">
         <div class="mp-brief">
-            <div class="pic <?php echo $deActiveClass . " " . $deActiveResumeClass; ?>">
+            <div class="pic">
                 <img src="<?php echo base_url('uploads/') . $candidate['CPI']; ?>" class="candidateImage"/>
             </div>
             <div class="col-md-12 col-xs-12 padding-0">
@@ -146,7 +144,7 @@ foreach ($dataSpecial as $candidate) {
                     <a target="_blank"
                        class="wanted-new"
                        href="<?php echo base_url('State/candidate_detail/' . $candidate['CandidateRefId'] . '/' . $stateId . '/' . $stateName); ?>">
-                            مشاهده پروفایل
+                        مشاهده پروفایل
                     </a>
                     <button
                             data-id="<?php echo $candidate['RowId']; ?>"

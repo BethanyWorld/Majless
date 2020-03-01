@@ -719,6 +719,22 @@ class Profile extends CI_Controller{
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/skills/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
+    public function getSkillBySearchTerm(){
+        if(isset($_GET['term'])){
+            $searchTerm = $_GET['term'];
+        }
+        else{
+            $searchTerm = "";
+        }
+        $items = array();
+        foreach ($this->ModelUtilities->getSkillBySearchTerm($searchTerm) as $row) {
+           array_push($items , array('id' =>$row['SkillId'], 'text'=> $row['SkillTitle']));
+        }
+        $result = array(
+            "results" =>$items
+        );
+        echo json_encode($items);
+    }
     public function candidateUpdateSkills()
     {
         $loginInfo = $this->session->userdata('UserLoginInfo');

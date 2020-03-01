@@ -156,6 +156,16 @@ class ModelUtilities extends CI_Model{
         $arr = array();
         return $arr;
     }
+    public function getSkillBySearchTerm($searchTerm){
+        $this->db->select('*');
+        $this->db->from('skills');
+        if (isset($searchTerm)) {
+            $this->db->like('SkillTitle', $searchTerm);
+        }
+        $this->db->order_by('SkillId DESC');
+        $this->db->limit(20, 0);
+        return $this->db->get()->result_array();
+    }
     public function getAllSkill()
     {
         $this->db->select('*');
