@@ -86,7 +86,7 @@ class ModelProfile extends CI_Model{
             $this->db->select('*')
                 ->from('candidate_academic_background')
                 ->join('university' , 'university.UniversityId = candidate_academic_background.CandidateUniversityName')
-                ->where('CandidateId', $id)
+                ->where('candidate_academic_background.CandidateId', $id)
                 ->get()
                 ->result_array();
     }
