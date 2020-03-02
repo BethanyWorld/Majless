@@ -26,17 +26,18 @@
                                 </div>
                             </a>
                         </li>
-                        <?php if ($candidate['CandidateGender'] == 'Male') { ?>
-                            <li class="col-md-12 padding-0">
-                                <a href="#military-records">
-                                    <i class="zmdi RightpanelIcon">
-                                        <span class="fa fa-flag"></span>
-                                    </i>
-                                    <div class="RightPanelContent">
-                                        <div class="RightPanleTitle"> نظام وظیفه</div>
-                                    </div>
-                            </li>
-                        <?php } ?>
+<!--                        --><?php //if ($candidate['CandidateGender'] == 'Male') { ?>
+<!--                            <li class="col-md-12 padding-0">-->
+<!--                                <a href="#military-records">-->
+<!--                                    <i class="zmdi RightpanelIcon">-->
+<!--                                        <span class="fa fa-flag"></span>-->
+<!--                                    </i>-->
+<!--                                    <div class="RightPanelContent">-->
+<!--                                        <div class="RightPanleTitle"> نظام وظیفه</div>-->
+<!--                                    </div>-->
+<!--                            </li>-->
+<!--                        --><?php //} ?>
+
                         <li class="col-md-12 padding-0">
                             <a href="#work-experience">
                                 <i class="zmdi RightpanelIcon">
@@ -57,16 +58,16 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col-md-12 padding-0">
-                            <a href="#skills">
-                                <i class="zmdi RightpanelIcon">
-                                    <span class="fa fa-outdent"></span>
-                                </i>
-                                <div class="RightPanelContent">
-                                    <div class="RightPanleTitle"> مهارت ها</div>
-                                </div>
-                            </a>
-                        </li>
+<!--                        <li class="col-md-12 padding-0">-->
+<!--                            <a href="#skills">-->
+<!--                                <i class="zmdi RightpanelIcon">-->
+<!--                                    <span class="fa fa-outdent"></span>-->
+<!--                                </i>-->
+<!--                                <div class="RightPanelContent">-->
+<!--                                    <div class="RightPanleTitle"> مهارت ها</div>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </li>-->
                         <li class="col-md-12 padding-0">
                             <a href="#election-promises">
                                 <i class="zmdi RightpanelIcon">
@@ -283,45 +284,45 @@
                             <li ng-repeat="item in candidateAcademicBackground">
                                 <span class="fa fa-circle-o"></span>
                                 <strong class="colored bg-white">
-                                    {{item.CandidateStudyStatus | bindEnum}}
+                                    <i ng-if="item.CandidateStudyStatus !== 'Graduated' ">{{item.CandidateStudyStatus | bindEnum}}</i>
                                     {{item.CandidateGrade | bindEnum}}
                                     <strong class="colored bg-white major">
                                         {{item.NewMajor | bindEnumMajor}}
                                     </strong>
-                                    {{item.CandidateUniversityName}}
+                                    {{item.UniversityTitle}}
 
                                 </strong>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <!-- Military Status -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="military-records"
-                     ng-if="candidateMilitaryStatus.length !== 0 ">
-                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                        <div class="have-border-bottom">
-                            <h3>سوابق خدمت</h3>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="resume-ul">
-                            <li ng-repeat="item in candidateMilitaryStatus">
-                                <span class="fa fa-circle-o"></span>
-                                <strong class="colored bg-white">
-
-                                    {{item.CandidateMilitaryStatus | bindEnum}}
-                                    {{item.CandidateExemptTitle | bindEnum}}
-                                    {{item.CandidateExemptDescription}}
-                                    {{item.CandidateMilitaryEndMonth |bindEnum}}
-                                    {{item.CandidateMilitaryEndYear}}
-                                    {{item.CandidateMilitaryEndArea |bindEnum}}
-                                    {{item.CandidateMilitaryEndAreaTitle}}
-
-                                </strong>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<!--                <!-- Military Status -->-->
+<!--                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="military-records"-->
+<!--                     ng-if="candidateMilitaryStatus.length !== 0 ">-->
+<!--                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">-->
+<!--                        <div class="have-border-bottom">-->
+<!--                            <h3>سوابق خدمت</h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="panel-body">-->
+<!--                        <ul class="resume-ul">-->
+<!--                            <li ng-repeat="item in candidateMilitaryStatus">-->
+<!--                                <span class="fa fa-circle-o"></span>-->
+<!--                                <strong class="colored bg-white">-->
+<!---->
+<!--                                    {{item.CandidateMilitaryStatus | bindEnum}}-->
+<!--                                    {{item.CandidateExemptTitle | bindEnum}}-->
+<!--                                    {{item.CandidateExemptDescription}}-->
+<!--                                    {{item.CandidateMilitaryEndMonth |bindEnum}}-->
+<!--                                    {{item.CandidateMilitaryEndYear}}-->
+<!--                                    {{item.CandidateMilitaryEndArea |bindEnum}}-->
+<!--                                    {{item.CandidateMilitaryEndAreaTitle}}-->
+<!---->
+<!--                                </strong>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <!-- Job History -->
                 <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="work-experience"
                      ng-if="candidateJobHistory.length !== 0 ">
@@ -364,7 +365,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <li>کتب</li>
+                        <li>تالیف</li>
                         <ul class="resume-ul">
 
                             <li ng-repeat="item in candidateBooks">
@@ -386,7 +387,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <li>مقالات</li>
+                        <li>مقالات علمی</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateArticles">
                                 <span class="fa fa-circle-o"></span>
@@ -432,7 +433,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <li>طراح های پژوهشی</li>
+                        <li>طرح های پژوهشی</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateResearch">
                                 <span class="fa fa-circle-o"></span>
@@ -484,7 +485,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <li>ترجمه ها</li>
+                        <li>ترجمه </li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateTranslation">
                                 <span class="fa fa-circle-o"></span>
@@ -509,32 +510,32 @@
                     </div>
                 </div>
                 <!-- Skills History -->
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="skills"
-                     ng-if="candidateSkills.length !== 0 ">
-                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
-                        <div class="have-border-bottom">
-                            <h3>مهارت ها</h3>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="resume-ul">
-                            <li ng-repeat="item in candidateSkills">
-                                <span class="fa fa-circle-o"></span>
-                                <strong class="colored bg-white">
-                                    {{item.SkillType}}
-                                </strong>
-                                سطح
-                                <strong class="colored bg-white">
-                                    {{item.SkillLevel | bindEnum }}
-                                </strong>
-                                یادگیری بصورت
-                                <strong class="colored bg-white">
-                                    {{item.SkillLearnType | bindEnum }}
-                                </strong>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<!--                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="skills"-->
+<!--                     ng-if="candidateSkills.length !== 0 ">-->
+<!--                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">-->
+<!--                        <div class="have-border-bottom">-->
+<!--                            <h3>مهارت ها</h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="panel-body">-->
+<!--                        <ul class="resume-ul">-->
+<!--                            <li ng-repeat="item in candidateSkills">-->
+<!--                                <span class="fa fa-circle-o"></span>-->
+<!--                                <strong class="colored bg-white">-->
+<!--                                    {{item.SkillType}}-->
+<!--                                </strong>-->
+<!--                                سطح-->
+<!--                                <strong class="colored bg-white">-->
+<!--                                    {{item.SkillLevel | bindEnum }}-->
+<!--                                </strong>-->
+<!--                                یادگیری بصورت-->
+<!--                                <strong class="colored bg-white">-->
+<!--                                    {{item.SkillLearnType | bindEnum }}-->
+<!--                                </strong>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <!-- Promises History -->
                 <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="election-promises"
                      ng-if="promises.length !== 0 ">

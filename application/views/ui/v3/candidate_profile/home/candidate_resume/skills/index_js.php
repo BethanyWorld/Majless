@@ -88,5 +88,17 @@
             }
             return false;
         });
+
+
+        // $('div.skillselectwo ul a').each(function () {
+        //     $parentId = $(this).parents('div.list-group-item').eq(0).attr('id');
+        //     $parentDom = "#" + $parentId + " ";
+        //     $($parentDom + '.skillselectwo ul a').click(function () {
+        //         $parentId = $(this).parents('div.list-group-item').attr('id');
+        //         $parentDom = "#" + $parentId + " ";
+        //         $($parentDom + '[name="inputSkillType"]').val($(this).data('name'));
+        //         $($parentDom + '.skillselectwo').addClass('hidden').hide();
+        //     });
+        // });
     });
 </script>

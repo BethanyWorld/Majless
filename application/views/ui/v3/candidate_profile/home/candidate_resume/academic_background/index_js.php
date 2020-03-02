@@ -360,10 +360,10 @@
                 $(this).val($(this).find("option:first").val());
             });
         });
-        if($("#form").find('div.list-group-item').length == 0 ){
+        if($("#form").find('div.list-group-item').length == 0 ) {
             $(".add-form").click();
         }
-        $(document).on('click','.remove-form',function(){
+        $(document).on('click','.remove-form',function() {
             $(this).parent().remove();
         });
 

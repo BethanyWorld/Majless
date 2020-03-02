@@ -3,7 +3,7 @@
     /*for tab panel */
     .tabs {
         margin: 0 auto;
-        padding: 10px 20px;
+        padding: 10px 0px;
     }
     #tab-button {
         display: table;
