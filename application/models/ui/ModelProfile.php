@@ -85,6 +85,7 @@ class ModelProfile extends CI_Model{
         return
             $this->db->select('*')
                 ->from('candidate_academic_background')
+                ->join('university' , 'university.UniversityId = candidate_academic_background.UniversityId')
                 ->where('CandidateId', $id)
                 ->get()
                 ->result_array();
@@ -126,6 +127,7 @@ class ModelProfile extends CI_Model{
                             $UserArray = array(
                                 'UniversityTitle' => $inputs['inputCandidateAcademicBackground'][$i + 5]['value'],
                                 'IsActive' => 0,
+                                'CandidateId' => $inputs['inputCandidateId'],
                                 'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
                             );
                             $this->db->insert('university', $UserArray);
