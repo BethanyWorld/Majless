@@ -86,7 +86,7 @@
                                                                             <?php } ?>
                                                                         </select>
                                                                     </div>
-                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat CandidateUniversityName">
+                                                                    <div class="col-md-4 col-xs-12 form-group RightFloat hidden CandidateUniversityName">
                                                                         <label class="active" for="inputCandidateUniversityName">
                                                                             <span class="Change-UniversityName">
                                                                                 نام دانشگاه
@@ -166,7 +166,7 @@
                                                                 <div class="dates">
                                                                     <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                         <label for="inputCandidateStartAcademicBackgroundMonth">
-                                                                            ماه شروع تحصیلی
+                                                                            ماه شروع تحصیل
                                                                         </label>
                                                                         <select class="form-control form-control-lg city-select"
                                                                                 name="inputCandidateStartAcademicBackgroundMonth"
@@ -311,7 +311,7 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-xs-12 form-group RightFloat CandidateUniversityName">
+                                                            <div class="col-md-4 col-xs-12 form-group RightFloat CandidateUniversityName hidden">
                                                                 <label class="active" for="inputCandidateUniversityName">
                                                                             <span class="Change-UniversityName">
                                                                                 نام دانشگاه

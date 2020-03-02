@@ -163,14 +163,14 @@
             });*/
             if($inputCandidateGrade !== "" && $inputCandidateGrade !== "ZirDiplom" && $inputCandidateGrade !== "Diplom") {
                 $($parentDom + '.CandidateLevelType').css('display' , 'block');
-                $($parentDom + '.CandidateUniversityName').css('display' , 'block');
+                $($parentDom + '.CandidateUniversityName').removeClass('hidden').show();
                 $($parentDom + '.CandidateDepartment').css('display' , 'block');
                 $($parentDom + '.CandidateMajor').css('display' , 'block');
                 $($parentDom + '.Radio-Buttons').css('display' , 'block');
             }
             else{
                 $($parentDom + '.CandidateLevelType').css('display' , 'none');
-                $($parentDom + '.CandidateUniversityName').css('display' , 'none');
+                $($parentDom + '.CandidateUniversityName').addClass('hidden').hide();
                 $($parentDom + '.CandidateDepartment').css('display' , 'none');
                 $($parentDom + '.CandidateMajor').css('display' , 'none');
                 $($parentDom + '.Radio-Buttons').css('display' , 'none');
@@ -311,7 +311,7 @@
             }
         });
         $(document).on('change', '[name="inputCandidateSchoolMajor"]', function (){
-           if($(this).val() !== '' && $(this).val() !== undefined){
+           if($(this).val() !== '' && $(this).val() !== undefined) {
                $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
                $parentDom = "#" + $parentId + " ";
                $inputCandidateSchoolMajor = $(this).val();
@@ -322,7 +322,7 @@
         $('[name="inputCandidateGrade"]').change();
         $('[name="inputCandidateUniversityName"]').change();
         $('[name="inputCandidateUniversityLevelType"]').change();
-        // setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
+        setTimeout(function(){$('[name="inputCandidateUniversityLevelType"]').change();} , 500);
         setTimeout(function(){$('[name="inputCandidateDepartment"]').change();} , 1000);
         setTimeout(function(){$('[name="inputCandidateSchoolMajor"]').change();} , 1500);
         function fillMajorDropDown($id , data) {
