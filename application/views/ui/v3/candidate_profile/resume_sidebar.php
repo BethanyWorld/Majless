@@ -57,6 +57,7 @@
             position: relative;
             top: -1px;
             margin-top: 0;
+            z-index: 1;
         }
     }
     /*for tab panel */
