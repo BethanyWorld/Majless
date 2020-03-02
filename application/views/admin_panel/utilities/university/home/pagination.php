@@ -10,6 +10,7 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
         <tr>
             <td class="fit"><?php echo $counter++; ?></td>
             <td><?php echo $university['UniversityTitle']; ?></td>
+            <td class="fit"><?php echo pipeUniversityStatus($university['IsActive']); ?></td>
             <td class="fit">
                 <a href="<?php echo base_url('Admin/Utilities/editUniversity/') . $university['UniversityId']; ?>">
                     <button type="button"

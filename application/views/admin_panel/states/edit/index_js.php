@@ -14,7 +14,7 @@
             $sendData = {
                 'inputStateId': $inputStateId,
                 'inputStateName': $inputStateName
-            }
+            };
             $.ajax({
                 type: 'post',
                 url: base_url + 'States/doEdit',
@@ -23,17 +23,33 @@
                     toggleLoader();
                     $result = jQuery.parseJSON(data);
                     notify($result['content'], $result['type']);
-                    if($result['success']){
-                        setTimeout(function () {
-                            window.history.back();
-                        } , 1500);
-                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     notify('اطلاعات استان تکراری ست', 'red');
                     toggleLoader();
                 }
             });
+
+            $sendData = [];
+            $sendData.push({
+                'inputStatisticsSlug': 'PercentageOfParticipation',
+                'inputStatisticsType': 'State',
+                'inputStatisticsTypeId': $inputStateId,
+                'inputStatisticsValue': $("#inputPercentageOfParticipation").val()
+            });
+            $sendData.push({
+                'inputStatisticsSlug': 'PercentageOfParticipationColor',
+                'inputStatisticsType': 'State',
+                'inputStatisticsTypeId': $inputStateId,
+                'inputStatisticsValue': $("#inputPercentageOfParticipationColor").val()
+            });
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Statistics/doAddItem',
+                data: { 'inputData': JSON.stringify($sendData) },
+                success: function (data) {  }
+            });
+
         });
         /* End Update User Info */
     });

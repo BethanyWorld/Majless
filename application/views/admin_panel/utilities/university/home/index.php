@@ -27,6 +27,7 @@
                                 <tr>
                                     <th class="fit">#</th>
                                     <th>عنوان دانشگاه</th>
+                                    <th class="fit">وضعیت</th>
                                     <th class="fit">ویرایش</th>
                                     <th class="fit">حذف</th>
                                 </tr>

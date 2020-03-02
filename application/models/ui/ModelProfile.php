@@ -115,6 +115,23 @@ class ModelProfile extends CI_Model{
                     'CandidateStudyStatus' => $inputs['inputCandidateAcademicBackground'][$i + 12]['value']
                 );
                 $this->db->insert('candidate_academic_background', $UserArray);
+                if($inputs['inputCandidateAcademicBackground'][$i + 1]['value'] != 'Others'){
+                    if(isset($inputs['inputCandidateAcademicBackground'][$i + 5]['value']) && $inputs['inputCandidateAcademicBackground'][$i + 5]['value'] != ""){
+                        $universityOtherName = $inputs['inputCandidateAcademicBackground'][$i + 5]['value'];
+                        $query = $this->db->select('*')->from('university')->where('UniversityTitle', $universityOtherName)->get()->result_array();
+                        if($query){
+                            /* university name Is repetitive */
+                        }
+                        else{
+                            $UserArray = array(
+                                'UniversityTitle' => $inputs['inputCandidateAcademicBackground'][$i + 5]['value'],
+                                'IsActive' => 0,
+                                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+                            );
+                            $this->db->insert('university', $UserArray);
+                        }
+                    }
+                }
                 $i = $i + 13;
             }
         }

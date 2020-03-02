@@ -5,6 +5,7 @@ class States extends CI_Controller{
         parent::__construct();
         $this->load->helper('admin/admin_login');
         $this->load->model('ui/ModelCountry');
+        $this->load->model('admin/ModelStatistics');
     }
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
@@ -30,6 +31,12 @@ class States extends CI_Controller{
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = 'ویرایش استان';
         $data['data'] = $this->ModelCountry->getStateByStateId($stateId)[0];
+
+        $statisticsArray = array(
+            'inputStatisticsType'=>'State',
+            'inputStatisticsTypeId'=>$stateId
+        );
+        $data['Statistics'] = $this->ModelStatistics->getItem($statisticsArray);
         $this->load->view('admin_panel/static/header', $data);
         $this->load->view('admin_panel/states/edit/index' , $data);
         $this->load->view('admin_panel/states/edit/index_css');
@@ -162,6 +169,4 @@ class States extends CI_Controller{
         $result = $this->ModelCountry->doEditElection($inputs);
         echo json_encode($result);
     }
-
-
 }

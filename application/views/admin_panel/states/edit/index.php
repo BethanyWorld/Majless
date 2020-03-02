@@ -20,6 +20,40 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <label for="inputPercentageOfParticipation">درصد مشارکت</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text"
+                                               class="form-control"
+                                                <?php
+                                                foreach ($Statistics as $item) {
+                                                    if($item['StatisticsSlug'] == 'PercentageOfParticipation'){
+                                                        setInputValue($item['StatisticsValue']);
+                                                    }
+                                                }
+                                                ?>
+                                               id="inputPercentageOfParticipation" name="inputPercentageOfParticipation"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <label for="inputPercentageOfParticipationColor">رنگ</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="color"
+                                               class="form-control"
+                                            <?php
+                                            foreach ($Statistics as $item) {
+                                                if($item['StatisticsSlug'] == 'PercentageOfParticipationColor'){
+                                                    setInputValue($item['StatisticsValue']);
+                                                }
+                                            }
+                                            ?>
+                                               id="inputPercentageOfParticipationColor" name="inputPercentageOfParticipationColor"/>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-xs-12">
                                 <button type="button" id="editState" class="btn btn-primary waves-effect">ذخیره</button>
                             </div>

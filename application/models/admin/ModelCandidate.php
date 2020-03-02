@@ -1,5 +1,4 @@
 <?php
-
 class ModelCandidate extends CI_Model{
     public function getCandidate($inputs)
     {
@@ -1071,6 +1070,7 @@ class ModelCandidate extends CI_Model{
                 'CandidateOperationStatus' => $inputs['inputOperationStatus'],
                 'CandidateSelectionStatus' => $inputs['inputCandidateSelectionStatus'],
                 'CandidateElectionCode' => $inputs['inputCandidateElectionCode'],
+                'CandidateElectionVote' => $inputs['inputCandidateElectionVote'],
                 'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
         } else {
@@ -1083,6 +1083,7 @@ class ModelCandidate extends CI_Model{
                 'CandidateOperationStatus' => $inputs['inputOperationStatus'],
                 'CandidateSelectionStatus' => $inputs['inputCandidateSelectionStatus'],
                 'CandidateElectionCode' => $inputs['inputCandidateElectionCode'],
+                'CandidateElectionVote' => $inputs['inputCandidateElectionVote'],
                 'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
             );
         }

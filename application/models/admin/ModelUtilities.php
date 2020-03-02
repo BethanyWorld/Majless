@@ -1,7 +1,6 @@
 <?php
 class ModelUtilities extends CI_Model{
-    public function getUniversity($inputs)
-    {
+    public function getUniversity($inputs){
         $limit = $inputs['pageIndex'];
         $start = ($limit - 1) * $this->config->item('defaultPageSize');
         $end = $this->config->item('defaultPageSize');
@@ -40,6 +39,7 @@ class ModelUtilities extends CI_Model{
     {
         $this->db->select('*');
         $this->db->from('university');
+        $this->db->where('IsActive', 1);
         $this->db->order_by('UniversityId DESC');
         return $this->db->get()->result_array();
     }

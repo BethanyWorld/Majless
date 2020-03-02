@@ -117,7 +117,6 @@ class ModelReport extends CI_Model{
         $this->db->limit(5);
         return $this->db->get()->result_array();
     }
-
     public function getTodayCandidates(){
         $this->db->select('*');
         $this->db->from('candidate');

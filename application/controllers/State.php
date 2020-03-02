@@ -9,16 +9,22 @@ class State extends CI_Controller{
         $this->load->model('ui/ModelCountry');
         $this->load->model('admin/ModelCandidate');
         $this->load->model('ui/ModelProfile');
+        $this->load->model('admin/ModelStatistics');
     }
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
         $data['pageTitle'] = $this->config->item('defaultPageTitle') . ' استان ها ';
         $data['title'] = 'ورود به سامانه جنبش از ما';
         $data['description'] = 'برای دعوت از نامزدها به چالش شایستگی و شفافیت و مشاهده رزومه انها';
+
+        $statisticsArray = array(
+            'inputStatisticsType'=>'State'
+        );
+        $data['Statistics'] = $this->ModelStatistics->getItem($statisticsArray);
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/state/home/index', $data);
         $this->load->view('ui/v3/state/home/index_css');
-        $this->load->view('ui/v3/state/home/index_js');
+        $this->load->view('ui/v3/state/home/index_js', $data);
         $this->load->view('ui/v3/static/footer', $data);
     }
     public function detail($stateId, $stateName){

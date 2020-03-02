@@ -121,6 +121,17 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-4 col-md-2">
+                                                    <label for="inputCandidateElectionVote">تعداد رای</label>
+                                                    <div class="form-group">
+                                                        <div class="form-line">
+                                                            <input type="text" class="form-control"
+                                                                   value="<?php echo $candidate['CandidateElectionVote']; ?>"
+                                                                   id="inputCandidateElectionVote"
+                                                                   name="inputCandidateElectionVote"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 col-md-2">
                                                     <label>وضعیت اتمام فرآیند</label>
                                                     <div class="form-group">
                                                         <div class="form-line">
