@@ -35,7 +35,7 @@
                                                                 <span class="remove-form fa fa-times"></span>
                                                                 <div class="list-group-Grade col-md-12 col-xs-12 padding-0">
                                                                     <!--for Format-->
-                                                                    <div class="col-md-12 col-xs-12 margin-b-25">
+                                                                    <div class="col-md-12 col-xs-12 margin-b-25 padding-0">
                                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
                                                                             <label for="inputCandidateActivityType">قالب فعالیت :</label>
                                                                             <select class="form-control form-control-lg" name="inputCandidateActivityType">
@@ -52,7 +52,7 @@
                                                                     </div>
                                                                     <!--for Format-->
                                                                     <!--for election-->
-                                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25 ElectionType">
+                                                                    <div class="RightFloat margin-b-25 ElectionType">
                                                                         <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
                                                                             <label for="inputCandidateElectionType">انتخابات :</label>
                                                                             <select class="form-control form-control-lg" data-selected-major="<?php echo $item['CandidateElectionPeriod']; ?>" name="inputCandidateElectionType">
@@ -79,10 +79,10 @@
                                                                     </div>
                                                                     <!--for election-->
                                                                     <!--for Responsibility-->
-                                                                    <div class="RightFloat margin-b-25  input-style">
-
-
-                                                                    </div>
+<!--                                                                    <div class="RightFloat margin-b-25  input-style">-->
+<!---->
+<!---->
+<!--                                                                    </div>-->
                                                                     <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
                                                                         <label for="inputCandidateResponsibility">مسئولیت</label>
                                                                         <select class="form-control form-control-lg" name="inputCandidateResponsibility">
@@ -198,7 +198,7 @@
                                                                     </div>
                                                                     <!--for Media-->
                                                                     <!--for Description-->
-                                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25 input-style">
+                                                                    <div class="col-md-12 col-xs-12 RightFloat padding-0 margin-t-25 margin-b-25 input-style">
                                                                         <div class="col-md-12 col-sm-12 col-xs-12 RightFloat">
                                                                             <label for="inputCandidateActivityDescription">توضیحات</label>
                                                                             <input name="inputCandidateActivityDescription"

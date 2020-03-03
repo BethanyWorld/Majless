@@ -24,6 +24,10 @@
         float: left;
     }
 
+    .margin-t-25 {
+        margin-top: 25px;
+    }
+
     .margin-b-25 {
         margin-bottom: 30px;
     }
@@ -122,35 +126,43 @@
     .CandidateName {
         display: none;
     }
-    .Partnership-title{
+
+    .Partnership-title {
         display: none;
     }
-    .Media{
+
+    .Media {
         display: none;
     }
-    .MediaName{
+
+    .MediaName {
         display: none;
     }
-    .Media-Activity{
+
+    .Media-Activity {
         display: none;
     }
-    .Media-Date{
+
+    .Media-Date {
         display: none;
     }
-    .CollectionName{
+
+    .CollectionName {
         display: none;
     }
-    .ElectionPeriod{
+
+    .ElectionPeriod {
         display: none;
     }
-    .media-template-title{
+
+    .media-template-title {
         display: none;
     }
 
     /*end for add form*/
 
-    @media(max-width: 992px) {
-        .response-padding{
+    @media (max-width: 992px) {
+        .response-padding {
             padding: 0px;
         }
     }
