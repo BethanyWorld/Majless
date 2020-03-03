@@ -221,21 +221,17 @@
                 $('#inputCandidateEndYear').find('option:last-child').attr('selected', 'selected');
             }
             // for date 98
-
         });
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });
-
         /* Add By ME */
         $('[name="inputCandidateActivityType"]').change();
         setTimeout(function () {$('[name="inputCandidateElectionType"]').change();}, 500);
         setTimeout(function () {$('[name="inputCandidateResponsibility"]').change();}, 100);
         setTimeout(function () {$('[name="inputCandidateMediaType"]').change();}, 1000);
-
         $("#updatePoliticBackground").click({redirect: false}, updatePoliticBackground);
         $("#updatePoliticBackgroundAndRedirect").click({redirect: true}, updatePoliticBackground);
-
         function updatePoliticBackground(param) {
             $sendData = {inputCandidatePoliticBackground: $("#form").serializeArray()}
             toggleLoader();
@@ -252,9 +248,7 @@
                     }
                 }
             });
-
         }
-
         $(document).on('change', '[name="inputCandidateResponsibility"]', function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
@@ -267,6 +261,5 @@
                 $($parentDom + '.states').hide();
             }
         });
-
     });
 </script>
