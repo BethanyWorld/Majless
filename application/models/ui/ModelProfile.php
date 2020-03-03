@@ -583,6 +583,7 @@ class ModelProfile extends CI_Model{
         return
             $this->db->select('*')
                 ->from('candidate_politic_record')
+                ->join('party','party.PartyId = candidate_politic_record.CandidatePartyId' , 'left')
                 ->where('CandidateId', $id)
                 ->get()
                 ->result_array();

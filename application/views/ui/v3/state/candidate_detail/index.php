@@ -571,11 +571,11 @@
                                 <li ng-repeat="item in politicBackground">
                                     <span class="fa fa-circle-o"></span>
                                     {{item.CandidateResponsibility | bindEnum}}
-                                    {{item.CandidateActivityType | bindEnum }}
+<!--                                    {{item.CandidateActivityType | bindEnum }}-->
 
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
+                                        ستاد انتخاباتی
                                         {{item.CandidateElectionListName }}
-
                                     </i>
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
                                         {{item.CandidateElectionType | bindEnum}}
@@ -584,13 +584,18 @@
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
                                         {{item.CandidateElectionPeriod }}
                                     </i>
+                                    <i ng-if="item.CandidateActivityType === 'Group'">
+                                        حزب
+                                        {{item.PartyTitle }}
+                                    </i>
+
                                     <i ng-if="item.CandidateResponsibility === 'ProvincialSecretary'">
                                         {{item.CandidateConstituencyStateId | bindState }}
 
                                     </i>
                                     <i ng-if="item.CandidateActivityType === 'Group'">
                                        {{item.CandidateStartMonth | bindEnum}} - {{item.CandidateStartYear}}
-
+                                        الی
                                    </i>
                                    <i ng-if="item.CandidateActivityType === 'Group'">
                                        {{item.CandidateEndMonth | bindEnum}} - {{item.CandidateEndYear}}
@@ -3198,6 +3203,55 @@
                 '{ "name": "سایر" , "value" : "17"}   ' +
                 ']',
         };
+
+        $President = JSON.parse(
+            ' [' +
+            '{ "name": "دوره اول - 1358" , "value" : "1" } ,' +
+            '{ "name": "دوره دوم - 1360" , "value" : "2"  } ,' +
+            '{ "name": "دوره سوم - 1360" , "value" : "3"  }   ,' +
+            '{ "name": "دوره چهارم - 1364" , "value" : "4"  }  ,' +
+            '{ "name": "دوره پنجم - 1368" , "value" : "5"  }   ,' +
+            '{ "name": "دوره ششم - 1372" , "value" : "6"  }   ,' +
+            '{ "name": "دوره هفتم - 1376" , "value" : "7"  }   ,' +
+            '{ "name": "دوره هشتم - 1380" , "value" : "8"  }   ,' +
+            '{ "name": "دوره نهم - 1384" , "value" : "9"  }   ,' +
+            '{ "name": "دوره دهم - 1388" , "value" : "10"  }   ,' +
+            '{ "name": "دوره یازدهم - 1392" , "value" : "11"  }   ,' +
+            '{ "name": "دوره دوازدهم - 1396" , "value" : "12"  }   ' +
+            ']'
+        );
+        $Parliament = JSON.parse(
+            ' [' +
+            '{ "name": "دوره اول - 1358"  , "value" : "1" } ,' +
+            '{ "name": "دوره دوم - 1363" , "value" : "2"  } ,' +
+            '{ "name": "دوره سوم - 1367" , "value" : "3"  }   ,' +
+            '{ "name": "دوره چهارم - 1371" , "value" : "4"  }  ,' +
+            '{ "name": "دوره پنجم - 1374" , "value" : "5"  }   ,' +
+            '{ "name": "دوره ششم - 1379" , "value" : "6"  }   ,' +
+            '{ "name": "دوره هفتم - 1382" , "value" : "7"  }   ,' +
+            '{ "name": "دوره هشتم - 1386" , "value" : "8"  }   ,' +
+            '{ "name": "دوره نهم - 1390" , "value" : "9"  }   ,' +
+            '{ "name": "دوره دهم - 1394" , "value" : "10"  }   ' +
+            ']'
+        );
+        $CouncilExperts = JSON.parse(
+            ' [' +
+            '{ "name": "دوره اول - 1361"  , "value" : "1" } ,' +
+            '{ "name": "دوره دوم - 1369" , "value" : "2"  } ,' +
+            '{ "name": "دوره سوم - 1377" , "value" : "3"  }   ,' +
+            '{ "name": "دوره چهارم - 1385" , "value" : "4"  }  ,' +
+            '{ "name": "دوره پنجم - 1394" , "value" : "5"  }   ' +
+            ']'
+        );
+        $CityCouncil = JSON.parse(
+            ' [' +
+            '{ "name": "دوره اول - 1377"  , "value" : "1" } ,' +
+            '{ "name": "دوره دوم - 1381" , "value" : "2"  } ,' +
+            '{ "name": "دوره سوم - 1385" , "value" : "3"  }   ,' +
+            '{ "name": "دوره چهارم - 1392" , "value" : "4"  }  ,' +
+            '{ "name": "دوره پنجم - 1396" , "value" : "5"  }   ' +
+            ']'
+        );
         var finance = [];
         var countries = [];
         var cities = [];
@@ -3384,6 +3438,46 @@
                 translatePrice('Vehicle', VehiclePricePlaceHolder);
 
 
+
+
+                console.log($scope.politicBackground);
+                console.log($President);
+                console.log($Parliament);
+                console.log($CouncilExperts);
+                console.log($CityCouncil);
+                for(let i=0;i<$scope.politicBackground.length;i++){
+                    switch($scope.politicBackground[i]['CandidateElectionType']){
+                        case 'CouncilExperts':
+                            for(let j=0;j<$CouncilExperts.length;j++){
+                                if($CouncilExperts[j]['value'] == $scope.politicBackground[i]['CandidateElectionPeriod']){
+                                    $scope.politicBackground[i]['CandidateElectionPeriod'] = $CouncilExperts[j]['name'];
+                                }
+                            }
+                            break;
+                        case 'CityCouncil':
+                            for(let j=0;j<$CityCouncil.length;j++){
+                                 if($CouncilExperts[j]['value'] == $scope.politicBackground[i]['CandidateElectionPeriod']){
+                                    $scope.politicBackground[i]['CandidateElectionPeriod'] = $CityCouncil[j]['name'];
+                                }
+                            }
+                            break;
+                        case 'Parliament':
+                            for(let j=0;j<$Parliament.length;j++){
+                                if($Parliament[j]['value'] == $scope.politicBackground[i]['CandidateElectionPeriod']){
+                                    $scope.politicBackground[i]['CandidateElectionPeriod'] = $Parliament[j]['name'];
+                                }
+                            }
+                            break;
+                        case 'President':
+                            for(let j=0;j<$President.length;j++){
+                                if($President[j]['value'] == $scope.politicBackground[i]['CandidateElectionPeriod']){
+                                    $scope.politicBackground[i]['CandidateElectionPeriod'] = $President[j]['name'];
+                                }
+                            }
+                            break;
+                    }
+                }
+                console.log($scope.politicBackground);
                 setTimeout(function () {
                     $(".left-candidate-panel-resume :input").prop('disabled', true);
                     $(".report :input").prop('disabled', false);
