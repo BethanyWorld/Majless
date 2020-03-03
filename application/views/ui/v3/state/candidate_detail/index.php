@@ -296,7 +296,7 @@
                         </ul>
                     </div>
                 </div>
-<!--                <!-- Military Status -->-->
+<!--                Military Status -->
 <!--                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="military-records"-->
 <!--                     ng-if="candidateMilitaryStatus.length !== 0 ">-->
 <!--                    <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">-->
