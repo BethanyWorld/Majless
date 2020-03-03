@@ -570,54 +570,30 @@
                             <ul class="resume-ul">
                                 <li ng-repeat="item in politicBackground">
                                     <span class="fa fa-circle-o"></span>
-                                    <strong class="colored bg-white">
-                                        مسئولیت :
-                                    </strong>
                                     {{item.CandidateResponsibility | bindEnum}}
                                     ,
-                                    <strong class="colored bg-white">
-                                        قالب فعالیت :
-                                    </strong>
                                     {{item.CandidateActivityType | bindEnum }}
                                     ,
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
-                                        <strong class="colored bg-white">
-                                            ستاد انتخاباتی :
-                                        </strong>
                                         {{item.CandidateElectionListName }}
                                         ,
                                     </i>
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
-                                        <strong class="colored bg-white">
-                                            دوره انتخابات :
-                                        </strong>
                                         {{item.CandidateElectionType | bindEnum}}
                                         ,
                                     </i>
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
-                                        <strong class="colored bg-white">
-                                            انتخابات :
-                                        </strong>
                                         {{item.CandidateElectionPeriod }}
                                     </i>
                                     <i ng-if="item.CandidateResponsibility === 'ProvincialSecretary'">
-                                        <strong class="colored bg-white">
-                                            استان :
-                                        </strong>
                                         {{item.CandidateConstituencyStateId | bindState }}
                                         ,
                                     </i>
                                     <i ng-if="item.CandidateActivityType === 'Group'">
-                                       <strong class="colored bg-white">
-                                           از تاریخ :
-                                       </strong>
                                        {{item.CandidateStartMonth | bindEnum}} - {{item.CandidateStartYear}}
                                         ,
                                    </i>
                                    <i ng-if="item.CandidateActivityType === 'Group'">
-                                       <strong class="colored bg-white">
-                                           تا تاریخ :
-                                       </strong>
                                        {{item.CandidateEndMonth | bindEnum}} - {{item.CandidateEndYear}}
                                    </i>
                                 </li>
