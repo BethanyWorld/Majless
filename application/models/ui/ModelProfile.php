@@ -878,7 +878,6 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
-
     public function candidateUpdateDocuments($inputs){
         foreach ($inputs['inputCandidateDocumentUrl'] as $document) {
             $UserArray = array(
@@ -921,6 +920,5 @@ class ModelProfile extends CI_Model{
         );
         return $arr;
     }
-
 }
 ?>

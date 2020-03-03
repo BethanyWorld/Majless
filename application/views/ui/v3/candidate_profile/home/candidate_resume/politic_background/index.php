@@ -30,8 +30,7 @@
                                                     <form id="form">
                                                         <span class="skill-divider"></span>
                                                         <?php foreach ($userInfo['politicBackground'] as $item) { ?>
-                                                            <div id="<?php echo md5(rand(1000, 9999)); ?>"
-                                                                 class="list-group-item extra-padding-top-25 odd-background-color-div">
+                                                            <div id="<?php echo md5(rand(1000, 9999)); ?>" class="list-group-item extra-padding-top-25 odd-background-color-div">
                                                                 <span class="remove-form fa fa-times"></span>
                                                                 <div class="list-group-Grade col-md-12 col-xs-12 padding-0">
                                                                     <!--for Format-->
@@ -80,8 +79,6 @@
                                                                     <!--for election-->
                                                                     <!--for Responsibility-->
                                                                     <div class="RightFloat margin-b-25  input-style">
-
-
                                                                     </div>
                                                                     <div class="col-md-4 col-sm-12 col-xs-12 RightFloat">
                                                                         <label for="inputCandidateResponsibility">مسئولیت</label>
@@ -124,7 +121,9 @@
                                                                         <label for="inputCandidateConstituencyStateId">استان</label>
                                                                         <select class="form-control form-control-lg state-select" name="inputCandidateConstituencyStateId" id="inputCandidateConstituencyStateId">
                                                                             <?php foreach ($states as $state) { ?>
-                                                                                <option value="<?php echo $state['StateId']; ?>">
+                                                                                <option
+                                                                                    <?php setOptionSelected($item['CandidateConstituencyStateId'], $state['StateId']); ?>
+                                                                                        value="<?php echo $state['StateId']; ?>">
                                                                                     <?php echo $state['StateName']; ?>
                                                                                 </option>
                                                                             <?php } ?>
