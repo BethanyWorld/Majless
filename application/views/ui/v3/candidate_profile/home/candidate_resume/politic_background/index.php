@@ -54,15 +54,6 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-
-                                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat input-style CollectionName">
-                                                                            <label for="inputCandidateActivityTypeOtherOrganizationTitle">نام
-                                                                                مجموعه</label>
-                                                                            <input name="inputCandidateActivityTypeOtherOrganizationTitle"
-                                                                                <?php setInputValue($item['CandidateActivityTypeOtherOrganizationTitle']); ?>
-                                                                                   type="text"
-                                                                                   required>
-                                                                        </div>
                                                                     </div>
                                                                     <!--for Format-->
                                                                     <!--for election-->
@@ -105,74 +96,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <!--for election-->
-                                                                    <!--for Cooperation-->
-                                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style Partnership-title">
-                                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                            <label for="inputCandidateHeadquarterActivityTitle">عنوان
-                                                                                همکاری :</label>
-                                                                            <select class="form-control form-control-lg"
-                                                                                    name="inputCandidateHeadquarterActivityTitle">
-                                                                                <option value="" selected>--انتخاب
-                                                                                    کنید--
-                                                                                </option>
-                                                                                <?php foreach ($EnumResumeProfile['CandidateHeadquarterActivityTitle'] as $key => $value) { ?>
-                                                                                    <option <?php setOptionSelected($item['CandidateHeadquarterActivityTitle'], $key); ?>
-                                                                                            value="<?php echo $key; ?>">
-                                                                                        <?php echo $value; ?>
-                                                                                    </option>
-                                                                                <?php } ?>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!--for Cooperation-->
-                                                                    <!--for Media-->
-                                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style Media">
-                                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                            <label for="inputCandidateMediaType">قالب
-                                                                                رسانه
-                                                                                :</label>
-                                                                            <select class="form-control form-control-lg"
-                                                                                    name="inputCandidateMediaType">
-                                                                                <option value="" selected>--انتخاب
-                                                                                    کنید--
-                                                                                </option>
-                                                                                <?php foreach ($EnumResumeProfile['CandidateMediaType'] as $key => $value) { ?>
-                                                                                    <option <?php setOptionSelected($item['CandidateMediaType'], $key); ?>
-                                                                                            value="<?php echo $key; ?>">
-                                                                                        <?php echo $value; ?>
-                                                                                    </option>
-                                                                                <?php } ?>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="col-md-6 col-sm-12 col-xs-12 input-style RightFloat media-template-title">
-                                                                            <label for="inputCandidateMediaTypeTitle">عنوان
-                                                                                قالب
-                                                                                رسانه</label>
-                                                                            <input name="inputCandidateMediaTypeTitle"
-                                                                                   type="text"
-                                                                                <?php setInputValue($item['CandidateMediaTypeTitle']); ?>
-                                                                                   required>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-12 col-xs-12 RightFloat margin-b-25 input-style MediaName">
-                                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                            <label for="inputCandidateMediaTitle"> نام
-                                                                                رسانه:</label>
-                                                                            <input name="inputCandidateMediaTitle"
-                                                                                   type="text"
-                                                                                <?php setInputValue($item['CandidateMediaTitle']); ?>
-                                                                                   required>
-                                                                        </div>
-                                                                        <div class="col-md-6 col-sm-12 col-xs-12 RightFloat Media-Activity input-style">
-                                                                            <label for="inputCandidateMediaActivityType">نوع
-                                                                                فعالیت :</label>
-                                                                            <input name="inputCandidateMediaActivityType"
-                                                                                   type="text"
-                                                                                <?php setInputValue($item['CandidateMediaActivityType']); ?>
-                                                                                   required>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!--for Media-->
+
                                                                     <!--for Responsibility-->
                                                                     <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style">
                                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
@@ -323,14 +247,6 @@
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
-
-                                                                <div class="col-md-6 col-sm-12 col-xs-12 RightFloat input-style CollectionName">
-                                                                    <label for="inputCandidateActivityTypeOtherOrganizationTitle">نام
-                                                                        مجموعه</label>
-                                                                    <input data-name="inputCandidateActivityTypeOtherOrganizationTitle"
-                                                                           type="text"
-                                                                           required>
-                                                                </div>
                                                             </div>
                                                             <!--for Format-->
 
@@ -370,67 +286,6 @@
                                                                 </div>
                                                             </div>
                                                             <!--for election-->
-
-                                                            <!--for Cooperation-->
-                                                            <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style Partnership-title">
-                                                                <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateHeadquarterActivityTitle">عنوان
-                                                                        همکاری :</label>
-                                                                    <select class="form-control form-control-lg"
-                                                                            data-name="inputCandidateHeadquarterActivityTitle">
-                                                                        <option value="" selected>--انتخاب کنید--
-                                                                        </option>
-                                                                        <?php foreach ($EnumResumeProfile['CandidateHeadquarterActivityTitle'] as $key => $value) { ?>
-                                                                            <option value="<?php echo $key; ?>">
-                                                                                <?php echo $value; ?>
-                                                                            </option>
-                                                                        <?php } ?>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <!--for Cooperation-->
-
-                                                            <!--for Media-->
-                                                            <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style Media">
-                                                                <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateMediaType">قالب رسانه
-                                                                        :</label>
-                                                                    <select class="form-control form-control-lg"
-                                                                            data-name="inputCandidateMediaType">
-                                                                        <option value="" selected>--انتخاب کنید--
-                                                                        </option>
-                                                                        <?php foreach ($EnumResumeProfile['CandidateMediaType'] as $key => $value) { ?>
-                                                                            <option value="<?php echo $key; ?>">
-                                                                                <?php echo $value; ?>
-                                                                            </option>
-                                                                        <?php } ?>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-6 col-sm-12 col-xs-12 input-style RightFloat media-template-title">
-                                                                    <label for="inputCandidateMediaTypeTitle">عنوان قالب
-                                                                        رسانه</label>
-                                                                    <input data-name="inputCandidateMediaTypeTitle"
-                                                                           type="text"
-                                                                           required>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 col-xs-12 RightFloat margin-b-25 input-style MediaName">
-                                                                <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateMediaTitle"> نام
-                                                                        رسانه:</label>
-                                                                    <input data-name="inputCandidateMediaTitle"
-                                                                           type="text"
-                                                                           required>
-                                                                </div>
-                                                                <div class="col-md-6 col-sm-12 col-xs-12 RightFloat Media-Activity input-style">
-                                                                    <label for="inputCandidateMediaActivityType">نوع
-                                                                        فعالیت
-                                                                        :</label>
-                                                                    <input data-name="inputCandidateMediaActivityType"
-                                                                           type="text" required>
-                                                                </div>
-                                                            </div>
-                                                            <!--for Media-->
 
                                                             <!--for Responsibility-->
                                                             <div class="col-md-12 col-xs-12 RightFloat margin-b-25  input-style">
@@ -475,7 +330,7 @@
                                                                     <label for="inputCandidateResponsibility">
                                                                         حزب
                                                                     </label>
-                                                                    <select class="form-control form-control-lg state-select"
+                                                                    <select class="form-control form-control-lg"
                                                                             name="inputCandidateConstituencyStateId"
                                                                             id="inputCandidateConstituencyStateId">
                                                                             <option value="" selected> -- انتخاب کنید --</option>

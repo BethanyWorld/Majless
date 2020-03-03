@@ -266,23 +266,6 @@
 
 
 
-        $(document).on('change', '.state-select', function () {
-            toggleLoader();
-            $inputCandidateStateId = $(this).val();
-            $this = $(this);
-            $.ajax({
-                type: 'post',
-                url: base_url + 'State/getCityByStateId/' + $inputCandidateStateId,
-                success: function (data) {
-                    toggleLoader();
-                    $result = JSON.parse(data);
-                },
-                error: function (data) {
-                    toggleLoader();
-                    notify('درخواست با خطا مواجه شد', 'red');
-                }
-            });
-        });
 
     });
 </script>
