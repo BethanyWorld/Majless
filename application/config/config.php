@@ -60,7 +60,7 @@ $config['gifLoader'] = $config['base_url'] . 'assets/ui/v4/images/loader.gif';
 /* عنوان پیش فرض سایت */
 $config['defaultPageTitle'] = 'جنبش از ما - ';
 /* تعداد سطر های پیش فرض جهت نمایش در پتل ها */
-$config['defaultPageSize'] = 6;
+$config['defaultPageSize'] = 50;
 /* مسیر آپلود فایل های کاربران برای نمایندگی */
 $config['upload_path'] = './uploads/';
 /* وضعیت های نامزد انتخاباتی */
@@ -268,6 +268,15 @@ $config['EnumResumeProfile'] = array(
 //        'Media' => 'رسانه',
 //        'Others' => 'سایر'
     ),
+    'CandidatePoliticResponsibility' => array(
+        'NormalMember' => 'عضو عادی',
+        'ActiveMember' => 'عضو فعال',
+        'CentralCouncilMember' => 'عضو شورای مرکزی',
+        'Speaker' => 'سخنگو',
+        'Secretary' => 'دبیر',
+        'SecretaryGeneral' => 'دبیر کل',
+        'ProvincialSecretary' => 'دبیر استانی'
+    ),
     'CandidatePoliticElectionType' => array(
         'President' => 'ریاست جمهوری',
         'Parliament' => 'مجلس',
@@ -328,3 +337,9 @@ $config['EnumResumeProfile'] = array(
 );
 /* استان پیش فرض تهران است */
 $config['defaultStateId'] = 8;
+
+
+$config['EnumStatisticsType'] = array(
+    'PercentageOfParticipation' => 'درصد مشارکت',
+    'PercentageOfParticipationColor' => 'رنگ استان بر حسب درصد مشارکت',
+);

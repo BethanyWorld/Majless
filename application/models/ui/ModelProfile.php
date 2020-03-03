@@ -598,25 +598,21 @@ class ModelProfile extends CI_Model{
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
                     'CandidateActivityType' => $inputs['inputCandidatePoliticBackground'][$i]['value'],
-                    'CandidateActivityTypeOtherOrganizationTitle' => $inputs['inputCandidatePoliticBackground'][$i + 1]['value'],
-                    'CandidateElectionType' => $inputs['inputCandidatePoliticBackground'][$i + 2]['value'],
-                    'CandidateElectionPeriod' => $inputs['inputCandidatePoliticBackground'][$i + 3]['value'],
-                    'CandidateElectionListName' => $inputs['inputCandidatePoliticBackground'][$i + 4]['value'],
-                    'CandidateHeadquarterActivityTitle' => $inputs['inputCandidatePoliticBackground'][$i + 5]['value'],
-                    'CandidateMediaType' => $inputs['inputCandidatePoliticBackground'][$i + 6]['value'],
-                    'CandidateMediaTypeTitle' => $inputs['inputCandidatePoliticBackground'][$i + 7]['value'],
-                    'CandidateMediaTitle' => $inputs['inputCandidatePoliticBackground'][$i + 8]['value'],
-                    'CandidateMediaActivityType' => $inputs['inputCandidatePoliticBackground'][$i + 9]['value'],
-                    'CandidateResponsibility' => $inputs['inputCandidatePoliticBackground'][$i + 10]['value'],
-                    'CandidateMemberShip' => $inputs['inputCandidatePoliticBackground'][$i + 11]['value'],
-                    'CandidateMediaStartMonth' => $inputs['inputCandidatePoliticBackground'][$i + 12]['value'],
-                    'CandidateMediaStartYear' => $inputs['inputCandidatePoliticBackground'][$i + 13]['value'],
-                    'CandidateMediaEndMonth' => $inputs['inputCandidatePoliticBackground'][$i + 14]['value'],
-                    'CandidateMediaEndYear' => $inputs['inputCandidatePoliticBackground'][$i + 15]['value'],
-                    'CandidateActivityDescription' => $inputs['inputCandidatePoliticBackground'][$i + 16]['value']
+                    'CandidateElectionType' => $inputs['inputCandidatePoliticBackground'][$i + 1]['value'],
+                    'CandidateElectionPeriod' => $inputs['inputCandidatePoliticBackground'][$i + 2]['value'],
+                    'CandidateElectionListName' => $inputs['inputCandidatePoliticBackground'][$i + 3]['value'],
+                    'CandidateResponsibility' => $inputs['inputCandidatePoliticBackground'][$i + 4]['value'],
+                    'CandidateMemberShip' => $inputs['inputCandidatePoliticBackground'][$i + 5]['value'],
+                    'CandidatePartyId' => $inputs['inputCandidatePoliticBackground'][$i + 6]['value'],
+                    'CandidateConstituencyStateId' => $inputs['inputCandidatePoliticBackground'][$i + 7]['value'],
+                    'CandidateStartMonth' => $inputs['inputCandidatePoliticBackground'][$i + 8]['value'],
+                    'CandidateStartYear' => $inputs['inputCandidatePoliticBackground'][$i + 9]['value'],
+                    'CandidateEndMonth' => $inputs['inputCandidatePoliticBackground'][$i + 10]['value'],
+                    'CandidateEndYear' => $inputs['inputCandidatePoliticBackground'][$i + 11]['value'],
+                    'CandidateActivityDescription' => $inputs['inputCandidatePoliticBackground'][$i + 12]['value']
                 );
                 $this->db->insert('candidate_politic_record', $UserArray);
-                $i += 17;
+                $i += 13;
             }
         }
         $this->db->trans_complete();

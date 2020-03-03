@@ -227,10 +227,6 @@
         $("#updatePoliticBackground").click({redirect: false}, updatePoliticBackground);
         $("#updatePoliticBackgroundAndRedirect").click({redirect: true}, updatePoliticBackground);
         function updatePoliticBackground(param) {
-            // if ($("#form").serializeArray().length <= 0) {
-            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            // }
-
                 $sendData = {inputCandidatePoliticBackground : $("#form").serializeArray()}
                 toggleLoader();
                 $.ajax({
@@ -248,12 +244,11 @@
                 });
 
         }
-
         $(document).on('change' , '[name="inputCandidateResponsibility"]' , function() {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateResponsibility = $(this).val();
-            if($inputCandidateResponsibility === 'provincialSecretary'){
+            if($inputCandidateResponsibility === 'ProvincialSecretary'){
                 $($parentDom + '.states').removeClass('hidden');
                 $($parentDom + '.states').show();
             }
@@ -262,10 +257,6 @@
                 $($parentDom + '.states').hide();
             }
         });
-
-
-
-
 
     });
 </script>

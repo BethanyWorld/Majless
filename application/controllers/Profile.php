@@ -608,18 +608,19 @@ class Profile extends CI_Controller{
         $data['userInfo']['politicBackground'] = $this->ModelProfile->getCandidateUpdatePoliticBackgroundByCandidateId($data['userInfo']['CandidateId']);
         $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
         $data['states'] = $this->ModelCountry->getStateList();
-
+        $data['parties'] = $this->ModelUtilities->getAllParty();
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index_css');
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/politic_background/index_js', $data);
         $this->load->view('ui/v3/static/footer');
     }
-    public function candidateUpdatePoliticBackground()
-    {
+    public function candidateUpdatePoliticBackground(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
         $inputs = $this->input->post(NULL, TRUE);
         $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        /*var_dump($inputs);
+        die();*/
         $result = $this->ModelProfile->candidateUpdatePoliticBackground($inputs);
         echo json_encode($result);
     }
