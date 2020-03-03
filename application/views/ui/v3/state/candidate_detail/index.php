@@ -571,27 +571,26 @@
                                 <li ng-repeat="item in politicBackground">
                                     <span class="fa fa-circle-o"></span>
                                     {{item.CandidateResponsibility | bindEnum}}
-                                    ,
                                     {{item.CandidateActivityType | bindEnum }}
-                                    ,
+
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
                                         {{item.CandidateElectionListName }}
-                                        ,
+
                                     </i>
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
                                         {{item.CandidateElectionType | bindEnum}}
-                                        ,
+
                                     </i>
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
                                         {{item.CandidateElectionPeriod }}
                                     </i>
                                     <i ng-if="item.CandidateResponsibility === 'ProvincialSecretary'">
                                         {{item.CandidateConstituencyStateId | bindState }}
-                                        ,
+
                                     </i>
                                     <i ng-if="item.CandidateActivityType === 'Group'">
                                        {{item.CandidateStartMonth | bindEnum}} - {{item.CandidateStartYear}}
-                                        ,
+
                                    </i>
                                    <i ng-if="item.CandidateActivityType === 'Group'">
                                        {{item.CandidateEndMonth | bindEnum}} - {{item.CandidateEndYear}}
