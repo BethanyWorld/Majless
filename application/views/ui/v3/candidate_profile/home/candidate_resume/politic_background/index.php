@@ -34,7 +34,7 @@
                                                                 <span class="remove-form fa fa-times"></span>
                                                                 <div class="list-group-Grade col-md-12 col-xs-12 padding-0">
                                                                     <!--for Format-->
-                                                                    <div class="col-md-12 col-xs-12 margin-b-25">
+                                                                    <div class="col-md-12 padding-0 col-xs-12 margin-b-25">
                                                                         <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
                                                                             <label for="inputCandidateActivityType">قالب فعالیت :</label>
                                                                             <select class="form-control form-control-lg" name="inputCandidateActivityType">
