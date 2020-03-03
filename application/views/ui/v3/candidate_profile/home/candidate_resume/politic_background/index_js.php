@@ -1,7 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $President = JSON.parse (
+        $President = JSON.parse(
             ' [' +
             '{ "name": "دوره اول - 1358" , "value" : "1" } ,' +
             '{ "name": "دوره دوم - 1360" , "value" : "2"  } ,' +
@@ -17,7 +17,7 @@
             '{ "name": "دوره دوازدهم - 1396" , "value" : "12"  }   ' +
             ']'
         );
-        $Parliament = JSON.parse (
+        $Parliament = JSON.parse(
             ' [' +
             '{ "name": "دوره اول - 1358"  , "value" : "1" } ,' +
             '{ "name": "دوره دوم - 1363" , "value" : "2"  } ,' +
@@ -31,7 +31,7 @@
             '{ "name": "دوره دهم - 1394" , "value" : "10"  }   ' +
             ']'
         );
-        $CouncilExperts = JSON.parse (
+        $CouncilExperts = JSON.parse(
             ' [' +
             '{ "name": "دوره اول - 1361"  , "value" : "1" } ,' +
             '{ "name": "دوره دوم - 1369" , "value" : "2"  } ,' +
@@ -40,7 +40,7 @@
             '{ "name": "دوره پنجم - 1394" , "value" : "5"  }   ' +
             ']'
         );
-        $CityCouncil = JSON.parse (
+        $CityCouncil = JSON.parse(
             ' [' +
             '{ "name": "دوره اول - 1377"  , "value" : "1" } ,' +
             '{ "name": "دوره دوم - 1381" , "value" : "2"  } ,' +
@@ -165,35 +165,44 @@
             $inputCandidateElectionType = $(this).val();
             $($parentDom + '.ElectionPeriod').css('display', 'block');
 
-            if($inputCandidateElectionType === "President"){
-                fillMajorDropDown($parentDom , $President);
+            if ($inputCandidateElectionType === "President") {
+                fillMajorDropDown($parentDom, $President);
             }
-            if($inputCandidateElectionType === "Parliament"){
-                fillMajorDropDown($parentDom , $Parliament);
+            if ($inputCandidateElectionType === "Parliament") {
+                fillMajorDropDown($parentDom, $Parliament);
             }
-            if($inputCandidateElectionType === "CouncilExperts"){
-                fillMajorDropDown($parentDom , $CouncilExperts);
+            if ($inputCandidateElectionType === "CouncilExperts") {
+                fillMajorDropDown($parentDom, $CouncilExperts);
             }
-            if($inputCandidateElectionType === "CityCouncil"){
-                fillMajorDropDown($parentDom , $CityCouncil);
+            if ($inputCandidateElectionType === "CityCouncil") {
+                fillMajorDropDown($parentDom, $CityCouncil);
             }
         });
 
-        function fillMajorDropDown($id , data) {
+        // for date 98
+        $inputCandidateMediaStartYear = $('#inputCandidateStartYear').find('option').filter('[selected]').length;
+        $inputCandidateMediaEndYear = $('#inputCandidateStartYear').find('option').filter('[selected]').length;
+        if ($inputCandidateMediaEndYear === 0 || $inputCandidateMediaStartYear === 0) {
+            $('#inputCandidateStartYear').find('option:last-child').attr('selected', 'selected');
+            $('#inputCandidateEndYear').find('option:last-child').attr('selected', 'selected');
+        }
+        // for date 98
+
+        function fillMajorDropDown($id, data) {
             $selectedMajor = $($id + "[name='inputCandidateElectionType']").data('selected-major');
             $($id + "[name='inputCandidateElectionPeriod']").html('');
             $tempOption = "<option selected value=''>-- انتخاب کنید --</option>";
             $($id + "[name='inputCandidateElectionPeriod']").append($tempOption);
-            for($i=0;$i<data.length;$i++){
-                if($selectedMajor == data[$i]['value']){
-                    $tempOption = "<option selected value='"+data[$i]['value']+"'> "+ data[$i]['name']+"</option>";
-                }
-                else{
-                    $tempOption = "<option value='"+data[$i]['value']+"'> "+ data[$i]['name']+"</option>";
+            for ($i = 0; $i < data.length; $i++) {
+                if ($selectedMajor == data[$i]['value']) {
+                    $tempOption = "<option selected value='" + data[$i]['value'] + "'> " + data[$i]['name'] + "</option>";
+                } else {
+                    $tempOption = "<option value='" + data[$i]['value'] + "'> " + data[$i]['name'] + "</option>";
                 }
                 $($id + "[name='inputCandidateElectionPeriod']").append($tempOption);
             }
         }
+
         $(".add-form").click(function () {
             $('.add-form').removeClass('waves');
             $("#plus-wave").remove();
@@ -204,13 +213,12 @@
             $(".skill-divider").after($form);
 
 
-
             // for date 98
-            $inputCandidateMediaStartYear = $('#inputCandidateMediaStartYear').find('option').filter('[selected]').length;
-            $inputCandidateMediaEndYear = $('#inputCandidateMediaEndYear').find('option').filter('[selected]').length;
+            $inputCandidateMediaStartYear = $('#inputCandidateStartYear').find('option').filter('[selected]').length;
+            $inputCandidateMediaEndYear = $('#inputCandidateStartYear').find('option').filter('[selected]').length;
             if ($inputCandidateMediaEndYear === 0 || $inputCandidateMediaStartYear === 0) {
-                $('#inputCandidateMediaStartYear').find('option:last-child').attr('selected' , 'selected');
-                $('#inputCandidateMediaEndYear').find('option:last-child').attr('selected' , 'selected');
+                $('#inputCandidateStartYear').find('option:last-child').attr('selected', 'selected');
+                $('#inputCandidateEndYear').find('option:last-child').attr('selected', 'selected');
             }
             // for date 98
 
@@ -221,38 +229,40 @@
 
         /* Add By ME */
         $('[name="inputCandidateActivityType"]').change();
-        setTimeout(function(){$('[name="inputCandidateElectionType"]').change();} , 500);
-        setTimeout(function(){$('[name="inputCandidateMediaType"]').change();} , 1000);
+        setTimeout(function () {$('[name="inputCandidateElectionType"]').change();}, 500);
+        setTimeout(function () {$('[name="inputCandidateResponsibility"]').change();}, 100);
+        setTimeout(function () {$('[name="inputCandidateMediaType"]').change();}, 1000);
 
         $("#updatePoliticBackground").click({redirect: false}, updatePoliticBackground);
         $("#updatePoliticBackgroundAndRedirect").click({redirect: true}, updatePoliticBackground);
+
         function updatePoliticBackground(param) {
-                $sendData = {inputCandidatePoliticBackground : $("#form").serializeArray()}
-                toggleLoader();
-                $.ajax({
-                    type: 'post',
-                    url: base_url + 'Profile/candidateUpdatePoliticBackground',
-                    data: $sendData,
-                    success: function (data) {
-                        toggleLoader();
-                        $result = JSON.parse(data);
-                        notify($result['content'], $result['type']);
-                        if (param.data.redirect) {
-                            window.location.href = base_url + 'Profile/scienceBackground';
-                        }
+            $sendData = {inputCandidatePoliticBackground: $("#form").serializeArray()}
+            toggleLoader();
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Profile/candidateUpdatePoliticBackground',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = JSON.parse(data);
+                    notify($result['content'], $result['type']);
+                    if (param.data.redirect) {
+                        window.location.href = base_url + 'Profile/scienceBackground';
                     }
-                });
+                }
+            });
 
         }
-        $(document).on('change' , '[name="inputCandidateResponsibility"]' , function() {
+
+        $(document).on('change', '[name="inputCandidateResponsibility"]', function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateResponsibility = $(this).val();
-            if($inputCandidateResponsibility === 'ProvincialSecretary'){
+            if ($inputCandidateResponsibility === 'ProvincialSecretary') {
                 $($parentDom + '.states').removeClass('hidden');
                 $($parentDom + '.states').show();
-            }
-            else {
+            } else {
                 $($parentDom + '.states').addClass('hidden');
                 $($parentDom + '.states').hide();
             }
