@@ -1,5 +1,10 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
+    #footer-promo {
+        text-align: center;
+        position: relative !important;
+        z-index: 10000 !important;
+    }
     .filter{
         cursor: pointer;
         display: inline-block;

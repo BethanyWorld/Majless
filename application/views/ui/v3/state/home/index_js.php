@@ -23,7 +23,9 @@
                 var title = $(this).attr('data-participation-value');
                 if (title !== '' && c !== '' ) {
                     $("#IranMap .list ." + b + " ." + c + " a").addClass("hover");
-                    $("#IranMap .show-title").html(title + ' درصد ').css({display: "block"})
+                    if(title !== undefined){
+                        $("#IranMap .show-title").html(title + ' درصد ').css({display: "block"});
+                    }
                 }
             }, function () {
                 $("#IranMap .list a").removeClass("hover");
@@ -40,7 +42,9 @@
                         var b = "#IranMap svg g." + c + " path." + e;
                         var d = $(b).attr("class");
                         $(b).attr("class", d + " hover");
-                        $("#IranMap .show-title").html(title + ' درصد ').css({display: "block"})
+                        if(title !== undefined){
+                            $("#IranMap .show-title").html(title + ' درصد ').css({display: "block"});
+                        }
                     }
                 },
                 function () {
