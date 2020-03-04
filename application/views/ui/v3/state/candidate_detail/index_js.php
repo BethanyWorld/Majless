@@ -180,7 +180,8 @@
                 });
             }
         });
-        $(".commonScrollStyle li a").click(function () {
+        $(".commonScrollStyle li a").click(function (e) {
+            e.preventDefault();
             theHref = $(this).attr("href");
             $("html, body").animate({
                 scrollTop: $(theHref).offset().top
