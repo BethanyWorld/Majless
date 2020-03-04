@@ -264,11 +264,11 @@ class State extends CI_Controller{
                 $data['dataSpecial'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);
                 $index +=1;
             }
-            $index = 0;
+            /*$index = 0;
             foreach ($data['dataSpecialNoRef'] as $item) {
                 $data['dataSpecialNoRef'][$index]['badges'] = $this->ModelCandidate->getCandidateBadgeByCandidateId($item['CandidateCode']);
                 $index +=1;
-            }
+            }*/
             echo $this->load->view('ui/v3/state/candidate/ajax', $data, TRUE);
         } else {
             echo "CSRF Token Is Different";

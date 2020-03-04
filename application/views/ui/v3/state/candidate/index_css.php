@@ -1,5 +1,8 @@
 <?php $_DIR = base_url('assets/ui/v4/'); ?>
 <style>
+    .candidate-info-box{
+
+    }
     #footer-promo {
         text-align: center;
         position: relative !important;

@@ -1,4 +1,5 @@
 <?php
+
 class ModelCandidate extends CI_Model{
     public function getCandidate($inputs)
     {
@@ -400,7 +401,23 @@ class ModelCandidate extends CI_Model{
         return array();
     }
     public function getCandidatesSpecialByElectionId($inputs){
-        $this->db->select('RowId,CandidateCode,ElectionName,CandidateStatus,CandidatePreName,CandidateFullName,CandidateHasAccepted,CandidateResumeForViewStatus,CandidateOperationStatus,CandidateRefId,CandidateId,candidate.CandidateStateId,candidate_special.CandidateElectionId,CandidateElectionCode,CandidateSelectionStatus, candidate_special.CandidateProfileImage as CPI');
+
+        $this->db->select('RowId,CandidateCode,ElectionName,CandidateStatus,CandidatePreName,CandidateFullName,CandidateHasAccepted,CandidateResumeForViewStatus,CandidateOperationStatus,CandidateRefId,CandidateId,candidate.CandidateStateId,candidate_special.CandidateElectionId,CandidateElectionCode,CandidateElectionVote,CandidateSelectionStatus, candidate_special.CandidateProfileImage as CPI');
+        $this->db->from('candidate_special');
+        $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
+        $this->db->join('candidate', 'candidate.CandidateId = candidate_special.CandidateRefId');
+        if (isset($inputs['inputElectionIds']) && !empty($inputs['inputElectionIds'])) {
+            $this->db->where_in('candidate_special.CandidateElectionId', $inputs['inputElectionIds']);
+        }
+        $this->db->where('candidate_special.CandidateStateId = '.$this->db->escape($inputs['inputStateId']).' AND (CandidateSelectionStatus= "SelectedFirstLop" OR CandidateSelectionStatus= "SelectedSecondLop")');
+        $this->db->order_by('CandidateSelectionStatus ASC');
+        $this->db->order_by('CandidateElectionVote DESC');
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        return array();
+        /*$this->db->select('RowId,CandidateCode,ElectionName,CandidateStatus,CandidatePreName,CandidateFullName,CandidateHasAccepted,CandidateResumeForViewStatus,CandidateOperationStatus,CandidateRefId,CandidateId,candidate.CandidateStateId,candidate_special.CandidateElectionId,CandidateElectionCode,CandidateSelectionStatus, candidate_special.CandidateProfileImage as CPI');
         $this->db->from('candidate_special');
         $this->db->join('election_location', 'election_location.ElectionId = candidate_special.CandidateElectionId');
         $this->db->join('candidate', 'candidate.CandidateId = candidate_special.CandidateRefId');
@@ -413,7 +430,7 @@ class ModelCandidate extends CI_Model{
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-        return array();
+        return array();*/
     }
     public function getCandidatesSpecialWithOutRefIdByElectionId($inputs){
         $this->db->select('* , candidate_special.CandidateProfileImage as CPI');
