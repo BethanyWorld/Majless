@@ -255,21 +255,20 @@
                 $($parentDom + '.CandidateUniversityName').show();
                 $($parentDom + '.CandidateUniversityOtherName').show();
                 $($parentDom + '.CandidateUniversityOtherNameHozeh').hide();
+
+                $($parentDom + '.CandidateDepartment').css('display' , 'block');
+                $($parentDom + '.CandidateMajor').css('display' , 'block');
             }
             else {
+                $($parentDom + '.CandidateDepartment').css('display' , 'none');
+                $($parentDom + '.CandidateMajor').css('display' , 'none');
+
                 $($parentDom + '.CandidateUniversityName').hide();
                 $($parentDom + '.CandidateUniversityOtherName').hide();
                 $($parentDom + '.CandidateUniversityOtherNameHozeh').show();
                 $($parentDom + '.CandidateUniversityOtherNameHozeh').removeClass('hidden');
             }
-            if($inputCandidateUniversityLevelType === "SeminaryLevelType") {
-                $($parentDom + '.CandidateDepartment').css('display' , 'none');
-                $($parentDom + '.CandidateMajor').css('display' , 'none');
-            }
-            else {
-                $($parentDom + '.CandidateDepartment').css('display' , 'block');
-                $($parentDom + '.CandidateMajor').css('display' , 'block');
-            }
+
             if($inputCandidateUniversityLevelType === "Others") {
                 $($parentDom + '.Change-UniversityName').html('نام مرکز آموزشی');
             }

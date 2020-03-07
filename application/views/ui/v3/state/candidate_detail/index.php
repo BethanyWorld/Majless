@@ -17,7 +17,7 @@
                 <div class="col-md-12 padding-0 RightPanel">
                     <ul class="col-md-12 padding-0 commonScrollStyle RightPanelUl">
                         <li class="col-md-12 padding-0">
-                            <a href="#academic-background">
+                            <a href="#academic-background" ng-if="candidateAcademicBackground.length !== 0">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-book"></span>
                                 </i>
@@ -25,19 +25,15 @@
                                     <div class="RightPanleTitle"> سوابق تحصیلی</div>
                                 </div>
                             </a>
+                            <a href="#item-not-entered" ng-if="candidateAcademicBackground.length === 0">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-book"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">سوابق تحصیلی</div>
+                                </div>
+                            </a>
                         </li>
-                        <!--                        --><?php //if ($candidate['CandidateGender'] == 'Male') { ?>
-                        <!--                            <li class="col-md-12 padding-0">-->
-                        <!--                                <a href="#military-records">-->
-                        <!--                                    <i class="zmdi RightpanelIcon">-->
-                        <!--                                        <span class="fa fa-flag"></span>-->
-                        <!--                                    </i>-->
-                        <!--                                    <div class="RightPanelContent">-->
-                        <!--                                        <div class="RightPanleTitle"> نظام وظیفه</div>-->
-                        <!--                                    </div>-->
-                        <!--                            </li>-->
-                        <!--                        --><?php //} ?>
-
                         <li class="col-md-12 padding-0">
                             <a href="#work-experience">
                                 <i class="zmdi RightpanelIcon">
@@ -58,16 +54,6 @@
                                 </div>
                             </a>
                         </li>
-                        <!--                        <li class="col-md-12 padding-0">-->
-                        <!--                            <a href="#skills">-->
-                        <!--                                <i class="zmdi RightpanelIcon">-->
-                        <!--                                    <span class="fa fa-outdent"></span>-->
-                        <!--                                </i>-->
-                        <!--                                <div class="RightPanelContent">-->
-                        <!--                                    <div class="RightPanleTitle"> مهارت ها</div>-->
-                        <!--                                </div>-->
-                        <!--                            </a>-->
-                        <!--                        </li>-->
                         <li class="col-md-12 padding-0">
                             <a href="#election-promises">
                                 <i class="zmdi RightpanelIcon">
@@ -2662,8 +2648,7 @@
                     </div>
                 </div>
                 <!-- Report Abuse -->
-
-                <div class="panel left-candidate-panel-resume padding-0 single-scroll">
+                <div class="panel left-candidate-panel-resume padding-0 single-scroll" id="item-not-entered">
                     <div class="panel-heading left-candidate-panel-resume col-md-12 col-xs-12 padding-0">
                         <div class="have-border-bottom">
                             <h3>موارد وارد نشده</h3>
@@ -3363,6 +3348,7 @@
                 finance = response.finance;
                 states = response.states;
                 cities = response.cities;
+
 
                 for (var i = 0; i < $scope.candidateAcademicBackground.length; i++) {
                     $scope.candidateAcademicBackground[i]['NewMajor'] = $scope.candidateAcademicBackground[i]['CandidateDepartment'] + "," + $scope.candidateAcademicBackground[i]['CandidateMajor'];

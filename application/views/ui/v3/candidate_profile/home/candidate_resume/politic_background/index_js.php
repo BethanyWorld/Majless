@@ -93,6 +93,7 @@
                 $($parentDom + '.Dates').addClass('hidden');
                 $($parentDom + '.Dates').hide();
             }
+            /* remain for backward compatibility
             if ($inputCandidateActivityType === "SupervisoryBoard") {
                 $($parentDom + '.Partnership-title').css('display', 'block');
                 $($parentDom + '.ElectionType').css('display', 'block');
@@ -111,7 +112,6 @@
                 $($parentDom + '.Dates').addClass('hidden');
                 $($parentDom + '.Dates').hide();
             }
-
             if ($inputCandidateActivityType === "Media") {
                 $($parentDom + '.Media').css('display', 'block');
                 $($parentDom + '.MediaName').css('display', 'block');
@@ -147,6 +147,7 @@
                 $($parentDom + '.Dates').addClass('hidden');
                 $($parentDom + '.Dates').hide();
             }
+           End remain for backward compatibility */
         });
         $(document).on('change', '[name="inputCandidateMediaType"]', function () {
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
@@ -179,14 +180,14 @@
             }
         });
 
-        // for date 98
+        //set last year for better user experience
         $inputCandidateMediaStartYear = $('#inputCandidateStartYear').find('option').filter('[selected]').length;
         $inputCandidateMediaEndYear = $('#inputCandidateStartYear').find('option').filter('[selected]').length;
         if ($inputCandidateMediaEndYear === 0 || $inputCandidateMediaStartYear === 0) {
             $('#inputCandidateStartYear').find('option:last-child').attr('selected', 'selected');
             $('#inputCandidateEndYear').find('option:last-child').attr('selected', 'selected');
         }
-        // for date 98
+        // End set last year for better user experience
 
         function fillMajorDropDown($id, data) {
             $selectedMajor = $($id + "[name='inputCandidateElectionType']").data('selected-major');
