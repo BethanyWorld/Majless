@@ -1,7 +1,8 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+        integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        setTimeout(function(){
+        setTimeout(function () {
             try {
                 $rolesScore = '<?php echo $candidate['CandidateRolesScore']; ?>';
                 $rolesScore = JSON.parse($rolesScore);
@@ -48,7 +49,7 @@
                             'هماهنگ‌ سازی'
                         ],
                         datasets: [{
-                            label:'',
+                            label: '',
                             data: $data,
                             backgroundColor: [
                                 'rgba(54, 162, 235, 1)',
@@ -73,7 +74,7 @@
                         },
                         tooltips: {
                             callbacks: {
-                                label: function(tooltipItem) {
+                                label: function (tooltipItem) {
                                     return tooltipItem.yLabel;
                                 }
                             }
@@ -122,9 +123,9 @@
                         });
                     }
                 });
+            } catch (e) {
             }
-            catch (e) {}
-        } , 2000);
+        }, 2000);
         $(window).scrollTop(0);
         $personalInfo = "";
         $militaryInfo = "";
@@ -144,8 +145,7 @@
             if ($inputReportFullName == "" || $inputReportTitle == "" || $inputReportPhone == "" || $inputReportContent == "" || $inputCaptcha == "") {
                 notify("لطفا تمامی موارد را کامل کنید", "red");
                 toggleLoader();
-            }
-            else {
+            } else {
                 $sendData = {
                     'inputReportCandidateId': $inputReportCandidateId,
                     'inputReportFullName': $inputReportFullName,
@@ -162,21 +162,21 @@
                     success: function (data) {
                         toggleLoader();
                         $result = JSON.parse(data);
-                        notify($result['content'] , $result['type']);
-                        if($result['success']){
-                            setTimeout(function(){
+                        notify($result['content'], $result['type']);
+                        if ($result['success']) {
+                            setTimeout(function () {
                                 location.reload();
-                            } , 2000);
+                            }, 2000);
                         }
                     },
-                    error: function(){
+                    error: function () {
                         toggleLoader();
-                        notify($result['content'] , $result['type']);
+                        notify($result['content'], $result['type']);
                     }
                 });
             }
         });
-        $(".commonScrollStyle li a").click(function (e) {
+        $(document).on('click', '.commonScrollStyle li a', function (e) {
             e.preventDefault();
             theHref = $(this).attr("href");
             $("html, body").animate({
@@ -216,6 +216,7 @@
                 }
             });
         }
+
         // for panel tab
         $(function () {
             var $tabButtonItem = $('#tab-button li'),

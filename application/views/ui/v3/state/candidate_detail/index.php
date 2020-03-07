@@ -35,7 +35,7 @@
                             </a>
                         </li>
                         <li class="col-md-12 padding-0">
-                            <a href="#work-experience">
+                            <a href="#work-experience" ng-if="candidateJobHistory.length !== 0">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-cogs"></span>
                                 </i>
@@ -43,9 +43,17 @@
                                     <div class="RightPanleTitle"> سوابق شغلی</div>
                                 </div>
                             </a>
+                            <a href="#item-not-entered" ng-if="candidateJobHistory.length === 0">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-book"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">سوابق شغلی</div>
+                                </div>
+                            </a>
                         </li>
                         <li class="col-md-12 padding-0">
-                            <a href="#scientific-research-records">
+                            <a href="#scientific-research-records" ng-if="candidateBooks.length !== 0">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-flask"></span>
                                 </i>
@@ -53,9 +61,17 @@
                                     <div class="RightPanleTitle"> سوابق علمی پژوهشی</div>
                                 </div>
                             </a>
+                            <a href="#item-not-entered" ng-if="candidateBooks.length === 0">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-book"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">سوابق علمی پژوهشی</div>
+                                </div>
+                            </a>
                         </li>
                         <li class="col-md-12 padding-0">
-                            <a href="#election-promises">
+                            <a href="#election-promises" ng-if="promises.length !== 0">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-outdent"></span>
                                 </i>
@@ -63,18 +79,35 @@
                                     <div class="RightPanleTitle">وعده های انتخاباتی</div>
                                 </div>
                             </a>
+                            <a href="#item-not-entered" ng-if="promises.length === 0">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-book"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">وعده های انتخاباتی</div>
+                                </div>
+                            </a>
                         </li>
                         <li class="col-md-12 padding-0">
-                            <a href="#political-background">
+                            <a href="#political-background" ng-if="politicBackground.length !== 0">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-handshake-o"></span>
                                 </i>
                                 <div class="RightPanelContent">
                                     <div class="RightPanleTitle"> سوابق سیاسی</div>
                                 </div>
+                            </a>
+                            <a href="#item-not-entered" ng-if="politicBackground.length === 0">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-book"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">وعده های سیاسی</div>
+                                </div>
+                            </a>
                         </li>
                         <li class="col-md-12 padding-0">
-                            <a href="#social-cultural-background">
+                            <a href="#social-cultural-background" ng-if="candidateSocialCulturalBackground.length !== 0">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-bookmark"></span>
                                 </i>
@@ -82,11 +115,27 @@
                                     <div class="RightPanleTitle"> سوابق فرهنگی اجتماعی</div>
                                 </div>
                             </a>
+                            <a href="#item-not-entered" ng-if="candidateSocialCulturalBackground.length === 0">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-book"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">سوابق فرهنگی اجتماعی</div>
+                                </div>
+                            </a>
                         </li>
                         <li class="col-md-12 padding-0">
-                            <a href="#property-assets">
+                            <a href="#property-assets" ng-if="finance.length !== 0">
                                 <i class="zmdi RightpanelIcon">
                                     <span class="fa fa-money"></span>
+                                </i>
+                                <div class="RightPanelContent">
+                                    <div class="RightPanleTitle">اطلاعات مالی</div>
+                                </div>
+                            </a>
+                            <a href="#item-not-entered" ng-if="finance.length === 0">
+                                <i class="zmdi RightpanelIcon">
+                                    <span class="fa fa-book"></span>
                                 </i>
                                 <div class="RightPanelContent">
                                     <div class="RightPanleTitle">اطلاعات مالی</div>
