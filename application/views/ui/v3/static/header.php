@@ -191,16 +191,14 @@ $userIsLogged = $CI->session->userdata('UserIsLogged');
                     <div class="menu-main-menu-container">
                         <ul id="menu-main-menu" class="nav-menu">
                             <li class="current-menu-item"><a href="<?php echo base_url('Home'); ?>">صفحه اصلی</a></li>
-                            <li><a href="<?php echo base_url('State') ?>">فهرست نامزدها</a></li>
+                            <li><a href="<?php echo base_url('State') ?>">فهرست نماینده ها</a></li>
                             <li>
                                 <a href="<?php echo base_url('blog/?page_id=40'); ?>">آشنایی با جنبش از ما</a>
                                 <ul>
                                     <li><a href="<?php echo base_url('blog/?page_id=40'); ?>">معرفی جنبش از ما</a></li>
                                     <li><a href="<?php echo base_url('blog/?page_id=42'); ?>">بیانیه ارزش</a></li>
-                                    <li><a href="<?php echo base_url('blog/?page_id=46'); ?>">فرآیند سنجش نامزدها</a>
-                                    </li>
-                                    <li><a href="<?php echo base_url('blog/?page_id=44'); ?>">آشنایی با آزمون ها</a>
-                                    </li>
+                                    <li><a href="<?php echo base_url('blog/?page_id=46'); ?>">فرآیند سنجش نامزدها</a></li>
+                                    <li><a href="<?php echo base_url('blog/?page_id=44'); ?>">آشنایی با آزمون ها</a></li>
                                     <li><a href="<?php echo base_url('blog/?p=90'); ?>">تعهدنامه داوطلبان</a></li>
                                     <li><a href="<?php echo base_url('blog/?page_id=49'); ?>">سوالات متداول</a></li>
                                 </ul>

@@ -1,6 +1,6 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <h1 class="page-caption">
-    برای مشاهده نامزد های دارای صلاحیت حرفه ای هر حوزه انتخابیه، استان مورد نظر خود را انتخاب کنید
+    استان مورد نظر خود را انتخاب کنید
 </h1>
 <div class="container container-wrapper">
     <div id="IranMap" class="clear">
