@@ -101,7 +101,6 @@ foreach ($dataSpecial as $candidate) {
         $inviteSectionSentence .= "امضای تعهدنامه"." ";
         $index =1;
     }
-
     ?>
     <div class="row col-md-4 col-md-offset-0 col-xs-12 candidate-info-box <?php echo $filterClass; ?> <?php echo $candidate['CandidateSelectionStatus']; ?>">
         <div class="mp-brief">
@@ -115,7 +114,8 @@ foreach ($dataSpecial as $candidate) {
                         <div class="sign <?php echo $badge; ?>"></div>
                     </a>
                     <?php $index += 1;
-                } ?>
+                }
+                ?>
             </div>
             <div class="col-xs-12">
                 <h3 class="candidateName">
@@ -123,6 +123,10 @@ foreach ($dataSpecial as $candidate) {
                     <div class="election">
                         <p style="margin: 0;"><?php echo $candidate['ElectionName']; ?></p>
                     </div>
+                    <p style="margin: 0;">
+                        تعداد رای:
+                        <?php echo number_format($candidate['CandidateElectionVote']); ?>
+                    </p>
                 </h3>
                 <?php if ($badgeCount == 3) { ?>
                     <p style="margin: 0;">&nbsp;</p>

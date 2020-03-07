@@ -1,9 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
-
 <script type="text/javascript">
     $(document).ready(function () {
-
-
         setTimeout(function(){
             try {
                 $rolesScore = '<?php echo $candidate['CandidateRolesScore']; ?>';
@@ -128,7 +125,6 @@
             }
             catch (e) {}
         } , 2000);
-
         $(window).scrollTop(0);
         $personalInfo = "";
         $militaryInfo = "";
@@ -180,7 +176,8 @@
                 });
             }
         });
-        $(".commonScrollStyle li a").click(function () {
+        $(".commonScrollStyle li a").click(function (e) {
+            e.preventDefault();
             theHref = $(this).attr("href");
             $("html, body").animate({
                 scrollTop: $(theHref).offset().top
@@ -283,6 +280,4 @@
 
         });
     });
-
-
 </script>

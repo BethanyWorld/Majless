@@ -1,6 +1,6 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <h1 class="page-caption">
-    برای مشاهده نامزد های دارای صلاحیت حرفه ای هر حوزه انتخابیه، استان مورد نظر خود را انتخاب کنید
+    استان مورد نظر خود را انتخاب کنید
 </h1>
 <div class="container container-wrapper">
     <div id="IranMap" class="clear">
@@ -133,7 +133,7 @@
             <div class="list">
                 <ul>
                     <li class="province">
-                        <span class="text-center">فهرست نامزد ها</span>
+                        <span class="text-center">فهرست استان ها</span>
                         <ul>
                             <li data-province-id="1" class="azerbaijan-east"><a href="#azerbaijan-east">آذربایجان شرقی</a></li>
                             <li data-province-id="2" class="azerbaijan-west"><a href="#azerbaijan-west">آذربایجان غربی</a></li>
