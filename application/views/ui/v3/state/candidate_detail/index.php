@@ -102,7 +102,7 @@
                                     <span class="fa fa-book"></span>
                                 </i>
                                 <div class="RightPanelContent">
-                                    <div class="RightPanleTitle">وعده های سیاسی</div>
+                                    <div class="RightPanleTitle">سوابق سیاسی</div>
                                 </div>
                             </a>
                         </li>
