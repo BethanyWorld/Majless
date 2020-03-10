@@ -85,14 +85,12 @@ class ModelProfile extends CI_Model{
         return
             $this->db->select('*')
                 ->from('candidate_academic_background')
-                ->join('university' , 'university.UniversityId = candidate_academic_background.CandidateUniversityName')
+                ->join('university' , 'university.UniversityId = candidate_academic_background.CandidateUniversityName' , 'left')
                 ->where('candidate_academic_background.CandidateId', $id)
                 ->get()
                 ->result_array();
     }
     public function candidateUpdateAcademicBackground($inputs){
-        /*var_dump($inputs['inputCandidateAcademicBackground']);
-        die();*/
         $this->db->trans_start();
         $this->db->delete('candidate_academic_background', array(
             'CandidateId' => $inputs['inputCandidateId']
@@ -120,9 +118,7 @@ class ModelProfile extends CI_Model{
                     if(isset($inputs['inputCandidateAcademicBackground'][$i + 5]['value']) && $inputs['inputCandidateAcademicBackground'][$i + 5]['value'] != ""){
                         $universityOtherName = $inputs['inputCandidateAcademicBackground'][$i + 5]['value'];
                         $query = $this->db->select('*')->from('university')->where('UniversityTitle', $universityOtherName)->get()->result_array();
-                        if($query){
-                            /* university name Is repetitive */
-                        }
+                        if($query){ /* university name Is repetitive */}
                         else{
                             $UserArray = array(
                                 'UniversityTitle' => $inputs['inputCandidateAcademicBackground'][$i + 5]['value'],

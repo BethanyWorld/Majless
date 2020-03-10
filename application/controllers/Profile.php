@@ -499,7 +499,8 @@ class Profile extends CI_Controller{
         $data['userInfo']['candidateAcademicBackground'] = $this->ModelProfile->getCandidateAcademicBackgroundByCandidateId($data['userInfo']['CandidateId']);
         $data['userInfo']['candidateDocuments'] = $this->ModelProfile->getCandidateDocuments($data['userInfo']['CandidateId']);
         $data['universities'] = $this->ModelUtilities->getAllUniversity();
-
+        /*var_dump($data['userInfo']['candidateAcademicBackground']);
+        die();*/
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index', $data);
         $this->load->view('ui/v3/candidate_profile/home/candidate_resume/academic_background/index_css');
@@ -1602,7 +1603,6 @@ class Profile extends CI_Controller{
             $data['allRequests'][$index]['EncryptionRowId'] = $ciphertext;
             $index+=1;
         }
-
         $this->load->view('ui/v3/static/header', $data);
         $this->load->view('ui/v3/candidate_profile/internal_candidate/vote/index', $data);
         $this->load->view('ui/v3/candidate_profile/internal_candidate/vote/index_css');

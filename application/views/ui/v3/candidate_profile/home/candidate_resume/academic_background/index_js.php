@@ -364,11 +364,9 @@
             });
 
             // for date 98
-            debugger;
             $inputCandidateStartAcademinBackgroundYear = $('#inputCandidateStartAcademicBackgroundYear').find('option').filter('[selected]').length;
             $inputCandidateEndAcademinBackgroundYear = $('#inputCandidateEndAcademicBackgroundYear').find('option').filter('[selected]').length;
             if ($inputCandidateStartAcademinBackgroundYear === 0 || $inputCandidateEndAcademinBackgroundYear === 0) {
-                debugger;
                 $('#inputCandidateStartAcademicBackgroundYear').find('option:last-child').attr('selected' , 'selected');
                 $('#inputCandidateEndAcademicBackgroundYear').find('option:last-child').attr('selected' , 'selected');
             }
