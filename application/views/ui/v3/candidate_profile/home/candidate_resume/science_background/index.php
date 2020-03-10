@@ -30,7 +30,7 @@ $_DIR = base_url('assets/ui/v3/');
                                             <div class="col-md-12 col-xs-12">
                                                 <div class="panel panel-default LeftPanelShadow">
                                                     <div class="panel-heading">
-                                                        تالیف کتاب
+                                                        تالیف
                                                         <span class="add-form fa fa-plus waves">
                                     <span class="fa fa-plus" id="plus-wave"></span>
                                 </span>

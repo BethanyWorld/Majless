@@ -394,7 +394,7 @@
                                                             </div>
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputCandidateStartAcademinBackgroundYear">
-                                                                    سال پایان تحصیل
+                                                                    سال شروع تحصیل
                                                                 </label>
                                                                 <select class="form-control form-control-lg city-select"
                                                                         name="inputCandidateStartAcademicBackgroundYear"

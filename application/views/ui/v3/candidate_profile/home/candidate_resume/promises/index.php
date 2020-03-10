@@ -26,24 +26,36 @@ $_DIR = base_url('assets/ui/v3/');
                                             <?php foreach ($userInfo['candidateElectionPromise'] as $item) { ?>
                                                 <div class="col-md-12 col-xs-12 padding-0 form">
                                                     <span class="remove-form fa fa-times"></span>
-                                                    <div class="col-md-12 col-xs-12 form-group">
-                                                        <label for="inputElectionPromise">وعده انتخاباتی شما :<span class="text-danger">
-                                                        </label>
-                                                        <textarea class="promise-text" type="text" name="inputElectionPromise"><?php echo $item['CandidateElectionPromise']; ?></textarea>
-                                                    </div>
+
+                                                        <div class="col-md-6 col-xs-12 form-group RightFloat">
+                                                            <label class="active" for="inputElectionPromise">
+                                                               وعده انتخاباتی شما :
+                                                            </label>
+                                                            <input type="text"
+                                                                <?php setInputValue($item['CandidateElectionPromise']); ?>
+                                                                   name="inputElectionPromise"
+                                                                   class="input-validate validate valid"
+                                                                   placeholder="پر کردن این فیلد الزامی می باشد">
+                                                        </div>
+
+
                                                 </div>
                                             <?php } ?>
                                         </form>
                                         <div id="unique-form"
                                              class="animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                             <span class="remove-form fa fa-times"></span>
-                                            <div class="col-md-12 col-xs-12 form-group">
-                                                <label for="inputElectionPromise">
+
+                                            <div class="col-md-6 col-xs-12 form-group RightFloat">
+                                                <label class="active" for="inputElectionPromise">
                                                     وعده انتخاباتی شما :
-                                                    <span class="text-danger">
                                                 </label>
-                                                <textarea class="promise-text" type="text" name="inputElectionPromise"></textarea>
+                                                <input type="text"
+                                                       name="inputElectionPromise"
+                                                       class="input-validate validate valid"
+                                                       placeholder="پر کردن این فیلد الزامی می باشد">
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>

@@ -195,7 +195,7 @@ $_DIR = base_url('assets/ui/v3/');
                                         </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12 RightFloat has-required-field">
                                             <label for="inputCandidateMaritalStatus">
-                                                وضعییت تاهل
+                                                وضعیت تاهل
                                                 <span class="text-danger">
                                                  <b class="text-danger">*</b>
                                              </span>

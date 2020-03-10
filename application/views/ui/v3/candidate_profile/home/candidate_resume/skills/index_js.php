@@ -50,44 +50,6 @@
             $(this).parent().parent().hide();
         });
 
-        $(document).on('keyup', '[name="inputSkillType"]', function () {
-            $this = $(this);
-            $parentId = $(this).parents('div.list-group-item').attr('id');
-            $parentDom = "#" + $parentId + " ";
-            $('div.list-group-item').css({
-                'position':'relative',
-                'z-index':'1'
-            });
-            $(this).parents('div.list-group-item').css({
-                'position':'relative',
-                'z-index':'222222222'
-            });
-            $searchTerm = $.trim($(this).val());
-            if ($.trim($searchTerm) === "") {
-                $('.skillselectwo ul').html('');
-                $('.skillselectwo').hide();
-            } else {
-                $.ajax({
-                    type: 'GET',
-                    url: base_url + 'Profile/getSkillBySearchTerm/?term=' + $searchTerm,
-                    success: function (data) {
-                        $result = JSON.parse(data);
-                        $resualtLength = $result.length;
-                        if ($resualtLength > 0) {
-                            var toAppend = '';
-                            for (var i = 0; i < $result.length; i++) {
-                                toAppend += "<a data-name = '" + $result[i]['SkillTitle'] + "' class='dataSkillAttribute' title='" + $result[i]['SkillTitle'] + "'>" + $result[i]['SkillTitle'] + "</a>";
-                            }
-                            $this.parent('.kindOfSkills').eq(0).next('.skillselectwo').find('ul').eq(0).html('').append(toAppend);
-                            $this.parent().next('.skillselectwo').removeClass('hidden').show();
-                        } else {
-                            $('.skillselectwo').addClass('hidden').hide();
-                        }
-                    }
-                });
-            }
-            return false;
-        });
 
 
         // $('div.skillselectwo ul a').each(function () {
@@ -100,5 +62,58 @@
         //         $($parentDom + '.skillselectwo').addClass('hidden').hide();
         //     });
         // });
+
+        var typingTimer;
+        var doneTypingInterval = 1000;
+
+        $(document).on('keyup','.skill-type', function () {
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(doneTyping, doneTypingInterval);
+        });
+
+        $(document).on('keydown','.skill-type' , function () {
+            clearTimeout(typingTimer);
+        });
+
+        function doneTyping() {
+                $('div.list-group-item').css({
+                    'position': 'relative',
+                    'z-index': '1'
+                });
+                $('#inputSkillType').parents('div.list-group-item').css({
+                    'position': 'relative',
+                    'z-index': '222222222'
+                });
+                $searchTerm = $.trim($('#inputSkillType').val());
+                if ($.trim($searchTerm) === "") {
+                    $('.skillselectwo ul').html('');
+                    $('.skillselectwo').hide();
+                } else {
+                    $('.bubblingG').removeClass('hidden').show();
+                    $('#inputSkillType').parent().next('.skillselectwo').removeClass('hidden').show();
+                    setTimeout(function () {
+                        $.ajax({
+                            type: 'GET',
+                            url: base_url + 'Profile/getSkillBySearchTerm/?term=' + $searchTerm,
+                            success: function (data) {
+                                $('.bubblingG').addClass('hidden').hide();
+                                $result = JSON.parse(data);
+                                $resualtLength = $result.length;
+                                if ($resualtLength > 0) {
+                                    var toAppend = '';
+                                    for (var i = 0; i < $result.length; i++) {
+                                        toAppend += "<a data-name = '" + $result[i]['SkillTitle'] + "' class='dataSkillAttribute' title='" + $result[i]['SkillTitle'] + "'>" + $result[i]['SkillTitle'] + "</a>";
+                                    }
+                                    $('#inputSkillType').parent('.kindOfSkills').eq(0).next('.skillselectwo').find('ul').eq(0).html('').append(toAppend);
+                                    $('#inputSkillType').parent().next('.skillselectwo').removeClass('hidden').show();
+                                } else {
+                                    $('.skillselectwo').addClass('hidden').hide();
+                                }
+                            }
+                        });
+                    },2000);
+                }
+                return false;
+        }
     });
 </script>

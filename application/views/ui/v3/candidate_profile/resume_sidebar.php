@@ -1,5 +1,8 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
 <style>
+    label{
+        font-size: 12px;
+    }
     /*for tab panel */
     .tabs {
         margin: 0 auto;

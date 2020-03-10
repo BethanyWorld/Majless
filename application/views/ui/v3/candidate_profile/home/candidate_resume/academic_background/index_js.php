@@ -135,6 +135,10 @@
             '{ "name": "سایر" , "value" : "11"  }   ' +
             ']'
         );
+
+
+
+
         $(document).on('change' , '[name= "inputCandidateUniversityName"]' , function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
@@ -358,10 +362,21 @@
             $form.find(".dates select").each(function(){
                 $(this).val($(this).find("option:first").val());
             });
+
+            // for date 98
+            debugger;
+            $inputCandidateStartAcademinBackgroundYear = $('#inputCandidateStartAcademicBackgroundYear').find('option').filter('[selected]').length;
+            $inputCandidateEndAcademinBackgroundYear = $('#inputCandidateEndAcademicBackgroundYear').find('option').filter('[selected]').length;
+            if ($inputCandidateStartAcademinBackgroundYear === 0 || $inputCandidateEndAcademinBackgroundYear === 0) {
+                debugger;
+                $('#inputCandidateStartAcademicBackgroundYear').find('option:last-child').attr('selected' , 'selected');
+                $('#inputCandidateEndAcademicBackgroundYear').find('option:last-child').attr('selected' , 'selected');
+            }
+            // for date 98
         });
-        if($("#form").find('div.list-group-item').length == 0 ) {
-            $(".add-form").click();
-        }
+        // if($("#form").find('div.list-group-item').length == 0 ) {
+        //     $(".add-form").click();
+        // }
         $(document).on('click','.remove-form',function() {
             $(this).parent().remove();
         });

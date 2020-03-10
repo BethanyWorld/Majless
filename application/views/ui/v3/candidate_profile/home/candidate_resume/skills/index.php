@@ -40,15 +40,23 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <span class="text-danger">
                                                     <b class="text-danger">*</b></span>
                                                                 </label>
-                                                                <input class="ttt" id="inputSkillType" type="text"
+                                                                <input autocomplete="off" class="skill-type"
+                                                                       id="inputSkillType" type="text"
                                                                        name="inputSkillType"
                                                                     <?php setInputValue($item['SkillType']); ?>
                                                                        placeholder="پر کردن این فیلد الزامی می باشد">
 
                                                             </div>
                                                             <div class="hidden skillselectwo">
+                                                                <div class="bubblingG" hidden>
+                                                                    <span id="bubblingG_1"></span>
+                                                                    <span id="bubblingG_2"></span>
+                                                                    <span id="bubblingG_3"></span>
+                                                                </div>
+
                                                                 <ul></ul>
                                                             </div>
+
                                                             <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputSkillLevel">
                                                                     سطح مهارت
@@ -94,7 +102,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                         </div>
                                                     <?php } ?>
                                                 </form>
-                                                <div  id="unique-form" class=" list-group-item animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
+                                                <div id="unique-form"
+                                                     class=" list-group-item animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                     <span class="remove-form fa fa-times"></span>
                                                     <div class="col-md-4 col-xs-12 form-group RightFloat kindOfSkills">
                                                         <label for="inputSkillType">
@@ -102,13 +111,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                             <span class="text-danger">
                                                     <b class="text-danger">*</b></span>
                                                         </label>
-                                                        <input id="inputSkillType" type="text"
+                                                        <input autocomplete="off" class="skill-type" id="inputSkillType"
+                                                               type="text"
                                                                name="inputSkillType"
                                                                placeholder="پر کردن این فیلد الزامی می باشد">
                                                     </div>
+
                                                     <div class="hidden skillselectwo">
+                                                        <div class="bubblingG hidden">
+                                                            <span id="bubblingG_1"></span>
+                                                            <span id="bubblingG_2"></span>
+                                                            <span id="bubblingG_3"></span>
+                                                        </div>
                                                         <ul></ul>
                                                     </div>
+
                                                     <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                         <label for="inputSkillLevel">
                                                             سطح مهارت
@@ -156,7 +173,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                 $documentData['documentName'] = $documentName;
                                                 $documentData['documentPersianName'] = $documentPersianName;
                                                 $documentData['candidateDocuments'] = $userInfo['candidateDocuments'];
-                                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document' , $documentData);
+                                                $this->load->view('ui/v3/candidate_profile/home/candidate_resume/upload_document', $documentData);
                                                 ?>
                                             </div>
                                         </div>
@@ -170,7 +187,8 @@ $_DIR = base_url('assets/ui/v3/');
             <div class="LeftPaneAction">
                 <div class="row form-group">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <button class="btn btn-block btn-lg CommonButtons waves-effect" id="updateProfileSkillsAndRedirect">
+                        <button class="btn btn-block btn-lg CommonButtons waves-effect"
+                                id="updateProfileSkillsAndRedirect">
                             ثبت و ادامه
                         </button>
                     </div>
@@ -192,3 +210,6 @@ $_DIR = base_url('assets/ui/v3/');
     </div>
 
 </div>
+
+
+
