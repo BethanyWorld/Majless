@@ -76,15 +76,18 @@
         });
 
         function doneTyping() {
+                $this = $('#inputSkillType');
+                $parentId = $this.parents('div.list-group-item').attr('id');
+                $parentDom = "#" + $parentId + " ";
                 $('div.list-group-item').css({
                     'position': 'relative',
                     'z-index': '1'
                 });
-                $('#inputSkillType').parents('div.list-group-item').css({
+                $this.parents('div.list-group-item').css({
                     'position': 'relative',
                     'z-index': '222222222'
                 });
-                $searchTerm = $.trim($('#inputSkillType').val());
+                $searchTerm = $.trim($this.val());
                 if ($.trim($searchTerm) === "") {
                     $('.skillselectwo ul').html('');
                     $('.skillselectwo').hide();
@@ -104,12 +107,13 @@
                                     for (var i = 0; i < $result.length; i++) {
                                         toAppend += "<a data-name = '" + $result[i]['SkillTitle'] + "' class='dataSkillAttribute' title='" + $result[i]['SkillTitle'] + "'>" + $result[i]['SkillTitle'] + "</a>";
                                     }
-                                    $('#inputSkillType').parent('.kindOfSkills').eq(0).next('.skillselectwo').find('ul').eq(0).html('').append(toAppend);
-                                    $('#inputSkillType').parent().next('.skillselectwo').removeClass('hidden').show();
+                                    $this.parent('.kindOfSkills').eq(0).next('.skillselectwo').find('ul').eq(0).html('').append(toAppend);
+                                    $this.parent().next('.skillselectwo').removeClass('hidden').show();
                                 } else {
                                     $('.skillselectwo').addClass('hidden').hide();
                                 }
                             }
+
                         });
                     },2000);
                 }
