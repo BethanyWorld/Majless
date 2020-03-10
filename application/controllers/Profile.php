@@ -1516,6 +1516,69 @@ class Profile extends CI_Controller{
             die();
         }
     }
+    /*///////////////////////////////////////*/
+
+    /* internal candidate*/
+    public function internalCandidate(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'نظارت مالی و فرآیندی';
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'نظارت مالی و فرآیندی';
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
+        if($data['userInfo']['CandidateProfileImage'] != NULL && $data['userInfo']['CandidateProfileImage'] != ''){
+            $data['noImg'] = $data['userInfo']['CandidateProfileImage'];
+        }
+        else{
+            $data['noImg'] = $this->config->item('defaultImage');
+        }
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $data['supervisorType'] = $this->ModelProfile->getSupervisorType($inputs);
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/internal_candidate/home/index', $data);
+        $this->load->view('ui/v3/candidate_profile/internal_candidate/home/index_css');
+        $this->load->view('ui/v3/candidate_profile/internal_candidate/home/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function doSetSupervisorType()
+    {
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelProfile->doSetSupervisorType($inputs);
+        echo json_encode($result);
+    }
+    public function doDeleteSupervisorType()
+    {
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelProfile->doDeleteSupervisorType($inputs);
+        echo json_encode($result);
+    }
+
+    /* End internal candidate*/
+
     public function logOut()
     {
         $this->session->unset_userdata('UserLoginInfo');

@@ -333,6 +333,10 @@ $config['EnumResumeProfile'] = array(
         'Book' => 'کتاب',
         'Invention' => 'اختراع / اکتشاف',
         'Art' => 'اثر هنری'
+    ),
+    'SupervisorType' => array(
+        'Finance' => 'بازرس مالی',
+        'Process' => 'بازرس فرآیندی'
     )
 );
 /* استان پیش فرض تهران است */

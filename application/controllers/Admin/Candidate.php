@@ -554,7 +554,6 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doResumeForView($inputs);
         echo json_encode($result);
     }
-
     public function doChangeCandidateExamResultStatus()
     {
         $inputs = $this->input->post(NULL, TRUE);
@@ -586,7 +585,6 @@ class Candidate extends CI_Controller{
         $result = $this->ModelCandidate->doCreateWordpressAuthor($inputs);
         echo json_encode($result);
     }
-
     /*End Admin Special Candidates*/
     public function badgeScores(){
         $data['noImg'] = $this->config->item('defaultImage');

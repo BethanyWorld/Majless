@@ -921,5 +921,56 @@ class ModelProfile extends CI_Model{
         );
         return $arr;
     }
+
+    public function getSupervisorType($inputs){
+        return $this->db->select('*')
+                ->from('internal_election')
+                ->where('CandidateId', $inputs['inputCandidateId'])
+                ->get()
+                ->result_array();
+    }
+    public function doSetSupervisorType($inputs){
+        $examRequestArray = array(
+            'CandidateId' => $inputs['inputCandidateId'],
+            'SupervisionType' => $inputs['inputSupervisorType'],
+            'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+        );
+        $this->db->trans_start();
+        $this->db->delete('internal_election', array(
+            'CandidateId' => $inputs['inputCandidateId'],
+            'SupervisionType' => $inputs['inputSupervisorType']
+        ));
+        $this->db->insert('internal_election', $examRequestArray);
+        $this->db->trans_complete();
+        if ($this->db->trans_status() === FALSE) {
+            $arr = array(
+                'type' => "red",
+                'content' => "بروزرسانی با مشکل مواجه شد",
+                'success' => false
+            );
+            return $arr;
+        } else {
+            $arr = array(
+                'type' => "green",
+                'content' => "عملیات با موفقیت انجام شد",
+                'success' => true
+            );
+            return $arr;
+        }
+    }
+    public function doDeleteSupervisorType($inputs){
+        $this->db->delete('internal_election', array(
+            'RowId' => $inputs['inputRowId'],
+            'CandidateId' => $inputs['inputCandidateId'],
+            'SupervisionType' => $inputs['inputSupervisorType']
+        ));
+        $arr = array(
+            'type' => "green",
+            'content' => "حذف با موفقیت انجام شد",
+            'success' => true
+        );
+        return $arr;
+    }
+
 }
 ?>

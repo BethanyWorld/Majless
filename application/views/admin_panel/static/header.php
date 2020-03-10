@@ -140,21 +140,6 @@ $CI =& get_instance();
                         </li>
                     </ul>
                 </li>
-                <li <?php echo $CI->uri->segment(2) == 'Veteran' ? 'class="active"' : '' ?> >
-                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
-                        <i class="material-icons">bookmark</i>
-                        <span>پشتیبان پنل ایثارگر</span>
-                    </a>
-                    <ul class="ml-menu" style="display: none;">
-                        <li <?php if (strstr($uri, '/Veteran/index') !== false) echo "class='active'"; ?>>
-                            <a href="<?php echo base_url('Admin/Veteran/index'); ?>" class="waves-effect waves-block">فهرست</a>
-                        </li>
-                        <li <?php if (strstr($uri, '/Veteran/add') !== false) echo "class='active'"; ?>>
-                            <a href="<?php echo base_url('Admin/Veteran/add'); ?>"
-                               class="waves-effect waves-block">افزودن</a>
-                        </li>
-                    </ul>
-                </li>
                 <li <?php echo $CI->uri->segment(2) == 'States' ? 'class="active"' : '' ?> >
                     <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
                         <i class="material-icons">bookmark</i>
@@ -227,6 +212,12 @@ $CI =& get_instance();
                         </li>
                     </ul>
                 </li>
+                <li <?php if (strstr($uri, 'Admin/InternalCandidate') !== false) echo "class='active'"; ?>>
+                    <a href="<?php echo base_url('Admin/InternalCandidate'); ?>">
+                        <i class="material-icons">person</i>
+                        <span>داوطلبان نظارت</span>
+                    </a>
+                </li>
                 <li <?php echo $CI->uri->segment(2) == 'ExamPlaces' ? 'class="active"' : '' ?> >
                     <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
                         <i class="material-icons">bookmark</i>
@@ -288,8 +279,7 @@ $CI =& get_instance();
                     </a>
                 </li>
                 <li <?php if (strstr($uri, 'Admin/Reports') !== false) echo "class='active'"; ?>>
-                    <a
-                            href="<?php echo base_url('Admin/Reports'); ?>">
+                    <a href="<?php echo base_url('Admin/Reports'); ?>">
                         <i class="material-icons">person</i>
                         <span>گزارش گیری</span>
                     </a>
@@ -299,6 +289,21 @@ $CI =& get_instance();
                         <i class="material-icons">person</i>
                         <span>پروفایل</span>
                     </a>
+                </li>
+                <li <?php echo $CI->uri->segment(2) == 'Veteran' ? 'class="active"' : '' ?> >
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">bookmark</i>
+                        <span>پشتیبان پنل ایثارگر</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li <?php if (strstr($uri, '/Veteran/index') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Veteran/index'); ?>" class="waves-effect waves-block">فهرست</a>
+                        </li>
+                        <li <?php if (strstr($uri, '/Veteran/add') !== false) echo "class='active'"; ?>>
+                            <a href="<?php echo base_url('Admin/Veteran/add'); ?>"
+                               class="waves-effect waves-block">افزودن</a>
+                        </li>
+                    </ul>
                 </li>
                 <li <?php echo $CI->uri->segment(2) == 'Utilities' ? 'class="active"' : '' ?> >
                     <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
