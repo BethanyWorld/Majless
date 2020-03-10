@@ -7,9 +7,11 @@ class Profile extends CI_Controller{
         $this->load->helper('ui/user_login');
         $this->load->model('ui/ModelCountry');
         $this->load->model('admin/ModelCandidate');
+        $this->load->model('admin/ModelInternalCandidate');
         $this->load->model('ui/ModelProfile');
         $this->load->model('agent/ModelExam');
         $this->load->model('admin/ModelUtilities');
+        $this->load->library('encryption');
     }
     public function index()
     {
@@ -1574,6 +1576,54 @@ class Profile extends CI_Controller{
             return makeSafeInput($v);
         }, $inputs);
         $result = $this->ModelProfile->doDeleteSupervisorType($inputs);
+        echo json_encode($result);
+    }
+    public function internalCandidateVote(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $data['title'] = 'نظارت مالی و فرآیندی';
+        $data['gifLoader'] = $this->config->item('gifLoader');
+        $data['pageTitle'] = $this->config->item('defaultPageTitle') . 'نظارت مالی و فرآیندی';
+        $data['userInfo'] = $this->ModelCandidate->getCandidateByCandidateId($loginInfo['CandidateId']);
+        $data['sidebar'] = $this->load->view('ui/v3/candidate_profile/sidebar', NULL, TRUE);
+        if($data['userInfo']['CandidateProfileImage'] != NULL && $data['userInfo']['CandidateProfileImage'] != ''){
+            $data['noImg'] = $data['userInfo']['CandidateProfileImage'];
+        }
+        else{
+            $data['noImg'] = $this->config->item('defaultImage');
+        }
+        $data['EnumResumeProfile'] = $this->config->item('EnumResumeProfile');
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $data['supervisorType'] = $this->ModelProfile->getSupervisorType($inputs);
+        $data['allRequests'] = $this->ModelInternalCandidate->getAllRequests();
+        $data['voteHistory'] = $this->ModelInternalCandidate->getVoteByCandidateId($loginInfo['CandidateId']);
+        $index = 0;
+        foreach ($data['allRequests'] as $item) {
+            $ciphertext = $this->encryption->encrypt($item['RowId']);
+            $data['allRequests'][$index]['EncryptionRowId'] = $ciphertext;
+            $index+=1;
+        }
+
+        $this->load->view('ui/v3/static/header', $data);
+        $this->load->view('ui/v3/candidate_profile/internal_candidate/vote/index', $data);
+        $this->load->view('ui/v3/candidate_profile/internal_candidate/vote/index_css');
+        $this->load->view('ui/v3/candidate_profile/internal_candidate/vote/index_js', $data);
+        $this->load->view('ui/v3/static/footer');
+    }
+    public function doVoteSupervisor(){
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        $inputs = $this->input->post(NULL, TRUE);
+        $inputs['inputCandidateId'] = $loginInfo['CandidateId'];
+        $inputs['inputRowId'] = $this->encryption->decrypt($inputs['inputId']);
+        $inputs = array_map(function ($v) {
+            return strip_tags($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return remove_invisible_characters($v);
+        }, $inputs);
+        $inputs = array_map(function ($v) {
+            return makeSafeInput($v);
+        }, $inputs);
+        $result = $this->ModelInternalCandidate->doVoteSupervisor($inputs);
         echo json_encode($result);
     }
 

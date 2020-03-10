@@ -33,6 +33,15 @@ class ModelInternalCandidate extends CI_Model{
         }
         return $result;
     }
+    public function getAllRequests(){
+        $this->db->select('*');
+        $this->db->from('internal_election');
+        $this->db->join('candidate', 'candidate.CandidateId = internal_election.CandidateId');
+        $this->db->join('state', 'candidate.CandidateStateId = state.StateId');
+        $this->db->join('city', 'candidate.CandidateCityId = city.CityId');
+        $this->db->order_by('internal_election.RowId', 'ASC');
+        return $this->db->get()->result_array();
+    }
     public function getRequestByRequestId($reqId)
     {
         $this->db->select('*');
@@ -69,6 +78,56 @@ class ModelInternalCandidate extends CI_Model{
             );
             return $arr;
         }
+    }
+    public function doVoteSupervisor($inputs){
+
+        $this->db->select('*');
+        $this->db->from('internal_election');
+        $this->db->where(array(
+            'RowId' => $inputs['inputRowId'],
+            'CandidateId' => $inputs['inputCandidateId']
+        ));
+        if($this->db->get()->num_rows() > 0){
+            $arr = array(
+                'type' => "red",
+                'content' => "شما به خود نمی توانید رای بدهید",
+                'success' => false
+            );
+            return $arr;
+        }
+        else{
+            $UserArray = array(
+                'InternalElectionId' => $inputs['inputRowId'],
+                'CandidateId' => $inputs['inputCandidateId'],
+                'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
+            );
+            $this->db->trans_start();
+            $this->db->insert('internal_election_votes', $UserArray);
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE) {
+                $arr = array(
+                    'type' => "red",
+                    'content' => "رای دهی با مشکل مواجه شد",
+                    'success' => false
+                );
+                return $arr;
+            }
+            else {
+                $arr = array(
+                    'type' => "green",
+                    'content' => "رای دهی با موفقیت انجام شد",
+                    'success' => true
+                );
+                return $arr;
+            }
+        }
+    }
+    public function getVoteByCandidateId($candidateId){
+        $this->db->select('*');
+        $this->db->from('internal_election_votes');
+        $this->db->join('internal_election' , 'internal_election.RowId = internal_election_votes.InternalElectionId');
+        $this->db->where('internal_election_votes.CandidateId' , $candidateId);
+        return $this->db->get()->result_array();
     }
 }
 ?>

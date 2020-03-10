@@ -38,13 +38,9 @@
         </div>
     </div>
     <div class="col-xs-12 col-md-9 pull-right">
-        <div class="col-xs-12">
+        <div class="col-xs-12 hidden register-for-supervisor-container">
             <div class="col-md-8 col-xs-12  pull-right">
-                <p class="text-justify" style="
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 55px;
-    text-align: justify;">
+                <p class="text-justify" style="font-weight: 900;font-size: 16px;line-height: 55px;text-align: justify;">
                     جنبش از ما، جهت بازرسی بر فرآیندهای مالی و گزینشی (نحوه برگزاری آزمون ها) دعوت میکند
                     تا بصورت داوطلبانه برای نظارت بر فرآیند های این جنبش اعلام آمادگی کنید.
                     بعد از اعلام آمادگی، تمامی داوطلبان از طریق اعضای سایت به رای دهی گذاشته شده و نتیجه
@@ -78,6 +74,40 @@
     color: #000;">
                             <i class="fa fa-angle-double-left"></i>
                             جهت اعلام آمادگی برای نظارت مالی و فرآیندی بر جنبش از ما کلیک کنید
+                            <i class="fa fa-angle-double-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 voting-contiainer">
+            <div class="col-md-8 col-xs-12  pull-right">
+                <p class="text-justify" style="font-weight: 900;font-size: 16px;line-height: 55px;text-align: justify;">
+                   اسامی داوطلبان نظارت بر سوابق مالی و فرآیندی مشخص شده اند.
+                    لطفا در رای دهی به این داوطلبان شرکت کنید.
+                </p>
+            </div>
+            <div class="col-md-4 col-xs-12 padding-0">
+                <div style="border: 6px solid #fdb72e;padding: 25px 0px;padding-bottom: 0;border-radius: 4px;margin: 10px 0;margin-top: 0;box-shadow: 0px -3px 25px 1px #c8c8c8;" class="row">
+                    <i style="
+    display: block;
+    text-align: center;
+    font-size: 60px;
+    margin: 30px 0;
+    margin-top: 0;" class="fa fa-info"></i>
+                    <a href="<?php echo base_url('Profile/internalCandidateVote'); ?>">
+                        <div class="col-xs-12 internal-candidate"
+                             style="
+    padding: 20px 20px;
+    background: #fdb72e;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 900;
+    color: #000;">
+                            <i class="fa fa-angle-double-left"></i>
+                             رای دهی به داوطلبان
                             <i class="fa fa-angle-double-right"></i>
                         </div>
                     </a>

@@ -47,7 +47,6 @@ class ModelProfile extends CI_Model{
             return $arr;
         }
     }
-
 }
 
 ?>
