@@ -51,7 +51,6 @@
         });
 
 
-
         // $('div.skillselectwo ul a').each(function () {
         //     $parentId = $(this).parents('div.list-group-item').eq(0).attr('id');
         //     $parentDom = "#" + $parentId + " ";
@@ -66,58 +65,60 @@
         var typingTimer;
         var doneTypingInterval = 1000;
 
-        $(document).on('keyup','.skill-type', function () {
+        $(document).on('keyup', '.skill-type', function () {
+            $(".skill-type").removeClass('active');
+            $(this).addClass('active');
             clearTimeout(typingTimer);
             typingTimer = setTimeout(doneTyping, doneTypingInterval);
         });
 
-        $(document).on('keydown','.skill-type' , function () {
+        $(document).on('keydown', '.skill-type', function () {
             clearTimeout(typingTimer);
         });
 
         function doneTyping() {
-                $this = $('#inputSkillType');
-                $parentId = $this.parents('div.list-group-item').attr('id');
-                $parentDom = "#" + $parentId + " ";
-                $('div.list-group-item').css({
-                    'position': 'relative',
-                    'z-index': '1'
-                });
-                $this.parents('div.list-group-item').css({
-                    'position': 'relative',
-                    'z-index': '222222222'
-                });
-                $searchTerm = $.trim($this.val());
-                if ($.trim($searchTerm) === "") {
-                    $('.skillselectwo ul').html('');
-                    $('.skillselectwo').hide();
-                } else {
-                    $('.bubblingG').removeClass('hidden').show();
-                    $('#inputSkillType').parent().next('.skillselectwo').removeClass('hidden').show();
-                    setTimeout(function () {
-                        $.ajax({
-                            type: 'GET',
-                            url: base_url + 'Profile/getSkillBySearchTerm/?term=' + $searchTerm,
-                            success: function (data) {
-                                $('.bubblingG').addClass('hidden').hide();
-                                $result = JSON.parse(data);
-                                $resualtLength = $result.length;
-                                if ($resualtLength > 0) {
-                                    var toAppend = '';
-                                    for (var i = 0; i < $result.length; i++) {
-                                        toAppend += "<a data-name = '" + $result[i]['SkillTitle'] + "' class='dataSkillAttribute' title='" + $result[i]['SkillTitle'] + "'>" + $result[i]['SkillTitle'] + "</a>";
-                                    }
-                                    $this.parent('.kindOfSkills').eq(0).next('.skillselectwo').find('ul').eq(0).html('').append(toAppend);
-                                    $this.parent().next('.skillselectwo').removeClass('hidden').show();
-                                } else {
-                                    $('.skillselectwo').addClass('hidden').hide();
-                                }
+            $this = $(".skill-type.active");
+            $('div.list-group-item').css({
+                'position': 'relative',
+                'z-index': '1'
+            });
+            $this.parents('div.list-group-item').css({
+                'position': 'relative',
+                'z-index': '222222222'
+            });
+            $searchTerm = $.trim($this.val());
+            /* skillselecttwo should be empty in both conditions */
+            if ($.trim($searchTerm) === "") {
+                /* implements just for backspace */
+                $('.skillselectwo ul').html('');
+                $('.skillselectwo').hide();
+            } else {
+                $('.skillselectwo ul').html('');
+                $('.skillselectwo').hide();
+                $('.bubblingG').removeClass('hidden').show();
+                $this.parent().next('.skillselectwo').removeClass('hidden').show();
+                $.ajax({
+                    type: 'GET',
+                    url: base_url + 'Profile/getSkillBySearchTerm/?term=' + $searchTerm,
+                    success: function (data) {
+                        $('.bubblingG').addClass('hidden').hide();
+                        $result = JSON.parse(data);
+                        $resualtLength = $result.length;
+                        if ($resualtLength > 0) {
+                            var toAppend = '';
+                            for (var i = 0; i < $result.length; i++) {
+                                toAppend += "<a data-name = '" + $result[i]['SkillTitle'] + "' class='dataSkillAttribute' title='" + $result[i]['SkillTitle'] + "'>" + $result[i]['SkillTitle'] + "</a>";
                             }
+                            $this.parent('.kindOfSkills').eq(0).next('.skillselectwo').find('ul').eq(0).html('').append(toAppend);
+                            $this.parent().next('.skillselectwo').removeClass('hidden').show();
+                        } else {
+                            $('.skillselectwo').addClass('hidden').hide();
+                        }
+                    }
+                });
 
-                        });
-                    },2000);
-                }
-                return false;
+            }
+            return false;
         }
     });
 </script>
