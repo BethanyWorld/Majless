@@ -5,6 +5,14 @@
 <div class="container container-wrapper">
     <div id="IranMap" class="clear">
         <div class="col-xs-12 col-md-6">
+
+            <select class="form-control" id="inputStatInfo">
+                <option value="PercentageOfParticipation" selected>درصد مشارکت</option>
+                <option value="Population">جمعیت</option>
+                <option value="NumberOfRepresentatives">تعداد نمایندگان</option>
+                <option value="RatioOfPopulationToNumberOfRepresentatives">نسبت جمعیت به تعداد نماینده</option>
+            </select>
+
             <div class="map">
                 <span class="show-title"></span>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0"y="0" viewBox="20 0 970 960" enable-background="new 20 0 970 960" xml:space="preserve">

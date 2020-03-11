@@ -17,6 +17,7 @@ class State extends CI_Controller{
         $data['title'] = 'ورود به سامانه جنبش از ما';
         $data['description'] = 'برای دعوت از نامزدها به چالش شایستگی و شفافیت و مشاهده رزومه انها';
 
+        $data['EnumStatisticsType'] = $this->config->item('EnumStatisticsType');
         $statisticsArray = array(
             'inputStatisticsType'=>'State'
         );

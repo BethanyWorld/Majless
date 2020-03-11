@@ -31,17 +31,13 @@
             });
 
             $sendData = [];
-            $sendData.push({
-                'inputStatisticsSlug': 'PercentageOfParticipation',
-                'inputStatisticsType': 'State',
-                'inputStatisticsTypeId': $inputStateId,
-                'inputStatisticsValue': $("#inputPercentageOfParticipation").val()
-            });
-            $sendData.push({
-                'inputStatisticsSlug': 'PercentageOfParticipationColor',
-                'inputStatisticsType': 'State',
-                'inputStatisticsTypeId': $inputStateId,
-                'inputStatisticsValue': $("#inputPercentageOfParticipationColor").val()
+            $(".stats-input").each(function(){
+                $sendData.push({
+                    'inputStatisticsSlug': $(this).data('slug'),
+                    'inputStatisticsType': 'State',
+                    'inputStatisticsTypeId': $inputStateId,
+                    'inputStatisticsValue': $(this).val()
+                });
             });
             $.ajax({
                 type: 'post',

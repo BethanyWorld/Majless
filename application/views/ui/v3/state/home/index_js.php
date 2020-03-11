@@ -4,7 +4,6 @@
             $(window).resize(function () {
                 a()
             });
-
             function a() {
                 var b = $("#IranMap .list").height();
                 var c = $("#IranMap .list").width();
@@ -14,9 +13,9 @@
                     $("#IranMap svg").height(b).width(b)
                 }
             }
-
             a();
-            $("#IranMap svg g path").hover(function () {
+            $("#IranMap svg g path").hover(
+                function () {
                 var c = $(this).attr("class");
                 var b = $(this).parent("g").attr("class");
                 //var d = $("#IranMap .list ." + b + " ." + c + " a").html();
@@ -24,15 +23,15 @@
                 if (title !== '' && c !== '' ) {
                     $("#IranMap .list ." + b + " ." + c + " a").addClass("hover");
                     if(title !== undefined){
-                        $("#IranMap .show-title").html(title + ' درصد ').css({display: "block"});
+                        $("#IranMap .show-title").html(title).css({display: "block"});
                     }
                 }
-            }, function () {
+            },
+                function () {
                 $("#IranMap .list a").removeClass("hover");
                 $("#IranMap .show-title").html("").css({display: "none"})
-            });
-
-
+            }
+            );
             $("#IranMap .list ul li ul li a").hover(
                 function () {
                     var e = $(this).parent("li").attr("class");
@@ -43,7 +42,7 @@
                         var d = $(b).attr("class");
                         $(b).attr("class", d + " hover");
                         if(title !== undefined){
-                            $("#IranMap .show-title").html(title + ' درصد ').css({display: "block"});
+                            $("#IranMap .show-title").html(title).css({display: "block"});
                         }
                     }
                 },
@@ -55,7 +54,8 @@
                         var d = $(b).attr("class");
                         $(b).attr("class", d.replace(" hover", ""))
                     }
-                });
+                }
+                );
             $("#IranMap").mousemove(function (d) {
                 var c = 0;
                 var h = 0;
@@ -101,19 +101,24 @@
         });
 
         $statistics = JSON.parse('<?php echo json_encode($Statistics); ?>');
-        for ($i = 0; $i < $statistics.length; $i++) {
-            $item = $statistics[$i];
-            $stateId = $item['StatisticsTypeId'];
-            if ($item['StatisticsSlug'] === 'PercentageOfParticipation') {
-                $('li[data-province-id=' + $stateId + ']').attr('data-participation-value', $item['StatisticsValue']);
-                $('li[data-province-id=' + $stateId + '] a').attr('data-participation-value', $item['StatisticsValue']);
-                $('path[data-province-id=' + $stateId + ']').attr('data-participation-value', $item['StatisticsValue']);
+        $("#inputStatInfo").change(function(){
+            $enumValue = $(this).val();
+            for ($i = 0; $i < $statistics.length; $i++) {
+                $item = $statistics[$i];
+                $stateId = $item['StatisticsTypeId'];
+                if ($item['StatisticsSlug'] === $enumValue) {
+                    $('li[data-province-id=' + $stateId + ']').attr('data-participation-value', $item['StatisticsValue']);
+                    $('li[data-province-id=' + $stateId + '] a').attr('data-participation-value', $item['StatisticsValue']);
+                    $('path[data-province-id=' + $stateId + ']').attr('data-participation-value', $item['StatisticsValue']);
+                }
+                if ($item['StatisticsSlug'] === $enumValue+'Color') {
+                    $('li[data-province-id=' + $stateId + ']').attr('data-state-color', $item['StatisticsValue']);
+                    $('path[data-province-id=' + $stateId + ']').css('fill', $item['StatisticsValue']);
+                }
             }
-            if ($item['StatisticsSlug'] === 'PercentageOfParticipationColor') {
-                $('li[data-province-id=' + $stateId + ']').attr('data-state-color', $item['StatisticsValue']);
-                $('path[data-province-id=' + $stateId + ']').css('fill', $item['StatisticsValue']);
-            }
-        }
+        });
+        $("#inputStatInfo").change();
+
     });
 
 </script>

@@ -342,8 +342,13 @@ $config['EnumResumeProfile'] = array(
 /* استان پیش فرض تهران است */
 $config['defaultStateId'] = 8;
 
-
 $config['EnumStatisticsType'] = array(
     'PercentageOfParticipation' => 'درصد مشارکت',
     'PercentageOfParticipationColor' => 'رنگ استان بر حسب درصد مشارکت',
+    'Population' => 'جمعیت',
+    'PopulationColor' => 'رنگ جمعیت',
+    'NumberOfRepresentatives' => 'تعداد نمایندگان',
+    'NumberOfRepresentativesColor' => 'رنگ تعداد نمایندگان',
+    'RatioOfPopulationToNumberOfRepresentatives' => 'نسبت جمعیت به تعداد نماینده',
+    'RatioOfPopulationToNumberOfRepresentativesColor' => 'رنگ نسبت جمعیت به تعداد نماینده'
 );
