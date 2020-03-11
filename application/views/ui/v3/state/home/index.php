@@ -6,7 +6,7 @@
     <div id="IranMap" class="clear">
         <div class="col-xs-12 col-md-6">
 
-            <select class="form-control" id="inputStatInfo">
+            <select id="inputStatInfo">
                 <option value="PercentageOfParticipation" selected>درصد مشارکت</option>
                 <option value="Population">جمعیت</option>
                 <option value="NumberOfRepresentatives">تعداد نمایندگان</option>
@@ -129,7 +129,7 @@
                     </g>
                 </svg>
             </div>
-            <div class="col-xs-12 text-left">
+            <div class="col-xs-12 text-left hidden">
                 <div class="percentage-of-participation">
                     <span class="percent zero">0</span>
                     <span class="percent">100</span>

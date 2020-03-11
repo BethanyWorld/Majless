@@ -1,5 +1,11 @@
 <style>
 
+    #inputStatInfo{
+        padding: 4px 2px;
+        font-size: 14px;
+        border: 1px solid #0f342f;
+        width: auto;
+    }
     .percentage-of-participation{
         background: linear-gradient(90deg, #c7efc4, #c7efc4,#0f342f,#0f342f);
         height: 35px;

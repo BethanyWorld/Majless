@@ -23,7 +23,12 @@
                 if (title !== '' && c !== '' ) {
                     $("#IranMap .list ." + b + " ." + c + " a").addClass("hover");
                     if(title !== undefined){
-                        $("#IranMap .show-title").html(title).css({display: "block"});
+                        if(parseInt(title) > 100){
+                            $("#IranMap .show-title").html(parseInt(title).toLocaleString()).css({display: "block"});
+                        }
+                        else{
+                            $("#IranMap .show-title").html(title).css({display: "block"});
+                        }
                     }
                 }
             },
@@ -42,7 +47,12 @@
                         var d = $(b).attr("class");
                         $(b).attr("class", d + " hover");
                         if(title !== undefined){
-                            $("#IranMap .show-title").html(title).css({display: "block"});
+                            if(parseInt(title) > 100){
+                                $("#IranMap .show-title").html(parseInt(title).toLocaleString()).css({display: "block"});
+                            }
+                            else{
+                                $("#IranMap .show-title").html(title).css({display: "block"});
+                            }
                         }
                     }
                 },
