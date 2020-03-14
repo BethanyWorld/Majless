@@ -1521,7 +1521,6 @@ class Profile extends CI_Controller{
         }
     }
     /*///////////////////////////////////////*/
-
     /* internal candidate*/
     public function internalCandidate(){
         $loginInfo = $this->session->userdata('UserLoginInfo');
@@ -1627,9 +1626,7 @@ class Profile extends CI_Controller{
         $result = $this->ModelInternalCandidate->doVoteSupervisor($inputs);
         echo json_encode($result);
     }
-
     /* End internal candidate*/
-
     public function logOut()
     {
         $this->session->unset_userdata('UserLoginInfo');
