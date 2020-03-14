@@ -41,8 +41,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         <label for="inputCandidateActivityFieldType">زمینه فعالیت :</label>
                                                                         <select class="form-control form-control-lg"
                                                                                 name="inputCandidateActivityFieldType">
-                                                                            <option value="" selected>--انتخاب کنید--
-                                                                            </option>
+                                                                            <option value="">--انتخاب کنید--</option>
                                                                             <?php foreach ($EnumResumeProfile['CandidateActivityFieldType'] as $key => $value) { ?>
                                                                                 <option
                                                                                     <?php setOptionSelected($item['CandidateActivityFieldType'], $key); ?>
@@ -56,10 +55,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         <!--For The type of mobilization -->
                                                                         <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateBasijType">
                                                                             <label for="inputCandidateBasijType">نوع بسیج :</label>
-                                                                            <select class="form-control form-control-lg"
-                                                                                    name="inputCandidateBasijType">
-                                                                                <option value="" selected>--انتخاب کنید--
-                                                                                </option>
+                                                                            <select class="form-control form-control-lg" name="inputCandidateBasijType">
+                                                                                <option value="" selected>--انتخاب کنید--</option>
                                                                                 <?php foreach ($EnumResumeProfile['CandidateBasijType'] as $key => $value) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['CandidateBasijType'], $key); ?>
@@ -72,10 +69,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         <!--For membership type-->
                                                                         <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateMobilMembershipType">
                                                                             <label for="inputCandidateMobilMembershipType">نوع عضویت :</label>
-                                                                            <select class="form-control form-control-lg"
-                                                                                    name="inputCandidateMobilMembershipType">
-                                                                                <option value="" selected>--انتخاب کنید--
-                                                                                </option>
+                                                                            <select class="form-control form-control-lg" name="inputCandidateMobilMembershipType">
+                                                                                <option value="" selected>--انتخاب کنید--</option>
                                                                                 <?php foreach ($EnumResumeProfile['CandidateMobilMembershipType'] as $key => $value) { ?>
                                                                                     <option <?php setOptionSelected($item['CandidateMobilMembershipType'], $key); ?>
                                                                                             value="<?php echo $key; ?>">
@@ -86,9 +81,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         </div>
                                                                         <!--For responsibility Title -->
                                                                         <div class="col-md-3 col-x-12 RightFloat hidden responsibility">
-                                                                            <label for="inputResponsibilityTitle" class="Lable">
-                                                                                عنوان مسئولیت:
-                                                                            </label>
+                                                                            <label for="inputResponsibilityTitle" class="Lable">عنوان مسئولیت:</label>
                                                                             <input
                                                                                 <?php setInputValue($item['CandidateResponsibilityTitle']); ?>
                                                                                     name="inputResponsibilityTitle"
@@ -120,8 +113,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         </div>
                                                                         <!--For Other-->
                                                                         <div class="col-md-4 col-xs-12 RightFloat margin-b-30 other-title">
-                                                                            <label class="Lable"
-                                                                                   for="inputCandidateActivityFieldOtherTypeTitle">عنوان</label>
+                                                                            <label class="Lable" for="inputCandidateActivityFieldOtherTypeTitle">عنوان</label>
                                                                             <input <?php setInputValue($item['CandidateActivityFieldOtherTypeTitle']); ?>
                                                                                     name="inputCandidateActivityFieldOtherTypeTitle"
                                                                                     class="ytyt" type="text" required>
@@ -149,10 +141,9 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <option value="Others">سایر</option>
                                                                             </select>
                                                                         </div>
-
                                                                         <div class="col-md-3 col-xs-12 form-group RightFloat hidden university-name">
                                                                             <label class="active" for="inputCandidateCollege">
-                                                                            <span class="Change-UniversityName">نام دانشکده</span>
+                                                                                <span class="Change-UniversityName">نام دانشکده</span>
                                                                             </label>
                                                                             <select class="form-control form-control-lg" name="inputCandidateCollege">
                                                                                 <option value="">--انتخاب کنید--</option>
@@ -168,10 +159,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         </div>
                                                                         <div class="col-md-4 col-xs-12 RightFloat inputmembershiptype">
                                                                             <label for="inputCandidateMemberShipType">نوع عضویت :</label>
-                                                                            <select class="form-control form-control-lg"
-                                                                                    name="inputCandidateMemberShipType">
-                                                                                <option value="" selected>--انتخاب کنید--
-                                                                                </option>
+                                                                            <select class="form-control form-control-lg" name="inputCandidateMemberShipType">
+                                                                                <option value="" selected>--انتخاب کنید--</option>
                                                                                 <?php foreach ($EnumResumeProfile['CandidateMemberShipType'] as $key => $value) { ?>
                                                                                     <option <?php setOptionSelected($item['CandidateMemberShipType'], $key); ?>
                                                                                             value="<?php echo $key; ?>">
@@ -186,10 +175,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                     name="inputCandidateMemberShipDescription"
                                                                                     class="ytyt" type="text" required>
                                                                         </div>
-
                                                                         <div class="col-md-4 col-x-12 RightFloat other-mobilization">
-                                                                            <label for="inputCandidateBasijTypeOtherTitle"
-                                                                                   class="Lable">سایر</label>
+                                                                            <label for="inputCandidateBasijTypeOtherTitle" class="Lable">سایر</label>
                                                                             <input <?php setInputValue($item['CandidateBasijTypeOtherTitle']); ?>
                                                                                     name="inputCandidateBasijTypeOtherTitle"
                                                                                     class="ytyt" type="text" required>
