@@ -125,13 +125,13 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                     class="ytyt" type="text" required>
                                                                         </div>
                                                                         <!--For exept mobilization-->
-                                                                        <div class="col-md-4 col-xs-12 margin-b-30 RightFloat Collectionname">
+                                                                        <div class="col-md-3 col-xs-12 margin-b-30 RightFloat Collectionname">
                                                                                 <label class="Lable organization-name" for="inputCandidateOrganizationName">نام مجموعه</label>
                                                                                 <input <?php setInputValue($item['CandidateOrganizationName']); ?>
                                                                                         name="inputCandidateOrganizationName"
                                                                                         class="ytyt" type="text" required>
                                                                         </div>
-                                                                        <div class="col-md-4 col-xs-12 form-group RightFloat hidden university-name">
+                                                                        <div class="col-md-3col-xs-12 form-group RightFloat hidden university-name">
                                                                             <label class="active" for="inputCandidateUniversityName">
                                                                             <span class="Change-UniversityName">
                                                                                 نام دانشگاه
@@ -147,6 +147,25 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <option value="Others">سایر</option>
                                                                             </select>
                                                                         </div>
+
+                                                                        <div class="col-md-3 col-xs-12 form-group RightFloat hidden university-name">
+                                                                            <label class="active" for="inputCandidateCollege">
+                                                                            <span class="Change-UniversityName">
+                                                                                نام دانشکده
+                                                                            </span>
+                                                                            </label>
+                                                                            <select class="form-control form-control-lg" name="inputCandidateCollege">
+                                                                                <option value="" selected="">--انتخاب کنید--</option>
+                                                                                <?php foreach ($universities as $item) { ?>
+                                                                                    <option value="<?php echo $item['UniversityId'] ?>">
+                                                                                        <?php echo $item['UniversityTitle'] ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                                <option value="Others">سایر</option>
+                                                                            </select>
+                                                                        </div>
+
+
                                                                         <div class="col-md-4 col-xs-12 RightFloat inputmembershiptype">
                                                                             <label for="inputCandidateMemberShipType">نوع عضویت
                                                                                 :</label>
@@ -171,7 +190,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                     class="ytyt" type="text" required>
                                                                         </div>
 
-                                                                        <div class="col-md-3 col-x-12 RightFloat other-mobilization">
+                                                                        <div class="col-md-4 col-x-12 RightFloat other-mobilization">
                                                                             <label for="inputCandidateBasijTypeOtherTitle"
                                                                                    class="Lable">سایر</label>
                                                                             <input <?php setInputValue($item['CandidateBasijTypeOtherTitle']); ?>
@@ -300,8 +319,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </div>
                                                                 <!--For Activity level -->
                                                                 <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateBasijType">
-                                                                    <label for="inputCandidateBasijType">سطح فعالیت :</label>
-                                                                    <select class="form-control form-control-lg" data-name="inputCandidateBasijType">
+                                                                    <label for="CandidateBasijActivityLevel">سطح فعالیت :</label>
+                                                                    <select class="form-control form-control-lg" data-name="CandidateBasijActivityLevel">
                                                                         <option value="" selected>--انتخاب کنید--</option>
                                                                         <?php foreach ($EnumResumeProfile['CandidateBasijActivityLevel'] as $key => $value) { ?>
                                                                             <option value="<?php echo $key; ?>">
@@ -323,11 +342,11 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <input data-name="inputCandidateActivityFieldOtherTypeTitle" class="ytyt" type="text" required>
                                                                 </div>
                                                                 <!--For exept mobilization-->
-                                                                <div class="col-md-4 col-xs-12 margin-b-30 RightFloat Collectionname">
+                                                                <div class="col-md-3 col-xs-12 margin-b-30 RightFloat Collectionname">
                                                                     <label class="Lable organization-name" for="inputCandidateOrganizationName">نام مجموعه</label>
                                                                     <input data-name="inputCandidateOrganizationName" class="ytyt" type="text" required>
                                                                 </div>
-                                                                <div class="col-md-4 col-xs-12 form-group RightFloat hidden university-name">
+                                                                <div class="col-md-3 col-xs-12 form-group RightFloat hidden university-name">
                                                                     <label class="active" for="inputCandidateUniversityName">
                                                                             <span class="Change-UniversityName">
                                                                                 نام دانشگاه
@@ -343,6 +362,24 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         <option value="Others">سایر</option>
                                                                     </select>
                                                                 </div>
+
+                                                                <div class="col-md-3 col-xs-12 form-group RightFloat hidden university-name">
+                                                                    <label class="active" for="inputCandidateCollege">
+                                                                            <span class="Change-UniversityName">
+                                                                                نام دانشکده
+                                                                            </span>
+                                                                    </label>
+                                                                    <select class="form-control form-control-lg" name="inputCandidateCollege">
+                                                                        <option value="" selected="">--انتخاب کنید--</option>
+                                                                        <?php foreach ($universities as $item) { ?>
+                                                                            <option value="<?php echo $item['UniversityId'] ?>">
+                                                                                <?php echo $item['UniversityTitle'] ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                        <option value="Others">سایر</option>
+                                                                    </select>
+                                                                </div>
+
                                                                 <div class="col-md-4 col-xs-12 RightFloat inputmembershiptype">
                                                                     <label for="inputCandidateMemberShipType">نوع عضویت :</label>
                                                                     <select class="form-control form-control-lg" data-name="inputCandidateMemberShipType">
@@ -358,7 +395,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     <label for="inputCandidateMemberShipDescription" class="Lable">توضیحات</label>
                                                                     <input data-name="inputCandidateMemberShipDescription" class="ytyt" type="text" required>
                                                                 </div>
-                                                                <div class="col-md-3 col-x-12  RightFloat other-mobilization">
+                                                                <div class="col-md-4 col-x-12  RightFloat other-mobilization">
                                                                     <label for="inputCandidateBasijTypeOtherTitle" class="Lable">سایر</label>
                                                                     <input data-name="inputCandidateBasijTypeOtherTitle" class="ytyt" type="text" required>
                                                                 </div>

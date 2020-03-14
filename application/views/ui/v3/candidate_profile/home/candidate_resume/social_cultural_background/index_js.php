@@ -84,7 +84,7 @@
             $parentDom = "#" + $parentId + " ";
             $inputThetypeofmobilization = $(this).val();
             $inputCandidateActivityFieldType = $($parentDom + "[name='inputCandidateActivityFieldType']").val();
-            if ($inputThetypeofmobilization === "Others" && $inputCandidateActivityFieldType === "Mobilization") {
+            if ($inputThetypeofmobilization === "Others") {
                 $($parentDom + '.other-mobilization').css('display', 'block');
             } else {
                 $($parentDom + '.other-mobilization').css('display', 'none');
