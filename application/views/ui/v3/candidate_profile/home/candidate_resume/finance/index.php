@@ -187,7 +187,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateBuyTimePrice">
-                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                ارزش حدودی ملک در زمان شروع مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -254,7 +254,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateNowTimePrice">
-                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                ارزش حدودی ملک درحال حاضر :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -458,7 +458,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateBuyTimePrice">
-                                                                    ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                    ارزش حدودی ملک در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -505,7 +505,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateNowTimePrice">
-                                                                    ارزش حدودی کل سهام درحال حاضر :
+                                                                    ارزش حدودی ملک درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -595,7 +595,7 @@
                                                                 if ($item['ForWho'] == 'Self') { ?>
                                                                     <div class="col-md-12 col-xs-12 padding-0 form">
                                                                         <span class="remove-form fa fa-times"></span>
-                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleType">
                                                                                 نوع وسیله نقلیه<span
                                                                                         class="text-danger"></span>
@@ -610,7 +610,11 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
+                                                                            <label for="inputVehicleCarName ">نام خودرو</label>
+                                                                            <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                                        </div>
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleOwnershipDate">
                                                                                 سال شروع مالکیت<span
                                                                                         class="text-danger"></span>
@@ -629,7 +633,7 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleOwnershipType">
                                                                                 نحوه مالکیت
                                                                                 <span class="text-danger"></span>
@@ -647,7 +651,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleBuyTimePrice">
-                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                ارزش حدودی در زمان شروع مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -714,7 +718,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleNowTimePrice">
-                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                ارزش حدودی درحال حاضر :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -779,11 +783,9 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-
-
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                             <label for="inputVehiclePortion">
-                                                                                سهم از ملک(1 تا 6 دانگ)
+                                                                                سهم از مالکیت(1 تا 6 دانگ)
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <input
@@ -799,9 +801,9 @@
                                                                 <?php }
                                                             } ?>
                                                         </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
+                                                        <div class="unique-form animated  list-group-item flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
-                                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleType">
                                                                     نوع وسیله نقلیه
                                                                     <span class="text-danger">
@@ -816,7 +818,11 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
+                                                                <label for="inputVehicleCarName ">نام خودرو</label>
+                                                                <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleOwnershipDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
@@ -835,7 +841,7 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleOwnershipType">
                                                                     نحوه مالکیت
                                                                     <span class="text-danger">
@@ -852,7 +858,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleBuyTimePrice">
-                                                                    ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                    ارزش حدودی در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -899,7 +905,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleNowTimePrice">
-                                                                    ارزش حدودی کل سهام درحال حاضر :
+                                                                    ارزش حدودی درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -944,10 +950,9 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                 <label for="inputVehiclePortion">
-                                                                    سهم از ملک(1 تا 6 دانگ)
+                                                                    سهم از مالکیت(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <input type="number" name="inputVehiclePortion"
@@ -3040,7 +3045,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateBuyTimePrice">
-                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                ارزش حدودی ملک در زمان شروع مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -3107,7 +3112,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateNowTimePrice">
-                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                ارزش حدودی ملک درحال حاضر :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -3311,7 +3316,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateBuyTimePrice">
-                                                                    ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                    ارزش حدودی ملک در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -3358,7 +3363,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateNowTimePrice">
-                                                                    ارزش حدودی کل سهام درحال حاضر :
+                                                                    ارزش حدودی ملک درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -3448,7 +3453,7 @@
                                                                 if ($item['ForWho'] == 'Wife') { ?>
                                                                     <div class="col-md-12 col-xs-12 padding-0 form">
                                                                         <span class="remove-form fa fa-times"></span>
-                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleType">
                                                                                 نوع وسیله نقلیه<span
                                                                                         class="text-danger"></span>
@@ -3463,7 +3468,11 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
+                                                                            <label for="inputVehicleCarName ">نام خودرو</label>
+                                                                            <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                                        </div>
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleOwnershipDate">
                                                                                 سال شروع مالکیت<span
                                                                                         class="text-danger"></span>
@@ -3482,7 +3491,7 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleOwnershipType">
                                                                                 نحوه مالکیت
                                                                                 <span class="text-danger"></span>
@@ -3500,7 +3509,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleBuyTimePrice">
-                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                ارزش حدودی در زمان شروع مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -3567,7 +3576,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleNowTimePrice">
-                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                ارزش حدودی درحال حاضر :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -3632,11 +3641,9 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-
-
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                             <label for="inputVehiclePortion">
-                                                                                سهم از ملک(1 تا 6 دانگ)
+                                                                                سهم از مالکیت(1 تا 6 دانگ)
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <input
@@ -3654,7 +3661,7 @@
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
-                                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleType">
                                                                     نوع وسیله نقلیه
                                                                     <span class="text-danger">
@@ -3669,7 +3676,11 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
+                                                                <label for="inputVehicleCarName ">نام خودرو</label>
+                                                                <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleOwnershipDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
@@ -3688,7 +3699,7 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleOwnershipType">
                                                                     نحوه مالکیت
                                                                     <span class="text-danger">
@@ -3705,7 +3716,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleBuyTimePrice">
-                                                                    ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                    ارزش حدودی در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -3752,7 +3763,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleNowTimePrice">
-                                                                    ارزش حدودی کل سهام درحال حاضر :
+                                                                    ارزش حدودی درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -3797,10 +3808,9 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                 <label for="inputVehiclePortion">
-                                                                    سهم از ملک(1 تا 6 دانگ)
+                                                                    سهم از مالکیت(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <input type="number" name="inputVehiclePortion"
@@ -5893,7 +5903,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateBuyTimePrice">
-                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                ارزش حدودی ملک در زمان شروع مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -5960,7 +5970,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputRealEstateNowTimePrice">
-                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                ارزش حدودی ملک درحال حاضر :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -6164,7 +6174,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateBuyTimePrice">
-                                                                    ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                    ارزش حدودی ملک در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -6211,7 +6221,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputRealEstateNowTimePrice">
-                                                                    ارزش حدودی کل سهام درحال حاضر :
+                                                                    ارزش حدودی ملک درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -6301,7 +6311,7 @@
                                                                 if ($item['ForWho'] == 'Child') { ?>
                                                                     <div class="col-md-12 col-xs-12 padding-0 form">
                                                                         <span class="remove-form fa fa-times"></span>
-                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleType">
                                                                                 نوع وسیله نقلیه<span
                                                                                         class="text-danger"></span>
@@ -6316,7 +6326,11 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
+                                                                            <label for="inputVehicleCarName ">نام خودرو</label>
+                                                                            <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                                        </div>
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleOwnershipDate">
                                                                                 سال شروع مالکیت<span
                                                                                         class="text-danger"></span>
@@ -6335,7 +6349,7 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleOwnershipType">
                                                                                 نحوه مالکیت
                                                                                 <span class="text-danger"></span>
@@ -6353,7 +6367,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleBuyTimePrice">
-                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                ارزش حدودی در زمان شروع مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -6420,7 +6434,7 @@
                                                                         </div>
                                                                         <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleNowTimePrice">
-                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                ارزش حدودی درحال حاضر :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -6485,11 +6499,9 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-
-
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                             <label for="inputVehiclePortion">
-                                                                                سهم از ملک(1 تا 6 دانگ)
+                                                                                سهم از مالکیت(1 تا 6 دانگ)
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <input
@@ -6507,7 +6519,7 @@
                                                         </form>
                                                         <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
-                                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleType">
                                                                     نوع وسیله نقلیه
                                                                     <span class="text-danger">
@@ -6522,7 +6534,11 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
+                                                                <label for="inputVehicleCarName ">نام خودرو</label>
+                                                                <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleOwnershipDate">
                                                                     سال شروع مالکیت
                                                                     <span class="text-danger">
@@ -6541,7 +6557,7 @@
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
+                                                            <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleOwnershipType">
                                                                     نحوه مالکیت
                                                                     <span class="text-danger">
@@ -6558,7 +6574,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleBuyTimePrice">
-                                                                    ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                    ارزش حدودی در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -6605,7 +6621,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleNowTimePrice">
-                                                                    ارزش حدودی کل سهام درحال حاضر :
+                                                                    ارزش حدودی درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -6650,10 +6666,9 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat clear-div">
                                                                 <label for="inputVehiclePortion">
-                                                                    سهم از ملک(1 تا 6 دانگ)
+                                                                    سهم از مالکیت(1 تا 6 دانگ)
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <input type="number" name="inputVehiclePortion"

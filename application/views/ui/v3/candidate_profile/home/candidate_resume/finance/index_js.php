@@ -134,6 +134,19 @@
             $(this).prev('div').prev('div').find("input[type='number']").attr('data-unit', $rightSide);
             updatePrice();
         });
+
+        $(document).on('change', '#inputVehicleType', function () {
+            $parentId = $(this).parents('div.list-group-item').attr('id');
+            $parentDom = "#" + $parentId + " ";
+            $inputVehicleType = $(this).val();
+            if($inputVehicleType === 'Vehicles' || $inputVehicleType === 'HeavyVehicles'){
+                $($parentDom + '.car-name').removeClass('hidden').show();
+            }
+            else {
+                $($parentDom + '.car-name').addClass('hidden').hide();
+            }
+        });
+
         $(document).on('change', '.state-select[name=inputRealEstateStateId]', function () {
             toggleLoader();
             $inputCandidateStateId = $(this).val();

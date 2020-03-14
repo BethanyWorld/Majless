@@ -1,6 +1,17 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
+        $(document).on('change' , '[name="inputCandidateMobilMembershipType"]' ,function () {
+            $parentId = $(this).parents('div.list-group-item').attr('id');
+            $parentDom = "#" + $parentId + " ";
+            $inputCandidateMobilMembershipType = $(this).val();
+            if($inputCandidateMobilMembershipType === 'Responsible'){
+                $($parentDom + '.responsibility').removeClass('hidden').show();
+            }
+            else {
+                $($parentDom + '.responsibility').addClass('hidden').hide();
+            }
+        });
         $(document).on('change', '[name="inputCandidateActivityFieldType"]', function () {
             $parentId = $(this).eq(0).parents('div.list-group-item').eq(0).attr('id');
             $parentDom = "#" + $parentId + " ";
@@ -8,7 +19,7 @@
 
             if ($inputfieldofactivity !== "Mobilization" && $inputfieldofactivity !== "Others") {
                 $($parentDom + '.Collectionname').css('display', 'block');
-                $($parentDom + '.inputmembershiptype').css('display', 'block');
+                $($parentDom + '.inputmembershiptype').css('display', 'none');
                 $($parentDom + '.Description').css('display', 'block');
                 $($parentDom + '.culture-date').css('display', 'block');
 
@@ -17,7 +28,27 @@
                 $($parentDom + '.domain-name').css('display', 'none');
                 $($parentDom + '.other-title').css('display', 'none');
                 $($parentDom + '.other-mobilization').css('display', 'none');
+                $($parentDom + '.responsibility').removeClass('hidden').show();
 
+            }
+            else
+            {
+                $($parentDom + '.responsibility').addClass('hidden').hide();
+            }
+
+            if ($inputfieldofactivity !== "University" || $inputfieldofactivity !== "TheMosque") {
+                $($parentDom + '.organization-name').html('نام مجموعه');
+            }
+
+            if ($inputfieldofactivity === "University") {
+                $($parentDom + '.organization-name').html('عنوان تشکل');
+                $($parentDom + '.university-name').removeClass('hidden').show();
+            }
+            else {
+                $($parentDom + '.university-name').addClass('hidden').hide();
+            }
+            if ($inputfieldofactivity === "TheMosque") {
+                $($parentDom + '.organization-name').html('نام مسجد');
             }
 
             if ($inputfieldofactivity === "Mobilization") {
