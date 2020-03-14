@@ -25,6 +25,9 @@
         100%   {background: #fdb72e;}
     }
     hr {
+        display: block;
+        width: 100%;
+        clear: both;
         margin-top: 20px;
         margin-bottom: 20px;
         border: 0;
