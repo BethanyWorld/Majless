@@ -593,7 +593,7 @@
                                                             <span class="divider"></span>
                                                             <?php foreach ($finance['Vehicle'] as $item) {
                                                                 if ($item['ForWho'] == 'Self') { ?>
-                                                                    <div id="<?php echo md5(rand(1000, 9999)); ?>" class="col-md-12 col-xs-12 padding-0 form">
+                                                                    <div id="<?php echo md5(rand(1000, 9999)); ?>" class="list-group-item col-md-12 col-xs-12 padding-0 form">
                                                                         <span class="remove-form fa fa-times"></span>
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleType">نوع وسیله نقلیه
@@ -3448,7 +3448,7 @@
                                                             <span class="divider"></span>
                                                             <?php foreach ($finance['Vehicle'] as $item) {
                                                                 if ($item['ForWho'] == 'Wife') { ?>
-                                                                    <div id="<?php echo md5(rand(1000, 9999)); ?>" class="col-md-12 col-xs-12 padding-0 form">
+                                                                    <div id="<?php echo md5(rand(1000, 9999)); ?>" class="list-group-item col-md-12 col-xs-12 padding-0 form">
                                                                         <span class="remove-form fa fa-times"></span>
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleType">
@@ -6309,7 +6309,7 @@
                                                             <span class="divider"></span>
                                                             <?php foreach ($finance['Vehicle'] as $item) {
                                                                 if ($item['ForWho'] == 'Child') { ?>
-                                                                    <div id="<?php echo md5(rand(1000, 9999)); ?>" class="col-md-12 col-xs-12 padding-0 form">
+                                                                    <div id="<?php echo md5(rand(1000, 9999)); ?>" class="list-group-item col-md-12 col-xs-12 padding-0 form">
                                                                         <span class="remove-form fa fa-times"></span>
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleType">
