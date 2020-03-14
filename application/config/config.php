@@ -314,6 +314,7 @@ $config['EnumResumeProfile'] = array(
         'Inheritance' => 'ارث',
         'gift' => 'هدیه / هبه',
         'Dowry' => 'مهریه',
+        'Rent' => 'رهن / اجاره',
         'Compensation' => 'جبران خسارت'
     ),
     'Extent' => array(
@@ -322,7 +323,7 @@ $config['EnumResumeProfile'] = array(
     ),
     'TypeOfVehicle' => array(
         'Motorcycle' => 'موتور سیکلت',
-        'Bike' => 'دوچرخه',
+        /*'Bike' => 'دوچرخه',*/
         'Vehicles' => 'خودرو سبک',
         'HeavyVehicles' => 'خودرو سنگین',
         'Other' => 'سایر',
