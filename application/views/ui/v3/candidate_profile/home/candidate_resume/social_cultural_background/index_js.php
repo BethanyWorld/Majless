@@ -1,11 +1,10 @@
 <script type="text/javascript">
     $(document).ready(function () {
-
-        $(document).on('change' , '[name="inputCandidateMobilMembershipType"]' ,function () {
+        $(document).on('change', '[name="inputCandidateMobilMembershipType"]', function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputCandidateMobilMembershipType = $(this).val();
-            if($inputCandidateMobilMembershipType === 'Responsible'){
+            if ($inputCandidateMobilMembershipType === 'Responsible') {
                 $($parentDom + '.responsibility').removeClass('hidden').show();
             }
             else {
@@ -31,8 +30,7 @@
                 $($parentDom + '.responsibility').removeClass('hidden').show();
 
             }
-            else
-            {
+            else {
                 $($parentDom + '.responsibility').addClass('hidden').hide();
             }
 
@@ -62,7 +60,6 @@
                 $($parentDom + '.Description').css('display', 'none');
                 $($parentDom + '.inputmembershiptype').css('display', 'none');
                 $($parentDom + '.other-title').css('display', 'none');
-
 
 
             }
@@ -104,8 +101,8 @@
             $inputCandidateActivityStartYear = $('#inputCandidateActivityStartYear').find('option').filter('[selected]').length;
             $inputCandidateActivityEndYear = $('#inputCandidateActivityEndYear').find('option').filter('[selected]').length;
             if ($inputCandidateActivityStartYear === 0) {
-                $('#inputCandidateActivityStartYear').find('option:last-child').attr('selected' , 'selected');
-                $('#inputCandidateActivityEndYear').find('option:last-child').attr('selected' , 'selected');
+                $('#inputCandidateActivityStartYear').find('option:last-child').attr('selected', 'selected');
+                $('#inputCandidateActivityEndYear').find('option:last-child').attr('selected', 'selected');
             }
             // for date 98
 
@@ -113,35 +110,32 @@
         $(document).on('click', '.remove-form', function () {
             $(this).parent().remove();
         });
+        setTimeout(function () {
+            $("#form [name='inputCandidateBasijType']").change();
+        }, 500);
 
         $("#form [name='inputCandidateActivityFieldType']").change();
-        setTimeout(function(){
-            $("#form [name='inputCandidateBasijType']").change();
-        } , 500);
+        $("#form [name='inputCandidateMobilMembershipType']").change();
+        $("#form [name='inputCandidateBasijType']").change();
 
-        $("#buttonUpdateSocialCaltural").click( {redirect: false}, updateProfileSocialCaltural);
-        $("#buttonUpdateSocialCalturalAndRedirect").click( {redirect: true}, updateProfileSocialCaltural);
+        $("#buttonUpdateSocialCaltural").click({redirect: false}, updateProfileSocialCaltural);
+        $("#buttonUpdateSocialCalturalAndRedirect").click({redirect: true}, updateProfileSocialCaltural);
         function updateProfileSocialCaltural(param) {
-            // if($("#form").serializeArray().length <=0){
-            //     notify('وارد کردن حداقل یک مهارت الزامی ست', 'yellow');
-            // }
-
-                $sendData = { inputSocialCulturalBackground : $("#form").serializeArray() }
-                toggleLoader();
-                $.ajax({
-                    type: 'post',
-                    url: base_url + 'Profile/candidateUpdateSocialCulturalBackground',
-                    data: $sendData,
-                    success: function (data) {
-                        toggleLoader();
-                        $result = JSON.parse(data);
-                        notify($result['content'], $result['type']);
-                        if(param.data.redirect){
-                            window.location.href =  base_url+'Profile/politicBackground';
-                        }
+            $sendData = {inputSocialCulturalBackground: $("#form").serializeArray()};
+            toggleLoader();
+            $.ajax({
+                type: 'post',
+                url: base_url + 'Profile/candidateUpdateSocialCulturalBackground',
+                data: $sendData,
+                success: function (data) {
+                    toggleLoader();
+                    $result = JSON.parse(data);
+                    notify($result['content'], $result['type']);
+                    if (param.data.redirect) {
+                        window.location.href = base_url + 'Profile/politicBackground';
                     }
-                });
-
+                }
+            });
         }
     });
 </script>

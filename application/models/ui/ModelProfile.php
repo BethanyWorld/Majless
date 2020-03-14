@@ -265,21 +265,25 @@ class ModelProfile extends CI_Model{
                 $UserArray = array(
                     'CandidateId' => $inputs['inputCandidateId'],
                     'CandidateActivityFieldType' => $inputs['inputSocialCulturalBackground'][$i]['value'],
-                    'CandidateActivityFieldOtherTypeTitle' => $inputs['inputSocialCulturalBackground'][$i + 1]['value'],
-                    'CandidateOrganizationName' => $inputs['inputSocialCulturalBackground'][$i + 2]['value'],
-                    'CandidateMemberShipType' => $inputs['inputSocialCulturalBackground'][$i + 3]['value'],
-                    'CandidateMemberShipDescription' => $inputs['inputSocialCulturalBackground'][$i + 4]['value'],
-                    'CandidateBasijType' => $inputs['inputSocialCulturalBackground'][$i + 5]['value'],
-                    'CandidateBasijTypeOtherTitle' => $inputs['inputSocialCulturalBackground'][$i + 6]['value'],
-                    'CandidateMobilMembershipType' => $inputs['inputSocialCulturalBackground'][$i + 7]['value'],
-                    'CandidateBasijAreaTitle' => $inputs['inputSocialCulturalBackground'][$i + 8]['value'],
-                    'CandidateActivityStartMonth' => $inputs['inputSocialCulturalBackground'][$i + 9]['value'],
-                    'CandidateActivityStartYear' => $inputs['inputSocialCulturalBackground'][$i + 10]['value'],
-                    'CandidateActivityEndMonth' => $inputs['inputSocialCulturalBackground'][$i + 11]['value'],
-                    'CandidateActivityEndYear' => $inputs['inputSocialCulturalBackground'][$i + 12]['value'],
+                    'CandidateBasijType' => $inputs['inputSocialCulturalBackground'][$i + 1]['value'],
+                    'CandidateMobilMembershipType' => $inputs['inputSocialCulturalBackground'][$i + 2]['value'],
+                    'CandidateResponsibilityTitle' => $inputs['inputSocialCulturalBackground'][$i + 3]['value'],
+                    'CandidateBasijActivityLevel' => $inputs['inputSocialCulturalBackground'][$i + 4]['value'],
+                    'CandidateBasijAreaTitle' => $inputs['inputSocialCulturalBackground'][$i + 5]['value'],
+                    'CandidateActivityFieldOtherTypeTitle' => $inputs['inputSocialCulturalBackground'][$i + 6]['value'],
+                    'CandidateOrganizationName' => $inputs['inputSocialCulturalBackground'][$i + 7]['value'],
+                    'CandidateBasijUniversityName' => $inputs['inputSocialCulturalBackground'][$i + 8]['value'],
+                    'CandidateBasijCollegeName' => $inputs['inputSocialCulturalBackground'][$i + 9]['value'],
+                    'CandidateMemberShipType' => $inputs['inputSocialCulturalBackground'][$i + 10]['value'],
+                    'CandidateMemberShipDescription' => $inputs['inputSocialCulturalBackground'][$i + 11]['value'],
+                    'CandidateBasijTypeOtherTitle' => $inputs['inputSocialCulturalBackground'][$i + 12]['value'],
+                    'CandidateActivityStartMonth' => $inputs['inputSocialCulturalBackground'][$i + 13]['value'],
+                    'CandidateActivityStartYear' => $inputs['inputSocialCulturalBackground'][$i + 14]['value'],
+                    'CandidateActivityEndMonth' => $inputs['inputSocialCulturalBackground'][$i + 15]['value'],
+                    'CandidateActivityEndYear' => $inputs['inputSocialCulturalBackground'][$i + 16]['value']
                 );
                 $this->db->insert('candidate_social_record', $UserArray);
-                $i = $i + 13;
+                $i = $i + 17;
             }
         }
         $this->db->trans_complete();
