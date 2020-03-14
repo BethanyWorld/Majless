@@ -134,7 +134,6 @@
             $(this).prev('div').prev('div').find("input[type='number']").attr('data-unit', $rightSide);
             updatePrice();
         });
-
         $(document).on('change', '#inputVehicleType', function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
@@ -146,7 +145,6 @@
                 $($parentDom + '.car-name').addClass('hidden').hide();
             }
         });
-
         $(document).on('change', '.state-select[name=inputRealEstateStateId]', function () {
             toggleLoader();
             $inputCandidateStateId = $(this).val();
@@ -189,7 +187,6 @@
         $ajaxCallResults = [];
         $requests = [];
         $UUIDs = [];
-
         $requestIndex = 0;
         $(".countries").each(function () {
             $uuid = UUID();
