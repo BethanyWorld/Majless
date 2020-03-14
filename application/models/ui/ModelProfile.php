@@ -921,7 +921,6 @@ class ModelProfile extends CI_Model{
         );
         return $arr;
     }
-
     public function getSupervisorType($inputs){
         return $this->db->select('*')
                 ->from('internal_election')
@@ -971,6 +970,5 @@ class ModelProfile extends CI_Model{
         );
         return $arr;
     }
-
 }
 ?>

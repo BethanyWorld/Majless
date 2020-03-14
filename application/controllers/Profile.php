@@ -895,15 +895,16 @@ class Profile extends CI_Controller{
                     $UserArray = array(
                         'CandidateId' => $inputs['inputCandidateId'],
                         'VehicleType' => $inputs['data'][$i]['value'],
-                        'VehicleOwnershipDate' => $inputs['data'][$i + 1]['value'],
-                        'VehicleOwnershipType' => $inputs['data'][$i + 2]['value'],
-                        'VehicleBuyTimePrice' => $inputs['data'][$i + 4]['value'] . "." . $inputs['data'][$i + 3]['value'] . " " . $inputs['data'][$i + 5]['value'],
-                        'VehicleNowTimePrice' => $inputs['data'][$i + 7]['value'] . "." . $inputs['data'][$i + 6]['value'] . " " . $inputs['data'][$i + 8]['value'],
-                        'VehiclePortion' => $inputs['data'][$i + 9]['value'],
+                        'VehicleOwnershipDate' => $inputs['data'][$i + 2]['value'],
+                        'VehicleOwnershipType' => $inputs['data'][$i + 3]['value'],
+                        'VehicleBuyTimePrice' => $inputs['data'][$i + 5]['value'] . "." . $inputs['data'][$i + 4]['value'] . " " . $inputs['data'][$i + 6]['value'],
+                        'VehicleNowTimePrice' => $inputs['data'][$i + 8]['value'] . "." . $inputs['data'][$i + 7]['value'] . " " . $inputs['data'][$i + 9]['value'],
+                        'VehiclePortion' => $inputs['data'][$i + 10]['value'],
+                        'VehicleCarName' => $inputs['data'][$i + 1]['value'],
                         'ForWho' => $inputs['role'],
                     );
                     $this->db->insert($tableName, $UserArray);
-                    $i = $i + 10;
+                    $i = $i + 11;
                 }
                 $arr = array(
                     'type' => "green",

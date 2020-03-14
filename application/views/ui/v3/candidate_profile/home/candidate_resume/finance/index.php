@@ -30,7 +30,7 @@
                         <div class="LeftPanel">
                             <div class="LeftPanelcontent">
                                 <div class="row">
-                                    <!--Books -->
+                                    <!--RealEStates -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
@@ -575,8 +575,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--End Books -->
-                                    <!--Articles -->
+                                    <!--End RealEStates -->
+                                    <!--Vehicle -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
                                             <div class="panel-heading">
@@ -596,13 +596,10 @@
                                                                     <div class="col-md-12 col-xs-12 padding-0 form">
                                                                         <span class="remove-form fa fa-times"></span>
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                            <label for="inputVehicleType">
-                                                                                نوع وسیله نقلیه<span
-                                                                                        class="text-danger"></span>
+                                                                            <label for="inputVehicleType">نوع وسیله نقلیه
+                                                                                <span class="text-danger"></span>
                                                                             </label>
-                                                                            <select class="form-control form-control-lg"
-                                                                                    name="inputVehicleType"
-                                                                                    id="inputVehicleType">
+                                                                            <select class="form-control form-control-lg" name="inputVehicleType">
                                                                                 <?php foreach ($EnumResumeProfile['TypeOfVehicle'] as $key => $value) { ?>
                                                                                     <option
                                                                                         <?php setOptionSelected($item['VehicleType'], $key); ?>
@@ -610,9 +607,12 @@
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-                                                                        <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
-                                                                            <label for="inputVehicleCarName ">نام خودرو</label>
-                                                                            <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                                        <div class="col-md-3 col-xs-4 RightFloat car-name">
+                                                                            <label for="inputVehicleCarName">نام خودرو</label>
+                                                                            <input
+                                                                                <?php setInputValue($item['VehicleCarName']); ?>
+                                                                                    type="text"
+                                                                                   name="inputVehicleCarName" class="form-control" placeholder="" min="0">
                                                                         </div>
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleOwnershipDate">
@@ -804,10 +804,7 @@
                                                         <div class="unique-form animated  list-group-item flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                <label for="inputVehicleType">
-                                                                    نوع وسیله نقلیه
-                                                                    <span class="text-danger">
-                                             </span>
+                                                                <label for="inputVehicleType">نوع وسیله نقلیه<span class="text-danger"></span>
                                                                 </label>
                                                                 <select class="form-control form-control-lg"
                                                                         name="inputVehicleType"
@@ -819,7 +816,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
-                                                                <label for="inputVehicleCarName ">نام خودرو</label>
+                                                                <label for="inputVehicleCarName">نام خودرو</label>
                                                                 <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
                                                             </div>
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
@@ -978,7 +975,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--End Articles -->
+                                    <!--End Vehicle -->
                                     <!--Research -->
                                     <div class="col-md-12 col-xs-12">
                                         <div class="panel panel-default LeftPanelShadow">
@@ -3469,8 +3466,10 @@
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
-                                                                            <label for="inputVehicleCarName ">نام خودرو</label>
-                                                                            <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                                            <label for="inputVehicleCarName">نام خودرو</label>
+                                                                            <input
+                                                                                <?php setInputValue($item['VehicleCarName']); ?>
+                                                                                    type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
                                                                         </div>
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleOwnershipDate">
@@ -3677,8 +3676,9 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
-                                                                <label for="inputVehicleCarName ">نام خودرو</label>
-                                                                <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                                <label for="inputVehicleCarName">نام خودرو</label>
+                                                                <input
+                                                                        type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
                                                             </div>
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleOwnershipDate">
@@ -6327,8 +6327,11 @@
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
-                                                                            <label for="inputVehicleCarName ">نام خودرو</label>
-                                                                            <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
+                                                                            <label for="inputVehicleCarName">نام خودرو</label>
+                                                                            <input
+
+                                                                                <?php setInputValue($item['VehicleCarName']); ?>
+                                                                                    type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
                                                                         </div>
                                                                         <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputVehicleOwnershipDate">
@@ -6535,7 +6538,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-3 col-xs-4 RightFloat hidden car-name">
-                                                                <label for="inputVehicleCarName ">نام خودرو</label>
+                                                                <label for="inputVehicleCarName">نام خودرو</label>
                                                                 <input type="text" name="inputVehicleCarName" class="form-control" placeholder="" min="0">
                                                             </div>
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">

@@ -76,6 +76,8 @@
                 'role': $role,
                 'target': $target
             }
+            console.log($sendData);
+            //return false;
             toggleLoader();
             $.ajax({
                 type: 'post',
@@ -91,7 +93,6 @@
                     notify('لطفا تمامی موارد را کامل کنید', 'red');
                 }
             });
-
         });
         $(".add-form").click(function () {
             $(this).removeClass('waves');
@@ -134,7 +135,6 @@
             $(this).prev('div').prev('div').find("input[type='number']").attr('data-unit', $rightSide);
             updatePrice();
         });
-
         $(document).on('change', '[name="inputVehicleType"]', function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
@@ -146,7 +146,6 @@
                 $($parentDom + '.car-name').addClass('hidden').hide();
             }
         });
-
         $(document).on('change', '.state-select[name=inputRealEstateStateId]', function () {
             toggleLoader();
             $inputCandidateStateId = $(this).val();
@@ -185,11 +184,11 @@
             });
         });
         $('.price-unit').change();
+        $('[name="inputVehicleType"]').change();
         $ajaxCalls = [];
         $ajaxCallResults = [];
         $requests = [];
         $UUIDs = [];
-
         $requestIndex = 0;
         $(".countries").each(function () {
             $uuid = UUID();
@@ -217,7 +216,6 @@
             );
         }
         $.when.apply(this, $requests).then(function () {
-            console.log($ajaxCallResults);
             for ($i = 0; $i < $ajaxCallResults.length; $i++) {
                 for ($j = 0; $j < $UUIDs.length; $j++) {
                     if ($ajaxCallResults[$i]["uuid"] === $UUIDs[$j]["uuid"]) {
