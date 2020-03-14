@@ -135,7 +135,7 @@
             updatePrice();
         });
 
-        $(document).on('change', '#inputVehicleType', function () {
+        $(document).on('change', '[name="inputVehicleType"]', function () {
             $parentId = $(this).parents('div.list-group-item').attr('id');
             $parentDom = "#" + $parentId + " ";
             $inputVehicleType = $(this).val();

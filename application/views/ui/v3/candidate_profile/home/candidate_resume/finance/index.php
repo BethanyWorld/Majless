@@ -3659,7 +3659,7 @@
                                                                 <?php }
                                                             } ?>
                                                         </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
+                                                        <div class="unique-form animated  list-group-item flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleType">
@@ -6517,7 +6517,7 @@
                                                                 <?php }
                                                             } ?>
                                                         </form>
-                                                        <div class="unique-form animated flipInX col-md-12 col-xs-12 padding-0 hidden form">
+                                                        <div class="unique-form animated list-group-item flipInX col-md-12 col-xs-12 padding-0 hidden form">
                                                             <span class="remove-form fa fa-times"></span>
                                                             <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputVehicleType">
