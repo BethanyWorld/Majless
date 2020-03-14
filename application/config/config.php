@@ -212,14 +212,12 @@ $config['EnumResumeProfile'] = array(
     'CandidateActivityFieldType' => array(
         'Charity' => 'انجمن خیریه',
         'Mobilization' => 'بسیج',
-        'University' => 'دانشگاه',
+        'University' => 'تشکل دانشجویی',
         'Semen' => 'سمن',
-        'Councils' => 'شورایاری',
-        'CulturalCenter' => 'فرهنگسرا',
+        /*'Councils' => 'شورایاری',*/
         'JihadistActivities' => 'فعالیت های جهادی',
-        'Schools' => 'مدارس',
         'TheMosque' => 'مسجد',
-        'RedCrescent' => 'هلال احمر',
+        /*'RedCrescent' => 'هلال احمر',*/
         'ReligiousCommittees' => 'هئیت های مذهبی',
         'Others' => 'سایر'
     ),
@@ -229,15 +227,24 @@ $config['EnumResumeProfile'] = array(
     ),
     'CandidateBasijType' => array(
         'Urban' => 'شهری',
-        'schools' => 'مدارس',
-        'University' => 'دانشگاه',
+        'schools' => 'دانش آموزی',
+        'University' => 'دانشجویی',
         'Others' => 'سایر'
     ),
+    'CandidateBasijActivityLevel' => array(
+        'Base' => 'پایگاه',
+        'Area' => 'حوزه',
+        'District' => 'ناحیه'
+    ),
     'CandidateMobilMembershipType' => array(
-        'Normal' => 'عادی',
+        /*'Normal' => 'عادی',
         'Active' => 'فعال',
         'Kadr' => 'کادر',
-        'Others' => 'سایر'
+        'Others' => 'سایر'*/
+        'Responsible' => 'مسئول',
+        'Central' => 'شورای مرکزی',
+        'Active' => 'فعال',
+        'Normal' => 'عادی'
     ),
     /* Military Enums */
     'CandidateMilitaryStatus' => array(

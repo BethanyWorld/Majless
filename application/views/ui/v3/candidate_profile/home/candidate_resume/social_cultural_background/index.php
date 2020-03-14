@@ -106,6 +106,12 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         </div>
                                                                     </div>
 
+                                                                    <div class="col-md-3 col-x-12 RightFloat domain-name">
+                                                                        <label for="" class="Lable">
+                                                                            عنوان مسئولیت:
+                                                                        </label>
+                                                                        <input name="" class="ytyt" type="text" required>
+                                                                    </div>
                                                                     <!--For mobilization Type-->
                                                                     <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateBasijType">
                                                                         <div class="col-md-12 col-xs-12">
@@ -124,7 +130,20 @@ $_DIR = base_url('assets/ui/v3/');
                                                                                 <?php } ?>
                                                                             </select>
                                                                         </div>
-
+                                                                    </div>
+                                                                    <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateBasijType">
+                                                                        <div class="col-md-12 col-xs-12">
+                                                                            <label for="inputCandidateBasijType">سطح فعالیت :</label>
+                                                                            <select class="form-control form-control-lg"
+                                                                                    data-name="inputCandidateBasijType">
+                                                                                <option value="" selected>--انتخاب کنید--</option>
+                                                                                <?php foreach ($EnumResumeProfile['CandidateBasijActivityLevel'] as $key => $value) { ?>
+                                                                                    <option value="<?php echo $key; ?>">
+                                                                                        <?php echo $value; ?>
+                                                                                    </option>
+                                                                                <?php } ?>
+                                                                            </select>
+                                                                        </div>
                                                                     </div>
                                                                     <div class="col-md-3 col-x-12 RightFloat other-mobilization">
                                                                         <label for="inputCandidateBasijTypeOtherTitle"
@@ -151,15 +170,13 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-3 col-x-12 RightFloat domain-name">
-                                                                        <label for="inputCandidateBasijAreaTitle" class="Lable">نام
-                                                                            حوزه</label>
+                                                                        <label for="inputCandidateBasijAreaTitle" class="Lable">
+                                                                           نام حوزه / پایگاه / ناحیه
+                                                                        </label>
                                                                         <input <?php setInputValue($item['CandidateBasijAreaTitle']); ?>
                                                                                 name="inputCandidateBasijAreaTitle"
                                                                                 class="ytyt" type="text" required>
                                                                     </div>
-
-
-                                                                    <!-- for Date -->
                                                                     <div class="col-md-12 col-xs-12 RightFloat culture-date padding-0">
                                                                         <div class="col-md-12 col-xs-12">
                                                                             <div class="col-md-6 col-xs-12 RightFloat">
@@ -237,8 +254,7 @@ $_DIR = base_url('assets/ui/v3/');
                                                         <div class="list-group-Grade col-md-12 col-xs-12 padding-0">
                                                             <div class="col-md-12 col-xs-12 margin-b-30">
                                                                 <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateActivityFieldType">زمینه فعالیت
-                                                                        :</label>
+                                                                    <label for="inputCandidateActivityFieldType">زمینه فعالیت :</label>
                                                                     <select class="form-control form-control-lg"
                                                                             data-name="inputCandidateActivityFieldType">
                                                                         <option value="" selected>--انتخاب کنید--</option>
@@ -251,33 +267,24 @@ $_DIR = base_url('assets/ui/v3/');
                                                                     </select>
                                                                 </div>
                                                             </div>
-
                                                             <!--For Other-->
                                                             <div class="col-md-6 col-xs-12 RightFloat margin-b-30 other-title">
                                                                 <div class="col-md-12 col-xs-12 RightFloat">
-                                                                    <label class="Lable"
-                                                                           for="inputCandidateActivityFieldOtherTypeTitle">عنوان</label>
-                                                                    <input data-name="inputCandidateActivityFieldOtherTypeTitle"
-                                                                           class="ytyt" type="text" required>
+                                                                    <label class="Lable" for="inputCandidateActivityFieldOtherTypeTitle">عنوان</label>
+                                                                    <input data-name="inputCandidateActivityFieldOtherTypeTitle" class="ytyt" type="text" required>
                                                                 </div>
                                                             </div>
-
                                                             <!--For exept mobilization-->
                                                             <div class="col-md-12 col-xs-12 margin-b-30 RightFloat Collectionname">
                                                                 <div class="col-md-6 col-sm-12 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateOrganizationName" class="Lable">نام
-                                                                        مجموعه</label>
-                                                                    <input data-name="inputCandidateOrganizationName"
-                                                                           class="ytyt" type="text" required>
+                                                                    <label for="inputCandidateOrganizationName" class="Lable">نام مجموعه</label>
+                                                                    <input data-name="inputCandidateOrganizationName" class="ytyt" type="text" required>
                                                                 </div>
-
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 RightFloat inputmembershiptype">
                                                                 <div class="col-md-12 col-sm-12 col-xs-12 RightFloat paddingLeft-0">
-                                                                    <label for="inputCandidateMemberShipType">نوع عضویت
-                                                                        :</label>
-                                                                    <select class="form-control form-control-lg"
-                                                                            data-name="inputCandidateMemberShipType">
+                                                                    <label for="inputCandidateMemberShipType">نوع عضویت :</label>
+                                                                    <select class="form-control form-control-lg" data-name="inputCandidateMemberShipType">
                                                                         <option value="" selected>--انتخاب کنید--</option>
                                                                         <?php foreach ($EnumResumeProfile['CandidateMemberShipType'] as $key => $value) { ?>
                                                                             <option value="<?php echo $key; ?>">
@@ -289,19 +296,21 @@ $_DIR = base_url('assets/ui/v3/');
                                                             </div>
                                                             <div class="col-md-6 col-xs-12 RightFloat margin-b-30 paddingRight-0 Description">
                                                                 <div class="col-md-12 col-sm-12 col-xs-12 RightFloat">
-                                                                    <label for="inputCandidateMemberShipDescription"
-                                                                           class="Lable">توضیحات</label>
-                                                                    <input data-name="inputCandidateMemberShipDescription"
-                                                                           class="ytyt" type="text" required>
+                                                                    <label for="inputCandidateMemberShipDescription" class="Lable">توضیحات</label>
+                                                                    <input data-name="inputCandidateMemberShipDescription" class="ytyt" type="text" required>
                                                                 </div>
                                                             </div>
-
                                                             <!--For mobilization Type-->
+                                                            <div class="col-md-3 col-x-12 RightFloat domain-name">
+                                                                <label for="" class="Lable">
+                                                                    عنوان مسئولیت:
+                                                                </label>
+                                                                <input name="" class="ytyt" type="text" required>
+                                                            </div>
                                                             <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateBasijType">
                                                                 <div class="col-md-12 col-xs-12">
                                                                     <label for="inputCandidateBasijType">نوع بسیج :</label>
-                                                                    <select class="form-control form-control-lg"
-                                                                            data-name="inputCandidateBasijType">
+                                                                    <select class="form-control form-control-lg" data-name="inputCandidateBasijType">
                                                                         <option value="" selected>--انتخاب کنید--</option>
                                                                         <?php foreach ($EnumResumeProfile['CandidateBasijType'] as $key => $value) { ?>
                                                                             <option value="<?php echo $key; ?>">
@@ -310,19 +319,28 @@ $_DIR = base_url('assets/ui/v3/');
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
-
+                                                            </div>
+                                                            <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateBasijType">
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <label for="inputCandidateBasijType">سطح فعالیت :</label>
+                                                                    <select class="form-control form-control-lg" data-name="inputCandidateBasijType">
+                                                                        <option value="" selected>--انتخاب کنید--</option>
+                                                                        <?php foreach ($EnumResumeProfile['CandidateBasijActivityLevel'] as $key => $value) { ?>
+                                                                            <option value="<?php echo $key; ?>">
+                                                                                <?php echo $value; ?>
+                                                                            </option>
+                                                                        <?php } ?>
+                                                                    </select>
+                                                                </div>
                                                             </div>
                                                             <div class="col-md-3 col-x-12  RightFloat other-mobilization">
                                                                 <label for="inputCandidateBasijTypeOtherTitle" class="Lable">سایر</label>
-                                                                <input data-name="inputCandidateBasijTypeOtherTitle"
-                                                                       class="ytyt" type="text" required>
+                                                                <input data-name="inputCandidateBasijTypeOtherTitle" class="ytyt" type="text" required>
                                                             </div>
                                                             <div class="col-md-3 col-xs-12 margin-b-35 RightFloat inputCandidateMobilMembershipType">
                                                                 <div class="col-md-12 col-xs-12">
-                                                                    <label for="inputCandidateMobilMembershipType">نوع عضویت
-                                                                        :</label>
-                                                                    <select class="form-control form-control-lg"
-                                                                            data-name="inputCandidateMobilMembershipType">
+                                                                    <label for="inputCandidateMobilMembershipType">نوع عضویت :</label>
+                                                                    <select class="form-control form-control-lg" data-name="inputCandidateMobilMembershipType">
                                                                         <option value="" selected>--انتخاب کنید--</option>
                                                                         <?php foreach ($EnumResumeProfile['CandidateMobilMembershipType'] as $key => $value) { ?>
                                                                             <option value="<?php echo $key; ?>">
@@ -333,19 +351,15 @@ $_DIR = base_url('assets/ui/v3/');
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-3 col-x-12 RightFloat domain-name">
-                                                                <label for="inputCandidateBasijAreaTitle" class="Lable">نام
-                                                                    حوزه</label>
-                                                                <input data-name="inputCandidateBasijAreaTitle" class="ytyt"
-                                                                       type="text" required>
+                                                                <label for="inputCandidateBasijAreaTitle" class="Lable">
+                                                                    نام حوزه / پایگاه / ناحیه</label>
+                                                                <input data-name="inputCandidateBasijAreaTitle" class="ytyt" type="text" required>
                                                             </div>
-
-
                                                             <!-- for Date -->
                                                             <div class="col-md-12 col-xs-12 RightFloat culture-date padding-0">
                                                                 <div class="col-md-12 col-xs-12">
                                                                     <div class="col-md-6 col-xs-12 RightFloat">
-                                                                        <label for="inputCandidateStartJobMonth">آغاز
-                                                                            همکاری</label>
+                                                                        <label for="inputCandidateStartJobMonth">آغاز همکاری</label>
                                                                         <div class="row">
                                                                             <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                 <select class="form-control form-control-lg city-select"
@@ -419,14 +433,8 @@ $_DIR = base_url('assets/ui/v3/');
                                                 ?>
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>

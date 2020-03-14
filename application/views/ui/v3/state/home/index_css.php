@@ -1,5 +1,9 @@
 <style>
-
+    #IranMap .map .province path {
+        fill: #bfbfbf;
+        stroke-linecap: butt !important;
+        stroke: #0f342f;
+    }
     #inputStatInfo{
         padding: 4px 2px;
         font-size: 14px;
