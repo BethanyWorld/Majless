@@ -1,46 +1,4 @@
 <?php $_DIR = base_url('assets/ui/v3/'); ?>
-<style>
-    .vote-container {
-        border: 1px solid #ccc;
-        padding: 0;
-        margin-bottom: 15px;
-    }
-
-    .vote-container .img-container {
-        padding: 0;
-    }
-
-    .vote-container .img-container img {
-        border-left: 1px solid #d9d9d9;
-        object-fit: scale-down;
-        border-radius: 1px;
-        width: 135px;
-    }
-
-    .vote-container .candidate-info {
-        padding: 16px 0;
-    }
-
-    .vote-container .candidate-info p {
-        font-weight: 900;
-        font-size: 18px;
-    }
-
-    .vote-container .candidate-info button {
-        float: left;
-        color: #fff;
-        line-height: 40px;
-    }
-
-    .vote-container .candidate-info button span {
-    }
-
-    .vote-container .candidate-info button i {
-        display: block;
-        margin: 10px 0;
-        font-size: 32px;
-    }
-</style>
 <div class="container container-wrapper" style="background: none;">
     <div class="row col-xs-12 col-md-3 pull-right">
         <div class="row col-xs-12  pull-right">

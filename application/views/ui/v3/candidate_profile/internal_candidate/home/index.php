@@ -8,32 +8,42 @@
         line-height: 32px;
         width: 100%;
     }
-
     .btn.vote:active,
     .btn.vote:focus {
         outline: 0;
     }
-
     .btn.vote span {
         position: relative;
         top: 2px;
     }
-
     .vote-container {
-        border: 6px solid #fdb72e;
-        padding: 25px 0px;
-        padding-bottom: 0;
+        border: 1px solid #fdb72e;
+        padding: 0 0;
         border-radius: 4px;
-        margin: 10px 0;
-        box-shadow: 0px -3px 25px 1px #c8c8c8;
+        margin: 10px 10px;
+        box-shadow: 0 -3px 25px 1px #c8c8c8;
+        display: inline-block;
+        min-width: 340px;
+        max-width: 100%;
     }
-
+    .vote-container p {
+        margin: 0;
+        padding: 10px 25px;
+        font-weight: 900;
+        text-align: center;
+        line-height: 40px;
+    }
     .vote-container i {
         display: block;
         text-align: center;
         font-size: 82px;
         margin: 35px 0;
         margin-top: 0;
+    }
+    h4{
+        margin: 8px 0;
+        margin-top: 35px;
+        color: #b5811c;
     }
 </style>
 <div class="container container-wrapper" style="background: none;">
@@ -62,7 +72,6 @@
         </div>
     </div>
     <div class="col-xs-12 col-md-9 pull-right alerts-container">
-
         <?php
         /* Check if candidate has accepted by admin */
         $hasResult = false;
@@ -77,8 +86,6 @@
             }
         }
         ?>
-
-
         <?php if($hasResult){ ?>
             <div class="col-xs-12">
                 <div class="alert alert-success text-center">
@@ -109,7 +116,6 @@
                 </table>
             </div>
         <?php } else{ ?>
-
             <p class="text-justify" style="font-weight: 900;font-size: 18px;line-height: 40px;text-align: center;">
                 جنبش از ما، جهت بازرسی بر فرآیندهای مالی و گزینشی (نحوه برگزاری آزمون ها) دعوت میکند
                 تا بصورت داوطلبانه برای نظارت بر فرآیند های این جنبش اعلام آمادگی کنید.
@@ -117,20 +123,36 @@
                 به اطلاع شما خواهد رسید.
             </p>
             <div class="col-xs-12 text-center">
-                <div class="col-xs-12 col-md-5 vote-container">
-                    <i class="fa fa-500px"></i>
+                <h4 class="text-center">داوطلبان نظارت مرکزی</h4>
+                <div class="vote-container">
+                    <p>نظارت بر گزارش های مالی در مرکز</p>
                     <button class="btn btn-success vote" data-supervisor-type="Finance">
-                        <span> اعلام آمادگی جهت نظارت بر فرآیند مالی</span>
+                        <span>ثبت نام</span>
                     </button>
                 </div>
-                <div class="col-md-2 col-xs-12" style="line-height: 212px;font-size: 40px;">یا</div>
-                <div class="col-xs-12 col-md-5 vote-container">
-                    <i class="fa fa-code-fork"></i>
+                <div class="vote-container">
+                    <p>نظارت بر فرآیندهای گزینشی در مرکز</p>
                     <button class="btn btn-primary vote" data-supervisor-type="Process">
-                        <span>اعلام آمادگی جهت نظارت بر فرآیند گزینشی</span>
+                        <span>ثبت نام</span>
                     </button>
                 </div>
             </div>
+            <div class="col-xs-12 text-center">
+                <h4 class="text-center">داوطلبان نظارت استانی</h4>
+                <div class="vote-container">
+                    <p>نظارت بر گزارش های مالی در سطح استان</p>
+                    <button class="btn btn-success vote" data-supervisor-type="Finance">
+                        <span>ثبت نام</span>
+                    </button>
+                </div>
+                <div class="vote-container">
+                    <p>نظارت بر فرآیندهای گزینشی در سطح استان</p>
+                    <button class="btn btn-primary vote" data-supervisor-type="Process">
+                        <span>ثبت نام</span>
+                    </button>
+                </div>
+            </div>
+
             <div class="col-xs-12"><br><br></div>
             <div class="col-xs-12">
                 <h4>سوابق درخواست:</h4>

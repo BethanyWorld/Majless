@@ -106,5 +106,55 @@
     }
 
 
+    .vote-container {
+        border: 1px solid #ccc;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    .vote-container .img-container {
+        padding: 0;
+    }
+
+    .vote-container .img-container img {
+        border-left: 1px solid #d9d9d9;
+        object-fit: scale-down;
+        border-radius: 1px;
+        width: 135px;
+    }
+
+    .vote-container .candidate-info {
+        padding: 16px 0;
+    }
+
+    .vote-container .candidate-info p {
+        font-weight: 900;
+        font-size: 18px;
+    }
+
+    .vote-container .candidate-info button {
+        float: left;
+        color: #fff;
+        line-height: 40px;
+    }
+
+    .vote-container .candidate-info button span {
+    }
+
+    .vote-container .candidate-info button i {
+        display: block;
+        margin: 10px 0;
+        font-size: 32px;
+    }
+    .nav-tabs>li{
+        float: right;
+    }
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+        color: #24890d;
+        cursor: default;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+    }
 
 </style>
