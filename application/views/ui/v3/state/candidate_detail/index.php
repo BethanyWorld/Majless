@@ -316,7 +316,7 @@
                     </div>
                     <div class="panel-body">
                         <ul class="resume-ul">
-                            <li ng-repeat="item in candidateAcademicBackground">
+                            <li ng-repeat="item in gradeArray">
                                 <span class="fa fa-circle-o"></span>
                                 <strong class="colored bg-white">
                                     <i ng-if="item.CandidateStudyStatus !== 'Graduated' ">{{item.CandidateStudyStatus |
@@ -689,7 +689,7 @@
                                 <form ng-repeat="item in candidateSocialCulturalBackground">
                                     <span class="divider"></span>
                                     <div class="col-md-12 col-xs-12 padding-0 form">
-                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat">
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                             <label for="">
                                                 زمینه فعالیت:
                                                 <span class="text-danger"></span>
@@ -697,13 +697,59 @@
                                             <span class="span-h"> {{item.CandidateActivityFieldType | bindEnum }}</span>
 
                                         </div>
-                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'Mobilization'">
                                             <label for="">
                                                 نوع عضویت:
                                             </label>
                                             <span class="span-h">{{item.CandidateMobilMembershipType | bindEnum}}</span>
 
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
+                                            <label for="">
+                                                عنوان مسئولیت :
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <span class="span-h"> {{item.CandidateActivityFieldType | bindEnum }}</span>
+
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
+                                            <label for="" ng-if="item.CandidateActivityFieldType === 'University'">
+                                                عنوان تشکل :
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <label for="" ng-if="item.CandidateActivityFieldType !== 'University' && item.CandidateActivityFieldType !== 'TheMosque' && item.CandidateActivityFieldType !== 'Mobilization' ">
+                                                نام مجموعه :
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <label for="" ng-if="item.CandidateActivityFieldType === 'TheMosque'">
+                                                نام مسجد :
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <span class="span-h"> {{item.CandidateOrganizationName  }}</span>
+
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'University'">
+                                            <label for="">
+                                                نام دانشگاه :
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <span class="span-h"> {{item.CandidateBasijUniversityName  | bindUniversityName }}</span>
+
+                                        </div>
+                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'University'">
+                                            <label for="">
+                                                نام دانشکده :
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <span class="span-h"> {{item.CandidateBasijCollegeName  | bindUniversityName }}</span>
+
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                            <label for="">
+                                                سطح فعالیت :
+                                                <span class="text-danger"></span>
+                                            </label>
+                                            <span class="span-h"> {{item.CandidateBasijActivityLevel | bindEnum }}</span>
                                         </div>
                                         <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType === 'Mobilization'">
@@ -713,8 +759,14 @@
                                             <span class="span-h">{{item.CandidateBasijType  | bindEnum}}</span>
 
                                         </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
+                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                            <label for="">
+                                                نام حوزه:
+                                            </label>
+                                            <span class="span-h">  {{item.CandidateBasijAreaTitle}}</span>
+
+                                        </div>
+                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'Others'">
                                             <label for="">
                                                 نوع عضویت:
                                             </label>
@@ -734,14 +786,6 @@
                                                  {{item.CandidateActivityEndMonth  | bindEnum}}
                                                     {{item.CandidateActivityEndYear }}
                                             </span>
-
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType === 'Mobilization'">
-                                            <label for="">
-                                                نام حوزه:
-                                            </label>
-                                            <span class="span-h">  {{item.CandidateBasijAreaTitle}}</span>
 
                                         </div>
                                         <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
@@ -766,15 +810,15 @@
                                             <span class="span-h"> {{item.CandidateActivityFieldOtherTypeTitle }}</span>
 
                                         </div>
-                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
-                                            <label for="">
-                                                نام مجموعه:
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span class="span-h">{{item.CandidateOrganizationName }}</span>
-
-                                        </div>
+<!--                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"-->
+<!--                                             ng-if="item.CandidateActivityFieldType !== 'University' || item.CandidateActivityFieldType !== 'Mobilization' ">-->
+<!--                                            <label for="">-->
+<!--                                                نام مجموعه:-->
+<!--                                                <span class="text-danger"></span>-->
+<!--                                            </label>-->
+<!--                                            <span class="span-h">{{item.CandidateOrganizationName }}</span>-->
+<!---->
+<!--                                        </div>-->
                                         <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat"
                                              ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
                                             <label for="">توضیحات:</label>
@@ -898,7 +942,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
+                                                                                        ارزش حدودی ملک در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
@@ -910,7 +954,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
+                                                                                        ارزش حدودی ملک درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
@@ -956,6 +1000,10 @@
                                                                                                 class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehicleType | bindEnum}} </span>
+                                                                                </div>
+                                                                                <div class="col-md-3 col-xs-4 RightFloat car-name" ng-if="item.VehicleType !== 'Motorcycle' && item.VehicleType !== 'Other' ">
+                                                                                    <label for="inputVehicleType">نام خودرو :<span class="text-danger"></span></label>
+                                                                                    <span class="span-h"> {{item.VehicleCarName}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
@@ -1519,7 +1567,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
+                                                                                        ارزش حدودی ملک در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
@@ -1531,7 +1579,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
+                                                                                        ارزش حدودی ملک درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
@@ -1577,6 +1625,10 @@
                                                                                                 class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehicleType | bindEnum}} </span>
+                                                                                </div>
+                                                                                <div class="col-md-3 col-xs-4 RightFloat car-name" ng-if="item.VehicleType !== 'Motorcycle' && item.VehicleType !== 'Other' ">
+                                                                                    <label for="inputVehicleType">نام خودرو :<span class="text-danger"></span></label>
+                                                                                    <span class="span-h"> {{item.VehicleCarName}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
@@ -2141,7 +2193,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
+                                                                                        ارزش حدودی ملک در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
@@ -2153,7 +2205,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
+                                                                                        ارزش حدودی ملک درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
@@ -2199,6 +2251,10 @@
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehicleType | bindEnum}} </span>
                                                                                 </div>
+                                                                                <div class="col-md-3 col-xs-4 RightFloat car-name" ng-if="item.VehicleType !== 'Motorcycle' && item.VehicleType !== 'Other' ">
+                                                                                    <label for="inputVehicleType">نام خودرو :<span class="text-danger"></span></label>
+                                                                                    <span class="span-h"> {{item.VehicleCarName}} </span>
+                                                                                </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
                                                                                         سال شروع مالکیت :<span
@@ -2222,7 +2278,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
+                                                                                        ارزش حدودی در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
@@ -2234,7 +2290,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
+                                                                                        ارزش حدودی درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
@@ -2707,112 +2763,107 @@
                         <ul class="resume-ul">
                             <li ng-if="candidateAcademicBackground.length === 0 ">
                                 <span class="fa fa-circle-o"></span>
-                                <i>سوابق تحصیلی وارد نشده است</i>
+                                <i>فاقد سوابق تحصیلی</i>
                             </li>
                             <li ng-if="candidateMilitaryStatus.length === 0 ">
                                 <span class="fa fa-circle-o"></span>
-                                <i>سوابق خدمت وارد نشده است</i>
+                                <i>فاقد سوابق خدمت</i>
                             </li>
                             <li ng-if="candidateJobHistory.length === 0 ">
                                 <span class="fa fa-circle-o"></span>
-                                <i>سوابق شغلی وارد نشده است</i>
+                                <i>فاقد سوابق شغلی</i>
                             </li>
                             <li ng-if="candidateBooks.length === 0 ">
                                 <span class="fa fa-circle-o"></span>
-                                <i>سوابق علمی پژوهشی وارد نشده است</i>
+                                <i>فاقد سوابق علمی پژوهشی</i>
                             </li>
-                            <li ng-if="candidateSkills.length === 0 ">
-                                <span class="fa fa-circle-o"></span>
-                                <i>مهارت ها وارد نشده است</i>
-                            </li>
+<!--                            <li ng-if="candidateSkills.length === 0 ">-->
+<!--                                <span class="fa fa-circle-o"></span>-->
+<!--                                <i>مهارت ها وارد نشده است</i>-->
+<!--                            </li>-->
                             <li ng-if="promises.length === 0 ">
                                 <span class="fa fa-circle-o"></span>
-                                <i>وعده های انتخاباتی وارد نشده است</i>
+                                <i>فاقد وعده های انتخاباتی</i>
                             </li>
                             <li ng-if="politicBackground.length === 0 ">
                                 <span class="fa fa-circle-o"></span>
-                                <i>سوابق سیاسی وارد نشده است</i>
+                                <i>فاقد سوابق سیاسی</i>
                             </li>
                             <li ng-if="candidateSocialCulturalBackground.length === 0 ">
                                 <span class="fa fa-circle-o"></span>
-                                <i>سوابق فرهنگی اجتماعی وارد نشده است</i>
+                                <i>فاقد سوابق فرهنگی اجتماعی</i>
                             </li>
                             <li ng-if="finance.length === 0 ">
                                 <span class="fa fa-circle-o"></span>
-                                <i>فهرست اموال و دارایی ها وارد نشده است</i>
+                                <i>فاقد فهرست اموال و دارایی ها</i>
                             </li>
 
                             <li ng-if="finance.RealEStates.hasChildItems === 0 || finance.RealEStates.hasWifeItems === 0 || finance.RealEStates.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.RealEStates.hasChildItems === 0">املاک و مستغلات فرزند وارد نشده
-                                    است</i> ,
-                                <i ng-if="finance.RealEStates.hasWifeItems === 0">املاک و مستغلات همسر وارد نشده است</i>
-                                ,
-                                <i ng-if="finance.RealEStates.hasSelfItems === 0">املاک و مستغلات خود وارد نشده است</i>
+                                <i ng-if="finance.RealEStates.hasChildItems === 0">فاقد املاک و مستغلات فرزند</i> ,
+                                <i ng-if="finance.RealEStates.hasWifeItems === 0">فاقد املاک و مستغلات همسر</i>,
+                                <i ng-if="finance.RealEStates.hasSelfItems === 0">فاقد املاک و مستغلات خود</i>
                             </li>
 
                             <li ng-if="finance.Vehicle.hasChildItems === 0 || finance.Vehicle.hasWifeItems === 0 || finance.Vehicle.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.Vehicle.hasChildItems === 0">وسیله نقلیه فرزند وارد نشده است</i> ,
-                                <i ng-if="finance.Vehicle.hasWifeItems === 0">وسیله نقلیه همسر وارد نشده است</i> ,
-                                <i ng-if="finance.Vehicle.hasSelfItems === 0">وسیله نقلیه خود وارد نشده است</i>
+                                <i ng-if="finance.Vehicle.hasChildItems === 0">فاقد وسایل نقلیه فرزند</i> ,
+                                <i ng-if="finance.Vehicle.hasWifeItems === 0">فاقد وسایل نقلیه همسر</i> ,
+                                <i ng-if="finance.Vehicle.hasSelfItems === 0">فاقد وسایل نقلیه خود</i>
                             </li>
 
                             <li ng-if="finance.Invest.hasChildItems === 0 || finance.Invest.hasWifeItems === 0 || finance.Invest.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.Invest.hasChildItems === 0">سرمایه گذاری ها فرزند وارد نشده است</i> ,
-                                <i ng-if="finance.Invest.hasWifeItems === 0">سرمایه گذاری ها همسر وارد نشده است</i> ,
-                                <i ng-if="finance.Invest.hasSelfItems === 0">سرمایه گذاری ها خود وارد نشده است</i>
+                                <i ng-if="finance.Invest.hasChildItems === 0">فاقد سهام اوراق و بهادار فرزند</i> ,
+                                <i ng-if="finance.Invest.hasWifeItems === 0">فاقد سهام اوراق و بهادار همسر</i> ,
+                                <i ng-if="finance.Invest.hasSelfItems === 0">فاقد سهام اوراق و بهادار خود</i>
                             </li>
 
                             <li ng-if="finance.BankAccount.hasChildItems === 0 || finance.BankAccount.hasWifeItems === 0 || finance.BankAccount.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.BankAccount.hasChildItems === 0">حساب های جاری فرزند وارد نشده است</i>
+                                <i ng-if="finance.BankAccount.hasChildItems === 0">فاقد موجودی حساب فرزند</i>
                                 ,
-                                <i ng-if="finance.BankAccount.hasWifeItems === 0">حساب های جاری همسر وارد نشده است</i> ,
-                                <i ng-if="finance.BankAccount.hasSelfItems === 0">حساب های جاری خود وارد نشده است</i>
+                                <i ng-if="finance.BankAccount.hasWifeItems === 0">فاقد موجودی حساب همسر</i> ,
+                                <i ng-if="finance.BankAccount.hasSelfItems === 0">فاقد موجودی حساب خود</i>
                             </li>
 
 
                             <li ng-if="finance.CreditDebtor.hasChildItems === 0 || finance.CreditDebtor.hasWifeItems === 0 || finance.CreditDebtor.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.CreditDebtor.hasChildItems === 0">دیون مطالبات فرزند وارد نشده است</i>
+                                <i ng-if="finance.CreditDebtor.hasChildItems === 0">فاقد دیون مطالبات فرزند</i>
                                 ,
-                                <i ng-if="finance.CreditDebtor.hasWifeItems === 0">دیون مطالبات همسر وارد نشده است</i> ,
-                                <i ng-if="finance.CreditDebtor.hasSelfItems === 0">دیون مطالبات خود وارد نشده است</i>
+                                <i ng-if="finance.CreditDebtor.hasWifeItems === 0">فاقد دیون مطالبات فرزند</i> ,
+                                <i ng-if="finance.CreditDebtor.hasSelfItems === 0">فاقد دیون مطالبات فرزند</i>
                             </li>
 
 
                             <li ng-if="finance.Goods.hasChildItems === 0 || finance.Goods.hasWifeItems === 0 || finance.Goods.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.Goods.hasChildItems === 0">کلیه کالاها فرزند وارد نشده است</i> ,
-                                <i ng-if="finance.Goods.hasWifeItems === 0">کلیه کالاها همسر وارد نشده است</i> ,
-                                <i ng-if="finance.Goods.hasSelfItems === 0">کلیه کالاها خود وارد نشده است</i>
+                                <i ng-if="finance.Goods.hasChildItems === 0">فاقد کالاهای قیمتی و ارزشمند فرزند</i> ,
+                                <i ng-if="finance.Goods.hasWifeItems === 0">فاقد کالاهای قیمتی و ارزشمند همسر</i> ,
+                                <i ng-if="finance.Goods.hasSelfItems === 0">فاقد کالاهای قیمتی و ارزشمند خود</i>
                             </li>
 
-
-                            <li ng-if="finance.Fee.hasChildItems === 0 || finance.Fee.hasWifeItems === 0 || finance.Fee.hasSelfItems === 0">
-                                <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.Fee.hasChildItems === 0">حقوق مالکیت معنوی فرزند وارد نشده است</i> ,
-                                <i ng-if="finance.Fee.hasWifeItems === 0">حقوق مالکیت معنوی همسر وارد نشده است</i> ,
-                                <i ng-if="finance.Fee.hasSelfItems === 0">حقوق مالکیت معنوی خود وارد نشده است</i>
-                            </li>
+<!---->
+<!--                            <li ng-if="finance.Fee.hasChildItems === 0 || finance.Fee.hasWifeItems === 0 || finance.Fee.hasSelfItems === 0">-->
+<!--                                <span class="fa fa-circle-o"></span>-->
+<!--                                <i ng-if="finance.Fee.hasChildItems === 0">حقوق مالکیت معنوی فرزند وارد نشده است</i> ,-->
+<!--                                <i ng-if="finance.Fee.hasWifeItems === 0">حقوق مالکیت معنوی همسر وارد نشده است</i> ,-->
+<!--                                <i ng-if="finance.Fee.hasSelfItems === 0">حقوق مالکیت معنوی خود وارد نشده است</i>-->
+<!--                            </li>-->
 
                             <li ng-if="finance.Income.hasChildItems === 0 || finance.Income.hasWifeItems === 0 || finance.Income.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.Income.hasChildItems === 0">درآمد فرزند وارد نشده است</i> ,
-                                <i ng-if="finance.Income.hasWifeItems === 0">درآمد همسر وارد نشده است</i> ,
-                                <i ng-if="finance.Income.hasSelfItems === 0">درآمد خود وارد نشده است</i>
+                                <i ng-if="finance.Income.hasChildItems === 0">فاقد درآمد فرزند</i> ,
+                                <i ng-if="finance.Income.hasWifeItems === 0">فاقد درآمد همسر</i> ,
+                                <i ng-if="finance.Income.hasSelfItems === 0">فاقد درآمد خود</i>
                             </li>
 
                             <li ng-if="finance.Election.hasChildItems === 0 || finance.Election.hasWifeItems === 0 || finance.Election.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.Election.hasChildItems === 0">شفاف سازی هزینه های انتخاباتی فرزند وارد
-                                    نشده است</i> ,
-                                <i ng-if="finance.Election.hasWifeItems === 0">شفاف سازی هزینه های انتخاباتی همسر وارد
-                                    نشده است</i> ,
-                                <i ng-if="finance.Election.hasSelfItems === 0">شفاف سازی هزینه های انتخاباتی خود وارد
-                                    نشده است</i>
+                                <i ng-if="finance.Election.hasChildItems === 0">فاقد شفاف سازی هزینه های انتخاباتی فرزند</i> ,
+                                <i ng-if="finance.Election.hasWifeItems === 0">فاقد شفاف سازی هزینه های انتخاباتی همسر</i> ,
+                                <i ng-if="finance.Election.hasSelfItems === 0">فاقد شفاف سازی هزینه های انتخاباتی خود</i>
                             </li>
 
                         </ul>
@@ -3042,20 +3093,6 @@
                 '{ "Book": "کتاب"} ,' +
                 '{ "Invention": "اختراع / اکتشاف" } ,' +
                 '{ "Art": "اثر هنری" }   ' +
-                ']', "CandidateActivityFieldType":
-                '[' +
-                '{ "Charity": "انجمن خیریه"} ,' +
-                '{ "Mobilization": "بسیج" } ,' +
-                '{ "University": "دانشگاه" }   ,' +
-                '{ "Semen": "سمن" }  ,' +
-                '{ "Councils": "شورایاری" }   ,' +
-                '{ "CulturalCenter": "فرهنگسرا" }   ,' +
-                '{ "JihadistActivities": "فعالیت های جهادی"}   ,' +
-                '{ "Schools": "مدارس"}   ,' +
-                '{ "TheMosque": "مسجد"}   ,' +
-                '{ "RedCrescent": "هلال احمر"}   ,' +
-                '{ "ReligiousCommittees": "هئیت های مذهبی"}   ,' +
-                '{ "Others": "سایر" }   ' +
                 ']',
             "CandidateMemberShipType":
                 '[' +
@@ -3092,12 +3129,37 @@
                 '{ "SecretaryGeneral": "دبیر کل" }   ,' +
                 '{ "ProvincialSecretary": "دبیر استانی" }   ' +
                 ']',
+            "'CandidateActivityFieldType' ":
+                '[' +
+                '{ "Charity": "انجمن خیریه"} ,' +
+                '{ "Mobilization": "بسیج" } ,' +
+                '{ "University": "تشکل دانشجویی" }   ,' +
+                '{ "Semen": "سمن" }   ,' +
+                '{ "JihadistActivities": "فعالیت های جهادی" }   ,' +
+                '{ "TheMosque": "مسجد" }   ,' +
+                '{ "ReligiousCommittees": "هئیت های مذهبی" }   ,' +
+                '{ "Others": "سایر" }   ' +
+                ']',
+            "'CandidateMobilMembershipType' ":
+                '[' +
+                '{ "Responsible": "مسئول"} ,' +
+                '{ "Central": "شورای مرکزی" } ,' +
+                '{ "Active": "فعال" }   ,' +
+                '{ "Normal": "عادی" }   ' +
+                ']',
             "'CandidatePoliticElectionType' ":
                 '[' +
                 '{ "President": "ریاست جمهوری"} ,' +
                 '{ "Parliament": "مجلس" } ,' +
                 '{ "CouncilExperts": "مجلس خبرگان" }   ,' +
                 '{ "CityCouncil": "شورای شهر" }   ' +
+                ']',
+
+            "'CandidateBasijActivityLevel' ":
+                '[' +
+                '{ "Base": "پایگاه"} ,' +
+                '{ "Area": "حوزه" } ,' +
+                '{ "District": "ناحیه" }   ' +
                 ']',
             "CandidateMobilMembershipType":
                 '[' +
@@ -3288,6 +3350,7 @@
         );
         var finance = [];
         var countries = [];
+        var universities = [];
         var cities = [];
         var states = [];
         app.filter('bindState', function () {
@@ -3310,6 +3373,18 @@
                     row['CountryId'] = row['CountryId'];
                     if (row['CountryId'] === $inputKeyCountry) {
                         return (row['FaName'])
+                    }
+                }
+            }
+        });
+        app.filter('bindUniversityName', function () {
+            return function (input) {
+                $inputKeyUniversity = input;
+                for (var i = 0; i < universities.length; i++) {
+                    var row = universities[i];
+                    row['UniversityId'] = row['UniversityId'];
+                    if (row['UniversityId'] === $inputKeyUniversity) {
+                        return (row['UniversityTitle'])
                     }
                 }
             }
@@ -3395,14 +3470,12 @@
                 $scope.finance = response.finance;
                 countries = response.countries;
                 finance = response.finance;
+                universities = response.universities;
                 states = response.states;
                 cities = response.cities;
-
-
                 for (var i = 0; i < $scope.candidateAcademicBackground.length; i++) {
                     $scope.candidateAcademicBackground[i]['NewMajor'] = $scope.candidateAcademicBackground[i]['CandidateDepartment'] + "," + $scope.candidateAcademicBackground[i]['CandidateMajor'];
                 }
-
                 var keys = Object.keys($scope.finance);
                 for (var i = 0; i < keys.length; i++) {
                     var row = $scope.finance[keys[i]];
@@ -3424,7 +3497,6 @@
                     $scope.finance[keys[i]]['hasWifeItems'] = hasWifeItems;
                     $scope.finance[keys[i]]['hasChildItems'] = hasChildItems;
                 }
-
                 var BankAccountPricePlaceHolder = ['BankAccountPrice'];
                 var CreditDebtorPricePlaceHolder = ['DebotrPrice', 'CreditPrice'];
                 var ElectionPricePlaceHolder = ['ElectionPlacePrice', 'ElectionFlockPrice', 'ElectionAdvertisePrice', 'ElectionStaffPrice', 'ElectionAllPrice'];
@@ -3461,7 +3533,6 @@
                         }
                     }
                 }
-
                 translatePrice('BankAccount', BankAccountPricePlaceHolder);
                 translatePrice('CreditDebtor', CreditDebtorPricePlaceHolder);
                 translatePrice('Election', ElectionPricePlaceHolder);
@@ -3471,8 +3542,6 @@
                 translatePrice('Invest', InvestPricePlaceHolder);
                 translatePrice('RealEStates', RealEStatesPricePlaceHolder);
                 translatePrice('Vehicle', VehiclePricePlaceHolder);
-
-
 
 
                 console.log($scope.politicBackground);
@@ -3512,6 +3581,75 @@
                             break;
                     }
                 }
+
+                var gradeArray = [];
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'ZirDiplom'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'Diplom'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'Kardani'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'Karshenasi'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'KarshenasiArshad'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'KarshenasiArshadPeyvasteh'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'DoctoryHerfei'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'DoctoryTakhasosi'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'FogDoctory'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'Hozeh1'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'Hozeh2'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'Hozeh3'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                for(let i=0;i<$scope.candidateAcademicBackground.length;i++){
+                    if($scope.candidateAcademicBackground[i]['CandidateGrade'] === 'Hozeh4'){
+                        gradeArray.push($scope.candidateAcademicBackground[i]);
+                    }
+                }
+                $scope.gradeArray = gradeArray;
+                console.log("gradeArray",gradeArray);
                 console.log($scope.politicBackground);
                 setTimeout(function () {
                     $(".left-candidate-panel-resume :input").prop('disabled', true);
