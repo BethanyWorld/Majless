@@ -319,10 +319,17 @@
                             <li ng-repeat="item in gradeArray">
                                 <span class="fa fa-circle-o"></span>
                                 <strong class="colored bg-white">
-                                    <i ng-if="item.CandidateStudyStatus !== 'Graduated' && item.CandidateGrade !== 'Diplom' && item.CandidateGrade !== 'ZirDiplom'">
+                                    <i ng-if="item.CandidateStudyStatus !== 'Graduated' && item.CandidateGrade !== 'Diplom' && item.CandidateGrade !== 'ZirDiplom' && (item.CandidateGrade !== 'Hozeh1' && item.CandidateGrade !== 'Hozeh2' && item.CandidateGrade !== 'Hozeh3' && item.CandidateGrade !== 'Hozeh4')">
                                         {{item.CandidateStudyStatus | bindEnum}}
                                     </i>
+                                    <i ng-if="(item.CandidateGrade === 'Hozeh1' || item.CandidateGrade === 'Hozeh2' || item.CandidateGrade === 'Hozeh3' || item.CandidateGrade === 'Hozeh4')">
+                                        طلبه
+                                    </i>
+
                                     {{item.CandidateGrade | bindEnum}}
+                                    <i>
+                                        {{item.CandidateSchoolMajor | bindEnum}}
+                                    </i>
                                     <strong class="colored bg-white major">
                                         {{item.NewMajor | bindEnumMajor}}
                                     </strong>
@@ -2717,9 +2724,9 @@
 
                             <li ng-if="finance.RealEStates.hasChildItems === 0 || finance.RealEStates.hasWifeItems === 0 || finance.RealEStates.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.RealEStates.hasChildItems === 0">فاقد املاک و مستغلات فرزند</i> ,
-                                <i ng-if="finance.RealEStates.hasWifeItems === 0">فاقد املاک و مستغلات همسر</i>,
-                                <i ng-if="finance.RealEStates.hasSelfItems === 0">فاقد املاک و مستغلات خود</i>
+                                <i ng-if="finance.RealEStates.hasChildItems === 0">فاقد املاک و مستغلات برای فرزند</i> ,
+                                <i ng-if="finance.RealEStates.hasWifeItems === 0">فاقد املاک و مستغلات برای همسر</i>,
+                                <i ng-if="finance.RealEStates.hasSelfItems === 0">فاقد املاک و مستغلات برای خود</i>
                             </li>
 
                             <li ng-if="finance.Vehicle.hasChildItems === 0 || finance.Vehicle.hasWifeItems === 0 || finance.Vehicle.hasSelfItems === 0">
@@ -2778,9 +2785,7 @@
 
                             <li ng-if="finance.Election.hasChildItems === 0 || finance.Election.hasWifeItems === 0 || finance.Election.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.Election.hasChildItems === 0">فاقد شفاف سازی هزینه های انتخاباتی فرزند</i> ,
-                                <i ng-if="finance.Election.hasWifeItems === 0">فاقد شفاف سازی هزینه های انتخاباتی همسر</i> ,
-                                <i ng-if="finance.Election.hasSelfItems === 0">فاقد شفاف سازی هزینه های انتخاباتی خود</i>
+                                <i ng-if="finance.Election.hasSelfItems === 0">فاقد شفاف سازی هزینه های انتخاباتی</i>
                             </li>
 
                         </ul>
@@ -3077,6 +3082,15 @@
                 '{ "Base": "پایگاه"} ,' +
                 '{ "Area": "حوزه" } ,' +
                 '{ "District": "ناحیه" }   ' +
+                ']',
+            "'CandidateSchoolMajor' ":
+                '[' +
+                '{ "Ensani": "انسانی"} ,' +
+                '{ "Tajrobi": "تجربی" } ,' +
+                '{ "Riazi": "ریاضی" } ,' +
+                '{ "Fani": "فنی" } ,' +
+                '{ "Maref": "معارف اسلامی" } ,' +
+                '{ "Kardanesh": "کارودانش" }   ' +
                 ']',
             "CandidateMobilMembershipType":
                 '[' +
