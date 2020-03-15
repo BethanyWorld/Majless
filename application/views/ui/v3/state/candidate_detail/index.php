@@ -319,8 +319,9 @@
                             <li ng-repeat="item in gradeArray">
                                 <span class="fa fa-circle-o"></span>
                                 <strong class="colored bg-white">
-                                    <i ng-if="item.CandidateStudyStatus !== 'Graduated' ">{{item.CandidateStudyStatus |
-                                        bindEnum}}</i>
+                                    <i ng-if="item.CandidateStudyStatus !== 'Graduated' && item.CandidateGrade !== 'Diplom' && item.CandidateGrade !== 'ZirDiplom'">
+                                        {{item.CandidateStudyStatus | bindEnum}}
+                                    </i>
                                     {{item.CandidateGrade | bindEnum}}
                                     <strong class="colored bg-white major">
                                         {{item.NewMajor | bindEnumMajor}}
