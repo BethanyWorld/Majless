@@ -607,7 +607,7 @@
                                 <li ng-repeat="item in politicBackground">
                                     <span class="fa fa-circle-o"></span>
                                     {{item.CandidateResponsibility | bindEnum}}
-<!--                                    {{item.CandidateActivityType | bindEnum }}-->
+                                    <!--                                    {{item.CandidateActivityType | bindEnum }}-->
 
                                     <i ng-if="item.CandidateActivityType === 'CandidatesCampaign'">
                                         ستاد انتخاباتی
@@ -630,12 +630,12 @@
 
                                     </i>
                                     <i ng-if="item.CandidateActivityType === 'Group'">
-                                       {{item.CandidateStartMonth | bindEnum}} - {{item.CandidateStartYear}}
+                                        {{item.CandidateStartMonth | bindEnum}} - {{item.CandidateStartYear}}
                                         الی
-                                   </i>
-                                   <i ng-if="item.CandidateActivityType === 'Group'">
-                                       {{item.CandidateEndMonth | bindEnum}} - {{item.CandidateEndYear}}
-                                   </i>
+                                    </i>
+                                    <i ng-if="item.CandidateActivityType === 'Group'">
+                                        {{item.CandidateEndMonth | bindEnum}} - {{item.CandidateEndYear}}
+                                    </i>
                                 </li>
                             </ul>
 
@@ -685,158 +685,74 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-xs-12 padding-0">
-                                <form ng-repeat="item in candidateSocialCulturalBackground">
-                                    <span class="divider"></span>
-                                    <div class="col-md-12 col-xs-12 padding-0 form">
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                            <label for="">
-                                                زمینه فعالیت:
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span class="span-h"> {{item.CandidateActivityFieldType | bindEnum }}</span>
+                        <ul class="resume-ul">
+                            <li ng-repeat="item in candidateSocialCulturalBackground">
+                                <span class="fa fa-circle-o"></span>
+                                <strong class="colored bg-white">
+<!--                                    <i>-->
+<!--                                        {{item.CandidateActivityFieldType | bindEnum }}-->
+<!--                                    </i>-->
+                                    <i ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                        {{item.CandidateMobilMembershipType | bindEnum}}
+                                    </i>
+                                    <i>
+                                        {{item.CandidateResponsibilityTitle }}
+                                    </i>
+                                    <i ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
+                                        <i  ng-if="item.CandidateActivityFieldType === 'University'">
+                                            تشکل
+                                        </i>
 
-                                        </div>
-                                        <div class="col-md-2 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'Mobilization'">
-                                            <label for="">
-                                                نوع عضویت:
-                                            </label>
-                                            <span class="span-h">{{item.CandidateMobilMembershipType | bindEnum}}</span>
+                                        <i  ng-if="item.CandidateActivityFieldType !== 'University' && item.CandidateActivityFieldType !== 'TheMosque' && item.CandidateActivityFieldType !== 'Mobilization' ">
+                                            نام مجموعه
+                                        </i>
 
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                            <label for="">
-                                                عنوان مسئولیت :
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span class="span-h"> {{item.CandidateActivityFieldType | bindEnum }}</span>
+                                        <i  ng-if="item.CandidateActivityFieldType === 'TheMosque'">
+                                            مسجد
+                                        </i>
+                                        {{item.CandidateOrganizationName  }}
+                                    </i>
+                                    <i ng-if="item.CandidateActivityFieldType === 'University'">
+                                        {{item.CandidateBasijUniversityName  | bindUniversityName }}
+                                    </i>
+                                    <i ng-if="item.CandidateActivityFieldType === 'University'">
+                                        {{item.CandidateBasijCollegeName  | bindUniversityName }}
+                                    </i>
+                                    <i ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                        {{item.CandidateBasijActivityLevel | bindEnum }}
+                                    </i>
+                                    <i ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                        {{item.CandidateBasijType  | bindEnum}}
+                                    </i>
+                                    <i ng-if="item.CandidateActivityFieldType === 'Mobilization'">
+                                        {{item.CandidateBasijAreaTitle}}
+                                    </i>
+                                    <i ng-if="item.CandidateActivityFieldType === 'Others'">
+                                        {{item.CandidateMemberShipType | bindEnum}}
+                                    </i>
+<!--                                    <i ng-if="item.CandidateActivityFieldType !== 'Mobilization'">-->
+<!--                                        {{item.CandidateMemberShipDescription}}-->
+<!--                                    </i>-->
+                                    <i>
+                                        {{item.CandidateActivityStartMonth | bindEnum}}
+                                        ,
+                                        {{item.CandidateActivityStartYear}}
+                                    </i>
+                                    <i>
+                                        {{item.CandidateActivityEndMonth  | bindEnum}}
+                                        {{item.CandidateActivityEndYear }}
+                                    </i>
+                                    <i ng-if="item.CandidateBasijType === 'Others'">
+                                        {{item.CandidateBasijTypeOtherTitle}}
+                                    </i>
+                                    <i ng-if="item.CandidateActivityFieldType === 'Others'">
+                                        {{item.CandidateActivityFieldOtherTypeTitle }}
+                                    </i>
 
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
-                                            <label for="" ng-if="item.CandidateActivityFieldType === 'University'">
-                                                عنوان تشکل :
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <label for="" ng-if="item.CandidateActivityFieldType !== 'University' && item.CandidateActivityFieldType !== 'TheMosque' && item.CandidateActivityFieldType !== 'Mobilization' ">
-                                                نام مجموعه :
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <label for="" ng-if="item.CandidateActivityFieldType === 'TheMosque'">
-                                                نام مسجد :
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span class="span-h"> {{item.CandidateOrganizationName  }}</span>
-
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'University'">
-                                            <label for="">
-                                                نام دانشگاه :
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span class="span-h"> {{item.CandidateBasijUniversityName  | bindUniversityName }}</span>
-
-                                        </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'University'">
-                                            <label for="">
-                                                نام دانشکده :
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span class="span-h"> {{item.CandidateBasijCollegeName  | bindUniversityName }}</span>
-
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'Mobilization'">
-                                            <label for="">
-                                                سطح فعالیت :
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span class="span-h"> {{item.CandidateBasijActivityLevel | bindEnum }}</span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType === 'Mobilization'">
-                                            <label for="">
-                                                نوع بسیج:
-                                            </label>
-                                            <span class="span-h">{{item.CandidateBasijType  | bindEnum}}</span>
-
-                                        </div>
-                                        <div class="col-md-4 col-sm-12 col-xs-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'Mobilization'">
-                                            <label for="">
-                                                نام حوزه:
-                                            </label>
-                                            <span class="span-h">  {{item.CandidateBasijAreaTitle}}</span>
-
-                                        </div>
-                                        <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat" ng-if="item.CandidateActivityFieldType === 'Others'">
-                                            <label for="">
-                                                نوع عضویت:
-                                            </label>
-                                            <span class="span-h"> {{item.CandidateMemberShipType | bindEnum}}</span>
-
-                                        </div>
-                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat">
-                                            <label for=""> آغاز همکاری:</label>
-                                            <span class="span-h"> {{item.CandidateActivityStartMonth | bindEnum}}
-                                                    ,
-                                                    {{item.CandidateActivityStartYear}}</span>
-
-                                        </div>
-                                        <div class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat">
-                                            <label for="">پایان همکاری:</label>
-                                            <span class="span-h">
-                                                 {{item.CandidateActivityEndMonth  | bindEnum}}
-                                                    {{item.CandidateActivityEndYear }}
-                                            </span>
-
-                                        </div>
-                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
-                                             ng-if="item.CandidateBasijType === 'Others'">
-                                            <label for="">
-                                                سایر:
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span class="span-h">{{item.CandidateBasijTypeOtherTitle}}</span>
-                                            <!--                                            <input type="text"-->
-                                            <!--                                                   value=""-->
-                                            <!--                                                   name=""-->
-                                            <!--                                                   id=""-->
-                                            <!--                                                   class="form-control">-->
-                                        </div>
-                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType === 'Others'">
-                                            <label for="">
-                                                عنوان:
-                                                <span class="text-danger"></span>
-                                            </label>
-                                            <span class="span-h"> {{item.CandidateActivityFieldOtherTypeTitle }}</span>
-
-                                        </div>
-<!--                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat"-->
-<!--                                             ng-if="item.CandidateActivityFieldType !== 'University' || item.CandidateActivityFieldType !== 'Mobilization' ">-->
-<!--                                            <label for="">-->
-<!--                                                نام مجموعه:-->
-<!--                                                <span class="text-danger"></span>-->
-<!--                                            </label>-->
-<!--                                            <span class="span-h">{{item.CandidateOrganizationName }}</span>-->
-<!---->
-<!--                                        </div>-->
-                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group RightFloat"
-                                             ng-if="item.CandidateActivityFieldType !== 'Mobilization'">
-                                            <label for="">توضیحات:</label>
-                                            <span class="span-h">{{item.CandidateMemberShipDescription}}</span>
-
-                                            <!--                                            <input-->
-                                            <!--                                                    value=""-->
-                                            <!--                                                    id=""-->
-                                            <!--                                                    type="text"-->
-                                            <!--                                                    name=""-->
-                                            <!--                                                    class="input-validate validate valid">-->
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </form>
-                            </div>
-                        </div>
+                                </strong>
+                            </li>
+                        </ul>
+                        <hr>
                     </div>
                 </div>
                 <!-- Finance History -->
@@ -2778,10 +2694,10 @@
                                 <span class="fa fa-circle-o"></span>
                                 <i>فاقد سوابق علمی پژوهشی</i>
                             </li>
-<!--                            <li ng-if="candidateSkills.length === 0 ">-->
-<!--                                <span class="fa fa-circle-o"></span>-->
-<!--                                <i>مهارت ها وارد نشده است</i>-->
-<!--                            </li>-->
+                            <!--                            <li ng-if="candidateSkills.length === 0 ">-->
+                            <!--                                <span class="fa fa-circle-o"></span>-->
+                            <!--                                <i>مهارت ها وارد نشده است</i>-->
+                            <!--                            </li>-->
                             <li ng-if="promises.length === 0 ">
                                 <span class="fa fa-circle-o"></span>
                                 <i>فاقد وعده های انتخاباتی</i>
@@ -2845,13 +2761,13 @@
                                 <i ng-if="finance.Goods.hasSelfItems === 0">فاقد کالاهای قیمتی و ارزشمند خود</i>
                             </li>
 
-<!---->
-<!--                            <li ng-if="finance.Fee.hasChildItems === 0 || finance.Fee.hasWifeItems === 0 || finance.Fee.hasSelfItems === 0">-->
-<!--                                <span class="fa fa-circle-o"></span>-->
-<!--                                <i ng-if="finance.Fee.hasChildItems === 0">حقوق مالکیت معنوی فرزند وارد نشده است</i> ,-->
-<!--                                <i ng-if="finance.Fee.hasWifeItems === 0">حقوق مالکیت معنوی همسر وارد نشده است</i> ,-->
-<!--                                <i ng-if="finance.Fee.hasSelfItems === 0">حقوق مالکیت معنوی خود وارد نشده است</i>-->
-<!--                            </li>-->
+                            <!---->
+                            <!--                            <li ng-if="finance.Fee.hasChildItems === 0 || finance.Fee.hasWifeItems === 0 || finance.Fee.hasSelfItems === 0">-->
+                            <!--                                <span class="fa fa-circle-o"></span>-->
+                            <!--                                <i ng-if="finance.Fee.hasChildItems === 0">حقوق مالکیت معنوی فرزند وارد نشده است</i> ,-->
+                            <!--                                <i ng-if="finance.Fee.hasWifeItems === 0">حقوق مالکیت معنوی همسر وارد نشده است</i> ,-->
+                            <!--                                <i ng-if="finance.Fee.hasSelfItems === 0">حقوق مالکیت معنوی خود وارد نشده است</i>-->
+                            <!--                            </li>-->
 
                             <li ng-if="finance.Income.hasChildItems === 0 || finance.Income.hasWifeItems === 0 || finance.Income.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
@@ -3561,7 +3477,7 @@
                             break;
                         case 'CityCouncil':
                             for(let j=0;j<$CityCouncil.length;j++){
-                                 if($CouncilExperts[j]['value'] == $scope.politicBackground[i]['CandidateElectionPeriod']){
+                                if($CouncilExperts[j]['value'] == $scope.politicBackground[i]['CandidateElectionPeriod']){
                                     $scope.politicBackground[i]['CandidateElectionPeriod'] = $CityCouncil[j]['name'];
                                 }
                             }
