@@ -73,6 +73,8 @@
     </div>
     <div class="col-xs-12 col-md-9 pull-right alerts-container">
         <?php
+        $loginInfo = $this->session->userdata('UserLoginInfo');
+        //var_dump($loginInfo);
         /* Check if candidate has accepted by admin */
         $hasResult = false;
         $result = NULL;
@@ -126,13 +128,19 @@
                 <h4 class="text-center">داوطلبان نظارت مرکزی</h4>
                 <div class="vote-container">
                     <p>نظارت بر گزارش های مالی در مرکز</p>
-                    <button class="btn btn-success vote" data-supervisor-type="Finance">
+                    <button class="btn btn-success vote"
+                            data-state-id="<?php echo $loginInfo['CandidateStateId']; ?>"
+                            data-election-scale="Central"
+                            data-supervisor-type="Finance">
                         <span>ثبت نام</span>
                     </button>
                 </div>
                 <div class="vote-container">
                     <p>نظارت بر فرآیندهای گزینشی در مرکز</p>
-                    <button class="btn btn-primary vote" data-supervisor-type="Process">
+                    <button class="btn btn-primary vote"
+                            data-state-id="<?php echo $loginInfo['CandidateStateId']; ?>"
+                            data-election-scale="Central"
+                            data-supervisor-type="Process">
                         <span>ثبت نام</span>
                     </button>
                 </div>
@@ -141,13 +149,19 @@
                 <h4 class="text-center">داوطلبان نظارت استانی</h4>
                 <div class="vote-container">
                     <p>نظارت بر گزارش های مالی در سطح استان</p>
-                    <button class="btn btn-success vote" data-supervisor-type="Finance">
+                    <button class="btn btn-success vote"
+                            data-state-id="<?php echo $loginInfo['CandidateStateId']; ?>"
+                            data-election-scale="State"
+                            data-supervisor-type="Finance">
                         <span>ثبت نام</span>
                     </button>
                 </div>
                 <div class="vote-container">
                     <p>نظارت بر فرآیندهای گزینشی در سطح استان</p>
-                    <button class="btn btn-primary vote" data-supervisor-type="Process">
+                    <button class="btn btn-primary vote"
+                            data-state-id="<?php echo $loginInfo['CandidateStateId']; ?>"
+                            data-election-scale="State"
+                            data-supervisor-type="Process">
                         <span>ثبت نام</span>
                     </button>
                 </div>
@@ -160,6 +174,7 @@
                     <thead>
                     <tr>
                         <th class="text-right">نوع درخواست</th>
+                        <th class="fit">محدوده درخواست</th>
                         <th class="fit">وضعیت درخواست</th>
                         <th class="fit">تاریخ ثبت</th>
                         <th class="fit">انصراف از درخواست</th>
@@ -172,7 +187,8 @@
                     <?php foreach ($supervisorType as $item) { ?>
                         <tr>
                             <td class="text-right"><?php echo pipeSupervisorType($item['SupervisionType']); ?></td>
-                            <td class="text-center"><?php echo resumeForViewPipe($item['AcceptanceStatus']); ?></td>
+                            <td class="fit text-center"><?php echo pipeInternalElectionType($item['ElectionScale']); ?></td>
+                            <td class="fit text-center"><?php echo resumeForViewPipe($item['AcceptanceStatus']); ?></td>
                             <td class="fit" dir="ltr"><?php echo $item['CreateDateTime']; ?></td>
                             <td class="fit">
                                 <button data-supervisor-type="<?php echo $item['SupervisionType']; ?>"

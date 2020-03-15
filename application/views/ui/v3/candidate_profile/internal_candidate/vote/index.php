@@ -75,6 +75,7 @@
                                                 <p>
                                                     داوطلب
                                                     <?php echo pipeSupervisorType($item['SupervisionType']); ?>
+                                                    <?php echo pipeInternalElectionType($item['ElectionScale']); ?>
                                                 </p>
                                             </div>
                                             <div class="col-md-4 col-xs-12 pull-right">
@@ -128,6 +129,7 @@
                                                 <p>
                                                     داوطلب
                                                     <?php echo pipeSupervisorType($item['SupervisionType']); ?>
+                                                    <?php echo pipeInternalElectionType($item['ElectionScale']); ?>
                                                 </p>
                                             </div>
                                             <div class="col-md-4 col-xs-12 pull-right">

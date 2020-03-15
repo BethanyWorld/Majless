@@ -4,11 +4,15 @@
             toggleLoader();
             e.preventDefault();
             $inputSupervisorType = $(this).data('supervisor-type');
+            $inputElectionScale = $(this).data('election-scale');
+            $inputStateId = $(this).data('state-id');
             $.ajax({
                 type: 'post',
                 url: base_url + 'Profile/doSetSupervisorType',
                 data: {
-                    'inputSupervisorType': $inputSupervisorType
+                    'inputSupervisorType': $inputSupervisorType,
+                    'inputElectionScale': $inputElectionScale,
+                    'inputElectionStateId': $inputStateId
                 },
                 success: function (data) {
                     toggleLoader();

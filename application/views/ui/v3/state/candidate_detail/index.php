@@ -710,9 +710,9 @@
                                             تشکل
                                         </i>
 
-                                        <i  ng-if="item.CandidateActivityFieldType !== 'University' && item.CandidateActivityFieldType !== 'TheMosque' && item.CandidateActivityFieldType !== 'Mobilization' ">
-                                            نام مجموعه
-                                        </i>
+<!--                                        <i  ng-if="item.CandidateActivityFieldType !== 'University' && item.CandidateActivityFieldType !== 'TheMosque' && item.CandidateActivityFieldType !== 'Mobilization' ">-->
+<!--                                            نام مجموعه-->
+<!--                                        </i>-->
 
                                         <i  ng-if="item.CandidateActivityFieldType === 'TheMosque'">
                                             مسجد
@@ -3230,7 +3230,6 @@
                 '{ "name": "سایر" , "value" : "17"}   ' +
                 ']',
         };
-
         $President = JSON.parse(
             ' [' +
             '{ "name": "دوره اول - 1358" , "value" : "1" } ,' +
@@ -3473,13 +3472,6 @@
                 translatePrice('Invest', InvestPricePlaceHolder);
                 translatePrice('RealEStates', RealEStatesPricePlaceHolder);
                 translatePrice('Vehicle', VehiclePricePlaceHolder);
-
-
-                console.log($scope.politicBackground);
-                console.log($President);
-                console.log($Parliament);
-                console.log($CouncilExperts);
-                console.log($CityCouncil);
                 for(let i=0;i<$scope.politicBackground.length;i++){
                     switch($scope.politicBackground[i]['CandidateElectionType']){
                         case 'CouncilExperts':
@@ -3580,8 +3572,6 @@
                     }
                 }
                 $scope.gradeArray = gradeArray;
-                console.log("gradeArray",gradeArray);
-                console.log($scope.politicBackground);
                 setTimeout(function () {
                     $(".left-candidate-panel-resume :input").prop('disabled', true);
                     $(".report :input").prop('disabled', false);

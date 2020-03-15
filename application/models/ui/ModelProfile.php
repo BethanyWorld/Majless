@@ -932,12 +932,16 @@ class ModelProfile extends CI_Model{
         $examRequestArray = array(
             'CandidateId' => $inputs['inputCandidateId'],
             'SupervisionType' => $inputs['inputSupervisorType'],
+            'ElectionScale' => $inputs['inputElectionScale'],
+            'ElectionStateId' => $inputs['inputElectionStateId'],
             'CreateDateTime' => jDateTime::date("Y/m/d H:i:s", false, false)
         );
         $this->db->trans_start();
         $this->db->delete('internal_election', array(
             'CandidateId' => $inputs['inputCandidateId'],
-            'SupervisionType' => $inputs['inputSupervisorType']
+            'SupervisionType' => $inputs['inputSupervisorType'],
+            'ElectionScale' => $inputs['inputElectionScale'],
+            'ElectionStateId' => $inputs['inputElectionStateId']
         ));
         $this->db->insert('internal_election', $examRequestArray);
         $this->db->trans_complete();
