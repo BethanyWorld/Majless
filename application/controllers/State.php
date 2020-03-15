@@ -10,6 +10,7 @@ class State extends CI_Controller{
         $this->load->model('admin/ModelCandidate');
         $this->load->model('ui/ModelProfile');
         $this->load->model('admin/ModelStatistics');
+        $this->load->model('admin/ModelUtilities');
     }
     public function index(){
         $data['noImg'] = $this->config->item('defaultImage');
@@ -185,6 +186,7 @@ class State extends CI_Controller{
         $data['countries'] = $this->ModelCountry->getCountryList();
         $data['states'] = $this->ModelCountry->getStateList();
         $data['cities'] = $this->ModelCountry->getCityList();
+        $data['universities'] = $this->ModelUtilities->getAllUniversity();
         echo json_encode($data);
 
     }
