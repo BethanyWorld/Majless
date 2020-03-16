@@ -709,21 +709,21 @@
                                         <i  ng-if="item.CandidateActivityFieldType === 'University'">
                                             تشکل
                                         </i>
-
 <!--                                        <i  ng-if="item.CandidateActivityFieldType !== 'University' && item.CandidateActivityFieldType !== 'TheMosque' && item.CandidateActivityFieldType !== 'Mobilization' ">-->
 <!--                                            نام مجموعه-->
 <!--                                        </i>-->
-
                                         <i  ng-if="item.CandidateActivityFieldType === 'TheMosque'">
                                             مسجد
                                         </i>
                                         {{item.CandidateOrganizationName  }}
                                     </i>
                                     <i ng-if="item.CandidateActivityFieldType === 'University'">
-                                        {{item.CandidateBasijUniversityName  | bindUniversityName }}
+                                        دانشکده
+                                        {{item.CandidateBasijCollegeName  | bindUniversityName }}
                                     </i>
                                     <i ng-if="item.CandidateActivityFieldType === 'University'">
-                                        {{item.CandidateBasijCollegeName  | bindUniversityName }}
+                                        دانشگاه
+                                        {{item.CandidateBasijUniversityName  | bindUniversityName }}
                                     </i>
                                     <i ng-if="item.CandidateActivityFieldType === 'Mobilization'">
                                         {{item.CandidateBasijActivityLevel | bindEnum }}
@@ -742,9 +742,8 @@
 <!--                                    </i>-->
                                     <i>
                                         {{item.CandidateActivityStartMonth | bindEnum}}
-                                        ,
                                         {{item.CandidateActivityStartYear}}
-                                    </i>
+                                    </i> ,
                                     <i>
                                         {{item.CandidateActivityEndMonth  | bindEnum}}
                                         {{item.CandidateActivityEndYear }}
@@ -945,16 +944,14 @@
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehiclePortion">
-                                                                                        سهم از ملک(1 تا 6 دانگ) :
+                                                                                        سهم(1 تا 6 دانگ) :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehiclePortion}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
-                                                                                        زمان
-                                                                                        شروع مالکیت :
+                                                                                        ارزش حدودی در زمان شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehicleBuyTimePrice.NumberValues[1]}} ,
@@ -964,8 +961,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
-                                                                                        حاضر :
+                                                                                        ارزش حدودی درحال حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehicleNowTimePrice.NumberValues[1]}} ,
@@ -1021,9 +1017,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
-                                                                                        زمان
-                                                                                        شروع مالکیت :
+                                                                                        ارزش حدودی کل سهام در زمان شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.InvestBuyTimePrice.NumberValues[1]}} ,
@@ -1033,8 +1027,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputInvestNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
-                                                                                        حاضر :
+                                                                                        ارزش حدودی کل سهام درحال حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.InvestNowTimePrice.NumberValues[1]}} ,
@@ -1200,9 +1193,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
-                                                                                        زمان
-                                                                                        شروع مالکیت :
+                                                                                        ارزش حدودی کالا در زمان شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.GoodsBuyTimePrice.NumberValues[1]}} ,
@@ -1212,8 +1203,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
-                                                                                        حاضر :
+                                                                                        ارزش حدودی کالا درحال حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.GoodsNowTimePrice.NumberValues[1]}} ,
@@ -1223,7 +1213,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsOwnershipPercent">
-                                                                                        درصد سهم از مالکیت :
+                                                                                        درصد از مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.GoodsOwnershipPercent}} </span>
@@ -1277,10 +1267,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputFeeAverageInYear">
-                                                                                        میزان درآمد متوسط
-                                                                                        سالیانه از
-                                                                                        مالکیت
-                                                                                        معنوی :
+                                                                                        میزان درآمد متوسط سالیانه از مالکیت معنوی :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h">  {{item.FeeAverageInYear.NumberValues[1]}} ,
@@ -1434,8 +1421,7 @@
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                                         <!--                                                                        <p ng-if="finance.RealEStates.hasWifeItems === 0 ">-->
                                                                         <!--                                                                            {{notFound}}</p>-->
-                                                                        <form ng-repeat="item in finance.RealEStates"
-                                                                              id="form-RealEstate">
+                                                                        <form ng-repeat="item in finance.RealEStates" id="form-RealEstate">
                                                                             <span class="divider"></span>
                                                                             <div ng-if="item.ForWho == 'Wife'"
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
@@ -1545,8 +1531,8 @@
                                                                                  class="col-md-12 col-xs-12 padding-0 form">
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleType">
-                                                                                        نوع وسیله نقلیه :<span
-                                                                                                class="text-danger"></span>
+                                                                                        نوع وسیله نقلیه :
+                                                                                        <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehicleType | bindEnum}} </span>
                                                                                 </div>
@@ -1556,8 +1542,8 @@
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleOwnershipDate">
-                                                                                        سال شروع مالکیت :<span
-                                                                                                class="text-danger"></span>
+                                                                                        سال شروع مالکیت :
+                                                                                        <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehicleOwnershipDate}} </span>
                                                                                 </div>
@@ -1570,14 +1556,14 @@
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehiclePortion">
-                                                                                        سهم از ملک(1 تا 6 دانگ) :
+                                                                                        سهم(1 تا 6 دانگ) :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehiclePortion}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
+                                                                                        ارزش حدودی در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
@@ -1589,7 +1575,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehicleNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
+                                                                                        ارزش حدودی درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
@@ -1825,7 +1811,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
+                                                                                        ارزش حدودی کالا در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
@@ -1837,7 +1823,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
+                                                                                        ارزش حدودی کالا درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
@@ -2195,7 +2181,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputVehiclePortion">
-                                                                                        سهم از ملک(1 تا 6 دانگ) :
+                                                                                        سهم(1 تا 6 دانگ) :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h"> {{item.VehiclePortion}} </span>
@@ -2450,7 +2436,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsBuyTimePrice">
-                                                                                        ارزش حدودی کل سهام در
+                                                                                        ارزش حدودی کالا در
                                                                                         زمان
                                                                                         شروع مالکیت :
                                                                                         <span class="text-danger"></span>
@@ -2462,7 +2448,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputGoodsNowTimePrice">
-                                                                                        ارزش حدودی کل سهام درحال
+                                                                                        ارزش حدودی کالا درحال
                                                                                         حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
@@ -2754,10 +2740,10 @@
 
                             <li ng-if="finance.CreditDebtor.hasChildItems === 0 || finance.CreditDebtor.hasWifeItems === 0 || finance.CreditDebtor.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.CreditDebtor.hasChildItems === 0">فاقد دیون مطالبات فرزند</i>
+                                <i ng-if="finance.CreditDebtor.hasChildItems === 0">فاقد دیون مطالبات برای فرزند</i>
                                 ,
-                                <i ng-if="finance.CreditDebtor.hasWifeItems === 0">فاقد دیون مطالبات فرزند</i> ,
-                                <i ng-if="finance.CreditDebtor.hasSelfItems === 0">فاقد دیون مطالبات فرزند</i>
+                                <i ng-if="finance.CreditDebtor.hasWifeItems === 0">فاقد دیون مطالبات برای همسر</i> ,
+                                <i ng-if="finance.CreditDebtor.hasSelfItems === 0">فاقد دیون مطالبات برای خود</i>
                             </li>
 
 
@@ -2783,9 +2769,9 @@
                                 <i ng-if="finance.Income.hasSelfItems === 0">فاقد درآمد خود</i>
                             </li>
 
-                            <li ng-if="finance.Election.hasChildItems === 0 || finance.Election.hasWifeItems === 0 || finance.Election.hasSelfItems === 0">
+                            <li ng-if="finance.Election.hasSelfItems === 0">
                                 <span class="fa fa-circle-o"></span>
-                                <i ng-if="finance.Election.hasSelfItems === 0">فاقد شفاف سازی هزینه های انتخاباتی</i>
+                                <i>فاقد شفاف سازی هزینه های انتخاباتی</i>
                             </li>
 
                         </ul>

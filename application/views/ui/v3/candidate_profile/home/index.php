@@ -81,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 voting-contiainer">
+        <div class="col-xs-12 voting-contiainer hidden">
             <div class="col-md-8 col-xs-12  pull-right">
                 <p class="text-justify" style="font-weight: 900;font-size: 16px;line-height: 55px;text-align: justify;">
                    اسامی داوطلبان نظارت بر سوابق مالی و فرآیندی مشخص شده اند.

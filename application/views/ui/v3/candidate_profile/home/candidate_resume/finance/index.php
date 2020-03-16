@@ -1791,7 +1791,7 @@
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputGoodsBuyTimePrice">
-                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                ارزش حدودی کالا در زمان شروع مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -1858,7 +1858,7 @@
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputGoodsNowTimePrice">
-                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                ارزش حدودی کالا درحال حاضر :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -1926,7 +1926,7 @@
 
                                                                         <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputGoodsOwnershipPercent">
-                                                                                درصد سهم از مالکیت :
+                                                                                درصد از مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <input
@@ -2004,7 +2004,7 @@
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputGoodsBuyTimePrice">
-                                                                    ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                    ارزش حدودی کالا در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -2051,7 +2051,7 @@
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputGoodsNowTimePrice">
-                                                                    ارزش حدودی کل سهام درحال حاضر :
+                                                                    ارزش حدودی کالا درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -4652,7 +4652,7 @@
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputGoodsBuyTimePrice">
-                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                ارزش حدودی کالا در زمان شروع مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -4719,7 +4719,7 @@
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputGoodsNowTimePrice">
-                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                ارزش حدودی کالا درحال حاضر :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -4787,7 +4787,7 @@
 
                                                                         <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputGoodsOwnershipPercent">
-                                                                                درصد سهم از مالکیت :
+                                                                                درصد از مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <input
@@ -4865,7 +4865,7 @@
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputGoodsBuyTimePrice">
-                                                                    ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                    ارزش حدودی کالا در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -4912,7 +4912,7 @@
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputGoodsNowTimePrice">
-                                                                    ارزش حدودی کل سهام درحال حاضر :
+                                                                    ارزش حدودی کالا درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -7513,7 +7513,7 @@
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputGoodsBuyTimePrice">
-                                                                                ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                                ارزش حدودی کالا در زمان شروع مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -7580,7 +7580,7 @@
                                                                         </div>
                                                                         <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputGoodsNowTimePrice">
-                                                                                ارزش حدودی کل سهام درحال حاضر :
+                                                                                ارزش حدودی کالا سهام درحال حاضر :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <div class="row">
@@ -7648,7 +7648,7 @@
 
                                                                         <div class="col-md-4 col-xs-12 col-sm-12 form-group RightFloat">
                                                                             <label for="inputGoodsOwnershipPercent">
-                                                                                درصد سهم از مالکیت :
+                                                                                درصد از مالکیت :
                                                                                 <span class="text-danger"></span>
                                                                             </label>
                                                                             <input
@@ -7726,7 +7726,7 @@
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputGoodsBuyTimePrice">
-                                                                    ارزش حدودی کل سهام در زمان شروع مالکیت :
+                                                                    ارزش حدودی کالا در زمان شروع مالکیت :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
@@ -7773,7 +7773,7 @@
                                                             </div>
                                                             <div class="col-md-12 col-xs-12 col-sm-12 form-group RightFloat">
                                                                 <label for="inputGoodsNowTimePrice">
-                                                                    ارزش حدودی کل سهام درحال حاضر :
+                                                                    ارزش حدودی کالا درحال حاضر :
                                                                     <span class="text-danger"></span>
                                                                 </label>
                                                                 <div class="row">
