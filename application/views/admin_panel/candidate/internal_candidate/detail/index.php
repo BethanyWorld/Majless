@@ -12,6 +12,7 @@
                                     <th>نام و نام خانوادگی</th>
                                     <th class="fit">استان</th>
                                     <th class="fit">شهر</th>
+                                    <th class="fit">محدوده درخواست</th>
                                     <th class="fit">وضعیت</th>
                                 </tr>
                                 </thead>
@@ -21,6 +22,7 @@
                                         <td><?php echo $request['CandidateFirstName']." ".$request['CandidateLastName']; ?></td>
                                         <td class="fit"><?php echo $request['StateName']; ?></td>
                                         <td class="fit"><?php echo $request['CityName']; ?></td>
+                                        <td class="fit text-center"><?php echo pipeInternalElectionType($request['ElectionScale']); ?></td>
                                         <td class="text-center"><?php echo resumeForViewPipe($request['AcceptanceStatus']); ?></td>
                                     </tr>
                                 </tbody>

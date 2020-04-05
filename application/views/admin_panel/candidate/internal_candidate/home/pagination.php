@@ -13,6 +13,7 @@ if ((isset($data) && !$data) || $data == NULL) { ?>
             <td><?php echo $request['CandidateFirstName']." ".$request['CandidateLastName']; ?></td>
             <td class="fit"><?php echo $request['StateName']; ?></td>
             <td class="fit"><?php echo $request['CityName']; ?></td>
+            <td class="fit text-center"><?php echo pipeInternalElectionType($request['ElectionScale']); ?></td>
             <td class="text-center"><?php echo resumeForViewPipe($request['AcceptanceStatus']); ?></td>
             <td class="fit">
                 <a href="<?php echo base_url('Admin/InternalCandidate/edit/') . $request['RowId']; ?>">

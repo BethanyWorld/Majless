@@ -94,7 +94,6 @@
                     درخواست شما تعیین وضعیت شده است
                 </div>
                 <p><strong>توضیحات:</strong></p>
-                <p><?php echo $item['Description']; ?></p>
                 <table class="table table-bordered table-striped table-hover rtl-dir">
                     <thead>
                         <tr>
@@ -112,6 +111,9 @@
                             <td class="text-right"><?php echo pipeSupervisorType($item['SupervisionType']); ?></td>
                             <td class="text-center"><?php echo resumeForViewPipe($item['AcceptanceStatus']); ?></td>
                             <td class="fit" dir="ltr"><?php echo $item['CreateDateTime']; ?></td>
+                        </tr>
+                        <tr class="bg-info">
+                            <td colspan="3" class="text-right"><?php echo $item['Description']; ?></td>
                         </tr>
                     <?php } ?>
                     </tbody>

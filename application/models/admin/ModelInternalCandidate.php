@@ -129,5 +129,50 @@ class ModelInternalCandidate extends CI_Model{
         $this->db->where('internal_election_votes.CandidateId' , $candidateId);
         return $this->db->get()->result_array();
     }
+    public function getVotes($inputs){
+        /*$limit = $inputs['pageIndex'];
+        $start = ($limit - 1) * $this->config->item('defaultPageSize');
+        $end = $this->config->item('defaultPageSize');*/
+        $this->db->select(' internal_election.RowId, 
+                            internal_election.CandidateId AS ReceiverVoteCandidateId, 
+                            internal_election_votes.VoteId, 
+                            internal_election_votes.InternalElectionId, 
+                            internal_election_votes.CandidateId AS VoterCandidateId, 
+                            internal_election_votes.CreateDateTime, 
+                            candidate.CandidateId, 
+                            state.StateName, 
+                            city.CityName, 
+                            candidate.CandidateFirstName, 
+                            candidate.CandidateLastName');
+        $this->db->from('internal_election_votes');
+        $this->db->join('internal_election', 'internal_election.RowId = internal_election_votes.InternalElectionId');
+        $this->db->join('candidate', 'candidate.CandidateId = internal_election_votes.CandidateId');
+        $this->db->join('state', 'candidate.CandidateStateId = state.StateId');
+        $this->db->join('city', 'candidate.CandidateCityId = city.CityId');
+        $this->db->order_by('internal_election.RowId', 'ASC');
+        if (!empty($inputs['inputCandidateState'])) {
+            $this->db->where('CandidateStateId', $inputs['inputCandidateState']);
+        }
+        $tempDb = clone $this->db;
+        $result['count'] = $tempDb->get()->num_rows();
+        /*$this->db->limit($end, $start);*/
+        $query = $this->db->get()->result_array();
+        if (count($query) > 0) {
+            $index=0;
+            foreach ($query as $item) {
+                $this->db->select('candidate.CandidateFirstName,candidate.CandidateLastName');
+                $this->db->from('candidate');
+                $this->db->where('candidate.CandidateId', $item['ReceiverVoteCandidateId']);
+                $query[$index]['ReceiverVoteInfo'] = $this->db->get()->result_array()[0];
+                $index+=1;
+            }
+            $result['data'] = $query;
+            $result['startPage'] = 0;
+        } else {
+            $result['data'] = false;
+            $result['startPage'] = 0;
+        }
+        return $result;
+    }
 }
 ?>
