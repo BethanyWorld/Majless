@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class SignUpReport extends CI_Controller{
     public function __construct(){
         parent::__construct();
@@ -78,7 +77,6 @@ class SignUpReport extends CI_Controller{
         $objWriter->save('Export.xlsx');
         readfile('Export.xlsx');
     }
-
     function convertToEnglish($string) {
         $persian = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
         $arabic = ['٩', '٨', '٧', '٦', '٥', '٤', '٣', '٢', '١','٠'];
@@ -87,5 +85,4 @@ class SignUpReport extends CI_Controller{
         $englishNumbersOnly = str_replace($arabic, $num, $convertedPersianNums);
         return $englishNumbersOnly;
     }
-
 }

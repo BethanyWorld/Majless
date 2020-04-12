@@ -46,6 +46,9 @@
         $("#searchButton").click(function () {
             loadData(1);
         });
+        var a = document.createElement("a");
+        a.href = "<?php echo base_url(); ?>"+ 'ExportVotes.xlsx';
+        document.body.appendChild(a);
+        a.click();
     });
-
 </script>

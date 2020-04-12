@@ -198,6 +198,7 @@
                         </h5>
                     </div>
                 </div>
+
                 <div class="panel left-candidate-panel-resume padding-0">
                     <?php
                     $isHidden = "";
@@ -260,6 +261,7 @@
                             <canvas id="BarChart"></canvas>
                         </div>
                     </div>
+
                     <?php
                     $hasDocument = false;
                     foreach ($candidateDocuments as $candidateDocument) {
@@ -323,7 +325,8 @@
                                     <i ng-if="(item.CandidateGrade === 'Hozeh1' || item.CandidateGrade === 'Hozeh2' || item.CandidateGrade === 'Hozeh3' || item.CandidateGrade === 'Hozeh4')">
                                         طلبه
                                     </i>
-                                        {{item.CandidateGrade | bindEnum}}
+
+                                    {{item.CandidateGrade | bindEnum}}
                                     <i>
                                         {{item.CandidateSchoolMajor | bindEnum}}
                                     </i>
@@ -331,20 +334,6 @@
                                         {{item.NewMajor | bindEnumMajor}}
                                     </strong>
                                     {{item.UniversityTitle}}
-                                    {{item.CandidateSchoolName}}
-                                    <strong ng-if="item.CandidateGrade !== 'ZirDiplom'">
-                                        (
-                                        <i class="colored bg-white">
-                                            {{ item.CandidateStartAcademicBackgroundMonth | bindEnum}}
-                                            {{ item.CandidateStartAcademicBackgroundYear }}
-                                        </i>
-                                       الی
-                                        <i class="colored bg-white">
-                                            {{ item.CandidateEndAcademicBackgroundMonth | bindEnum }}
-                                            {{ item.CandidateEndAcademicBackgroundYear }}
-                                        </i>
-                                        )
-                                    </strong>
 
                                 </strong>
                             </li>
@@ -397,7 +386,7 @@
                                 <strong class="colored bg-white">
                                     {{ item.CandidateJobCompanyTitle }}
                                 </strong>
-                                (
+                                از
                                 <strong class="colored bg-white">
                                     {{ item.CandidateStartJobMonth | bindEnum}}
                                     {{ item.CandidateStartJobYear }}
@@ -407,7 +396,6 @@
                                     {{ item.CandidateEndJobMonth | bindEnum }}
                                     {{ item.CandidateEndJobYear }}
                                 </strong>
-                                )
                             </li>
                         </ul>
                     </div>
@@ -421,8 +409,9 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <p>تالیف</p>
+                        <li>تالیف</li>
                         <ul class="resume-ul">
+
                             <li ng-repeat="item in candidateBooks">
                                 <span class="fa fa-circle-o"></span>
                                 <strong class="colored bg-white">
@@ -442,7 +431,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <p>مقالات علمی</p>
+                        <li>مقالات علمی</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateArticles">
                                 <span class="fa fa-circle-o"></span>
@@ -466,7 +455,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <p>اختراعات</p>
+                        <li>اختراعات</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateInvention">
                                 <span class="fa fa-circle-o"></span>
@@ -481,16 +470,14 @@
                                 <strong class="colored bg-white">
                                     {{item.CandidateInventionRegisterNumber}}
                                 </strong>
-                                (
                                 <strong>
                                     {{item.CandidateInventionDescription}}
                                 </strong>
-                                )
                             </li>
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <p>طرح های پژوهشی</p>
+                        <li>طرح های پژوهشی</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateResearch">
                                 <span class="fa fa-circle-o"></span>
@@ -518,7 +505,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <p>همایش ها</p>
+                        <li>همایش ها</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateConference">
                                 <span class="fa fa-circle-o"></span>
@@ -529,8 +516,7 @@
                                 <strong class="colored bg-white">
                                     {{item.CandidateConferenceLevel | bindEnum}}
                                 </strong>
-                                <!-- نوع پذیرش / ارائه-->
-                                در قالب
+                                نوع پذیرش / ارائه
                                 <strong class="colored bg-white">
                                     {{item.CandidateConferenceAcceptType | bindEnum}}
                                 </strong>
@@ -543,19 +529,20 @@
                         </ul>
                     </div>
                     <div class="col-xs-12">
-                        <p>ترجمه</p>
+                        <li>ترجمه</li>
                         <ul class="resume-ul">
                             <li ng-repeat="item in candidateTranslation">
                                 <span class="fa fa-circle-o"></span>
-                                <strong class="colored bg-white">
-                                    {{item.CandidateTranslationType | bindEnum }}
-                                </strong>
                                 <strong class="colored bg-white">
                                     {{item.CandidateTranslationTitle}}
                                 </strong>
                                 نشر
                                 <strong class="colored bg-white">
                                     {{item.CandidateTranslationPublisher}}
+                                </strong>
+                                نوع
+                                <strong class="colored bg-white">
+                                    {{item.CandidateTranslationType | bindEnum }}
                                 </strong>
                                 تاریخ
                                 <strong class="colored bg-white">
@@ -819,6 +806,8 @@
                                                             <div class="panel-body padding-r-0 padding-l-0">
                                                                 <div class="row">
                                                                     <div class="col-lg-12 col-md-12 col-xs-12">
+                                                                        <!--                                                                        <p ng-if="finance.RealEStates.hasSelfItems === 0 ">-->
+                                                                        <!--                                                                            {{notFound}}</p>-->
                                                                         <form ng-repeat="item in finance.RealEStates"
                                                                               id="form-RealEstate">
                                                                             <span class="divider"></span>
@@ -845,21 +834,24 @@
                                                                                     <span class="span-h"> {{item.RealEstateOwnershipType | bindEnum}}</span>
                                                                                 </div>
                                                                                 <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat countries">
-                                                                                    <label for="inputRealEstateCountryId">کشور :</label>
-                                                                                    <span class="span-h">
-                                                                                        {{item.RealEstateCountryId | bindCountry}}
-                                                                                    </span>
+                                                                                    <label for="inputRealEstateCountryId">کشور
+                                                                                        :</label>
+                                                                                    <span class="span-h">  {{item.RealEstateCountryId | bindCountry}}</span>
                                                                                 </div>
-                                                                                <div ng-if="item.RealEstateCountryId === '103'" class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                                    <label for="inputRealEstateStateId">استان :</label>
+                                                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                                    <label for="inputRealEstateStateId">استان
+                                                                                        :</label>
                                                                                     <span class="span-h">  {{item.RealEstateStateId | bindState}} </span>
                                                                                 </div>
-                                                                                <div ng-if="item.RealEstateCountryId === '103'" class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                                    <label for="inputRealEstateCityId">شهر :</label>
-                                                                                    <span class="span-h">{{item.RealEstateCityId | bindCity}} </span>
+                                                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                                    <label for="inputRealEstateCityId">
+                                                                                        شهر :
+                                                                                    </label>
+                                                                                    <span class="span-h">   {{item.RealEstateCityId | bindCity}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
-                                                                                    <label for="inputRealEstatePortion">سهم از ملک(1 تا 6 دانگ) :
+                                                                                    <label for="inputRealEstatePortion">
+                                                                                        سهم از ملک(1 تا 6 دانگ) :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
                                                                                     <span class="span-h">  {{item.RealEstatePortion}} </span>
@@ -869,7 +861,7 @@
                                                                                         متراژ حدودی ملک :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <span class="span-h">{{item.RealEstateExtent}},{{item.RealEstateExtentUnit | bindEnum}} </span>
+                                                                                    <span class="span-h">  {{item.RealEstateExtent}} ,   {{item.RealEstateExtentUnit | bindEnum}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-6 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstateBuyTimePrice">
@@ -962,8 +954,7 @@
                                                                                         ارزش حدودی در زمان شروع مالکیت :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <span class="span-h">
-                                                                                        {{item.VehicleBuyTimePrice.NumberValues[1]}} ,
+                                                                                    <span class="span-h"> {{item.VehicleBuyTimePrice.NumberValues[1]}} ,
                                                                                         {{item.VehicleBuyTimePrice.NumberValues[0]}}
                                                                                         {{item.VehicleBuyTimePrice.TranslatedUnit}}
                                                                                     </span>
@@ -973,8 +964,7 @@
                                                                                         ارزش حدودی درحال حاضر :
                                                                                         <span class="text-danger"></span>
                                                                                     </label>
-                                                                                    <span class="span-h">
-                                                                                        {{item.VehicleNowTimePrice.NumberValues[1]}} ,
+                                                                                    <span class="span-h"> {{item.VehicleNowTimePrice.NumberValues[1]}} ,
                                                                                         {{item.VehicleNowTimePrice.NumberValues[0]}}
                                                                                         {{item.VehicleNowTimePrice.TranslatedUnit}}
                                                                                     </span>
@@ -1460,13 +1450,16 @@
                                                                                         :</label>
                                                                                     <span class="span-h">  {{item.RealEstateCountryId | bindCountry}}</span>
                                                                                 </div>
-                                                                                <div ng-if="item.RealEstateCountryId === '103'" class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                                    <label for="inputRealEstateStateId">استان :</label>
+                                                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                                    <label for="inputRealEstateStateId">استان
+                                                                                        :</label>
                                                                                     <span class="span-h">  {{item.RealEstateStateId | bindState}} </span>
                                                                                 </div>
-                                                                                <div ng-if="item.RealEstateCountryId === '103'" class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                                    <label for="inputRealEstateCityId">شهر :</label>
-                                                                                    <span class="span-h">{{item.RealEstateCityId | bindCity}} </span>
+                                                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                                    <label for="inputRealEstateCityId">
+                                                                                        شهر :
+                                                                                    </label>
+                                                                                    <span class="span-h">   {{item.RealEstateCityId | bindCity}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstatePortion">
@@ -2083,13 +2076,16 @@
                                                                                         :</label>
                                                                                     <span class="span-h">  {{item.RealEstateCountryId | bindCountry}}</span>
                                                                                 </div>
-                                                                                <div ng-if="item.RealEstateCountryId === '103'" class="col-md-3 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                                    <label for="inputRealEstateStateId">استان :</label>
+                                                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                                    <label for="inputRealEstateStateId">استان
+                                                                                        :</label>
                                                                                     <span class="span-h">  {{item.RealEstateStateId | bindState}} </span>
                                                                                 </div>
-                                                                                <div ng-if="item.RealEstateCountryId === '103'" class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
-                                                                                    <label for="inputRealEstateCityId">شهر :</label>
-                                                                                    <span class="span-h">{{item.RealEstateCityId | bindCity}} </span>
+                                                                                <div class="col-md-2 col-sm-12 col-xs-12 form-group RightFloat MoneyStateDiv">
+                                                                                    <label for="inputRealEstateCityId">
+                                                                                        شهر :
+                                                                                    </label>
+                                                                                    <span class="span-h">   {{item.RealEstateCityId | bindCity}} </span>
                                                                                 </div>
                                                                                 <div class="col-md-3 col-xs-12 col-sm-12 form-group RightFloat">
                                                                                     <label for="inputRealEstatePortion">
@@ -2972,7 +2968,6 @@
             "OwnershipType":
                 '[' +
                 '{ "Buy": "خرید"} ,' +
-                '{ "Rent": "رهن/اجاره"} ,' +
                 '{ "Inheritance": "ارث" } ,' +
                 '{ "gift": "هدیه / هبه" }   ,' +
                 '{ "Dowry": "مهریه" }   ,' +

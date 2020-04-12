@@ -1,6 +1,5 @@
 <?php
 class ModelSignUp extends CI_Model{
-
     public function doExportReport(){
         $this->db->select('*');
         $this->db->from('candidate');

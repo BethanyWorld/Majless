@@ -38,7 +38,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-md-9 pull-right">
-        <div class="col-xs-12 register-for-supervisor-container hidden">
+        <div class="col-xs-12 register-for-supervisor-container">
             <div class="col-md-8 col-xs-12  pull-right">
                 <p class="text-justify" style="font-weight: 900;font-size: 16px;line-height: 55px;text-align: justify;">
                     جنبش از ما، جهت بازرسی بر فرآیندهای مالی و گزینشی (نحوه برگزاری آزمون ها) دعوت میکند
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 voting-contiainer">
+        <div class="col-xs-12 voting-contiainer hidden">
             <div class="col-md-8 col-xs-12  pull-right">
                 <p class="text-justify" style="font-weight: 900;font-size: 16px;line-height: 55px;text-align: justify;">
                    اسامی داوطلبان نظارت بر سوابق مالی و فرآیندی مشخص شده اند.
@@ -113,7 +113,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-xs-12">
             <div class="col-xs-12">
                     <?php

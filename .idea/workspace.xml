@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="127eba2d-7415-495a-85e7-2bfd297d5681" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index_css.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index_js.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index-copy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LocalDB majles11.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universities.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Admin/InternalCandidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin/InternalCandidate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Admin/SignUpReport.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin/SignUpReport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/admin/ModelInternalCandidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/admin/ModelInternalCandidate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/admin/ModelSignUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/admin/ModelSignUp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/detail/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/detail/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/home/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/home/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/home/pagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index_js.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/internal_candidate/home/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/internal_candidate/home/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azmaan_db.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +79,7 @@
           <entry key="htaccess" value="3" />
           <entry key="html" value="4" />
           <entry key="js" value="1" />
-          <entry key="php" value="654" />
+          <entry key="php" value="670" />
           <entry key="png" value="2" />
           <entry key="sql" value="2" />
           <entry key="txt" value="5" />
@@ -101,7 +91,7 @@
           <entry key="HTML" value="4" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="654" />
+          <entry key="PHP" value="670" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SQL" value="2" />
           <entry key="XML" value="3" />
@@ -110,24 +100,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="21698" />
+          <entry key="php" value="21912" />
           <entry key="sql" value="1" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="21698" />
+          <entry key="PHP" value="21912" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="28" />
+          <entry key="project.closed" value="32" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.105" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.35" value="1" />
@@ -147,7 +141,7 @@
           <entry key="project.open.time.65" value="1" />
           <entry key="project.open.time.72" value="1" />
           <entry key="project.open.time.81" value="1" />
-          <entry key="project.opened" value="29" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
     </session>
@@ -156,39 +150,12 @@
     <favorites_list name="1TeachMe" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/admin/ModelInternalCandidate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-              <folding>
-                <element signature="n#getRequests#0;n#ModelInternalCandidate#0;n#!!top" />
-                <element signature="n#getAllRequests#0;n#ModelInternalCandidate#0;n#!!top" />
-                <element signature="n#getRequestByRequestId#0;n#ModelInternalCandidate#0;n#!!top" />
-                <element signature="n#doSetSupervisorType#0;n#ModelInternalCandidate#0;n#!!top" />
-                <element signature="n#doVoteSupervisor#0;n#ModelInternalCandidate#0;n#!!top" />
-                <element signature="n#getVoteByCandidateId#0;n#ModelInternalCandidate#0;n#!!top" />
-                <element signature="n#getVotes#0;n#ModelInternalCandidate#0;n#!!top" />
-                <element signature="e#5665#6345#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Admin/InternalCandidate.php">
+        <entry file="file://$PROJECT_DIR$/application/controllers/State.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="111" column="32" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
-              <folding>
-                <element signature="n#__construct#0;n#InternalCandidate#0;n#!!top" />
-                <element signature="n#index#0;n#InternalCandidate#0;n#!!top" />
-                <element signature="n#doPagination#0;n#InternalCandidate#0;n#!!top" />
-                <element signature="n#edit#0;n#InternalCandidate#0;n#!!top" />
-                <element signature="n#doSetSupervisorType#0;n#InternalCandidate#0;n#!!top" />
-                <element signature="n#doVotesPagination#0;n#InternalCandidate#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="1154">
+              <caret line="227" column="26" lean-forward="true" selection-start-line="227" selection-start-column="26" selection-end-line="231" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -205,7 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>فعالیت</find>
       <find>ng-binding</find>
       <find>input</find>
       <find>font-size</find>
@@ -235,6 +201,7 @@
       <find>کلیه کالاهای فاقد سند مالکیت رسمی</find>
       <find>فهرست اموال و دارایی ها</find>
       <find>زمینه فعالیت :</find>
+      <find>bindEnum</find>
     </findStrings>
     <replaceStrings>
       <replace>?&gt;</replace>
@@ -284,21 +251,21 @@
         <option value="$PROJECT_DIR$/application/helpers/pipes/pipe_helper.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/internal_candidate/vote/index.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/finance/index.php" />
-        <option value="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/social_cultural_background/index_js.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/home/pagination.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/detail/index.php" />
         <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/internal_candidate/home/index.php" />
-        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/home/index.php" />
-        <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index_js.php" />
         <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index.php" />
-        <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/pagination.php" />
         <option value="$PROJECT_DIR$/application/models/admin/ModelInternalCandidate.php" />
         <option value="$PROJECT_DIR$/application/models/admin/ModelSignUp.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Admin/SignUpReport.php" />
         <option value="$PROJECT_DIR$/application/controllers/Admin/InternalCandidate.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index_js.php" />
+        <option value="$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/pagination.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php" />
+        <option value="$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Admin/SignUpReport.php" />
       </list>
     </option>
   </component>
@@ -329,10 +296,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1322" />
-    <option name="y" value="-103" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectId" id="1V4AaHwzvzyAORLY1Vc3AmLovqR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -343,6 +310,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -365,26 +333,6 @@
               <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
               <item name="Majless" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -400,22 +348,12 @@
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin_panel" type="462c0819:PsiDirectoryNode" />
-              <item name="candidate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Majless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Majless" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin_panel" type="462c0819:PsiDirectoryNode" />
-              <item name="candidate" type="462c0819:PsiDirectoryNode" />
-              <item name="internal_candidate" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -426,24 +364,24 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="eu.ydp.idea.ts.spec.generator.settings.spec.template" value="import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';&#10;&#10;describe('$ClassName$', () =&gt; {&#10;  let $ObjName$:$ClassName$;&#10;&#10;  beforeEach(() =&gt; {&#10;    $ObjName$ = new $ClassName$();&#10;  });&#10;&#10;  describe('', () =&gt; {&#10;    it('', () =&gt; {&#10;      // given&#10;&#10;      // when&#10;&#10;      // then&#10;    });&#10;  });&#10;});&#10;" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ng2CI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\state\candidate_detail" />
+      <recent name="C:\wamp64\www\Majless\application\views\admin_panel\candidate\internal_candidate" />
+      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\internal_candidate" />
+      <recent name="C:\wamp64\www\Majless\application\views\admin_panel\candidate" />
+      <recent name="C:\wamp64\www\Majless\application\models\admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Majless\application\views\admin_panel\candidate\internal_candidate\home" />
       <recent name="C:\wamp64\www\Majless\application\views\admin_panel\utilities\university" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\exams" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\home\candidate_resume" />
       <recent name="C:\wamp64\www\Majless\application\views\ui\v3\profile\home" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Majless\application\views\admin_panel\candidate\internal_candidate" />
-      <recent name="C:\wamp64\www\Majless\application\views\ui\v3\candidate_profile\internal_candidate" />
-      <recent name="C:\wamp64\www\Majless\application\views\admin_panel\candidate" />
-      <recent name="C:\wamp64\www\Majless\application\models\admin" />
-      <recent name="C:\wamp64\www\Majless\application\controllers\Admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -836,7 +774,11 @@
       <workItem from="1584245362785" duration="16488000" />
       <workItem from="1584333493675" duration="4341000" />
       <workItem from="1585970967132" duration="6283000" />
-      <workItem from="1586059326663" duration="11718000" />
+      <workItem from="1586059326663" duration="13585000" />
+      <workItem from="1586145750194" duration="8027000" />
+      <workItem from="1586236577686" duration="5831000" />
+      <workItem from="1586252921398" duration="986000" />
+      <workItem from="1586578077717" duration="719000" />
     </task>
     <task id="LOCAL-00001" summary="commit from phpstorm">
       <created>1571642032929</created>
@@ -866,7 +808,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437712000" />
+    <option name="totallyTimeSpent" value="455142000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -878,10 +820,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1374" y="-102" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4948276" visible="true" weight="0.3027523" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4948276" visible="true" weight="0.24513619" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" show_stripe_button="false" sideWeight="0.50517243" side_tool="true" weight="0.23929663" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -895,7 +837,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32931036" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" weight="0.32931036" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49923548" weight="0.32931036" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50076455" side_tool="true" weight="0.3275862" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50076455" side_tool="true" weight="0.32586208" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -974,48 +916,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/internal_candidate/vote/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/academic_background/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="366" column="46" selection-start-line="366" selection-start-column="46" selection-end-line="366" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/candidate_resume/academic_background/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/AboutUs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="63" selection-start-line="1" selection-start-column="63" selection-end-line="1" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/states/edit/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/states/edit/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="115" column="79" selection-start-line="115" selection-start-column="79" selection-end-line="115" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Statistics.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -1067,13 +967,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/admin/ModelAgent.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/State.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="226" column="5" lean-forward="true" selection-start-line="226" selection-start-column="5" selection-end-line="226" selection-end-column="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/internal_candidate/vote/index_css.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1152,13 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="2450" column="101" lean-forward="true" selection-start-line="2450" selection-start-column="101" selection-end-line="2450" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/home/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1195,13 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/static/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4498">
-          <caret line="215" column="15" selection-start-line="215" selection-start-column="15" selection-end-line="215" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1234,24 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="73" column="63" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1266,33 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-          <folding>
-            <element signature="e#331#1927#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/pagination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="110" selection-start-line="11" selection-start-column="110" selection-end-line="11" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -1300,17 +1134,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="119" selection-start-line="119" selection-end-line="119" />
-          <folding>
-            <element signature="n#getAllCandidatesCount#0;n#ModelReport#0;n#!!top" />
-            <element signature="n#getAllReportAbusesCount#0;n#ModelReport#0;n#!!top" />
-            <element signature="n#getAllExamsCount#0;n#ModelReport#0;n#!!top" />
-            <element signature="n#getAllExamRequestsCount#0;n#ModelReport#0;n#!!top" />
-            <element signature="n#getStateCandidatesCount#0;n#ModelReport#0;n#!!top" />
-            <element signature="n#getRolesCount#0;n#ModelReport#0;n#!!top" />
-            <element signature="n#getGenderCount#0;n#ModelReport#0;n#!!top" />
-            <element signature="n#getLatestCandidates#0;n#ModelReport#0;n#!!top" />
-            <element signature="n#getTodayCandidates#0;n#ModelReport#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1318,11 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding>
-            <element signature="n#getItem#0;n#ModelStatistics#0;n#!!top" />
-            <element signature="n#doAddItem#0;n#ModelStatistics#0;n#!!top" />
-            <element signature="n#doDeleteItem#0;n#ModelStatistics#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1330,55 +1148,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="1" column="35" lean-forward="true" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding>
-            <element signature="n#doExportReport#0;n#ModelSignUp#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/SignUpReport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="79" selection-end-column="6" />
-          <folding>
-            <element signature="n#__construct#0;n#SignUpReport#0;n#!!top" />
-            <element signature="n#index#0;n#SignUpReport#0;n#!!top" />
-            <element signature="n#doGetPersonReport#0;n#SignUpReport#0;n#!!top" />
-            <element signature="n#doExportReport#0;n#SignUpReport#0;n#!!top" />
-            <element signature="n#convertToEnglish#0;n#SignUpReport#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/admin/ModelInternalCandidate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="n#getRequests#0;n#ModelInternalCandidate#0;n#!!top" />
-            <element signature="n#getAllRequests#0;n#ModelInternalCandidate#0;n#!!top" />
-            <element signature="n#getRequestByRequestId#0;n#ModelInternalCandidate#0;n#!!top" />
-            <element signature="n#doSetSupervisorType#0;n#ModelInternalCandidate#0;n#!!top" />
-            <element signature="n#doVoteSupervisor#0;n#ModelInternalCandidate#0;n#!!top" />
-            <element signature="n#getVoteByCandidateId#0;n#ModelInternalCandidate#0;n#!!top" />
-            <element signature="n#getVotes#0;n#ModelInternalCandidate#0;n#!!top" />
-            <element signature="e#5665#6345#0#PHP" />
-          </folding>
+        <state relative-caret-position="-234">
+          <caret line="132" column="39" lean-forward="true" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="39" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index_css.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/signup_report/home/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/candidate/internal_candidate/votes/index_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index-copy.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/state/candidate_detail/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="2081" column="126" selection-start-line="2081" selection-start-column="126" selection-end-line="2081" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ui/v3/candidate_profile/home/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="43" lean-forward="true" selection-start-column="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Home.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Admin/InternalCandidate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="111" column="32" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
-          <folding>
-            <element signature="n#__construct#0;n#InternalCandidate#0;n#!!top" />
-            <element signature="n#index#0;n#InternalCandidate#0;n#!!top" />
-            <element signature="n#doPagination#0;n#InternalCandidate#0;n#!!top" />
-            <element signature="n#edit#0;n#InternalCandidate#0;n#!!top" />
-            <element signature="n#doSetSupervisorType#0;n#InternalCandidate#0;n#!!top" />
-            <element signature="n#doVotesPagination#0;n#InternalCandidate#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="104">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin_panel/static/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="141" column="21" lean-forward="true" selection-start-line="141" selection-start-column="21" selection-end-line="160" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/States.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2964">
+          <caret line="114" column="14" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/SignUpReport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/State.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1154">
+          <caret line="227" column="26" lean-forward="true" selection-start-line="227" selection-start-column="26" selection-end-line="231" selection-end-column="5" />
         </state>
       </provider>
     </entry>
